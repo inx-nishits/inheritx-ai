@@ -30,10 +30,10 @@ export function Logo({
       <Image
         src={src}
         alt="InheritX"
-        width={148}
-        height={21}
+        width={200}
+        height={28}
         priority={priority}
-        className="h-5 w-auto md:h-6"
+        className="h-7 w-auto md:h-8"
       />
     </Link>
   );
