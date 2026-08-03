@@ -34,6 +34,11 @@ type Beam = {
   speed: number;
 };
 
+const CONNECTION_DIST = 140;
+const CONNECTION_DIST_SQ = CONNECTION_DIST * CONNECTION_DIST;
+const MOUSE_INFLUENCE = 220;
+const MOUSE_INFLUENCE_SQ = MOUSE_INFLUENCE * MOUSE_INFLUENCE;
+
 export function HeroAtmosphere({ className }: HeroAtmosphereProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouse = useRef({ x: -9999, y: -9999, active: false });
@@ -46,11 +51,29 @@ export function HeroAtmosphere({ className }: HeroAtmosphereProps) {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
     let width = 0;
     let height = 0;
+    let running = false;
+    let inView = true;
+    let pageVisible = document.visibilityState !== "hidden";
+
+    const createStream = (w: number, h: number): Stream => {
+      const x = Math.random() * w;
+      const y = Math.random() * h;
+      const angle = Math.random() * Math.PI * 2;
+      const dist = 80 + Math.random() * 180;
+      return {
+        x,
+        y,
+        tx: x + Math.cos(angle) * dist,
+        ty: y + Math.sin(angle) * dist,
+        progress: Math.random(),
+        speed: 0.004 + Math.random() * 0.008,
+      };
+    };
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
@@ -82,29 +105,72 @@ export function HeroAtmosphere({ className }: HeroAtmosphereProps) {
       }));
     };
 
-    const createStream = (w: number, h: number): Stream => {
-      const x = Math.random() * w;
-      const y = Math.random() * h;
-      const angle = Math.random() * Math.PI * 2;
-      const dist = 80 + Math.random() * 180;
-      return {
-        x,
-        y,
-        tx: x + Math.cos(angle) * dist,
-        ty: y + Math.sin(angle) * dist,
-        progress: Math.random(),
-        speed: 0.004 + Math.random() * 0.008,
-      };
+    const drawConnections = (pts: Node[]) => {
+      const cellSize = CONNECTION_DIST;
+      const cols = Math.max(1, Math.ceil(width / cellSize));
+      const rows = Math.max(1, Math.ceil(height / cellSize));
+      const bucketCount = cols * rows;
+      const buckets: number[][] = Array.from({ length: bucketCount }, () => []);
+
+      for (let i = 0; i < pts.length; i++) {
+        const p = pts[i];
+        const col = Math.min(cols - 1, Math.max(0, Math.floor(p.x / cellSize)));
+        const row = Math.min(rows - 1, Math.max(0, Math.floor(p.y / cellSize)));
+        buckets[row * cols + col].push(i);
+      }
+
+      ctx.lineWidth = 1;
+
+      for (let i = 0; i < pts.length; i++) {
+        const a = pts[i];
+        const col = Math.min(cols - 1, Math.max(0, Math.floor(a.x / cellSize)));
+        const row = Math.min(rows - 1, Math.max(0, Math.floor(a.y / cellSize)));
+
+        for (let oy = -1; oy <= 1; oy++) {
+          const ny = row + oy;
+          if (ny < 0 || ny >= rows) continue;
+          for (let ox = -1; ox <= 1; ox++) {
+            const nx = col + ox;
+            if (nx < 0 || nx >= cols) continue;
+            const bucket = buckets[ny * cols + nx];
+            for (let b = 0; b < bucket.length; b++) {
+              const j = bucket[b];
+              if (j <= i) continue;
+              const other = pts[j];
+              const dx = a.x - other.x;
+              const dy = a.y - other.y;
+              const distSq = dx * dx + dy * dy;
+              if (distSq >= CONNECTION_DIST_SQ || distSq === 0) continue;
+              const d = Math.sqrt(distSq);
+              const alpha = 0.22 * (1 - d / CONNECTION_DIST);
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(other.x, other.y);
+              ctx.strokeStyle = `rgba(0, 190, 212, ${alpha})`;
+              ctx.stroke();
+            }
+          }
+        }
+      }
     };
 
     const draw = () => {
+      if (!running) return;
+
       time.current += 0.016;
       ctx.clearRect(0, 0, width, height);
 
       // Soft moving aurora wash
       const gx = width * 0.5 + Math.sin(time.current * 0.18) * width * 0.12;
       const gy = height * 0.35 + Math.cos(time.current * 0.14) * height * 0.08;
-      const aurora = ctx.createRadialGradient(gx, gy, 0, gx, gy, Math.max(width, height) * 0.55);
+      const aurora = ctx.createRadialGradient(
+        gx,
+        gy,
+        0,
+        gx,
+        gy,
+        Math.max(width, height) * 0.55,
+      );
       aurora.addColorStop(0, "rgba(0, 190, 212, 0.14)");
       aurora.addColorStop(0.45, "rgba(8, 145, 168, 0.05)");
       aurora.addColorStop(1, "rgba(0, 0, 0, 0)");
@@ -153,15 +219,21 @@ export function HeroAtmosphere({ className }: HeroAtmosphereProps) {
       }
 
       const pts = nodes.current;
+      const mouseActive = mouse.current.active;
+      const mx = mouse.current.x;
+      const my = mouse.current.y;
+      const t = time.current;
 
       for (const p of pts) {
-        const dx = mouse.current.x - p.x;
-        const dy = mouse.current.y - p.y;
-        const dist = Math.hypot(dx, dy);
-
-        if (mouse.current.active && dist < 220) {
-          p.vx += (dx / dist) * 0.018;
-          p.vy += (dy / dist) * 0.018;
+        if (mouseActive) {
+          const dx = mx - p.x;
+          const dy = my - p.y;
+          const distSq = dx * dx + dy * dy;
+          if (distSq < MOUSE_INFLUENCE_SQ && distSq > 0) {
+            const dist = Math.sqrt(distSq);
+            p.vx += (dx / dist) * 0.018;
+            p.vy += (dy / dist) * 0.018;
+          }
         }
 
         p.x += p.vx;
@@ -171,8 +243,8 @@ export function HeroAtmosphere({ className }: HeroAtmosphereProps) {
         p.pulse += 0.02;
 
         // Gentle drift
-        p.vx += Math.sin(time.current * 0.4 + p.y * 0.01) * 0.002;
-        p.vy += Math.cos(time.current * 0.35 + p.x * 0.01) * 0.002;
+        p.vx += Math.sin(t * 0.4 + p.y * 0.01) * 0.002;
+        p.vy += Math.cos(t * 0.35 + p.x * 0.01) * 0.002;
 
         if (p.x < 0 || p.x > width) p.vx *= -1;
         if (p.y < 0 || p.y > height) p.vy *= -1;
@@ -180,23 +252,7 @@ export function HeroAtmosphere({ className }: HeroAtmosphereProps) {
         p.y = Math.max(0, Math.min(height, p.y));
       }
 
-      // Connections
-      for (let i = 0; i < pts.length; i++) {
-        for (let j = i + 1; j < pts.length; j++) {
-          const a = pts[i];
-          const b = pts[j];
-          const d = Math.hypot(a.x - b.x, a.y - b.y);
-          if (d < 140) {
-            const alpha = 0.22 * (1 - d / 140);
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(0, 190, 212, ${alpha})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-      }
+      drawConnections(pts);
 
       // Nodes
       for (const p of pts) {
@@ -235,7 +291,26 @@ export function HeroAtmosphere({ className }: HeroAtmosphereProps) {
       raf.current = requestAnimationFrame(draw);
     };
 
+    const start = () => {
+      if (running || !inView || !pageVisible) return;
+      running = true;
+      raf.current = requestAnimationFrame(draw);
+    };
+
+    const stop = () => {
+      if (!running) return;
+      running = false;
+      cancelAnimationFrame(raf.current);
+      raf.current = 0;
+    };
+
+    const syncRunning = () => {
+      if (inView && pageVisible) start();
+      else stop();
+    };
+
     const onMove = (event: PointerEvent) => {
+      if (!running) return;
       const rect = canvas.getBoundingClientRect();
       mouse.current = {
         x: event.clientX - rect.left,
@@ -248,17 +323,35 @@ export function HeroAtmosphere({ className }: HeroAtmosphereProps) {
       mouse.current.active = false;
     };
 
+    const onVisibility = () => {
+      pageVisible = document.visibilityState !== "hidden";
+      syncRunning();
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting;
+        syncRunning();
+      },
+      { threshold: 0, rootMargin: "0px" },
+    );
+
     resize();
-    draw();
+    observer.observe(canvas);
+    syncRunning();
+
     window.addEventListener("resize", resize);
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerleave", onLeave);
+    document.addEventListener("visibilitychange", onVisibility);
 
     return () => {
-      cancelAnimationFrame(raf.current);
+      stop();
+      observer.disconnect();
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerleave", onLeave);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, []);
 
