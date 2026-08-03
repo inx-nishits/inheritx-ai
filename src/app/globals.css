@@ -140,10 +140,33 @@ body {
   }
 }
 
+@keyframes footer-wordmark-glow {
+  0%,
+  100% {
+    opacity: 0.75;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 18px rgba(0, 190, 212, 0.35));
+  }
+}
+
+.footer-wordmark-text {
+  animation: footer-wordmark-glow 4.5s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marquee-track,
   .float-soft,
-  .pulse-ring {
+  .pulse-ring,
+  .footer-wordmark-text {
     animation: none !important;
+    filter: none !important;
+  }
+
+  .footer-wordmark-text {
+    fill: rgba(0, 190, 212, 0.35) !important;
+    opacity: 1 !important;
   }
 }
