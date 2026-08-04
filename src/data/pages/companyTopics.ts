@@ -10,7 +10,7 @@ const companyTopics: TopicPage[] = [
     description:
       "InheritX treats AI as enterprise infrastructure—reliable, observable, and entirely under your control. Not rented capability. Not pilot theater. Systems that compound.",
     primaryCta: { label: "Explore solutions", href: "/solutions" },
-    secondaryCta: { label: "Book a strategy call", href: "/contact" },
+    secondaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
     layout: "narrative",
     metadata: {
       title: "Our AI Vision | InheritX",
@@ -102,7 +102,7 @@ const companyTopics: TopicPage[] = [
     title: "Your data. Your models. Your IP.",
     description:
       "Enterprises choose InheritX when pilots are no longer enough—when we build and hand over systems you own: code, fine-tuned weights, and private-cloud deployment with zero third-party data sharing.",
-    primaryCta: { label: "Book a strategy call", href: "/contact" },
+    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "narrative",
     metadata: {
@@ -124,7 +124,7 @@ const companyTopics: TopicPage[] = [
         type: "narrative",
         title: "Built for buyers who cannot afford theater",
         body: [
-          "InheritX is an Enterprise AI Solutions company. We design, govern, and industrialize intelligence systems—agents, platforms, and automation—so leaders own capability, not demos.",
+          "InheritX is an Enterprise AI Solutions company—an AI-native services and consulting partner. We design, govern, and industrialize intelligence systems—agents, platforms, and automation—so leaders own capability, not demos. We are not a foundation-model vendor and not a classic staff-augmentation broker.",
           "Our clients operate where mistakes have consequences: healthcare, finance, insurance, manufacturing, logistics, and public institutions. They need partners who treat security, privacy, and auditability as product requirements—not change requests after launch.",
           "We refuse the trade that many AI vendors offer: speed today for dependency tomorrow. Code, fine-tunes, agents, and workflows transfer. Your competitive advantage stays yours.",
         ],
@@ -180,9 +180,10 @@ const companyTopics: TopicPage[] = [
         links: [
           { label: "Our AI vision", href: "/company/ai-vision" },
           { label: "Our approach", href: "/company/approach" },
-          { label: "Solutions & engagement models", href: "/solutions" },
-          { label: "Resources & insights", href: "/resources" },
-          { label: "Careers", href: "/careers" },
+          { label: "Security practices", href: "/company/security" },
+          { label: "IP ownership", href: "/company/ip-ownership" },
+          { label: "Engagement models", href: "/resources/engagement-models" },
+          { label: "Contact", href: "/contact" },
         ],
       },
     ],
@@ -258,13 +259,38 @@ const companyTopics: TopicPage[] = [
         ],
       },
       {
+        type: "bullets",
+        title: "After handover",
+        intro:
+          "Ownership raises a fair question: who supports the system next? Options are explicit—never forced dependency.",
+        items: [
+          {
+            title: "Hypercare window",
+            copy: "A defined period after go-live for stabilization, knowledge transfer, and rapid response on issues tied to the delivered system.",
+          },
+          {
+            title: "Advisory retainer (optional)",
+            copy: "When offered, ongoing architecture and optimization advice without repossessing your IP or requiring a rented platform.",
+          },
+          {
+            title: "Enhancement waves",
+            copy: "Additional scoped builds as new workflows industrialize—same ownership model as the original program.",
+          },
+          {
+            title: "Your operations remain yours",
+            copy: "You are not required to keep InheritX online to run what you own. Handover is designed for internal operability.",
+          },
+        ],
+      },
+      {
         type: "related",
         title: "Related",
         links: [
           { label: "Our AI vision", href: "/company/ai-vision" },
           { label: "Why InheritX", href: "/company/why-inheritx" },
-          { label: "Culture & values", href: "/team/culture" },
-          { label: "Insights & playbooks", href: "/resources/insights" },
+          { label: "Security practices", href: "/company/security" },
+          { label: "IP ownership", href: "/company/ip-ownership" },
+          { label: "Production readiness", href: "/resources/production-readiness" },
           { label: "Contact", href: "/contact" },
         ],
       },
@@ -283,6 +309,228 @@ const companyTopics: TopicPage[] = [
           {
             q: "How do you handle programs that span multiple business units?",
             a: "Industrialization includes platform patterns and governance models that business units can adopt without re-solving security and evaluation from scratch each time.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "security",
+    eyebrow: "Security & Compliance",
+    title: "Security practices for private, production AI.",
+    description:
+      "How InheritX approaches identity, data boundaries, private deployment, and honest compliance language—without claiming certifications we have not earned.",
+    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    secondaryCta: { label: "Security FAQ", href: "/resources/security-faq" },
+    layout: "narrative",
+    metadata: {
+      title: "Security & Compliance | InheritX",
+      description:
+        "InheritX security practices for private-cloud AI: data boundaries, access control, auditability, and precise compliance language for enterprise buyers.",
+    },
+    sections: [
+      {
+        type: "narrative",
+        title: "What we commit to—and what we do not claim",
+        body: [
+          "Enterprise buyers deserve precise language. InheritX designs AI systems for private deployment, attributable actions, and customer-controlled data boundaries. We use phrases such as GDPR-aligned practices and HIPAA-ready architecture patterns when they describe how we build—not as substitutes for formal certifications.",
+          "If a specific attestation, questionnaire answer, or certificate is required for your procurement process, we will state clearly whether we hold it today, are pursuing it, or will support your review with architecture evidence and contractual controls.",
+          "Certification status is shared factually during vendor diligence—we do not publish blanket certification claims on this site without evidence.",
+        ],
+      },
+      {
+        type: "bullets",
+        title: "Security design defaults",
+        intro: "These are the patterns we apply on production AI engagements unless your estate requires a documented exception.",
+        items: [
+          {
+            title: "Customer-tenant deployment",
+            copy: "Workloads target your AWS, Azure, or GCP accounts (or equivalent private estate)—not a multi-tenant InheritX SaaS that reuses your data across customers.",
+          },
+          {
+            title: "Least-privilege access",
+            copy: "Engagement access uses time-bound identities, scoped roles, and your approval processes for production systems and sensitive data stores.",
+          },
+          {
+            title: "Secrets and configuration hygiene",
+            copy: "Secrets stay in your vaults/KMS patterns; we avoid embedding credentials in source and prefer infrastructure-as-code you can audit.",
+          },
+          {
+            title: "Auditability for AI actions",
+            copy: "Agent and generation workflows are designed with traces, approval gates for high-risk tools, and retention aligned to your policy—not opaque chat logs.",
+          },
+          {
+            title: "No public-model training on your proprietary data",
+            copy: "InheritX does not use your proprietary corpora, prompts, or fine-tunes to train public foundation models.",
+          },
+        ],
+      },
+      {
+        type: "split",
+        title: "Compliance language we use carefully",
+        leftTitle: "Appropriate claims",
+        leftBody: [
+          "GDPR-aligned practices for data minimization, purpose limitation, and processor/controller clarity in contracts.",
+          "HIPAA-ready architecture patterns for healthcare workloads (private estate, access control, audit logging)—when the engagement scope requires them.",
+          "NDA-protected discovery and diligence discussions on request.",
+          "Support for your vendor security questionnaire with factual answers.",
+        ],
+        rightTitle: "Claims we avoid unless true",
+        rightItems: [
+          "“HIPAA certified” or “GDPR certified” as InheritX entity claims without evidence",
+          "Implied formal partnership status with model or cloud vendors",
+          "Guarantees that every workload is automatically compliant in every jurisdiction",
+          "Security theater language disconnected from how systems are actually deployed",
+        ],
+      },
+      {
+        type: "related",
+        title: "Related",
+        links: [
+          { label: "Security FAQ", href: "/resources/security-faq" },
+          { label: "Diligence pack overview", href: "/resources/diligence-pack" },
+          { label: "IP ownership", href: "/company/ip-ownership" },
+          { label: "AI governance", href: "/resources/ai-governance" },
+          { label: "Contact", href: "/contact" },
+        ],
+      },
+      {
+        type: "faq",
+        title: "Security questions",
+        items: [
+          {
+            q: "Where does customer data live during an engagement?",
+            a: "In your designated cloud projects/subscriptions and approved environments. We do not require a shared InheritX multi-tenant data lake for delivery.",
+          },
+          {
+            q: "Do you use our data to improve models for other clients?",
+            a: "No. Proprietary data, fine-tunes, and interaction logs from your program are not reused to train systems for other customers or public models.",
+          },
+          {
+            q: "Can we run a security review before build?",
+            a: "Yes. Blueprint and consulting phases are designed to survive CISO review. Bring your questionnaire—we answer factually and flag gaps honestly.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ip-ownership",
+    eyebrow: "IP Ownership",
+    title: "What you own when we hand over.",
+    description:
+      "“You own the code” is a contractual and technical commitment—not a slogan. Here is the scope InheritX transfers on production AI engagements.",
+    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    secondaryCta: { label: "Our approach", href: "/company/approach" },
+    layout: "narrative",
+    metadata: {
+      title: "IP Ownership & Handover | InheritX",
+      description:
+        "InheritX IP handover scope: code, fine-tunes, agents, prompts, and infrastructure-as-code transferred to the customer—without renting back the platform.",
+    },
+    sections: [
+      {
+        type: "narrative",
+        title: "Ownership is the point of the engagement",
+        body: [
+          "Many AI vendors accelerate pilots by keeping the valuable layer—orchestration, fine-tunes, evaluation, and workflow glue—inside a rented platform. InheritX is built the other way: we implement capability inside your estate and transfer what we create for you.",
+          "Exact transfer terms are defined in the statement of work and master agreement for each engagement. The lists below describe our standard intent for production build programs. A detailed IP schedule can be shared under NDA during diligence.",
+        ],
+      },
+      {
+        type: "bullets",
+        title: "Typically transferred to you",
+        intro: "Unless the contract states otherwise, production build engagements are designed so you retain:",
+        items: [
+          {
+            title: "Application & agent code",
+            copy: "Services, APIs, UIs, agent logic, tool adapters, and workflow orchestration implemented for your program.",
+          },
+          {
+            title: "Fine-tunes & adapters trained for you",
+            copy: "Model weights/adapters fine-tuned on your approved data for your use—remaining your IP.",
+          },
+          {
+            title: "Prompts, policies, and evaluation assets",
+            copy: "Prompt libraries, guardrail configs, offline eval suites, and runbooks created for your system.",
+          },
+          {
+            title: "Infrastructure-as-code for your estate",
+            copy: "IaC and deployment definitions targeting your cloud accounts so your teams can operate and extend the system.",
+          },
+        ],
+      },
+      {
+        type: "bullets",
+        title: "What you should not assume is “owned”",
+        items: [
+          {
+            title: "Third-party foundation models",
+            copy: "Commercial model licenses (OpenAI, Anthropic, etc.) remain governed by those providers’ terms. We help you choose and integrate—they are not InheritX IP to transfer.",
+          },
+          {
+            title: "Your pre-existing systems & data",
+            copy: "Your ERP/EHR data, brands, and prior codebases remain yours; we do not claim them.",
+          },
+          {
+            title: "InheritX accelerators reused across clients",
+            copy: "Generic internal tooling may speed delivery. Anything material reused is disclosed in the SOW; customer-specific work product still transfers.",
+          },
+        ],
+      },
+      {
+        type: "steps",
+        title: "Handover package (standard intent)",
+        intro: "At go-live, production programs aim to leave your team with operable ownership—not tribal knowledge.",
+        items: [
+          {
+            step: "01",
+            title: "Source & environments",
+            copy: "Repositories, CI/CD definitions, and environment documentation under your control.",
+          },
+          {
+            step: "02",
+            title: "Security & operations",
+            copy: "Access model notes, secret locations, observability dashboards, and incident basics agreed for hypercare.",
+          },
+          {
+            step: "03",
+            title: "Evaluation & governance",
+            copy: "Eval harnesses, approval-gate configuration, and policy docs for high-risk actions.",
+          },
+          {
+            step: "04",
+            title: "Enablement",
+            copy: "Runbooks and walkthroughs so internal owners can operate, extend, and audit the system after we step back.",
+          },
+        ],
+      },
+      {
+        type: "related",
+        title: "Related",
+        links: [
+          { label: "Security practices", href: "/company/security" },
+          { label: "Our approach", href: "/company/approach" },
+          { label: "Diligence pack", href: "/resources/diligence-pack" },
+          { label: "Why InheritX", href: "/company/why-inheritx" },
+          { label: "Contact", href: "/contact" },
+        ],
+      },
+      {
+        type: "faq",
+        title: "Ownership questions",
+        items: [
+          {
+            q: "Do you retain a license to reuse our solution for others?",
+            a: "Customer-specific work product is not resold as a productized clone of your system. Contract language governs residual knowledge and any shared accelerators—ask for the IP schedule in diligence.",
+          },
+          {
+            q: "What about prompts and eval sets?",
+            a: "Assets created for your program are intended to transfer with the system so you can continue improving quality after handover.",
+          },
+          {
+            q: "Can legal review this before we sign?",
+            a: "Yes. We expect enterprise counsel to review ownership, data processing, and confidentiality terms before build begins.",
           },
         ],
       },

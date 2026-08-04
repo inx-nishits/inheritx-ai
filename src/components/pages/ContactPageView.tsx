@@ -47,10 +47,12 @@ export function ContactPageView() {
           <Reveal>
             <div className="rounded-[1.75rem] border border-white/10 bg-ink-soft p-6 md:p-8">
               <h2 className="font-display text-2xl text-white md:text-3xl">
-                Send a brief
+                Request an AI consultation
               </h2>
               <p className="mt-2 text-sm text-white/45">
-                We’ll respond with next steps—usually within one business day.
+                Include mandate, systems in scope, constraints, and whether you
+                need consulting, a production build, a squad, or embeds. We’ll
+                respond with next steps—usually within one business day.
               </p>
 
               {submitted ? (
@@ -127,7 +129,7 @@ export function ContactPageView() {
                   </label>
                   <button
                     type="submit"
-                    className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-cyan px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-white sm:w-auto"
+                    className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-cyan px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-ink sm:w-auto"
                   >
                     Continue via email
                   </button>

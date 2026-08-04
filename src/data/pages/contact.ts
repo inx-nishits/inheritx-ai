@@ -1,28 +1,28 @@
 export const contactHero = {
   eyebrow: "Contact",
-  title: "Ready to build your AI advantage?",
+  title: "Book an AI strategy call with an architect.",
   description:
-    "Book a 30-minute strategy call with an AI architect. We’ll review your use case, tell you honestly whether AI is the right solution, and outline a delivery roadmap—NDA available on request.",
+    "Thirty minutes to pressure-test your mandate. We’ll review your use case, tell you honestly whether AI is the right solution, and outline a delivery roadmap—NDA and a diligence pack available for qualified opportunities.",
 };
 
 export const contactChannels = [
   {
-    title: "Strategy & sales",
+    title: "Strategy & transformation",
     detail: "hello@inheritx.com",
     href: "mailto:hello@inheritx.com",
-    note: "Best for transformation and platform engagements",
+    note: "Best for AI transformation, platforms, and agentic systems",
   },
   {
     title: "Careers",
     detail: "Open roles & how to apply",
     href: "/careers",
-    note: "Architects, ML engineers, and product builders",
+    note: "AI architects, ML engineers, and LLMOps builders",
   },
   {
-    title: "Partnerships",
-    detail: "Ecosystem & platform partners",
-    href: "mailto:hello@inheritx.com?subject=Partnership%20Inquiry",
-    note: "Cloud, model, and delivery collaborations",
+    title: "Security & diligence",
+    detail: "Vendor review materials",
+    href: "/resources/diligence-pack",
+    note: "FAQ public; detailed pack under NDA after fit is confirmed",
   },
 ];
 
@@ -49,27 +49,40 @@ export const contactNextSteps = [
   {
     step: "01",
     title: "Share context",
-    copy: "Mandate, industry, systems in play, data constraints, and what “good” looks like in 90 days.",
+    copy: "Mandate and KPI, systems in/out of scope, VPC or private-estate preferences, any security review underway, and whether you need consulting, a production build, a squad, or embeds. Include what “good” looks like in 90 days.",
   },
   {
     step: "02",
-    title: "30-min strategy call",
+    title: "30-min AI strategy call",
     copy: "An AI architect pressure-tests fit—and will say when AI is not the right move. NDA available on request.",
   },
   {
     step: "03",
     title: "Concrete next move",
-    copy: "A recommended engagement shape with scope boundaries, ownership model, and success metrics—not a vague proposal.",
+    copy: "A recommended engagement shape (consulting, build, squad, or embed) with ownership model and success metrics—plus diligence materials and reference process when appropriate.",
   },
 ];
 
 export const contactTopics = [
   "AI Transformation Program",
+  "AI / ML Engineering",
+  "Agentic AI / Multi-Agent System",
+  "AI DevOps / LLMOps",
+  "AI Consulting & Architecture",
   "Custom AI Platform",
-  "Multi-Agent System",
   "Hire AI Engineers",
   "Dedicated AI Squad",
   "Private AI / VPC Deployment",
+  "Security / Diligence",
   "Partnership",
   "Other",
+];
+
+/** Prep guidance shown via existing contact copy surfaces / FAQs where wired. */
+export const contactStrategyPrep = [
+  "Business mandate and the KPI you need to move",
+  "Systems and data sources in scope (and out of scope)",
+  "Deployment preference (VPC / private estate constraints)",
+  "Security or compliance reviews already underway",
+  "Whether you need consulting, a production build, a squad, or embeds",
 ];

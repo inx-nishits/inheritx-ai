@@ -25,6 +25,7 @@ export const industryTopics: TopicPage[] = [
         body: [
           "Clinicians spend disproportionate time in the EHR—charting, searching policies, and chasing prior authorization—while patient-facing work suffers. Knowledge lives in PDFs, order sets, and siloed repositories that generic chat tools cannot safely surface.",
           "Health systems need AI that accelerates documentation and routing without hallucinating clinical guidance or bypassing privacy controls. Every answer must be traceable, every action reversible, and every high-risk recommendation escalated to a licensed professional.",
+          "InheritX designs for private estates, clinician-in-the-loop gates, and audit-friendly traces—using HIPAA-ready architecture patterns where the workload requires them, without overclaiming certifications we have not earned.",
         ],
       },
       {
@@ -154,7 +155,7 @@ export const industryTopics: TopicPage[] = [
           { label: "AI agents that execute work", href: "/solutions/ai-agents" },
           { label: "Enterprise AI platforms", href: "/solutions/enterprise-ai" },
           { label: "Case studies", href: "/case-studies" },
-          { label: "Book a strategy call", href: "/contact" },
+          { label: "Book an AI Strategy Call", href: "/contact" },
         ],
       },
     ],
@@ -175,6 +176,14 @@ export const industryTopics: TopicPage[] = [
         "Multi-agent fraud triage, underwriting copilots, and policy-aware decision support for institutions that need speed and regulatory explainability.",
     },
     sections: [
+      {
+        type: "narrative",
+        title: "Institutional constraints come first",
+        body: [
+          "Financial institutions cannot treat AI as an unverifiable assistant. Fraud, underwriting, and servicing decisions must be attributable, policy-bound, and deployable inside private estates.",
+          "InheritX designs multi-agent and generative systems with traces, human escalation on high-risk actions, and ownership at handover—so speed does not trade away auditability.",
+        ],
+      },
       {
         type: "proof",
         items: [
@@ -481,6 +490,14 @@ export const industryTopics: TopicPage[] = [
         "Edge computer vision, predictive maintenance agents, and plant intelligence for manufacturers who need detection accuracy and operational continuity.",
     },
     sections: [
+      {
+        type: "narrative",
+        title: "Plant constraints come first",
+        body: [
+          "Manufacturers cannot accept vision or agent systems that invent defects, miss safety-critical events, or sit outside MES and quality processes. Latency, OT/IT boundaries, and change control matter as much as model accuracy.",
+          "InheritX designs edge perception and maintenance agents with evidence trails, operator feedback loops, and drift monitoring—so a successful pilot line can industrialize without becoming shadow IT.",
+        ],
+      },
       {
         type: "split",
         title: "Plant floor vs. enterprise layer",

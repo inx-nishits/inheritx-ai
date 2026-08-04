@@ -27,8 +27,8 @@ export function ResourcesPageView() {
         eyebrow={resourcesHero.eyebrow}
         title={resourcesHero.title}
         description={resourcesHero.description}
-        primaryCta={{ label: "Browse insights", href: "/resources/insights" }}
-        secondaryCta={{ label: "Open AI portfolio", href: "/portfolio" }}
+        primaryCta={{ label: "Book an AI Strategy Call", href: "/contact" }}
+        secondaryCta={{ label: "Browse AI insights", href: "/resources/insights" }}
       />
 
       <section className="bg-ink py-16 md:py-24">
@@ -174,7 +174,7 @@ export function ResourcesPageView() {
           </div>
           <MagneticButton
             href="/contact"
-            className="mt-10 bg-ink px-6 py-3 text-white hover:bg-cyan hover:text-ink"
+            className="mt-10 bg-ink px-6 py-3 text-white hover:bg-cyan hover:text-white"
           >
             Request a private briefing
           </MagneticButton>

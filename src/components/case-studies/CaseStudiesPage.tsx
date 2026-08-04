@@ -27,7 +27,7 @@ export function CaseStudiesHero() {
           <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
             {caseStudyIntro.eyebrow}
           </p>
-          <h1 className="font-display mt-4 max-w-3xl text-4xl leading-[1.05] text-white md:text-6xl">
+          <h1 className="font-display mt-4 max-w-3xl text-4xl leading-[1.15] text-white md:text-6xl">
             {caseStudyIntro.title}
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
@@ -36,7 +36,7 @@ export function CaseStudiesHero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <MagneticButton
               href="/contact"
-              className="bg-cyan px-6 py-3 text-ink hover:bg-white"
+              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
             >
               Discuss a similar project
             </MagneticButton>
@@ -55,10 +55,10 @@ export function CaseStudiesHero() {
 
         <div className="mt-12 grid grid-cols-2 gap-3 border-t border-white/[0.08] pt-8 sm:grid-cols-4 md:mt-14">
           {[
-            { value: "8+", label: "Featured stories" },
-            { value: "AI/ML", label: "Core focus areas" },
-            { value: "Mobile+Web", label: "Product surfaces" },
-            { value: "Measurable", label: "Business outcomes" },
+            { value: "14+", label: "Years enterprise DNA" },
+            { value: "600+", label: "Client engagements" },
+            { value: "AI/ML", label: "Agents · Vision · LLMOps" },
+            { value: "Owned", label: "IP at handover" },
           ].map((stat) => (
             <div key={stat.label}>
               <p className="font-display text-2xl text-cyan md:text-3xl">
@@ -189,19 +189,19 @@ export function CaseStudiesCTA() {
           viewport={{ once: true }}
         >
           <h2 className="font-display text-3xl text-white md:text-5xl">
-            Planning an AI mandate like these?
+            Planning an AI transformation like these?
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-sm text-white/50 md:text-base">
-            Tell us the workflow, constraint, and outcome you need—we will map
-            whether consulting, a build, or embedded AI talent is the right first
-            move.
+            Share the workflow, constraint, and outcome you need—we will map
+            whether consulting, a production build, or embedded AI talent is the
+            right first move.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <MagneticButton
               href="/contact"
-              className="bg-cyan px-7 py-3.5 text-ink hover:bg-white"
+              className="bg-cyan px-7 py-3.5 text-white hover:bg-white hover:text-ink"
             >
-              Book a strategy call
+              Book an AI Strategy Call
             </MagneticButton>
             <Link
               href="/portfolio"

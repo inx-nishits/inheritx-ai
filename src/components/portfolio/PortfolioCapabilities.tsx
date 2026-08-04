@@ -13,15 +13,15 @@ export function PortfolioCapabilities() {
       <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         <div className="mb-12 max-w-3xl md:mb-16">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-            AI Capabilities Used
+            AI Infrastructure
           </p>
           <TextReveal
-            text="The stack behind governed enterprise AI."
-            className="font-display mt-5 text-4xl leading-[1.05] text-white md:text-5xl"
+            text="The stack behind production enterprise AI."
+            className="font-display mt-5 text-4xl leading-[1.15] text-white md:text-5xl"
           />
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/50">
-            Models, orchestration, retrieval, and cloud estates we compose for
-            private, production-grade systems—not demo stacks.
+            Models, agentic orchestration, retrieval, and cloud estates we
+            compose for private, production-grade systems—not demo stacks.
           </p>
         </div>
 
@@ -63,12 +63,12 @@ export function BusinessImpact() {
             Business Impact
           </p>
           <TextReveal
-            text="Outcomes leadership can govern and measure."
-            className="font-display mt-5 text-4xl leading-[1.05] text-white md:text-5xl"
+            text="Outcomes CEOs and CTOs can measure."
+            className="font-display mt-5 text-4xl leading-[1.15] text-white md:text-5xl"
           />
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/50">
-            The impact dimensions we design for—cost, capacity, decision speed,
-            coverage, and trust. Specific client metrics live in Case Studies.
+            Target outcome classes across cost, speed, automation, and trust.
+            Specific client metrics live in Case Studies.
           </p>
         </div>
 
@@ -113,21 +113,21 @@ export function PortfolioCTA() {
       <div className="relative mx-auto max-w-[1400px] px-5 text-center md:px-8">
         <Reveal>
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-            Next engagement
+            Start your AI transformation
           </p>
-          <h2 className="font-display mx-auto mt-5 max-w-3xl text-4xl leading-[1.05] text-white md:text-6xl">
+          <h2 className="font-display mx-auto mt-5 max-w-3xl text-4xl leading-[1.15] text-white md:text-6xl">
             Let&apos;s industrialize your next AI mandate
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-white/55">
-            From strategy to multi-agent production systems—we design, govern,
-            and scale Enterprise AI you own.
+            From strategy to agentic production systems—we design AI/ML,
+            Agentic AI, and AI DevOps platforms enterprises own.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <MagneticButton
               href="mailto:hello@inheritx.com"
-              className="bg-cyan px-7 py-3.5 text-ink shadow-[0_0_36px_rgba(0,190,212,0.22)] hover:bg-white"
+              className="bg-cyan px-7 py-3.5 text-white shadow-[0_0_36px_rgba(0,190,212,0.22)] hover:bg-white hover:text-ink"
             >
-              Book a 30-min strategy call
+              Book an AI Strategy Call
             </MagneticButton>
             <a
               href="/"

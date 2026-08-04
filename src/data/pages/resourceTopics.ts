@@ -1,4 +1,5 @@
 import type { TopicPage } from "./topic";
+import { enterpriseResourceTopics } from "./enterpriseResourceTopics";
 
 const resourceTopics: TopicPage[] = [
   {
@@ -7,7 +8,7 @@ const resourceTopics: TopicPage[] = [
     title: "Executive and architect perspectives on enterprise AI.",
     description:
       "Short, decision-grade writing for leaders and builders—governed agents, private AI ownership, and the path from pilot to platform. No filler. No hype.",
-    primaryCta: { label: "Book a strategy call", href: "/contact" },
+    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "library",
     metadata: {
@@ -87,7 +88,7 @@ const resourceTopics: TopicPage[] = [
           },
           {
             q: "Can we request a private briefing on a theme?",
-            a: "Yes. Book a strategy call and we will tailor a briefing to your industry, risk posture, and current AI maturity.",
+            a: "Yes. Book an AI Strategy Call and we will tailor a briefing to your industry, risk posture, and current AI maturity.",
           },
           {
             q: "How often do you publish?",
@@ -181,7 +182,7 @@ const resourceTopics: TopicPage[] = [
     title: "Frameworks for AI modernization.",
     description:
       "Longer-form frameworks for transformation leaders—sequencing investment, designing governed platforms, and moving agentic capability from proof to estate-wide scale.",
-    primaryCta: { label: "Book a strategy call", href: "/contact" },
+    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
     secondaryCta: { label: "Our approach", href: "/company/approach" },
     layout: "library",
     metadata: {
@@ -279,6 +280,7 @@ const resourceTopics: TopicPage[] = [
       },
     ],
   },
+  ...enterpriseResourceTopics,
 ];
 
 export function getResourceTopic(slug: string): TopicPage | undefined {

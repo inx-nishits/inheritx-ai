@@ -1,19 +1,19 @@
 export const solutionsHero = {
   eyebrow: "Solutions",
-  title: "Custom AI systems—built, deployed, and owned by you.",
+  title: "AI systems that transform how enterprises operate.",
   description:
-    "InheritX is an Enterprise AI Solutions company. Agents, multi-agent orchestration, computer vision, generative platforms, and automation—handed over with full IP and private-cloud deployment, not rented access.",
+    "InheritX is an AI-native enterprise partner. We deliver AI/ML engineering, Agentic AI, and AI DevOps—consulting when the mandate is unclear; production systems in your private cloud when you are ready—with full IP handover.",
 };
 
 export const solutionPillars = [
   {
     id: "01",
-    title: "Governed Intelligence Platforms",
+    title: "AI/ML Engineering",
     summary:
-      "Enterprise RAG, model gateways, and policy controls inside your estate—context-aware generation with guardrails so answers stay grounded in your business.",
+      "Custom LLMs, RAG, fine-tuning, vector search, prediction systems, and AI analytics—engineered for measurable outcomes inside your security boundary.",
     points: [
-      "Vector retrieval with citations and role-aware access",
-      "Custom guardrails against missing-context hallucinations",
+      "Enterprise RAG, fine-tuning, and model gateways",
+      "Prediction, search, and analytics systems tied to KPIs",
       "Full IP transfer on delivery",
     ],
     image: "/images/visuals/lead-solutions.png",
@@ -21,12 +21,12 @@ export const solutionPillars = [
   },
   {
     id: "02",
-    title: "Agent Workforces",
+    title: "Agentic AI",
     summary:
-      "Task-oriented and hierarchical multi-agent systems that plan, call tools, peer-review outputs, and escalate exceptions—with humans on consequential decisions.",
+      "Autonomous agents, multi-agent orchestration, MCP, tool calling, memory, and human–AI collaboration—AI employees that execute work with auditability.",
     points: [
-      "Memory, planning, and tool access to your systems",
-      "Specialised sub-agents with human approval gates",
+      "Single agents and hierarchical multi-agent systems",
+      "MCP, tool contracts, memory, and approval gates",
       "Observability for every agent decision",
     ],
     image: "/images/visuals/lead-agents.png",
@@ -34,62 +34,62 @@ export const solutionPillars = [
   },
   {
     id: "03",
-    title: "Vision, Documents & Workflows",
+    title: "AI DevOps",
     summary:
-      "Computer vision, document intelligence, and automation woven into ERP, CRM, and plant systems—trained on your domain data, deployed where your data lives.",
+      "MLOps, LLMOps, CI/CD for AI, model lifecycle, monitoring, and cloud AI infrastructure—so production intelligence stays reliable after go-live.",
     points: [
-      "Vision transformers and CNNs for inspection and imaging",
-      "Document extraction, classification, and validation",
-      "Exception queues and continuous evaluation",
+      "CI/CD, evaluation harnesses, and model lifecycle",
+      "Tracing, guardrails, cost controls, and incident playbooks",
+      "Vision, documents, and workflow automation when ops need them",
     ],
     image: "/images/visuals/lead-capabilities.png",
-    href: "/solutions/ai-automation",
+    href: "/solutions/ai-transformation",
   },
 ];
 
 export const engagementModels = [
   {
+    title: "AI Consulting & Architecture",
+    duration: "2–6 weeks · Start here when the mandate is unclear",
+    copy: "Board-ready blueprints: data readiness, model strategy, agent design, LLMOps posture, security, and sequenced investment—before you commit to a build.",
+    bestFor: "CTO / CIO / CISO / Head of AI",
+    href: "/solutions/ai-consulting",
+  },
+  {
     title: "AI Transformation Programs",
-    duration: "90 days → multi-wave",
-    copy: "Executive alignment, architecture, governed pilots that industrialize, and enablement for the operating model.",
+    duration: "90 days → multi-wave · Production build & industrialize",
+    copy: "Executive alignment, architecture, governed pilots that industrialize, private-cloud deployment, and enablement—with IP handover.",
     bestFor: "CEO / Transformation Office",
     href: "/solutions/ai-transformation",
   },
   {
-    title: "AI Consulting & Architecture",
-    duration: "2–6 weeks",
-    copy: "Board-ready blueprints: data readiness, model strategy, LLMOps posture, security, and sequenced investment.",
-    bestFor: "CTO / CIO / CISO / Architecture",
-    href: "/solutions/ai-consulting",
+    title: "Dedicated AI Squads",
+    duration: "Pod-based delivery · Owned capability to production",
+    copy: "Cross-functional pods (ML, agentic systems, LLMOps, platform) that own a capability from discovery to production under InheritX delivery leadership.",
+    bestFor: "Business unit & innovation leaders",
+    href: "/solutions/dedicated-ai-squads",
   },
   {
     title: "Hire AI Engineers",
-    duration: "Dedicated embed",
-    copy: "Senior AI / ML / agentic engineers embedded in your roadmap—shipping under your standards, not staff-aug theater.",
-    bestFor: "Product & Engineering leaders",
+    duration: "Dedicated embed · Only when the roadmap is already clear",
+    copy: "Senior AI / ML / agentic / LLMOps engineers embedded in your roadmap—shipping under your standards. Not a substitute for strategy.",
+    bestFor: "Product & Engineering leaders with a defined backlog",
     href: "/solutions/hire-ai-engineers",
-  },
-  {
-    title: "Dedicated AI Squads",
-    duration: "Pod-based delivery",
-    copy: "Cross-functional pods (ML, LLMOps, platform, product) that own a capability from discovery to production.",
-    bestFor: "Business unit & innovation leaders",
-    href: "/solutions/dedicated-ai-squads",
   },
 ];
 
 export const solutionFitMatrix = [
   {
-    need: "We need private AI with compliance",
-    fit: "Governed Intelligence Platforms",
+    need: "We need custom models, RAG, or prediction systems",
+    fit: "AI/ML Engineering",
   },
   {
-    need: "We need work executed, not just answers",
-    fit: "Agent Workforces",
+    need: "We need agents that execute work, not just answer",
+    fit: "Agentic AI",
   },
   {
-    need: "We need AI inside existing processes",
-    fit: "Workflow Automation Fabric",
+    need: "We need production reliability, MLOps, and LLMOps",
+    fit: "AI DevOps",
   },
   {
     need: "We need specialized AI capacity on our team",
@@ -97,10 +97,10 @@ export const solutionFitMatrix = [
   },
 ];
 
-/** Non-numeric trust principles — avoids unverifiable performance claims. */
+/** Trust signals for enterprise buyers — ownership + outcome classes. */
 export const solutionProofPoints = [
   { value: "Owned", label: "100% code & model IP at handover" },
   { value: "Private", label: "Deployed in your VPC or on-prem" },
-  { value: "Governed", label: "Audit trails & human gates" },
-  { value: "Honest", label: "We’ll say when AI isn’t the fit" },
+  { value: "40%", label: "Faster documentation cycles (pattern)" },
+  { value: "10×", label: "Faster agentic triage (pattern)" },
 ];

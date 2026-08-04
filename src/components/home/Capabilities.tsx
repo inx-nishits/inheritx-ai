@@ -1,11 +1,18 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { capabilities } from "@/data/content";
 import { TextReveal } from "@/components/ui/Reveal";
 import { VisualFrame } from "@/components/ui/VisualFrame";
+import { cn } from "@/lib/cn";
 
 const cardLeads = [
   "/images/visuals/lead-capabilities.png",
@@ -58,12 +65,17 @@ export function Capabilities() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [isDesktop, setIsDesktop] = useState(false);
   const [scrollDistance, setScrollDistance] = useState(0);
+  const [progress, setProgress] = useState(0);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
   });
-  const x = useTransform(scrollYProgress, (progress) => progress * -scrollDistance);
+  const x = useTransform(scrollYProgress, (value) => value * -scrollDistance);
+
+  useMotionValueEvent(scrollYProgress, "change", (value) => {
+    setProgress(value);
+  });
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
@@ -93,6 +105,23 @@ export function Capabilities() {
     };
   }, [isDesktop]);
 
+  const scrollToProgress = useCallback((next: number) => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const clamped = Math.min(1, Math.max(0, next));
+    const start = section.offsetTop;
+    const range = Math.max(1, section.offsetHeight - window.innerHeight);
+    window.scrollTo({ top: start + clamped * range, behavior: "smooth" });
+  }, []);
+
+  const step = 1 / Math.max(1, capabilities.length - 1);
+  const canPrev = progress > 0.02;
+  const canNext = progress < 0.98;
+  const activeIndex = Math.min(
+    capabilities.length,
+    Math.max(1, Math.round(progress * (capabilities.length - 1)) + 1),
+  );
+
   return (
     <section
       id="capabilities"
@@ -111,12 +140,12 @@ export function Capabilities() {
               </p>
               <TextReveal
                 text="What we build for the AI-native enterprise."
-                className="font-display mt-5 text-[2rem] leading-[1.08] text-white"
+                className="font-display mt-5 text-[2rem] leading-[1.15] text-white"
               />
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-white/45">
-              Platforms, custom agents, multi-agent orchestration, computer vision,
-              and document intelligence—engineered for private cloud and full IP ownership.
+              From AI/ML engineering and agentic systems to AI DevOps, private
+              platforms, and vision—production capabilities you own.
             </p>
           </div>
         </div>
@@ -144,13 +173,51 @@ export function Capabilities() {
                 </p>
                 <TextReveal
                   text="What we build for the AI-native enterprise."
-                  className="font-display mt-4 text-[2rem] leading-[1.08] text-white md:text-[2.75rem] lg:mt-5 lg:text-6xl"
+                  className="font-display mt-4 text-[2rem] leading-[1.15] text-white md:text-[2.75rem] lg:mt-5 lg:text-6xl"
                 />
               </div>
-              <p className="max-w-sm text-sm leading-relaxed text-white/45 md:text-base">
-                Platforms, custom agents, multi-agent orchestration, computer vision,
-                and document intelligence—engineered for private cloud and full IP ownership.
-              </p>
+              <div className="flex flex-col gap-5 lg:items-end">
+                <p className="max-w-sm text-sm leading-relaxed text-white/45 md:text-base lg:text-right">
+                  From AI/ML engineering and agentic systems to AI DevOps,
+                  private platforms, and vision—production capabilities you own.
+                </p>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    aria-label="Previous capability"
+                    disabled={!canPrev}
+                    onClick={() => scrollToProgress(progress - step)}
+                    className={cn(
+                      "inline-flex h-11 items-center gap-2 rounded-full border px-4 text-sm transition-colors",
+                      canPrev
+                        ? "border-white/20 text-white/80 hover:border-cyan/50 hover:text-white"
+                        : "cursor-not-allowed border-white/10 text-white/25",
+                    )}
+                  >
+                    <ArrowLeft size={16} />
+                    Prev
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Next capability"
+                    disabled={!canNext}
+                    onClick={() => scrollToProgress(progress + step)}
+                    className={cn(
+                      "inline-flex h-11 items-center gap-2 rounded-full border px-4 text-sm transition-colors",
+                      canNext
+                        ? "border-white/20 text-white/80 hover:border-cyan/50 hover:text-white"
+                        : "cursor-not-allowed border-white/10 text-white/25",
+                    )}
+                  >
+                    Next
+                    <ArrowRight size={16} />
+                  </button>
+                  <span className="ml-2 font-mono text-[11px] text-white/35">
+                    {String(activeIndex).padStart(2, "0")} /{" "}
+                    {String(capabilities.length).padStart(2, "0")}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 

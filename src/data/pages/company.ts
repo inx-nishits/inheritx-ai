@@ -1,13 +1,13 @@
 export const companyHero = {
   eyebrow: "Company",
-  title: "Enterprise AI systems. You own the code.",
+  title: "AI-native enterprise partner. You own the systems.",
   description:
-    "InheritX is an Enterprise AI Solutions company. We design, build, and hand over agents, platforms, and vision systems—private cloud, full IP transfer, regulated industries—so leaders own capability, not demos.",
+    "InheritX helps enterprises transform with AI—14+ years of enterprise delivery DNA and 600+ engagements underpinning AI/ML, Agentic AI, and AI DevOps programs for regulated industries. We design, build, and hand over—private cloud, IP transfer, governance by design.",
 };
 
 export const companyVision = {
   title: "Our AI vision",
-  lead: "Intelligence should behave like infrastructure you own: reliable, governed, measurable—and never rented back to you as a black box.",
+  lead: "Enterprise AI should behave like infrastructure you own: reliable, governed, measurable—and never rented back to you as a black box.",
   pillars: [
     {
       title: "Systems over slides",
@@ -19,7 +19,7 @@ export const companyVision = {
     },
     {
       title: "Agents that work",
-      copy: "Multi-agent systems that execute enterprise workflows—with humans supervising risk, not watching a chatbot demo.",
+      copy: "Agentic systems that execute enterprise workflows—with humans supervising risk, not watching a chatbot demo.",
     },
   ],
 };
@@ -33,31 +33,31 @@ export const companyTimeline = [
   {
     year: "AI shift",
     title: "From platforms to intelligence",
-    copy: "Became an AI-first practice: agents, generative applications, computer vision, private AI, and LLMOps.",
+    copy: "Became an AI-native practice: AI/ML engineering, agentic systems, computer vision, private AI platforms, and LLMOps.",
   },
   {
     year: "Today",
-    title: "Enterprise AI partner",
-    copy: "Board-ready transformation programs that industrialize AI across regulated industries—with ownership left with the client.",
+    title: "Enterprise AI transformation partner",
+    copy: "Board-ready programs that industrialize AI across regulated industries—with ownership left with the client.",
   },
 ];
 
 export const companyPrinciples = [
   {
     title: "100% code ownership",
-    copy: "Every line of agent logic, automation, and interface code is licensed and transferred at handover. We retain no rights to your systems.",
+    copy: "Agent logic, automation, interfaces, and infrastructure-as-code we create for you are transferred at handover under the engagement contract. We retain no rights to operate your systems as a rented platform.",
   },
   {
     title: "Proprietary models stay yours",
-    copy: "Weights fine-tuned on your data remain your exclusive IP. We never reuse, share, or train public models on your proprietary datasets.",
+    copy: "Weights and adapters fine-tuned on your data remain your exclusive IP. InheritX does not reuse them across clients or feed them into public training sets.",
   },
   {
     title: "Private cloud deployment",
-    copy: "Systems deploy into your AWS, Azure, or GCP VPC. Data does not leave your boundary to train external models.",
+    copy: "Systems deploy into your AWS, Azure, or GCP VPC (or equivalent private estate). Customer data is not used by InheritX to train external public models.",
   },
   {
-    title: "Zero third-party data sharing",
-    copy: "Telemetry, prompt histories, embeddings, and inference logs are shielded from public LLM training datasets—by design.",
+    title: "Zero third-party training on your data",
+    copy: "Prompt histories, embeddings, and inference logs for your workloads are treated as customer-controlled. We do not contribute them to public LLM training corpora.",
   },
 ];
 
@@ -70,7 +70,7 @@ export const companyStats = [
 ];
 
 export const careersTeaser = {
-  title: "Build the intelligence enterprises will run on.",
-  copy: "We hire people who ship production AI—architects, ML/LLM engineers, and builders who treat governance as part of the product.",
-  roles: ["AI Architects", "ML / LLM Engineers", "Agentic Systems", "LLMOps"],
+  title: "Build the AI systems enterprises will run on.",
+  copy: "We hire people who ship production AI—architects, ML/LLM engineers, agentic systems builders, and LLMOps practitioners who treat governance as part of the product.",
+  roles: ["AI Architects", "ML / LLM Engineers", "Agentic Systems", "AI DevOps / LLMOps"],
 };

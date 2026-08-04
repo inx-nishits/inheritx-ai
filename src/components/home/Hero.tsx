@@ -1,44 +1,68 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
-import { ArrowDownRight } from "lucide-react";
-import { useRef } from "react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 import { HeroAtmosphere } from "@/components/canvas/HeroAtmosphere";
-import {
-  HeroAgentStrip,
-  HeroStage,
-} from "@/components/home/HeroAgentMesh";
+import { HeroStage } from "@/components/home/HeroConstellation";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
-const lines = [
-  { words: ["Enterprise", "AI."], accent: false },
-  { words: ["You", "own", "the", "code."], accent: true },
-];
+const verbs = ["Scale", "Automate", "Orchestrate", "Transform"] as const;
 
 export function Hero() {
   const copyRef = useRef<HTMLDivElement>(null);
+  const [verbIndex, setVerbIndex] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setVerbIndex((i) => (i + 1) % verbs.length);
+    }, 3600);
+    return () => window.clearInterval(id);
+  }, []);
 
   useGSAP(
     () => {
       if (!copyRef.current) return;
-      gsap.from(".hero-word", {
-        yPercent: 110,
-        duration: 0.95,
-        ease: "power4.out",
-        stagger: 0.06,
-        delay: 0.12,
-      });
-      gsap.from(".hero-fade", {
-        y: 16,
+
+      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+
+      tl.from(".hero-eyebrow", {
+        y: 14,
         opacity: 0,
-        duration: 0.75,
-        ease: "power3.out",
-        stagger: 0.07,
-        delay: 0.55,
-      });
+        duration: 0.85,
+        delay: 0.12,
+      })
+        .from(
+          ".hero-line-1 .hero-mask-inner",
+          {
+            yPercent: 110,
+            duration: 1.05,
+            stagger: 0.06,
+          },
+          "-=0.45",
+        )
+        .from(
+          ".hero-line-2",
+          {
+            y: 18,
+            opacity: 0,
+            duration: 0.85,
+          },
+          "-=0.55",
+        )
+        .from(
+          ".hero-fade",
+          {
+            y: 16,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.08,
+          },
+          "-=0.4",
+        );
     },
     { scope: copyRef },
   );
@@ -49,90 +73,148 @@ export function Hero() {
         id="top"
         className="relative flex h-dvh max-h-dvh flex-col overflow-hidden"
       >
-        <HeroAtmosphere className="absolute inset-0 z-0 h-full w-full opacity-45" />
+        {/* Layer 3 — soft particles (noticeable, still secondary) */}
+        <HeroAtmosphere className="absolute inset-0 z-0 h-full w-full opacity-[0.48] [mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)]" />
 
-        <div className="pointer-events-none absolute inset-0 z-[1]">
-          <motion.div
-            className="absolute top-[-10%] right-[-5%] h-[42vw] max-h-[420px] w-[42vw] max-w-[420px] rounded-full bg-cyan/[0.08] blur-[120px]"
-            animate={{ opacity: [0.35, 0.55, 0.35], scale: [1, 1.06, 1] }}
-            transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        {/* Layer 1 — ambient gradient environment */}
+        <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_38%,#0c1520_0%,#07090d_55%,#05070a_100%)]" />
+
+          {/* Soft corner ambience — restored depth, still quiet */}
+          <div
+            className="absolute -top-[12%] right-[-10%] h-[48vw] max-h-[460px] w-[48vw] max-w-[460px]"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(8,145,168,0.17) 0%, transparent 70%)",
+            }}
           />
-          <motion.div
-            className="absolute bottom-[-15%] left-[20%] h-[36vw] max-h-[360px] w-[36vw] max-w-[360px] rounded-full bg-[#0891a8]/10 blur-[130px]"
-            animate={{ opacity: [0.25, 0.45, 0.25] }}
-            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+          <div
+            className="absolute bottom-[-18%] left-[-8%] h-[44vw] max-h-[400px] w-[44vw] max-w-[400px]"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(0,190,212,0.125) 0%, transparent 72%)",
+            }}
           />
-          <div className="noise-overlay opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/35" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-transparent to-ink/70" />
+
+          {/* Soft horizon depth band */}
+          <div
+            className="absolute inset-x-0 top-[44%] h-[26%] -translate-y-1/2"
+            style={{
+              background:
+                "radial-gradient(ellipse 75% 100% at 50% 50%, rgba(22,28,39,0.55) 0%, transparent 75%)",
+            }}
+          />
+
+          <div className="noise-overlay opacity-28" />
+
+          {/* Edge vignette — keeps edges quiet, center readable */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_28%,rgba(7,9,13,0.34)_70%,rgba(7,9,13,0.86)_100%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink/78" />
         </div>
 
+        {/* Soft scrim — protects content without flattening the field */}
+        <div
+          className="pointer-events-none absolute inset-0 z-[3]"
+          aria-hidden
+          style={{
+            background:
+              "radial-gradient(ellipse 62% 48% at 50% 48%, rgba(7,9,13,0.22) 0%, transparent 74%)",
+          }}
+        />
+
+        {/* Bottom feather — soft fade so bg lines/particles don't hard-clip */}
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[4] h-[34%] md:h-[38%]"
+          aria-hidden
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent 0%, rgba(7,9,13,0.35) 38%, rgba(7,9,13,0.82) 72%, #07090d 100%)",
+          }}
+        />
+
+        {/* Layer 4 — content (highest priority) */}
         <div
           ref={copyRef}
-          className="relative z-20 mx-auto grid h-full w-full max-w-[1400px] grid-cols-1 items-center px-5 pt-20 pb-6 md:px-8 md:pt-24 md:pb-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-8 lg:pt-28 lg:pb-10"
+          className="relative z-20 mx-auto flex h-full w-full max-w-[1100px] flex-col items-center justify-center px-5 pt-16 pb-16 text-center md:px-8"
         >
-          {/* Left: primary content */}
-          <div className="relative z-30 max-w-xl xl:max-w-2xl">
-            <p className="hero-fade mb-3 text-[11px] tracking-[0.28em] text-cyan uppercase md:mb-4">
-              Enterprise AI Solutions · Full IP ownership
+          {/* Content spotlight — soft lift so type stays primary */}
+          <div
+            className="pointer-events-none absolute left-1/2 top-[46%] h-[min(72vw,520px)] w-[min(96vw,820px)] -translate-x-1/2 -translate-y-1/2"
+            aria-hidden
+            style={{
+              background:
+                "radial-gradient(ellipse at center, rgba(255,255,255,0.06) 0%, rgba(22,28,39,0.32) 40%, transparent 72%)",
+            }}
+          />
+
+          <div className="relative">
+            <p className="hero-eyebrow text-[11px] tracking-[0.32em] text-cyan uppercase">
+              AI-Native Enterprise Partner
             </p>
 
-            <h1 className="font-display text-[clamp(2.4rem,5.2vw,4.85rem)] leading-[1.08] tracking-[-0.03em] text-white">
-              {lines.map((line) => (
-                <span key={line.words.join("-")} className="block">
-                  {line.words.map((word) => (
-                    <span
-                      key={word}
-                      className="mr-[0.28em] inline-block overflow-hidden pt-[0.08em] pb-[0.22em] align-bottom last:mr-0"
-                    >
-                      <span
-                        className={`hero-word inline-block ${
-                          line.accent ? "italic text-cyan" : ""
-                        }`}
-                      >
-                        {word}
-                      </span>
+            <h1 className="font-display mt-6 text-[clamp(2.6rem,7.5vw,5.75rem)] leading-[1.12] tracking-[-0.04em] text-white md:mt-8">
+              <span className="hero-line-1 block">
+                {"Enterprise AI.".split(" ").map((word) => (
+                  <span
+                    key={word}
+                    className="mr-[0.22em] inline-block overflow-hidden py-[0.2em] -my-[0.08em] align-bottom last:mr-0"
+                  >
+                    <span className="hero-mask-inner inline-block drop-shadow-[0_2px_24px_rgba(0,0,0,0.45)]">
+                      {word}
                     </span>
-                  ))}
+                  </span>
+                ))}
+              </span>
+
+              <span className="hero-line-2 mt-1 flex flex-wrap items-baseline justify-center gap-x-[0.28em]">
+                <span className="text-white/90">Built to</span>
+                <span
+                  className="relative inline-flex h-[1.35em] min-w-[11ch] items-center justify-center overflow-hidden align-bottom sm:min-w-[12ch]"
+                  aria-live="polite"
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={verbs[verbIndex]}
+                      className="absolute inset-x-0 text-cyan"
+                      initial={{ y: "110%", opacity: 0 }}
+                      animate={{ y: "0%", opacity: 1 }}
+                      exit={{ y: "-100%", opacity: 0 }}
+                      transition={{
+                        duration: 0.6,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                    >
+                      {verbs[verbIndex]}.
+                    </motion.span>
+                  </AnimatePresence>
                 </span>
-              ))}
+              </span>
             </h1>
 
-            <p className="hero-fade mt-5 max-w-md text-sm leading-relaxed text-white/60 md:mt-6 md:text-base">
-              We build custom AI agents, multi-agent systems, and computer vision
-              platforms for enterprises in healthcare, finance, logistics, and
-              manufacturing—then hand over the IP and deploy into your private
-              cloud. Production systems, not rented platforms.
+            <p className="hero-fade mx-auto mt-6 max-w-lg text-base leading-relaxed text-white/60 md:mt-8 md:text-lg">
+              AI/ML engineering, Agentic AI, and AI DevOps—deployed in your
+              private cloud with full IP ownership.
             </p>
 
-            <div className="hero-fade mt-7 flex w-full flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-nowrap sm:items-center sm:gap-5">
+            <div className="hero-fade mt-10 flex flex-col items-center gap-4 sm:mt-12 sm:flex-row sm:justify-center sm:gap-6">
               <MagneticButton
                 href="/contact"
-                className="min-h-12 w-full shrink-0 justify-center whitespace-nowrap bg-cyan px-6 py-3.5 text-ink shadow-[0_0_36px_rgba(0,190,212,0.22)] hover:bg-white sm:w-auto"
-                strength={0.35}
+                className="min-h-12 bg-cyan px-8 py-3.5 text-white shadow-[0_0_32px_rgba(0,190,212,0.22)] hover:bg-white hover:text-ink"
+                strength={0.2}
               >
-                Book a 30-min strategy call
+                Book an AI Strategy Call
               </MagneticButton>
-              <a
-                href="/case-studies"
-                className="group inline-flex min-h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap px-1 text-sm text-white/70 transition-colors hover:text-white sm:justify-start"
+              <Link
+                href="#path"
+                className="group inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white"
               >
-                See Case Studies
-                <ArrowDownRight
-                  size={16}
-                  className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5"
-                />
-              </a>
+                Explore the work
+                <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                  →
+                </span>
+              </Link>
             </div>
-
-            <HeroAgentStrip />
           </div>
-
-          {/* Right: visual weight reserved for mesh (rendered by HeroStage) */}
-          <div
-            className="pointer-events-none relative hidden h-full min-h-0 lg:block"
-            aria-hidden
-          />
         </div>
       </section>
     </HeroStage>

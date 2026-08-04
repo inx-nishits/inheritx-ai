@@ -48,16 +48,17 @@ export function AgentEcosystem() {
       <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-            AI Agent Ecosystem
+            Agentic AI
           </p>
           <TextReveal
-            text="A constellation of agents. One governed system."
-            className="font-display mt-5 justify-center text-4xl leading-[1.05] text-white md:text-6xl"
+            text="Autonomous agents. Orchestrated as one enterprise system."
+            className="font-display mt-5 justify-center text-4xl leading-[1.15] text-white md:text-6xl"
           />
           <Reveal delay={0.1}>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/50">
-              Multi-agent architectures that research, decide, execute, and
-              escalate—with humans in control of the outcomes that matter.
+              Multi-agent systems with MCP, tool calling, memory, and human
+              gates—AI employees that research, decide, execute, and escalate
+              under enterprise control.
             </p>
           </Reveal>
         </div>

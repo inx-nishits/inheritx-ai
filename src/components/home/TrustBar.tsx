@@ -1,35 +1,96 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+
 import { trustSectors } from "@/data/content";
 import { Reveal } from "@/components/ui/Reveal";
 
+const sectorHref: Record<string, string> = {
+  Healthcare: "/industries/healthcare",
+  Finance: "/industries/finance",
+  Manufacturing: "/industries/manufacturing",
+  Retail: "/industries/retail",
+  Insurance: "/industries/insurance",
+  Logistics: "/industries/logistics",
+  Government: "/industries/government",
+};
+
 export function TrustBar() {
-  const items = [...trustSectors, ...trustSectors];
-
   return (
-    <section className="relative overflow-hidden border-y border-[var(--line-dark)] bg-paper text-ink">
-      <div className="mx-auto max-w-[1400px] px-5 py-14 md:px-8 md:py-16">
-        <Reveal>
-          <p className="text-center text-[11px] tracking-[0.28em] text-ink/40 uppercase">
-            Enterprise AI for regulated industries across North America, Europe, and APAC
-          </p>
-        </Reveal>
-      </div>
+    <section
+      aria-label="Industries we serve"
+      className="relative overflow-hidden border-y border-[var(--line-dark)] bg-paper text-ink"
+    >
+      <div className="editorial-grid-light pointer-events-none absolute inset-0 opacity-50" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 left-1/2 h-56 w-[70%] -translate-x-1/2 rounded-full bg-cyan/10 blur-[90px]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-28 right-[-10%] h-64 w-64 rounded-full bg-cyan/[0.08] blur-[100px]"
+      />
 
-      <div className="relative mb-14 border-y border-[var(--line-dark)] py-6">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-paper to-transparent md:w-40" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-paper to-transparent md:w-40" />
-        <div className="marquee-track flex w-max gap-12 whitespace-nowrap px-6">
-          {items.map((sector, index) => (
-            <span
-              key={`${sector}-${index}`}
-              className="font-display text-3xl text-ink/80 md:text-5xl"
+      <div className="relative mx-auto max-w-[1400px] px-5 py-16 md:px-8 md:py-20">
+        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+          <Reveal className="max-w-xl">
+            <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
+              Industry coverage
+            </p>
+            <h2 className="font-display mt-3 text-[2rem] leading-[1.15] tracking-[-0.03em] text-ink md:text-5xl">
+              Built for regulated industries.
+            </h2>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-ink/55 md:text-base">
+              Sector-fluent AI programs where accuracy, auditability, and private
+              deployment are non-negotiable.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <Link
+              href="/industries"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-cyan-deep transition-colors hover:text-ink"
             >
-              {sector}
-              <span className="ml-12 inline-block h-1.5 w-1.5 rounded-full bg-cyan align-middle" />
-            </span>
-          ))}
+              Explore all industries
+              <ArrowUpRight
+                size={14}
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </Link>
+          </Reveal>
         </div>
+
+        <Reveal delay={0.15}>
+          <ul className="mt-12 flex flex-wrap items-center gap-x-3 gap-y-4 md:mt-14 md:gap-x-4 md:gap-y-5">
+            {trustSectors.map((sector, index) => {
+              const href = sectorHref[sector];
+              const label = (
+                <span className="font-display text-2xl tracking-[-0.03em] text-ink transition-colors group-hover:text-cyan-deep md:text-4xl">
+                  {sector}
+                </span>
+              );
+
+              return (
+                <li key={sector} className="inline-flex items-center gap-3 md:gap-4">
+                  {href ? (
+                    <Link href={href} className="group">
+                      {label}
+                    </Link>
+                  ) : (
+                    label
+                  )}
+                  {index < trustSectors.length - 1 ? (
+                    <span
+                      aria-hidden
+                      className="size-1.5 shrink-0 rounded-full bg-cyan"
+                    />
+                  ) : null}
+                </li>
+              );
+            })}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

@@ -56,13 +56,19 @@ export function TextReveal({
   const words = text.split(" ");
 
   return (
-    <Tag ref={ref as never} className={cn("flex flex-wrap gap-x-[0.3em]", className)}>
+    <Tag
+      ref={ref as never}
+      className={cn("flex flex-wrap gap-x-[0.3em] gap-y-[0.08em]", className)}
+    >
       {words.map((word, index) => (
-        <span key={`${word}-${index}`} className="overflow-hidden">
+        <span
+          key={`${word}-${index}`}
+          className="inline-block overflow-hidden py-[0.22em] -my-[0.1em]"
+        >
           <motion.span
             className="inline-block"
-            initial={{ y: "110%" }}
-            animate={inView ? { y: "0%" } : { y: "110%" }}
+            initial={{ y: "115%" }}
+            animate={inView ? { y: "0%" } : { y: "115%" }}
             transition={{
               duration: 0.7,
               ease: [0.22, 1, 0.36, 1],

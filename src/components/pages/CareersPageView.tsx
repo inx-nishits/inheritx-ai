@@ -100,7 +100,7 @@ export function CareersPageView() {
             <div className="mt-12 flex flex-wrap items-center gap-4">
               <MagneticButton
                 href="mailto:hello@inheritx.com?subject=Careers%20at%20InheritX"
-                className="bg-cyan px-6 py-3 text-ink hover:bg-white"
+                className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
               >
                 Email careers
               </MagneticButton>

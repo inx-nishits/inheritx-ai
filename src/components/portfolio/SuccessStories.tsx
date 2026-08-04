@@ -14,14 +14,14 @@ export function SuccessStories() {
       <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
         <div className="mb-14 max-w-3xl md:mb-20">
           <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
-            Capability narratives
+            Enterprise AI outcomes
           </p>
           <TextReveal
-            text="How enterprise AI reshapes operating models."
-            className="font-display mt-5 text-4xl leading-[1.05] md:text-6xl"
+            text="How AI transforms cost, speed, and operating risk."
+            className="font-display mt-5 text-4xl leading-[1.15] md:text-6xl"
           />
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink/55 md:text-base">
-            Illustrative capability narratives—patterns we design and ship.
+            Capability narratives across AI/ML, Agentic AI, and AI DevOps.
             Named client outcomes live in Case Studies.
           </p>
         </div>

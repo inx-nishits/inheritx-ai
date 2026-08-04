@@ -7,7 +7,7 @@ import { CompanyPageView } from "@/components/pages/CompanyPageView";
 export const metadata: Metadata = {
   title: "Company — InheritX AI",
   description:
-    "InheritX is an Enterprise AI Solutions company—AI vision, principles, evolution story, and how we build owned intelligence systems.",
+    "InheritX is an AI-native enterprise partner—AI vision, ownership principles, and how we industrialize AI systems enterprises own.",
 };
 
 export default function CompanyPage() {

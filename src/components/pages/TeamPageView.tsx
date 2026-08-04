@@ -212,7 +212,7 @@ export function TeamPageView() {
           <div className="flex flex-wrap gap-4">
             <MagneticButton
               href="/contact"
-              className="bg-cyan px-6 py-3 text-ink hover:bg-white"
+              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
             >
               Start a conversation
             </MagneticButton>

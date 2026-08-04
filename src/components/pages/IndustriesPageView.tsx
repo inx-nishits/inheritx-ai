@@ -186,7 +186,7 @@ export function IndustriesPageView() {
           <div className="mt-12 flex flex-wrap gap-4">
             <MagneticButton
               href="/contact"
-              className="bg-ink px-6 py-3 text-white hover:bg-cyan hover:text-ink"
+              className="bg-ink px-6 py-3 text-white hover:bg-cyan hover:text-white"
             >
               Brief us on your industry
             </MagneticButton>

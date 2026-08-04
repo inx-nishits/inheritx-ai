@@ -7,7 +7,7 @@ import { ResourcesPageView } from "@/components/pages/ResourcesPageView";
 export const metadata: Metadata = {
   title: "Resources — InheritX AI",
   description:
-    "Insights, briefs, playbooks, case studies, and AI portfolio resources for enterprise leaders.",
+    "Decision material for CEOs and CTOs—insights, governance, diligence, and frameworks for industrializing enterprise AI.",
 };
 
 export default function ResourcesPage() {

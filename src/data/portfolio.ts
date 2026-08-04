@@ -1,6 +1,6 @@
 export const portfolioStats = [
   { value: "14+", label: "Years enterprise delivery DNA" },
-  { value: "AI-first", label: "Agents · GenAI · Vision · LLMOps" },
+  { value: "AI-first", label: "AI/ML · Agents · Vision · LLMOps" },
   { value: "18", label: "Industries engaged" },
   { value: "Owned", label: "IP transfer on delivery" },
 ];
@@ -275,33 +275,33 @@ export const capabilityLogos = [
 
 export const businessImpacts = [
   {
-    title: "Operating cost",
-    value: "Lower",
-    copy: "Automation and intelligent triage reduce repetitive cost centers.",
-  },
-  {
-    title: "Team capacity",
-    value: "Reclaimed",
-    copy: "Knowledge work and reviews return hours to specialists and leaders.",
+    title: "Manual operations",
+    value: "65%",
+    copy: "Lower manual ops through agentic triage and workflow automation.",
   },
   {
     title: "Decision velocity",
-    value: "Faster",
-    copy: "Drafting, triage, and exception loops move with governed agents.",
+    value: "80%",
+    copy: "Faster decision cycles with governed agents and AI analytics.",
   },
   {
-    title: "Workflow coverage",
-    value: "Broader",
-    copy: "Tier-1 paths resolve automatically; humans own high-risk gates.",
+    title: "Process automation",
+    value: "10×",
+    copy: "Higher throughput on tier-1 paths while humans own high-risk gates.",
   },
   {
-    title: "Time to value",
-    value: "Sequenced",
-    copy: "Programs designed for measurable return—not open-ended experiments.",
+    title: "Delivery speed",
+    value: "40%",
+    copy: "Faster product and ops delivery with AI platforms and LLMOps.",
   },
   {
-    title: "Answer quality",
-    value: "Cited",
-    copy: "Retrieval and validation raise trust with attributable responses.",
+    title: "Workflow accuracy",
+    value: "90%",
+    copy: "Higher accuracy on governed AI workflows with evaluation harnesses.",
+  },
+  {
+    title: "Ownership",
+    value: "100%",
+    copy: "Code, agents, and fine-tunes transfer at handover—no rented platform.",
   },
 ];

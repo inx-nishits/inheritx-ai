@@ -22,7 +22,7 @@ export function CompanyPageView() {
         eyebrow={companyHero.eyebrow}
         title={companyHero.title}
         description={companyHero.description}
-        primaryCta={{ label: "Talk to our team", href: "/contact" }}
+        primaryCta={{ label: "Book an AI Strategy Call", href: "/contact" }}
         secondaryCta={{ label: "See how we engage", href: "/solutions" }}
       />
 
@@ -183,7 +183,7 @@ export function CompanyPageView() {
           <div className="flex flex-wrap gap-4">
             <MagneticButton
               href="/careers"
-              className="bg-cyan px-6 py-3 text-ink hover:bg-white"
+              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
             >
               View careers
             </MagneticButton>

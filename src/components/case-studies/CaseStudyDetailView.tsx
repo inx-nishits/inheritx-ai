@@ -27,7 +27,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
           <p className="mt-8 text-[11px] tracking-[0.28em] text-cyan uppercase">
             {study.category}
           </p>
-          <h1 className="font-display mt-4 max-w-3xl text-4xl leading-[1.05] text-white md:text-6xl">
+          <h1 className="font-display mt-4 max-w-3xl text-4xl leading-[1.15] text-white md:text-6xl">
             {study.name}
           </h1>
           <p className="mt-3 text-lg text-white/70 md:text-xl">{study.tagline}</p>
@@ -154,9 +154,9 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
           <div className="flex flex-wrap gap-4">
             <MagneticButton
               href="/contact"
-              className="bg-cyan px-6 py-3 text-ink hover:bg-white"
+              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
             >
-              Book a strategy call
+              Book an AI Strategy Call
             </MagneticButton>
             <Link
               href="/portfolio/agent-bank"

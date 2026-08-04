@@ -4,14 +4,13 @@ import { Hero } from "@/components/home/Hero";
 import { TrustedBy } from "@/components/home/TrustedBy";
 import { TrustBar } from "@/components/home/TrustBar";
 import { ChooseYourPath } from "@/components/home/ChooseYourPath";
+import { FeaturedCaseStudy } from "@/components/home/FeaturedCaseStudy";
 import { Capabilities } from "@/components/home/Capabilities";
 import { TransformationJourney } from "@/components/home/TransformationJourney";
 import { Solutions } from "@/components/home/Solutions";
 import { Industries } from "@/components/home/Industries";
 import { TechStack } from "@/components/home/TechStack";
-import { CaseStudies } from "@/components/home/CaseStudies";
 import { WhyInheritX } from "@/components/home/WhyInheritX";
-import { Process } from "@/components/home/Process";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
 export default function Home() {
@@ -23,14 +22,13 @@ export default function Home() {
         <TrustedBy />
         <TrustBar />
         <ChooseYourPath />
+        <FeaturedCaseStudy />
         <Capabilities />
         <TransformationJourney />
         <Solutions />
         <Industries />
         <TechStack />
-        <CaseStudies />
         <WhyInheritX />
-        <Process />
         <FinalCTA />
       </main>
       <Footer />

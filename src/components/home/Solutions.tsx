@@ -25,15 +25,15 @@ export function Solutions() {
       <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
         <div className="mb-10 max-w-3xl md:mb-12">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-            Enterprise Solutions
+            Enterprise AI Solutions
           </p>
             <TextReveal
-              text="Custom AI systems, outcome-focused."
-              className="font-display mt-5 text-4xl leading-[1.05] text-white md:text-6xl"
+              text="AI systems that create measurable business outcomes."
+              className="font-display mt-5 text-4xl leading-[1.15] text-white md:text-6xl"
             />
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/45 md:text-base">
-              Agents, multi-agent orchestration, vision, RAG platforms, and
-              automation—each lane built for production handover, not rented demos.
+              From AI/ML engineering and agentic workforces to AI DevOps and
+              vision—each lane built for production handover, not rented demos.
             </p>
         </div>
 

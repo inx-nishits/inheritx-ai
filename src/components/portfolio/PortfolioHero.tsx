@@ -25,11 +25,11 @@ export function PortfolioHero() {
           </Reveal>
           <TextReveal
             text="Enterprise AI systems, mapped by capability."
-            className="font-display mt-5 max-w-2xl text-4xl leading-[1.05] text-white md:text-6xl lg:text-[4.25rem]"
+            className="font-display mt-5 max-w-2xl text-4xl leading-[1.15] text-white md:text-6xl lg:text-[4.25rem]"
           />
           <Reveal delay={0.12}>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-white/55 md:text-lg">
-              How we deliver Enterprise AI Solutions—agents, multi-agent systems,
+              How we deliver AI/ML engineering, Agentic AI, and AI DevOps—
               generative applications, vision, automation, and transformation—
               organized by capability. Named client outcomes live in Case Studies.
             </p>
@@ -38,7 +38,7 @@ export function PortfolioHero() {
             <div className="mt-8 flex flex-wrap gap-3">
               <MagneticButton
                 href="#grid"
-                className="bg-cyan px-6 py-3 text-ink shadow-[0_0_36px_rgba(0,190,212,0.22)] hover:bg-white"
+                className="bg-cyan px-6 py-3 text-white shadow-[0_0_36px_rgba(0,190,212,0.22)] hover:bg-white hover:text-ink"
               >
                 Browse AI work
               </MagneticButton>

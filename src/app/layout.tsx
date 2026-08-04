@@ -1,13 +1,42 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import localFont from "next/font/local";
+import { Geist_Mono } from "next/font/google";
 
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const satoshi = localFont({
+  src: [
+    {
+      path: "../fonts/satoshi/Satoshi-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/satoshi/Satoshi-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/satoshi/Satoshi-Bold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/satoshi/Satoshi-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/satoshi/Satoshi-Black.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-satoshi",
+  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
 const geistMono = Geist_Mono({
@@ -15,17 +44,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-});
-
 export const metadata: Metadata = {
-  title: "InheritX — Enterprise AI Solutions",
+  title: "InheritX — AI-Native Enterprise Partner",
   description:
-    "InheritX builds custom AI agents, multi-agent systems, and computer vision for enterprises—with full IP ownership and private cloud deployment.",
+    "InheritX helps enterprises transform with AI—AI/ML engineering, Agentic AI, and AI DevOps—deployed in your private cloud with full IP ownership.",
   icons: {
     icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
@@ -40,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable} h-full antialiased`}
+      className={`${satoshi.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body

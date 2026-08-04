@@ -18,8 +18,8 @@ export function Industries() {
             Industries
           </p>
           <TextReveal
-            text="Sector fluency. Enterprise discipline."
-            className="font-display mt-5 text-[2rem] leading-[1.08] md:text-6xl"
+            text="Sector fluency. AI systems that survive regulation."
+            className="font-display mt-5 text-[2rem] leading-[1.15] md:text-6xl"
           />
         </div>
 

@@ -33,7 +33,7 @@ export function PortfolioGrid() {
           </p>
           <TextReveal
             text="Filter the work by capability."
-            className="font-display mt-5 text-[2rem] leading-[1.08] text-white md:text-5xl"
+            className="font-display mt-5 text-[2rem] leading-[1.15] text-white md:text-5xl"
           />
         </div>
 

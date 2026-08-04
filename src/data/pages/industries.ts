@@ -1,8 +1,8 @@
 export const industriesHero = {
   eyebrow: "Industries",
-  title: "Built for regulated industries where mistakes are expensive.",
+  title: "Enterprise AI for sectors where mistakes are expensive.",
   description:
-    "Healthcare, finance, logistics, manufacturing, and more—InheritX designs agents, vision, and automation for sectors where accuracy, auditability, and private deployment are non-negotiable.",
+    "Healthcare, finance, logistics, manufacturing, and more—InheritX designs AI/ML systems, agentic workforces, and AI automation for industries where accuracy, auditability, and private deployment are non-negotiable.",
 };
 
 export const industryProfiles = [
@@ -20,7 +20,7 @@ export const industryProfiles = [
       "Governed knowledge retrieval",
       "Prior-auth and intake automation",
     ],
-    metric: "Documentation & care ops lift",
+    metric: "Up to 40% less documentation time",
     image: "/images/visuals/industries/industry-healthcare.png",
   },
   {
@@ -37,7 +37,7 @@ export const industryProfiles = [
       "Underwriting copilots",
       "Policy-aware decision support",
     ],
-    metric: "Faster governed review cycles",
+    metric: "10× faster agentic triage cycles",
     image: "/images/visuals/industries/industry-finance.png",
   },
   {

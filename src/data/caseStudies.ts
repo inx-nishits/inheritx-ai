@@ -15,8 +15,8 @@ export type CaseStudy = {
 
 export const caseStudyIntro = {
   eyebrow: "Case Studies",
-  title: "Measured outcomes from production—not pilot theater.",
-  copy: "Client engagements led by agents, computer vision, generative AI, and platforms. We publish methodology with the story—verifiable deployments, not anonymous vanity metrics.",
+  title: "Measured AI outcomes from production—not pilot theater.",
+  copy: "Client engagements led by AI/ML, agentic systems, computer vision, generative AI, and platforms. We publish methodology with the story—verifiable deployments, not anonymous vanity metrics. Outcomes are framed by class (efficiency, risk, reliability, cost, enablement). Named or anonymized references for qualified opportunities are available under NDA.",
 };
 
 /**
@@ -38,15 +38,16 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     image: "/images/visuals/industries/industry-healthcare.png",
     challenge:
-      "Patients delayed care due to access friction, while clinics lacked a reliable way to capture diagnostic-quality imagery outside the chair.",
+      "Patients delayed care due to access friction, while clinics lacked a reliable way to capture diagnostic-quality imagery outside the chair—without replacing clinician judgment or weakening data controls.",
     approach:
-      "We built a sensor-guided capture flow with vision models that gate scan quality, secure cloud processing, and clinician review workflows.",
+      "We built a sensor-guided capture flow with vision models that gate scan quality, secure cloud processing, and clinician review workflows. High-risk interpretation stayed human-owned; AI focused on quality gates and intake efficiency.",
     outcome:
-      "At-home scans became a trusted intake path—cutting avoidable visits without replacing clinical judgment.",
+      "At-home scans became a trusted intake path—cutting avoidable visits without replacing clinical judgment. Pattern: vision + human review for regulated care workflows.",
     highlights: [
       "Vision models for scan quality gating",
-      "Clinician-reviewed AI-assisted intake",
+      "Clinician-reviewed AI-assisted intake (HITL)",
       "Secure cloud pipeline for regulated care data",
+      "Clear separation: AI assists intake; clinicians decide",
     ],
   },
   {
@@ -63,15 +64,16 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     image: "/images/visuals/industries/industry-healthcare.png",
     challenge:
-      "Patients struggled to navigate care options while providers lacked a unified intelligence layer for personalized guidance.",
+      "Patients struggled to navigate care options while providers lacked a unified intelligence layer for personalized guidance within approved content boundaries.",
     approach:
-      "We designed an AI-native interaction layer—NLP-driven guidance, personalization models, and operator-visible pathways with human oversight.",
+      "We designed an AI-native interaction layer—NLP-driven guidance, personalization models, and operator-visible pathways with human oversight for clinical escalation.",
     outcome:
-      "Care discovery effort dropped sharply; patients received more relevant pathways without losing clinical accountability.",
+      "Care discovery effort dropped sharply; patients received more relevant pathways without losing clinical accountability. Pattern: governed generative guidance with operator visibility.",
     highlights: [
       "Generative / NLP patient interaction",
       "Personalization for care discovery",
-      "Wellness intelligence for operators",
+      "Human oversight for clinical escalation",
+      "Operator-visible pathways (not a black box)",
     ],
   },
   {
@@ -88,15 +90,16 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     image: "/images/visuals/lead-agents.png",
     challenge:
-      "Teams building AI workflows hit reliability walls—opaque failures, slow recovery, and fragile environments.",
+      "Teams building AI workflows hit reliability walls—opaque failures, slow recovery, and fragile environments that blocked production trust.",
     approach:
-      "We strengthened LLMOps-adjacent reliability: clearer observability, resilient service topology, and operational playbooks for AI workloads.",
+      "We strengthened LLMOps-adjacent reliability: clearer observability, resilient service topology, and operational playbooks for AI workloads—treating the platform as governed infrastructure.",
     outcome:
-      "Builders spent less time firefighting and more time shipping AI workflows with confidence.",
+      "Builders spent less time firefighting and more time shipping AI workflows with confidence. Pattern: observability + ops discipline for AI platforms.",
     highlights: [
       "AI platform reliability & observability",
       "Faster recovery for AI services",
       "Stable environments for model-driven products",
+      "Operational playbooks for AI incidents",
     ],
   },
   {
@@ -117,11 +120,12 @@ export const caseStudiesPage: CaseStudy[] = [
     approach:
       "We audited posture, hardened secrets and IAM, and automated guardrails so the AI platform could run as governed infrastructure.",
     outcome:
-      "Attack surface and avoidable spend dropped—protecting both the AI product and operating margin.",
+      "Attack surface and avoidable spend dropped—protecting both the AI product and operating margin. Pattern: security + cost controls as first-class AI platform requirements.",
     highlights: [
       "AI platform security posture",
       "Governed cloud & secrets hygiene",
       "Infrastructure guardrails for production AI",
+      "Cost leakage controls alongside security",
     ],
   },
   {

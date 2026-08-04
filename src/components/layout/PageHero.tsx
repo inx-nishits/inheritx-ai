@@ -36,7 +36,7 @@ export function PageHero({
         <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
           {eyebrow}
         </p>
-        <h1 className="font-display mt-4 max-w-3xl text-[2rem] leading-[1.08] text-white md:text-6xl">
+        <h1 className="font-display mt-4 max-w-3xl text-[2rem] leading-[1.15] text-white md:text-6xl">
           {title}
         </h1>
         <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-white/55 md:text-lg">
@@ -47,7 +47,7 @@ export function PageHero({
             {primaryCta && (
               <MagneticButton
                 href={primaryCta.href}
-                className="min-h-12 w-full justify-center bg-cyan px-6 py-3 text-ink hover:bg-white sm:w-auto"
+                className="min-h-12 w-full justify-center bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink sm:w-auto"
               >
                 {primaryCta.label}
               </MagneticButton>

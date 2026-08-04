@@ -20,18 +20,18 @@ export function Process() {
         <div className="flex flex-col gap-6 border-b border-white/10 pb-10 md:flex-row md:items-end md:justify-between md:pb-12">
           <div className="max-w-2xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-              Process
+              How we deliver Enterprise AI
             </p>
-            <h2 className="font-display mt-3 text-[2rem] leading-[1.08] text-white sm:text-4xl md:text-5xl lg:text-[3.4rem]">
-              From discovery
-              <span className="mt-1 block italic text-cyan">
-                to production.
+            <h2 className="font-display mt-3 text-[2rem] leading-[1.15] text-white sm:text-4xl md:text-5xl lg:text-[3.4rem]">
+              From mandate
+              <span className="mt-1 block font-semibold text-cyan">
+                to production AI.
               </span>
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed text-white/45 md:text-right">
-            Four stages for Enterprise AI programs. Typical path: weeks to a
-            governed production system. You own everything we build.
+            Four stages for enterprise AI transformation. Typical path: weeks to
+            a governed production system. You own everything we build.
           </p>
         </div>
 
@@ -94,24 +94,24 @@ export function Process() {
           <div className="mt-10 flex flex-col items-start justify-between gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center md:mt-12">
             <div>
               <p className="text-sm text-white/70">
-                Ready to start an Enterprise AI engagement?
+                Ready to start your AI transformation?
               </p>
               <p className="mt-1 text-xs text-white/35">
-                Most programs begin with a 30-minute strategy call.
+                Most programs begin with a 30-minute AI strategy call.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-4">
               <MagneticButton
                 href="/contact"
-                className="bg-cyan px-6 py-3 text-sm font-medium text-ink hover:bg-white"
+                className="bg-cyan px-6 py-3 text-sm font-medium text-white hover:bg-white hover:text-ink"
               >
-                Book Strategy Call
+                Book an AI Strategy Call
               </MagneticButton>
               <a
                 href="/case-studies"
                 className="group inline-flex items-center gap-1.5 text-sm text-white/50 transition-colors hover:text-white"
               >
-                See case studies
+                See enterprise outcomes
                 <ArrowUpRight
                   size={14}
                   className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

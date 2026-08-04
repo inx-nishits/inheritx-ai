@@ -1,80 +1,213 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import { Reveal } from "@/components/ui/Reveal";
-import { cn } from "@/lib/cn";
-
-const partners = [
-  { name: "OpenAI", src: "/images/partners/openai.svg" },
-  { name: "Microsoft", src: "/images/partners/microsoft.svg" },
-  { name: "AWS", src: "/images/partners/amazonaws.svg" },
-  { name: "Google Cloud", src: "/images/partners/googlecloud.svg" },
-  { name: "NVIDIA", src: "/images/partners/nvidia.svg" },
-  { name: "Anthropic", src: "/images/partners/anthropic.svg" },
-  { name: "LangChain", src: "/images/partners/langchain.svg" },
-  { name: "Pinecone", src: "/images/partners/pinecone.svg" },
-  { name: "Vercel", src: "/images/partners/vercel.svg" },
-  { name: "Stripe", src: "/images/partners/stripe.svg" },
+const logos = [
+  {
+    name: "AWS Partner",
+    node: (
+      <svg viewBox="0 0 120 56" className="h-14 w-[128px] md:h-16 md:w-[148px]" aria-hidden>
+        <text
+          x="60"
+          y="26"
+          textAnchor="middle"
+          fill="#fff"
+          fontFamily="system-ui, Arial, sans-serif"
+          fontSize="26"
+          fontWeight="700"
+          letterSpacing="-0.5"
+        >
+          aws
+        </text>
+        <path
+          d="M28 34c14 10 50 10 64 0"
+          stroke="#FF9900"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          fill="none"
+        />
+        <path
+          d="M86 32.5l6 1.5-3.5 5.5"
+          stroke="#FF9900"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
+        <text
+          x="60"
+          y="50"
+          textAnchor="middle"
+          fill="#fff"
+          fontFamily="system-ui, Arial, sans-serif"
+          fontSize="11"
+        >
+          Partner
+        </text>
+      </svg>
+    ),
+  },
+  {
+    name: "Google Reviews",
+    node: (
+      <svg viewBox="0 0 150 40" className="h-12 w-[160px] md:h-14 md:w-[180px]" aria-hidden>
+        <text
+          x="0"
+          y="16"
+          fontFamily="system-ui, Arial, sans-serif"
+          fontSize="15"
+          fontWeight="700"
+        >
+          <tspan fill="#4285F4">G</tspan>
+          <tspan fill="#EA4335">o</tspan>
+          <tspan fill="#FBBC05">o</tspan>
+          <tspan fill="#4285F4">g</tspan>
+          <tspan fill="#34A853">l</tspan>
+          <tspan fill="#EA4335">e</tspan>
+        </text>
+        <text
+          x="58"
+          y="16"
+          fill="#fff"
+          fontFamily="system-ui, Arial, sans-serif"
+          fontSize="14"
+          fontWeight="500"
+        >
+          Reviews
+        </text>
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path
+            key={i}
+            transform={`translate(${i * 16}, 22)`}
+            d="M6 0l1.4 4.2H12l-3.5 2.6 1.3 4.2L6 8.4 2.2 11 3.5 6.8 0 4.2h4.6z"
+            fill="#FABB05"
+          />
+        ))}
+      </svg>
+    ),
+  },
+  {
+    name: "Clutch",
+    node: (
+      <svg viewBox="0 0 110 36" className="h-11 w-[120px] md:h-12 md:w-[132px]" aria-hidden>
+        <text
+          x="0"
+          y="26"
+          fill="#fff"
+          fontFamily="system-ui, Arial, sans-serif"
+          fontSize="26"
+          fontWeight="700"
+          letterSpacing="-0.6"
+        >
+          Clutch
+        </text>
+        <circle cx="40" cy="18.5" r="3.4" fill="#E11B22" />
+      </svg>
+    ),
+  },
+  {
+    name: "Upwork",
+    node: (
+      <svg viewBox="0 0 120 36" className="h-10 w-[128px] md:h-11 md:w-[140px]" aria-hidden>
+        <text
+          x="0"
+          y="26"
+          fill="#14A800"
+          fontFamily="system-ui, Arial, sans-serif"
+          fontSize="24"
+          fontWeight="600"
+          letterSpacing="-0.4"
+        >
+          upwork
+        </text>
+      </svg>
+    ),
+  },
+  {
+    name: "Trustpilot",
+    node: (
+      <svg viewBox="0 0 150 36" className="h-10 w-[148px] md:h-11 md:w-[160px]" aria-hidden>
+        <text
+          x="0"
+          y="25"
+          fill="#A1A1AA"
+          fontFamily="system-ui, Arial, sans-serif"
+          fontSize="17"
+          fontWeight="600"
+          letterSpacing="2"
+        >
+          TRUSTPILOT
+        </text>
+      </svg>
+    ),
+  },
 ];
+
+function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
+  // Repeat logos within each half so the track is always wider than the viewport
+  const sequence = [...logos, ...logos, ...logos];
+
+  return (
+    <div
+      aria-hidden={ariaHidden || undefined}
+      className="flex shrink-0 items-center gap-14 pr-14 md:gap-20 md:pr-20"
+    >
+      {sequence.map((logo, index) => (
+        <div
+          key={`${logo.name}-${index}`}
+          title={ariaHidden ? undefined : logo.name}
+          className="flex min-h-16 shrink-0 items-center justify-center"
+        >
+          {logo.node}
+          {!ariaHidden ? <span className="sr-only">{logo.name}</span> : null}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export function TrustedBy() {
   return (
-    <section className="relative overflow-hidden border-b border-white/[0.06] bg-ink py-16 md:py-20">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,190,212,0.05),transparent_60%)]" />
+    <section
+      aria-label="Trust and recognition"
+      className="relative z-10 overflow-hidden border-b border-white/[0.06] bg-ink py-14 md:py-20"
+    >
+      <div className="mx-auto max-w-[1400px] px-5 text-center md:px-8">
+        <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
+          Enterprise recognition
+        </p>
+        <h2 className="font-display mt-3 text-2xl leading-tight text-white md:text-4xl">
+          Trusted by modern enterprise teams.
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50 md:text-base">
+          Recognized across leading review and delivery platforms—proof of
+          consistent enterprise AI delivery, production readiness, and client
+          trust.
+        </p>
 
-      <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
-        <Reveal>
-          <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
-            <p className="text-[11px] tracking-[0.22em] text-white/40 uppercase">
-              AI ecosystem &amp; technology partners
-            </p>
-            <a
-              href="/solutions"
-              className="group inline-flex items-center gap-1.5 text-sm text-cyan transition-colors hover:text-white"
-            >
-              Explore Enterprise AI Solutions
-              <ArrowUpRight
-                size={14}
-                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </a>
-          </div>
-        </Reveal>
+        <div className="mt-8 flex justify-center">
+          <Link
+            href="/case-studies"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-cyan px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(0,190,212,0.22)] transition-colors hover:bg-white hover:text-ink"
+          >
+            See enterprise success stories
+            <ArrowUpRight
+              size={15}
+              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </Link>
+        </div>
+      </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mt-12 md:gap-5 lg:grid-cols-5">
-          {partners.map((partner, index) => (
-            <motion.div
-              key={partner.name}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-6% 0px" }}
-              transition={{
-                duration: 0.45,
-                delay: index * 0.035,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className={cn(
-                "group flex min-h-[96px] items-center justify-center rounded-2xl border border-white/[0.07] bg-white/[0.03] px-5 py-6 backdrop-blur-sm transition-all duration-400",
-                "hover:border-white/15 hover:bg-white/[0.06] hover:shadow-[0_0_28px_rgba(255,255,255,0.06)]",
-              )}
-            >
-              <div className="flex flex-col items-center gap-2.5 transition-transform duration-300 group-hover:scale-[1.05]">
-                <Image
-                  src={partner.src}
-                  alt={`${partner.name} logo`}
-                  width={36}
-                  height={36}
-                  className="h-9 w-9 object-contain drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
-                />
-                <span className="text-[12px] font-medium tracking-tight text-white/70 md:text-[13px]">
-                  {partner.name}
-                </span>
-              </div>
-            </motion.div>
-          ))}
+      {/* Seamless infinite marquee: two equal halves → translateX(-50%) */}
+      <div className="marquee-pause relative mt-10 md:mt-12">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-ink to-transparent md:w-24" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-ink to-transparent md:w-24" />
+
+        <div className="marquee-track flex w-max will-change-transform">
+          <LogoRow />
+          <LogoRow ariaHidden />
         </div>
       </div>
     </section>

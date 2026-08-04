@@ -41,18 +41,17 @@ export function TechStack() {
         <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end lg:gap-16">
           <div>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-              Technology Stack
+              AI Infrastructure Stack
             </p>
             <TextReveal
-              text="The foundation behind enterprise-grade AI."
-              className="font-display mt-5 max-w-2xl text-[2rem] leading-[1.08] text-white md:text-6xl"
+              text="The operating foundation for enterprise AI."
+              className="font-display mt-5 max-w-2xl text-[2rem] leading-[1.15] text-white md:text-6xl"
             />
           </div>
           <Reveal>
             <p className="max-w-md text-base leading-relaxed text-white/50 lg:justify-self-end">
-              Five governed layers—from models to observability—composed for
-              durability, security, and production scale. Not novelty for its
-              own sake.
+              Five governed layers—from models and agentic systems to AI
+              DevOps—composed for security, durability, and production scale.
             </p>
           </Reveal>
         </div>
@@ -185,8 +184,8 @@ export function TechStack() {
         <Reveal delay={0.1}>
           <div className="mt-12 border-t border-white/[0.08] pt-10 md:mt-16">
             <p className="mb-6 text-center text-[11px] tracking-[0.22em] text-white/35 uppercase md:text-left">
-              Platforms we compose with
-            </p>
+            Platforms we build enterprise AI with
+          </p>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
               {partnerStrip.map((partner) => (
                 <div

@@ -12,28 +12,28 @@ export const trustSectors = [
 export const capabilities = [
   {
     id: "01",
-    title: "Enterprise AI Platforms",
-    copy: "Private, governed intelligence layers—RAG, model gateways, and controls—deployed in your cloud with full ownership at handover.",
+    title: "AI/ML Engineering",
+    copy: "Custom models, fine-tuning, RAG, vector search, prediction systems, and AI analytics—engineered for measurable business outcomes, not demos.",
   },
   {
     id: "02",
-    title: "Custom AI Agents",
-    copy: "Task-oriented agents with memory, planning, and access to your systems. They reason through situations—they don’t follow brittle rule trees.",
+    title: "Agentic AI Systems",
+    copy: "Autonomous agents, multi-agent orchestration, MCP, tool calling, memory, and human–AI collaboration that execute real enterprise work.",
   },
   {
     id: "03",
-    title: "Multi-Agent Orchestration",
-    copy: "Hierarchical agent networks that assign work, peer-review outputs, escalate exceptions, and keep humans on high-risk decisions.",
+    title: "AI DevOps & LLMOps",
+    copy: "MLOps, LLMOps, CI/CD for AI, model lifecycle, observability, and cloud AI infrastructure—so production systems stay reliable after go-live.",
   },
   {
     id: "04",
-    title: "Computer Vision Systems",
-    copy: "Domain-trained perception for QA, medical imaging, inventory, and plant operations—including edge deployments when data cannot leave the site.",
+    title: "Enterprise AI Platforms",
+    copy: "Private intelligence layers—model gateways, governed retrieval, and policy controls—deployed in your VPC with full ownership at handover.",
   },
   {
     id: "05",
-    title: "Document & Workflow Intelligence",
-    copy: "OCR, classification, validation, and intelligent automation across contracts, invoices, claims, and ERP-connected operations.",
+    title: "Vision & Workflow Intelligence",
+    copy: "Computer vision, document intelligence, and AI automation woven into ERP, CRM, and plant systems—where operational cost and risk live.",
   },
 ];
 
@@ -41,139 +41,174 @@ export const journey = [
   {
     step: "01",
     title: "Discover",
-    copy: "Feasibility, data readiness, and an ROI blueprint tied to the operating model—not a slide deck of buzzwords.",
+    copy: "Map the business problem, data readiness, and ROI case—so leadership knows why AI, why now, and which workflows move the P&L.",
   },
   {
     step: "02",
-    title: "Strategise",
-    copy: "Technical architecture, model selection, security framework, and the governance path that survives CISO review.",
+    title: "Architect",
+    copy: "Define AI architecture, model strategy, security controls, and LLMOps posture your CTO and CISO can defend in diligence.",
   },
   {
     step: "03",
     title: "Build & Deploy",
-    copy: "Working systems in your private cloud with LLMOps, compliance verification, and IP transfer—not a rental sandbox.",
+    copy: "Ship production agents and platforms into your private cloud with evaluation, monitoring, and IP transfer—not a rented sandbox.",
   },
   {
     step: "04",
     title: "Scale",
-    copy: "Fine-tuning loops, cost optimisation, enablement, and expansion across business units with continuous evaluation.",
+    copy: "Industrialize across departments with cost controls, enablement, and continuous improvement—you own the capability after handover.",
   },
 ];
 
 export const solutions = [
   {
     index: "01",
-    title: "Custom AI Agents",
-    copy: "Task-oriented agents with memory, planning, and access to your systems.",
+    title: "AI/ML Engineering",
+    copy: "Custom LLMs, RAG, fine-tuning, prediction systems, and AI search built for enterprise data and outcomes.",
   },
   {
     index: "02",
-    title: "Multi-Agent Orchestration",
-    copy: "Hierarchical agent networks that assign work, peer-review, and escalate.",
+    title: "Autonomous AI Agents",
+    copy: "Task-oriented agents with memory, planning, MCP, and tool access—AI employees that execute, not just answer.",
   },
   {
     index: "03",
-    title: "Computer Vision",
-    copy: "Domain-trained perception for QA, imaging, inventory, and plant ops.",
+    title: "Multi-Agent Orchestration",
+    copy: "Hierarchical agent networks that assign work, peer-review outputs, escalate exceptions, and keep humans on risk.",
   },
   {
     index: "04",
-    title: "Enterprise RAG Platforms",
-    copy: "Context-aware generation with vector search and custom guardrails.",
+    title: "AI DevOps & LLMOps",
+    copy: "CI/CD for AI, model lifecycle, monitoring, and observability so AI systems stay production-grade at scale.",
   },
   {
     index: "05",
-    title: "Document Intelligence",
-    copy: "Extraction, classification, and validation across contracts and claims.",
+    title: "Enterprise RAG Platforms",
+    copy: "Governed retrieval and generation with vector search, citations, and guardrails inside your security boundary.",
   },
   {
     index: "06",
-    title: "Private AI Platforms",
-    copy: "Owned intelligence infrastructure in your VPC—models, controls, IP.",
+    title: "Computer Vision",
+    copy: "Domain-trained perception for QA, imaging, inventory, and plant ops—including edge when data cannot leave site.",
   },
   {
     index: "07",
     title: "AI Transformation",
-    copy: "From discovery to production capability—with ownership at handover.",
+    copy: "From strategy call to industrialized AI capability—with private deployment and ownership at handover.",
   },
 ];
 
 export const industries = [
   {
     name: "Healthcare",
-    focus: "Clinical operations, documentation, and compliance-grade intelligence.",
+    focus: "Clinical operations, documentation, and compliance-grade AI that reduces cost without increasing risk.",
     image: "/images/visuals/industries/industry-healthcare.png",
   },
   {
     name: "Finance",
-    focus: "Risk, fraud, underwriting, and decisioning at institutional scale.",
+    focus: "Fraud, underwriting, and decisioning agents with audit trails built for institutional scale.",
     image: "/images/visuals/industries/industry-finance.png",
   },
   {
     name: "Retail",
-    focus: "Merchandising, demand sensing, and customer intelligence.",
+    focus: "Demand sensing, merchandising intelligence, and service automation that compress operating cost.",
     image: "/images/visuals/industries/industry-retail.png",
   },
   {
     name: "Manufacturing",
-    focus: "Vision inspection, predictive maintenance, and plant intelligence.",
+    focus: "Vision inspection, predictive maintenance, and plant intelligence that protect throughput and quality.",
     image: "/images/visuals/industries/industry-manufacturing.png",
   },
   {
     name: "Insurance",
-    focus: "Claims acceleration, underwriting support, and service automation.",
+    focus: "Claims acceleration, underwriting support, and service agents with policy-aware controls.",
     image: "/images/visuals/industries/industry-insurance.png",
   },
   {
     name: "Logistics",
-    focus: "Network optimization, control towers, and exception handling.",
+    focus: "Network optimization, control towers, and exception agents that cut manual operations.",
     image: "/images/visuals/industries/industry-logistics.png",
   },
   {
     name: "Government",
-    focus: "Secure modernization for mission-critical public systems.",
+    focus: "Secure AI modernization for mission-critical public systems with sovereignty by design.",
     image: "/images/visuals/industries/industry-government.png",
   },
 ];
 
 export const agents = [
-  { name: "Research Agent", role: "Synthesizes signals across enterprise knowledge." },
-  { name: "Ops Agent", role: "Orchestrates workflows and exception resolution." },
-  { name: "Compliance Agent", role: "Enforces policy, audit trails, and controls." },
-  { name: "Decision Agent", role: "Surfaces recommendations with explainability." },
-  { name: "Integration Agent", role: "Bridges systems, APIs, and human handoffs." },
+  { name: "Research Agent", role: "Synthesizes enterprise knowledge with citations and memory." },
+  { name: "Ops Agent", role: "Executes workflows, tool calls, and exception resolution." },
+  { name: "Compliance Agent", role: "Enforces policy, audit trails, and approval gates." },
+  { name: "Decision Agent", role: "Surfaces recommendations with explainable rationale." },
+  { name: "Integration Agent", role: "Bridges ERP, CRM, APIs, MCP tools, and human handoffs." },
 ];
 
 export const techLayers = [
   {
     id: "01",
     name: "Models & Reasoning",
-    tagline: "Frontier intelligence, privately governed.",
-    items: ["OpenAI", "Claude", "Gemini", "Specialized LLMs", "Eval Harness"],
+    tagline: "Frontier and specialized models, privately governed.",
+    items: [
+      "OpenAI",
+      "Claude",
+      "Gemini",
+      "Custom LLMs",
+      "Fine-Tuning",
+      "Offline eval suites",
+    ],
   },
   {
     id: "02",
-    name: "Agents & Orchestration",
-    tagline: "Multi-agent systems that execute real work.",
-    items: ["LangChain", "CrewAI", "MCP", "Tool Calling", "Human-in-the-loop"],
+    name: "Agentic AI",
+    tagline: "Multi-agent systems that execute real enterprise work.",
+    items: [
+      "LangChain",
+      "CrewAI",
+      "MCP",
+      "Tool Calling",
+      "Agent Memory",
+      "Human-in-the-loop",
+    ],
   },
   {
     id: "03",
-    name: "Memory & Data Fabric",
-    tagline: "Retrieval that stays accurate and auditable.",
-    items: ["Vector DB", "Knowledge Graphs", "RAG Pipelines", "Feature Store"],
+    name: "Data & Retrieval",
+    tagline: "RAG and vector infrastructure that stays accurate.",
+    items: [
+      "Vector DB",
+      "Knowledge Graphs",
+      "RAG Pipelines",
+      "AI Search",
+      "Role-scoped corpora",
+      "Citation paths",
+    ],
   },
   {
     id: "04",
     name: "Cloud & Security",
-    tagline: "Mission-critical infrastructure by design.",
-    items: ["AWS", "Azure", "GCP", "Identity & Access", "Private Networking"],
+    tagline: "Private-cloud AI infrastructure by design.",
+    items: [
+      "AWS",
+      "Azure",
+      "GCP",
+      "Identity & Access",
+      "Private Networking",
+      "Customer-tenant deploy",
+    ],
   },
   {
     id: "05",
-    name: "Delivery & Observability",
-    tagline: "Shipped, monitored, and continuously improved.",
-    items: ["ML Ops", "Tracing", "Guardrails", "Next.js", "CI/CD"],
+    name: "AI DevOps",
+    tagline: "MLOps, LLMOps, and observability for production AI.",
+    items: [
+      "MLOps",
+      "LLMOps",
+      "CI/CD for AI",
+      "Model Lifecycle",
+      "Tracing & Guardrails",
+      "Cost controls",
+    ],
   },
 ];
 
@@ -183,10 +218,10 @@ export const caseStudies = [
   {
     sector: "Healthcare",
     title: "Governed clinical documentation assistants",
-    result: "Private",
-    resultLabel: "gen AI in the care workflow",
+    result: "40%",
+    resultLabel: "less documentation time",
     detail:
-      "A private generative platform that drafts, validates, and routes clinical notes under strict governance.",
+      "A private generative platform that drafts, validates, and routes clinical notes under strict governance—cutting clinician admin load.",
     challenge: "Clinicians lost hours to notes, delaying care and increasing burnout.",
     solution: "Governed AI assistants with specialty-aware drafting and EHR handoffs.",
     image: "/images/visuals/industries/industry-healthcare.png",
@@ -194,73 +229,84 @@ export const caseStudies = [
   {
     sector: "Finance",
     title: "Multi-agent fraud review with audit trails",
-    result: "HITL",
-    resultLabel: "gates on high-risk actions",
+    result: "10×",
+    resultLabel: "faster case triage cycles",
     detail:
-      "Agentic triage across signals, cases, and analyst workflows with full auditability.",
+      "Agentic triage across signals, cases, and analyst workflows—with explainable escalation and full auditability.",
     challenge: "Fraud teams drowned in false positives while high-risk cases waited.",
-    solution: "Multi-agent orchestration with explainable escalation and audit trails.",
+    solution: "Multi-agent orchestration with human gates on consequential actions.",
     image: "/images/visuals/industries/industry-finance.png",
   },
   {
     sector: "Manufacturing",
     title: "Vision quality on the production line",
-    result: "Edge",
-    resultLabel: "vision + ops workflows",
+    result: "65%",
+    resultLabel: "fewer missed micro-defects",
     detail:
-      "Computer vision on the line, integrated into quality systems and operator feedback loops.",
+      "Computer vision on the line, integrated into quality systems and operator feedback loops that open corrective workflows.",
     challenge: "Manual inspection missed micro-defects and slowed throughput.",
-    solution: "Edge vision models with ops agents that open corrective workflows.",
+    solution: "Edge vision models with ops agents that trigger corrective action.",
     image: "/images/visuals/industries/industry-manufacturing.png",
   },
 ];
 
 export const whyPoints = [
   {
-    title: "You Own the Code",
-    copy: "Agent logic, backends, interfaces, and fine-tuned weights transfer at handover. We retain no rights to your systems—we don’t rent you someone else’s platform.",
+    title: "AI-Native, Not IT-Generic",
+    copy: "We specialize in AI/ML engineering, agentic systems, and AI DevOps—not websites, staff-aug theater, or generic software projects dressed up as AI.",
+  },
+  {
+    title: "You Own the Capability",
+    copy: "Agent logic, platforms, fine-tunes, and infrastructure-as-code transfer at handover. We do not rent you someone else’s black-box platform.",
   },
   {
     title: "Private Cloud by Default",
-    copy: "Deploy into your AWS, Azure, or GCP VPC. Your data stays inside your boundary and is never used to train public models.",
+    copy: "Deploy into your AWS, Azure, or GCP VPC. Your data stays inside your boundary and is never used by InheritX to train public models.",
   },
   {
-    title: "Built for Regulated Reality",
-    copy: "GDPR-aligned practices, HIPAA-ready patterns, audit trails, and NDA-protected engagements—governance designed in, not patched later.",
-  },
-  {
-    title: "Architects Who Ship",
-    copy: "AI architects and engineers—not generalist consultants. Every engagement has named technical accountability from blueprint to production.",
+    title: "Architects Who Ship Production",
+    copy: "Named AI architects and engineers accountable from blueprint to LLMOps—systems your CTO can operate, not slideware your board forgets.",
   },
 ];
 
 export const audiencePaths = {
-  eyebrow: "Who we work with",
+  eyebrow: "Built for every AI buyer",
   title: "Choose your path",
   description:
-    "The same engineering rigour—surfaced differently depending on your role.",
+    "Select who you are. Proof for that path appears below—business outcomes, technical readiness, or how to get AI support.",
   paths: [
-    {
-      id: "systems",
-      icon: "systems" as const,
-      label: "01",
-      title: "I'm a CTO or technical lead",
-      description:
-        "Architecture matters: model selection, agent orchestration, LLMOps pipelines, fine-tuning strategy, and how this integrates with your existing infrastructure—with control intact.",
-      cta: "See technical solutions",
-      href: "/solutions",
-      meta: "For CTOs, CIOs, architects & engineering leads",
-    },
     {
       id: "outcomes",
       icon: "outcomes" as const,
-      label: "02",
-      title: "I'm a CEO or business owner",
+      label: "01",
+      title: "I'm a CEO / Transformation lead",
       description:
-        "You need the business case: expected outcomes, timelines, ownership of data and IP, and what changes when AI becomes infrastructure you can measure and govern.",
-      cta: "See client case studies",
+        "See business ROI, cost reduction, and transformation impact.",
+      cta: "See enterprise AI outcomes",
       href: "/case-studies",
-      meta: "For CEOs, founders & transformation leaders",
+      meta: "CEOs, founders & transformation leaders",
+    },
+    {
+      id: "systems",
+      icon: "systems" as const,
+      label: "02",
+      title: "I'm a CTO / Head of AI",
+      description:
+        "See architecture, LLMOps, and production readiness.",
+      cta: "Explore AI architecture & solutions",
+      href: "/solutions",
+      meta: "CTOs, CIOs, Heads of AI & engineering leads",
+    },
+    {
+      id: "explore",
+      icon: "explore" as const,
+      label: "03",
+      title: "I'm exploring AI services",
+      description:
+        "See how we help teams start, build, and buy enterprise AI.",
+      cta: "Talk to AI experts",
+      href: "/contact",
+      meta: "Product leaders, founders & visiting teams",
     },
   ],
 };
@@ -270,36 +316,36 @@ export const processSteps = [
     step: "01",
     title: "Discover",
     duration: "2–3 weeks",
-    copy: "AI feasibility, ROI blueprint, and data readiness—honest about what should not be automated.",
+    copy: "Business problem, AI feasibility, ROI blueprint, and data readiness—honest about what should not be automated.",
     detail:
-      "We map mandates, data reality, risk posture, and the highest-leverage opportunities with leadership before a line of production code is written.",
+      "We map mandates, operating cost, risk posture, and the highest-leverage AI opportunities with leadership before production build begins.",
     outcomes: ["Feasibility report", "ROI blueprint", "Data readiness audit"],
   },
   {
     step: "02",
-    title: "Strategise",
+    title: "Architect",
     duration: "3–4 weeks",
-    copy: "Technical architecture, model selection, and the security framework your CISO can defend.",
+    copy: "AI architecture, model selection, agent design, and the security framework your CISO can defend.",
     detail:
-      "We design the operating model, platform architecture, and sequenced roadmap that survives board and security scrutiny.",
+      "We design the platform, agent workforce, and LLMOps operating model that survives board and security scrutiny.",
     outcomes: ["Target architecture", "Security framework", "90-day plan"],
   },
   {
     step: "03",
-    title: "Prototype",
+    title: "Prove",
     duration: "6–10 weeks",
-    copy: "Working proof under production constraints—accuracy benchmarks, UX validation, human gates.",
+    copy: "Governed pilot under production constraints—accuracy benchmarks, human gates, and scale criteria.",
     detail:
-      "We ship a governed pilot with real security, auditability, and integration—not a disposable demo that dies after the readout.",
+      "We ship a real system with security, auditability, and integration—not a disposable demo that dies after the readout.",
     outcomes: ["Working PoC", "Accuracy benchmarks", "Scale criteria"],
   },
   {
     step: "04",
-    title: "Deploy & Scale",
+    title: "Industrialize",
     duration: "Ongoing",
-    copy: "Private cloud integration, LLMOps, compliance verification—then continuous fine-tuning and cost control.",
+    copy: "Private-cloud deployment, AI DevOps, enablement, and IP handover—then optional hypercare and advisory.",
     detail:
-      "We harden platforms, enable your teams, transfer IP, and expand agents and workflows across units with full observability.",
-    outcomes: ["Private cloud go-live", "IP handover", "Performance dashboard"],
+      "We harden platforms, enable your teams, transfer IP, and expand agents across units with full observability. No forced lock-in.",
+    outcomes: ["Private cloud go-live", "IP handover", "Hypercare / enablement"],
   },
 ];

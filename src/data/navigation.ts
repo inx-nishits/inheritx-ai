@@ -15,150 +15,225 @@ export type MegaFeatured = {
   description: string;
   href: string;
   cta?: string;
+  stats?: { value: string; label: string }[];
 };
 
 export type NavItem = {
   label: string;
   href: string;
+  overview?: string;
   columns?: MegaColumn[];
   featured?: MegaFeatured;
+  quickLinks?: MegaItem[];
 };
 
 export const navigation: NavItem[] = [
   {
     label: "Solutions",
     href: "/solutions",
+    overview:
+      "AI/ML engineering, Agentic AI, and AI DevOps—built for enterprise production, not pilots.",
     columns: [
       {
-        label: "Platforms & Systems",
+        label: "AI Capabilities",
         items: [
           {
             title: "Enterprise AI",
-            description: "Private, governed intelligence at scale.",
+            description: "Private platforms, RAG, and governed intelligence.",
             href: "/solutions/enterprise-ai",
           },
           {
             title: "AI Agents",
-            description: "Autonomous systems that execute work.",
+            description: "Autonomous agents with MCP, memory, and tool calling.",
             href: "/solutions/ai-agents",
           },
           {
             title: "AI Automation",
-            description: "End-to-end workflow orchestration.",
+            description: "Workflow intelligence that cuts operating cost.",
             href: "/solutions/ai-automation",
           },
           {
             title: "Generative AI",
-            description: "Secure LLM applications for the enterprise.",
+            description: "Secure LLM applications for enterprise work.",
             href: "/solutions/generative-ai",
           },
           {
             title: "Computer Vision",
-            description: "Perception systems for the physical world.",
+            description: "Perception systems for plants, QA, and logistics.",
             href: "/solutions/computer-vision",
           },
         ],
       },
       {
-        label: "Engagement Models",
+        label: "How We Engage",
         items: [
           {
             title: "AI Transformation",
-            description: "From strategy to industrialized capability.",
+            description: "From mandate to industrialized capability.",
             href: "/solutions/ai-transformation",
           },
           {
             title: "AI Consulting",
-            description: "Architecture, governance, and roadmap design.",
+            description: "Architecture, governance, and investment roadmaps.",
             href: "/solutions/ai-consulting",
           },
           {
-            title: "Hire AI Engineers",
-            description: "Embedded AI / ML specialists—not staff-aug theater.",
-            href: "/solutions/hire-ai-engineers",
+            title: "Dedicated AI Squads",
+            description: "Pods that own a capability to production.",
+            href: "/solutions/dedicated-ai-squads",
           },
           {
-            title: "Dedicated AI Squads",
-            description: "Pods that own an AI capability to production.",
-            href: "/solutions/dedicated-ai-squads",
+            title: "Hire AI Engineers",
+            description: "Embeds when the roadmap is already clear.",
+            href: "/solutions/hire-ai-engineers",
           },
         ],
       },
     ],
     featured: {
-      eyebrow: "Featured",
-      title: "Production AI, not experiments",
+      eyebrow: "Featured solution",
+      title: "Agentic AI for enterprise operations",
       description:
-        "Platforms, agents, and engagement models designed for regulated enterprise scale.",
-      href: "/solutions",
-      cta: "Explore solutions",
+        "Multi-agent systems with MCP, human gates, and full audit trails—deployed in your VPC.",
+      href: "/solutions/ai-agents",
+      cta: "Explore Agentic AI",
+      stats: [
+        { value: "MCP", label: "Tool contracts" },
+        { value: "HITL", label: "Risk gates" },
+        { value: "100%", label: "IP at handover" },
+      ],
     },
+    quickLinks: [
+      { title: "AI Strategy Call", description: "30-min architect session", href: "/contact" },
+      { title: "All solutions", description: "Capability map", href: "/solutions" },
+      { title: "Engagement models", description: "How to buy", href: "/resources/engagement-models" },
+    ],
   },
   {
     label: "Industries",
     href: "/industries",
+    overview:
+      "Sector-fluent AI programs for regulated environments where accuracy and auditability are non-negotiable.",
     columns: [
       {
-        label: "Sectors",
+        label: "Primary sectors",
         items: [
           {
             title: "Healthcare",
-            description: "Clinical intelligence with compliance built in.",
+            description: "Clinical ops and documentation with compliance controls.",
             href: "/industries/healthcare",
           },
           {
             title: "Finance",
-            description: "Risk, fraud, and decision systems.",
+            description: "Fraud, underwriting, and decisioning at scale.",
             href: "/industries/finance",
           },
           {
-            title: "Retail",
-            description: "Demand, personalization, and operations.",
-            href: "/industries/retail",
+            title: "Manufacturing",
+            description: "Vision inspection and predictive plant intelligence.",
+            href: "/industries/manufacturing",
           },
           {
-            title: "Manufacturing",
-            description: "Vision, quality, and predictive uptime.",
-            href: "/industries/manufacturing",
+            title: "Retail",
+            description: "Demand sensing, merchandising, and service AI.",
+            href: "/industries/retail",
           },
         ],
       },
       {
-        label: "Also Serving",
+        label: "Also serving",
         items: [
           {
             title: "Insurance",
-            description: "Claims, underwriting, and service AI.",
+            description: "Claims acceleration and underwriting support.",
             href: "/industries/insurance",
           },
           {
             title: "Logistics",
-            description: "Routing, forecasting, and control towers.",
+            description: "Control towers and exception automation.",
             href: "/industries/logistics",
           },
           {
             title: "Government",
-            description: "Secure modernization for public institutions.",
+            description: "Secure modernization for mission systems.",
             href: "/industries/government",
           },
         ],
       },
     ],
     featured: {
-      eyebrow: "Focus",
-      title: "Fortune 500 Transformation",
-      description: "AI programs designed for board-level outcomes.",
+      eyebrow: "Industry proof",
+      title: "Outcomes across regulated enterprises",
+      description:
+        "See how AI moves cost, speed, and risk in healthcare, finance, and manufacturing.",
       href: "/case-studies",
       cta: "View case studies",
+      stats: [
+        { value: "18", label: "Industries" },
+        { value: "40%", label: "Doc time ↓" },
+        { value: "10×", label: "Triage speed" },
+      ],
     },
+    quickLinks: [
+      { title: "All industries", description: "Sector map", href: "/industries" },
+      { title: "Case studies", description: "Measured outcomes", href: "/case-studies" },
+    ],
   },
   {
     label: "Case Studies",
     href: "/case-studies",
+    overview:
+      "Production AI outcomes—methodology included. Proof for CEOs, CTOs, and diligence teams.",
+    columns: [
+      {
+        label: "Proof",
+        items: [
+          {
+            title: "Case Studies",
+            description: "Measured deployments across AI/ML and agents.",
+            href: "/case-studies",
+          },
+          {
+            title: "Enterprise references",
+            description: "How buyers verify InheritX.",
+            href: "/resources/enterprise-references",
+          },
+          {
+            title: "Production readiness",
+            description: "Checklist before go-live.",
+            href: "/resources/production-readiness",
+          },
+          {
+            title: "Security FAQ",
+            description: "CISO and procurement answers.",
+            href: "/resources/security-faq",
+          },
+        ],
+      },
+    ],
+    featured: {
+      eyebrow: "Featured outcome",
+      title: "Measured enterprise AI results",
+      description:
+        "Client deployments with methodology—vision, generative systems, platforms, and agentic workflows.",
+      href: "/case-studies",
+      cta: "Browse case studies",
+      stats: [
+        { value: "AI/ML", label: "Core focus" },
+        { value: "Owned", label: "IP handover" },
+        { value: "Prod", label: "Not pilots" },
+      ],
+    },
+    quickLinks: [
+      { title: "Book strategy call", description: "Map your use case", href: "/contact" },
+      { title: "AI Portfolio", description: "Capability patterns", href: "/portfolio" },
+    ],
   },
   {
     label: "Portfolio",
     href: "/portfolio",
+    overview:
+      "Enterprise AI capability patterns—platforms, agents, vision, and transformation systems.",
     columns: [
       {
         label: "Showcase",
@@ -183,24 +258,34 @@ export const navigation: NavItem[] = [
         "A production multi-agent platform with policy controls, audit trails, and human gates.",
       href: "/portfolio/agent-bank",
       cta: "View project",
+      stats: [
+        { value: "Multi", label: "Agent ops" },
+        { value: "Audit", label: "Full traces" },
+        { value: "HITL", label: "High-risk" },
+      ],
     },
+    quickLinks: [
+      { title: "Case studies", description: "Measured outcomes", href: "/case-studies" },
+      { title: "All solutions", description: "Capability map", href: "/solutions" },
+    ],
   },
   {
     label: "Company",
     href: "/company",
+    overview:
+      "An AI-native enterprise partner—architects and engineers who ship owned intelligence systems.",
     columns: [
       {
-        label: "Who We Are",
+        label: "Who we are",
         items: [
           {
             title: "About InheritX",
-            description:
-              "Enterprise AI Solutions company—agents, platforms, transformation.",
+            description: "AI-native partner for enterprise transformation.",
             href: "/company",
           },
           {
             title: "Our AI Vision",
-            description: "Intelligence as governed infrastructure you own.",
+            description: "Intelligence as infrastructure you own.",
             href: "/company/ai-vision",
           },
           {
@@ -210,8 +295,18 @@ export const navigation: NavItem[] = [
           },
           {
             title: "Our Approach",
-            description: "From mandate to industrialized AI capability.",
+            description: "From mandate to industrialized capability.",
             href: "/company/approach",
+          },
+          {
+            title: "Security & Compliance",
+            description: "Private deployment and precise claims.",
+            href: "/company/security",
+          },
+          {
+            title: "IP Ownership",
+            description: "What transfers at handover.",
+            href: "/company/ip-ownership",
           },
         ],
       },
@@ -220,7 +315,7 @@ export const navigation: NavItem[] = [
         items: [
           {
             title: "Our Team",
-            description: "Leadership, culture, and how we collaborate.",
+            description: "Leadership and delivery operators.",
             href: "/team",
           },
           {
@@ -230,7 +325,7 @@ export const navigation: NavItem[] = [
           },
           {
             title: "Careers",
-            description: "Join teams shaping enterprise AI systems.",
+            description: "Build enterprise AI systems with us.",
             href: "/careers",
           },
         ],
@@ -245,24 +340,35 @@ export const navigation: NavItem[] = [
           },
           {
             title: "Book a Strategy Call",
-            description: "30 minutes to map your AI opportunity.",
+            description: "30 minutes to map your AI transformation.",
             href: "/contact",
           },
         ],
       },
     ],
     featured: {
-      eyebrow: "People",
-      title: "Meet the operators behind the systems",
+      eyebrow: "Connect",
+      title: "Talk with an AI architect",
       description:
-        "Architects, engineers, and delivery leads who treat AI as enterprise infrastructure.",
-      href: "/team",
-      cta: "Our Team",
+        "30 minutes to pressure-test fit, ownership model, and the right engagement shape.",
+      href: "/contact",
+      cta: "Book an AI Strategy Call",
+      stats: [
+        { value: "14+", label: "Years DNA" },
+        { value: "600+", label: "Engagements" },
+        { value: "97%", label: "Retention" },
+      ],
     },
+    quickLinks: [
+      { title: "Contact", description: "Start a conversation", href: "/contact" },
+      { title: "Careers", description: "Join the team", href: "/careers" },
+    ],
   },
   {
     label: "Resources",
     href: "/resources",
+    overview:
+      "Decision material for CEOs and CTOs—insights, frameworks, and diligence packs.",
     columns: [
       {
         label: "Learn",
@@ -292,16 +398,66 @@ export const navigation: NavItem[] = [
             description: "Frameworks for AI modernization.",
             href: "/resources/whitepapers",
           },
+          {
+            title: "Engagement models",
+            description: "Consulting, build, squads, embeds.",
+            href: "/resources/engagement-models",
+          },
+        ],
+      },
+      {
+        label: "Enterprise diligence",
+        items: [
+          {
+            title: "Security FAQ",
+            description: "Procurement-ready answers.",
+            href: "/resources/security-faq",
+          },
+          {
+            title: "Diligence pack",
+            description: "NDA materials for qualified buyers.",
+            href: "/resources/diligence-pack",
+          },
+          {
+            title: "AI governance",
+            description: "Controls for agentic systems.",
+            href: "/resources/ai-governance",
+          },
+          {
+            title: "Production readiness",
+            description: "Checklist before declaring AI production-ready.",
+            href: "/resources/production-readiness",
+          },
+          {
+            title: "Architecture principles",
+            description: "Private, governed defaults.",
+            href: "/resources/architecture-principles",
+          },
+          {
+            title: "Enterprise references",
+            description: "How buyers verify InheritX—honest tiers of proof.",
+            href: "/resources/enterprise-references",
+          },
         ],
       },
     ],
     featured: {
-      eyebrow: "Insight",
-      title: "The Enterprise AI Playbook",
-      description: "A practical guide from strategy to agentic systems.",
-      href: "/resources/insights",
-      cta: "Explore insights",
+      eyebrow: "Trust center",
+      title: "Security practices & diligence",
+      description:
+        "Private-cloud defaults, precise compliance language, and materials for enterprise review.",
+      href: "/company/security",
+      cta: "Review security",
+      stats: [
+        { value: "VPC", label: "Private by default" },
+        { value: "NDA", label: "Diligence pack" },
+        { value: "IP", label: "Client-owned" },
+      ],
     },
+    quickLinks: [
+      { title: "Case studies", description: "Measured outcomes", href: "/case-studies" },
+      { title: "AI portfolio", description: "Capability patterns", href: "/portfolio" },
+    ],
   },
 ];
 
@@ -330,6 +486,8 @@ export const footerColumns = [
     title: "Company",
     links: [
       { label: "About", href: "/company" },
+      { label: "Security", href: "/company/security" },
+      { label: "IP Ownership", href: "/company/ip-ownership" },
       { label: "Our Team", href: "/team" },
       { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },

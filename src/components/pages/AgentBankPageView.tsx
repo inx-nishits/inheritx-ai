@@ -23,7 +23,7 @@ export function AgentBankPageView() {
             {p.eyebrow}
           </p>
           <p className="mt-3 text-sm text-white/40">{p.category}</p>
-          <h1 className="font-display mt-4 max-w-3xl text-4xl leading-[1.05] text-white md:text-6xl">
+          <h1 className="font-display mt-4 max-w-3xl text-4xl leading-[1.15] text-white md:text-6xl">
             {p.headline}
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
@@ -32,7 +32,7 @@ export function AgentBankPageView() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <MagneticButton
               href="/contact"
-              className="bg-cyan px-6 py-3 text-ink hover:bg-white"
+              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
             >
               Discuss a similar build
             </MagneticButton>
@@ -262,9 +262,9 @@ export function AgentBankPageView() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <MagneticButton
               href="/contact"
-              className="bg-cyan px-6 py-3 text-ink hover:bg-white"
+              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
             >
-              Book a strategy call
+              Book an AI Strategy Call
             </MagneticButton>
             <Link
               href="/case-studies"

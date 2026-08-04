@@ -28,8 +28,8 @@ export function SolutionsPageView() {
         eyebrow={solutionsHero.eyebrow}
         title={solutionsHero.title}
         description={solutionsHero.description}
-        primaryCta={{ label: "Book Strategy Call", href: "/contact" }}
-        secondaryCta={{ label: "See client outcomes", href: "/case-studies" }}
+        primaryCta={{ label: "Book an AI Strategy Call", href: "/contact" }}
+        secondaryCta={{ label: "See enterprise outcomes", href: "/case-studies" }}
       />
 
       {/* Proof strip — unique to solutions page */}
@@ -57,7 +57,7 @@ export function SolutionsPageView() {
               Solution pillars
             </p>
             <h2 className="font-display mt-3 max-w-2xl text-3xl text-white md:text-5xl">
-              Three ways intelligence enters the enterprise.
+              Three pillars of enterprise AI transformation.
             </h2>
           </Reveal>
 
@@ -152,11 +152,11 @@ export function SolutionsPageView() {
               Engagement models
             </p>
             <h2 className="font-display mt-3 max-w-2xl text-3xl md:text-5xl">
-              How we work with you—including Hire AI Engineers.
+              How enterprise leaders engage us.
             </h2>
             <p className="mt-4 max-w-xl text-sm text-ink/55 md:text-base">
-              Engagement is a product decision. Pick the shape that matches your
-              readiness—not a one-size staffing label.
+              Pick the motion that matches readiness—strategy when the mandate
+              is unclear; production build when you are ready to industrialize.
             </p>
           </Reveal>
 
@@ -199,7 +199,7 @@ export function SolutionsPageView() {
               Quick fit
             </p>
             <h2 className="font-display mt-3 text-3xl text-white md:text-4xl">
-              Start from the need—not the buzzword.
+              Start from the business problem—not the buzzword.
             </h2>
           </Reveal>
           <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
@@ -218,9 +218,9 @@ export function SolutionsPageView() {
           <div className="mt-10 flex flex-wrap gap-4">
             <MagneticButton
               href="/contact"
-              className="bg-cyan px-6 py-3 text-ink hover:bg-white"
+              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
             >
-              Map your fit on a call
+              Schedule an AI Assessment
             </MagneticButton>
             <Link
               href="/portfolio"

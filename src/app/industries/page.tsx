@@ -7,7 +7,7 @@ import { IndustriesPageView } from "@/components/pages/IndustriesPageView";
 export const metadata: Metadata = {
   title: "Industries — InheritX AI",
   description:
-    "AI for healthcare, finance, manufacturing, retail, insurance, logistics, and government—with sector-specific plays.",
+    "Enterprise AI for healthcare, finance, manufacturing, retail, insurance, logistics, and government—where accuracy and auditability matter.",
 };
 
 export default function IndustriesPage() {

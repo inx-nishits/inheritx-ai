@@ -28,11 +28,11 @@ export function FinalCTA() {
 
         <div className="order-1 text-center lg:order-2 lg:text-left">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-            Begin the transformation
+            Start your AI transformation
           </p>
           <TextReveal
-            text="Ready to build your AI advantage?"
-            className="font-display mt-5 text-[2rem] leading-[1.08] text-white md:mt-6 md:text-6xl lg:justify-start lg:text-6xl"
+            text="Ready to industrialize enterprise AI?"
+            className="font-display mt-5 text-[2rem] leading-[1.15] text-white md:mt-6 md:text-6xl lg:justify-start lg:text-6xl"
           />
 
           <motion.div
@@ -43,16 +43,17 @@ export function FinalCTA() {
             className="mt-8 flex flex-col items-center gap-5 md:mt-10 lg:items-start"
           >
             <p className="max-w-xl text-[15px] text-white/50 md:text-lg">
-              Book a 30-minute call with an AI architect. We’ll review your use
-              case, tell you honestly whether AI is the right move, and outline a
-              delivery roadmap—NDA available on request. No obligation.
+              Book a 30-minute AI strategy call with an architect. We’ll pressure-
+              test your use case, say honestly whether AI is the right move, and
+              outline a delivery roadmap—NDA and diligence materials available for
+              qualified opportunities.
             </p>
             <MagneticButton
               href="mailto:hello@inheritx.com"
-              className="mt-1 min-h-12 w-full max-w-sm justify-center bg-cyan px-8 py-4 text-base text-ink hover:bg-white sm:w-auto"
+              className="mt-1 min-h-12 w-full max-w-sm justify-center bg-cyan px-8 py-4 text-base text-white hover:bg-white hover:text-ink sm:w-auto"
               strength={0.45}
             >
-              Book a strategy call
+              Book an AI Strategy Call
             </MagneticButton>
           </motion.div>
         </div>

@@ -1,8 +1,8 @@
 export const resourcesHero = {
   eyebrow: "Resources",
-  title: "Material leaders can use—not content for content’s sake.",
+  title: "Decision material for CEOs and CTOs building with AI.",
   description:
-    "Outcomes, system maps, and practical briefs for executives and architects building the AI-native enterprise.",
+    "Outcomes, architecture briefs, and practical frameworks for leaders industrializing AI/ML, Agentic AI, and AI DevOps across the enterprise.",
 };
 
 export const resourceArticles = [
@@ -55,7 +55,20 @@ export const resourceArticles = [
     body: [
       "Hire AI Engineers works when the roadmap is clear and the bottleneck is execution capacity—not when the problem is still undefined.",
       "We embed senior practitioners who ship under your architecture standards, security reviews, and product rituals.",
-      "If you need a mandate and a blueprint first, start with consulting. If you need velocity on a defined platform, embed the team.",
+      "If you need a mandate and a blueprint first, start with consulting. If you need velocity on a defined platform, embed the team. See Engagement Models for the full buying sequence.",
+    ],
+  },
+  {
+    slug: "owned-ai-not-rented",
+    category: "Brief",
+    title: "What “you own the code” includes",
+    readTime: "5 min",
+    excerpt:
+      "IP handover is contractual and technical. Here is the standard intent—and what still belongs to model vendors.",
+    body: [
+      "Production builds are designed so application code, agents, fine-tunes created for you, prompts, evals, and IaC targeting your estate transfer at handover.",
+      "Foundation model licenses remain governed by those providers. Your pre-existing data and systems remain yours.",
+      "Ask for the IP schedule under NDA during diligence—ownership should be reviewable by counsel before build starts.",
     ],
   },
 ];
@@ -69,18 +82,18 @@ export const resourceLibrary = [
     meta: "Perspectives",
   },
   {
-    title: "Research briefs",
+    title: "Security & diligence",
     description:
-      "Applied intelligence notes for architects and operators building production AI estates.",
-    href: "/resources/research",
-    meta: "Briefs",
+      "Security practices, FAQ, diligence pack, governance, and production-readiness materials for enterprise review.",
+    href: "/company/security",
+    meta: "Trust",
   },
   {
-    title: "Whitepapers",
+    title: "Engagement models",
     description:
-      "Frameworks for AI modernization—governance, ownership, and industrialization patterns.",
-    href: "/resources/whitepapers",
-    meta: "Frameworks",
+      "Consulting, build/transformation, squads, and embeds—when each motion is the right buy.",
+    href: "/resources/engagement-models",
+    meta: "How to buy",
   },
   {
     title: "Case Studies Library",
@@ -90,18 +103,21 @@ export const resourceLibrary = [
     meta: "Client proof",
   },
 ];
-
 export const resourceFaqs = [
   {
     q: "Are these resources sales collateral?",
     a: "They are written to help buyers and builders make better decisions. If they also start a conversation with us, that is useful—but the content stands alone.",
   },
   {
-    q: "Can we request a private briefing?",
-    a: "Yes. Book a strategy call and we will tailor a briefing to your industry, risk posture, and current AI maturity.",
+    q: "Can we request a private briefing or diligence pack?",
+    a: "Yes. Book an AI Strategy Call. NDA-backed diligence materials (security, IP intent, engagement models) can follow when there is mutual fit.",
+  },
+  {
+    q: "Do OpenAI/AWS/Microsoft logos mean you are formal partners?",
+    a: "They indicate platforms and models we commonly implement with—not automatic formal partnership claims. Ask for current status in diligence.",
   },
   {
     q: "Do you publish technical deep-dives?",
-    a: "Yes—architecture patterns, evaluation approaches, and engagement guidance appear here as they are ready for external readers.",
+    a: "Yes—architecture principles, AI governance, production readiness, and engagement guidance appear here as they are ready for external readers.",
   },
 ];

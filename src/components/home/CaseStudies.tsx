@@ -32,10 +32,10 @@ export function CaseStudies() {
           <div className="flex items-end justify-between gap-4">
             <div className="min-w-0">
               <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-                Sector patterns
+                Enterprise outcomes
               </p>
               <h2 className="font-display mt-1.5 text-[1.75rem] leading-[1.12] text-white sm:mt-2 sm:text-4xl md:text-5xl">
-                AI outcomes that move the enterprise.
+                AI that moves cost, speed, and risk.
               </h2>
             </div>
             <Link

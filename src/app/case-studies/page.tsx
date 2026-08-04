@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "Case Studies — InheritX AI",
   description:
-    "Client success stories led by AI outcomes—computer vision, generative AI, platforms, and enterprise systems—from InheritX engagements.",
+    "Measured enterprise AI outcomes—AI/ML, agentic systems, computer vision, and platforms—from InheritX production engagements.",
 };
 
 export default function CaseStudiesRoute() {

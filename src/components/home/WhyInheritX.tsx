@@ -14,14 +14,14 @@ export function WhyInheritX() {
               Why InheritX
             </p>
           <TextReveal
-            text="We don't sell software projects. We engineer enterprise intelligence you own."
-            className="font-display mt-5 text-[2rem] leading-[1.08] md:text-6xl"
+            text="We don't sell software projects. We engineer enterprise AI you own."
+            className="font-display mt-5 text-[2rem] leading-[1.15] md:text-6xl"
           />
           <Reveal delay={0.15}>
             <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-ink/55 md:mt-8 md:text-lg">
-              InheritX is an Enterprise AI Solutions company. We build and hand
-              over—custom agents, multi-agent systems, vision, and platforms—so
-              CEOs and CTOs keep the code, the models, and the data.
+              InheritX is an AI-native enterprise partner. We design, build, and
+              hand over AI/ML systems, agentic workforces, and AI DevOps
+              platforms—so CEOs and CTOs keep the code, the models, and the data.
             </p>
           </Reveal>
           </div>
@@ -39,8 +39,8 @@ export function WhyInheritX() {
               <div className="absolute -inset-3 rounded-[2rem] bg-cyan/5 blur-2xl" />
               <blockquote className="relative rounded-[1.75rem] border border-ink/10 bg-white p-6 shadow-[0_20px_50px_rgba(11,18,32,0.06)] md:p-9">
                 <p className="font-display text-xl leading-snug text-ink md:text-2xl">
-                  &ldquo;The future belongs to enterprises that treat AI as
-                  infrastructure—not a side project.&rdquo;
+                  &ldquo;Enterprises that industrialize AI will outpace those
+                  still running pilots.&rdquo;
                 </p>
                 <footer className="mt-6 text-sm tracking-[0.12em] text-ink/40 uppercase">
                   InheritX Manifesto

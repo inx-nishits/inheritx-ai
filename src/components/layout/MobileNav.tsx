@@ -1,7 +1,28 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, ChevronDown } from "lucide-react";
+import {
+  ArrowUpRight,
+  Bot,
+  Brain,
+  Briefcase,
+  Building2,
+  ChevronDown,
+  Eye,
+  Factory,
+  FileText,
+  HeartPulse,
+  Landmark,
+  Network,
+  Shield,
+  ShoppingBag,
+  Sparkles,
+  Target,
+  Truck,
+  Users,
+  Workflow,
+  type LucideIcon,
+} from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -9,6 +30,47 @@ import { navigation } from "@/data/navigation";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/cn";
+
+const iconMap: Record<string, LucideIcon> = {
+  "Enterprise AI": Building2,
+  "AI Agents": Bot,
+  "AI Automation": Workflow,
+  "AI Consulting": Sparkles,
+  "AI Transformation": Target,
+  "Hire AI Engineers": Users,
+  "Dedicated AI Squads": Briefcase,
+  "Generative AI": Network,
+  "Computer Vision": Eye,
+  Healthcare: HeartPulse,
+  Finance: Landmark,
+  Retail: ShoppingBag,
+  Manufacturing: Factory,
+  Insurance: Shield,
+  Logistics: Truck,
+  Government: Landmark,
+  Insights: FileText,
+  "AI Portfolio": Network,
+  "Case Studies": FileText,
+  Research: Brain,
+  Whitepapers: FileText,
+  "Engagement models": Briefcase,
+  "About InheritX": Building2,
+  "Our AI Vision": Sparkles,
+  "Why InheritX": Target,
+  "Our Approach": Workflow,
+  "Security & Compliance": Shield,
+  "IP Ownership": FileText,
+  "Our Team": Users,
+  Careers: Briefcase,
+  Contact: Sparkles,
+  "Agent Bank": Bot,
+  "Enterprise references": Building2,
+  "Production readiness": Target,
+  "Security FAQ": Shield,
+  "Diligence pack": FileText,
+  "AI governance": Shield,
+  "Architecture principles": Network,
+};
 
 type MobileNavProps = {
   open: boolean;
@@ -34,7 +96,7 @@ export function MobileNav({
 
   return (
     <AnimatePresence>
-      {open && (
+      {open ? (
         <>
           <motion.button
             type="button"
@@ -55,7 +117,7 @@ export function MobileNav({
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-y-0 right-0 z-[70] flex w-[min(100%,24rem)] flex-col border-l border-white/[0.08] bg-ink shadow-[-24px_0_80px_rgba(0,0,0,0.45)] lg:hidden"
+            className="fixed inset-y-0 right-0 z-[70] flex w-[min(100%,26rem)] flex-col border-l border-white/[0.08] bg-ink shadow-[-24px_0_80px_rgba(0,0,0,0.45)] lg:hidden"
           >
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,190,212,0.12),transparent_55%)]" />
             <div className="pointer-events-none absolute inset-0 editorial-grid opacity-20" />
@@ -68,7 +130,7 @@ export function MobileNav({
                 aria-label="Close menu"
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors active:bg-white/10"
               >
-                <span className="font-display text-2xl leading-none">×</span>
+                <span className="text-2xl leading-none">×</span>
               </button>
             </div>
 
@@ -76,8 +138,12 @@ export function MobileNav({
               aria-label="Mobile"
               className="relative flex-1 overflow-y-auto overscroll-contain px-5 py-6"
             >
-              <p className="mb-5 text-[11px] tracking-[0.24em] text-cyan uppercase">
-                Navigate
+              <p className="mb-2 text-[11px] tracking-[0.24em] text-cyan uppercase">
+                AI-native enterprise
+              </p>
+              <p className="mb-6 max-w-xs text-sm leading-relaxed text-white/45">
+                Explore solutions, industries, proof, and company—built for
+                enterprise decision makers.
               </p>
 
               <ul className="space-y-1">
@@ -98,36 +164,41 @@ export function MobileNav({
                       className="border-b border-white/[0.06]"
                     >
                       <div className="flex items-center gap-2 py-1">
-                        <Link
-                          href={item.href}
-                          onClick={onClose}
-                          className="min-h-14 flex-1 py-3 font-display text-[1.75rem] leading-none text-white transition-colors active:text-cyan"
-                        >
-                          {item.label}
-                        </Link>
-                        {hasChildren && (
+                        {hasChildren ? (
                           <button
                             type="button"
                             aria-expanded={isExpanded}
-                            aria-label={`${isExpanded ? "Collapse" : "Expand"} ${item.label}`}
                             onClick={() =>
                               onExpandedChange(isExpanded ? null : item.label)
                             }
-                            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors active:border-cyan/40 active:text-cyan"
+                            className="flex min-h-14 flex-1 items-center justify-between gap-3 py-3 text-left"
                           >
-                            <ChevronDown
-                              size={18}
-                              className={cn(
-                                "transition-transform duration-300",
-                                isExpanded && "rotate-180",
-                              )}
-                            />
+                            <span className="font-display text-[1.65rem] leading-none text-white">
+                              {item.label}
+                            </span>
+                            <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/70">
+                              <ChevronDown
+                                size={18}
+                                className={cn(
+                                  "transition-transform duration-300",
+                                  isExpanded && "rotate-180 text-cyan",
+                                )}
+                              />
+                            </span>
                           </button>
+                        ) : (
+                          <Link
+                            href={item.href}
+                            onClick={onClose}
+                            className="min-h-14 flex-1 py-3 font-display text-[1.65rem] leading-none text-white transition-colors active:text-cyan"
+                          >
+                            {item.label}
+                          </Link>
                         )}
                       </div>
 
                       <AnimatePresence initial={false}>
-                        {hasChildren && isExpanded && (
+                        {hasChildren && isExpanded ? (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
@@ -138,32 +209,51 @@ export function MobileNav({
                             }}
                             className="overflow-hidden"
                           >
-                            <div className="space-y-5 pb-5 pl-1">
+                            <div className="space-y-5 pb-5">
+                              {item.overview ? (
+                                <p className="text-sm leading-relaxed text-white/45">
+                                  {item.overview}
+                                </p>
+                              ) : null}
+
                               {item.columns!.map((column) => (
                                 <div key={column.label}>
                                   <p className="mb-2 text-[10px] tracking-[0.2em] text-cyan uppercase">
                                     {column.label}
                                   </p>
-                                  <div className="space-y-0.5">
-                                    {column.items.map((link) => (
-                                      <Link
-                                        key={link.title}
-                                        href={link.href}
-                                        onClick={onClose}
-                                        className="flex min-h-12 items-center justify-between gap-3 rounded-xl px-2 text-[15px] text-white/65 transition-colors active:bg-white/[0.04] active:text-white"
-                                      >
-                                        <span>{link.title}</span>
-                                        <ArrowUpRight
-                                          size={14}
-                                          className="shrink-0 text-white/35"
-                                        />
-                                      </Link>
-                                    ))}
+                                  <div className="space-y-1">
+                                    {column.items.map((link) => {
+                                      const Icon = iconMap[link.title] ?? Sparkles;
+                                      return (
+                                        <Link
+                                          key={link.title}
+                                          href={link.href}
+                                          onClick={onClose}
+                                          className="flex min-h-12 items-center gap-3 rounded-xl px-2 py-2 text-[15px] text-white/70 transition-colors active:bg-white/[0.04] active:text-white"
+                                        >
+                                          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 text-cyan">
+                                            <Icon size={14} />
+                                          </span>
+                                          <span className="min-w-0 flex-1">
+                                            <span className="block font-medium text-white/85">
+                                              {link.title}
+                                            </span>
+                                            <span className="mt-0.5 block text-[12px] text-white/40">
+                                              {link.description}
+                                            </span>
+                                          </span>
+                                          <ArrowUpRight
+                                            size={14}
+                                            className="shrink-0 text-white/30"
+                                          />
+                                        </Link>
+                                      );
+                                    })}
                                   </div>
                                 </div>
                               ))}
 
-                              {item.featured && (
+                              {item.featured ? (
                                 <Link
                                   href={item.featured.href}
                                   onClick={onClose}
@@ -175,17 +265,31 @@ export function MobileNav({
                                   <p className="mt-2 text-sm font-medium leading-snug text-white">
                                     {item.featured.title}
                                   </p>
-                                  {item.featured.cta && (
+                                  {item.featured.stats ? (
+                                    <div className="mt-3 flex gap-4">
+                                      {item.featured.stats.map((stat) => (
+                                        <div key={stat.label}>
+                                          <p className="text-sm text-cyan">
+                                            {stat.value}
+                                          </p>
+                                          <p className="text-[10px] text-white/40">
+                                            {stat.label}
+                                          </p>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  ) : null}
+                                  {item.featured.cta ? (
                                     <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-cyan">
                                       {item.featured.cta}
                                       <ArrowUpRight size={12} />
                                     </span>
-                                  )}
+                                  ) : null}
                                 </Link>
-                              )}
+                              ) : null}
                             </div>
                           </motion.div>
-                        )}
+                        ) : null}
                       </AnimatePresence>
                     </motion.li>
                   );
@@ -196,19 +300,19 @@ export function MobileNav({
             <div className="relative border-t border-white/[0.06] px-5 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
               <MagneticButton
                 href="/contact"
-                className="w-full bg-cyan py-3.5 font-semibold text-ink"
+                className="w-full bg-cyan py-3.5 font-semibold text-white"
                 onClick={onClose}
                 strength={0}
               >
-                Book a 30-Min Strategy Call
+                Book an AI Strategy Call
               </MagneticButton>
               <p className="mt-3 text-center text-[11px] text-white/35">
-                30 minutes · Strategy-first · No pitch deck theater
+                30 minutes · Strategy-first · No pitch theater
               </p>
             </div>
           </motion.aside>
         </>
-      )}
+      ) : null}
     </AnimatePresence>
   );
 }

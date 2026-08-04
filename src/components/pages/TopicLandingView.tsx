@@ -618,7 +618,7 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
           <div className="flex flex-wrap gap-4">
             <MagneticButton
               href={topic.primaryCta.href}
-              className="bg-cyan px-6 py-3 text-ink hover:bg-white"
+              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
             >
               {topic.primaryCta.label}
             </MagneticButton>
