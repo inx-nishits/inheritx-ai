@@ -82,6 +82,19 @@ const exploreFunnel = [
   { label: "Production", value: 31 },
 ];
 
+function IllustrativeNote() {
+  return (
+    <p className="mb-4 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-[11px] leading-relaxed text-white/45">
+      Illustrative planning metrics for buyer conversations—not audited client
+      outcomes. See{" "}
+      <Link href="/case-studies" className="text-cyan underline-offset-2 hover:underline">
+        case studies
+      </Link>{" "}
+      for published results.
+    </p>
+  );
+}
+
 function ChartCard({
   title,
   meta,
@@ -437,6 +450,9 @@ function FunnelChart() {
 function CeoDecisionPanel() {
   return (
     <div className="grid gap-4 lg:grid-cols-12">
+      <div className="lg:col-span-12">
+        <IllustrativeNote />
+      </div>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:col-span-12">
         {ceoKpis.map((kpi) => (
           <div key={kpi.label} className="px-0 py-1">
@@ -450,7 +466,7 @@ function CeoDecisionPanel() {
 
       <ChartCard
         title="AI value creation curve"
-        meta="+70 pts / 8 mo"
+        meta="Illustrative"
         className="lg:col-span-5"
       >
         <AreaGrowthChart />
@@ -463,13 +479,13 @@ function CeoDecisionPanel() {
 
       <ChartCard
         title="Outcome lift after AI"
-        meta="Point gains"
+        meta="Illustrative"
         className="lg:col-span-4"
       >
         <OutcomeLiftList />
       </ChartCard>
 
-      <ChartCard title="Enterprise value mix" meta="ROI drivers" className="lg:col-span-3">
+      <ChartCard title="Enterprise value mix" meta="Illustrative" className="lg:col-span-3">
         <DonutChart segments={ceoRoiMix} />
       </ChartCard>
     </div>
@@ -479,9 +495,12 @@ function CeoDecisionPanel() {
 function CtoDecisionPanel() {
   return (
     <div className="grid gap-4 lg:grid-cols-12">
+      <div className="lg:col-span-12">
+        <IllustrativeNote />
+      </div>
       <ChartCard
         title="Production readiness score"
-        meta="System health"
+        meta="Illustrative"
         className="lg:col-span-4"
       >
         <div className="grid grid-cols-4 gap-2 pt-1">
@@ -497,7 +516,7 @@ function CtoDecisionPanel() {
 
       <ChartCard
         title="Agentic inference latency"
-        meta="p50 · ms"
+        meta="Illustrative · p50 ms"
         className="lg:col-span-5"
       >
         <LatencyBars />
@@ -505,7 +524,7 @@ function CtoDecisionPanel() {
 
       <ChartCard
         title="AI capability readiness"
-        meta="Stack coverage"
+        meta="Illustrative"
         className="lg:col-span-3"
       >
         <ReadinessBars />
@@ -517,9 +536,12 @@ function CtoDecisionPanel() {
 function ExploreDecisionPanel() {
   return (
     <div className="grid gap-4 lg:grid-cols-12">
+      <div className="lg:col-span-12">
+        <IllustrativeNote />
+      </div>
       <ChartCard
         title="Service demand index"
-        meta="Where buyers start"
+        meta="Illustrative"
         className="lg:col-span-7"
       >
         <DemandBars />
@@ -527,7 +549,7 @@ function ExploreDecisionPanel() {
 
       <ChartCard
         title="Engagement funnel"
-        meta="Inquiry → production"
+        meta="Illustrative"
         className="lg:col-span-5"
       >
         <FunnelChart />

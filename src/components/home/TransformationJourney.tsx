@@ -27,14 +27,14 @@ export function TransformationJourney() {
             AI Transformation Journey
           </p>
           <TextReveal
-            text="From strategy call to AI systems you own."
+            text="A sequenced path from mandate to production."
             className="font-display mt-5 text-4xl leading-[1.15] md:text-6xl"
           />
           <Reveal delay={0.15}>
             <p className="mt-6 max-w-md text-base leading-relaxed text-ink/55">
-              Discover why AI matters now, architect for scale, deploy into your
-              private cloud, and industrialize across departments—with IP
-              handover built in.
+              Discover, architect, build, and scale—four stages that take a
+              qualified use case from leadership alignment to industrialized
+              delivery.
             </p>
           </Reveal>
         </div>

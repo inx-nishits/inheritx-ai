@@ -50,8 +50,8 @@ export function TechStack() {
           </div>
           <Reveal>
             <p className="max-w-md text-base leading-relaxed text-white/50 lg:justify-self-end">
-              Five governed layers—from models and agentic systems to AI
-              DevOps—composed for security, durability, and production scale.
+              Six infrastructure layers and the tools we compose them
+              with—models, agents, retrieval, automation, cloud, and AI DevOps.
             </p>
           </Reveal>
         </div>

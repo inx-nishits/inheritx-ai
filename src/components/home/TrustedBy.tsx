@@ -2,15 +2,23 @@
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import type { ReactNode } from "react";
 
 /**
- * Public profiles verified for InheritX Solutions.
- * Logos are retained; each mark links to an external proof page where available.
+ * Public profiles for InheritX Solutions.
+ * Logos are always rendered. Only company-specific profile URLs are linked.
  */
-const logos = [
+const logos: {
+  name: string;
+  /** Exact InheritX profile URL — omit until the official listing is confirmed. */
+  href?: string;
+  node: ReactNode;
+}[] = [
   {
     name: "AWS Partner",
-    href: "https://aws.amazon.com/partners/",
+    // TODO: Replace with the official InheritX AWS Partner Network directory URL
+    // (partners.amazonaws.com/partners/…/InheritX…). Do not use aws.amazon.com/partners/.
+    href: undefined,
     node: (
       <svg viewBox="0 0 120 56" className="h-14 w-[128px] md:h-16 md:w-[148px]" aria-hidden>
         <text
@@ -55,7 +63,9 @@ const logos = [
   },
   {
     name: "Google Reviews",
-    href: "https://www.google.com/search?q=InheritX+Solutions+reviews",
+    // TODO: Replace with the official InheritX Google Business Profile URL
+    // (maps.app.goo.gl/… or google.com/maps/place/…). Do not use search-result URLs.
+    href: undefined,
     node: (
       <svg viewBox="0 0 150 40" className="h-12 w-[160px] md:h-14 md:w-[180px]" aria-hidden>
         <text
@@ -115,7 +125,9 @@ const logos = [
   },
   {
     name: "Upwork",
-    href: "https://www.upwork.com/search/talent/?q=InheritX%20Solutions",
+    // TODO: Replace with the official InheritX Upwork agency profile URL
+    // (upwork.com/agencies/…). Do not use talent search pages.
+    href: undefined,
     node: (
       <svg viewBox="0 0 120 36" className="h-10 w-[128px] md:h-11 md:w-[140px]" aria-hidden>
         <text
@@ -209,9 +221,9 @@ export function TrustedBy() {
           Trusted by modern enterprise teams.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50 md:text-base">
-          InheritX is listed on leading review and delivery platforms—AWS Partner,
-          Google Reviews, Clutch, Upwork, and Trustpilot. Click any mark to open the
-          public profile.
+          InheritX maintains presence on leading review and delivery platforms—AWS
+          Partner, Google Reviews, Clutch, Upwork, and Trustpilot. Linked marks open
+          the verified public profile.
         </p>
 
         <div className="mt-8 flex justify-center">

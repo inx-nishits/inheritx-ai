@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Briefcase, CheckCircle2, Mail, MapPin } from "lucide-react";
+import { Briefcase, Calendar, CheckCircle2, Mail, MapPin } from "lucide-react";
 
 import {
   contactChannels,
@@ -14,24 +14,74 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 
+const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL?.trim() || "";
+
+type SubmitState =
+  | { status: "idle" }
+  | { status: "submitting" }
+  | { status: "success"; fallbackMailto: boolean }
+  | { status: "error"; message: string };
+
 export function ContactPageView() {
   const [submitted, setSubmitted] = useState(false);
   const [topic, setTopic] = useState(contactTopics[0]);
+  const [submitState, setSubmitState] = useState<SubmitState>({ status: "idle" });
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") || "");
-    const email = String(data.get("email") || "");
-    const company = String(data.get("company") || "");
-    const message = String(data.get("message") || "");
-    const subject = encodeURIComponent(`[InheritX] ${topic} — ${company || name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nTopic: ${topic}\n\n${message}`,
-    );
-    window.location.href = `mailto:hello@inheritx.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    const payload = {
+      name: String(data.get("name") || ""),
+      email: String(data.get("email") || ""),
+      company: String(data.get("company") || ""),
+      topic,
+      message: String(data.get("message") || ""),
+      source: "website-contact",
+    };
+
+    setSubmitState({ status: "submitting" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = (await response.json()) as {
+        ok?: boolean;
+        error?: string;
+        fallbackMailto?: boolean;
+        mailto?: { to: string; subject: string; body: string };
+      };
+
+      if (!response.ok || !result.ok) {
+        setSubmitState({
+          status: "error",
+          message:
+            result.error ||
+            "Unable to submit right now. Please email hello@inheritx.com.",
+        });
+        return;
+      }
+
+      if (result.fallbackMailto && result.mailto) {
+        const href = `mailto:${result.mailto.to}?subject=${encodeURIComponent(result.mailto.subject)}&body=${encodeURIComponent(result.mailto.body)}`;
+        window.location.href = href;
+      }
+
+      setSubmitted(true);
+      setSubmitState({
+        status: "success",
+        fallbackMailto: Boolean(result.fallbackMailto),
+      });
+      form.reset();
+    } catch {
+      setSubmitState({
+        status: "error",
+        message: "Unable to submit right now. Please email hello@inheritx.com.",
+      });
+    }
   };
 
   return (
@@ -59,21 +109,37 @@ export function ContactPageView() {
                 <div className="mt-10 flex items-start gap-3 rounded-2xl border border-cyan/30 bg-cyan/10 p-5">
                   <CheckCircle2 className="mt-0.5 shrink-0 text-cyan" size={20} />
                   <div>
-                    <p className="font-medium text-white">Mail client opening</p>
-                    <p className="mt-1 text-sm text-white/55">
-                      If it doesn’t open, email hello@inheritx.com directly with
-                      your brief.
+                    <p className="font-medium text-white">
+                      {submitState.status === "success" && submitState.fallbackMailto
+                        ? "Opening email fallback"
+                        : "Request received"}
                     </p>
+                    <p className="mt-1 text-sm text-white/55">
+                      {submitState.status === "success" && submitState.fallbackMailto
+                        ? "If your mail client doesn’t open, email hello@inheritx.com with your brief. You can also book time below when calendar booking is available."
+                        : "An architect will follow up—usually within one business day. Prefer a specific slot? Use the calendar booking option when available."}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSubmitted(false);
+                        setSubmitState({ status: "idle" });
+                      }}
+                      className="mt-4 text-sm text-cyan underline-offset-4 hover:underline"
+                    >
+                      Submit another request
+                    </button>
                   </div>
                 </div>
               ) : (
-                <form onSubmit={onSubmit} className="mt-8 space-y-5">
+                <form onSubmit={onSubmit} className="mt-8 space-y-5" noValidate>
                   <div className="grid gap-5 sm:grid-cols-2">
                     <label className="block text-xs tracking-wide text-white/40">
                       Name
                       <input
                         required
                         name="name"
+                        autoComplete="name"
                         className="mt-2 w-full rounded-xl border border-white/10 bg-ink px-4 py-3.5 text-base text-white outline-none transition-colors focus:border-cyan/50 md:py-3 md:text-sm"
                         placeholder="Your name"
                       />
@@ -84,6 +150,7 @@ export function ContactPageView() {
                         required
                         type="email"
                         name="email"
+                        autoComplete="email"
                         className="mt-2 w-full rounded-xl border border-white/10 bg-ink px-4 py-3.5 text-base text-white outline-none transition-colors focus:border-cyan/50 md:py-3 md:text-sm"
                         placeholder="you@company.com"
                       />
@@ -93,18 +160,26 @@ export function ContactPageView() {
                     Company
                     <input
                       name="company"
+                      autoComplete="organization"
                       className="mt-2 w-full rounded-xl border border-white/10 bg-ink px-4 py-3.5 text-base text-white outline-none transition-colors focus:border-cyan/50 md:py-3 md:text-sm"
                       placeholder="Organization"
                     />
                   </label>
                   <div>
-                    <p className="text-xs tracking-wide text-white/40">Topic</p>
-                    <div className="mt-2 flex flex-wrap gap-2">
+                    <p className="text-xs tracking-wide text-white/40" id="contact-topic-label">
+                      Topic
+                    </p>
+                    <div
+                      className="mt-2 flex flex-wrap gap-2"
+                      role="group"
+                      aria-labelledby="contact-topic-label"
+                    >
                       {contactTopics.map((item) => (
                         <button
                           key={item}
                           type="button"
                           onClick={() => setTopic(item)}
+                          aria-pressed={topic === item}
                           className={cn(
                             "min-h-11 rounded-full border px-4 py-2.5 text-sm transition-all",
                             topic === item
@@ -127,12 +202,29 @@ export function ContactPageView() {
                       placeholder="Mandate, systems involved, timeline, constraints…"
                     />
                   </label>
+                  {submitState.status === "error" ? (
+                    <p className="text-sm text-red-300" role="alert">
+                      {submitState.message}
+                    </p>
+                  ) : null}
                   <button
                     type="submit"
-                    className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-cyan px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-ink sm:w-auto"
+                    disabled={submitState.status === "submitting"}
+                    className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-cyan px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-ink disabled:opacity-60 sm:w-auto"
                   >
-                    Continue via email
+                    {submitState.status === "submitting"
+                      ? "Submitting…"
+                      : "Submit consultation request"}
                   </button>
+                  <p className="text-xs text-white/35">
+                    Prefer email?{" "}
+                    <a
+                      href="mailto:hello@inheritx.com"
+                      className="text-cyan underline-offset-2 hover:underline"
+                    >
+                      hello@inheritx.com
+                    </a>
+                  </p>
                 </form>
               )}
             </div>
@@ -140,6 +232,51 @@ export function ContactPageView() {
 
           <div className="space-y-8">
             <Reveal delay={0.05}>
+              <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-5 md:p-6">
+                <div className="flex items-center gap-2 text-white">
+                  <Calendar size={14} className="text-cyan" />
+                  <p className="text-[11px] tracking-[0.2em] text-cyan uppercase">
+                    Calendar booking
+                  </p>
+                </div>
+                <h3 className="font-display mt-3 text-xl text-white">
+                  Book a 30-minute AI strategy call
+                </h3>
+                {calendlyUrl ? (
+                  <>
+                    <p className="mt-2 text-sm text-white/45">
+                      Pick a time that works for your leadership team.
+                    </p>
+                    <div className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-ink">
+                      <iframe
+                        title="Book an AI strategy call"
+                        src={calendlyUrl}
+                        className="h-[620px] w-full"
+                        loading="lazy"
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <p className="mt-2 text-sm text-white/45">
+                      Submit the consultation form and an architect will propose
+                      times—usually within one business day. Direct calendar
+                      booking activates once your Calendly (or equivalent) URL is
+                      configured.
+                    </p>
+                    {/* TODO: Set NEXT_PUBLIC_CALENDLY_URL to the official InheritX booking page. */}
+                    <a
+                      href="mailto:hello@inheritx.com?subject=AI%20Strategy%20Call%20Booking"
+                      className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full border border-cyan/35 bg-cyan/10 px-5 text-sm text-cyan transition-colors hover:bg-cyan hover:text-white"
+                    >
+                      Request a booking slot by email
+                    </a>
+                  </>
+                )}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.08}>
               <div>
                 <p className="text-[11px] tracking-[0.2em] text-cyan uppercase">
                   Channels

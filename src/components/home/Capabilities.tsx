@@ -140,13 +140,13 @@ export function Capabilities() {
                 AI Capabilities
               </p>
               <TextReveal
-                text="What we build for the AI-native enterprise."
+                text="Capability lanes from models to LLMOps."
                 className="font-display mt-5 text-[2rem] leading-[1.15] text-white"
               />
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-white/45">
-              From AI/ML and Generative AI to agentic systems, n8n automation,
-              and AI DevOps—production capabilities you own.
+              AI/ML, Generative AI, agents, n8n automation, and AI
+              DevOps—each lane engineered for production delivery.
             </p>
           </div>
         </div>
@@ -173,14 +173,14 @@ export function Capabilities() {
                   AI Capabilities
                 </p>
                 <TextReveal
-                  text="What we build for the AI-native enterprise."
+                  text="Capability lanes from models to LLMOps."
                   className="font-display mt-4 text-[2rem] leading-[1.15] text-white md:text-[2.75rem] lg:mt-5 lg:text-6xl"
                 />
               </div>
               <div className="flex flex-col gap-5 lg:items-end">
                 <p className="max-w-sm text-sm leading-relaxed text-white/45 md:text-base lg:text-right">
-                  From AI/ML and Generative AI to agentic systems, n8n
-                  automation, and AI DevOps—production capabilities you own.
+                  AI/ML, Generative AI, agents, n8n automation, and AI
+                  DevOps—each lane engineered for production delivery.
                 </p>
                 <div className="flex items-center gap-2">
                   <button

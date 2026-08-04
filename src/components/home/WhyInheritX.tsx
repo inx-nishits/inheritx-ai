@@ -19,9 +19,9 @@ export function WhyInheritX() {
           />
           <Reveal delay={0.15}>
             <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-ink/55 md:mt-8 md:text-lg">
-              InheritX is an AI-native enterprise partner. We design, build, and
-              hand over AI/ML systems, agentic workforces, and AI DevOps
-              platforms—so CEOs and CTOs keep the code, the models, and the data.
+              Differentiation over delivery theater: named architects, full IP
+              handover, and systems your team can operate after go-live—not a
+              rented black-box platform.
             </p>
           </Reveal>
           </div>

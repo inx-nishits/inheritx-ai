@@ -6,6 +6,7 @@ import { TrustBar } from "@/components/home/TrustBar";
 import { ChooseYourPath } from "@/components/home/ChooseYourPath";
 import { FeaturedCaseStudy } from "@/components/home/FeaturedCaseStudy";
 import { Capabilities } from "@/components/home/Capabilities";
+import { MidPageCTA } from "@/components/home/MidPageCTA";
 import { TransformationJourney } from "@/components/home/TransformationJourney";
 import { Solutions } from "@/components/home/Solutions";
 import { Industries } from "@/components/home/Industries";
@@ -24,6 +25,7 @@ export default function Home() {
         <ChooseYourPath />
         <FeaturedCaseStudy />
         <Capabilities />
+        <MidPageCTA />
         <TransformationJourney />
         <Solutions />
         <Industries />

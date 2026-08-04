@@ -51,7 +51,7 @@ export function MagneticButton({
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
       className={cn(
-        "group relative inline-flex items-center justify-center overflow-hidden rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-colors",
+        "group relative inline-flex items-center justify-center overflow-hidden rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
         className,
       )}
       {...props}

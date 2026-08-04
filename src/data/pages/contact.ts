@@ -49,7 +49,7 @@ export const contactNextSteps = [
   {
     step: "01",
     title: "Share context",
-    copy: "Mandate and KPI, systems in/out of scope, VPC or private-estate preferences, any security review underway, and whether you need consulting, a production build, a squad, or embeds. Include what “good” looks like in 90 days.",
+    copy: "Mandate and KPI, systems in/out of scope, deployment preferences, any security review underway, and whether you need consulting, a production build, a squad, or embeds. Include what “good” looks like in 90 days.",
   },
   {
     step: "02",

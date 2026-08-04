@@ -56,12 +56,12 @@ export const journey = [
   {
     step: "03",
     title: "Build & Deploy",
-    copy: "Ship production agents and platforms into your private cloud with evaluation, monitoring, and IP transfer—not a rented sandbox.",
+    copy: "Ship production agents and platforms into your environment with evaluation, monitoring, and IP transfer—not a rented sandbox.",
   },
   {
     step: "04",
     title: "Scale",
-    copy: "Industrialize across departments with cost controls, enablement, and continuous improvement—you own the capability after handover.",
+    copy: "Industrialize across departments with cost controls, enablement, and continuous improvement after handover.",
   },
 ];
 
@@ -74,7 +74,7 @@ export const solutions = [
   {
     index: "02",
     title: "Generative AI",
-    copy: "Secure LLM applications with prompt engineering, evals, guardrails, and RAG copilots you own in your private cloud.",
+    copy: "Secure LLM applications with prompt engineering, evals, guardrails, and RAG copilots designed for enterprise controls.",
   },
   {
     index: "03",
@@ -109,7 +109,7 @@ export const solutions = [
   {
     index: "09",
     title: "AI Transformation",
-    copy: "From strategy call to industrialized AI capability—with private deployment and ownership at handover.",
+    copy: "From strategy call to industrialized AI capability—with a clear path from pilot criteria to scaled operations.",
   },
 ];
 
