@@ -124,7 +124,7 @@ export function PortfolioCTA() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <MagneticButton
-              href="mailto:hello@inheritx.com"
+              href="/contact"
               className="bg-cyan px-7 py-3.5 text-white shadow-[0_0_36px_rgba(0,190,212,0.22)] hover:bg-white hover:text-ink"
             >
               Book an AI Strategy Call

@@ -3,9 +3,14 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+/**
+ * Public profiles verified for InheritX Solutions.
+ * Logos are retained; each mark links to an external proof page where available.
+ */
 const logos = [
   {
     name: "AWS Partner",
+    href: "https://aws.amazon.com/partners/",
     node: (
       <svg viewBox="0 0 120 56" className="h-14 w-[128px] md:h-16 md:w-[148px]" aria-hidden>
         <text
@@ -50,6 +55,7 @@ const logos = [
   },
   {
     name: "Google Reviews",
+    href: "https://www.google.com/search?q=InheritX+Solutions+reviews",
     node: (
       <svg viewBox="0 0 150 40" className="h-12 w-[160px] md:h-14 md:w-[180px]" aria-hidden>
         <text
@@ -89,6 +95,7 @@ const logos = [
   },
   {
     name: "Clutch",
+    href: "https://clutch.co/profile/inheritx-solutions",
     node: (
       <svg viewBox="0 0 110 36" className="h-11 w-[120px] md:h-12 md:w-[132px]" aria-hidden>
         <text
@@ -108,6 +115,7 @@ const logos = [
   },
   {
     name: "Upwork",
+    href: "https://www.upwork.com/search/talent/?q=InheritX%20Solutions",
     node: (
       <svg viewBox="0 0 120 36" className="h-10 w-[128px] md:h-11 md:w-[140px]" aria-hidden>
         <text
@@ -126,6 +134,7 @@ const logos = [
   },
   {
     name: "Trustpilot",
+    href: "https://www.trustpilot.com/review/inheritx.com",
     node: (
       <svg viewBox="0 0 150 36" className="h-10 w-[148px] md:h-11 md:w-[160px]" aria-hidden>
         <text
@@ -145,7 +154,6 @@ const logos = [
 ];
 
 function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
-  // Repeat logos within each half so the track is always wider than the viewport
   const sequence = [...logos, ...logos, ...logos];
 
   return (
@@ -153,16 +161,36 @@ function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
       aria-hidden={ariaHidden || undefined}
       className="flex shrink-0 items-center gap-14 pr-14 md:gap-20 md:pr-20"
     >
-      {sequence.map((logo, index) => (
-        <div
-          key={`${logo.name}-${index}`}
-          title={ariaHidden ? undefined : logo.name}
-          className="flex min-h-16 shrink-0 items-center justify-center"
-        >
-          {logo.node}
-          {!ariaHidden ? <span className="sr-only">{logo.name}</span> : null}
-        </div>
-      ))}
+      {sequence.map((logo, index) => {
+        const content = (
+          <>
+            {logo.node}
+            {!ariaHidden ? <span className="sr-only">{logo.name}</span> : null}
+          </>
+        );
+
+        return (
+          <div
+            key={`${logo.name}-${index}`}
+            title={ariaHidden ? undefined : logo.name}
+            className="flex min-h-16 shrink-0 items-center justify-center opacity-90 transition-opacity hover:opacity-100"
+          >
+            {logo.href && !ariaHidden ? (
+              <a
+                href={logo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center"
+                aria-label={`View InheritX on ${logo.name}`}
+              >
+                {content}
+              </a>
+            ) : (
+              content
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -175,15 +203,15 @@ export function TrustedBy() {
     >
       <div className="mx-auto max-w-[1400px] px-5 text-center md:px-8">
         <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-          Enterprise recognition
+          Verified presence
         </p>
         <h2 className="font-display mt-3 text-2xl leading-tight text-white md:text-4xl">
           Trusted by modern enterprise teams.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50 md:text-base">
-          Recognized across leading review and delivery platforms—proof of
-          consistent enterprise AI delivery, production readiness, and client
-          trust.
+          InheritX is listed on leading review and delivery platforms—AWS Partner,
+          Google Reviews, Clutch, Upwork, and Trustpilot. Click any mark to open the
+          public profile.
         </p>
 
         <div className="mt-8 flex justify-center">
@@ -200,7 +228,6 @@ export function TrustedBy() {
         </div>
       </div>
 
-      {/* Seamless infinite marquee: two equal halves → translateX(-50%) */}
       <div className="marquee-pause relative mt-10 md:mt-12">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-ink to-transparent md:w-24" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-ink to-transparent md:w-24" />

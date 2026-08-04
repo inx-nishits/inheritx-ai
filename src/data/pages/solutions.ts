@@ -2,7 +2,7 @@ export const solutionsHero = {
   eyebrow: "Solutions",
   title: "AI systems that transform how enterprises operate.",
   description:
-    "InheritX is an AI-native enterprise partner. We deliver AI/ML engineering, Agentic AI, and AI DevOps—consulting when the mandate is unclear; production systems in your private cloud when you are ready—with full IP handover.",
+    "InheritX is an AI-native enterprise partner. We deliver AI/ML engineering, Generative AI, Agentic AI, and AI DevOps—consulting when the mandate is unclear; production systems in your private cloud when you are ready—with full IP handover.",
 };
 
 export const solutionPillars = [
@@ -36,11 +36,11 @@ export const solutionPillars = [
     id: "03",
     title: "AI DevOps",
     summary:
-      "MLOps, LLMOps, CI/CD for AI, model lifecycle, monitoring, and cloud AI infrastructure—so production intelligence stays reliable after go-live.",
+      "MLOps, LLMOps, CloudOps, GitOps, CI/CD for AI, model lifecycle, monitoring, and cloud AI infrastructure—so production intelligence stays reliable after go-live.",
     points: [
-      "CI/CD, evaluation harnesses, and model lifecycle",
-      "Tracing, guardrails, cost controls, and incident playbooks",
-      "Vision, documents, and workflow automation when ops need them",
+      "CI/CD, GitOps promotion gates, and model lifecycle",
+      "CloudOps, tracing, guardrails, cost controls, and incident playbooks",
+      "Vision, documents, and n8n workflow automation when ops need them",
     ],
     image: "/images/visuals/lead-capabilities.png",
     href: "/solutions/ai-transformation",

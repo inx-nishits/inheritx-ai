@@ -16,10 +16,11 @@ import { cn } from "@/lib/cn";
 
 const cardLeads = [
   "/images/visuals/lead-capabilities.png",
-  "/images/visuals/lead-agents.png",
   "/images/visuals/lead-solutions.png",
+  "/images/visuals/lead-agents.png",
   "/images/visuals/lead-journey.png",
   "/images/visuals/lead-tech.png",
+  "/images/visuals/lead-capabilities.png",
 ];
 
 function CapabilityCard({
@@ -144,8 +145,8 @@ export function Capabilities() {
               />
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-white/45">
-              From AI/ML engineering and agentic systems to AI DevOps, private
-              platforms, and vision—production capabilities you own.
+              From AI/ML and Generative AI to agentic systems, n8n automation,
+              and AI DevOps—production capabilities you own.
             </p>
           </div>
         </div>
@@ -178,8 +179,8 @@ export function Capabilities() {
               </div>
               <div className="flex flex-col gap-5 lg:items-end">
                 <p className="max-w-sm text-sm leading-relaxed text-white/45 md:text-base lg:text-right">
-                  From AI/ML engineering and agentic systems to AI DevOps,
-                  private platforms, and vision—production capabilities you own.
+                  From AI/ML and Generative AI to agentic systems, n8n
+                  automation, and AI DevOps—production capabilities you own.
                 </p>
                 <div className="flex items-center gap-2">
                   <button

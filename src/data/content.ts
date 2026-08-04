@@ -17,23 +17,28 @@ export const capabilities = [
   },
   {
     id: "02",
+    title: "Generative AI",
+    copy: "Secure LLM applications, copilots, and content systems with prompt engineering, evaluation harnesses, citations, and private-cloud ownership.",
+  },
+  {
+    id: "03",
     title: "Agentic AI Systems",
     copy: "Autonomous agents, multi-agent orchestration, MCP, tool calling, memory, and human–AI collaboration that execute real enterprise work.",
   },
   {
-    id: "03",
-    title: "AI DevOps & LLMOps",
-    copy: "MLOps, LLMOps, CI/CD for AI, model lifecycle, observability, and cloud AI infrastructure—so production systems stay reliable after go-live.",
-  },
-  {
     id: "04",
-    title: "Enterprise AI Platforms",
-    copy: "Private intelligence layers—model gateways, governed retrieval, and policy controls—deployed in your VPC with full ownership at handover.",
+    title: "AI Automation",
+    copy: "Workflow intelligence with n8n, agents, and system integrations—cutting operating cost inside ERP, CRM, and plant systems you already run.",
   },
   {
     id: "05",
-    title: "Vision & Workflow Intelligence",
-    copy: "Computer vision, document intelligence, and AI automation woven into ERP, CRM, and plant systems—where operational cost and risk live.",
+    title: "AI DevOps & LLMOps",
+    copy: "MLOps, LLMOps, CloudOps, GitOps, CI/CD for AI, and observability—so production systems stay reliable after go-live.",
+  },
+  {
+    id: "06",
+    title: "Enterprise AI Platforms",
+    copy: "Private intelligence layers—model gateways, governed retrieval, and policy controls—deployed in your VPC with full ownership at handover.",
   },
 ];
 
@@ -68,31 +73,41 @@ export const solutions = [
   },
   {
     index: "02",
+    title: "Generative AI",
+    copy: "Secure LLM applications with prompt engineering, evals, guardrails, and RAG copilots you own in your private cloud.",
+  },
+  {
+    index: "03",
     title: "Autonomous AI Agents",
     copy: "Task-oriented agents with memory, planning, MCP, and tool access—AI employees that execute, not just answer.",
   },
   {
-    index: "03",
+    index: "04",
     title: "Multi-Agent Orchestration",
     copy: "Hierarchical agent networks that assign work, peer-review outputs, escalate exceptions, and keep humans on risk.",
   },
   {
-    index: "04",
-    title: "AI DevOps & LLMOps",
-    copy: "CI/CD for AI, model lifecycle, monitoring, and observability so AI systems stay production-grade at scale.",
+    index: "05",
+    title: "AI Automation",
+    copy: "Governed workflow automation with n8n, agents, and integrations—cut operating cost without shadow IT.",
   },
   {
-    index: "05",
+    index: "06",
+    title: "AI DevOps & LLMOps",
+    copy: "MLOps, LLMOps, CloudOps, GitOps, CI/CD for AI, and observability so AI systems stay production-grade at scale.",
+  },
+  {
+    index: "07",
     title: "Enterprise RAG Platforms",
     copy: "Governed retrieval and generation with vector search, citations, and guardrails inside your security boundary.",
   },
   {
-    index: "06",
+    index: "08",
     title: "Computer Vision",
     copy: "Domain-trained perception for QA, imaging, inventory, and plant ops—including edge when data cannot leave site.",
   },
   {
-    index: "07",
+    index: "09",
     title: "AI Transformation",
     copy: "From strategy call to industrialized AI capability—with private deployment and ownership at handover.",
   },
@@ -155,6 +170,7 @@ export const techLayers = [
       "Gemini",
       "Custom LLMs",
       "Fine-Tuning",
+      "Prompt Engineering",
       "Offline eval suites",
     ],
   },
@@ -186,6 +202,19 @@ export const techLayers = [
   },
   {
     id: "04",
+    name: "Automation & Integration",
+    tagline: "Workflow intelligence connected to enterprise systems.",
+    items: [
+      "n8n",
+      "MCP Tools",
+      "API Orchestration",
+      "ERP / CRM Hooks",
+      "Event Triggers",
+      "Human Approval Gates",
+    ],
+  },
+  {
+    id: "05",
     name: "Cloud & Security",
     tagline: "Private-cloud AI infrastructure by design.",
     items: [
@@ -198,16 +227,16 @@ export const techLayers = [
     ],
   },
   {
-    id: "05",
+    id: "06",
     name: "AI DevOps",
-    tagline: "MLOps, LLMOps, and observability for production AI.",
+    tagline: "MLOps, LLMOps, CloudOps, and GitOps for production AI.",
     items: [
       "MLOps",
       "LLMOps",
+      "CloudOps",
+      "GitOps",
       "CI/CD for AI",
-      "Model Lifecycle",
       "Tracing & Guardrails",
-      "Cost controls",
     ],
   },
 ];

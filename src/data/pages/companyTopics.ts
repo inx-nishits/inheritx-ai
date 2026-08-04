@@ -124,7 +124,7 @@ const companyTopics: TopicPage[] = [
         type: "narrative",
         title: "Built for buyers who cannot afford theater",
         body: [
-          "InheritX is an Enterprise AI Solutions company—an AI-native services and consulting partner. We design, govern, and industrialize intelligence systems—agents, platforms, and automation—so leaders own capability, not demos. We are not a foundation-model vendor and not a classic staff-augmentation broker.",
+          "InheritX is an Enterprise AI Solutions company—an AI-native enterprise partner. We design, govern, and industrialize intelligence systems—agents, platforms, and automation—so leaders own capability, not demos. We are not a foundation-model vendor and not a classic staff-augmentation broker.",
           "Our clients operate where mistakes have consequences: healthcare, finance, insurance, manufacturing, logistics, and public institutions. They need partners who treat security, privacy, and auditability as product requirements—not change requests after launch.",
           "We refuse the trade that many AI vendors offer: speed today for dependency tomorrow. Code, fine-tunes, agents, and workflows transfer. Your competitive advantage stays yours.",
         ],

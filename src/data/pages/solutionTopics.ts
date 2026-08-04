@@ -292,7 +292,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "AI Automation",
     title: "Intelligent workflow automation woven into enterprise systems.",
     description:
-      "Embed AI into intake, routing, documentation, and exception handling—including document intelligence across contracts and invoices—connected to ERP and CRM with evaluation loops and cost discipline.",
+      "Embed AI into intake, routing, documentation, and exception handling—using n8n, agents, and system integrations connected to ERP and CRM with evaluation loops and cost discipline.",
     primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
     secondaryCta: { label: "Browse case studies", href: "/case-studies" },
     layout: "capability",
@@ -428,7 +428,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "Generative AI",
     title: "Secure LLM applications built for enterprise constraints.",
     description:
-      "Context-aware RAG with vector stores, semantic search, and custom guardrails—so answers stay grounded in your business context. Copilots and content systems you own in your private cloud.",
+      "Context-aware RAG with vector stores, semantic search, prompt engineering, evaluation harnesses, and custom guardrails—so answers stay grounded in your business context. Copilots and content systems you own in your private cloud.",
     primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
     secondaryCta: { label: "Explore enterprise AI platform", href: "/solutions/enterprise-ai" },
     layout: "capability",

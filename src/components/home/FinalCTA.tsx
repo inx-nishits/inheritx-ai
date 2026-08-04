@@ -49,7 +49,7 @@ export function FinalCTA() {
               qualified opportunities.
             </p>
             <MagneticButton
-              href="mailto:hello@inheritx.com"
+              href="/contact"
               className="mt-1 min-h-12 w-full max-w-sm justify-center bg-cyan px-8 py-4 text-base text-white hover:bg-white hover:text-ink sm:w-auto"
               strength={0.45}
             >

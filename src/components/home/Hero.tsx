@@ -192,8 +192,8 @@ export function Hero() {
             </h1>
 
             <p className="hero-fade mx-auto mt-6 max-w-lg text-base leading-relaxed text-white/60 md:mt-8 md:text-lg">
-              AI/ML engineering, Agentic AI, and AI DevOps—deployed in your
-              private cloud with full IP ownership.
+              AI/ML engineering, Generative AI, Agentic AI, and AI
+              DevOps—deployed in your private cloud with full IP ownership.
             </p>
 
             <div className="hero-fade mt-10 flex flex-col items-center gap-4 sm:mt-12 sm:flex-row sm:justify-center sm:gap-6">

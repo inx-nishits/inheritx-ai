@@ -257,7 +257,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "narrative",
         title: "What InheritX is—and is not",
         body: [
-          "InheritX is an AI-native IT services and consulting company: we design, build, govern, and hand over systems. We are not a foundation-model provider, and we are not a classic staff-augmentation broker optimizing for headcount.",
+          "InheritX is an AI-native enterprise partner—an Enterprise AI Solutions company. We design, build, govern, and hand over systems. We are not a foundation-model provider, and we are not a classic staff-augmentation broker optimizing for headcount.",
           "Embeds exist to accelerate a defined roadmap under your standards. If you need the mandate and blueprint first, start with consulting—even if you eventually want embeds.",
         ],
       },

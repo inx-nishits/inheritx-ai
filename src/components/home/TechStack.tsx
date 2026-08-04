@@ -3,13 +3,13 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Cpu, Database, Cloud, Network, Activity } from "lucide-react";
+import { ArrowUpRight, Cpu, Database, Cloud, Network, Activity, Workflow } from "lucide-react";
 
 import { techLayers } from "@/data/content";
 import { Reveal, TextReveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 
-const layerIcons = [Cpu, Network, Database, Cloud, Activity];
+const layerIcons = [Cpu, Network, Database, Workflow, Cloud, Activity];
 
 const partnerStrip = [
   { name: "OpenAI", src: "/images/partners/openai.svg" },
