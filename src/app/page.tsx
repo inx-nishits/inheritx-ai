@@ -13,13 +13,15 @@ import { TransformationJourney } from "@/components/home/TransformationJourney";
 import { TechStack } from "@/components/home/TechStack";
 import { ProcurementTrustStrip } from "@/components/home/ProcurementTrustStrip";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import { Testimonials } from "@/components/testimonials/TestimonialsSection";
 
 /**
  * Homepage story arc (enterprise buyer psychology):
  * Attention → soft trust → tech strength → convert → choose path →
  * why us → what we build → proof → sector depth → process → tech →
- * compact diligence links → close.
+ * enterprise voices (when approved) → diligence → close.
  *
+ * Testimonials render only when approved + published entries exist.
  * Full procurement depth lives on Contact / Security FAQ / Diligence Pack.
  * Solutions catalog lives on /solutions (avoids Capabilities duplication).
  */
@@ -39,6 +41,7 @@ export default function Home() {
         <Industries />
         <TransformationJourney />
         <TechStack />
+        <Testimonials />
         <ProcurementTrustStrip />
         <FinalCTA />
       </main>

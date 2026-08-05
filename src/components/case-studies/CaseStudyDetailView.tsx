@@ -4,11 +4,57 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
-import type { CaseStudy } from "@/data/caseStudies";
+import type { CaseStudy, CaseStudyLink } from "@/data/caseStudies";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Reveal } from "@/components/ui/Reveal";
 
+function LinkRow({
+  title,
+  links,
+}: {
+  title: string;
+  links: CaseStudyLink[];
+}) {
+  return (
+    <div>
+      <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
+        {title}
+      </p>
+      <ul className="mt-4 space-y-2">
+        {links.map((link) => (
+          <li key={link.href + link.label}>
+            <Link
+              href={link.href}
+              className="group inline-flex items-center gap-1.5 text-sm text-ink/65 transition-colors hover:text-ink"
+            >
+              {link.label}
+              <ArrowUpRight
+                size={12}
+                className="opacity-60 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
+  const hasJourney =
+    Boolean(study.whyAi) ||
+    Boolean(study.architecture?.length) ||
+    Boolean(study.aiCapabilities?.length) ||
+    Boolean(study.deliveryApproach) ||
+    Boolean(study.businessOutcomes?.length) ||
+    Boolean(study.lessonsLearned?.length);
+
+  const hasRelated =
+    Boolean(study.relatedSolutions?.length) ||
+    Boolean(study.relatedIndustries?.length) ||
+    Boolean(study.relatedResources?.length) ||
+    Boolean(study.relatedProjectHref);
+
   return (
     <>
       <section className="relative overflow-hidden border-b border-white/[0.06] bg-ink pt-28 pb-16 md:pt-36 md:pb-20">
@@ -34,6 +80,15 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/55">
             {study.summary}
           </p>
+          {study.relatedProjectHref ? (
+            <Link
+              href={study.relatedProjectHref}
+              className="group mt-6 inline-flex items-center gap-2 text-sm text-cyan transition-colors hover:text-white"
+            >
+              {study.relatedProjectLabel ?? "Open related project"}
+              <ArrowUpRight size={14} />
+            </Link>
+          ) : null}
         </div>
       </section>
 
@@ -72,7 +127,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
         <div className="mx-auto grid max-w-[1400px] gap-12 px-5 lg:grid-cols-3 lg:gap-10 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-              Challenge
+              Business challenge
             </p>
             <p className="mt-4 text-base leading-relaxed text-white/55">
               {study.challenge}
@@ -80,15 +135,15 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
           </Reveal>
           <Reveal delay={0.06}>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-              Approach
+              {study.whyAi ? "Why AI" : "Approach"}
             </p>
             <p className="mt-4 text-base leading-relaxed text-white/55">
-              {study.approach}
+              {study.whyAi ?? study.approach}
             </p>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-              Outcome
+              Business outcomes
             </p>
             <p className="mt-4 text-base leading-relaxed text-white/55">
               {study.outcome}
@@ -97,11 +152,85 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
         </div>
       </section>
 
+      {hasJourney ? (
+        <section className="border-t border-white/[0.06] bg-ink py-16 md:py-20">
+          <div className="mx-auto max-w-[1400px] space-y-14 px-5 md:px-8 md:space-y-16">
+            {study.whyAi ? (
+              <Reveal>
+                <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
+                  Delivery approach
+                </p>
+                <h2 className="font-display mt-3 max-w-2xl text-3xl text-white md:text-4xl">
+                  How the solution was implemented.
+                </h2>
+                <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/55">
+                  {study.deliveryApproach ?? study.approach}
+                </p>
+              </Reveal>
+            ) : null}
+
+            {study.architecture?.length ? (
+              <Reveal>
+                <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
+                  Solution architecture
+                </p>
+                <ul className="mt-6 grid gap-3 md:grid-cols-2">
+                  {study.architecture.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm leading-relaxed text-white/60"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            ) : null}
+
+            {study.aiCapabilities?.length ? (
+              <Reveal>
+                <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
+                  AI capabilities delivered
+                </p>
+                <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {study.aiCapabilities.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-2xl border border-cyan/20 bg-cyan/[0.04] px-5 py-4 text-sm leading-relaxed text-white/70"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            ) : null}
+
+            {study.businessOutcomes?.length ? (
+              <Reveal>
+                <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
+                  Outcome detail
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {study.businessOutcomes.map((item) => (
+                    <li
+                      key={item}
+                      className="border-l border-cyan/40 pl-4 text-sm leading-relaxed text-white/55"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
       <section className="bg-paper py-16 text-ink md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
-              Highlights
+              Technical highlights
             </p>
             <h2 className="font-display mt-3 text-3xl md:text-4xl">
               What made the delivery work.
@@ -121,8 +250,12 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
               </Reveal>
             ))}
           </div>
+
           <Reveal>
-            <div className="mt-10 flex flex-wrap gap-2">
+            <p className="mt-12 text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
+              Enterprise technologies used
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
               {study.technologies.map((tech) => (
                 <span
                   key={tech}
@@ -133,6 +266,50 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
               ))}
             </div>
           </Reveal>
+
+          {study.lessonsLearned?.length ? (
+            <Reveal>
+              <p className="mt-14 text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
+                Lessons learned
+              </p>
+              <ul className="mt-5 max-w-3xl space-y-4">
+                {study.lessonsLearned.map((item) => (
+                  <li
+                    key={item}
+                    className="text-sm leading-relaxed text-ink/60 md:text-[0.9375rem]"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          ) : null}
+
+          {hasRelated ? (
+            <div className="mt-14 grid gap-10 border-t border-ink/10 pt-12 md:grid-cols-3">
+              {study.relatedSolutions?.length ? (
+                <Reveal>
+                  <LinkRow title="Related solutions" links={study.relatedSolutions} />
+                </Reveal>
+              ) : null}
+              {study.relatedIndustries?.length ? (
+                <Reveal delay={0.04}>
+                  <LinkRow
+                    title="Related industries"
+                    links={study.relatedIndustries}
+                  />
+                </Reveal>
+              ) : null}
+              {study.relatedResources?.length ? (
+                <Reveal delay={0.08}>
+                  <LinkRow
+                    title="Related resources"
+                    links={study.relatedResources}
+                  />
+                </Reveal>
+              ) : null}
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -144,25 +321,26 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
               Next engagement
             </p>
             <h2 className="font-display mt-3 text-3xl text-white md:text-4xl">
-              Ready for a similar outcome?
+              Discuss a similar AI initiative.
             </h2>
             <p className="mt-4 text-sm text-white/50">
-              Tell us about the system, constraints, and timeline—we will map a
-              practical first slice.
+              Thirty minutes with an architect to pressure-test fit, constraints,
+              and a practical first slice—NDA available for qualified
+              opportunities.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
             <MagneticButton
-              href="/contact"
+              href="/contact?intent=strategy"
               className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
             >
               Book an AI Strategy Call
             </MagneticButton>
             <Link
-              href="/portfolio/agent-bank"
+              href="/solutions"
               className="group inline-flex items-center gap-2 text-sm text-white/50 hover:text-white"
             >
-              See Agent Bank
+              Explore AI solutions
               <ArrowUpRight size={14} />
             </Link>
           </div>

@@ -41,7 +41,7 @@ export const industryCaseLinks: Record<
   },
   Finance: {
     sectorHref: "/industries/finance",
-    cases: [],
+    cases: [{ id: "agent-bank", name: "Agent Bank" }],
   },
   Retail: {
     sectorHref: "/industries/retail",
