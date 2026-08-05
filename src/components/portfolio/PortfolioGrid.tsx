@@ -45,7 +45,7 @@ export function PortfolioGrid() {
                 type="button"
                 onClick={() => setActive(service)}
                 className={cn(
-                  "min-h-11 shrink-0 snap-start rounded-full border px-4 py-2.5 text-sm tracking-wide transition-all md:min-h-0 md:py-2 md:text-xs",
+                  "inline-flex min-h-11 shrink-0 snap-start items-center justify-center rounded-full border px-4 py-2.5 text-sm tracking-wide transition-all md:min-h-0 md:py-2 md:text-xs",
                   active === service
                     ? "border-cyan/40 bg-cyan-soft text-cyan"
                     : "border-white/10 text-white/45 hover:border-white/25 hover:text-white/75",
@@ -96,12 +96,12 @@ export function PortfolioGrid() {
                       </span>
                     ))}
                   </div>
-                  <div className="mt-5 flex items-center justify-between gap-3 border-t border-white/[0.06] pt-4">
-                    <p className="text-sm text-cyan">{project.impact}</p>
+                  <div className="mt-5 flex flex-col items-start gap-3 border-t border-white/[0.06] pt-4 lg:flex-row lg:items-center lg:justify-between">
+                    <p className="min-w-0 text-sm text-cyan">{project.impact}</p>
                     {project.href && (
                       <Link
                         href={project.href}
-                        className="group/link inline-flex items-center gap-1.5 text-xs text-white/50 transition-colors hover:text-cyan"
+                        className="group/link inline-flex shrink-0 items-center gap-1.5 text-xs text-white/50 transition-colors hover:text-cyan"
                       >
                         View project
                         <ArrowUpRight

@@ -94,7 +94,7 @@ export function CaseStudiesListing() {
               type="button"
               onClick={() => setActive(cat)}
               className={cn(
-                "min-h-11 shrink-0 snap-start rounded-full border px-4 py-2.5 text-sm tracking-wide transition-all md:min-h-0 md:py-2 md:text-xs",
+                "inline-flex min-h-11 shrink-0 snap-start items-center justify-center rounded-full border px-4 py-2.5 text-sm tracking-wide transition-all md:min-h-0 md:py-2 md:text-xs",
                 active === cat
                   ? "border-cyan/40 bg-cyan-soft text-cyan"
                   : "border-white/10 text-white/45 hover:border-white/25 hover:text-white/75",

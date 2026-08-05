@@ -45,7 +45,7 @@ export function IndustriesPageView() {
                   aria-selected={active === index}
                   onClick={() => setActive(index)}
                   className={cn(
-                    "min-h-11 shrink-0 snap-start rounded-full border px-4 py-2.5 text-sm transition-all",
+                    "inline-flex min-h-11 shrink-0 snap-start items-center justify-center rounded-full border px-4 py-2.5 text-sm transition-all",
                     active === index
                       ? "border-cyan/45 bg-cyan/15 text-white"
                       : "border-white/10 text-white/45 hover:text-white/80",

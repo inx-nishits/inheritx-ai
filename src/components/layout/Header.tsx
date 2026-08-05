@@ -33,13 +33,13 @@ export function Header() {
           )}
         >
           <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-4 px-5 md:h-[4.5rem] md:px-8">
-            <Logo variant="light" />
+            <Logo variant="light" className="min-w-0 shrink" />
 
-            <div className="flex items-center gap-2.5 md:gap-3">
+            <div className="flex shrink-0 items-center gap-2.5 md:gap-3">
               <Link
                 href="/contact?intent=strategy"
                 className={cn(
-                  "group relative inline-flex h-10 items-center gap-2 overflow-hidden rounded-full",
+                  "group relative inline-flex h-10 shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full",
                   "border border-cyan bg-cyan pl-4 pr-3.5",
                   "text-[12px] font-semibold tracking-wide text-white sm:text-[13px]",
                   "shadow-[0_0_24px_rgba(0,190,212,0.22)]",
@@ -50,7 +50,7 @@ export function Header() {
               >
                 <span className="sm:hidden">Strategy Call</span>
                 <span className="hidden sm:inline">Book an AI Strategy Call</span>
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-ink transition-colors duration-300 group-hover:bg-ink group-hover:text-white">
+                <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-white text-ink transition-colors duration-300 group-hover:bg-ink group-hover:text-white">
                   <ArrowUpRight size={13} strokeWidth={2.25} />
                 </span>
               </Link>
@@ -58,7 +58,7 @@ export function Header() {
               <button
                 type="button"
                 className={cn(
-                  "inline-flex h-10 w-10 items-center justify-center rounded-full border text-white transition-colors",
+                  "inline-flex size-10 shrink-0 items-center justify-center rounded-full border text-white transition-colors",
                   menuOpen
                     ? "border-cyan/40 bg-cyan/10 text-cyan"
                     : "border-white/15 hover:border-white/30 hover:bg-white/5 active:bg-white/10",

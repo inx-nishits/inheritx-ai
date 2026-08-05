@@ -628,8 +628,8 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
       )}
 
       <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
-        <div className="mx-auto flex max-w-[1400px] flex-col gap-6 px-5 md:flex-row md:items-end md:justify-between md:px-8">
-          <div className="max-w-xl">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-6 px-5 md:px-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="w-full min-w-0 max-w-xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Next step
             </p>

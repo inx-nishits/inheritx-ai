@@ -229,12 +229,12 @@ export function TrustedBy() {
         <div className="mt-8 flex justify-center">
           <Link
             href="/case-studies"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-cyan px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(0,190,212,0.22)] transition-colors hover:bg-white hover:text-ink"
+            className="group inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full bg-cyan px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(0,190,212,0.22)] transition-colors hover:bg-white hover:text-ink"
           >
             Explore case studies
             <ArrowUpRight
               size={15}
-              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
           </Link>
         </div>

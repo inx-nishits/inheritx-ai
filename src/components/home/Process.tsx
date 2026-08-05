@@ -17,8 +17,8 @@ export function Process() {
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-cyan/[0.07] blur-[100px]" />
 
       <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
-        <div className="flex flex-col gap-6 border-b border-white/10 pb-10 md:flex-row md:items-end md:justify-between md:pb-12">
-          <div className="max-w-2xl">
+        <div className="flex flex-col gap-6 border-b border-white/10 pb-10 md:pb-12 lg:flex-row lg:items-end lg:justify-between">
+          <div className="w-full min-w-0 max-w-2xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               How we deliver Enterprise AI
             </p>
@@ -29,7 +29,7 @@ export function Process() {
               </span>
             </h2>
           </div>
-          <p className="max-w-xs text-sm leading-relaxed text-white/45 md:text-right">
+          <p className="w-full max-w-md text-sm leading-relaxed text-white/45 lg:max-w-xs lg:text-right">
             Four stages for enterprise AI transformation. Typical path: weeks to
             a governed production system. You own everything we build.
           </p>
@@ -91,8 +91,8 @@ export function Process() {
 
         {/* Closing bar */}
         <Reveal delay={0.2}>
-          <div className="mt-10 flex flex-col items-start justify-between gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center md:mt-12">
-            <div>
+          <div className="mt-10 flex flex-col items-start gap-5 border-t border-white/10 pt-8 md:mt-12 lg:flex-row lg:items-center lg:justify-between">
+            <div className="w-full min-w-0">
               <p className="text-sm text-white/70">
                 Ready to start your AI transformation?
               </p>

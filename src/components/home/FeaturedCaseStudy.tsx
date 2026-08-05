@@ -64,8 +64,8 @@ export function FeaturedCaseStudy() {
         if (!e.currentTarget.contains(e.relatedTarget as Node)) setPaused(false);
       }}
     >
-      {/* Compact stage — fits laptop viewports with CTA/controls visible */}
-      <div className="relative min-h-[min(68vh,560px)] w-full md:min-h-[min(62vh,520px)]">
+      {/* Compact stage — full viewport height on md+; standard section spacing on mobile */}
+      <div className="relative w-full md:min-h-[min(62vh,520px)]">
         <AnimatePresence mode="sync" custom={direction}>
           <motion.div
             key={study.id}
@@ -100,26 +100,26 @@ export function FeaturedCaseStudy() {
 
         <div className="noise-overlay opacity-40" />
 
-        <div className="relative z-10 mx-auto flex min-h-[min(68vh,560px)] max-w-[1400px] flex-col px-5 py-7 md:min-h-[min(62vh,520px)] md:px-8 md:py-9 lg:py-10">
-          {/* Top bar */}
-          <div className="flex items-start justify-between gap-6">
-            <div>
+        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col px-5 py-16 md:min-h-[min(62vh,520px)] md:px-8 md:py-9 lg:py-10">
+          {/* Top bar — stack on mobile/tablet so copy keeps full width */}
+          <div className="flex flex-col items-start gap-4 lg:flex-row lg:justify-between lg:gap-6">
+            <div className="w-full min-w-0 lg:max-w-md">
               <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
                 Case studies
               </p>
-              <p className="mt-1.5 max-w-md text-sm text-white/45">
+              <p className="mt-1.5 text-sm text-white/45">
                 Production outcomes—not pilot theater. Named references available
                 under NDA for qualified opportunities.
               </p>
             </div>
             <Link
               href="/case-studies"
-              className="group inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full border border-cyan/55 bg-cyan/10 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,190,212,0.12)] transition-colors hover:border-cyan hover:bg-cyan/20"
+              className="group inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-cyan/55 bg-cyan/10 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,190,212,0.12)] transition-colors hover:border-cyan hover:bg-cyan/20"
             >
               View all case studies
               <ArrowUpRight
                 size={14}
-                className="text-cyan transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                className="shrink-0 text-cyan transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </Link>
           </div>
@@ -166,12 +166,12 @@ export function FeaturedCaseStudy() {
                 <div className="mt-6 flex flex-wrap items-center gap-3 md:mt-7">
                   <Link
                     href={`/case-studies/${study.id}`}
-                    className="group inline-flex min-h-11 items-center gap-2.5 rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-white shadow-[0_0_32px_rgba(0,190,212,0.25)] transition-colors hover:bg-white hover:text-ink"
+                    className="group inline-flex min-h-11 items-center justify-center gap-2.5 rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-white shadow-[0_0_32px_rgba(0,190,212,0.25)] transition-colors hover:bg-white hover:text-ink"
                   >
                     Read full case study
                     <ArrowUpRight
                       size={15}
-                      className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     />
                   </Link>
                   <div className="flex gap-2">
@@ -179,7 +179,7 @@ export function FeaturedCaseStudy() {
                       type="button"
                       aria-label="Previous case study"
                       onClick={goPrev}
-                      className="inline-flex size-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 backdrop-blur-sm transition-colors hover:border-cyan/50 hover:text-white"
+                      className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 backdrop-blur-sm transition-colors hover:border-cyan/50 hover:text-white"
                     >
                       <ArrowLeft size={17} />
                     </button>
@@ -187,7 +187,7 @@ export function FeaturedCaseStudy() {
                       type="button"
                       aria-label="Next case study"
                       onClick={goNext}
-                      className="inline-flex size-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 backdrop-blur-sm transition-colors hover:border-cyan/50 hover:text-white"
+                      className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 backdrop-blur-sm transition-colors hover:border-cyan/50 hover:text-white"
                     >
                       <ArrowRight size={17} />
                     </button>

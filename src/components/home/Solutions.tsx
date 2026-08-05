@@ -50,7 +50,7 @@ export function Solutions() {
               aria-selected={active === index}
               onClick={() => setActive(index)}
               className={cn(
-                "min-h-11 shrink-0 snap-start rounded-full border px-4 py-2.5 text-left transition-all duration-300",
+                "inline-flex min-h-11 shrink-0 snap-start items-center rounded-full border px-4 py-2.5 text-left transition-all duration-300",
                 active === index
                   ? "border-cyan/50 bg-cyan/15 text-white"
                   : "border-white/10 bg-white/[0.02] text-white/50 hover:border-white/25 hover:text-white/80",
@@ -85,7 +85,7 @@ export function Solutions() {
                     {current.copy}
                   </p>
                   <div className="mt-8 flex items-center gap-3 text-sm text-white/40">
-                    <span className="h-2 w-2 rounded-full bg-cyan" />
+                    <span className="size-2 shrink-0 rounded-full bg-cyan" />
                     Built for regulated enterprise environments
                   </div>
                 </motion.div>
@@ -95,9 +95,9 @@ export function Solutions() {
                 <button
                   type="button"
                   onClick={() => goTo(active - 1)}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2.5 text-sm text-white/70 transition-colors hover:border-cyan/40 hover:text-white"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-white/15 px-4 py-2.5 text-sm text-white/70 transition-colors hover:border-cyan/40 hover:text-white"
                 >
-                  <ArrowLeft size={16} />
+                  <ArrowLeft size={16} className="shrink-0" />
                   Previous
                 </button>
                 <div className="hidden items-center gap-1.5 sm:flex">
@@ -107,8 +107,10 @@ export function Solutions() {
                       type="button"
                       onClick={() => setActive(index)}
                       className={cn(
-                        "h-1.5 rounded-full transition-all duration-300",
-                        active === index ? "w-6 bg-cyan" : "w-1.5 bg-white/25",
+                        "rounded-full transition-all duration-300",
+                        active === index
+                          ? "h-1.5 w-6 bg-cyan"
+                          : "size-1.5 shrink-0 bg-white/25",
                       )}
                       aria-label={item.title}
                     />
@@ -117,10 +119,10 @@ export function Solutions() {
                 <button
                   type="button"
                   onClick={() => goTo(active + 1)}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2.5 text-sm text-white transition-colors hover:border-cyan/40 hover:bg-cyan/10"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2.5 text-sm text-white transition-colors hover:border-cyan/40 hover:bg-cyan/10"
                 >
                   Next
-                  <ArrowRight size={16} />
+                  <ArrowRight size={16} className="shrink-0" />
                 </button>
               </div>
             </div>

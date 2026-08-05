@@ -14,8 +14,8 @@ export function ProcurementTrustStrip() {
       aria-label="Security and diligence links"
       className="border-t border-white/[0.06] bg-ink"
     >
-      <div className="mx-auto flex max-w-[1400px] flex-col gap-2.5 px-5 py-4 md:flex-row md:items-center md:justify-between md:gap-6 md:px-8 md:py-5">
-        <p className="text-sm text-white/40">
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-2.5 px-5 py-4 md:gap-3 md:px-8 md:py-5 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
+        <p className="w-full min-w-0 text-sm text-white/40 lg:w-auto">
           Need security or procurement information?
         </p>
         <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">

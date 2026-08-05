@@ -28,10 +28,12 @@ function CapabilityCard({
   item,
   index,
   className,
+  contentAtBottom = false,
 }: {
   item: (typeof capabilities)[number];
   index: number;
   className?: string;
+  contentAtBottom?: boolean;
 }) {
   return (
     <article
@@ -47,9 +49,14 @@ function CapabilityCard({
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/30" />
       <div className="absolute inset-0 bg-gradient-to-br from-cyan/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-      <div className="relative flex h-full flex-col justify-between">
+      <div
+        className={cn(
+          "relative flex flex-1 flex-col",
+          contentAtBottom ? "justify-end" : "h-full justify-between",
+        )}
+      >
         <span className="font-mono text-sm text-cyan">{item.id}</span>
-        <div>
+        <div className={cn(contentAtBottom && "mt-3")}>
           <h3 className="font-display text-2xl leading-tight text-white md:text-3xl lg:text-4xl">
             {item.title}
           </h3>
@@ -161,7 +168,8 @@ export function Capabilities() {
               key={item.id}
               item={item}
               index={index}
-              className="group relative min-h-[280px] w-full overflow-hidden rounded-[1.75rem] border border-white/10 bg-ink-soft p-6"
+              contentAtBottom
+              className="group relative flex min-h-[280px] w-full flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-ink-soft p-6"
             />
           ))}
         </div>

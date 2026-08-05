@@ -128,7 +128,7 @@ export function MobileNav({
                 type="button"
                 onClick={onClose}
                 aria-label="Close menu"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors active:bg-white/10"
+                className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors active:bg-white/10"
               >
                 <span className="text-2xl leading-none">×</span>
               </button>
@@ -176,7 +176,7 @@ export function MobileNav({
                             <span className="font-display text-[1.65rem] leading-none text-white">
                               {item.label}
                             </span>
-                            <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/70">
+                            <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/70">
                               <ChevronDown
                                 size={18}
                                 className={cn(
@@ -300,7 +300,7 @@ export function MobileNav({
             <div className="relative border-t border-white/[0.06] px-5 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
               <MagneticButton
                 href="/contact"
-                className="w-full bg-cyan py-3.5 font-semibold text-white"
+                className="min-h-12 w-full justify-center bg-cyan py-3.5 font-semibold text-white"
                 onClick={onClose}
                 strength={0}
               >

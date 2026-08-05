@@ -200,7 +200,7 @@ export function HeroStage({ children }: HeroStageProps) {
   return (
     <div
       ref={ref}
-      className="relative flex h-dvh max-h-dvh flex-col overflow-hidden bg-ink"
+      className="relative flex h-auto flex-col overflow-hidden bg-ink md:h-dvh md:max-h-dvh"
       onMouseMove={onMove}
     >
       <motion.div

@@ -268,7 +268,7 @@ function DonutChart({
         {segments.map((seg) => (
           <div key={seg.label} className="flex items-center gap-2 text-[11px]">
             <span
-              className="h-2 w-2 rounded-full"
+              className="size-2 shrink-0 rounded-full"
               style={{ background: seg.color }}
             />
             <span className="text-white/60">{seg.label}</span>
@@ -624,16 +624,11 @@ export function ChooseYourPath() {
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   className="h-full"
                 >
-                  <button
-                    type="button"
-                    role="radio"
-                    aria-checked={isSelected}
-                    onClick={() => setSelected(path.id)}
+                  <div
                     className={cn(
-                      "group relative flex h-full min-h-0 w-full flex-col overflow-hidden rounded-[1.5rem] text-left",
-                      "border bg-gradient-to-b from-ink-elevated to-ink-soft p-5 md:p-6",
+                      "group relative flex h-full min-h-0 w-full flex-col overflow-hidden rounded-[1.5rem]",
+                      "border bg-gradient-to-b from-ink-elevated to-ink-soft",
                       "transition-[border-color,box-shadow] duration-500",
-                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan/50",
                       isSelected
                         ? "border-cyan/45 shadow-[0_28px_80px_rgba(0,0,0,0.35)]"
                         : "border-white/10 hover:border-cyan/30 hover:shadow-[0_28px_80px_rgba(0,0,0,0.35)]",
@@ -656,53 +651,83 @@ export function ChooseYourPath() {
                       )}
                     />
 
-                    <div className="relative flex items-start justify-between gap-3">
-                      <div className="inline-flex size-10 items-center justify-center rounded-xl border border-cyan/25 bg-cyan-soft text-cyan transition-transform duration-500 group-hover:scale-105">
-                        <Icon size={18} strokeWidth={1.5} />
+                    <button
+                      type="button"
+                      role="radio"
+                      aria-checked={isSelected}
+                      aria-expanded={isSelected}
+                      onClick={() => setSelected(path.id)}
+                      className="relative flex w-full flex-1 flex-col p-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan/50 focus-visible:ring-inset md:p-6"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="inline-flex size-10 items-center justify-center rounded-xl border border-cyan/25 bg-cyan-soft text-cyan transition-transform duration-500 group-hover:scale-105">
+                          <Icon size={18} strokeWidth={1.5} />
+                        </div>
+                        <span
+                          aria-hidden
+                          className={cn(
+                            "mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border transition-colors",
+                            isSelected
+                              ? "border-cyan bg-cyan/20"
+                              : "border-white/25 bg-transparent",
+                          )}
+                        >
+                          <span
+                            className={cn(
+                              "size-2 rounded-full transition-colors",
+                              isSelected ? "bg-cyan" : "bg-transparent",
+                            )}
+                          />
+                        </span>
                       </div>
-                      <span
-                        aria-hidden
-                        className={cn(
-                          "mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border transition-colors",
-                          isSelected
-                            ? "border-cyan bg-cyan/20"
-                            : "border-white/25 bg-transparent",
-                        )}
-                      >
+
+                      <p className="mt-4 text-[11px] tracking-[0.18em] text-white/40 uppercase">
+                        {path.meta}
+                      </p>
+
+                      <h3 className="font-display mt-2 max-w-md text-lg leading-snug text-white md:text-xl">
+                        {path.title}
+                      </h3>
+
+                      <p className="mt-2.5 max-w-md text-sm leading-relaxed text-white/50">
+                        {path.description}
+                      </p>
+
+                      <div className="mt-5 flex items-center justify-between gap-3">
+                        <span className="font-mono text-xs text-white/30">
+                          {path.label}
+                        </span>
                         <span
                           className={cn(
-                            "size-2 rounded-full transition-colors",
-                            isSelected ? "bg-cyan" : "bg-transparent",
+                            "text-sm transition-colors",
+                            isSelected ? "text-cyan" : "text-white/40",
                           )}
-                        />
-                      </span>
-                    </div>
+                        >
+                          {isSelected ? "Selected" : "Select"}
+                        </span>
+                      </div>
+                    </button>
 
-                    <p className="relative mt-4 text-[11px] tracking-[0.18em] text-white/40 uppercase">
-                      {path.meta}
-                    </p>
-
-                    <h3 className="font-display relative mt-2 max-w-md text-lg leading-snug text-white md:text-xl">
-                      {path.title}
-                    </h3>
-
-                    <p className="relative mt-2.5 max-w-md text-sm leading-relaxed text-white/50">
-                      {path.description}
-                    </p>
-
-                    <div className="relative mt-5 flex items-center justify-between gap-3">
-                      <span className="font-mono text-xs text-white/30">
-                        {path.label}
-                      </span>
-                      <span
-                        className={cn(
-                          "text-sm transition-colors",
-                          isSelected ? "text-cyan" : "text-white/40",
-                        )}
-                      >
-                        {isSelected ? "Selected" : "Select"}
-                      </span>
-                    </div>
+                    {/* Mobile: open decision details inside the selected card */}
+                    <AnimatePresence initial={false}>
+                      {isSelected ? (
+                        <motion.div
+                          key={`${path.id}-details-mobile`}
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{
+                            duration: 0.35,
+                            ease: [0.22, 1, 0.36, 1],
+                          }}
+                          className="relative overflow-hidden md:hidden"
+                        >
+                          <div className="border-t border-white/10 px-5 pt-5 pb-5">
+                            <PathDetails pathId={path.id} />
+                          </div>
+                        </motion.div>
+                      ) : null}
+                    </AnimatePresence>
 
                     <div
                       className={cn(
@@ -712,13 +737,14 @@ export function ChooseYourPath() {
                           : "scale-x-0 group-hover:scale-x-100",
                       )}
                     />
-                  </button>
+                  </div>
                 </motion.div>
               </Reveal>
             );
           })}
         </div>
 
+        {/* Desktop/laptop: details panel below the cards */}
         <AnimatePresence mode="wait">
           {activePath ? (
             <motion.div
@@ -727,7 +753,7 @@ export function ChooseYourPath() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 8 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-5 md:mt-6"
+              className="mt-5 hidden md:mt-6 md:block"
             >
               <div className="mb-6 border-b border-white/10 pb-5">
                 <p className="text-[11px] tracking-[0.2em] text-cyan uppercase">
@@ -744,8 +770,8 @@ export function ChooseYourPath() {
         </AnimatePresence>
 
         <Reveal delay={0.08}>
-          <div className="mt-10 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between sm:gap-8 md:mt-12 md:pt-10">
-            <div className="max-w-2xl">
+          <div className="mt-10 flex flex-col items-start gap-5 border-t border-white/10 pt-8 md:mt-12 md:pt-10 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+            <div className="w-full min-w-0 max-w-2xl">
               <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
                 Recommended next step
               </p>

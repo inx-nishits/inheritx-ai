@@ -23,8 +23,8 @@ export function TrustBar() {
       />
 
       <div className="relative mx-auto max-w-[1400px] px-5 py-16 md:px-8 md:py-20">
-        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
-          <Reveal className="max-w-xl">
+        <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
+          <Reveal className="w-full min-w-0 max-w-xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Technology strength
             </p>

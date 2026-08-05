@@ -71,7 +71,7 @@ export function Hero() {
     <HeroStage>
       <section
         id="top"
-        className="relative flex h-dvh max-h-dvh flex-col overflow-hidden"
+        className="relative flex h-auto flex-col overflow-hidden md:h-dvh md:max-h-dvh"
       >
         {/* Layer 3 — soft particles (noticeable, still secondary) */}
         <HeroAtmosphere className="absolute inset-0 z-0 h-full w-full opacity-[0.48] [mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)]" />
@@ -135,7 +135,7 @@ export function Hero() {
         {/* Layer 4 — content (highest priority) */}
         <div
           ref={copyRef}
-          className="relative z-20 mx-auto flex h-full w-full max-w-[1100px] flex-col items-center justify-center px-5 pt-16 pb-16 text-center md:px-8"
+          className="relative z-20 mx-auto flex w-full max-w-[1100px] flex-col items-center px-5 pt-28 pb-16 text-center md:h-full md:justify-center md:px-8 md:pt-16 md:pb-16"
         >
           {/* Content spotlight — soft lift so type stays primary */}
           <div
@@ -199,14 +199,14 @@ export function Hero() {
             <div className="hero-fade mt-10 flex flex-col items-center gap-4 sm:mt-12 sm:flex-row sm:justify-center sm:gap-6">
               <MagneticButton
                 href="/contact?intent=strategy"
-                className="min-h-12 bg-cyan px-8 py-3.5 text-white shadow-[0_0_32px_rgba(0,190,212,0.22)] hover:bg-white hover:text-ink"
+                className="min-h-12 justify-center bg-cyan px-8 py-3.5 text-white shadow-[0_0_32px_rgba(0,190,212,0.22)] hover:bg-white hover:text-ink"
                 strength={0.2}
               >
                 Book an AI Strategy Call
               </MagneticButton>
               <Link
                 href="#cases"
-                className="group inline-flex min-h-12 items-center gap-2 rounded-full border border-cyan/55 bg-cyan/10 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,190,212,0.12)] transition-colors hover:border-cyan hover:bg-cyan/20"
+                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-cyan/55 bg-cyan/10 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,190,212,0.12)] transition-colors hover:border-cyan hover:bg-cyan/20"
               >
                 See production outcomes
                 <span className="text-cyan transition-transform duration-300 group-hover:translate-x-0.5">

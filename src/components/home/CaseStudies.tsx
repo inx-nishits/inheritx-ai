@@ -60,7 +60,7 @@ export function CaseStudies() {
                 aria-selected={active === index}
                 onClick={() => goTo(index)}
                 className={cn(
-                  "min-h-11 shrink-0 snap-start rounded-full border px-3.5 py-2.5 text-left transition-all duration-300 sm:px-4",
+                  "inline-flex min-h-11 shrink-0 snap-start items-center rounded-full border px-3.5 py-2.5 text-left transition-all duration-300 sm:px-4",
                   active === index
                     ? "border-cyan/50 bg-cyan/15 text-white"
                     : "border-white/10 bg-white/[0.02] text-white/50 hover:border-white/25 hover:text-white/80",
@@ -158,7 +158,7 @@ export function CaseStudies() {
                     onClick={() => goTo(active - 1)}
                     className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/15 px-4 py-2.5 text-sm text-white/70 transition-colors hover:border-cyan/40 hover:text-white sm:flex-initial"
                   >
-                    <ArrowLeft size={16} />
+                    <ArrowLeft size={16} className="shrink-0" />
                     Previous
                   </button>
                   <button
@@ -167,7 +167,7 @@ export function CaseStudies() {
                     className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/15 px-4 py-2.5 text-sm text-white/70 transition-colors hover:border-cyan/40 hover:text-white sm:flex-initial"
                   >
                     Next
-                    <ArrowRight size={16} />
+                    <ArrowRight size={16} className="shrink-0" />
                   </button>
                 </div>
                 <Link

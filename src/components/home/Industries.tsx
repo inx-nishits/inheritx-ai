@@ -18,8 +18,8 @@ export function Industries() {
   return (
     <section id="industries" className="relative bg-paper py-16 text-ink md:py-20">
       <div className="mx-auto max-w-[1400px] px-5 md:px-8">
-        <div className="mb-12 flex max-w-3xl flex-col gap-4 md:mb-14 md:max-w-none md:flex-row md:items-end md:justify-between">
-          <div className="max-w-3xl">
+        <div className="mb-12 flex max-w-3xl flex-col gap-4 md:mb-14 md:max-w-none lg:flex-row lg:items-end lg:justify-between">
+          <div className="w-full min-w-0 max-w-3xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Industries
             </p>
@@ -111,8 +111,8 @@ export function Industries() {
         </div>
 
         {proof ? (
-          <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-ink/10 bg-white px-5 py-4 sm:flex-row sm:items-center sm:justify-between md:px-6">
-            <div>
+          <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-ink/10 bg-white px-5 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="min-w-0 w-full lg:w-auto">
               <p className="text-[11px] tracking-[0.16em] text-ink/40 uppercase">
                 {activeIndustry.name} — published outcomes
               </p>

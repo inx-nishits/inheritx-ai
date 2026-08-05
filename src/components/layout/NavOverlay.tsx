@@ -213,7 +213,7 @@ function SectionContent({
               key={`${link.title}-${link.href}`}
               href={link.href}
               onClick={onClose}
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-2 text-xs text-white/70 transition-colors hover:border-cyan/30 hover:text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-2 text-xs text-white/70 transition-colors hover:border-cyan/30 hover:text-white"
             >
               {link.title}
               <ArrowUpRight size={12} className="text-cyan/80" />
@@ -396,7 +396,7 @@ export function NavOverlay({ open, onClose }: NavOverlayProps) {
               type="button"
               onClick={onClose}
               aria-label="Close navigation"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white transition-colors hover:border-cyan/40 hover:bg-white/5"
+              className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 text-white transition-colors hover:border-cyan/40 hover:bg-white/5"
             >
               <X size={18} />
             </button>
@@ -431,7 +431,7 @@ export function NavOverlay({ open, onClose }: NavOverlayProps) {
                       </span>
                       <span
                         className={cn(
-                          "h-1.5 w-1.5 rounded-full transition-colors",
+                          "size-1.5 shrink-0 rounded-full transition-colors",
                           isActive ? "bg-cyan" : "bg-transparent",
                         )}
                       />

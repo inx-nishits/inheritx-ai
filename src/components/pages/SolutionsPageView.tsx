@@ -68,7 +68,7 @@ export function SolutionsPageView() {
                 type="button"
                 onClick={() => setActive(index)}
                 className={cn(
-                  "min-h-11 shrink-0 snap-start rounded-full border px-4 py-2.5 text-sm transition-all",
+                  "inline-flex min-h-11 shrink-0 snap-start items-center rounded-full border px-4 py-2.5 text-sm transition-all",
                   active === index
                     ? "border-cyan/45 bg-cyan/15 text-white"
                     : "border-white/10 text-white/45 hover:text-white/80",
@@ -174,11 +174,11 @@ export function SolutionsPageView() {
                     <p className="mt-4 text-sm leading-relaxed text-ink/55">
                       {model.copy}
                     </p>
-                    <div className="mt-6 flex items-center justify-between gap-3">
-                      <p className="text-[11px] tracking-[0.14em] text-cyan-deep uppercase">
+                    <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                      <p className="min-w-0 text-[11px] tracking-[0.14em] text-cyan-deep uppercase">
                         Best for · {model.bestFor}
                       </p>
-                      <span className="inline-flex items-center gap-1 text-sm text-ink/40 transition-colors group-hover:text-cyan-deep">
+                      <span className="inline-flex shrink-0 items-center gap-1 text-sm text-ink/40 transition-colors group-hover:text-cyan-deep">
                         Details
                         <ArrowUpRight size={14} />
                       </span>

@@ -50,7 +50,7 @@ export function TransformationJourney() {
               {journey.map((item, index) => (
                 <Reveal key={item.step} delay={index * 0.05}>
                   <li className="relative grid grid-cols-[40px_1fr] gap-5 md:grid-cols-[48px_1fr] md:gap-8">
-                    <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full border border-ink/15 bg-paper text-[11px] font-medium md:h-10 md:w-10">
+                    <div className="relative z-10 flex size-8 shrink-0 items-center justify-center rounded-full border border-ink/15 bg-paper text-[11px] font-medium md:size-10">
                       {item.step}
                     </div>
                     <div className="rounded-[1.75rem] border border-ink/10 bg-white/70 p-6 shadow-[0_20px_60px_rgba(11,18,32,0.04)] backdrop-blur-sm md:p-8">

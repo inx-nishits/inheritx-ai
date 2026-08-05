@@ -230,7 +230,7 @@ export function ContactPageView() {
                           onClick={() => setTopic(item)}
                           aria-pressed={topic === item}
                           className={cn(
-                            "min-h-11 rounded-full border px-4 py-2.5 text-sm transition-all",
+                            "inline-flex min-h-11 items-center justify-center rounded-full border px-4 py-2.5 text-sm transition-all",
                             topic === item
                               ? "border-cyan/40 bg-cyan/15 text-cyan"
                               : "border-white/10 text-white/45 hover:text-white/75",

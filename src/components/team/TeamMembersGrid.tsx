@@ -90,7 +90,7 @@ function FeaturedMemberCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${member.name} on LinkedIn`}
-              className="absolute top-4 right-4 inline-flex size-11 items-center justify-center rounded-full border border-white/15 bg-ink/55 text-white/70 opacity-100 backdrop-blur-md transition-all duration-500 hover:border-cyan/40 hover:text-cyan md:size-9 md:opacity-0 md:group-hover:opacity-100"
+              className="absolute top-4 right-4 inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-ink/55 text-white/70 opacity-100 backdrop-blur-md transition-all duration-500 hover:border-cyan/40 hover:text-cyan md:size-9 md:opacity-0 md:group-hover:opacity-100"
             >
               <LinkedInIcon className="size-3.5" />
             </a>
@@ -155,7 +155,7 @@ function GridMemberCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${member.name} on LinkedIn`}
-              className="absolute top-3 right-3 inline-flex size-11 items-center justify-center rounded-full border border-white/15 bg-ink/55 text-white/70 opacity-100 backdrop-blur-md transition-all duration-500 hover:border-cyan/40 hover:text-cyan md:size-8 md:opacity-0 md:group-hover:opacity-100"
+              className="absolute top-3 right-3 inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-ink/55 text-white/70 opacity-100 backdrop-blur-md transition-all duration-500 hover:border-cyan/40 hover:text-cyan md:size-8 md:opacity-0 md:group-hover:opacity-100"
             >
               <LinkedInIcon className="size-3" />
             </a>
