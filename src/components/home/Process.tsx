@@ -31,7 +31,8 @@ export function Process() {
           </div>
           <p className="w-full max-w-md text-sm leading-relaxed text-white/45 lg:max-w-xs lg:text-right">
             Four stages for enterprise AI transformation. Typical path: weeks to
-            a governed production system. You own everything we build.
+            a governed production system—with evaluation and runbooks before
+            scale.
           </p>
         </div>
 

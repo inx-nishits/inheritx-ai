@@ -2,7 +2,7 @@ export const companyHero = {
   eyebrow: "Company",
   title: "AI-native enterprise partner. You own the systems.",
   description:
-    "InheritX helps enterprises transform with AI—14+ years of enterprise delivery DNA and 600+ engagements underpinning AI/ML, Agentic AI, and AI DevOps programs for regulated industries. We design, build, and hand over—private cloud, IP transfer, governance by design.",
+    "InheritX is an AI-native enterprise partner for regulated industries—AI/ML, Agentic AI, and AI DevOps programs built on 14+ years of enterprise delivery DNA and 600+ engagements. We design, build, and industrialize production intelligence with governance by design.",
 };
 
 export const companyVision = {
@@ -27,8 +27,8 @@ export const companyVision = {
 export const companyTimeline = [
   {
     year: "2011+",
-    title: "Enterprise delivery roots",
-    copy: "Deep experience shipping complex systems for global organizations—the operating discipline behind today’s AI programs.",
+    title: "Delivery DNA that scales AI",
+    copy: "Complex enterprise systems for global organizations—the operating discipline we now apply to AI platforms, agents, and LLMOps.",
   },
   {
     year: "AI shift",
@@ -38,7 +38,7 @@ export const companyTimeline = [
   {
     year: "Today",
     title: "Enterprise AI transformation partner",
-    copy: "Board-ready programs that industrialize AI across regulated industries—with ownership left with the client.",
+    copy: "Board-ready programs that industrialize AI across regulated industries—with evaluation, security, and operability designed in.",
   },
 ];
 
@@ -63,9 +63,9 @@ export const companyPrinciples = [
 
 /** Figures reflected on inheritx.com company materials; labels reframed for AI-first positioning. */
 export const companyStats = [
-  { value: "14+", label: "Years of enterprise delivery" },
-  { value: "600+", label: "Global client engagements" },
-  { value: "18", label: "Industries served" },
+  { value: "14+", label: "Years delivery DNA for AI programs" },
+  { value: "600+", label: "Engagements informing AI delivery" },
+  { value: "18", label: "Industries with AI-ready programs" },
   { value: "97%", label: "Client retention" },
 ];
 

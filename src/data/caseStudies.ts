@@ -40,7 +40,12 @@ export const caseStudiesPage: CaseStudy[] = [
     tagline: "Vision-guided dental assessment at home",
     summary:
       "Computer vision quality gates for at-home dental scans—reducing unnecessary clinic visits by 30–35% while keeping clinicians in the loop.",
-    technologies: ["Computer Vision", "AWS Amplify", "Firebase", "Mobile capture"],
+    technologies: [
+      "Computer Vision",
+      "Quality gating models",
+      "Secure cloud pipeline",
+      "Clinician review workflow",
+    ],
     results: [
       { value: "60%", label: "Reduced entry barriers" },
       { value: "30–35%", label: "Reduction in clinic visits" },
@@ -66,7 +71,7 @@ export const caseStudiesPage: CaseStudy[] = [
     tagline: "AI-native healthcare & wellness intelligence",
     summary:
       "NLP and personalization models that unify patient interaction and care discovery—cutting discovery effort by ~50%.",
-    technologies: ["Python", "NLP", "ML Models", "React"],
+    technologies: ["Generative AI", "NLP", "Personalization models", "Python"],
     results: [
       { value: "~50%", label: "Reduction in care discovery effort" },
       { value: "Improved", label: "Personalized care pathways" },
@@ -144,7 +149,12 @@ export const caseStudiesPage: CaseStudy[] = [
     tagline: "AR-assisted coaching intelligence",
     summary:
       "Coach-athlete platform with AR-assisted practice guidance—cutting coach prep time ~50% and lifting off-court consistency.",
-    technologies: ["ARKit", "Video Processing", "React Native", "Firebase"],
+    technologies: [
+      "Computer Vision",
+      "AR coaching intelligence",
+      "Video processing",
+      "Progress analytics",
+    ],
     results: [
       { value: "50%", label: "Reduction in coach preparation time" },
       { value: "50–60%", label: "Improvement in off-court practice" },
@@ -153,9 +163,9 @@ export const caseStudiesPage: CaseStudy[] = [
     challenge:
       "Coaches lacked a system to assign drills, track progress, and guide practice between sessions.",
     approach:
-      "We combined progress intelligence with AR-assisted practice experiences so guidance traveled with the athlete.",
+      "We applied computer vision and AR-assisted practice cues with progress intelligence so coaching guidance traveled with the athlete between sessions.",
     outcome:
-      "Coaches prepared faster; athletes practiced more consistently with clearer, vision-assisted cues.",
+      "Coaches prepared faster; athletes practiced more consistently with clearer, vision-assisted cues. Pattern: CV/AR coaching intelligence with measurable prep-time reduction.",
     highlights: [
       "Vision / AR-assisted practice cues",
       "Coach-driven training intelligence",

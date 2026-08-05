@@ -108,8 +108,8 @@ export function FeaturedCaseStudy() {
                 Case studies
               </p>
               <p className="mt-1.5 text-sm text-white/45">
-                Production outcomes—not pilot theater. Named references available
-                under NDA for qualified opportunities.
+                Measured production outcomes with published methodology. Named
+                references available under NDA for qualified opportunities.
               </p>
             </div>
             <Link

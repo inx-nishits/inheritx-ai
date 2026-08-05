@@ -57,8 +57,8 @@ export function AgentEcosystem() {
           <Reveal delay={0.1}>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/50">
               Multi-agent systems with MCP, tool calling, memory, and human
-              gates—AI employees that research, decide, execute, and escalate
-              under enterprise control.
+              gates—autonomous workers that research, decide, execute, and
+              escalate under enterprise control.
             </p>
           </Reveal>
         </div>

@@ -60,7 +60,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             q: "Do you have SOC 2 / ISO certificates we can download?",
-            a: "Placeholder until certified: formal SOC/ISO marks are published only when evidenced. Until then, use this Security FAQ and the diligence pack under NDA. We share attestation status factually during vendor review—this site does not claim certifications that are not currently evidenced.",
+            a: "Formal SOC/ISO marks are published only when evidenced. Until then, use this Security FAQ and the diligence pack under NDA. We share attestation status factually during vendor review—this site does not claim certifications that are not currently evidenced.",
           },
         ],
       },
@@ -131,7 +131,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         body: [
           "Serious enterprise programs need more than a marketing site. After a strategy call confirms mutual fit, we can share a diligence pack under NDA covering security practices, engagement models, IP intent, and architecture patterns relevant to your mandate.",
           "We will not invent certificates, logos, or capabilities to fill gaps. Where an item is not available, we mark it clearly and propose an alternative evidence path (architecture review, reference call process, questionnaire response).",
-          "Placeholder until certified: formal SOC/ISO marks appear only when evidenced. Until then, use the Security FAQ and this pack under NDA.",
+          "Formal SOC/ISO marks appear only when evidenced. Until then, use the Security FAQ and this pack under NDA.",
         ],
       },
       {
@@ -210,24 +210,29 @@ export const enterpriseResourceTopics: TopicPage[] = [
       },
       {
         type: "matrix",
-        title: "Items that may require InheritX to supply files",
-        intro: "Marked for internal completion—do not treat as published claims until attached.",
+        title: "Materials available under NDA after fit is confirmed",
+        intro:
+          "Shared during vendor review when mutual fit is clear—not as public downloads.",
         rows: [
           {
             need: "Current certification letters / reports",
-            approach: "STATUS: Provide only if earned. Otherwise state “not currently published” in diligence answers. Placeholder until certified.",
+            approach:
+              "Provided only when earned and evidenced. Otherwise we state clearly that marks are not currently published.",
           },
           {
             need: "Subprocessors / tools list for a typical engagement",
-            approach: "STATUS: Maintain an accurate living list for sales/security to share under NDA.",
+            approach:
+              "Accurate living list shared with security and procurement under NDA.",
           },
           {
             need: "Sample SOW / MSA exhibits (IP, DPA)",
-            approach: "STATUS: Legal-owned templates shared under NDA—not public downloads.",
+            approach:
+              "Legal-owned templates shared under NDA—not published as open downloads.",
           },
           {
             need: "Named customer references",
-            approach: "STATUS: Only with written customer approval; otherwise anonymized industry+scale references.",
+            approach:
+              "Only with written customer approval; otherwise anonymized industry and scale references under NDA.",
           },
         ],
       },
@@ -308,7 +313,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             step: "04",
-            title: "Hire AI Engineers (embeds)",
+            title: "Embedded AI Engineering",
             copy: "Only when the roadmap and architecture standards already exist and the bottleneck is senior execution capacity—not strategy.",
           },
         ],
@@ -331,7 +336,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             need: "We have a clear backlog and need senior AI bench strength",
-            approach: "Hire AI Engineers (embedded)",
+            approach: "Embedded AI Engineering",
           },
         ],
       },
@@ -350,7 +355,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           { label: "AI Consulting", href: "/solutions/ai-consulting" },
           { label: "AI Transformation", href: "/solutions/ai-transformation" },
           { label: "Dedicated AI Squads", href: "/solutions/dedicated-ai-squads" },
-          { label: "Hire AI Engineers", href: "/solutions/hire-ai-engineers" },
+          { label: "Embedded AI Engineering", href: "/solutions/hire-ai-engineers" },
           { label: "Contact", href: "/contact" },
         ],
       },
@@ -648,26 +653,6 @@ export const enterpriseResourceTopics: TopicPage[] = [
         ],
       },
       {
-        type: "matrix",
-        title: "Additional anonymized reference set — STATUS",
-        intro:
-          "Template rows beyond published cases for InheritX sales/delivery to complete with approved facts. Empty or STATUS rows are intentional—do not treat as live claims.",
-        rows: [
-          {
-            need: "Financial services / insurance · size band TBD",
-            approach: "STATUS: Fill policy/audit constraints, use case, role, outcome class after approval.",
-          },
-          {
-            need: "Manufacturing / industrial · size band TBD",
-            approach: "STATUS: Fill OT/IT or quality constraints, use case, role, outcome class after approval.",
-          },
-          {
-            need: "Additional sectors (expand toward 6–12 total)",
-            approach: "STATUS: Expand only with real engagements; prefer anonymized blurbs over invented logos.",
-          },
-        ],
-      },
-      {
         type: "bullets",
         title: "What we ask buyers to prepare",
         items: [
@@ -781,7 +766,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             q: "How often is proof refreshed?",
-            a: "STATUS: InheritX should refresh published outcomes and security FAQ on a quarterly cadence when new approved material is available—without inventing interim claims.",
+            a: "Published outcomes and the security FAQ are refreshed when new approved material is available—without inventing interim claims.",
           },
         ],
       },

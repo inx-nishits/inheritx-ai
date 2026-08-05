@@ -52,7 +52,7 @@ export const cultureTopic: TopicPage = {
       title: "How we collaborate with clients",
       leftTitle: "Embedded, not distant",
       leftBody: [
-        "Squads and Hire AI Engineers engagements work inside your rituals—standups, architecture forums, security reviews—not around them.",
+        "Squads and Embedded AI Engineering engagements work inside your rituals—standups, architecture forums, security reviews—not around them.",
         "Senior practitioners lead critical path work. We say plainly when consulting should precede hiring, or when a pilot is not ready to scale.",
         "Evidence beats narrative: demos tied to eval results, integration progress, and exception handling—not vanity metrics.",
       ],

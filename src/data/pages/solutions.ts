@@ -23,7 +23,7 @@ export const solutionPillars = [
     id: "02",
     title: "Agentic AI",
     summary:
-      "Autonomous agents, multi-agent orchestration, MCP, tool calling, memory, and human–AI collaboration—AI employees that execute work with auditability.",
+      "Autonomous agents, multi-agent orchestration, MCP, tool calling, memory, and human–AI collaboration—agents that execute work with auditability.",
     points: [
       "Single agents and hierarchical multi-agent systems",
       "MCP, tool contracts, memory, and approval gates",
@@ -70,7 +70,7 @@ export const engagementModels = [
     href: "/solutions/dedicated-ai-squads",
   },
   {
-    title: "Hire AI Engineers",
+    title: "Embedded AI Engineering",
     duration: "Dedicated embed · Only when the roadmap is already clear",
     copy: "Senior AI / ML / agentic / LLMOps engineers embedded in your roadmap—shipping under your standards. Not a substitute for strategy.",
     bestFor: "Product & Engineering leaders with a defined backlog",
@@ -93,7 +93,7 @@ export const solutionFitMatrix = [
   },
   {
     need: "We need senior AI engineers on a defined platform roadmap",
-    fit: "Hire AI Engineers / Dedicated AI Squads",
+    fit: "Embedded AI Engineering / Dedicated AI Squads",
   },
 ];
 

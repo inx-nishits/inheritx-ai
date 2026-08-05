@@ -101,7 +101,7 @@ export const contactTopics = [
   "AI DevOps / LLMOps",
   "AI Consulting & Architecture",
   "Custom AI Platform",
-  "Hire AI Engineers",
+  "Embedded AI Engineering",
   "Dedicated AI Squad",
   "Private AI / VPC Deployment",
   "Security / Diligence",

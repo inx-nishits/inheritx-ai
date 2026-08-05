@@ -33,7 +33,7 @@ const iconMap: Record<string, LucideIcon> = {
   "AI Automation": Workflow,
   "AI Consulting": Sparkles,
   "AI Transformation": Target,
-  "Hire AI Engineers": Users,
+  "Embedded AI Engineering": Users,
   "Dedicated AI Squads": Briefcase,
   "Generative AI": Network,
   "Computer Vision": Eye,

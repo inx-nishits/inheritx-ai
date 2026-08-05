@@ -277,10 +277,7 @@ export function ContactPageView() {
                     >
                       hello@inheritx.com
                     </a>
-                    {" · "}
-                    CRM delivery activates when{" "}
-                    <span className="text-white/50">CONTACT_WEBHOOK_URL</span> or
-                    Resend is configured.
+                    . We respond to qualified inquiries within one business day.
                   </p>
                 </form>
               )}
@@ -317,12 +314,9 @@ export function ContactPageView() {
                   <>
                     <p className="mt-2 text-sm text-white/45">
                       Submit the form and an architect will propose times—usually
-                      within one business day. Embedded calendar booking activates
-                      when{" "}
-                      <span className="text-white/60">NEXT_PUBLIC_CALENDLY_URL</span>{" "}
-                      is set.
+                      within one business day. Prefer email? Request a booking
+                      slot and we will confirm availability.
                     </p>
-                    {/* TODO: Set NEXT_PUBLIC_CALENDLY_URL to the official InheritX booking page. */}
                     <a
                       href="mailto:hello@inheritx.com?subject=AI%20Strategy%20Call%20Booking"
                       className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full border border-cyan/35 bg-cyan/10 px-5 text-sm text-cyan transition-colors hover:bg-cyan hover:text-white"

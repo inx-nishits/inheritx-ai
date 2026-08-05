@@ -2,7 +2,7 @@
 export const trustTechnologies = [
   { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
   { label: "Agentic AI", href: "/solutions/ai-agents" },
-  { label: "Generative AI", href: "/solutions/enterprise-ai" },
+  { label: "Generative AI", href: "/solutions/generative-ai" },
   { label: "RAG", href: "/solutions/enterprise-ai" },
   { label: "LLMOps", href: "/solutions/ai-transformation" },
   { label: "MCP", href: "/solutions/ai-agents" },
@@ -79,7 +79,7 @@ export const solutions = [
   {
     index: "03",
     title: "Autonomous AI Agents",
-    copy: "Task-oriented agents with memory, planning, MCP, and tool access—AI employees that execute, not just answer.",
+    copy: "Task-oriented agents with memory, planning, MCP, and tool access—autonomous workers that execute, not just answer.",
   },
   {
     index: "04",
@@ -248,7 +248,7 @@ export const caseStudies = [
     sector: "Healthcare",
     title: "Governed clinical documentation assistants",
     result: "40%",
-    resultLabel: "less documentation time",
+    resultLabel: "less documentation time (pattern)",
     detail:
       "A private generative platform that drafts, validates, and routes clinical notes under strict governance—cutting clinician admin load.",
     challenge: "Clinicians lost hours to notes, delaying care and increasing burnout.",
@@ -259,7 +259,7 @@ export const caseStudies = [
     sector: "Finance",
     title: "Multi-agent fraud review with audit trails",
     result: "10×",
-    resultLabel: "faster case triage cycles",
+    resultLabel: "faster case triage cycles (pattern)",
     detail:
       "Agentic triage across signals, cases, and analyst workflows—with explainable escalation and full auditability.",
     challenge: "Fraud teams drowned in false positives while high-risk cases waited.",
@@ -270,7 +270,7 @@ export const caseStudies = [
     sector: "Manufacturing",
     title: "Vision quality on the production line",
     result: "65%",
-    resultLabel: "fewer missed micro-defects",
+    resultLabel: "fewer missed micro-defects (pattern)",
     detail:
       "Computer vision on the line, integrated into quality systems and operator feedback loops that open corrective workflows.",
     challenge: "Manual inspection missed micro-defects and slowed throughput.",

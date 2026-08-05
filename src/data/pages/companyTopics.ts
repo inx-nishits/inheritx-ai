@@ -114,9 +114,9 @@ const companyTopics: TopicPage[] = [
       {
         type: "proof",
         items: [
-          { value: "14+", label: "Years of enterprise delivery" },
-          { value: "600+", label: "Global client engagements" },
-          { value: "18", label: "Industries served" },
+          { value: "14+", label: "Years delivery DNA for AI programs" },
+          { value: "600+", label: "Engagements informing AI delivery" },
+          { value: "18", label: "Industries with AI-ready programs" },
           { value: "97%", label: "Client retention" },
         ],
       },
@@ -148,7 +148,7 @@ const companyTopics: TopicPage[] = [
           },
           {
             need: "We have a roadmap but lack senior execution capacity",
-            approach: "Hire AI Engineers and dedicated squads embedded in your rituals—shipping under your standards, not staff-augmentation theater.",
+            approach: "Embedded AI Engineering and dedicated squads embedded in your rituals—shipping under your standards, not staff-augmentation theater.",
           },
         ],
       },

@@ -20,7 +20,7 @@ export const industryProfiles = [
       "Governed knowledge retrieval",
       "Prior-auth and intake automation",
     ],
-    metric: "Up to 40% less documentation time",
+    metric: "Up to 40% less documentation time (pattern)",
     image: "/images/visuals/industries/industry-healthcare.png",
   },
   {
@@ -37,7 +37,7 @@ export const industryProfiles = [
       "Underwriting copilots",
       "Policy-aware decision support",
     ],
-    metric: "10× faster agentic triage cycles",
+    metric: "10× faster agentic triage cycles (pattern)",
     image: "/images/visuals/industries/industry-finance.png",
   },
   {

@@ -48,12 +48,12 @@ export const resourceArticles = [
   {
     slug: "hire-ai-engineers",
     category: "Engagement",
-    title: "When to hire embedded AI engineers",
+    title: "When Embedded AI Engineering is the right motion",
     readTime: "4 min",
     excerpt:
-      "Staffing is not a strategy—but dedicated talent can accelerate a strategy already defined.",
+      "Capacity is not a strategy—but senior embedded talent can accelerate a strategy already defined.",
     body: [
-      "Hire AI Engineers works when the roadmap is clear and the bottleneck is execution capacity—not when the problem is still undefined.",
+      "Embedded AI Engineering works when the roadmap is clear and the bottleneck is execution capacity—not when the problem is still undefined.",
       "We embed senior practitioners who ship under your architecture standards, security reviews, and product rituals.",
       "If you need a mandate and a blueprint first, start with consulting. If you need velocity on a defined platform, embed the team. See Engagement Models for the full buying sequence.",
     ],

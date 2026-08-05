@@ -55,8 +55,8 @@ export function CaseStudiesHero() {
 
         <div className="mt-12 grid grid-cols-2 gap-3 border-t border-white/[0.08] pt-8 sm:grid-cols-4 md:mt-14">
           {[
-            { value: "14+", label: "Years enterprise DNA" },
-            { value: "600+", label: "Client engagements" },
+            { value: "14+", label: "Years DNA for AI programs" },
+            { value: "600+", label: "Engagements informing delivery" },
             { value: "AI/ML", label: "Agents · Vision · LLMOps" },
             { value: "Owned", label: "IP at handover" },
           ].map((stat) => (

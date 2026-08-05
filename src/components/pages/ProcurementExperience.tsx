@@ -81,11 +81,9 @@ export function ProcurementExperience({
                     : "text-sm leading-relaxed text-ink/55"
                 }
               >
-                <span className={isDark ? "text-white/80" : "text-ink/80"}>
-                  Placeholder until certified:
-                </span>{" "}
-                formal SOC/ISO marks appear here only when evidenced. Until then,
-                use Security FAQ and the diligence pack under NDA.
+                Formal SOC/ISO marks appear here only when evidenced. Until then,
+                use the Security FAQ and the diligence pack under NDA—we share
+                attestation status factually during vendor review.
               </p>
             </div>
           </Reveal>

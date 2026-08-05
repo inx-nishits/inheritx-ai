@@ -152,7 +152,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "Agentic AI",
     title: "Autonomous agents that execute enterprise work—not chat demos.",
     description:
-      "AI employees with memory, planning, MCP, and tool calling. Multi-agent networks assign work, peer-review outputs, and escalate exceptions—fully instrumented, with humans on consequential decisions.",
+      "Autonomous agents with memory, planning, MCP, and tool calling. Multi-agent networks assign work, peer-review outputs, and escalate exceptions—fully instrumented, with humans on consequential decisions.",
     primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
     secondaryCta: { label: "See Agent Bank", href: "/portfolio/agent-bank" },
     layout: "capability",
@@ -162,7 +162,7 @@ export const solutionTopics: TopicPage[] = [
         title: "From chat interfaces to accountable action",
         body: [
           "Enterprise leaders do not need another chatbot. They need systems that intake requests, gather context, call internal APIs via MCP and tool contracts, draft outputs, and route exceptions—under explicit policy and with a record of every step.",
-          "InheritX designs agentic architectures around your operational reality: which tools exist, which actions require human approval, and where autonomy stops. Agents are observable workers—AI employees—not opaque oracles.",
+          "InheritX designs agentic architectures around your operational reality: which tools exist, which actions require human approval, and where autonomy stops. Agents are observable workers—not opaque oracles.",
           "Multi-agent patterns decompose complex workflows—research, triage, fulfillment—into specialized roles with shared memory, structured handoffs, and evaluation harnesses that catch regressions before production traffic does.",
         ],
       },
@@ -955,7 +955,7 @@ export const solutionTopics: TopicPage[] = [
         links: [
           { label: "AI Transformation", href: "/solutions/ai-transformation" },
           { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
-          { label: "Hire AI Engineers", href: "/solutions/hire-ai-engineers" },
+          { label: "Embedded AI Engineering", href: "/solutions/hire-ai-engineers" },
           { label: "Industries", href: "/industries" },
         ],
       },
@@ -968,7 +968,7 @@ export const solutionTopics: TopicPage[] = [
   },
   {
     slug: "hire-ai-engineers",
-    eyebrow: "Hire AI Engineers",
+    eyebrow: "Embedded AI Engineering",
     title: "Embedded AI specialists who ship under your standards.",
     description:
       "Add senior ML, LLM, and agentic engineers to your roadmap—working inside your repos, ceremonies, and compliance boundaries, not parallel shadow teams.",
@@ -1078,7 +1078,7 @@ export const solutionTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "Hire AI engineers FAQ",
+        title: "Embedded AI Engineering FAQ",
         items: [
           {
             q: "When should we NOT hire embeds first?",
@@ -1104,7 +1104,7 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "Hire AI Engineers — InheritX",
+      title: "Embedded AI Engineering — InheritX",
       description:
         "Embedded senior AI, ML, and agentic engineers for enterprise teams—shipping in your repos and standards with explicit knowledge transfer.",
     },
@@ -1226,7 +1226,7 @@ export const solutionTopics: TopicPage[] = [
         type: "related",
         title: "Related paths",
         links: [
-          { label: "Hire AI Engineers", href: "/solutions/hire-ai-engineers" },
+          { label: "Embedded AI Engineering", href: "/solutions/hire-ai-engineers" },
           { label: "AI Transformation", href: "/solutions/ai-transformation" },
           { label: "AI Agents", href: "/solutions/ai-agents" },
           { label: "Case studies", href: "/case-studies" },

@@ -83,7 +83,7 @@ export const navigation: NavItem[] = [
             href: "/solutions/dedicated-ai-squads",
           },
           {
-            title: "Hire AI Engineers",
+            title: "Embedded AI Engineering",
             description: "Senior AI/ML embeds when architecture is defined.",
             href: "/solutions/hire-ai-engineers",
           },
@@ -170,8 +170,8 @@ export const navigation: NavItem[] = [
       cta: "View case studies",
       stats: [
         { value: "VPC", label: "Private by default" },
-        { value: "40%", label: "Doc time ↓" },
-        { value: "10×", label: "Triage speed" },
+        { value: "40%", label: "Doc time ↓ (pattern)" },
+        { value: "10×", label: "Triage speed (pattern)" },
       ],
     },
     quickLinks: [
@@ -354,7 +354,7 @@ export const navigation: NavItem[] = [
       href: "/contact",
       cta: "Book an AI Strategy Call",
       stats: [
-        { value: "14+", label: "Years DNA" },
+        { value: "14+", label: "Years AI delivery DNA" },
         { value: "600+", label: "Engagements" },
         { value: "97%", label: "Retention" },
       ],
@@ -469,7 +469,7 @@ export const footerColumns = [
       { label: "AI Agents", href: "/solutions/ai-agents" },
       { label: "AI Automation", href: "/solutions/ai-automation" },
       { label: "AI Transformation", href: "/solutions/ai-transformation" },
-      { label: "Hire AI Engineers", href: "/solutions/hire-ai-engineers" },
+      { label: "Embedded AI Engineering", href: "/solutions/hire-ai-engineers" },
     ],
   },
   {

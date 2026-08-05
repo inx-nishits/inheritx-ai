@@ -34,7 +34,7 @@ export const coreCapabilities = [
     copy: "Build retrieval, agents, vision, and evaluation loops that hold up in production.",
   },
   {
-    title: "Full-Stack Product Engineers",
+    title: "AI Application Engineers",
     copy: "Ship the interfaces and integrations that make intelligence usable by real teams.",
   },
   {
@@ -65,7 +65,7 @@ export const cultureValues = [
 export const whyWorkWithUs = [
   {
     title: "Embedded, not distant",
-    copy: "Squads and Hire AI Engineers engagements work inside your rituals—not around them.",
+    copy: "Squads and Embedded AI Engineering engagements work inside your rituals—not around them.",
   },
   {
     title: "Senior by default",
@@ -101,7 +101,7 @@ export const collaborationSteps = [
 ];
 
 export const teamHighlights = [
-  { value: "14+", label: "Years of enterprise delivery DNA" },
+  { value: "14+", label: "Years delivery DNA for AI programs" },
   { value: "Global", label: "Pods across IN · US · EU · JP" },
   { value: "AI-native", label: "Agents, RAG, vision, LLMOps" },
   { value: "Owned", label: "IP transfer on every build" },
