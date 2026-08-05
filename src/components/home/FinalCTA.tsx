@@ -56,13 +56,13 @@ export function FinalCTA() {
                 className="min-h-12 w-full justify-center bg-cyan px-8 py-4 text-base text-white hover:bg-white hover:text-ink sm:w-auto"
                 strength={0.45}
               >
-                Book an AI Strategy Call
+                Book an AI strategy call
               </MagneticButton>
               <Link
                 href="/contact?intent=assessment"
                 className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 px-6 text-sm text-white/70 transition-colors hover:border-cyan/40 hover:text-white"
               >
-                Request AI Assessment
+                Request AI assessment
               </Link>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white/40 lg:justify-start">

@@ -12,7 +12,7 @@ export function InsightsHero({
       eyebrow="Insights"
       title={title}
       description={description}
-      primaryCta={{ label: "Book an AI Strategy Call", href: "/contact?intent=strategy" }}
+      primaryCta={{ label: "Book an AI strategy call", href: "/contact?intent=strategy" }}
       secondaryCta={{ label: "Explore solutions", href: "/solutions" }}
     />
   );

@@ -15,7 +15,7 @@ export function MidPageCTA() {
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,190,212,0.12),transparent_55%)]" />
       <div className="relative mx-auto flex max-w-[1400px] flex-col items-start gap-6 px-5 py-14 md:px-8 md:py-16 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
-        <Reveal className="w-full min-w-0">
+        <Reveal className="w-full min-w-0 lg:max-w-2xl">
           <div className="max-w-2xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Next step
@@ -29,21 +29,21 @@ export function MidPageCTA() {
             </p>
           </div>
         </Reveal>
-        <Reveal delay={0.08}>
-          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
+        <Reveal delay={0.08} className="w-full min-w-0 lg:w-auto lg:shrink-0">
+          <div className="flex flex-row flex-nowrap items-center gap-2 sm:gap-3">
             <MagneticButton
               href="/contact?intent=strategy"
-              className="min-h-12 justify-center bg-cyan px-7 py-3.5 text-sm text-white hover:bg-white hover:text-ink"
+              className="min-h-11 shrink-0 justify-center whitespace-nowrap bg-cyan px-3.5 py-3 text-[13px] text-white hover:bg-white hover:text-ink sm:min-h-12 sm:px-7 sm:py-3.5 sm:text-sm"
               strength={0.35}
             >
-              Book an AI Strategy Call
+              Book an AI strategy call
             </MagneticButton>
             <Link
               href="/case-studies"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-cyan/55 bg-cyan/10 px-5 text-sm font-semibold text-white transition-colors hover:border-cyan hover:bg-cyan/20"
+              className="inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-cyan/55 bg-cyan/10 px-3 text-[13px] font-semibold text-white transition-colors hover:border-cyan hover:bg-cyan/20 sm:min-h-12 sm:gap-2 sm:px-5 sm:text-sm"
             >
               Review case studies
-              <ArrowUpRight size={14} className="text-cyan" />
+              <ArrowUpRight size={14} className="shrink-0 text-cyan" />
             </Link>
           </div>
         </Reveal>

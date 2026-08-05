@@ -37,7 +37,7 @@ export const capabilities = [
   },
   {
     id: "06",
-    title: "Enterprise AI Platforms",
+    title: "Enterprise AI platforms",
     copy: "Private intelligence layers—model gateways, governed retrieval, AI security controls, and policy governance—deployed in your VPC with full ownership at handover.",
   },
 ];
@@ -78,7 +78,7 @@ export const solutions = [
   },
   {
     index: "03",
-    title: "Autonomous AI Agents",
+    title: "Autonomous AI agents",
     copy: "Task-oriented agents with memory, planning, MCP, and tool access—autonomous workers that execute, not just answer.",
   },
   {
@@ -177,7 +177,7 @@ export const techLayers = [
   {
     id: "02",
     name: "Agentic AI",
-    tagline: "Multi-agent systems that execute real enterprise work.",
+    tagline: "Multi-Agent Systems that execute real enterprise work.",
     items: [
       "LangChain",
       "CrewAI",
@@ -272,7 +272,7 @@ export const caseStudies = [
     result: "65%",
     resultLabel: "fewer missed micro-defects (pattern)",
     detail:
-      "Computer vision on the line, integrated into quality systems and operator feedback loops that open corrective workflows.",
+      "Computer Vision on the line, integrated into quality systems and operator feedback loops that open corrective workflows.",
     challenge: "Manual inspection missed micro-defects and slowed throughput.",
     solution: "Edge vision models with ops agents that trigger corrective action.",
     image: "/images/visuals/industries/industry-manufacturing.png",
@@ -293,7 +293,7 @@ export const whyPoints = [
     copy: "Deploy into your AWS, Azure, or GCP VPC. Your data stays inside your boundary and is never used by InheritX to train public models.",
   },
   {
-    title: "Architects Who Ship Production",
+    title: "Architects who ship production",
     copy: "Named AI architects and engineers accountable from blueprint to LLMOps—systems your CTO can operate, not slideware your board forgets.",
   },
 ];
@@ -302,40 +302,40 @@ export const audiencePaths = {
   eyebrow: "Built for enterprise AI buyers",
   title: "Choose your path",
   description:
-    "Select your seat. We’ll surface the decision signals that matter—illustrative frameworks, not client claims. Primary proof lives in case studies.",
+    "Open the decision page built for your seat—outcomes for CEOs, architecture for CTOs, and operating models for Heads of AI.",
   paths: [
     {
       id: "outcomes",
       icon: "outcomes" as const,
       label: "01",
-      title: "I'm a CEO / Transformation lead",
+      title: "I'm a CEO / Business leader",
       description:
         "Clarify ROI, operating-cost impact, and board-ready transformation outcomes.",
-      cta: "See enterprise AI outcomes",
-      href: "/case-studies",
+      cta: "Open CEO path",
+      href: "/path/ceo",
       meta: "CEOs, founders & transformation leaders",
     },
     {
       id: "systems",
       icon: "systems" as const,
       label: "02",
-      title: "I'm a CTO / Head of AI",
+      title: "I'm a CTO / VP Engineering",
       description:
-        "Pressure-test architecture, LLMOps, governance, and production readiness.",
-      cta: "Explore AI architecture & solutions",
-      href: "/solutions",
-      meta: "CTOs, CIOs, Heads of AI & engineering leads",
+        "Pressure-test architecture, LLMOps, security, and production readiness.",
+      cta: "Open CTO path",
+      href: "/path/cto",
+      meta: "CTOs, CIOs & VP Engineering",
     },
     {
       id: "explore",
       icon: "explore" as const,
       label: "03",
-      title: "I'm evaluating enterprise AI",
+      title: "I'm a Head of AI / Enterprise architect",
       description:
-        "Map consulting, build, or embedded AI engineering to a clear next step.",
-      cta: "Talk to AI architects",
-      href: "/contact",
-      meta: "Product, innovation & visiting leadership teams",
+        "Define maturity, agent architecture, evaluation, and the AI operating model.",
+      cta: "Open AI leadership path",
+      href: "/path/head-of-ai",
+      meta: "Heads of AI & enterprise architects",
     },
   ],
 };

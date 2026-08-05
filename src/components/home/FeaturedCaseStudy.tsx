@@ -55,7 +55,7 @@ export function FeaturedCaseStudy() {
     <section
       id="cases"
       aria-roledescription="carousel"
-      aria-label="Case studies"
+      aria-label="Case Studies"
       className="relative overflow-hidden border-t border-white/[0.06] bg-ink"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}

@@ -334,7 +334,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
               href="/contact?intent=strategy"
               className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
             >
-              Book an AI Strategy Call
+              Book an AI strategy call
             </MagneticButton>
             <Link
               href="/solutions"

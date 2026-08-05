@@ -35,7 +35,7 @@ export const navigation: NavItem[] = [
       "AI/ML engineering, Agentic AI, and AI DevOps—built for enterprise production, not pilots.",
     columns: [
       {
-        label: "AI Capabilities",
+        label: "AI capabilities",
         items: [
           {
             title: "Enterprise AI",
@@ -65,7 +65,7 @@ export const navigation: NavItem[] = [
         ],
       },
       {
-        label: "How We Engage",
+        label: "How we engage",
         items: [
           {
             title: "AI Transformation",
@@ -94,7 +94,7 @@ export const navigation: NavItem[] = [
       eyebrow: "Featured solution",
       title: "Agentic AI for enterprise operations",
       description:
-        "Multi-agent systems with MCP, human gates, and full audit trails—deployed in your VPC.",
+        "Multi-Agent Systems with MCP, human gates, and full audit trails—deployed in your VPC.",
       href: "/solutions/ai-agents",
       cta: "Explore Agentic AI",
       stats: [
@@ -104,7 +104,7 @@ export const navigation: NavItem[] = [
       ],
     },
     quickLinks: [
-      { title: "AI Strategy Call", description: "30-min architect session", href: "/contact" },
+      { title: "AI strategy call", description: "30-min architect session", href: "/contact" },
       { title: "All solutions", description: "Capability map", href: "/solutions" },
       { title: "Engagement models", description: "How to buy", href: "/resources/engagement-models" },
     ],
@@ -176,7 +176,7 @@ export const navigation: NavItem[] = [
     },
     quickLinks: [
       { title: "All industries", description: "Sector map", href: "/industries" },
-      { title: "Case studies", description: "Measured outcomes", href: "/case-studies" },
+      { title: "Case Studies", description: "Measured outcomes", href: "/case-studies" },
     ],
   },
   {
@@ -194,7 +194,7 @@ export const navigation: NavItem[] = [
             href: "/case-studies",
           },
           {
-            title: "Enterprise references",
+            title: "Enterprise References",
             description: "How buyers verify InheritX.",
             href: "/resources/enterprise-references",
           },
@@ -265,7 +265,7 @@ export const navigation: NavItem[] = [
       ],
     },
     quickLinks: [
-      { title: "Case studies", description: "Measured outcomes", href: "/case-studies" },
+      { title: "Case Studies", description: "Measured outcomes", href: "/case-studies" },
       { title: "All solutions", description: "Capability map", href: "/solutions" },
     ],
   },
@@ -339,7 +339,7 @@ export const navigation: NavItem[] = [
             href: "/contact",
           },
           {
-            title: "Book a Strategy Call",
+            title: "Book a strategy call",
             description: "30 minutes to map your AI transformation.",
             href: "/contact",
           },
@@ -352,7 +352,7 @@ export const navigation: NavItem[] = [
       description:
         "30 minutes to pressure-test fit, ownership model, and the right engagement shape.",
       href: "/contact",
-      cta: "Book an AI Strategy Call",
+      cta: "Book an AI strategy call",
       stats: [
         { value: "14+", label: "Years AI delivery DNA" },
         { value: "600+", label: "Engagements" },
@@ -392,9 +392,9 @@ export const navigation: NavItem[] = [
       },
     ],
     quickLinks: [
-      { title: "All insights", description: "Browse the library", href: "/insights" },
-      { title: "Case studies", description: "Measured outcomes", href: "/case-studies" },
-      { title: "AI Strategy Call", description: "Talk to an architect", href: "/contact?intent=strategy" },
+      { title: "All Insights", description: "Browse the library", href: "/insights" },
+      { title: "Case Studies", description: "Measured outcomes", href: "/case-studies" },
+      { title: "AI strategy call", description: "Talk to an architect", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -452,7 +452,7 @@ export const navigation: NavItem[] = [
             href: "/resources/diligence-pack",
           },
           {
-            title: "AI governance",
+            title: "AI Governance",
             description: "Controls for agentic systems.",
             href: "/resources/ai-governance",
           },
@@ -467,7 +467,7 @@ export const navigation: NavItem[] = [
             href: "/resources/architecture-principles",
           },
           {
-            title: "Enterprise references",
+            title: "Enterprise References",
             description: "How buyers verify InheritX—honest tiers of proof.",
             href: "/resources/enterprise-references",
           },
@@ -488,8 +488,8 @@ export const navigation: NavItem[] = [
       ],
     },
     quickLinks: [
-      { title: "Case studies", description: "Measured outcomes", href: "/case-studies" },
-      { title: "AI portfolio", description: "Capability patterns", href: "/portfolio" },
+      { title: "Case Studies", description: "Measured outcomes", href: "/case-studies" },
+      { title: "AI Portfolio", description: "Capability patterns", href: "/portfolio" },
     ],
   },
 ];

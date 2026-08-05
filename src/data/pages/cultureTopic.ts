@@ -11,7 +11,7 @@ export const cultureTopic: TopicPage = {
   secondaryCta: { label: "Meet the team", href: "/team" },
   layout: "narrative",
   metadata: {
-    title: "Culture & Values | InheritX",
+    title: "Culture & values | InheritX",
     description:
       "Precision, ownership, and ambitious craft—how InheritX teams ship governed enterprise AI with accountability and calm delivery under pressure.",
   },
@@ -96,10 +96,10 @@ export const cultureTopic: TopicPage = {
       type: "related",
       title: "Join us or go deeper",
       links: [
-        { label: "Our team", href: "/team" },
+        { label: "Our Team", href: "/team" },
         { label: "Careers", href: "/careers" },
         { label: "Why InheritX", href: "/company/why-inheritx" },
-        { label: "Our approach", href: "/company/approach" },
+        { label: "Our Approach", href: "/company/approach" },
         { label: "Contact", href: "/contact" },
       ],
     },

@@ -201,7 +201,7 @@ export function CaseStudiesCTA() {
               href="/contact"
               className="bg-cyan px-7 py-3.5 text-white hover:bg-white hover:text-ink"
             >
-              Book an AI Strategy Call
+              Book an AI strategy call
             </MagneticButton>
             <Link
               href="/portfolio"

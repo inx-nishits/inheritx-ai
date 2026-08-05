@@ -48,8 +48,8 @@ export function Header() {
                   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan/50 focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
                 )}
               >
-                <span className="sm:hidden">Strategy Call</span>
-                <span className="hidden sm:inline">Book an AI Strategy Call</span>
+                <span className="sm:hidden">Strategy call</span>
+                <span className="hidden sm:inline">Book an AI strategy call</span>
                 <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-white text-ink transition-colors duration-300 group-hover:bg-ink group-hover:text-white">
                   <ArrowUpRight size={13} strokeWidth={2.25} />
                 </span>

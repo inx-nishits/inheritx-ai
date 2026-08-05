@@ -8,7 +8,7 @@ const resourceTopics: TopicPage[] = [
     title: "Executive and architect perspectives on enterprise AI.",
     description:
       "Short, decision-grade writing for leaders and builders—governed agents, private AI ownership, and the path from pilot to platform. No filler. No hype.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "library",
     metadata: {
@@ -73,7 +73,7 @@ const resourceTopics: TopicPage[] = [
         links: [
           { label: "Research briefs", href: "/resources/research" },
           { label: "Whitepapers", href: "/resources/whitepapers" },
-          { label: "Our approach", href: "/company/approach" },
+          { label: "Our Approach", href: "/company/approach" },
           { label: "Solutions", href: "/solutions" },
           { label: "Contact", href: "/contact" },
         ],
@@ -88,7 +88,7 @@ const resourceTopics: TopicPage[] = [
           },
           {
             q: "Can we request a private briefing on a theme?",
-            a: "Yes. Book an AI Strategy Call and we will tailor a briefing to your industry, risk posture, and current AI maturity.",
+            a: "Yes. Book an AI strategy call and we will tailor a briefing to your industry, risk posture, and current AI maturity.",
           },
           {
             q: "How often do you publish?",
@@ -105,7 +105,7 @@ const resourceTopics: TopicPage[] = [
     description:
       "Focused research notes on how enterprise AI behaves in production—evaluation design, agent governance, private deployment patterns, and domain-specific constraints.",
     primaryCta: { label: "Explore solutions", href: "/solutions" },
-    secondaryCta: { label: "AI portfolio", href: "/portfolio" },
+    secondaryCta: { label: "AI Portfolio", href: "/portfolio" },
     layout: "library",
     metadata: {
       title: "Applied AI Research | InheritX",
@@ -169,7 +169,7 @@ const resourceTopics: TopicPage[] = [
         links: [
           { label: "Insights", href: "/insights" },
           { label: "Whitepapers", href: "/resources/whitepapers" },
-          { label: "Case studies", href: "/case-studies" },
+          { label: "Case Studies", href: "/case-studies" },
           { label: "Company & vision", href: "/company" },
           { label: "Contact", href: "/contact" },
         ],
@@ -182,8 +182,8 @@ const resourceTopics: TopicPage[] = [
     title: "Frameworks for AI modernization.",
     description:
       "Longer-form frameworks for transformation leaders—sequencing investment, designing governed platforms, and moving agentic capability from proof to estate-wide scale.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
-    secondaryCta: { label: "Our approach", href: "/company/approach" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    secondaryCta: { label: "Our Approach", href: "/company/approach" },
     layout: "library",
     metadata: {
       title: "AI Modernization Whitepapers | InheritX",

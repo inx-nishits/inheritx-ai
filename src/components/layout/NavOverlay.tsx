@@ -65,13 +65,13 @@ const iconMap: Record<string, LucideIcon> = {
   "Culture & Values": Sparkles,
   Careers: Briefcase,
   Contact: Sparkles,
-  "Book a Strategy Call": Sparkles,
+  "Book a strategy call": Sparkles,
   "Agent Bank": Bot,
-  "Enterprise references": Building2,
+  "Enterprise References": Building2,
   "Production readiness": Target,
   "Security FAQ": Shield,
   "Diligence pack": FileText,
-  "AI governance": Shield,
+  "AI Governance": Shield,
   "Architecture principles": Network,
 };
 

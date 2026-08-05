@@ -9,14 +9,14 @@ export const contactHero = {
 export const contactIntents = [
   {
     id: "strategy",
-    label: "AI Strategy Call",
-    topic: "AI Strategy Call",
+    label: "AI strategy call",
+    topic: "AI strategy call",
     description: "Pressure-test fit, scope, and a 90-day path with an architect.",
   },
   {
     id: "assessment",
-    label: "AI Assessment / Architecture Review",
-    topic: "AI Assessment / Architecture Review",
+    label: "AI assessment / architecture review",
+    topic: "AI assessment / architecture review",
     description:
       "Structured readiness review—data, architecture, security, and build-vs-buy.",
   },
@@ -93,13 +93,13 @@ export const contactNextSteps = [
 ];
 
 export const contactTopics = [
-  "AI Strategy Call",
-  "AI Assessment / Architecture Review",
-  "AI Transformation Program",
+  "AI strategy call",
+  "AI assessment / architecture review",
+  "AI transformation Program",
   "AI / ML Engineering",
   "Agentic AI / Multi-Agent System",
   "AI DevOps / LLMOps",
-  "AI Consulting & Architecture",
+  "AI consulting & Architecture",
   "Custom AI Platform",
   "Embedded AI Engineering",
   "Dedicated AI Squad",

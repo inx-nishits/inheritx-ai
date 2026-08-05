@@ -9,7 +9,7 @@ import {
 } from "@/components/case-studies/CaseStudiesPage";
 
 export const metadata: Metadata = {
-  title: "Case Studies — InheritX AI",
+  title: "Case studies — InheritX AI",
   description:
     "Measured enterprise AI outcomes—AI/ML, agentic systems, computer vision, and platforms—from InheritX production engagements.",
 };

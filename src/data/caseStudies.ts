@@ -38,7 +38,7 @@ export type CaseStudy = {
 };
 
 export const caseStudyIntro = {
-  eyebrow: "Case Studies",
+  eyebrow: "Case studies",
   title: "Measured AI outcomes from production—not pilot theater.",
   copy: "AI-led engagements first—agentic systems, computer vision, generative intelligence, AI platforms, and AI infrastructure—followed by enterprise systems that prove scale and ops discipline. We publish methodology with the story. Named or anonymized references for qualified opportunities are available under NDA.",
 };
@@ -124,7 +124,7 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     relatedSolutions: [
       { label: "Agentic AI", href: "/solutions/ai-agents" },
-      { label: "Enterprise AI Platforms", href: "/solutions/enterprise-ai" },
+      { label: "Enterprise AI platforms", href: "/solutions/enterprise-ai" },
       { label: "AI Transformation", href: "/solutions/ai-transformation" },
     ],
     relatedIndustries: [
@@ -134,7 +134,7 @@ export const caseStudiesPage: CaseStudy[] = [
     relatedResources: [
       { label: "Security FAQ", href: "/resources/security-faq" },
       { label: "Engagement models", href: "/resources/engagement-models" },
-      { label: "AI Strategy Call", href: "/contact?intent=strategy" },
+      { label: "AI strategy call", href: "/contact?intent=strategy" },
     ],
     relatedProjectHref: "/portfolio/agent-bank",
     relatedProjectLabel: "Open full Agent Bank project",
@@ -145,7 +145,7 @@ export const caseStudiesPage: CaseStudy[] = [
     category: "Computer Vision",
     tagline: "Vision-guided dental assessment at home",
     summary:
-      "Computer vision quality gates for at-home dental scans—reducing unnecessary clinic visits by 30–35% while keeping clinicians in the loop.",
+      "Computer Vision quality gates for at-home dental scans—reducing unnecessary clinic visits by 30–35% while keeping clinicians in the loop.",
     technologies: [
       "Computer Vision",
       "Quality gating models",
@@ -160,7 +160,7 @@ export const caseStudiesPage: CaseStudy[] = [
     challenge:
       "Patients delayed care due to access friction, while clinics lacked a reliable way to capture diagnostic-quality imagery outside the chair—without replacing clinician judgment or weakening data controls.",
     whyAi:
-      "Manual intake cannot scale quality checks across at-home capture. Computer vision is the right tool when the business problem is consistent scan quality and triage efficiency—while clinical interpretation remains human-owned.",
+      "Manual intake cannot scale quality checks across at-home capture. Computer Vision is the right tool when the business problem is consistent scan quality and triage efficiency—while clinical interpretation remains human-owned.",
     approach:
       "We built a sensor-guided capture flow with vision models that gate scan quality, secure cloud processing, and clinician review workflows. High-risk interpretation stayed human-owned; AI focused on quality gates and intake efficiency.",
     architecture: [
@@ -170,7 +170,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "Clinician review workflows with clear human decision ownership",
     ],
     aiCapabilities: [
-      "Computer vision quality gating",
+      "Computer Vision quality gating",
       "AI-assisted intake (not autonomous diagnosis)",
       "Human-in-the-loop clinical review",
       "Separation of AI assist vs. clinician decision authority",
@@ -205,8 +205,8 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     relatedResources: [
       { label: "Security FAQ", href: "/resources/security-faq" },
-      { label: "IP ownership", href: "/company/ip-ownership" },
-      { label: "AI Strategy Call", href: "/contact?intent=strategy" },
+      { label: "IP Ownership", href: "/company/ip-ownership" },
+      { label: "AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -271,7 +271,7 @@ export const caseStudiesPage: CaseStudy[] = [
     relatedResources: [
       { label: "Security FAQ", href: "/resources/security-faq" },
       { label: "Diligence pack", href: "/resources/diligence-pack" },
-      { label: "AI Strategy Call", href: "/contact?intent=strategy" },
+      { label: "AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -333,8 +333,8 @@ export const caseStudiesPage: CaseStudy[] = [
       "Playbooks and topology hardening compound: every recovered incident improves the next release.",
     ],
     relatedSolutions: [
-      { label: "AI Transformation / AI DevOps", href: "/solutions/ai-transformation" },
-      { label: "Enterprise AI Platforms", href: "/solutions/enterprise-ai" },
+      { label: "AI transformation / AI DevOps", href: "/solutions/ai-transformation" },
+      { label: "Enterprise AI platforms", href: "/solutions/enterprise-ai" },
       { label: "Embedded AI Engineering", href: "/solutions/hire-ai-engineers" },
     ],
     relatedIndustries: [
@@ -344,7 +344,7 @@ export const caseStudiesPage: CaseStudy[] = [
     relatedResources: [
       { label: "Engagement models", href: "/resources/engagement-models" },
       { label: "Security FAQ", href: "/resources/security-faq" },
-      { label: "AI Strategy Call", href: "/contact?intent=strategy" },
+      { label: "AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -405,8 +405,8 @@ export const caseStudiesPage: CaseStudy[] = [
       "Cost leakage and security exposure often share root causes in cloud AI estates.",
     ],
     relatedSolutions: [
-      { label: "AI Transformation / AI DevOps", href: "/solutions/ai-transformation" },
-      { label: "Enterprise AI Platforms", href: "/solutions/enterprise-ai" },
+      { label: "AI transformation / AI DevOps", href: "/solutions/ai-transformation" },
+      { label: "Enterprise AI platforms", href: "/solutions/enterprise-ai" },
       { label: "AI Consulting", href: "/solutions/ai-consulting" },
     ],
     relatedIndustries: [
@@ -416,7 +416,7 @@ export const caseStudiesPage: CaseStudy[] = [
     relatedResources: [
       { label: "Security FAQ", href: "/resources/security-faq" },
       { label: "Company security practices", href: "/company/security" },
-      { label: "AI Strategy Call", href: "/contact?intent=strategy" },
+      { label: "AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -440,11 +440,11 @@ export const caseStudiesPage: CaseStudy[] = [
     challenge:
       "Coaches lacked a system to assign drills, track progress, and guide practice between sessions.",
     whyAi:
-      "Static drill libraries do not adapt to athlete progress between sessions. Computer vision and AR-assisted cues make practice guidance portable—so coaching intelligence travels with the athlete.",
+      "Static drill libraries do not adapt to athlete progress between sessions. Computer Vision and AR-assisted cues make practice guidance portable—so coaching intelligence travels with the athlete.",
     approach:
       "We applied computer vision and AR-assisted practice cues with progress intelligence so coaching guidance traveled with the athlete between sessions.",
     architecture: [
-      "Computer vision / AR-assisted practice cues",
+      "Computer Vision / AR-assisted practice cues",
       "Progress intelligence for drill assignment and tracking",
       "Coach-driven training workflows",
       "Athlete-facing guidance between sessions",
@@ -482,8 +482,8 @@ export const caseStudiesPage: CaseStudy[] = [
       { label: "Retail / consumer", href: "/industries/retail" },
     ],
     relatedResources: [
-      { label: "AI portfolio", href: "/portfolio" },
-      { label: "AI Strategy Call", href: "/contact?intent=strategy" },
+      { label: "AI Portfolio", href: "/portfolio" },
+      { label: "AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -545,7 +545,7 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     relatedResources: [
       { label: "Engagement models", href: "/resources/engagement-models" },
-      { label: "AI Strategy Call", href: "/contact?intent=strategy" },
+      { label: "AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -603,8 +603,8 @@ export const caseStudiesPage: CaseStudy[] = [
       { label: "Logistics", href: "/industries/logistics" },
     ],
     relatedResources: [
-      { label: "Case studies", href: "/case-studies" },
-      { label: "AI Strategy Call", href: "/contact?intent=strategy" },
+      { label: "Case Studies", href: "/case-studies" },
+      { label: "AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -654,15 +654,15 @@ export const caseStudiesPage: CaseStudy[] = [
       "Latency and availability are buyer trust signals—whether the surface is a leaderboard or an agent console.",
     ],
     relatedSolutions: [
-      { label: "AI Transformation / AI DevOps", href: "/solutions/ai-transformation" },
+      { label: "AI transformation / AI DevOps", href: "/solutions/ai-transformation" },
       { label: "Agentic AI", href: "/solutions/ai-agents" },
     ],
     relatedIndustries: [
       { label: "Retail", href: "/industries/retail" },
     ],
     relatedResources: [
-      { label: "AI portfolio", href: "/portfolio" },
-      { label: "AI Strategy Call", href: "/contact?intent=strategy" },
+      { label: "AI Portfolio", href: "/portfolio" },
+      { label: "AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
 ];

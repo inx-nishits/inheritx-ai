@@ -5,15 +5,15 @@ export type { TopicLink, TopicSection, TopicPage } from "./topic";
 const companyTopics: TopicPage[] = [
   {
     slug: "ai-vision",
-    eyebrow: "AI Vision",
+    eyebrow: "AI vision",
     title: "Intelligence as governed infrastructure you own.",
     description:
       "InheritX treats AI as enterprise infrastructure—reliable, observable, and entirely under your control. Not rented capability. Not pilot theater. Systems that compound.",
     primaryCta: { label: "Explore solutions", href: "/solutions" },
-    secondaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    secondaryCta: { label: "Book an AI strategy call", href: "/contact" },
     layout: "narrative",
     metadata: {
-      title: "Our AI Vision | InheritX",
+      title: "Our AI vision | InheritX",
       description:
         "Intelligence should behave like infrastructure: governed, measurable, and owned by the enterprise. InheritX designs AI systems for production—not demos.",
     },
@@ -42,7 +42,7 @@ const companyTopics: TopicPage[] = [
           },
           {
             title: "Agents that work",
-            copy: "Multi-agent systems that plan, call tools, escalate exceptions, and keep humans in the decision loop for high-risk actions.",
+            copy: "Multi-Agent Systems that plan, call tools, escalate exceptions, and keep humans in the decision loop for high-risk actions.",
           },
         ],
       },
@@ -70,9 +70,9 @@ const companyTopics: TopicPage[] = [
         title: "Continue exploring",
         links: [
           { label: "Why InheritX", href: "/company/why-inheritx" },
-          { label: "Our approach", href: "/company/approach" },
+          { label: "Our Approach", href: "/company/approach" },
           { label: "Enterprise AI solutions", href: "/solutions" },
-          { label: "Our team", href: "/team" },
+          { label: "Our Team", href: "/team" },
           { label: "Contact", href: "/contact" },
         ],
       },
@@ -102,7 +102,7 @@ const companyTopics: TopicPage[] = [
     title: "Your data. Your models. Your IP.",
     description:
       "Enterprises choose InheritX when pilots are no longer enough—when we build and hand over systems you own: code, fine-tuned weights, and private-cloud deployment with zero third-party data sharing.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "narrative",
     metadata: {
@@ -178,10 +178,10 @@ const companyTopics: TopicPage[] = [
         type: "related",
         title: "Go deeper",
         links: [
-          { label: "Our AI vision", href: "/company/ai-vision" },
-          { label: "Our approach", href: "/company/approach" },
+          { label: "Our AI Vision", href: "/company/ai-vision" },
+          { label: "Our Approach", href: "/company/approach" },
           { label: "Security practices", href: "/company/security" },
-          { label: "IP ownership", href: "/company/ip-ownership" },
+          { label: "IP Ownership", href: "/company/ip-ownership" },
           { label: "Engagement models", href: "/resources/engagement-models" },
           { label: "Contact", href: "/contact" },
         ],
@@ -190,7 +190,7 @@ const companyTopics: TopicPage[] = [
   },
   {
     slug: "approach",
-    eyebrow: "Our Approach",
+    eyebrow: "Our approach",
     title: "From discovery to production.",
     description:
       "Discover, strategise, prototype, deploy, and scale—with governance and ownership in every phase. Typical engagements move from feasibility to private-cloud go-live with full IP handover.",
@@ -198,7 +198,7 @@ const companyTopics: TopicPage[] = [
     secondaryCta: { label: "Explore solutions", href: "/solutions" },
     layout: "narrative",
     metadata: {
-      title: "Our Approach | InheritX Enterprise AI",
+      title: "Our approach | InheritX Enterprise AI",
       description:
         "A disciplined path from executive mandate to industrialized AI: discovery, blueprint, pilot to proof, and scale—with governance and IP ownership throughout.",
     },
@@ -286,10 +286,10 @@ const companyTopics: TopicPage[] = [
         type: "related",
         title: "Related",
         links: [
-          { label: "Our AI vision", href: "/company/ai-vision" },
+          { label: "Our AI Vision", href: "/company/ai-vision" },
           { label: "Why InheritX", href: "/company/why-inheritx" },
           { label: "Security practices", href: "/company/security" },
-          { label: "IP ownership", href: "/company/ip-ownership" },
+          { label: "IP Ownership", href: "/company/ip-ownership" },
           { label: "Production readiness", href: "/resources/production-readiness" },
           { label: "Contact", href: "/contact" },
         ],
@@ -320,11 +320,11 @@ const companyTopics: TopicPage[] = [
     title: "Security practices for private, production AI.",
     description:
       "How InheritX approaches identity, data boundaries, private deployment, and honest compliance language—without claiming certifications we have not earned.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
     secondaryCta: { label: "Security FAQ", href: "/resources/security-faq" },
     layout: "narrative",
     metadata: {
-      title: "Security & Compliance | InheritX",
+      title: "Security & compliance | InheritX",
       description:
         "InheritX security practices for private-cloud AI: data boundaries, access control, auditability, and precise compliance language for enterprise buyers.",
     },
@@ -389,9 +389,9 @@ const companyTopics: TopicPage[] = [
         links: [
           { label: "Security FAQ", href: "/resources/security-faq" },
           { label: "Diligence pack overview", href: "/resources/diligence-pack" },
-          { label: "Enterprise references", href: "/resources/enterprise-references" },
-          { label: "IP ownership", href: "/company/ip-ownership" },
-          { label: "AI governance", href: "/resources/ai-governance" },
+          { label: "Enterprise References", href: "/resources/enterprise-references" },
+          { label: "IP Ownership", href: "/company/ip-ownership" },
+          { label: "AI Governance", href: "/resources/ai-governance" },
           { label: "Contact — diligence", href: "/contact?intent=security" },
         ],
       },
@@ -421,11 +421,11 @@ const companyTopics: TopicPage[] = [
     title: "What you own when we hand over.",
     description:
       "“You own the code” is a contractual and technical commitment—not a slogan. Here is the scope InheritX transfers on production AI engagements.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
-    secondaryCta: { label: "Our approach", href: "/company/approach" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    secondaryCta: { label: "Our Approach", href: "/company/approach" },
     layout: "narrative",
     metadata: {
-      title: "IP Ownership & Handover | InheritX",
+      title: "IP ownership & Handover | InheritX",
       description:
         "InheritX IP handover scope: code, fine-tunes, agents, prompts, and infrastructure-as-code transferred to the customer—without renting back the platform.",
     },
@@ -511,7 +511,7 @@ const companyTopics: TopicPage[] = [
         title: "Related",
         links: [
           { label: "Security practices", href: "/company/security" },
-          { label: "Our approach", href: "/company/approach" },
+          { label: "Our Approach", href: "/company/approach" },
           { label: "Diligence pack", href: "/resources/diligence-pack" },
           { label: "Why InheritX", href: "/company/why-inheritx" },
           { label: "Contact", href: "/contact" },

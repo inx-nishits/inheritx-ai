@@ -6,7 +6,7 @@ export const companyHero = {
 };
 
 export const companyVision = {
-  title: "Our AI vision",
+  title: "Our AI Vision",
   lead: "Enterprise AI should behave like infrastructure you own: reliable, governed, measurable—and never rented back to you as a black box.",
   pillars: [
     {

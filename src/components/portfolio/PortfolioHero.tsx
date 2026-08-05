@@ -20,7 +20,7 @@ export function PortfolioHero() {
         <div>
           <Reveal>
             <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
-              AI Portfolio
+              AI portfolio
             </p>
           </Reveal>
           <TextReveal
@@ -31,7 +31,7 @@ export function PortfolioHero() {
             <p className="mt-4 max-w-lg text-base leading-relaxed text-white/55 md:text-lg">
               How we deliver AI/ML engineering, Agentic AI, and AI DevOps—
               generative applications, vision, automation, and transformation—
-              organized by capability. Named client outcomes live in Case Studies.
+              organized by capability. Named client outcomes live in Case studies.
             </p>
           </Reveal>
           <Reveal delay={0.18}>

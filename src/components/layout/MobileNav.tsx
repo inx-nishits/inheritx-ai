@@ -62,14 +62,15 @@ const iconMap: Record<string, LucideIcon> = {
   "Security & Compliance": Shield,
   "IP Ownership": FileText,
   "Our Team": Users,
+  "Culture & Values": Sparkles,
   Careers: Briefcase,
   Contact: Sparkles,
   "Agent Bank": Bot,
-  "Enterprise references": Building2,
+  "Enterprise References": Building2,
   "Production readiness": Target,
   "Security FAQ": Shield,
   "Diligence pack": FileText,
-  "AI governance": Shield,
+  "AI Governance": Shield,
   "Architecture principles": Network,
 };
 
@@ -305,7 +306,7 @@ export function MobileNav({
                 onClick={onClose}
                 strength={0}
               >
-                Book an AI Strategy Call
+                Book an AI strategy call
               </MagneticButton>
               <p className="mt-3 text-center text-[11px] text-white/35">
                 30 minutes · Strategy-first · No pitch theater

@@ -108,7 +108,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "dummy-06",
     quote:
-      "Computer vision quality gates finally stuck in production. The difference was the operating model—HITL, secure pipelines, and clear ownership at handover.",
+      "Computer Vision quality gates finally stuck in production. The difference was the operating model—HITL, secure pipelines, and clear ownership at handover.",
     name: "Amara Brooks",
     title: "VP of Digital Transformation",
     company: "Harbor Retail Co.",

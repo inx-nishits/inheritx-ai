@@ -21,7 +21,7 @@ export const solutionTopics: TopicPage[] = [
     title: "Private AI platforms that transform how enterprises operate.",
     description:
       "We build and hand over AI/ML systems—governed retrieval, fine-tuning, model endpoints, prediction, and policy controls inside your VPC. Your data, your models, your IP. Not a rental of someone else’s platform.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
     secondaryCta: { label: "View AI portfolio", href: "/portfolio" },
     layout: "capability",
     sections: [
@@ -113,9 +113,9 @@ export const solutionTopics: TopicPage[] = [
         links: [
           { label: "Generative AI applications", href: "/solutions/generative-ai" },
           { label: "AI Agents", href: "/solutions/ai-agents" },
-          { label: "AI Consulting & architecture", href: "/solutions/ai-consulting" },
+          { label: "AI consulting & architecture", href: "/solutions/ai-consulting" },
           { label: "Industry programs", href: "/industries" },
-          { label: "Case studies", href: "/case-studies" },
+          { label: "Case Studies", href: "/case-studies" },
         ],
       },
       {
@@ -142,7 +142,7 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "Enterprise AI Platforms — InheritX",
+      title: "Enterprise AI platforms — InheritX",
       description:
         "Private, governed enterprise AI platforms—retrieval, model routing, policy controls, and observability inside your cloud estate.",
     },
@@ -153,7 +153,7 @@ export const solutionTopics: TopicPage[] = [
     title: "Autonomous agents that execute enterprise work—not chat demos.",
     description:
       "Autonomous agents with memory, planning, MCP, and tool calling. Multi-agent networks assign work, peer-review outputs, and escalate exceptions—fully instrumented, with humans on consequential decisions.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
     secondaryCta: { label: "See Agent Bank", href: "/portfolio/agent-bank" },
     layout: "capability",
     sections: [
@@ -293,7 +293,7 @@ export const solutionTopics: TopicPage[] = [
     title: "Intelligent workflow automation woven into enterprise systems.",
     description:
       "Embed AI into intake, routing, documentation, and exception handling—using n8n, agents, and system integrations connected to ERP and CRM with evaluation loops and cost discipline.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
     secondaryCta: { label: "Browse case studies", href: "/case-studies" },
     layout: "capability",
     sections: [
@@ -429,7 +429,7 @@ export const solutionTopics: TopicPage[] = [
     title: "Secure LLM applications built for enterprise constraints.",
     description:
       "Context-aware RAG with vector stores, semantic search, prompt engineering, evaluation harnesses, and custom guardrails—so answers stay grounded in your business context. Copilots and content systems you own in your private cloud.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
     secondaryCta: { label: "Explore enterprise AI platform", href: "/solutions/enterprise-ai" },
     layout: "capability",
     sections: [
@@ -537,7 +537,7 @@ export const solutionTopics: TopicPage[] = [
         links: [
           { label: "Enterprise AI platform", href: "/solutions/enterprise-ai" },
           { label: "AI Consulting", href: "/solutions/ai-consulting" },
-          { label: "Case studies", href: "/case-studies" },
+          { label: "Case Studies", href: "/case-studies" },
           { label: "Contact", href: "/contact" },
         ],
       },
@@ -554,7 +554,7 @@ export const solutionTopics: TopicPage[] = [
     title: "Perception systems for the physical operating world.",
     description:
       "Custom CNNs and Vision Transformer models trained on your domain data for real-time detection, anomaly finding, and classification—including edge deployments when data cannot leave the site.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
     secondaryCta: { label: "Manufacturing & logistics", href: "/industries" },
     layout: "capability",
     sections: [
@@ -562,7 +562,7 @@ export const solutionTopics: TopicPage[] = [
         type: "narrative",
         title: "Vision that survives the factory floor",
         body: [
-          "Computer vision pilots often fail in production because training data never captured glare, motion blur, line changeovers, or the long tail of defect morphology.",
+          "Computer Vision pilots often fail in production because training data never captured glare, motion blur, line changeovers, or the long tail of defect morphology.",
           "InheritX builds perception pipelines with field validation loops: capture protocols, labeling governance, and retraining triggers tied to operator feedback—not static model drops.",
           "We design for deployment reality—GPU budgets at the edge, latency budgets on high-speed lines, and integration paths into quality hold systems and maintenance ticketing.",
         ],
@@ -649,7 +649,7 @@ export const solutionTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "Computer vision FAQ",
+        title: "Computer Vision FAQ",
         items: [
           {
             q: "Do you supply camera hardware?",
@@ -672,7 +672,7 @@ export const solutionTopics: TopicPage[] = [
           { label: "AI Automation", href: "/solutions/ai-automation" },
           { label: "Dedicated AI Squads", href: "/solutions/dedicated-ai-squads" },
           { label: "Portfolio", href: "/portfolio" },
-          { label: "Case studies", href: "/case-studies" },
+          { label: "Case Studies", href: "/case-studies" },
         ],
       },
     ],
@@ -688,7 +688,7 @@ export const solutionTopics: TopicPage[] = [
     title: "From executive mandate to industrialized AI capability.",
     description:
       "Run structured transformation programs across AI/ML, Agentic AI, and AI DevOps—align leadership, stand up architecture, deliver governed pilots, and embed LLMOps so AI scales beyond innovation labs.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
     secondaryCta: { label: "AI Consulting", href: "/solutions/ai-consulting" },
     layout: "engagement",
     sections: [
@@ -794,7 +794,7 @@ export const solutionTopics: TopicPage[] = [
           { label: "AI Consulting", href: "/solutions/ai-consulting" },
           { label: "Enterprise AI platform", href: "/solutions/enterprise-ai" },
           { label: "Dedicated AI Squads", href: "/solutions/dedicated-ai-squads" },
-          { label: "Case studies", href: "/case-studies" },
+          { label: "Case Studies", href: "/case-studies" },
           { label: "Contact", href: "/contact" },
         ],
       },
@@ -818,7 +818,7 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "AI Transformation Programs — InheritX",
+      title: "AI transformation Programs — InheritX",
       description:
         "Enterprise AI transformation from strategy through industrialized capability—executive alignment, governed pilots, platform foundation, and operating model design.",
     },
@@ -829,7 +829,7 @@ export const solutionTopics: TopicPage[] = [
     title: "Architecture, governance, and roadmap design for AI at scale.",
     description:
       "Engage senior architects for board-ready blueprints—data readiness, model strategy, LLMOps posture, security controls, and sequenced investment before major build spend.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
     secondaryCta: { label: "Start transformation program", href: "/solutions/ai-transformation" },
     layout: "engagement",
     sections: [
@@ -961,7 +961,7 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "AI Consulting & Architecture — InheritX",
+      title: "AI consulting & Architecture — InheritX",
       description:
         "Enterprise AI consulting for CTOs and CIOs—reference architecture, data readiness, model strategy, LLMOps, security controls, and sequenced roadmaps.",
     },
@@ -972,8 +972,8 @@ export const solutionTopics: TopicPage[] = [
     title: "Embedded AI specialists who ship under your standards.",
     description:
       "Add senior ML, LLM, and agentic engineers to your roadmap—working inside your repos, ceremonies, and compliance boundaries, not parallel shadow teams.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
-    secondaryCta: { label: "Compare Dedicated AI Squads", href: "/solutions/dedicated-ai-squads" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    secondaryCta: { label: "Compare dedicated AI squads", href: "/solutions/dedicated-ai-squads" },
     layout: "engagement",
     sections: [
       {
@@ -1082,7 +1082,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             q: "When should we NOT hire embeds first?",
-            a: "When the KPI, architecture standards, or security path are still undefined. Start with AI Consulting & Architecture, then embed once the backlog and guardrails are clear.",
+            a: "When the KPI, architecture standards, or security path are still undefined. Start with AI consulting & Architecture, then embed once the backlog and guardrails are clear.",
           },
           {
             q: "How is this different from Dedicated AI Squads?",
@@ -1115,7 +1115,7 @@ export const solutionTopics: TopicPage[] = [
     title: "Cross-functional pods that own a capability to production.",
     description:
       "Stand up dedicated squads—ML, LLMOps, platform, and product delivery— chartered to deliver a defined AI capability from discovery through production operations.",
-    primaryCta: { label: "Book an AI Strategy Call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
     secondaryCta: { label: "View portfolio", href: "/portfolio" },
     layout: "engagement",
     sections: [
@@ -1206,7 +1206,7 @@ export const solutionTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "Dedicated AI squads FAQ",
+        title: "Dedicated AI Squads FAQ",
         items: [
           {
             q: "How is a squad different from hiring individual engineers?",
@@ -1229,7 +1229,7 @@ export const solutionTopics: TopicPage[] = [
           { label: "Embedded AI Engineering", href: "/solutions/hire-ai-engineers" },
           { label: "AI Transformation", href: "/solutions/ai-transformation" },
           { label: "AI Agents", href: "/solutions/ai-agents" },
-          { label: "Case studies", href: "/case-studies" },
+          { label: "Case Studies", href: "/case-studies" },
           { label: "Contact", href: "/contact" },
         ],
       },

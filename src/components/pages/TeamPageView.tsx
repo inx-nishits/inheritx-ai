@@ -109,7 +109,7 @@ export function TeamPageView() {
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-              Culture & Values
+              Culture & values
             </p>
             <h2 className="font-display mt-3 max-w-2xl text-3xl text-white md:text-5xl">
               How we show up when stakes are high.

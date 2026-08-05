@@ -49,14 +49,14 @@ export const solutionPillars = [
 
 export const engagementModels = [
   {
-    title: "AI Consulting & Architecture",
+    title: "AI consulting & Architecture",
     duration: "2–6 weeks · Start here when the mandate is unclear",
     copy: "Board-ready blueprints: data readiness, model strategy, agent design, LLMOps posture, security, and sequenced investment—before you commit to a build.",
     bestFor: "CTO / CIO / CISO / Head of AI",
     href: "/solutions/ai-consulting",
   },
   {
-    title: "AI Transformation Programs",
+    title: "AI transformation Programs",
     duration: "90 days → multi-wave · Production build & industrialize",
     copy: "Executive alignment, architecture, governed pilots that industrialize, private-cloud deployment, and enablement—with IP handover.",
     bestFor: "CEO / Transformation Office",

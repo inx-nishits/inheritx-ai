@@ -28,7 +28,7 @@ export function SolutionsPageView() {
         eyebrow={solutionsHero.eyebrow}
         title={solutionsHero.title}
         description={solutionsHero.description}
-        primaryCta={{ label: "Book an AI Strategy Call", href: "/contact" }}
+        primaryCta={{ label: "Book an AI strategy call", href: "/contact" }}
         secondaryCta={{ label: "See enterprise outcomes", href: "/case-studies" }}
       />
 
@@ -220,7 +220,7 @@ export function SolutionsPageView() {
               href="/contact"
               className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
             >
-              Schedule an AI Assessment
+              Schedule an AI assessment
             </MagneticButton>
             <Link
               href="/portfolio"

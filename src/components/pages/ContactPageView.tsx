@@ -264,7 +264,7 @@ export function ContactPageView() {
                     {submitState.status === "submitting"
                       ? "Submitting…"
                       : topic.includes("Assessment")
-                        ? "Request AI Assessment"
+                        ? "Request AI assessment"
                         : topic.includes("Security")
                           ? "Request diligence support"
                           : "Submit consultation request"}

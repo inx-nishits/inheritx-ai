@@ -29,7 +29,7 @@ export function PortfolioGrid() {
       <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         <div className="mb-8 max-w-3xl md:mb-12">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-            Browse by AI Services
+            Browse by AI services
           </p>
           <TextReveal
             text="Filter the work by capability."

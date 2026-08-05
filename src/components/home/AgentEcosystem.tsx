@@ -56,7 +56,7 @@ export function AgentEcosystem() {
           />
           <Reveal delay={0.1}>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/50">
-              Multi-agent systems with MCP, tool calling, memory, and human
+              Multi-Agent Systems with MCP, tool calling, memory, and human
               gates—autonomous workers that research, decide, execute, and
               escalate under enterprise control.
             </p>

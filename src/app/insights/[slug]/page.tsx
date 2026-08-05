@@ -170,7 +170,7 @@ export default async function InsightDetailPage({ params }: Props) {
               className="inline-flex min-h-11 items-center gap-2 text-sm text-white/45 transition-colors hover:text-white"
             >
               <ArrowLeft size={14} className="shrink-0" />
-              Back to Insights
+              Back to insights
             </Link>
             <div className="mt-6 max-w-3xl md:mt-8">
               <AuthorMeta
@@ -225,7 +225,7 @@ export default async function InsightDetailPage({ params }: Props) {
                         href="/contact?intent=strategy"
                         className="min-h-12 w-full justify-center bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink sm:w-auto"
                       >
-                        Book an AI Strategy Call
+                        Book an AI strategy call
                       </MagneticButton>
                     </div>
                   </div>

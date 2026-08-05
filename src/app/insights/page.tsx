@@ -100,7 +100,7 @@ export default async function InsightsPage() {
               href="/contact?intent=strategy"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan hover:text-white"
             >
-              Book an AI Strategy Call
+              Book an AI strategy call
               <ArrowUpRight size={14} />
             </Link>
           </div>

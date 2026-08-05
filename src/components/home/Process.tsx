@@ -106,7 +106,7 @@ export function Process() {
                 href="/contact"
                 className="bg-cyan px-6 py-3 text-sm font-medium text-white hover:bg-white hover:text-ink"
               >
-                Book an AI Strategy Call
+                Book an AI strategy call
               </MagneticButton>
               <a
                 href="/case-studies"

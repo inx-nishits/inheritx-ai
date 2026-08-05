@@ -22,7 +22,7 @@ export function CompanyPageView() {
         eyebrow={companyHero.eyebrow}
         title={companyHero.title}
         description={companyHero.description}
-        primaryCta={{ label: "Book an AI Strategy Call", href: "/contact" }}
+        primaryCta={{ label: "Book an AI strategy call", href: "/contact" }}
         secondaryCta={{ label: "See how we engage", href: "/solutions" }}
       />
 

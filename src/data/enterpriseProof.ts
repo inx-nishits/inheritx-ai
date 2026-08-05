@@ -77,7 +77,7 @@ export const diligenceLinks = [
     note: "Detailed materials under NDA after fit is confirmed",
   },
   {
-    label: "IP ownership",
+    label: "IP Ownership",
     href: "/company/ip-ownership",
     note: "How code, models, and data transfer at handover",
   },

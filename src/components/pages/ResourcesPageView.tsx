@@ -27,7 +27,7 @@ export function ResourcesPageView() {
         eyebrow={resourcesHero.eyebrow}
         title={resourcesHero.title}
         description={resourcesHero.description}
-        primaryCta={{ label: "Book an AI Strategy Call", href: "/contact" }}
+        primaryCta={{ label: "Book an AI strategy call", href: "/contact" }}
         secondaryCta={{ label: "Browse AI insights", href: "/insights" }}
       />
 

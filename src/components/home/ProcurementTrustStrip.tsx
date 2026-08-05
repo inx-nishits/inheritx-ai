@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 /**
  * Compact homepage discoverability only — full procurement depth lives on
- * Contact, Security FAQ, and Diligence Pack.
+ * Contact, Security FAQ, and Diligence pack.
  */
 export function ProcurementTrustStrip() {
   return (
@@ -30,7 +30,7 @@ export function ProcurementTrustStrip() {
             href="/resources/diligence-pack"
             className="inline-flex items-center gap-1 text-sm text-white/35 transition-colors hover:text-white/60"
           >
-            Diligence Pack
+            Diligence pack
             <ArrowUpRight size={12} className="opacity-70" />
           </Link>
         </div>

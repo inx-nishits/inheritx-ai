@@ -32,6 +32,11 @@ const nextConfig: NextConfig = {
         destination: "/insights",
         permanent: true,
       },
+      {
+        source: "/path/evaluating",
+        destination: "/path/head-of-ai",
+        permanent: true,
+      },
     ];
   },
 };

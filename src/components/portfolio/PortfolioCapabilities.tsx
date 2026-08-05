@@ -68,7 +68,7 @@ export function BusinessImpact() {
           />
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/50">
             Target outcome classes across cost, speed, automation, and trust.
-            Specific client metrics live in Case Studies.
+            Specific client metrics live in Case studies.
           </p>
         </div>
 
@@ -127,7 +127,7 @@ export function PortfolioCTA() {
               href="/contact"
               className="bg-cyan px-7 py-3.5 text-white shadow-[0_0_36px_rgba(0,190,212,0.22)] hover:bg-white hover:text-ink"
             >
-              Book an AI Strategy Call
+              Book an AI strategy call
             </MagneticButton>
             <a
               href="/"
