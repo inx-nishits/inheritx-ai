@@ -1,12 +1,13 @@
-export const trustSectors = [
-  "Healthcare",
-  "Finance",
-  "Manufacturing",
-  "Retail",
-  "Insurance",
-  "Logistics",
-  "Government",
-];
+/** Homepage strength strip — core AI technology lanes (UI shared with former sector bar). */
+export const trustTechnologies = [
+  { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
+  { label: "Agentic AI", href: "/solutions/ai-agents" },
+  { label: "Generative AI", href: "/solutions/enterprise-ai" },
+  { label: "RAG", href: "/solutions/enterprise-ai" },
+  { label: "LLMOps", href: "/solutions/ai-transformation" },
+  { label: "MCP", href: "/solutions/ai-agents" },
+  { label: "Multi-Agent", href: "/solutions/ai-agents" },
+] as const;
 
 export const capabilities = [
   {

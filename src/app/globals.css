@@ -87,11 +87,11 @@ body {
 }
 
 .marquee-track {
-  animation: marquee 48s linear infinite;
+  animation: marquee 150s linear infinite;
 }
 
 .marquee-track-slow {
-  animation: marquee 55s linear infinite;
+  animation: marquee 180s linear infinite;
 }
 
 .marquee-pause:hover .marquee-track,
@@ -169,12 +169,45 @@ body {
   animation: footer-wordmark-glow 4.5s ease-in-out infinite;
 }
 
+/* Hero banner tag — Satoshi + cyan scan (white base) */
+.hero-eyebrow-shimmer {
+  font-family: var(--font-satoshi), system-ui, sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.35;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 38%,
+    #00bed4 46%,
+    #b4f5ff 50%,
+    #00bed4 54%,
+    #ffffff 62%,
+    #ffffff 100%
+  );
+  background-size: 220% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: hero-eyebrow-scan 5.5s linear infinite;
+}
+
+@keyframes hero-eyebrow-scan {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marquee-track,
   .marquee-track-slow,
   .float-soft,
   .pulse-ring,
-  .footer-wordmark-text {
+  .footer-wordmark-text,
+  .hero-eyebrow-shimmer {
     animation: none !important;
     filter: none !important;
   }
@@ -182,6 +215,13 @@ body {
   .footer-wordmark-text {
     fill: rgba(0, 190, 212, 0.35) !important;
     opacity: 1 !important;
+  }
+
+  .hero-eyebrow-shimmer {
+    color: #ffffff !important;
+    background-image: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
   }
 }
 

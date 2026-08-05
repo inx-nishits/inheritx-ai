@@ -16,8 +16,8 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 
 /**
  * Homepage story arc (enterprise buyer psychology):
- * Attention → soft trust → sector signal → why us → what we build →
- * proof → convert → persona path → sector depth → process → tech →
+ * Attention → soft trust → tech strength → convert → choose path →
+ * why us → what we build → proof → sector depth → process → tech →
  * compact diligence links → close.
  *
  * Full procurement depth lives on Contact / Security FAQ / Diligence Pack.
@@ -31,11 +31,11 @@ export default function Home() {
         <Hero />
         <TrustedBy />
         <TrustBar />
+        <MidPageCTA />
+        <ChooseYourPath />
         <WhyInheritX />
         <Capabilities />
         <FeaturedCaseStudy />
-        <MidPageCTA />
-        <ChooseYourPath />
         <Industries />
         <TransformationJourney />
         <TechStack />

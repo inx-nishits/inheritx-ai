@@ -1,16 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import { useState, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  ArrowUpRight,
   CircuitBoard,
   LineChart,
   Sparkles,
 } from "lucide-react";
 
 import { audiencePaths } from "@/data/content";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Reveal, TextReveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 
@@ -555,6 +554,34 @@ export function ChooseYourPath() {
   const [selected, setSelected] = useState<string | null>(null);
   const activePath = audiencePaths.paths.find((path) => path.id === selected);
 
+  const pathCta = activePath
+    ? {
+        title:
+          activePath.id === "outcomes"
+            ? "See measured enterprise AI outcomes"
+            : activePath.id === "systems"
+              ? "Review architecture & solution lanes"
+              : "Talk through your AI evaluation with an architect",
+        description:
+          activePath.id === "outcomes"
+            ? "Production case studies with methodology—proof for transformation and board conversations."
+            : activePath.id === "systems"
+              ? "Agentic systems, RAG, LLMOps, and private-cloud patterns your CTO can pressure-test."
+              : "A 30-minute strategy call to map consulting, build, or embedded AI engineering next.",
+        label: activePath.cta,
+        href:
+          activePath.id === "explore"
+            ? "/contact?intent=strategy"
+            : activePath.href,
+      }
+    : {
+        title: "Ready to choose a path with an architect?",
+        description:
+          "Select your seat above—or book a 30-minute AI strategy call and we’ll map the right next step.",
+        label: "Book an AI Strategy Call",
+        href: "/contact?intent=strategy",
+      };
+
   return (
     <section
       id="path"
@@ -702,28 +729,42 @@ export function ChooseYourPath() {
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               className="mt-5 md:mt-6"
             >
-              <div className="mb-6 flex flex-col gap-4 border-b border-white/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <p className="text-[11px] tracking-[0.2em] text-cyan uppercase">
-                    {activePath.meta}
-                  </p>
-                  <h4 className="font-display mt-2 text-2xl text-white md:text-3xl">
-                    {activePath.title}
-                  </h4>
-                </div>
-                <Link
-                  href={activePath.href}
-                  className="inline-flex items-center gap-2 text-sm text-cyan transition-colors hover:text-white"
-                >
-                  {activePath.cta}
-                  <ArrowUpRight size={16} />
-                </Link>
+              <div className="mb-6 border-b border-white/10 pb-5">
+                <p className="text-[11px] tracking-[0.2em] text-cyan uppercase">
+                  {activePath.meta}
+                </p>
+                <h4 className="font-display mt-2 text-2xl text-white md:text-3xl">
+                  {activePath.title}
+                </h4>
               </div>
 
               <PathDetails pathId={activePath.id} />
             </motion.div>
           ) : null}
         </AnimatePresence>
+
+        <Reveal delay={0.08}>
+          <div className="mt-10 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between sm:gap-8 md:mt-12 md:pt-10">
+            <div className="max-w-2xl">
+              <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
+                Recommended next step
+              </p>
+              <h3 className="font-display mt-2 text-xl leading-snug text-white md:text-2xl">
+                {pathCta.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/50">
+                {pathCta.description}
+              </p>
+            </div>
+            <MagneticButton
+              href={pathCta.href}
+              className="min-h-12 shrink-0 justify-center bg-cyan px-7 py-3.5 text-sm text-white hover:bg-white hover:text-ink"
+              strength={0.3}
+            >
+              {pathCta.label}
+            </MagneticButton>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

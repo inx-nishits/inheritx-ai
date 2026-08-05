@@ -24,8 +24,8 @@ export function MidPageCTA() {
               Ready for an enterprise AI consultation?
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/50 md:text-base">
-              Primary path: a 30-minute strategy call with an architect. Prefer a
-              structured readiness review first? Request an AI Assessment.
+              Primary path: a 30-minute strategy call with an architect. Prefer
+              proof first? Review production case studies.
             </p>
           </div>
         </Reveal>
@@ -39,17 +39,11 @@ export function MidPageCTA() {
               Book an AI Strategy Call
             </MagneticButton>
             <Link
-              href="/contact?intent=assessment"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-5 text-sm text-white/70 transition-colors hover:border-cyan/40 hover:text-white"
-            >
-              Request AI Assessment
-            </Link>
-            <Link
               href="/case-studies"
-              className="inline-flex min-h-12 items-center justify-center gap-2 px-2 text-sm text-white/45 transition-colors hover:text-white"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-cyan/55 bg-cyan/10 px-5 text-sm font-semibold text-white transition-colors hover:border-cyan hover:bg-cyan/20"
             >
               Review case studies
-              <ArrowUpRight size={14} />
+              <ArrowUpRight size={14} className="text-cyan" />
             </Link>
           </div>
         </Reveal>

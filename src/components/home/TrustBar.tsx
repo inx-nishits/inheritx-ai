@@ -3,23 +3,13 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import { trustSectors } from "@/data/content";
+import { trustTechnologies } from "@/data/content";
 import { Reveal } from "@/components/ui/Reveal";
-
-const sectorHref: Record<string, string> = {
-  Healthcare: "/industries/healthcare",
-  Finance: "/industries/finance",
-  Manufacturing: "/industries/manufacturing",
-  Retail: "/industries/retail",
-  Insurance: "/industries/insurance",
-  Logistics: "/industries/logistics",
-  Government: "/industries/government",
-};
 
 export function TrustBar() {
   return (
     <section
-      aria-label="Industries we serve"
+      aria-label="Core AI technologies"
       className="relative overflow-hidden border-y border-[var(--line-dark)] bg-paper text-ink"
     >
       <div className="editorial-grid-light pointer-events-none absolute inset-0 opacity-50" />
@@ -36,23 +26,23 @@ export function TrustBar() {
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <Reveal className="max-w-xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
-              Industry coverage
+              Technology strength
             </p>
             <h2 className="font-display mt-3 text-[2rem] leading-[1.15] tracking-[-0.03em] text-ink md:text-5xl">
-              Built for regulated industries.
+              Built on production AI systems.
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-ink/55 md:text-base">
-              Sector-fluent AI programs where accuracy, auditability, and private
-              deployment are non-negotiable.
+              Enterprise AI, agents, RAG, and LLMOps—engineered for private
+              cloud, governance, and systems you own end to end.
             </p>
           </Reveal>
 
           <Reveal delay={0.1}>
             <Link
-              href="/industries"
+              href="/solutions"
               className="group inline-flex items-center gap-2 text-sm font-medium text-cyan-deep transition-colors hover:text-ink"
             >
-              Explore all industries
+              Explore all solutions
               <ArrowUpRight
                 size={14}
                 className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -63,32 +53,24 @@ export function TrustBar() {
 
         <Reveal delay={0.15}>
           <ul className="mt-12 flex flex-wrap items-center gap-x-3 gap-y-4 md:mt-14 md:gap-x-4 md:gap-y-5">
-            {trustSectors.map((sector, index) => {
-              const href = sectorHref[sector];
-              const label = (
-                <span className="font-display text-2xl tracking-[-0.03em] text-ink transition-colors group-hover:text-cyan-deep md:text-4xl">
-                  {sector}
-                </span>
-              );
-
-              return (
-                <li key={sector} className="inline-flex items-center gap-3 md:gap-4">
-                  {href ? (
-                    <Link href={href} className="group">
-                      {label}
-                    </Link>
-                  ) : (
-                    label
-                  )}
-                  {index < trustSectors.length - 1 ? (
-                    <span
-                      aria-hidden
-                      className="size-1.5 shrink-0 rounded-full bg-cyan"
-                    />
-                  ) : null}
-                </li>
-              );
-            })}
+            {trustTechnologies.map((tech, index) => (
+              <li
+                key={tech.label}
+                className="inline-flex items-center gap-3 md:gap-4"
+              >
+                <Link href={tech.href} className="group">
+                  <span className="font-display text-2xl tracking-[-0.03em] text-ink transition-colors group-hover:text-cyan-deep md:text-4xl">
+                    {tech.label}
+                  </span>
+                </Link>
+                {index < trustTechnologies.length - 1 ? (
+                  <span
+                    aria-hidden
+                    className="size-1.5 shrink-0 rounded-full bg-cyan"
+                  />
+                ) : null}
+              </li>
+            ))}
           </ul>
         </Reveal>
       </div>

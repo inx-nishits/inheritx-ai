@@ -215,15 +215,15 @@ export function TrustedBy() {
     >
       <div className="mx-auto max-w-[1400px] px-5 text-center md:px-8">
         <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-          Public verification
+          Recognition
         </p>
         <h2 className="font-display mt-3 text-2xl leading-tight text-white md:text-4xl">
-          Independent profiles buyers can inspect.
+          Trusted presence across leading platforms.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50 md:text-base">
-          Review linked public profiles for InheritX. Enterprise proof is
-          published case studies, anonymized engagement classes, and named
-          references under NDA—not marketplace logos alone.
+          Open any profile to verify InheritX delivery history and reviews. For
+          enterprise diligence, start with our published case studies—or request
+          references under NDA.
         </p>
 
         <div className="mt-8 flex justify-center">
@@ -231,7 +231,7 @@ export function TrustedBy() {
             href="/case-studies"
             className="group inline-flex items-center gap-2.5 rounded-full bg-cyan px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(0,190,212,0.22)] transition-colors hover:bg-white hover:text-ink"
           >
-            See published case studies
+            Explore case studies
             <ArrowUpRight
               size={15}
               className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

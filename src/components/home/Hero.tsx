@@ -148,7 +148,7 @@ export function Hero() {
           />
 
           <div className="relative">
-            <p className="hero-eyebrow text-[11px] tracking-[0.32em] text-cyan uppercase">
+            <p className="hero-eyebrow hero-eyebrow-shimmer mx-auto max-w-[min(92vw,44rem)] text-center text-sm font-semibold tracking-[0.22em] uppercase md:text-base md:tracking-[0.26em]">
               AI-Native Enterprise Partner
             </p>
 
@@ -206,10 +206,10 @@ export function Hero() {
               </MagneticButton>
               <Link
                 href="#cases"
-                className="group inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white"
+                className="group inline-flex min-h-12 items-center gap-2 rounded-full border border-cyan/55 bg-cyan/10 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,190,212,0.12)] transition-colors hover:border-cyan hover:bg-cyan/20"
               >
                 See production outcomes
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                <span className="text-cyan transition-transform duration-300 group-hover:translate-x-0.5">
                   →
                 </span>
               </Link>

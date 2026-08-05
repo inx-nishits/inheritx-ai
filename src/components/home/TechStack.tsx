@@ -14,12 +14,23 @@ const layerIcons = [Cpu, Network, Database, Workflow, Cloud, Activity];
 const partnerStrip = [
   { name: "OpenAI", src: "/images/partners/openai.svg" },
   { name: "Anthropic", src: "/images/partners/anthropic.svg" },
+  { name: "Gemini", src: "/images/partners/googlecloud.svg" },
+  { name: "Hugging Face", src: "/images/partners/huggingface.svg" },
+  { name: "NVIDIA", src: "/images/partners/nvidia.svg" },
+  { name: "LangChain", src: "/images/partners/langchain.svg" },
+  { name: "CrewAI", src: "/images/partners/crewai.svg" },
+  { name: "Pinecone", src: "/images/partners/pinecone.svg" },
+  { name: "Weaviate", src: "/images/partners/weaviate.svg" },
+  { name: "Redis", src: "/images/partners/redis.svg" },
+  { name: "n8n", src: "/images/partners/n8n.svg" },
   { name: "AWS", src: "/images/partners/amazonaws.svg" },
   { name: "Azure", src: "/images/partners/microsoft.svg" },
   { name: "GCP", src: "/images/partners/googlecloud.svg" },
-  { name: "LangChain", src: "/images/partners/langchain.svg" },
-  { name: "NVIDIA", src: "/images/partners/nvidia.svg" },
-  { name: "Pinecone", src: "/images/partners/pinecone.svg" },
+  { name: "Docker", src: "/images/partners/docker.svg" },
+  { name: "Kubernetes", src: "/images/partners/kubernetes.svg" },
+  { name: "Terraform", src: "/images/partners/terraform.svg" },
+  { name: "Vercel", src: "/images/partners/vercel.svg" },
+  { name: "Stripe", src: "/images/partners/stripe.svg" },
 ];
 
 export function TechStack() {
@@ -186,7 +197,7 @@ export function TechStack() {
             <p className="mb-6 text-center text-[11px] tracking-[0.22em] text-white/35 uppercase md:text-left">
             Platforms we build enterprise AI with
           </p>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7">
               {partnerStrip.map((partner) => (
                 <div
                   key={partner.name}

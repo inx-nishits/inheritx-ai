@@ -114,12 +114,12 @@ export function FeaturedCaseStudy() {
             </div>
             <Link
               href="/case-studies"
-              className="group inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white"
+              className="group inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full border border-cyan/55 bg-cyan/10 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,190,212,0.12)] transition-colors hover:border-cyan hover:bg-cyan/20"
             >
               View all case studies
               <ArrowUpRight
                 size={14}
-                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                className="text-cyan transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </Link>
           </div>
