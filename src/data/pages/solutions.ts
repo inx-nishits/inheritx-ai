@@ -92,7 +92,7 @@ export const solutionFitMatrix = [
     fit: "AI DevOps",
   },
   {
-    need: "We need specialized AI capacity on our team",
+    need: "We need senior AI engineers on a defined platform roadmap",
     fit: "Hire AI Engineers / Dedicated AI Squads",
   },
 ];

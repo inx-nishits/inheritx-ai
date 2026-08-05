@@ -549,52 +549,78 @@ function renderSection(
 export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
   const showIndustryImage = topic.layout === "industry" && topic.image;
 
+  const breadcrumb =
+    crumbs && crumbs.length > 0 ? (
+      <div
+        className={cn(
+          "bg-ink",
+          showIndustryImage
+            ? "border-b-0 pt-20 md:pt-24"
+            : "border-b border-white/[0.06]",
+        )}
+      >
+        <nav
+          aria-label="Breadcrumb"
+          className="mx-auto flex max-w-[1400px] flex-wrap items-center gap-2 px-5 py-4 text-xs text-white/35 md:px-8 md:py-5"
+        >
+          {crumbs.map((crumb, i) => (
+            <span key={crumb.href} className="inline-flex items-center gap-2">
+              {i > 0 && <span aria-hidden>/</span>}
+              <Link href={crumb.href} className="hover:text-white/70">
+                {crumb.label}
+              </Link>
+            </span>
+          ))}
+          <span aria-hidden>/</span>
+          <span className="text-white/55">{topic.eyebrow}</span>
+        </nav>
+      </div>
+    ) : null;
+
+  const industryBanner = showIndustryImage ? (
+    <section className="bg-ink pt-5 pb-8 md:pt-6 md:pb-10 lg:pt-8 lg:pb-12">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="relative aspect-[21/9] overflow-hidden rounded-[1.5rem] border border-white/10 md:rounded-[2rem]">
+          <Image
+            src={topic.image!}
+            alt=""
+            fill
+            unoptimized
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
+        </div>
+      </div>
+    </section>
+  ) : null;
+
   return (
     <>
-      <PageHero
-        eyebrow={topic.eyebrow}
-        title={topic.title}
-        description={topic.description}
-        primaryCta={topic.primaryCta}
-        secondaryCta={topic.secondaryCta}
-      />
-
-      {crumbs && crumbs.length > 0 && (
-        <div className="border-b border-white/[0.06] bg-ink">
-          <nav
-            aria-label="Breadcrumb"
-            className="mx-auto flex max-w-[1400px] flex-wrap items-center gap-2 px-5 py-3 text-xs text-white/35 md:px-8"
-          >
-            {crumbs.map((crumb, i) => (
-              <span key={crumb.href} className="inline-flex items-center gap-2">
-                {i > 0 && <span aria-hidden>/</span>}
-                <Link href={crumb.href} className="hover:text-white/70">
-                  {crumb.label}
-                </Link>
-              </span>
-            ))}
-            <span aria-hidden>/</span>
-            <span className="text-white/55">{topic.eyebrow}</span>
-          </nav>
-        </div>
-      )}
-
-      {showIndustryImage && (
-        <section className="bg-ink">
-          <div className="mx-auto max-w-[1400px] px-5 md:px-8">
-            <div className="relative aspect-[21/9] overflow-hidden rounded-[1.5rem] border border-white/10 md:rounded-[2rem]">
-              <Image
-                src={topic.image!}
-                alt=""
-                fill
-                unoptimized
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
-            </div>
-          </div>
-        </section>
+      {showIndustryImage ? (
+        <>
+          {breadcrumb}
+          {industryBanner}
+          <PageHero
+            eyebrow={topic.eyebrow}
+            title={topic.title}
+            description={topic.description}
+            primaryCta={topic.primaryCta}
+            secondaryCta={topic.secondaryCta}
+            className="border-b border-white/[0.06] pt-10 pb-12 md:pt-14 md:pb-16"
+          />
+        </>
+      ) : (
+        <>
+          <PageHero
+            eyebrow={topic.eyebrow}
+            title={topic.title}
+            description={topic.description}
+            primaryCta={topic.primaryCta}
+            secondaryCta={topic.secondaryCta}
+          />
+          {breadcrumb}
+        </>
       )}
 
       {topic.sections.map((section, index) =>

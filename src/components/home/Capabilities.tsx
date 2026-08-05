@@ -6,7 +6,8 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { capabilities } from "@/data/content";
@@ -118,10 +119,6 @@ export function Capabilities() {
   const step = 1 / Math.max(1, capabilities.length - 1);
   const canPrev = progress > 0.02;
   const canNext = progress < 0.98;
-  const activeIndex = Math.min(
-    capabilities.length,
-    Math.max(1, Math.round(progress * (capabilities.length - 1)) + 1),
-  );
 
   return (
     <section
@@ -148,6 +145,13 @@ export function Capabilities() {
               AI/ML, Generative AI, agents, n8n automation, and AI
               DevOps—each lane engineered for production delivery.
             </p>
+            <Link
+              href="/solutions"
+              className="inline-flex items-center gap-1.5 text-sm text-cyan transition-colors hover:text-white"
+            >
+              Explore solution lanes
+              <ArrowUpRight size={14} />
+            </Link>
           </div>
         </div>
 
@@ -179,9 +183,16 @@ export function Capabilities() {
               </div>
               <div className="flex flex-col gap-5 lg:items-end">
                 <p className="max-w-sm text-sm leading-relaxed text-white/45 md:text-base lg:text-right">
-                  AI/ML, Generative AI, agents, n8n automation, and AI
-                  DevOps—each lane engineered for production delivery.
+                  AI/ML, Generative AI, agents, automation, and LLMOps—each lane
+                  engineered for governed production delivery.
                 </p>
+                <Link
+                  href="/solutions"
+                  className="inline-flex items-center gap-1.5 text-sm text-cyan transition-colors hover:text-white lg:justify-end"
+                >
+                  Explore solution lanes
+                  <ArrowUpRight size={14} />
+                </Link>
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
@@ -213,10 +224,6 @@ export function Capabilities() {
                     Next
                     <ArrowRight size={16} />
                   </button>
-                  <span className="ml-2 font-mono text-[11px] text-white/35">
-                    {String(activeIndex).padStart(2, "0")} /{" "}
-                    {String(capabilities.length).padStart(2, "0")}
-                  </span>
                 </div>
               </div>
             </div>

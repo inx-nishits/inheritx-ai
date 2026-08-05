@@ -16,8 +16,17 @@ export type CaseStudy = {
 export const caseStudyIntro = {
   eyebrow: "Case Studies",
   title: "Measured AI outcomes from production—not pilot theater.",
-  copy: "Client engagements led by AI/ML, agentic systems, computer vision, generative AI, and platforms. We publish methodology with the story—verifiable deployments, not anonymous vanity metrics. Outcomes are framed by class (efficiency, risk, reliability, cost, enablement). Named or anonymized references for qualified opportunities are available under NDA.",
+  copy: "AI-led engagements first—computer vision, generative systems, AI platforms, and infrastructure—followed by enterprise systems that prove scale and ops discipline. We publish methodology with the story. Named or anonymized references for qualified opportunities are available under NDA.",
 };
+
+/** Homepage featured carousel — AI-forward IDs only. */
+export const featuredCaseStudyIds = [
+  "ai-dent",
+  "heva",
+  "kavia-ai",
+  "t2d2",
+  "hoop-dna",
+] as const;
 
 /**
  * Order is intentional: AI-forward stories first, then enterprise systems
@@ -97,7 +106,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "Builders spent less time firefighting and more time shipping AI workflows with confidence. Pattern: observability + ops discipline for AI platforms.",
     highlights: [
       "AI platform reliability & observability",
-      "Faster recovery for AI services",
+      "Faster recovery for AI platforms",
       "Stable environments for model-driven products",
       "Operational playbooks for AI incidents",
     ],
@@ -129,10 +138,35 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
   },
   {
+    id: "hoop-dna",
+    name: "Hoop DNA",
+    category: "Computer Vision",
+    tagline: "AR-assisted coaching intelligence",
+    summary:
+      "Coach-athlete platform with AR-assisted practice guidance—cutting coach prep time ~50% and lifting off-court consistency.",
+    technologies: ["ARKit", "Video Processing", "React Native", "Firebase"],
+    results: [
+      { value: "50%", label: "Reduction in coach preparation time" },
+      { value: "50–60%", label: "Improvement in off-court practice" },
+    ],
+    image: "/images/visuals/lead-capabilities.png",
+    challenge:
+      "Coaches lacked a system to assign drills, track progress, and guide practice between sessions.",
+    approach:
+      "We combined progress intelligence with AR-assisted practice experiences so guidance traveled with the athlete.",
+    outcome:
+      "Coaches prepared faster; athletes practiced more consistently with clearer, vision-assisted cues.",
+    highlights: [
+      "Vision / AR-assisted practice cues",
+      "Coach-driven training intelligence",
+      "Athlete progress visibility",
+    ],
+  },
+  {
     id: "qdis",
     name: "QDIS",
     category: "Enterprise Systems",
-    tagline: "Operations platform for property maintenance",
+    tagline: "Operations fabric ready for AI automation",
     summary:
       "Unified work-order and GPS-verified service operations across 120+ properties—eliminating most billing disputes and holding budgets.",
     technologies: [".NET Core", "React", "React Native", "Azure"],
@@ -146,11 +180,11 @@ export const caseStudiesPage: CaseStudy[] = [
     approach:
       "We delivered a multi-role operations fabric—admin, tenant, and vendor workflows with verified service proof and transparent economics.",
     outcome:
-      "Leaders gained end-to-end operational visibility; disputes collapsed and budgets held. Foundation work that later AI automation can extend.",
+      "Leaders gained end-to-end operational visibility; disputes collapsed and budgets held—the governed data plane AI automation extends next.",
     highlights: [
       "Enterprise operations visibility",
       "Verified field service completion",
-      "Automation-ready workflow fabric",
+      "Automation-ready workflow fabric for agents",
     ],
   },
   {
@@ -176,31 +210,6 @@ export const caseStudiesPage: CaseStudy[] = [
       "Real-time operational telemetry",
       "Integrated session & payment flows",
       "Operator-ready control plane",
-    ],
-  },
-  {
-    id: "hoop-dna",
-    name: "Hoop DNA",
-    category: "Computer Vision",
-    tagline: "AR-assisted coaching intelligence",
-    summary:
-      "Coach-athlete platform with AR-assisted practice guidance—cutting coach prep time ~50% and lifting off-court consistency.",
-    technologies: ["ARKit", "Video Processing", "React Native", "Firebase"],
-    results: [
-      { value: "50%", label: "Reduction in coach preparation time" },
-      { value: "50–60%", label: "Improvement in off-court practice" },
-    ],
-    image: "/images/visuals/lead-capabilities.png",
-    challenge:
-      "Coaches lacked a system to assign drills, track progress, and guide practice between sessions.",
-    approach:
-      "We combined progress intelligence with AR-assisted practice experiences so guidance traveled with the athlete.",
-    outcome:
-      "Coaches prepared faster; athletes practiced more consistently with clearer, vision-assisted cues.",
-    highlights: [
-      "Vision / AR-assisted practice cues",
-      "Coach-driven training intelligence",
-      "Athlete progress visibility",
     ],
   },
   {

@@ -1,16 +1,19 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
-import { Briefcase, Calendar, CheckCircle2, Mail, MapPin } from "lucide-react";
+import { useEffect, useState, type FormEvent } from "react";
+import { Briefcase, Calendar, CheckCircle2, Mail, MapPin, Shield } from "lucide-react";
 
 import {
   contactChannels,
   contactHero,
+  contactIntents,
   contactNextSteps,
   contactOffices,
+  contactProcurementNotes,
   contactTopics,
 } from "@/data/pages/contact";
 import { PageHero } from "@/components/layout/PageHero";
+import { ProcurementExperience } from "@/components/pages/ProcurementExperience";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 
@@ -26,6 +29,20 @@ export function ContactPageView() {
   const [submitted, setSubmitted] = useState(false);
   const [topic, setTopic] = useState(contactTopics[0]);
   const [submitState, setSubmitState] = useState<SubmitState>({ status: "idle" });
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const intentId = params.get("intent");
+    const topicParam = params.get("topic");
+    const fromIntent = contactIntents.find((item) => item.id === intentId);
+    if (fromIntent) {
+      setTopic(fromIntent.topic);
+      return;
+    }
+    if (topicParam && (contactTopics as readonly string[]).includes(topicParam)) {
+      setTopic(topicParam);
+    }
+  }, []);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -97,13 +114,45 @@ export function ContactPageView() {
           <Reveal>
             <div className="rounded-[1.75rem] border border-white/10 bg-ink-soft p-6 md:p-8">
               <h2 className="font-display text-2xl text-white md:text-3xl">
-                Request an AI consultation
+                How should we engage?
               </h2>
               <p className="mt-2 text-sm text-white/45">
-                Include mandate, systems in scope, constraints, and whether you
-                need consulting, a production build, a squad, or embeds. We’ll
-                respond with next steps—usually within one business day.
+                Choose an intent—strategy call, architecture assessment, or
+                security diligence—then share context. We’ll respond within one
+                business day.
               </p>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                {contactIntents.map((intent) => {
+                  const active = topic === intent.topic;
+                  return (
+                    <button
+                      key={intent.id}
+                      type="button"
+                      onClick={() => setTopic(intent.topic)}
+                      aria-pressed={active}
+                      className={cn(
+                        "rounded-2xl border px-4 py-3.5 text-left transition-colors",
+                        active
+                          ? "border-cyan/40 bg-cyan/15"
+                          : "border-white/10 bg-ink hover:border-white/25",
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "text-sm font-medium",
+                          active ? "text-cyan" : "text-white",
+                        )}
+                      >
+                        {intent.label}
+                      </p>
+                      <p className="mt-1.5 text-[11px] leading-relaxed text-white/40">
+                        {intent.description}
+                      </p>
+                    </button>
+                  );
+                })}
+              </div>
 
               {submitted ? (
                 <div className="mt-10 flex items-start gap-3 rounded-2xl border border-cyan/30 bg-cyan/10 p-5">
@@ -214,7 +263,11 @@ export function ContactPageView() {
                   >
                     {submitState.status === "submitting"
                       ? "Submitting…"
-                      : "Submit consultation request"}
+                      : topic.includes("Assessment")
+                        ? "Request AI Assessment"
+                        : topic.includes("Security")
+                          ? "Request diligence support"
+                          : "Submit consultation request"}
                   </button>
                   <p className="text-xs text-white/35">
                     Prefer email?{" "}
@@ -224,6 +277,10 @@ export function ContactPageView() {
                     >
                       hello@inheritx.com
                     </a>
+                    {" · "}
+                    CRM delivery activates when{" "}
+                    <span className="text-white/50">CONTACT_WEBHOOK_URL</span> or
+                    Resend is configured.
                   </p>
                 </form>
               )}
@@ -259,10 +316,11 @@ export function ContactPageView() {
                 ) : (
                   <>
                     <p className="mt-2 text-sm text-white/45">
-                      Submit the consultation form and an architect will propose
-                      times—usually within one business day. Direct calendar
-                      booking activates once your Calendly (or equivalent) URL is
-                      configured.
+                      Submit the form and an architect will propose times—usually
+                      within one business day. Embedded calendar booking activates
+                      when{" "}
+                      <span className="text-white/60">NEXT_PUBLIC_CALENDLY_URL</span>{" "}
+                      is set.
                     </p>
                     {/* TODO: Set NEXT_PUBLIC_CALENDLY_URL to the official InheritX booking page. */}
                     <a
@@ -273,6 +331,28 @@ export function ContactPageView() {
                     </a>
                   </>
                 )}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.07}>
+              <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-5 md:p-6">
+                <div className="flex items-center gap-2 text-white">
+                  <Shield size={14} className="text-cyan" />
+                  <p className="text-[11px] tracking-[0.2em] text-cyan uppercase">
+                    Procurement notes
+                  </p>
+                </div>
+                <ul className="mt-4 space-y-2.5">
+                  {contactProcurementNotes.map((note) => (
+                    <li
+                      key={note}
+                      className="flex gap-2 text-sm leading-relaxed text-white/50"
+                    >
+                      <span className="mt-2 size-1 shrink-0 rounded-full bg-cyan" />
+                      {note}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
 
@@ -336,6 +416,8 @@ export function ContactPageView() {
           </div>
         </div>
       </section>
+
+      <ProcurementExperience tone="dark" />
 
       <section className="border-t border-white/[0.06] bg-paper py-20 text-ink md:py-24">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">

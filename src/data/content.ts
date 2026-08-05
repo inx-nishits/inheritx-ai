@@ -6,7 +6,6 @@ export const trustSectors = [
   "Insurance",
   "Logistics",
   "Government",
-  "Energy",
 ];
 
 export const capabilities = [
@@ -18,7 +17,7 @@ export const capabilities = [
   {
     id: "02",
     title: "Generative AI",
-    copy: "Secure LLM applications, copilots, and content systems with prompt engineering, evaluation harnesses, citations, and private-cloud ownership.",
+    copy: "Secure LLM applications, copilots, and content systems with prompt engineering, evaluation harnesses, guardrails, citations, and private-cloud ownership.",
   },
   {
     id: "03",
@@ -33,12 +32,12 @@ export const capabilities = [
   {
     id: "05",
     title: "AI DevOps & LLMOps",
-    copy: "MLOps, LLMOps, CloudOps, GitOps, CI/CD for AI, and observability—so production systems stay reliable after go-live.",
+    copy: "MLOps, LLMOps, CloudOps, GitOps, CI/CD for AI, observability, and LLM FinOps—so production systems stay reliable and cost-governed after go-live.",
   },
   {
     id: "06",
     title: "Enterprise AI Platforms",
-    copy: "Private intelligence layers—model gateways, governed retrieval, and policy controls—deployed in your VPC with full ownership at handover.",
+    copy: "Private intelligence layers—model gateways, governed retrieval, AI security controls, and policy governance—deployed in your VPC with full ownership at handover.",
   },
 ];
 
@@ -299,10 +298,10 @@ export const whyPoints = [
 ];
 
 export const audiencePaths = {
-  eyebrow: "Built for every AI buyer",
+  eyebrow: "Built for enterprise AI buyers",
   title: "Choose your path",
   description:
-    "Select who you are. Proof for that path appears below—business outcomes, technical readiness, or how to get AI support.",
+    "Select your seat. We’ll surface the decision signals that matter—illustrative frameworks, not client claims. Primary proof lives in case studies.",
   paths: [
     {
       id: "outcomes",
@@ -310,7 +309,7 @@ export const audiencePaths = {
       label: "01",
       title: "I'm a CEO / Transformation lead",
       description:
-        "See business ROI, cost reduction, and transformation impact.",
+        "Clarify ROI, operating-cost impact, and board-ready transformation outcomes.",
       cta: "See enterprise AI outcomes",
       href: "/case-studies",
       meta: "CEOs, founders & transformation leaders",
@@ -321,7 +320,7 @@ export const audiencePaths = {
       label: "02",
       title: "I'm a CTO / Head of AI",
       description:
-        "See architecture, LLMOps, and production readiness.",
+        "Pressure-test architecture, LLMOps, governance, and production readiness.",
       cta: "Explore AI architecture & solutions",
       href: "/solutions",
       meta: "CTOs, CIOs, Heads of AI & engineering leads",
@@ -330,12 +329,12 @@ export const audiencePaths = {
       id: "explore",
       icon: "explore" as const,
       label: "03",
-      title: "I'm exploring AI services",
+      title: "I'm evaluating enterprise AI",
       description:
-        "See how we help teams start, build, and buy enterprise AI.",
-      cta: "Talk to AI experts",
+        "Map consulting, build, or embedded AI engineering to a clear next step.",
+      cta: "Talk to AI architects",
       href: "/contact",
-      meta: "Product leaders, founders & visiting teams",
+      meta: "Product, innovation & visiting leadership teams",
     },
   ],
 };

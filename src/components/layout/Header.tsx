@@ -37,7 +37,7 @@ export function Header() {
 
             <div className="flex items-center gap-2.5 md:gap-3">
               <Link
-                href="/contact"
+                href="/contact?intent=strategy"
                 className={cn(
                   "group relative inline-flex h-10 items-center gap-2 overflow-hidden rounded-full",
                   "border border-cyan bg-cyan pl-4 pr-3.5",

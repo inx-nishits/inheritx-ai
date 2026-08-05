@@ -82,11 +82,39 @@ export const resourceLibrary = [
     meta: "Perspectives",
   },
   {
-    title: "Security & diligence",
+    title: "Security FAQ",
     description:
-      "Security practices, FAQ, diligence pack, governance, and production-readiness materials for enterprise review.",
-    href: "/company/security",
+      "CISO and procurement answers—private cloud, data boundaries, model use, and access controls.",
+    href: "/resources/security-faq",
+    meta: "Security",
+  },
+  {
+    title: "Diligence pack",
+    description:
+      "NDA-ready security, IP intent, engagement classes from published cases, and procurement answers.",
+    href: "/resources/diligence-pack",
     meta: "Trust",
+  },
+  {
+    title: "AI governance",
+    description:
+      "How we design policy, evaluation, guardrails, and human gates for production AI.",
+    href: "/resources/ai-governance",
+    meta: "Governance",
+  },
+  {
+    title: "Architecture principles",
+    description:
+      "Reference patterns for RAG, agents, MCP, LLMOps, and private-cloud deployment.",
+    href: "/resources/architecture-principles",
+    meta: "Architecture",
+  },
+  {
+    title: "Enterprise references",
+    description:
+      "How buyers verify InheritX—published cases, anonymized NDA references, and named calls only with approval.",
+    href: "/resources/enterprise-references",
+    meta: "Proof",
   },
   {
     title: "Engagement models",
@@ -101,6 +129,13 @@ export const resourceLibrary = [
       "Named client outcomes led by AI—vision, generative systems, platforms—and supporting enterprise delivery.",
     href: "/case-studies",
     meta: "Client proof",
+  },
+  {
+    title: "IP ownership",
+    description:
+      "What transfers at handover—application code, agents, fine-tunes, prompts, evals, and IaC.",
+    href: "/company/ip-ownership",
+    meta: "Ownership",
   },
 ];
 export const resourceFaqs = [

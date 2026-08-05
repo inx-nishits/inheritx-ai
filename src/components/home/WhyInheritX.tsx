@@ -3,6 +3,7 @@
 import { whyPoints } from "@/data/content";
 import { Reveal, TextReveal } from "@/components/ui/Reveal";
 import { VisualFrame } from "@/components/ui/VisualFrame";
+import Link from "next/link";
 
 export function WhyInheritX() {
   return (
@@ -19,9 +20,9 @@ export function WhyInheritX() {
           />
           <Reveal delay={0.15}>
             <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-ink/55 md:mt-8 md:text-lg">
-              Differentiation over delivery theater: named architects, full IP
-              handover, and systems your team can operate after go-live—not a
-              rented black-box platform.
+              InheritX is an AI-native enterprise partner. We design, build, and
+              hand over AI/ML systems, agentic workforces, and AI DevOps
+              platforms—so CEOs and CTOs keep the code, the models, and the data.
             </p>
           </Reveal>
           </div>
@@ -53,20 +54,47 @@ export function WhyInheritX() {
         <div className="mt-12 grid gap-px overflow-hidden rounded-[1.75rem] border border-ink/10 bg-ink/10 md:mt-16 md:grid-cols-2 md:rounded-[2rem]">
           {whyPoints.map((point, index) => (
             <Reveal key={point.title} delay={index * 0.05}>
-              <article className="h-full bg-paper p-6 md:p-10">
+              <article className="h-full bg-paper px-6 py-5 md:px-10 md:py-6">
                 <span className="font-mono text-xs text-cyan-deep">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-display mt-4 text-2xl md:mt-5 md:text-3xl">
+                <h3 className="font-display mt-2.5 text-2xl md:mt-3 md:text-3xl">
                   {point.title}
                 </h3>
-                <p className="mt-3 max-w-md text-sm leading-relaxed text-ink/55 md:mt-4 md:text-base">
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-ink/55 md:mt-2.5 md:text-base">
                   {point.copy}
                 </p>
               </article>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.1}>
+          <p className="mt-8 max-w-3xl text-sm leading-relaxed text-ink/45 md:mt-10">
+            What buyers review first:{" "}
+            <Link
+              href="/case-studies"
+              className="text-cyan-deep underline-offset-2 hover:underline"
+            >
+              published case studies
+            </Link>
+            ,{" "}
+            <Link
+              href="/resources/enterprise-references"
+              className="text-cyan-deep underline-offset-2 hover:underline"
+            >
+              enterprise references
+            </Link>
+            , and{" "}
+            <Link
+              href="/resources/diligence-pack"
+              className="text-cyan-deep underline-offset-2 hover:underline"
+            >
+              diligence under NDA
+            </Link>
+            .
+          </p>
+        </Reveal>
       </div>
     </section>
   );

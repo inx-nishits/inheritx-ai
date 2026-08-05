@@ -389,9 +389,10 @@ const companyTopics: TopicPage[] = [
         links: [
           { label: "Security FAQ", href: "/resources/security-faq" },
           { label: "Diligence pack overview", href: "/resources/diligence-pack" },
+          { label: "Enterprise references", href: "/resources/enterprise-references" },
           { label: "IP ownership", href: "/company/ip-ownership" },
           { label: "AI governance", href: "/resources/ai-governance" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact — diligence", href: "/contact?intent=security" },
         ],
       },
       {

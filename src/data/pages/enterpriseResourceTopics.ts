@@ -60,8 +60,40 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             q: "Do you have SOC 2 / ISO certificates we can download?",
-            a: "We share attestation status factually during diligence. This site does not claim certifications that are not currently evidenced. Request the diligence pack on a strategy call.",
+            a: "Placeholder until certified: formal SOC/ISO marks are published only when evidenced. Until then, use this Security FAQ and the diligence pack under NDA. We share attestation status factually during vendor review—this site does not claim certifications that are not currently evidenced.",
           },
+        ],
+      },
+      {
+        type: "bullets",
+        title: "Anonymized engagement classes (from published cases)",
+        intro:
+          "Derived from published case studies—not invented client names. Use these for early peer matching; named references require written approval.",
+        items: [
+          {
+            title: "Healthcare & clinical workflows",
+            copy: "Published patterns in intake, vision quality gates, and care discovery. Cases: AI Dent, Heva.",
+          },
+          {
+            title: "AI platforms & LLMOps reliability",
+            copy: "Published work hardening AI builder infrastructure and recovery. Case: Kavia AI.",
+          },
+          {
+            title: "AI infrastructure security",
+            copy: "Published posture hardening for an AI damage-detection platform. Case: T2D2.",
+          },
+          {
+            title: "Enterprise operations systems",
+            copy: "Published multi-property and real-time operations platforms. Cases: QDIS, Twelfthman, E-mobility.",
+          },
+        ],
+      },
+      {
+        type: "narrative",
+        title: "What we share publicly vs under NDA",
+        body: [
+          "We do not publish unverified logos or invented testimonials. Public materials include this FAQ, published case methodology, anonymized engagement classes from those stories, and company pages on security practices and IP ownership.",
+          "Named customer references: only with written approval. Otherwise anonymized industry + scale references under NDA for qualified opportunities—after a strategy or security diligence conversation confirms fit.",
         ],
       },
       {
@@ -70,9 +102,10 @@ export const enterpriseResourceTopics: TopicPage[] = [
         links: [
           { label: "Security practices", href: "/company/security" },
           { label: "Diligence pack", href: "/resources/diligence-pack" },
+          { label: "Enterprise references", href: "/resources/enterprise-references" },
           { label: "IP ownership", href: "/company/ip-ownership" },
           { label: "AI governance", href: "/resources/ai-governance" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact — security intent", href: "/contact?intent=security" },
         ],
       },
     ],
@@ -98,6 +131,31 @@ export const enterpriseResourceTopics: TopicPage[] = [
         body: [
           "Serious enterprise programs need more than a marketing site. After a strategy call confirms mutual fit, we can share a diligence pack under NDA covering security practices, engagement models, IP intent, and architecture patterns relevant to your mandate.",
           "We will not invent certificates, logos, or capabilities to fill gaps. Where an item is not available, we mark it clearly and propose an alternative evidence path (architecture review, reference call process, questionnaire response).",
+          "Placeholder until certified: formal SOC/ISO marks appear only when evidenced. Until then, use the Security FAQ and this pack under NDA.",
+        ],
+      },
+      {
+        type: "bullets",
+        title: "Anonymized engagement classes (from published cases)",
+        intro:
+          "Early peer matching without invented client names. Each class links to published case methodology on this site.",
+        items: [
+          {
+            title: "Healthcare & clinical workflows",
+            copy: "Intake, vision quality gates, and care discovery patterns. Published cases: /case-studies/ai-dent, /case-studies/heva.",
+          },
+          {
+            title: "AI platforms & LLMOps reliability",
+            copy: "AI builder infrastructure and recovery hardening. Published case: /case-studies/kavia-ai.",
+          },
+          {
+            title: "AI infrastructure security",
+            copy: "Posture hardening for AI platforms. Published case: /case-studies/t2d2.",
+          },
+          {
+            title: "Enterprise operations systems",
+            copy: "Multi-property and real-time operations platforms. Published cases: /case-studies/qdis, /case-studies/twelfthman, /case-studies/e-mobility.",
+          },
         ],
       },
       {
@@ -123,7 +181,30 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             title: "Reference process",
-            copy: "How qualified opportunities request anonymized or named references when approved.",
+            copy: "How qualified opportunities request anonymized or named references when approved. Named references only with written customer approval.",
+          },
+        ],
+      },
+      {
+        type: "bullets",
+        title: "Public security & procurement links",
+        intro: "Available without NDA—use these while your questionnaire is prepared.",
+        items: [
+          {
+            title: "Security FAQ",
+            copy: "Public procurement-oriented answers — /resources/security-faq",
+          },
+          {
+            title: "IP ownership",
+            copy: "How code, models, and data transfer at handover — /company/ip-ownership",
+          },
+          {
+            title: "Security practices",
+            copy: "Deployment and governance posture — /company/security",
+          },
+          {
+            title: "Enterprise references process",
+            copy: "How verification works — /resources/enterprise-references",
           },
         ],
       },
@@ -134,7 +215,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         rows: [
           {
             need: "Current certification letters / reports",
-            approach: "STATUS: Provide only if earned. Otherwise state “not currently published” in diligence answers.",
+            approach: "STATUS: Provide only if earned. Otherwise state “not currently published” in diligence answers. Placeholder until certified.",
           },
           {
             need: "Subprocessors / tools list for a typical engagement",
@@ -156,8 +237,8 @@ export const enterpriseResourceTopics: TopicPage[] = [
         items: [
           {
             step: "01",
-            title: "Strategy call",
-            copy: "Share mandate, industry, systems, and risk constraints. We confirm whether InheritX is the right partner.",
+            title: "Strategy call or security intent",
+            copy: "Share mandate, industry, systems, and risk constraints via /contact?intent=strategy or /contact?intent=security. We confirm whether InheritX is the right partner.",
           },
           {
             step: "02",
@@ -183,8 +264,9 @@ export const enterpriseResourceTopics: TopicPage[] = [
           { label: "Security practices", href: "/company/security" },
           { label: "Security FAQ", href: "/resources/security-faq" },
           { label: "IP ownership", href: "/company/ip-ownership" },
+          { label: "Enterprise references", href: "/resources/enterprise-references" },
           { label: "Engagement models", href: "/resources/engagement-models" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact — diligence", href: "/contact?intent=security" },
         ],
       },
     ],
@@ -542,15 +624,35 @@ export const enterpriseResourceTopics: TopicPage[] = [
         ],
       },
       {
-        type: "matrix",
-        title: "Anonymized reference set — STATUS",
+        type: "bullets",
+        title: "Published anonymized engagement classes",
         intro:
-          "Template rows for InheritX sales/delivery to complete with approved facts. Empty or STATUS rows are intentional—do not treat as live claims.",
-        rows: [
+          "Available now from published case studies—not invented client names. Prefer these for early peer matching before NDA.",
+        items: [
           {
-            need: "Healthcare / life sciences · size band TBD",
-            approach: "STATUS: Fill industry, constraint (e.g. HIPAA-ready patterns), use case, role, outcome class after approval.",
+            title: "Healthcare & clinical workflows",
+            copy: "Intake, vision quality gates, care discovery — cases: AI Dent, Heva.",
           },
+          {
+            title: "AI platforms & LLMOps reliability",
+            copy: "AI builder infrastructure and recovery — case: Kavia AI.",
+          },
+          {
+            title: "AI infrastructure security",
+            copy: "Posture hardening for AI platforms — case: T2D2.",
+          },
+          {
+            title: "Enterprise operations systems",
+            copy: "Multi-property and real-time operations — cases: QDIS, Twelfthman, E-mobility.",
+          },
+        ],
+      },
+      {
+        type: "matrix",
+        title: "Additional anonymized reference set — STATUS",
+        intro:
+          "Template rows beyond published cases for InheritX sales/delivery to complete with approved facts. Empty or STATUS rows are intentional—do not treat as live claims.",
+        rows: [
           {
             need: "Financial services / insurance · size band TBD",
             approach: "STATUS: Fill policy/audit constraints, use case, role, outcome class after approval.",
@@ -560,7 +662,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
             approach: "STATUS: Fill OT/IT or quality constraints, use case, role, outcome class after approval.",
           },
           {
-            need: "Additional sectors (6–12 total target)",
+            need: "Additional sectors (expand toward 6–12 total)",
             approach: "STATUS: Expand only with real engagements; prefer anonymized blurbs over invented logos.",
           },
         ],
@@ -591,7 +693,8 @@ export const enterpriseResourceTopics: TopicPage[] = [
           { label: "Diligence pack", href: "/resources/diligence-pack" },
           { label: "Outcome taxonomy", href: "/resources/outcome-taxonomy" },
           { label: "Security FAQ", href: "/resources/security-faq" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact — diligence", href: "/contact?intent=security" },
+          { label: "Contact — strategy", href: "/contact?intent=strategy" },
         ],
       },
     ],

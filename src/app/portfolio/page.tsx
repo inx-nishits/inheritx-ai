@@ -23,8 +23,8 @@ export default function PortfolioPage() {
       <Header />
       <main className="flex-1">
         <PortfolioHero />
-        <PortfolioGrid />
         <SuccessStories />
+        <PortfolioGrid />
         <PortfolioCapabilities />
         <BusinessImpact />
         <PortfolioCTA />

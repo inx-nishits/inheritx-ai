@@ -15,8 +15,8 @@ export function Footer() {
               Enterprise AI systems. You own the code.
             </p>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/45">
-              InheritX builds custom agents, multi-agent systems, and vision
-              platforms—then hands over the IP and deploys into your private
+              InheritX builds agents, RAG platforms, LLMOps, and vision
+              systems—then hands over the IP and deploys into your private
               cloud.
             </p>
           </div>

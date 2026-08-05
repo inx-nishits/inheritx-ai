@@ -82,19 +82,6 @@ const exploreFunnel = [
   { label: "Production", value: 31 },
 ];
 
-function IllustrativeNote() {
-  return (
-    <p className="mb-4 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-[11px] leading-relaxed text-white/45">
-      Illustrative planning metrics for buyer conversations—not audited client
-      outcomes. See{" "}
-      <Link href="/case-studies" className="text-cyan underline-offset-2 hover:underline">
-        case studies
-      </Link>{" "}
-      for published results.
-    </p>
-  );
-}
-
 function ChartCard({
   title,
   meta,
@@ -451,17 +438,19 @@ function CeoDecisionPanel() {
   return (
     <div className="grid gap-4 lg:grid-cols-12">
       <div className="lg:col-span-12">
-        <IllustrativeNote />
-      </div>
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:col-span-12">
-        {ceoKpis.map((kpi) => (
-          <div key={kpi.label} className="px-0 py-1">
-            <p className="font-display text-2xl leading-none text-cyan">
-              {kpi.value}
-            </p>
-            <p className="mt-2 text-[11px] text-white/55">{kpi.label}</p>
-          </div>
-        ))}
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+          {ceoKpis.map((kpi) => (
+            <div key={kpi.label} className="px-0 py-1">
+              <p className="font-display text-2xl leading-none text-cyan">
+                {kpi.value}
+              </p>
+              <p className="mt-2 text-[11px] text-white/55">{kpi.label}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-[11px] tracking-[0.14em] text-white/35 uppercase">
+          Illustrative decision ranges — not named client KPIs
+        </p>
       </div>
 
       <ChartCard
@@ -495,9 +484,6 @@ function CeoDecisionPanel() {
 function CtoDecisionPanel() {
   return (
     <div className="grid gap-4 lg:grid-cols-12">
-      <div className="lg:col-span-12">
-        <IllustrativeNote />
-      </div>
       <ChartCard
         title="Production readiness score"
         meta="Illustrative"
@@ -536,11 +522,8 @@ function CtoDecisionPanel() {
 function ExploreDecisionPanel() {
   return (
     <div className="grid gap-4 lg:grid-cols-12">
-      <div className="lg:col-span-12">
-        <IllustrativeNote />
-      </div>
       <ChartCard
-        title="Service demand index"
+        title="Enterprise AI capability demand"
         meta="Illustrative"
         className="lg:col-span-7"
       >
@@ -548,14 +531,14 @@ function ExploreDecisionPanel() {
       </ChartCard>
 
       <ChartCard
-        title="Engagement funnel"
+        title="Path to production"
         meta="Illustrative"
         className="lg:col-span-5"
       >
         <FunnelChart />
         <p className="mt-4 text-[11px] leading-relaxed text-white/40">
-          Share your use case on a strategy call—we map consulting, build, or
-          embedded AI talent to what you need next.
+          On a strategy call we map consulting, transformation build, or
+          embedded AI engineering—only after the mandate is clear.
         </p>
       </ChartCard>
     </div>

@@ -1,26 +1,40 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 import { industries } from "@/data/content";
+import { industryCaseLinks } from "@/data/enterpriseProof";
 import { TextReveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 
 export function Industries() {
   const [active, setActive] = useState(0);
+  const activeIndustry = industries[active];
+  const proof = industryCaseLinks[activeIndustry.name];
 
   return (
     <section id="industries" className="relative bg-paper py-16 text-ink md:py-32">
       <div className="mx-auto max-w-[1400px] px-5 md:px-8">
-        <div className="mb-10 max-w-3xl md:mb-16">
-          <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
-            Industries
-          </p>
-          <TextReveal
-            text="Sector fluency. AI systems that survive regulation."
-            className="font-display mt-5 text-[2rem] leading-[1.15] md:text-6xl"
-          />
+        <div className="mb-10 flex max-w-3xl flex-col gap-4 md:mb-16 md:max-w-none md:flex-row md:items-end md:justify-between">
+          <div className="max-w-3xl">
+            <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
+              Industries
+            </p>
+            <TextReveal
+              text="Sector fluency. AI systems that survive regulation."
+              className="font-display mt-5 text-[2rem] leading-[1.15] md:text-6xl"
+            />
+          </div>
+          <Link
+            href="/case-studies"
+            className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-cyan-deep transition-colors hover:text-ink"
+          >
+            Browse all outcomes
+            <ArrowUpRight size={14} />
+          </Link>
         </div>
 
         <div className="flex h-auto flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#070b12] md:h-[560px] md:flex-row md:items-stretch md:rounded-[2rem]">
@@ -54,7 +68,6 @@ export function Industries() {
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_15%,rgba(0,190,212,0.22),transparent_55%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_90%,rgba(0,80,120,0.25),transparent_50%)]" />
 
-                {/* Absolute content so vertical labels never stretch panel height */}
                 <div
                   className={cn(
                     "absolute inset-0 z-10 p-4 md:p-6",
@@ -96,6 +109,40 @@ export function Industries() {
             );
           })}
         </div>
+
+        {proof ? (
+          <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-ink/10 bg-white px-5 py-4 sm:flex-row sm:items-center sm:justify-between md:px-6">
+            <div>
+              <p className="text-[11px] tracking-[0.16em] text-ink/40 uppercase">
+                {activeIndustry.name} — published outcomes
+              </p>
+              <p className="mt-1 text-sm text-ink/55">
+                {proof.cases.length > 0
+                  ? "Linked only to published case studies for this sector."
+                  : "Sector page available; browse all case studies for related patterns."}
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              {proof.cases.map((item) => (
+                <Link
+                  key={item.id}
+                  href={`/case-studies/${item.id}`}
+                  className="inline-flex items-center gap-1 text-sm font-medium text-cyan-deep hover:text-ink"
+                >
+                  {item.name}
+                  <ArrowUpRight size={13} />
+                </Link>
+              ))}
+              <Link
+                href={proof.sectorHref}
+                className="inline-flex items-center gap-1 text-sm text-ink/55 hover:text-ink"
+              >
+                Sector page
+                <ArrowUpRight size={13} />
+              </Link>
+            </div>
+          </div>
+        ) : null}
       </div>
     </section>
   );

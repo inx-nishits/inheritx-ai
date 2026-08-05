@@ -6,10 +6,12 @@ import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
-import { caseStudiesPage } from "@/data/caseStudies";
+import { caseStudiesPage, featuredCaseStudyIds } from "@/data/caseStudies";
 
 const AUTO_MS = 7000;
-const featuredStudies = caseStudiesPage.slice(0, 5);
+const featuredStudies = featuredCaseStudyIds
+  .map((id) => caseStudiesPage.find((study) => study.id === id))
+  .filter((study): study is NonNullable<typeof study> => Boolean(study));
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -106,7 +108,8 @@ export function FeaturedCaseStudy() {
                 Case studies
               </p>
               <p className="mt-1.5 max-w-md text-sm text-white/45">
-                Production outcomes—not pilot theater.
+                Production outcomes—not pilot theater. Named references available
+                under NDA for qualified opportunities.
               </p>
             </div>
             <Link

@@ -198,17 +198,17 @@ export function Hero() {
 
             <div className="hero-fade mt-10 flex flex-col items-center gap-4 sm:mt-12 sm:flex-row sm:justify-center sm:gap-6">
               <MagneticButton
-                href="/contact"
+                href="/contact?intent=strategy"
                 className="min-h-12 bg-cyan px-8 py-3.5 text-white shadow-[0_0_32px_rgba(0,190,212,0.22)] hover:bg-white hover:text-ink"
                 strength={0.2}
               >
                 Book an AI Strategy Call
               </MagneticButton>
               <Link
-                href="#path"
+                href="#cases"
                 className="group inline-flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white"
               >
-                Explore the work
+                See production outcomes
                 <span className="transition-transform duration-300 group-hover:translate-x-0.5">
                   →
                 </span>

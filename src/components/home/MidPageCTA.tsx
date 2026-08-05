@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Reveal } from "@/components/ui/Reveal";
 
-/** Single mid-page conversion band — placed after capabilities / proof. */
+/** Single mid-page conversion band — placed after proof. */
 export function MidPageCTA() {
   return (
     <section
@@ -24,23 +24,29 @@ export function MidPageCTA() {
               Ready for an enterprise AI consultation?
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/50 md:text-base">
-              Book a 30-minute strategy call with an architect—pressure-test fit,
-              scope, and a production-minded path forward.
+              Primary path: a 30-minute strategy call with an architect. Prefer a
+              structured readiness review first? Request an AI Assessment.
             </p>
           </div>
         </Reveal>
         <Reveal delay={0.08}>
-          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
             <MagneticButton
-              href="/contact"
+              href="/contact?intent=strategy"
               className="min-h-12 justify-center bg-cyan px-7 py-3.5 text-sm text-white hover:bg-white hover:text-ink"
               strength={0.35}
             >
               Book an AI Strategy Call
             </MagneticButton>
             <Link
+              href="/contact?intent=assessment"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-5 text-sm text-white/70 transition-colors hover:border-cyan/40 hover:text-white"
+            >
+              Request AI Assessment
+            </Link>
+            <Link
               href="/case-studies"
-              className="inline-flex min-h-12 items-center justify-center gap-2 px-2 text-sm text-white/55 transition-colors hover:text-white"
+              className="inline-flex min-h-12 items-center justify-center gap-2 px-2 text-sm text-white/45 transition-colors hover:text-white"
             >
               Review case studies
               <ArrowUpRight size={14} />

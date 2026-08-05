@@ -153,9 +153,10 @@ export const industryTopics: TopicPage[] = [
         links: [
           { label: "Generative AI for enterprise", href: "/solutions/generative-ai" },
           { label: "AI agents that execute work", href: "/solutions/ai-agents" },
-          { label: "Enterprise AI platforms", href: "/solutions/enterprise-ai" },
-          { label: "Case studies", href: "/case-studies" },
-          { label: "Book an AI Strategy Call", href: "/contact" },
+          { label: "AI Dent case study", href: "/case-studies/ai-dent" },
+          { label: "Heva case study", href: "/case-studies/heva" },
+          { label: "All case studies", href: "/case-studies" },
+          { label: "Book an AI Strategy Call", href: "/contact?intent=strategy" },
         ],
       },
     ],
@@ -328,7 +329,7 @@ export const industryTopics: TopicPage[] = [
     description:
       "Retail leaders use InheritX for demand intelligence, support command agents, and assortment copilots that connect to your commerce stack—with governance over customer data and brand voice.",
     primaryCta: { label: "Explore retail AI", href: "/contact" },
-    secondaryCta: { label: "View success stories", href: "/case-studies" },
+    secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "industry",
     image: "/images/visuals/industries/industry-retail.png",
     metadata: {

@@ -79,12 +79,12 @@ export const navigation: NavItem[] = [
           },
           {
             title: "Dedicated AI Squads",
-            description: "Pods that own a capability to production.",
+            description: "Pods that own an AI capability to production.",
             href: "/solutions/dedicated-ai-squads",
           },
           {
             title: "Hire AI Engineers",
-            description: "Embeds when the roadmap is already clear.",
+            description: "Senior AI/ML embeds when architecture is defined.",
             href: "/solutions/hire-ai-engineers",
           },
         ],
@@ -169,7 +169,7 @@ export const navigation: NavItem[] = [
       href: "/case-studies",
       cta: "View case studies",
       stats: [
-        { value: "18", label: "Industries" },
+        { value: "VPC", label: "Private by default" },
         { value: "40%", label: "Doc time ↓" },
         { value: "10×", label: "Triage speed" },
       ],
@@ -380,7 +380,7 @@ export const navigation: NavItem[] = [
           },
           {
             title: "Case Studies",
-            description: "Client success stories with measurable results.",
+            description: "Published AI production outcomes with methodology.",
             href: "/case-studies",
           },
           {
@@ -478,7 +478,10 @@ export const footerColumns = [
       { label: "Industries", href: "/industries" },
       { label: "Case Studies", href: "/case-studies" },
       { label: "AI Portfolio", href: "/portfolio" },
-      { label: "Agent Bank", href: "/portfolio/agent-bank" },
+      { label: "Security FAQ", href: "/resources/security-faq" },
+      { label: "Diligence pack", href: "/resources/diligence-pack" },
+      { label: "AI Governance", href: "/resources/ai-governance" },
+      { label: "Enterprise References", href: "/resources/enterprise-references" },
       { label: "Resources", href: "/resources" },
     ],
   },
@@ -491,6 +494,7 @@ export const footerColumns = [
       { label: "Our Team", href: "/team" },
       { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
+      { label: "AI Assessment", href: "/contact?intent=assessment" },
     ],
   },
 ];

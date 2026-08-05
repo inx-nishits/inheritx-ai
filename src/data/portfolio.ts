@@ -1,7 +1,7 @@
 export const portfolioStats = [
   { value: "14+", label: "Years enterprise delivery DNA" },
   { value: "AI-first", label: "AI/ML · Agents · Vision · LLMOps" },
-  { value: "18", label: "Industries engaged" },
+  { value: "VPC", label: "Private-cloud by default" },
   { value: "Owned", label: "IP transfer on delivery" },
 ];
 

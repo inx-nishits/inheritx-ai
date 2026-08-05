@@ -2,8 +2,31 @@ export const contactHero = {
   eyebrow: "Contact",
   title: "Book an AI strategy call with an architect.",
   description:
-    "Thirty minutes to pressure-test your mandate. We’ll review your use case, tell you honestly whether AI is the right solution, and outline a delivery roadmap—NDA and a diligence pack available for qualified opportunities.",
+    "Thirty minutes to pressure-test your mandate. We’ll review your use case, say honestly whether AI is the right solution, and outline a delivery roadmap—NDA and a diligence pack available for qualified opportunities.",
 };
+
+/** Primary buyer intents — maps to form topics and ?intent= query params. */
+export const contactIntents = [
+  {
+    id: "strategy",
+    label: "AI Strategy Call",
+    topic: "AI Strategy Call",
+    description: "Pressure-test fit, scope, and a 90-day path with an architect.",
+  },
+  {
+    id: "assessment",
+    label: "AI Assessment / Architecture Review",
+    topic: "AI Assessment / Architecture Review",
+    description:
+      "Structured readiness review—data, architecture, security, and build-vs-buy.",
+  },
+  {
+    id: "security",
+    label: "Security / Diligence",
+    topic: "Security / Diligence",
+    description: "Questionnaire support, NDA pack, and reference process.",
+  },
+] as const;
 
 export const contactChannels = [
   {
@@ -13,16 +36,22 @@ export const contactChannels = [
     note: "Best for AI transformation, platforms, and agentic systems",
   },
   {
+    title: "Security FAQ",
+    detail: "Public procurement answers",
+    href: "/resources/security-faq",
+    note: "Data residency, access, models, IP—before the call",
+  },
+  {
+    title: "Diligence pack",
+    detail: "Vendor review materials",
+    href: "/resources/diligence-pack",
+    note: "Detailed pack under NDA after fit is confirmed",
+  },
+  {
     title: "Careers",
     detail: "Open roles & how to apply",
     href: "/careers",
     note: "AI architects, ML engineers, and LLMOps builders",
-  },
-  {
-    title: "Security & diligence",
-    detail: "Vendor review materials",
-    href: "/resources/diligence-pack",
-    note: "FAQ public; detailed pack under NDA after fit is confirmed",
   },
 ];
 
@@ -49,21 +78,23 @@ export const contactNextSteps = [
   {
     step: "01",
     title: "Share context",
-    copy: "Mandate and KPI, systems in/out of scope, deployment preferences, any security review underway, and whether you need consulting, a production build, a squad, or embeds. Include what “good” looks like in 90 days.",
+    copy: "Mandate and KPI, systems in/out of scope, deployment preferences, any security review underway, and whether you need a strategy call, assessment, production build, squad, or embeds. Include what “good” looks like in 90 days.",
   },
   {
     step: "02",
-    title: "30-min AI strategy call",
-    copy: "An AI architect pressure-tests fit—and will say when AI is not the right move. NDA available on request.",
+    title: "Architect conversation",
+    copy: "Strategy call or assessment scoping with an AI architect—we will say when AI is not the right move. NDA available on request.",
   },
   {
     step: "03",
     title: "Concrete next move",
-    copy: "A recommended engagement shape (consulting, build, squad, or embed) with ownership model and success metrics—plus diligence materials and reference process when appropriate.",
+    copy: "Recommended engagement shape with ownership model and success metrics—plus diligence materials and anonymized or approved references when appropriate.",
   },
 ];
 
 export const contactTopics = [
+  "AI Strategy Call",
+  "AI Assessment / Architecture Review",
   "AI Transformation Program",
   "AI / ML Engineering",
   "Agentic AI / Multi-Agent System",
@@ -78,11 +109,18 @@ export const contactTopics = [
   "Other",
 ];
 
+export const contactProcurementNotes = [
+  "NDA available before detailed architecture or data discussion",
+  "Security FAQ is public; full diligence pack after fit is confirmed",
+  "Named references only with written customer approval—otherwise anonymized industry + scale under NDA",
+  "IP handover and private-cloud / VPC deployment are default commercial postures",
+];
+
 /** Prep guidance shown via existing contact copy surfaces / FAQs where wired. */
 export const contactStrategyPrep = [
   "Business mandate and the KPI you need to move",
   "Systems and data sources in scope (and out of scope)",
   "Deployment preference (VPC / private estate constraints)",
   "Security or compliance reviews already underway",
-  "Whether you need consulting, a production build, a squad, or embeds",
+  "Whether you need a strategy call, assessment, production build, squad, or embeds",
 ];

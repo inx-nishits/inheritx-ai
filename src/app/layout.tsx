@@ -47,7 +47,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "InheritX — AI-Native Enterprise Partner",
   description:
-    "InheritX helps enterprises transform with AI—AI/ML engineering, Agentic AI, and AI DevOps—deployed in your private cloud with full IP ownership.",
+    "InheritX is an AI-native enterprise technology partner—AI/ML engineering, Generative AI, Agentic AI, and AI DevOps—deployed in your private cloud with full IP ownership.",
   icons: {
     icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],

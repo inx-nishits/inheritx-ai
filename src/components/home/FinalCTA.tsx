@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { TextReveal } from "@/components/ui/Reveal";
@@ -48,13 +50,51 @@ export function FinalCTA() {
               outline a delivery roadmap—NDA and diligence materials available for
               qualified opportunities.
             </p>
-            <MagneticButton
-              href="/contact"
-              className="mt-1 min-h-12 w-full max-w-sm justify-center bg-cyan px-8 py-4 text-base text-white hover:bg-white hover:text-ink sm:w-auto"
-              strength={0.45}
-            >
-              Book an AI Strategy Call
-            </MagneticButton>
+            <div className="flex w-full max-w-lg flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:max-w-none">
+              <MagneticButton
+                href="/contact?intent=strategy"
+                className="min-h-12 w-full justify-center bg-cyan px-8 py-4 text-base text-white hover:bg-white hover:text-ink sm:w-auto"
+                strength={0.45}
+              >
+                Book an AI Strategy Call
+              </MagneticButton>
+              <Link
+                href="/contact?intent=assessment"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 px-6 text-sm text-white/70 transition-colors hover:border-cyan/40 hover:text-white"
+              >
+                Request AI Assessment
+              </Link>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white/40 lg:justify-start">
+              <Link
+                href="/contact?intent=security"
+                className="inline-flex items-center gap-1 transition-colors hover:text-cyan"
+              >
+                Security / diligence
+                <ArrowUpRight size={13} />
+              </Link>
+              <Link
+                href="/resources/security-faq"
+                className="inline-flex items-center gap-1 transition-colors hover:text-cyan"
+              >
+                Security FAQ
+                <ArrowUpRight size={13} />
+              </Link>
+              <Link
+                href="/resources/diligence-pack"
+                className="inline-flex items-center gap-1 transition-colors hover:text-cyan"
+              >
+                Diligence pack
+                <ArrowUpRight size={13} />
+              </Link>
+              <Link
+                href="/case-studies"
+                className="inline-flex items-center gap-1 transition-colors hover:text-cyan"
+              >
+                Case studies
+                <ArrowUpRight size={13} />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </div>
