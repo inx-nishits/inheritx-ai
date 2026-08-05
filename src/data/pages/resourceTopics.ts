@@ -167,7 +167,7 @@ const resourceTopics: TopicPage[] = [
         type: "related",
         title: "Continue reading",
         links: [
-          { label: "Insights", href: "/resources/insights" },
+          { label: "Insights", href: "/insights" },
           { label: "Whitepapers", href: "/resources/whitepapers" },
           { label: "Case studies", href: "/case-studies" },
           { label: "Company & vision", href: "/company" },
@@ -253,7 +253,7 @@ const resourceTopics: TopicPage[] = [
         type: "related",
         title: "Related resources",
         links: [
-          { label: "Insights", href: "/resources/insights" },
+          { label: "Insights", href: "/insights" },
           { label: "Research briefs", href: "/resources/research" },
           { label: "Solutions", href: "/solutions" },
           { label: "Careers", href: "/careers" },

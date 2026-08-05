@@ -78,7 +78,7 @@ export const resourceLibrary = [
     title: "Insights",
     description:
       "Decision-grade perspectives on governed agents, private AI, and the path from pilot to platform.",
-    href: "/resources/insights",
+    href: "/insights",
     meta: "Perspectives",
   },
   {

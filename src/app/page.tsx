@@ -14,18 +14,18 @@ import { TechStack } from "@/components/home/TechStack";
 import { ProcurementTrustStrip } from "@/components/home/ProcurementTrustStrip";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { Testimonials } from "@/components/testimonials/TestimonialsSection";
+import { HomeInsightsPreview } from "@/components/insights/HomeInsightsPreview";
+import { fetchInsightsListing } from "@/lib/insights/api";
 
 /**
  * Homepage story arc (enterprise buyer psychology):
  * Attention → soft trust → tech strength → convert → choose path →
  * why us → what we build → proof → sector depth → process → tech →
- * enterprise voices (when approved) → diligence → close.
- *
- * Testimonials render only when approved + published entries exist.
- * Full procurement depth lives on Contact / Security FAQ / Diligence Pack.
- * Solutions catalog lives on /solutions (avoids Capabilities duplication).
+ * voices → thought leadership → diligence → close.
  */
-export default function Home() {
+export default async function Home() {
+  const insights = await fetchInsightsListing().catch(() => null);
+
   return (
     <>
       <Header />
@@ -42,6 +42,12 @@ export default function Home() {
         <TransformationJourney />
         <TechStack />
         <Testimonials />
+        {insights ? (
+          <HomeInsightsPreview
+            featured={insights.featured}
+            latest={insights.latest}
+          />
+        ) : null}
         <ProcurementTrustStrip />
         <FinalCTA />
       </main>

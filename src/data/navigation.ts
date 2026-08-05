@@ -365,6 +365,39 @@ export const navigation: NavItem[] = [
     ],
   },
   {
+    label: "Insights",
+    href: "/insights",
+    overview:
+      "Enterprise AI perspectives on agentic systems, LLMOps, governance, and production architecture.",
+    columns: [
+      {
+        label: "Library",
+        items: [
+          {
+            title: "All Insights",
+            description: "Browse the enterprise AI library.",
+            href: "/insights",
+          },
+          {
+            title: "Case Studies",
+            description: "Measured production outcomes.",
+            href: "/case-studies",
+          },
+          {
+            title: "AI Portfolio",
+            description: "Capability patterns in production.",
+            href: "/portfolio",
+          },
+        ],
+      },
+    ],
+    quickLinks: [
+      { title: "All insights", description: "Browse the library", href: "/insights" },
+      { title: "Case studies", description: "Measured outcomes", href: "/case-studies" },
+      { title: "AI Strategy Call", description: "Talk to an architect", href: "/contact?intent=strategy" },
+    ],
+  },
+  {
     label: "Resources",
     href: "/resources",
     overview:
@@ -375,8 +408,8 @@ export const navigation: NavItem[] = [
         items: [
           {
             title: "Insights",
-            description: "Perspectives on enterprise AI.",
-            href: "/resources/insights",
+            description: "Enterprise AI perspectives from production.",
+            href: "/insights",
           },
           {
             title: "Case Studies",
@@ -477,6 +510,7 @@ export const footerColumns = [
     links: [
       { label: "Industries", href: "/industries" },
       { label: "Case Studies", href: "/case-studies" },
+      { label: "Insights", href: "/insights" },
       { label: "AI Portfolio", href: "/portfolio" },
       { label: "Security FAQ", href: "/resources/security-faq" },
       { label: "Diligence pack", href: "/resources/diligence-pack" },

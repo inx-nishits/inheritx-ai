@@ -274,3 +274,244 @@ select:focus-visible {
     outline-offset: 2px;
   }
 }
+
+/* Scoped WordPress / Insights rich HTML — does not leak into site chrome */
+.rich-content {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (min-width: 640px) {
+  .rich-content {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+}
+
+.rich-content > *:first-child {
+  margin-top: 0;
+}
+
+.rich-content h1,
+.rich-content h2,
+.rich-content h3,
+.rich-content h4 {
+  color: #fff;
+  font-family: var(--font-satoshi), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 1.75rem 0 0.75rem;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 768px) {
+  .rich-content h1,
+  .rich-content h2,
+  .rich-content h3,
+  .rich-content h4 {
+    margin: 2.25rem 0 0.85rem;
+    line-height: 1.15;
+  }
+}
+
+.rich-content h2 {
+  font-size: clamp(1.35rem, 4vw, 2rem);
+}
+
+.rich-content h3 {
+  font-size: clamp(1.15rem, 3.2vw, 1.5rem);
+}
+
+.rich-content p {
+  margin: 0 0 1.15rem;
+}
+
+.rich-content a {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rich-content a:hover {
+  color: #fff;
+}
+
+.rich-content ul,
+.rich-content ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.15rem;
+}
+
+.rich-content li {
+  margin: 0.35rem 0;
+}
+
+.rich-content ul {
+  list-style: disc;
+}
+
+.rich-content ol {
+  list-style: decimal;
+}
+
+.rich-content blockquote {
+  margin: 1.25rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 2px solid rgba(0, 190, 212, 0.55);
+  color: rgba(255, 255, 255, 0.82);
+  font-style: italic;
+}
+
+.rich-content pre,
+.rich-content code {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+.rich-content code {
+  font-size: 0.9em;
+  color: #b4f5ff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.4rem;
+  padding: 0.1rem 0.35rem;
+  word-break: break-word;
+}
+
+.rich-content pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.25rem 0;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(16, 20, 28, 0.95);
+  max-width: 100%;
+}
+
+.rich-content pre code {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.82);
+  white-space: pre;
+}
+
+.rich-content img,
+.rich-content figure img,
+.rich-content .wp-block-image img,
+.rich-content .aligncenter,
+.rich-content .alignnone,
+.rich-content .alignwide,
+.rich-content .alignfull {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 1.25rem 0;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  object-fit: contain;
+}
+
+.rich-content figure,
+.rich-content .wp-block-image,
+.rich-content .wp-caption,
+.rich-content .wp-block-table,
+.rich-content .wp-block-embed,
+.rich-content .wp-block-video {
+  margin: 1.25rem 0;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.rich-content figure img,
+.rich-content .wp-block-image img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rich-content figcaption,
+.rich-content .wp-caption-text {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.rich-content table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.875rem;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rich-content th,
+.rich-content td {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .rich-content th,
+  .rich-content td {
+    white-space: normal;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .rich-content table {
+    font-size: 0.9375rem;
+  }
+}
+
+.rich-content th {
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+
+.rich-content iframe,
+.rich-content video,
+.rich-content embed,
+.rich-content object {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto;
+  min-height: 180px;
+  margin: 1.25rem 0;
+  border-radius: 1rem;
+  aspect-ratio: 16 / 9;
+}
+
+.rich-content hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1.75rem 0;
+}
+
+.rich-content strong {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+}
+
+/* Kill common WP fixed widths that break mobile */
+.rich-content [style*="width"],
+.rich-content [width] {
+  max-width: 100% !important;
+}
+
+.rich-content .alignleft,
+.rich-content .alignright {
+  float: none !important;
+  margin: 1.25rem 0 !important;
+  max-width: 100% !important;
+}

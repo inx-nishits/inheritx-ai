@@ -49,6 +49,7 @@ const iconMap: Record<string, LucideIcon> = {
   Logistics: Truck,
   Government: Landmark,
   Insights: FileText,
+  "All Insights": FileText,
   "AI Portfolio": Network,
   "Case Studies": FileText,
   Research: Brain,

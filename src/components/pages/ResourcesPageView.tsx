@@ -28,7 +28,7 @@ export function ResourcesPageView() {
         title={resourcesHero.title}
         description={resourcesHero.description}
         primaryCta={{ label: "Book an AI Strategy Call", href: "/contact" }}
-        secondaryCta={{ label: "Browse AI insights", href: "/resources/insights" }}
+        secondaryCta={{ label: "Browse AI insights", href: "/insights" }}
       />
 
       <section className="bg-ink py-16 md:py-20">
