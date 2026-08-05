@@ -20,7 +20,7 @@ export function Solutions() {
   );
 
   return (
-    <section id="solutions" className="relative overflow-hidden bg-ink py-24 md:py-32">
+    <section id="solutions" className="relative overflow-hidden bg-ink py-16 md:py-20">
       <div className="noise-overlay" />
       <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
         <div className="mb-10 max-w-3xl md:mb-12">

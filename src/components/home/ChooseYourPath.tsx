@@ -585,7 +585,7 @@ export function ChooseYourPath() {
   return (
     <section
       id="path"
-      className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-28"
+      className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20"
     >
       <div className="noise-overlay" />
       <div className="pointer-events-none absolute top-0 right-0 h-[420px] w-[420px] rounded-full bg-cyan/[0.06] blur-[120px]" />
@@ -599,10 +599,10 @@ export function ChooseYourPath() {
           </Reveal>
           <TextReveal
             text={audiencePaths.title}
-            className="font-display mt-4 text-[2rem] leading-[1.15] text-white md:text-5xl lg:text-6xl"
+            className="font-display mt-3 text-[2rem] leading-[1.15] text-white md:text-5xl lg:text-6xl"
           />
           <Reveal delay={0.12}>
-            <p className="mt-5 w-full text-base leading-relaxed text-white/50 md:text-lg">
+            <p className="mt-4 w-full text-base leading-relaxed text-white/50 md:text-lg">
               {audiencePaths.description}
             </p>
           </Reveal>

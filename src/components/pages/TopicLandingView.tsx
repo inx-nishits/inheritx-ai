@@ -26,7 +26,7 @@ function SectionShell({
   return (
     <section
       className={cn(
-        "py-16 md:py-24",
+        "py-16 md:py-20",
         tone === "ink" && "bg-ink text-white",
         tone === "soft" && "border-t border-white/[0.06] bg-ink-soft text-white",
         tone === "paper" && "bg-paper text-ink",
@@ -86,7 +86,7 @@ function NarrativeBlock({
       >
         {title}
       </h2>
-      <div className="mt-8 max-w-3xl space-y-4">
+      <div className="mt-4 max-w-3xl space-y-4">
         {body.map((para) => (
           <p
             key={para.slice(0, 40)}
@@ -144,7 +144,7 @@ function BulletsBlock({
           </p>
         )}
       </Reveal>
-      <div className="mt-10 grid gap-4 md:grid-cols-2">
+      <div className="mt-12 grid gap-4 md:mt-14 md:grid-cols-2">
         {items.map((item, index) => (
           <Reveal key={item.title} delay={index * 0.04}>
             <article
@@ -201,7 +201,7 @@ function StepsBlock({
           <p className="mt-4 max-w-2xl text-sm text-white/50">{intro}</p>
         )}
       </Reveal>
-      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-12 grid gap-6 md:mt-14 md:grid-cols-2 lg:grid-cols-4">
         {items.map((item, index) => (
           <Reveal key={item.step} delay={index * 0.05}>
             <div className="border-t border-white/10 pt-6">
@@ -243,7 +243,7 @@ function SplitBlock({
           {title}
         </h2>
       </Reveal>
-      <div className="mt-10 grid gap-6 lg:grid-cols-2">
+      <div className="mt-12 grid gap-6 md:mt-14 lg:grid-cols-2">
         <Reveal>
           <div className="h-full rounded-[1.75rem] border border-white/10 bg-ink p-7 md:p-9">
             <h3 className="font-display text-2xl text-white">{leftTitle}</h3>
@@ -323,7 +323,7 @@ function MatrixBlock({
       </Reveal>
       <div
         className={cn(
-          "mt-10 divide-y border-y",
+          "mt-12 divide-y border-y md:mt-14",
           light ? "divide-ink/10 border-ink/10" : "divide-white/10 border-white/10",
         )}
       >
@@ -372,7 +372,7 @@ function RelatedBlock({
           {title}
         </h2>
       </Reveal>
-      <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid gap-3 sm:grid-cols-2 md:mt-14 lg:grid-cols-3">
         {links.map((link, index) => (
           <Reveal key={link.href + link.label} delay={index * 0.03}>
             <Link
@@ -423,7 +423,7 @@ function FaqBlock({
       </Reveal>
       <div
         className={cn(
-          "mt-10 max-w-3xl divide-y border-y",
+          "mt-12 max-w-3xl divide-y border-y md:mt-14",
           light ? "divide-ink/10 border-ink/10" : "divide-white/10 border-white/10",
         )}
       >
@@ -607,7 +607,7 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
             description={topic.description}
             primaryCta={topic.primaryCta}
             secondaryCta={topic.secondaryCta}
-            className="border-b border-white/[0.06] pt-10 pb-12 md:pt-14 md:pb-16"
+            className="border-b border-white/[0.06] pt-10 pb-16 md:pt-14 md:pb-20"
           />
         </>
       ) : (

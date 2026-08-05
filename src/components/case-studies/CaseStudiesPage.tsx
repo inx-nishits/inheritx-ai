@@ -27,10 +27,10 @@ export function CaseStudiesHero() {
           <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
             {caseStudyIntro.eyebrow}
           </p>
-          <h1 className="font-display mt-4 max-w-3xl text-4xl leading-[1.15] text-white md:text-6xl">
+          <h1 className="font-display mt-3 max-w-3xl text-4xl leading-[1.15] text-white md:text-6xl">
             {caseStudyIntro.title}
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
             {caseStudyIntro.copy}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -85,7 +85,7 @@ export function CaseStudiesListing() {
   );
 
   return (
-    <section className="relative bg-ink py-16 md:py-24">
+    <section className="relative bg-ink py-16 md:py-20">
       <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         <div className="mb-10 flex snap-x snap-mandatory gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] md:mb-12 md:flex-wrap md:snap-none md:overflow-visible [&::-webkit-scrollbar]:hidden">
           {caseStudyCategories.map((cat) => (
@@ -180,7 +180,7 @@ export function CaseStudiesListing() {
 
 export function CaseStudiesCTA() {
   return (
-    <section className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-20 md:py-28">
+    <section className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,190,212,0.08),transparent_60%)]" />
       <div className="relative mx-auto max-w-[1400px] px-5 text-center md:px-8">
         <motion.div

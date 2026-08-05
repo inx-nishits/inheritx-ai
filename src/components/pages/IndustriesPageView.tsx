@@ -30,7 +30,7 @@ export function IndustriesPageView() {
         secondaryCta={{ label: "Read case studies", href: "/case-studies" }}
       />
 
-      <section className="bg-ink py-16 md:py-24">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <div className="sticky top-16 z-20 -mx-5 border-b border-white/[0.06] bg-ink/92 px-5 py-3 backdrop-blur-xl md:static md:mx-0 md:border-0 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none">
             <div
@@ -158,7 +158,7 @@ export function IndustriesPageView() {
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] bg-paper py-20 text-ink md:py-28">
+      <section className="border-t border-white/[0.06] bg-paper py-16 text-ink md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">

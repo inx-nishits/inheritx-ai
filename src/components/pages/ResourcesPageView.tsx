@@ -31,7 +31,7 @@ export function ResourcesPageView() {
         secondaryCta={{ label: "Browse AI insights", href: "/resources/insights" }}
       />
 
-      <section className="bg-ink py-16 md:py-24">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -66,7 +66,7 @@ export function ResourcesPageView() {
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] bg-ink-soft py-20 md:py-28">
+      <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -132,7 +132,7 @@ export function ResourcesPageView() {
         </div>
       </section>
 
-      <section className="bg-paper py-20 text-ink md:py-28">
+      <section className="bg-paper py-16 text-ink md:py-20">
         <div className="mx-auto max-w-[900px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">

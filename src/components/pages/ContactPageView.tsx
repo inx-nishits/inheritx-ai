@@ -109,7 +109,7 @@ export function ContactPageView() {
         description={contactHero.description}
       />
 
-      <section className="bg-ink py-16 md:py-24">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto grid max-w-[1400px] gap-10 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 md:px-8">
           <Reveal>
             <div className="rounded-[1.75rem] border border-white/10 bg-ink-soft p-6 md:p-8">
@@ -419,7 +419,7 @@ export function ContactPageView() {
 
       <ProcurementExperience tone="dark" />
 
-      <section className="border-t border-white/[0.06] bg-paper py-20 text-ink md:py-24">
+      <section className="border-t border-white/[0.06] bg-paper py-16 text-ink md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">

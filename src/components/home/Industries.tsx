@@ -16,16 +16,16 @@ export function Industries() {
   const proof = industryCaseLinks[activeIndustry.name];
 
   return (
-    <section id="industries" className="relative bg-paper py-16 text-ink md:py-32">
+    <section id="industries" className="relative bg-paper py-16 text-ink md:py-20">
       <div className="mx-auto max-w-[1400px] px-5 md:px-8">
-        <div className="mb-10 flex max-w-3xl flex-col gap-4 md:mb-16 md:max-w-none md:flex-row md:items-end md:justify-between">
+        <div className="mb-12 flex max-w-3xl flex-col gap-4 md:mb-14 md:max-w-none md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Industries
             </p>
             <TextReveal
               text="Sector fluency. AI systems that survive regulation."
-              className="font-display mt-5 text-[2rem] leading-[1.15] md:text-6xl"
+              className="font-display mt-3 text-[2rem] leading-[1.15] md:text-6xl"
             />
           </div>
           <Link

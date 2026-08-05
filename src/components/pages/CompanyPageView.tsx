@@ -41,7 +41,7 @@ export function CompanyPageView() {
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] bg-ink py-20 md:py-28">
+      <section className="border-t border-white/[0.06] bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <Reveal>
@@ -83,7 +83,7 @@ export function CompanyPageView() {
         </div>
       </section>
 
-      <section className="bg-paper py-20 text-ink md:py-28">
+      <section className="bg-paper py-16 text-ink md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
@@ -114,7 +114,7 @@ export function CompanyPageView() {
         </div>
       </section>
 
-      <section className="bg-ink py-20 md:py-28">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -159,7 +159,7 @@ export function CompanyPageView() {
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] bg-ink-soft py-20 md:py-24">
+      <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
         <div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-5 md:flex-row md:items-end md:justify-between md:px-8">
           <div className="max-w-xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">

@@ -138,12 +138,12 @@ export function Capabilities() {
               </p>
               <TextReveal
                 text="Capability lanes from models to LLMOps."
-                className="font-display mt-5 text-[2rem] leading-[1.15] text-white"
+                className="font-display mt-3 text-[2rem] leading-[1.15] text-white"
               />
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-white/45">
-              AI/ML, Generative AI, agents, n8n automation, and AI
-              DevOps—each lane engineered for production delivery.
+              AI/ML, Generative AI, agents, automation, and LLMOps—each lane
+              engineered for governed production delivery.
             </p>
             <Link
               href="/solutions"
@@ -178,7 +178,7 @@ export function Capabilities() {
                 </p>
                 <TextReveal
                   text="Capability lanes from models to LLMOps."
-                  className="font-display mt-4 text-[2rem] leading-[1.15] text-white md:text-[2.75rem] lg:mt-5 lg:text-6xl"
+                  className="font-display mt-3 text-[2rem] leading-[1.15] text-white md:text-[2.75rem] lg:text-6xl"
                 />
               </div>
               <div className="flex flex-col gap-5 lg:items-end">

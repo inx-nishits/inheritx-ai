@@ -26,7 +26,7 @@ export function CareersPageView() {
         secondaryCta={{ label: "Meet the team", href: "/team" }}
       />
 
-      <section className="bg-ink py-16 md:py-24">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -42,7 +42,7 @@ export function CareersPageView() {
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-24">
+      <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -69,7 +69,7 @@ export function CareersPageView() {
         </div>
       </section>
 
-      <section className="bg-ink py-16 md:py-24">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">

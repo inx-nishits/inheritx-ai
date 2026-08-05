@@ -41,7 +41,7 @@ export function AgentEcosystem() {
   );
 
   return (
-    <section id="agents" className="relative overflow-hidden bg-ink py-24 md:py-32">
+    <section id="agents" className="relative overflow-hidden bg-ink py-16 md:py-20">
       <div className="editorial-grid absolute inset-0 opacity-30" />
       <div className="noise-overlay" />
 

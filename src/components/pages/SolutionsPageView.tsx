@@ -50,7 +50,7 @@ export function SolutionsPageView() {
       </section>
 
       {/* Pillar explorer */}
-      <section className="bg-ink py-20 md:py-28">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -145,7 +145,7 @@ export function SolutionsPageView() {
       </section>
 
       {/* Engagement models */}
-      <section id="engagement" className="border-t border-white/[0.06] bg-paper py-20 text-ink md:py-28">
+      <section id="engagement" className="border-t border-white/[0.06] bg-paper py-16 text-ink md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
@@ -192,7 +192,7 @@ export function SolutionsPageView() {
       </section>
 
       {/* Fit matrix */}
-      <section className="bg-ink py-20 md:py-28">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">

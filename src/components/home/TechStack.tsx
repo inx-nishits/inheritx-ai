@@ -41,7 +41,7 @@ export function TechStack() {
   return (
     <section
       id="tech"
-      className="relative overflow-hidden bg-ink py-16 md:py-32"
+      className="relative overflow-hidden bg-ink py-16 md:py-20"
     >
       <div className="noise-overlay" />
       <div className="pointer-events-none absolute inset-0 editorial-grid opacity-30" />
@@ -56,7 +56,7 @@ export function TechStack() {
             </p>
             <TextReveal
               text="The operating foundation for enterprise AI."
-              className="font-display mt-5 max-w-2xl text-[2rem] leading-[1.15] text-white md:text-6xl"
+              className="font-display mt-3 max-w-2xl text-[2rem] leading-[1.15] text-white md:text-6xl"
             />
           </div>
           <Reveal>
@@ -68,7 +68,7 @@ export function TechStack() {
         </div>
 
         {/* Architecture canvas */}
-        <div className="mt-14 grid gap-6 lg:mt-20 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8">
+        <div className="mt-12 grid gap-6 md:mt-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8">
           {/* Layer navigator */}
           <Reveal>
             <div className="flex snap-x snap-mandatory flex-row gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] lg:flex-col lg:gap-2 lg:overflow-visible lg:snap-none [&::-webkit-scrollbar]:hidden">
@@ -193,7 +193,7 @@ export function TechStack() {
 
         {/* Partner / platform strip */}
         <Reveal delay={0.1}>
-          <div className="mt-12 border-t border-white/[0.08] pt-10 md:mt-16">
+          <div className="mt-12 border-t border-white/[0.08] pt-10 md:mt-14 md:pt-12">
             <p className="mb-6 text-center text-[11px] tracking-[0.22em] text-white/35 uppercase md:text-left">
             Platforms we build enterprise AI with
           </p>

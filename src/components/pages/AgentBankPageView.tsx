@@ -69,7 +69,7 @@ export function AgentBankPageView() {
         </div>
       </section>
 
-      <section className="bg-ink py-14 md:py-16">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-4 px-5 md:grid-cols-4 md:gap-6 md:px-8">
           {p.stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.04}>
@@ -84,7 +84,7 @@ export function AgentBankPageView() {
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] bg-ink py-20 md:py-28">
+      <section className="border-t border-white/[0.06] bg-ink py-16 md:py-20">
         <div className="mx-auto grid max-w-[1400px] gap-12 px-5 lg:grid-cols-2 lg:gap-20 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -122,7 +122,7 @@ export function AgentBankPageView() {
         </div>
       </section>
 
-      <section className="bg-paper py-20 text-ink md:py-28">
+      <section className="bg-paper py-16 text-ink md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
@@ -150,7 +150,7 @@ export function AgentBankPageView() {
         </div>
       </section>
 
-      <section className="bg-ink py-20 md:py-28">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -178,7 +178,7 @@ export function AgentBankPageView() {
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] bg-ink-soft py-20 md:py-28">
+      <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
         <div className="mx-auto grid max-w-[1400px] gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -207,7 +207,7 @@ export function AgentBankPageView() {
         </div>
       </section>
 
-      <section className="bg-paper py-20 text-ink md:py-28">
+      <section className="bg-paper py-16 text-ink md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
@@ -246,7 +246,7 @@ export function AgentBankPageView() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-20 md:py-28">
+      <section className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,190,212,0.08),transparent_60%)]" />
         <div className="relative mx-auto max-w-[1400px] px-5 text-center md:px-8">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">

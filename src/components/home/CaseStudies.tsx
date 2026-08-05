@@ -22,7 +22,7 @@ export function CaseStudies() {
   return (
     <section
       id="cases"
-      className="relative overflow-hidden bg-ink pt-16 pb-20 md:pt-20 md:pb-28 lg:pt-24 lg:pb-32"
+      className="relative overflow-hidden bg-ink py-16 md:py-20"
     >
       <div className="noise-overlay" />
 

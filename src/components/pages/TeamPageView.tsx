@@ -43,7 +43,7 @@ export function TeamPageView() {
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] bg-ink py-20 md:py-28">
+      <section className="border-t border-white/[0.06] bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -79,7 +79,7 @@ export function TeamPageView() {
 
       <TeamMembersGrid />
 
-      <section className="bg-paper py-20 text-ink md:py-28">
+      <section className="bg-paper py-16 text-ink md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
@@ -105,7 +105,7 @@ export function TeamPageView() {
         </div>
       </section>
 
-      <section className="bg-ink py-20 md:py-28">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -141,7 +141,7 @@ export function TeamPageView() {
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] bg-ink-soft py-20 md:py-28">
+      <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -168,7 +168,7 @@ export function TeamPageView() {
         </div>
       </section>
 
-      <section className="bg-paper py-20 text-ink md:py-28">
+      <section className="bg-paper py-16 text-ink md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
@@ -194,7 +194,7 @@ export function TeamPageView() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-20 md:py-28">
+      <section className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,190,212,0.08),transparent_60%)]" />
         <div className="relative mx-auto flex max-w-[1400px] flex-col gap-8 px-5 md:flex-row md:items-end md:justify-between md:px-8">
           <div className="max-w-xl">

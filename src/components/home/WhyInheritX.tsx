@@ -5,7 +5,7 @@ import { Reveal, TextReveal } from "@/components/ui/Reveal";
 
 export function WhyInheritX() {
   return (
-    <section id="why" className="relative overflow-hidden bg-paper py-16 text-ink md:py-32">
+    <section id="why" className="relative overflow-hidden bg-paper py-16 text-ink md:py-20">
       <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         <div>
           <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
@@ -13,10 +13,10 @@ export function WhyInheritX() {
           </p>
           <TextReveal
             text="We don't sell software projects. We engineer enterprise AI you own."
-            className="font-display mt-5 max-w-none text-[2rem] leading-[1.15] md:text-6xl"
+            className="font-display mt-3 max-w-none text-[2rem] leading-[1.15] md:text-6xl"
           />
           <Reveal delay={0.15}>
-            <p className="mt-6 w-full text-[15px] leading-relaxed text-ink/55 md:mt-8 md:text-lg">
+            <p className="mt-4 w-full text-[15px] leading-relaxed text-ink/55 md:text-lg">
               InheritX is an AI-native enterprise partner. We design, build, and
               hand over AI/ML systems, agentic workforces, and AI DevOps
               platforms—so CEOs and CTOs keep the code, the models, and the data.
@@ -24,7 +24,7 @@ export function WhyInheritX() {
           </Reveal>
         </div>
 
-        <div className="mt-8 grid gap-px overflow-hidden rounded-[1.75rem] border border-ink/10 bg-ink/10 md:mt-10 md:grid-cols-2 md:rounded-[2rem]">
+        <div className="mt-12 grid gap-px overflow-hidden rounded-[1.75rem] border border-ink/10 bg-ink/10 md:mt-14 md:grid-cols-2 md:rounded-[2rem]">
           {whyPoints.map((point, index) => (
             <Reveal key={point.title} delay={index * 0.05}>
               <article className="h-full bg-paper px-5 py-4 md:px-8 md:py-5">

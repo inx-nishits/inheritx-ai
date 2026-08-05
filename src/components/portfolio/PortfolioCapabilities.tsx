@@ -9,7 +9,7 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export function PortfolioCapabilities() {
   return (
-    <section className="relative border-t border-white/[0.06] bg-ink py-24 md:py-32">
+    <section className="relative border-t border-white/[0.06] bg-ink py-16 md:py-20">
       <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         <div className="mb-12 max-w-3xl md:mb-16">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -55,7 +55,7 @@ export function PortfolioCapabilities() {
 
 export function BusinessImpact() {
   return (
-    <section className="relative bg-ink-soft py-24 md:py-32">
+    <section className="relative bg-ink-soft py-16 md:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,190,212,0.08),transparent_60%)]" />
       <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
         <div className="mb-12 max-w-3xl md:mb-16">
@@ -96,7 +96,7 @@ export function PortfolioCTA() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-24 md:py-32"
+      className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20"
     >
       <div className="noise-overlay" />
       <div className="pointer-events-none absolute inset-0">

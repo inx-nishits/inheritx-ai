@@ -175,7 +175,7 @@ function GridMemberCard({
 
 export function TeamMembersGrid() {
   return (
-    <section className="border-t border-white/[0.06] bg-ink py-20 md:py-28">
+    <section className="border-t border-white/[0.06] bg-ink py-16 md:py-20">
       <div className="mx-auto max-w-[1400px] px-5 md:px-8">
         <Reveal>
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">

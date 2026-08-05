@@ -24,7 +24,7 @@ export function LegalPageView({
     <>
       <PageHero eyebrow={eyebrow} title={title} description={description} />
 
-      <section className="bg-ink py-14 md:py-20">
+      <section className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[800px] px-5 md:px-8">
           <p className="text-xs tracking-wide text-white/40">
             Last updated: {updated}

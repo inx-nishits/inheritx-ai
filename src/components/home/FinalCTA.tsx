@@ -12,7 +12,7 @@ export function FinalCTA() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-ink py-16 md:py-40"
+      className="relative overflow-hidden bg-ink py-16 md:py-20"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,190,212,0.18),transparent_55%)]" />
       <div className="editorial-grid absolute inset-0 opacity-25" />
@@ -34,7 +34,7 @@ export function FinalCTA() {
           </p>
           <TextReveal
             text="Ready to industrialize enterprise AI?"
-            className="font-display mt-5 text-[2rem] leading-[1.15] text-white md:mt-6 md:text-6xl lg:justify-start lg:text-6xl"
+            className="font-display mt-3 text-[2rem] leading-[1.15] text-white md:text-6xl lg:justify-start lg:text-6xl"
           />
 
           <motion.div
@@ -42,7 +42,7 @@ export function FinalCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="mt-8 flex flex-col items-center gap-5 md:mt-10 lg:items-start"
+            className="mt-4 flex flex-col items-center gap-5 lg:items-start"
           >
             <p className="max-w-xl text-[15px] text-white/50 md:text-lg">
               Book a 30-minute AI strategy call with an architect. We’ll pressure-

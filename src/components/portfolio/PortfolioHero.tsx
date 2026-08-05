@@ -10,7 +10,7 @@ import { Reveal, TextReveal } from "@/components/ui/Reveal";
 
 export function PortfolioHero() {
   return (
-    <section className="relative overflow-hidden border-b border-white/[0.06] bg-ink pt-28 pb-20 md:pt-36 md:pb-28">
+    <section className="relative overflow-hidden border-b border-white/[0.06] bg-ink pt-28 pb-16 md:pt-36 md:pb-20">
       <div className="noise-overlay" />
       <div className="pointer-events-none absolute inset-0 editorial-grid opacity-40" />
       <div className="pointer-events-none absolute -top-24 right-0 h-[520px] w-[520px] rounded-full bg-cyan/10 blur-[120px]" />
@@ -25,10 +25,10 @@ export function PortfolioHero() {
           </Reveal>
           <TextReveal
             text="Enterprise AI systems, mapped by capability."
-            className="font-display mt-5 max-w-2xl text-4xl leading-[1.15] text-white md:text-6xl lg:text-[4.25rem]"
+            className="font-display mt-3 max-w-2xl text-4xl leading-[1.15] text-white md:text-6xl lg:text-[4.25rem]"
           />
           <Reveal delay={0.12}>
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-white/55 md:text-lg">
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-white/55 md:text-lg">
               How we deliver AI/ML engineering, Agentic AI, and AI DevOps—
               generative applications, vision, automation, and transformation—
               organized by capability. Named client outcomes live in Case Studies.

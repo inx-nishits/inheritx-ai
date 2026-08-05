@@ -21,17 +21,17 @@ export function TransformationJourney() {
       className="relative bg-paper text-ink"
     >
       <div className="editorial-grid-light absolute inset-0 opacity-60" />
-      <div className="relative mx-auto grid max-w-[1400px] gap-16 px-5 py-24 md:px-8 md:py-32 lg:grid-cols-[0.95fr_1.05fr]">
+      <div className="relative mx-auto grid max-w-[1400px] gap-16 px-5 py-16 md:px-8 md:py-20 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
             AI Transformation Journey
           </p>
           <TextReveal
             text="A sequenced path from mandate to production."
-            className="font-display mt-5 text-4xl leading-[1.15] md:text-6xl"
+            className="font-display mt-3 text-4xl leading-[1.15] md:text-6xl"
           />
           <Reveal delay={0.15}>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-ink/55">
+            <p className="mt-4 max-w-md text-base leading-relaxed text-ink/55">
               Discover, architect, build, and scale—four stages that take a
               qualified use case from leadership alignment to industrialized
               delivery.

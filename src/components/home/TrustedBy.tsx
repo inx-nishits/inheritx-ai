@@ -211,7 +211,7 @@ export function TrustedBy() {
   return (
     <section
       aria-label="Trust and recognition"
-      className="relative z-10 overflow-hidden border-b border-white/[0.06] bg-ink py-14 md:py-20"
+      className="relative z-10 overflow-hidden border-b border-white/[0.06] bg-ink py-16 md:py-20"
     >
       <div className="mx-auto max-w-[1400px] px-5 text-center md:px-8">
         <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -240,7 +240,7 @@ export function TrustedBy() {
         </div>
       </div>
 
-      <div className="marquee-pause relative mt-10 md:mt-12">
+      <div className="marquee-pause relative mt-12 md:mt-14">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-ink to-transparent md:w-24" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-ink to-transparent md:w-24" />
 

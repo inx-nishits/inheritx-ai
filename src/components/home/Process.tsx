@@ -11,7 +11,7 @@ export function Process() {
   return (
     <section
       id="process"
-      className="relative overflow-hidden bg-ink py-20 md:py-28 lg:py-32"
+      className="relative overflow-hidden bg-ink py-16 md:py-20"
     >
       <div className="noise-overlay" />
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-cyan/[0.07] blur-[100px]" />
