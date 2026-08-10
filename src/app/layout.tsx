@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Geist_Mono } from "next/font/google";
 
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { IRAChatCTA } from "@/components/ira/IRAChatCTA";
 
 import "./globals.css";
 
@@ -71,6 +72,7 @@ export default function RootLayout({
       >
         <SmoothScroll>
           <div className="flex min-h-dvh flex-col">{children}</div>
+          <IRAChatCTA />
         </SmoothScroll>
       </body>
     </html>

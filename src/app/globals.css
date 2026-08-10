@@ -515,3 +515,14 @@ select:focus-visible {
   margin: 1.25rem 0 !important;
   max-width: 100% !important;
 }
+
+/* IRA floating CTA — subtle idle float (honors prefers-reduced-motion via Tailwind motion-safe) */
+@keyframes ira-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
