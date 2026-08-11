@@ -526,3 +526,19 @@ select:focus-visible {
     transform: translateY(-4px);
   }
 }
+
+/* One-time entrance pop (jump) for the floating CTA */
+@keyframes ira-pop {
+  0% {
+    transform: translateY(10px) scale(0.96);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-2px) scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}

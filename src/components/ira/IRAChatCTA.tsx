@@ -82,7 +82,7 @@ export function IRAChatCTA() {
           "transition-[opacity,transform] duration-500 ease-out",
           "motion-reduce:transition-none",
           entered
-            ? "translate-y-0 opacity-100"
+            ? "translate-y-0 opacity-100 motion-safe:animate-[ira-pop_0.55s_ease-out] motion-reduce:animate-none"
             : "translate-y-3 opacity-0 motion-reduce:translate-y-0 motion-reduce:opacity-100",
         )}
       >
