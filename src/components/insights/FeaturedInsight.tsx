@@ -10,7 +10,7 @@ import {
   primaryCategory,
   resolveFeatureImage,
 } from "@/lib/insights/utils";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaText } from "@/components/cta/CtaText";
 import { Reveal } from "@/components/ui/Reveal";
 
 /**
@@ -99,14 +99,9 @@ export function FeaturedInsight({ insight }: { insight: InsightCard }) {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <MagneticButton
-                  href={href}
-                  className="min-h-12 bg-cyan px-7 py-3.5 text-sm text-white hover:bg-white hover:text-ink"
-                  strength={0.3}
-                >
+                <CtaText href={href} location="insight" pattern="text-explore">
                   Read insight
-                  <ArrowUpRight size={15} />
-                </MagneticButton>
+                </CtaText>
                 {category ? (
                   <Link
                     href={insightCategoryHref(category.slug)}

@@ -29,13 +29,10 @@ export function rewriteWpLinks(html: string): string {
     (_m, quote: string, slug: string) => {
       const clean = slug.toLowerCase();
       if (clean === "contact") return `href=${quote}/contact${quote}`;
-      if (
-        clean === "blog" ||
-        clean === "insights" ||
-        clean === "about" ||
-        clean === "services" ||
-        clean === "portfolio"
-      ) {
+      if (clean === "about") return `href=${quote}/company${quote}`;
+      if (clean === "services") return `href=${quote}/solutions${quote}`;
+      if (clean === "portfolio") return `href=${quote}/portfolio${quote}`;
+      if (clean === "blog" || clean === "insights") {
         return `href=${quote}/insights${quote}`;
       }
       return `href=${quote}/insights/${slug}${quote}`;

@@ -1,7 +1,11 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaGhost } from "@/components/cta/CtaGhost";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { CtaProof } from "@/components/cta/CtaProof";
+import { CtaText } from "@/components/cta/CtaText";
+import {
+  ctaPairSecondaryFamily,
+  type CtaPairSecondaryFamily,
+} from "@/data/cta/families";
 import { cn } from "@/lib/cn";
 
 type PageHeroProps = {
@@ -10,6 +14,10 @@ type PageHeroProps = {
   description: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  /** Insights and other low-intent heroes use text instead of fill. */
+  primaryVariant?: "fill" | "text";
+  /** Defaults from href: contact → ghost, proof → tint, else text. */
+  secondaryVariant?: CtaPairSecondaryFamily;
   className?: string;
 };
 
@@ -19,8 +27,21 @@ export function PageHero({
   description,
   primaryCta,
   secondaryCta,
+  primaryVariant,
+  secondaryVariant,
   className,
 }: PageHeroProps) {
+  const resolvedPrimaryVariant =
+    primaryVariant ??
+    (primaryCta &&
+    (primaryCta.href.includes("/contact") ||
+      primaryCta.href.startsWith("mailto:"))
+      ? "fill"
+      : "text");
+  const secondaryFamily =
+    secondaryVariant ??
+    ctaPairSecondaryFamily(primaryCta?.href, secondaryCta?.href);
+
   return (
     <section
       className={cn(
@@ -44,26 +65,55 @@ export function PageHero({
         </p>
         {(primaryCta || secondaryCta) && (
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-            {primaryCta && (
-              <MagneticButton
-                href={primaryCta.href}
-                className="min-h-12 w-full justify-center bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink sm:w-auto"
-              >
-                {primaryCta.label}
-              </MagneticButton>
-            )}
-            {secondaryCta && (
-              <Link
-                href={secondaryCta.href}
-                className="group inline-flex min-h-12 items-center justify-center gap-2 px-1 text-sm text-white/60 transition-colors hover:text-white sm:justify-start"
-              >
-                {secondaryCta.label}
-                <ArrowUpRight
-                  size={14}
-                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </Link>
-            )}
+            {primaryCta &&
+              (resolvedPrimaryVariant === "text" ? (
+                <CtaText
+                  href={primaryCta.href}
+                  className="sm:justify-start"
+                  location="page.hero"
+                  pattern="insight-inline"
+                >
+                  {primaryCta.label}
+                </CtaText>
+              ) : (
+                <CtaPrimary
+                  href={primaryCta.href}
+                  fullWidth
+                  className="sm:w-auto"
+                  location="page.hero"
+                  pattern="hero-pair"
+                >
+                  {primaryCta.label}
+                </CtaPrimary>
+              ))}
+            {secondaryCta &&
+              (secondaryFamily === "ghost" ? (
+                <CtaGhost
+                  href={secondaryCta.href}
+                  className="sm:w-auto"
+                  location="page.hero"
+                  pattern="hero-pair"
+                >
+                  {secondaryCta.label}
+                </CtaGhost>
+              ) : secondaryFamily === "tint" ? (
+                <CtaProof
+                  href={secondaryCta.href}
+                  className="sm:w-auto"
+                  location="page.hero"
+                  pattern="hero-pair"
+                >
+                  {secondaryCta.label}
+                </CtaProof>
+              ) : (
+                <CtaText
+                  href={secondaryCta.href}
+                  className="sm:justify-start"
+                  location="page.hero"
+                >
+                  {secondaryCta.label}
+                </CtaText>
+              ))}
           </div>
         )}
       </div>

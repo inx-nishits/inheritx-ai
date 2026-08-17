@@ -68,7 +68,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Clinicians spent hours on documentation, delaying care and increasing burnout.",
     solution:
       "Enterprise AI assistants with specialty-aware drafting, audit trails, and EHR handoffs.",
-    outcome: "40% less documentation time across specialty clinics.",
+    outcome: "40% less documentation time across specialty clinics (pattern).",
     impact: "40% time saved",
     tech: ["OpenAI", "LangChain", "Python", "Azure", "Vector DB"],
     image: "/images/visuals/industries/industry-healthcare.png",
@@ -86,7 +86,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Fraud teams drowned in false positives while high-risk cases waited.",
     solution:
       "Multi-agent orchestration with risk scoring, evidence synthesis, and human-in-the-loop gates.",
-    outcome: "Fraud review accelerated 6× with clearer auditability.",
+    outcome: "Fraud review accelerated 6× with clearer auditability (pattern).",
     impact: "6× faster review",
     tech: ["Claude", "CrewAI", "MCP", "Python", "AWS"],
     image: "/images/visuals/industries/industry-finance.png",
@@ -104,7 +104,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Manual inspection missed micro-defects and slowed throughput.",
     solution:
       "Vision models + ops agents that flag anomalies and open maintenance tickets automatically.",
-    outcome: "Defect escape rate cut by 58% on critical lines.",
+    outcome: "Defect escape rate cut by 58% on critical lines (pattern).",
     impact: "58% fewer escapes",
     tech: ["Gemini", "Python", "AWS", "Edge Inference"],
     image: "/images/visuals/industries/industry-manufacturing.png",
@@ -138,7 +138,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Support volume spiked while CSAT and handle times slipped.",
     solution:
       "Agentic support workflows with CRM tools, sentiment routing, and supervised escalation.",
-    outcome: "32% lower handle time and higher first-contact resolution.",
+    outcome: "32% lower handle time and higher first-contact resolution (pattern).",
     impact: "32% faster support",
     tech: ["Claude", "LangChain", "GCP", "Next.js"],
     image: "/images/visuals/industries/industry-retail.png",
@@ -154,7 +154,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Policy updates lagged; agents worked from outdated guidance.",
     solution:
       "Continuous ingestion, citation-backed answers, and change-aware retrieval.",
-    outcome: "Policy answer accuracy improved to 94% with citations.",
+    outcome: "Policy answer accuracy improved to 94% with citations (pattern).",
     impact: "94% accuracy",
     tech: ["OpenAI", "Vector DB", "Python", "AWS"],
     image: "/images/visuals/industries/industry-insurance.png",
@@ -186,7 +186,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "HR teams were overloaded with repetitive employee requests.",
     solution:
       "Role-scoped assistant with workflow automation for onboarding and policy support.",
-    outcome: "65% of tier-1 HR queries auto-resolved.",
+    outcome: "65% of tier-1 HR queries auto-resolved (pattern).",
     impact: "65% auto-resolved",
     tech: ["Claude", "MCP", "Python", "GCP"],
     image: "/images/visuals/lead-capabilities.png",
@@ -218,7 +218,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Unplanned downtime disrupted production schedules.",
     solution:
       "Sensor ML pipelines with ops agents that trigger maintenance playbooks.",
-    outcome: "Unplanned downtime reduced by 27%.",
+    outcome: "Unplanned downtime reduced by 27% (pattern).",
     impact: "27% less downtime",
     tech: ["Python", "AWS", "Gemini", "Observability"],
     image: "/images/visuals/lead-tech.png",
@@ -234,7 +234,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Legacy case workflows were slow, opaque, and labor-heavy.",
     solution:
       "Transformation program with automation agents, audit logs, and secure cloud controls.",
-    outcome: "Case cycle time reduced by 45% with full auditability.",
+    outcome: "Case cycle time reduced by 45% with full auditability (pattern).",
     impact: "45% faster cycles",
     tech: ["Claude", "CrewAI", "Azure", "Next.js"],
     image: "/images/visuals/industries/industry-government.png",
@@ -259,45 +259,45 @@ export const portfolioProjects: PortfolioProject[] = [
 ];
 
 export const capabilityLogos = [
-  { name: "OpenAI", src: "/images/partners/openai.svg" },
   { name: "Claude", src: "/images/partners/anthropic.svg" },
-  { name: "Gemini", src: "/images/partners/googlecloud.svg" },
-  { name: "LangChain", src: "/images/partners/langchain.svg" },
-  { name: "CrewAI", src: "/images/partners/openai.svg" },
-  { name: "MCP", src: "/images/partners/anthropic.svg" },
-  { name: "Vector DB", src: "/images/partners/pinecone.svg" },
-  { name: "Python", src: "/images/partners/vercel.svg" },
-  { name: "Next.js", src: "/images/partners/vercel.svg" },
-  { name: "AWS", src: "/images/partners/amazonaws.svg" },
+  { name: "LangGraph", src: "/images/partners/langgraph.svg" },
+  { name: "LlamaIndex", src: "/images/partners/llamaindex.svg" },
+  { name: "CrewAI", src: "/images/partners/crewai.svg" },
+  { name: "Pinecone", src: "/images/partners/pinecone.svg" },
+  { name: "Weaviate", src: "/images/partners/weaviate.svg" },
+  { name: "Qdrant", src: "/images/partners/qdrant.svg" },
   { name: "Azure", src: "/images/partners/microsoft.svg" },
-  { name: "GCP", src: "/images/partners/googlecloud.svg" },
+  { name: "NVIDIA", src: "/images/partners/nvidia.svg" },
+  { name: "Kubernetes", src: "/images/partners/kubernetes.svg" },
+  { name: "PyTorch", src: "/images/partners/pytorch.svg" },
+  { name: "Hugging Face", src: "/images/partners/huggingface.svg" },
 ];
 
 export const businessImpacts = [
   {
     title: "Manual operations",
     value: "65%",
-    copy: "Lower manual ops through agentic triage and workflow automation.",
+    copy: "Lower manual ops through agentic triage and workflow automation (pattern).",
   },
   {
     title: "Decision velocity",
     value: "80%",
-    copy: "Faster decision cycles with governed agents and AI analytics.",
+    copy: "Faster decision cycles with governed agents and AI analytics (pattern).",
   },
   {
     title: "Process automation",
     value: "10×",
-    copy: "Higher throughput on tier-1 paths while humans own high-risk gates.",
+    copy: "Higher throughput on tier-1 paths while humans own high-risk gates (pattern).",
   },
   {
     title: "Delivery speed",
     value: "40%",
-    copy: "Faster product and ops delivery with AI platforms and LLMOps.",
+    copy: "Faster product and ops delivery with AI platforms and LLMOps (pattern).",
   },
   {
     title: "Workflow accuracy",
     value: "90%",
-    copy: "Higher accuracy on governed AI workflows with evaluation harnesses.",
+    copy: "Higher accuracy on governed AI workflows with evaluation harnesses (pattern).",
   },
   {
     title: "Ownership",

@@ -13,7 +13,8 @@ import { Newsletter } from "@/components/insights/Newsletter";
 import { ReadingProgress } from "@/components/insights/ReadingProgress";
 import { TableOfContents } from "@/components/insights/TableOfContents";
 import { InsightCard } from "@/components/insights/InsightCard";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaText } from "@/components/cta/CtaText";
+import { contactHref } from "@/lib/cta";
 import {
   fetchAllInsightSlugs,
   fetchInsightBySlug,
@@ -221,15 +222,28 @@ export default async function InsightDetailPage({ params }: Props) {
                       className="text-white/80"
                     />
                     <div className="mt-6">
-                      <MagneticButton
-                        href="/contact?intent=strategy"
-                        className="min-h-12 w-full justify-center bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink sm:w-auto"
+                      <CtaText
+                        href={contactHref("strategy")}
+                        location="insight"
+                        intent="strategy"
+                        pattern="insight-inline"
                       >
-                        Book an AI strategy call
-                      </MagneticButton>
+                        Talk to an architect about this
+                      </CtaText>
                     </div>
                   </div>
-                ) : null}
+                ) : (
+                  <div className="mt-10 border-t border-white/[0.08] pt-6">
+                    <CtaText
+                      href={contactHref("strategy")}
+                      location="insight"
+                      intent="strategy"
+                      pattern="insight-inline"
+                    >
+                      Talk to an architect about this
+                    </CtaText>
+                  </div>
+                )}
 
                 <div className="mt-8 flex flex-wrap gap-3 border-t border-white/[0.08] pt-6 sm:mt-10 sm:pt-8">
                   <p className="w-full text-[11px] tracking-[0.2em] text-white/35 uppercase">
@@ -296,13 +310,14 @@ export default async function InsightDetailPage({ params }: Props) {
                 </div>
               ) : null}
 
-              <Link
+              <CtaText
                 href="/solutions"
-                className="group inline-flex min-h-11 items-center gap-1.5 text-sm text-white/45 hover:text-white"
+                location="insight"
+                pattern="text-explore"
+                className="text-white/45 hover:text-white"
               >
                 Explore AI solutions
-                <ArrowUpRight size={14} className="shrink-0" />
-              </Link>
+              </CtaText>
             </aside>
           </div>
         </section>

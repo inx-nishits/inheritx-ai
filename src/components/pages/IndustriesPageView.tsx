@@ -12,8 +12,11 @@ import {
   industryProfiles,
 } from "@/data/pages/industries";
 import { PageHero } from "@/components/layout/PageHero";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaGhost } from "@/components/cta/CtaGhost";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { CtaText } from "@/components/cta/CtaText";
 import { Reveal } from "@/components/ui/Reveal";
+import { contactHref } from "@/lib/cta";
 import { cn } from "@/lib/cn";
 
 export function IndustriesPageView() {
@@ -26,7 +29,10 @@ export function IndustriesPageView() {
         eyebrow={industriesHero.eyebrow}
         title={industriesHero.title}
         description={industriesHero.description}
-        primaryCta={{ label: "Discuss your sector", href: "/contact" }}
+        primaryCta={{
+          label: "Discuss your sector",
+          href: contactHref("strategy"),
+        }}
         secondaryCta={{ label: "Read case studies", href: "/case-studies" }}
       />
 
@@ -184,19 +190,31 @@ export function IndustriesPageView() {
             ))}
           </div>
           <div className="mt-12 flex flex-wrap gap-4">
-            <MagneticButton
-              href="/contact"
-              className="bg-ink px-6 py-3 text-white hover:bg-cyan hover:text-white"
+            <CtaPrimary
+              href={contactHref("strategy")}
+              location="page.close"
+              intent="strategy"
+              pattern="closing-stage"
+              className="bg-ink hover:bg-cyan hover:text-white"
             >
               Brief us on your industry
-            </MagneticButton>
-            <Link
+            </CtaPrimary>
+            <CtaGhost
+              href={contactHref("assessment")}
+              location="page.close"
+              intent="assessment"
+              pattern="closing-stage"
+              surface="paper"
+            >
+              Request AI assessment
+            </CtaGhost>
+            <CtaText
               href="/solutions"
-              className="group inline-flex items-center gap-2 text-sm text-ink/50 hover:text-ink"
+              location="page.close"
+              className="text-ink/50 hover:text-ink"
             >
               Explore solutions
-              <ArrowUpRight size={14} />
-            </Link>
+            </CtaText>
           </div>
         </div>
       </section>

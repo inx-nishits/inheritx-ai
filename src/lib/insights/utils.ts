@@ -1,5 +1,5 @@
 import type { InsightCard, InsightCategory, InsightDetail } from "./types";
-import { rewriteWpLinks } from "./rewriteWpLinks";
+import { sanitizeInsightHtml } from "./sanitizeHtml";
 
 export { insightHref, insightCategoryHref, rewriteWpLinks } from "./rewriteWpLinks";
 
@@ -19,7 +19,16 @@ export function normalizeCategories(
 export function primaryCategory(
   value: InsightCategory | InsightCategory[] | null | undefined,
 ): InsightCategory | null {
-  return normalizeCategories(value)[0] ?? null;
+  const cats = normalizeCategories(value);
+  return (
+    cats.find((c) =>
+      /artificial|intelligence|\bai\b|agent|llm|devops|security|automation|governance/i.test(
+        `${c.slug} ${c.name}`,
+      ),
+    ) ??
+    cats[0] ??
+    null
+  );
 }
 
 export function stripHtml(html: string | undefined | null): string {
@@ -58,7 +67,7 @@ export function excerptFrom(
 }
 
 export function prepareRichHtml(html: string | undefined | null): string {
-  return rewriteWpLinks(html ?? "");
+  return sanitizeInsightHtml(html ?? "");
 }
 
 export function withSlug(

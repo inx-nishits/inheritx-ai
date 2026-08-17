@@ -55,7 +55,7 @@ export const resourceArticles = [
     body: [
       "Embedded AI Engineering works when the roadmap is clear and the bottleneck is execution capacity—not when the problem is still undefined.",
       "We embed senior practitioners who ship under your architecture standards, security reviews, and product rituals.",
-      "If you need a mandate and a blueprint first, start with consulting. If you need velocity on a defined platform, embed the team. See Engagement models for the full buying sequence.",
+      "If you need a mandate and a blueprint first, start with consulting. If the architecture is defined and the bottleneck is execution, Embedded AI Engineering is the right motion. See Engagement models for the full buying sequence.",
     ],
   },
   {

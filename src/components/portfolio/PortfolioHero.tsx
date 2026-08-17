@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { portfolioStats } from "@/data/portfolio";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaText } from "@/components/cta/CtaText";
 import { Reveal, TextReveal } from "@/components/ui/Reveal";
 
 export function PortfolioHero() {
@@ -36,22 +35,12 @@ export function PortfolioHero() {
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-8 flex flex-wrap gap-3">
-              <MagneticButton
-                href="#grid"
-                className="bg-cyan px-6 py-3 text-white shadow-[0_0_36px_rgba(0,190,212,0.22)] hover:bg-white hover:text-ink"
-              >
+              <CtaText href="#grid" location="nav" pattern="text-explore">
                 Browse AI work
-              </MagneticButton>
-              <a
-                href="/portfolio/agent-bank"
-                className="group inline-flex items-center gap-2 px-2 text-sm text-white/65 transition-colors hover:text-white"
-              >
+              </CtaText>
+              <CtaText href="/portfolio/agent-bank" location="nav">
                 Featured: Agent Bank
-                <ArrowUpRight
-                  size={14}
-                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </a>
+              </CtaText>
             </div>
           </Reveal>
         </div>

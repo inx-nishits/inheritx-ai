@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { CtaText } from "@/components/cta/CtaText";
 import { InsightsHero } from "@/components/insights/InsightsHero";
 import { FeaturedInsight } from "@/components/insights/FeaturedInsight";
 import { InsightsSearch } from "@/components/insights/Search";
@@ -96,13 +95,15 @@ export default async function InsightsPage() {
             <p className="text-sm text-white/45">
               Looking for a production AI roadmap, not just reading?
             </p>
-            <Link
+            <CtaText
               href="/contact?intent=strategy"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan hover:text-white"
+              location="insight"
+              intent="strategy"
+              pattern="insight-inline"
+              className="font-medium text-cyan hover:text-white"
             >
-              Book an AI strategy call
-              <ArrowUpRight size={14} />
-            </Link>
+              Talk to an architect
+            </CtaText>
           </div>
         </section>
 

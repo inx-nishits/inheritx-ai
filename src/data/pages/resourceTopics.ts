@@ -1,3 +1,4 @@
+import { contactHref } from "@/data/cta/intents";
 import type { TopicPage } from "./topic";
 import { enterpriseResourceTopics } from "./enterpriseResourceTopics";
 
@@ -8,7 +9,7 @@ const resourceTopics: TopicPage[] = [
     title: "Executive and architect perspectives on enterprise AI.",
     description:
       "Short, decision-grade writing for leaders and builders—governed agents, private AI ownership, and the path from pilot to platform. No filler. No hype.",
-    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    primaryCta: { label: "Talk to an architect", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "library",
     metadata: {
@@ -75,7 +76,7 @@ const resourceTopics: TopicPage[] = [
           { label: "Whitepapers", href: "/resources/whitepapers" },
           { label: "Our Approach", href: "/company/approach" },
           { label: "Solutions", href: "/solutions" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
       {
@@ -171,7 +172,7 @@ const resourceTopics: TopicPage[] = [
           { label: "Whitepapers", href: "/resources/whitepapers" },
           { label: "Case Studies", href: "/case-studies" },
           { label: "Company & vision", href: "/company" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
     ],
@@ -182,7 +183,7 @@ const resourceTopics: TopicPage[] = [
     title: "Frameworks for AI modernization.",
     description:
       "Longer-form frameworks for transformation leaders—sequencing investment, designing governed platforms, and moving agentic capability from proof to estate-wide scale.",
-    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    primaryCta: { label: "Talk to an architect", href: contactHref("strategy") },
     secondaryCta: { label: "Our Approach", href: "/company/approach" },
     layout: "library",
     metadata: {
@@ -257,7 +258,7 @@ const resourceTopics: TopicPage[] = [
           { label: "Research briefs", href: "/resources/research" },
           { label: "Solutions", href: "/solutions" },
           { label: "Careers", href: "/careers" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
       {

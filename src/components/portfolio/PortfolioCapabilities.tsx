@@ -4,8 +4,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { businessImpacts, capabilityLogos } from "@/data/portfolio";
+import { CTA_LABELS } from "@/data/cta/copy";
+import { CtaGhost } from "@/components/cta/CtaGhost";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { CtaText } from "@/components/cta/CtaText";
 import { Reveal, TextReveal } from "@/components/ui/Reveal";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { contactHref } from "@/lib/cta";
 
 export function PortfolioCapabilities() {
   return (
@@ -63,7 +67,7 @@ export function BusinessImpact() {
             Business Impact
           </p>
           <TextReveal
-            text="Outcomes CEOs and CTOs can measure."
+            text="Outcome classes we design programs around."
             className="font-display mt-5 text-4xl leading-[1.15] text-white md:text-5xl"
           />
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/50">
@@ -123,18 +127,25 @@ export function PortfolioCTA() {
             Agentic AI, and AI DevOps platforms enterprises own.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <MagneticButton
-              href="/contact"
-              className="bg-cyan px-7 py-3.5 text-white shadow-[0_0_36px_rgba(0,190,212,0.22)] hover:bg-white hover:text-ink"
+            <CtaPrimary
+              href={contactHref("strategy")}
+              location="page.close"
+              intent="strategy"
+              pattern="closing-stage"
             >
-              Book an AI strategy call
-            </MagneticButton>
-            <a
-              href="/"
-              className="text-sm text-white/55 transition-colors hover:text-white"
+              {CTA_LABELS.similarEngagement}
+            </CtaPrimary>
+            <CtaGhost
+              href={contactHref("assessment")}
+              location="page.close"
+              intent="assessment"
+              pattern="closing-stage"
             >
+              Request AI assessment
+            </CtaGhost>
+            <CtaText href="/" location="page.close">
               Back to home
-            </a>
+            </CtaText>
           </div>
         </Reveal>
       </div>

@@ -1,3 +1,4 @@
+import { contactHref } from "@/data/cta/intents";
 import type { TopicPage } from "./topic";
 
 export type { TopicLink, TopicSection, TopicPage } from "./topic";
@@ -9,8 +10,8 @@ const companyTopics: TopicPage[] = [
     title: "Intelligence as governed infrastructure you own.",
     description:
       "InheritX treats AI as enterprise infrastructure—reliable, observable, and entirely under your control. Not rented capability. Not pilot theater. Systems that compound.",
-    primaryCta: { label: "Explore solutions", href: "/solutions" },
-    secondaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: contactHref("strategy") },
+    secondaryCta: { label: "Explore solutions", href: "/solutions" },
     layout: "narrative",
     metadata: {
       title: "Our AI vision | InheritX",
@@ -73,7 +74,7 @@ const companyTopics: TopicPage[] = [
           { label: "Our Approach", href: "/company/approach" },
           { label: "Enterprise AI solutions", href: "/solutions" },
           { label: "Our Team", href: "/team" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
       {
@@ -102,7 +103,7 @@ const companyTopics: TopicPage[] = [
     title: "Your data. Your models. Your IP.",
     description:
       "Enterprises choose InheritX when pilots are no longer enough—when we build and hand over systems you own: code, fine-tuned weights, and private-cloud deployment with zero third-party data sharing.",
-    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "narrative",
     metadata: {
@@ -183,7 +184,7 @@ const companyTopics: TopicPage[] = [
           { label: "Security practices", href: "/company/security" },
           { label: "IP Ownership", href: "/company/ip-ownership" },
           { label: "Engagement models", href: "/resources/engagement-models" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
     ],
@@ -194,7 +195,7 @@ const companyTopics: TopicPage[] = [
     title: "From discovery to production.",
     description:
       "Discover, strategise, prototype, deploy, and scale—with governance and ownership in every phase. Typical engagements move from feasibility to private-cloud go-live with full IP handover.",
-    primaryCta: { label: "Start a conversation", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: contactHref("strategy") },
     secondaryCta: { label: "Explore solutions", href: "/solutions" },
     layout: "narrative",
     metadata: {
@@ -291,7 +292,7 @@ const companyTopics: TopicPage[] = [
           { label: "Security practices", href: "/company/security" },
           { label: "IP Ownership", href: "/company/ip-ownership" },
           { label: "Production readiness", href: "/resources/production-readiness" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
       {
@@ -320,7 +321,7 @@ const companyTopics: TopicPage[] = [
     title: "Security practices for private, production AI.",
     description:
       "How InheritX approaches identity, data boundaries, private deployment, and honest compliance language—without claiming certifications we have not earned.",
-    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: contactHref("strategy") },
     secondaryCta: { label: "Security FAQ", href: "/resources/security-faq" },
     layout: "narrative",
     metadata: {
@@ -421,7 +422,7 @@ const companyTopics: TopicPage[] = [
     title: "What you own when we hand over.",
     description:
       "“You own the code” is a contractual and technical commitment—not a slogan. Here is the scope InheritX transfers on production AI engagements.",
-    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    primaryCta: { label: "Book an AI strategy call", href: contactHref("strategy") },
     secondaryCta: { label: "Our Approach", href: "/company/approach" },
     layout: "narrative",
     metadata: {
@@ -514,7 +515,7 @@ const companyTopics: TopicPage[] = [
           { label: "Our Approach", href: "/company/approach" },
           { label: "Diligence pack", href: "/resources/diligence-pack" },
           { label: "Why InheritX", href: "/company/why-inheritx" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
       {

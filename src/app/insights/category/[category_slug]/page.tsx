@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -13,6 +13,7 @@ import {
   fetchInsightsByCategory,
   fetchInsightsListing,
 } from "@/lib/insights/api";
+import { isEnterpriseInsightCategory } from "@/lib/insights/categories";
 
 type Props = {
   params: Promise<{ category_slug: string }>;
@@ -24,7 +25,7 @@ export const revalidate = 300;
 export async function generateStaticParams() {
   try {
     const listing = await fetchInsightsListing();
-    return listing.categories.slice(0, 24).map((c) => ({
+    return listing.categories.map((c) => ({
       category_slug: c.slug,
     }));
   } catch {
@@ -32,8 +33,19 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const { category_slug } = await params;
+  const query = await searchParams;
+  const page = Math.max(1, Number(query.page) || 1);
+  const enterprise = isEnterpriseInsightCategory(category_slug);
+
+  if (!enterprise) {
+    return {
+      title: "Insights | InheritX",
+      robots: { index: false, follow: false },
+    };
+  }
+
   try {
     const data = await fetchInsightsByCategory(category_slug, 1);
     if (!data.categoryName) {
@@ -51,10 +63,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         type: "website",
         url: `/insights/category/${category_slug}`,
       },
-      robots: { index: true, follow: true },
+      robots: { index: page === 1, follow: true },
     };
   } catch {
-    return { title: "Insights Category | InheritX" };
+    return {
+      title: "Insights Category | InheritX",
+      robots: { index: false },
+    };
   }
 }
 
@@ -65,6 +80,10 @@ export default async function InsightCategoryPage({
   const { category_slug } = await params;
   const query = await searchParams;
   const page = Math.max(1, Number(query.page) || 1);
+
+  if (!isEnterpriseInsightCategory(category_slug)) {
+    redirect("/insights");
+  }
 
   let data;
   try {

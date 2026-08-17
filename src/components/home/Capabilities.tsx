@@ -191,7 +191,7 @@ export function Capabilities() {
               </div>
               <div className="flex flex-col gap-5 lg:items-end">
                 <p className="max-w-sm text-sm leading-relaxed text-white/45 md:text-base lg:text-right">
-                  AI/ML, Generative AI, agents, automation, and LLMOps—each lane
+                  AI/ML, search, agents, automation, and LLMOps—each lane
                   engineered for governed production delivery.
                 </p>
                 <Link

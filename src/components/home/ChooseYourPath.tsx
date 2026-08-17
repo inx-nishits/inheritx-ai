@@ -5,8 +5,11 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Brain, CircuitBoard, LineChart } from "lucide-react";
 
 import { audiencePaths } from "@/data/content";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CTA_LABELS } from "@/data/cta/copy";
+import { CtaGhost } from "@/components/cta/CtaGhost";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
 import { Reveal, TextReveal } from "@/components/ui/Reveal";
+import { contactHref } from "@/lib/cta";
 import { cn } from "@/lib/cn";
 
 const icons = {
@@ -121,13 +124,26 @@ export function ChooseYourPath() {
                 engineering—honestly, including when AI is not the right move.
               </p>
             </div>
-            <MagneticButton
-              href="/contact?intent=strategy"
-              className="min-h-12 shrink-0 justify-center bg-cyan px-7 py-3.5 text-sm text-white hover:bg-white hover:text-ink"
-              strength={0.3}
-            >
-              Book an AI strategy call
-            </MagneticButton>
+            <div className="flex flex-wrap items-center gap-3">
+              <CtaPrimary
+                href={contactHref("strategy")}
+                location="home.mid"
+                intent="strategy"
+                pattern="contextual-band"
+                className="min-h-12 shrink-0"
+                strength={0.3}
+              >
+                {CTA_LABELS.strategySession}
+              </CtaPrimary>
+              <CtaGhost
+                href={contactHref("assessment")}
+                location="home.mid"
+                intent="assessment"
+                pattern="contextual-band"
+              >
+                Request AI assessment
+              </CtaGhost>
+            </div>
           </div>
         </Reveal>
       </div>

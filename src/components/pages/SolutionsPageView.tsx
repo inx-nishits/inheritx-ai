@@ -13,9 +13,12 @@ import {
   solutionProofPoints,
   solutionsHero,
 } from "@/data/pages/solutions";
+import { CTA_LABELS } from "@/data/cta/copy";
 import { PageHero } from "@/components/layout/PageHero";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaGhost } from "@/components/cta/CtaGhost";
+import { CtaText } from "@/components/cta/CtaText";
 import { Reveal } from "@/components/ui/Reveal";
+import { contactHref } from "@/lib/cta";
 import { cn } from "@/lib/cn";
 
 export function SolutionsPageView() {
@@ -28,8 +31,11 @@ export function SolutionsPageView() {
         eyebrow={solutionsHero.eyebrow}
         title={solutionsHero.title}
         description={solutionsHero.description}
-        primaryCta={{ label: "Book an AI strategy call", href: "/contact" }}
-        secondaryCta={{ label: "See enterprise outcomes", href: "/case-studies" }}
+        primaryCta={{
+          label: CTA_LABELS.startConversation,
+          href: contactHref("strategy"),
+        }}
+        secondaryCta={{ label: "Explore solution lanes", href: "#lanes" }}
       />
 
       {/* Proof strip — unique to solutions page */}
@@ -50,7 +56,7 @@ export function SolutionsPageView() {
       </section>
 
       {/* Pillar explorer */}
-      <section className="bg-ink py-16 md:py-20">
+      <section id="lanes" className="bg-ink py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -216,19 +222,17 @@ export function SolutionsPageView() {
             ))}
           </div>
           <div className="mt-10 flex flex-wrap gap-4">
-            <MagneticButton
-              href="/contact"
-              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
+            <CtaGhost
+              href={contactHref("assessment")}
+              location="page.close"
+              intent="assessment"
+              pattern="closing-stage"
             >
-              Schedule an AI assessment
-            </MagneticButton>
-            <Link
-              href="/portfolio"
-              className="group inline-flex items-center gap-2 text-sm text-white/55 hover:text-white"
-            >
+              Request AI assessment
+            </CtaGhost>
+            <CtaText href="/portfolio" location="page.close">
               Browse AI portfolio
-              <ArrowUpRight size={14} />
-            </Link>
+            </CtaText>
           </div>
         </div>
       </section>

@@ -12,7 +12,7 @@ export const termsSections = [
     title: "Agreement",
     body: [
       "By accessing or using inheritx-ai.com and related InheritX marketing sites (the “Sites”), you agree to these Terms of Use. If you do not agree, do not use the Sites.",
-      "These Terms apply to website visitors and people who contact us through the Sites. They do not replace separate written agreements for consulting, build, or staffing engagements.",
+      "These Terms apply to website visitors and people who contact us through the Sites. They do not replace separate written agreements for consulting or build engagements.",
     ],
   },
   {

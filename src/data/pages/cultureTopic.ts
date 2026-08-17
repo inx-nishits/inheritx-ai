@@ -1,3 +1,4 @@
+import { contactHref } from "@/data/cta/intents";
 import type { TopicPage } from "./topic";
 
 /** Culture & values topic — rendered at /team/culture */
@@ -100,7 +101,7 @@ export const cultureTopic: TopicPage = {
         { label: "Careers", href: "/careers" },
         { label: "Why InheritX", href: "/company/why-inheritx" },
         { label: "Our Approach", href: "/company/approach" },
-        { label: "Contact", href: "/contact" },
+        { label: "Contact", href: contactHref("strategy") },
       ],
     },
   ],

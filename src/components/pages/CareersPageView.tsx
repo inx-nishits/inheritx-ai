@@ -1,6 +1,3 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
 import {
   careerRoles,
   careersFaqs,
@@ -9,8 +6,10 @@ import {
   careersIntro,
 } from "@/data/pages/careers";
 import { PageHero } from "@/components/layout/PageHero";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { CtaText } from "@/components/cta/CtaText";
 import { Reveal } from "@/components/ui/Reveal";
+import { contactHref } from "@/lib/cta";
 
 export function CareersPageView() {
   return (
@@ -98,22 +97,20 @@ export function CareersPageView() {
           </div>
           <Reveal delay={0.15}>
             <div className="mt-12 flex flex-wrap items-center gap-4">
-              <MagneticButton
+              <CtaPrimary
                 href="mailto:hello@inheritx.com?subject=Careers%20at%20InheritX"
-                className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
+                location="page.close"
+                pattern="closing-stage"
               >
                 Email careers
-              </MagneticButton>
-              <Link
-                href="/contact"
-                className="group inline-flex items-center gap-2 text-sm text-white/55 hover:text-white"
+              </CtaPrimary>
+              <CtaText
+                href={contactHref("strategy")}
+                location="page.close"
+                intent="strategy"
               >
                 Prefer the contact form
-                <ArrowUpRight
-                  size={14}
-                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </Link>
+              </CtaText>
             </div>
           </Reveal>
         </div>

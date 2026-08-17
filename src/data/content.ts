@@ -3,7 +3,7 @@ export const trustTechnologies = [
   { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
   { label: "Agentic AI", href: "/solutions/ai-agents" },
   { label: "Generative AI", href: "/solutions/generative-ai" },
-  { label: "RAG", href: "/solutions/enterprise-ai" },
+  { label: "AI Search", href: "/solutions/enterprise-ai" },
   { label: "LLMOps", href: "/solutions/ai-transformation" },
   { label: "MCP", href: "/solutions/ai-agents" },
   { label: "Multi-Agent", href: "/solutions/ai-agents" },
@@ -13,32 +13,32 @@ export const capabilities = [
   {
     id: "01",
     title: "AI/ML Engineering",
-    copy: "Custom models, fine-tuning, RAG, vector search, prediction systems, and AI analytics—engineered for measurable business outcomes, not demos.",
+    copy: "Fine-tuning, Document AI, prediction systems, and PyTorch-class training—engineered for measurable outcomes, not demos.",
   },
   {
     id: "02",
     title: "Generative AI",
-    copy: "Secure LLM applications, copilots, and content systems with prompt engineering, evaluation harnesses, guardrails, citations, and private-cloud ownership.",
+    copy: "Secure LLM apps, RAG copilots, and code copilots with evaluation harnesses, guardrails, citations, and private-cloud ownership.",
   },
   {
     id: "03",
     title: "Agentic AI Systems",
-    copy: "Autonomous agents, multi-agent orchestration, MCP, tool calling, memory, and human–AI collaboration that execute real enterprise work.",
+    copy: "Text, voice/realtime, and multimodal agents with MCP, tool calling, memory, and human gates that execute real enterprise work.",
   },
   {
     id: "04",
     title: "AI Automation",
-    copy: "Workflow intelligence with n8n, agents, and system integrations—cutting operating cost inside ERP, CRM, and plant systems you already run.",
+    copy: "Workflow intelligence with n8n, durable orchestration, and system integrations—cutting operating cost inside ERP, CRM, and plant systems you already run.",
   },
   {
     id: "05",
     title: "AI DevOps & LLMOps",
-    copy: "MLOps, LLMOps, CloudOps, GitOps, CI/CD for AI, observability, and LLM FinOps—so production systems stay reliable and cost-governed after go-live.",
+    copy: "CI/CD for AI, MLflow, vLLM serving, tracing, and LLM FinOps—so production systems stay reliable and cost-governed after go-live.",
   },
   {
     id: "06",
     title: "Enterprise AI platforms",
-    copy: "Private intelligence layers—model gateways, governed retrieval, AI security controls, and policy governance—deployed in your VPC with full ownership at handover.",
+    copy: "AI Search, GraphRAG, model gateways, and AI security controls—deployed in your VPC with full ownership at handover.",
   },
 ];
 
@@ -51,7 +51,7 @@ export const journey = [
   {
     step: "02",
     title: "Architect",
-    copy: "Define AI architecture, model strategy, security controls, and LLMOps posture your CTO and CISO can defend in diligence.",
+    copy: "Define AI architecture, model strategy, eval and security controls, and LLMOps posture your CTO and CISO can defend in diligence.",
   },
   {
     step: "03",
@@ -69,17 +69,17 @@ export const solutions = [
   {
     index: "01",
     title: "AI/ML Engineering",
-    copy: "Custom LLMs, RAG, fine-tuning, prediction systems, and AI search built for enterprise data and outcomes.",
+    copy: "Fine-tuning, Document AI, prediction systems, and AI Search built for enterprise data and outcomes.",
   },
   {
     index: "02",
     title: "Generative AI",
-    copy: "Secure LLM applications with prompt engineering, evals, guardrails, and RAG copilots designed for enterprise controls.",
+    copy: "Secure LLM applications with evals, guardrails, RAG copilots, and code copilots designed for enterprise controls.",
   },
   {
     index: "03",
     title: "Autonomous AI agents",
-    copy: "Task-oriented agents with memory, planning, MCP, and tool access—autonomous workers that execute, not just answer.",
+    copy: "Task-oriented agents—text, voice/realtime, and computer-use—with MCP and tool access that execute, not just answer.",
   },
   {
     index: "04",
@@ -94,22 +94,22 @@ export const solutions = [
   {
     index: "06",
     title: "AI DevOps & LLMOps",
-    copy: "MLOps, LLMOps, CloudOps, GitOps, CI/CD for AI, and observability so AI systems stay production-grade at scale.",
+    copy: "CI/CD for AI, MLflow, vLLM, tracing, and GitOps so AI systems stay production-grade at scale.",
   },
   {
     index: "07",
     title: "Enterprise RAG Platforms",
-    copy: "Governed retrieval and generation with vector search, citations, and guardrails inside your security boundary.",
+    copy: "AI Search and GraphRAG with hybrid retrieval, citations, and guardrails inside your security boundary.",
   },
   {
     index: "08",
     title: "Computer Vision",
-    copy: "Domain-trained perception for QA, imaging, inventory, and plant ops—including edge when data cannot leave site.",
+    copy: "Domain-trained perception for QA, imaging, and plant ops—including on-device / edge inference when data cannot leave site.",
   },
   {
     index: "09",
     title: "AI Transformation",
-    copy: "From strategy call to industrialized AI capability—with a clear path from pilot criteria to scaled operations.",
+    copy: "From strategy call to industrialized capability—with eval, safety, and security gates from pilot to scaled operations.",
   },
 ];
 
@@ -163,15 +163,15 @@ export const techLayers = [
   {
     id: "01",
     name: "Models & Reasoning",
-    tagline: "Frontier and specialized models, privately governed.",
+    tagline: "Frontier, open-weight, and cloud AI platforms—privately governed.",
     items: [
       "OpenAI",
       "Claude",
       "Gemini",
-      "Custom LLMs",
+      "Llama / Mistral / DeepSeek",
+      "Bedrock / Azure OpenAI / Vertex",
+      "PyTorch / Transformers",
       "Fine-Tuning",
-      "Prompt Engineering",
-      "Offline eval suites",
     ],
   },
   {
@@ -180,24 +180,26 @@ export const techLayers = [
     tagline: "Multi-Agent Systems that execute real enterprise work.",
     items: [
       "LangChain",
+      "LangGraph",
+      "LlamaIndex",
       "CrewAI",
       "MCP",
       "Tool Calling",
-      "Agent Memory",
       "Human-in-the-loop",
     ],
   },
   {
     id: "03",
     name: "Data & Retrieval",
-    tagline: "RAG and vector infrastructure that stays accurate.",
+    tagline: "AI Search, GraphRAG, and vector infrastructure that stays accurate.",
     items: [
-      "Vector DB",
-      "Knowledge Graphs",
+      "Pinecone",
+      "Weaviate",
+      "Qdrant / pgvector",
+      "OpenSearch",
+      "GraphRAG",
       "RAG Pipelines",
       "AI Search",
-      "Role-scoped corpora",
-      "Citation paths",
     ],
   },
   {
@@ -206,21 +208,21 @@ export const techLayers = [
     tagline: "Workflow intelligence connected to enterprise systems.",
     items: [
       "n8n",
+      "Temporal / Prefect",
       "MCP Tools",
       "API Orchestration",
       "ERP / CRM Hooks",
-      "Event Triggers",
       "Human Approval Gates",
     ],
   },
   {
     id: "05",
     name: "Cloud & Security",
-    tagline: "Private-cloud AI infrastructure by design.",
+    tagline: "Bedrock, Azure OpenAI, Vertex, and private-cloud AI by design.",
     items: [
-      "AWS",
-      "Azure",
-      "GCP",
+      "AWS / Bedrock",
+      "Azure OpenAI / Foundry",
+      "GCP / Vertex AI",
       "Identity & Access",
       "Private Networking",
       "Customer-tenant deploy",
@@ -229,12 +231,13 @@ export const techLayers = [
   {
     id: "06",
     name: "AI DevOps",
-    tagline: "MLOps, LLMOps, CloudOps, and GitOps for production AI.",
+    tagline: "MLflow, vLLM, GitOps, and tracing for production AI.",
     items: [
-      "MLOps",
-      "LLMOps",
-      "CloudOps",
-      "GitOps",
+      "MLflow",
+      "vLLM / FastAPI",
+      "Langfuse",
+      "Argo CD",
+      "OpenTelemetry",
       "CI/CD for AI",
       "Tracing & Guardrails",
     ],
@@ -302,7 +305,7 @@ export const audiencePaths = {
   eyebrow: "Built for enterprise AI buyers",
   title: "Choose your path",
   description:
-    "Open the decision page built for your seat—outcomes for CEOs, architecture for CTOs, and operating models for Heads of AI.",
+    "Open the decision page built for your seat—outcomes for CEOs, architecture for CTOs, and operating models for Heads of AI and Enterprise Architects.",
   paths: [
     {
       id: "outcomes",
@@ -332,7 +335,7 @@ export const audiencePaths = {
       label: "03",
       title: "I'm a Head of AI / Enterprise architect",
       description:
-        "Define maturity, agent architecture, evaluation, and the AI operating model.",
+        "Define estate fit, agent architecture, evaluation, and the AI operating model.",
       cta: "Open AI leadership path",
       href: "/path/head-of-ai",
       meta: "Heads of AI & enterprise architects",

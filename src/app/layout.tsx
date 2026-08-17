@@ -4,6 +4,8 @@ import { Geist_Mono } from "next/font/google";
 
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { IRAChatCTA } from "@/components/ira/IRAChatCTA";
+import { GtmBoot } from "@/components/analytics/GtmBoot";
+import { SITE_URL } from "@/lib/site";
 
 import "./globals.css";
 
@@ -45,10 +47,41 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const defaultTitle = "InheritX — AI-Native Enterprise Partner";
+const defaultDescription =
+  "InheritX is an AI-native enterprise technology partner—AI/ML engineering, Generative AI, Agentic AI, and AI DevOps—deployed in your private cloud with full IP ownership.";
+
 export const metadata: Metadata = {
-  title: "InheritX — AI-Native Enterprise Partner",
-  description:
-    "InheritX is an AI-native enterprise technology partner—AI/ML engineering, Generative AI, Agentic AI, and AI DevOps—deployed in your private cloud with full IP ownership.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: defaultTitle,
+    template: "%s",
+  },
+  description: defaultDescription,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "InheritX",
+    title: defaultTitle,
+    description: defaultDescription,
+    url: "/",
+    images: [
+      {
+        url: "/images/visuals/lead-capabilities.png",
+        width: 1200,
+        height: 630,
+        alt: "InheritX — AI-native enterprise technology partner",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: ["/images/visuals/lead-capabilities.png"],
+  },
+  robots: { index: true, follow: true },
   icons: {
     icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
@@ -70,8 +103,17 @@ export default function RootLayout({
         className="bg-ink font-sans text-foreground"
         suppressHydrationWarning
       >
+        <GtmBoot />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-cyan focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-ink"
+        >
+          Skip to content
+        </a>
         <SmoothScroll>
-          <div className="flex min-h-dvh flex-col">{children}</div>
+          <div id="main-content" className="flex min-h-dvh flex-col">
+            {children}
+          </div>
           <IRAChatCTA />
         </SmoothScroll>
       </body>

@@ -27,8 +27,9 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 import { navigation } from "@/data/navigation";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
 import { Logo } from "@/components/ui/Logo";
+import { contactHref } from "@/lib/cta";
 import { cn } from "@/lib/cn";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -300,14 +301,18 @@ export function MobileNav({
             </nav>
 
             <div className="relative border-t border-white/[0.06] px-5 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
-              <MagneticButton
-                href="/contact"
-                className="min-h-12 w-full justify-center bg-cyan py-3.5 font-semibold text-white"
+              <CtaPrimary
+                href={contactHref("strategy")}
+                fullWidth
+                location="mobile-nav"
+                intent="strategy"
+                pattern="header-convert"
                 onClick={onClose}
                 strength={0}
+                className="min-h-12 py-3.5 font-semibold"
               >
                 Book an AI strategy call
-              </MagneticButton>
+              </CtaPrimary>
               <p className="mt-3 text-center text-[11px] text-white/35">
                 30 minutes · Strategy-first · No pitch theater
               </p>

@@ -1,8 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
 import {
   collaborationSteps,
   coreCapabilities,
@@ -14,8 +11,10 @@ import {
 } from "@/data/pages/team";
 import { PageHero } from "@/components/layout/PageHero";
 import { TeamMembersGrid } from "@/components/team/TeamMembersGrid";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { CtaText } from "@/components/cta/CtaText";
 import { Reveal } from "@/components/ui/Reveal";
+import { contactHref } from "@/lib/cta";
 
 export function TeamPageView() {
   return (
@@ -24,7 +23,10 @@ export function TeamPageView() {
         eyebrow={teamHero.eyebrow}
         title={teamHero.title}
         description={teamHero.description}
-        primaryCta={{ label: "Meet us on a call", href: "/contact" }}
+        primaryCta={{
+          label: "Book an AI strategy call",
+          href: contactHref("strategy"),
+        }}
         secondaryCta={{ label: "About the company", href: "/company" }}
       />
 
@@ -130,13 +132,9 @@ export function TeamPageView() {
             ))}
           </div>
           <Reveal delay={0.1}>
-            <Link
-              href="/team/culture"
-              className="group mt-10 inline-flex items-center gap-2 text-sm text-cyan hover:text-white"
-            >
+            <CtaText href="/team/culture" location="page.body" className="mt-10">
               Explore culture & values
-              <ArrowUpRight size={14} />
-            </Link>
+            </CtaText>
           </Reveal>
         </div>
       </section>
@@ -210,19 +208,17 @@ export function TeamPageView() {
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
-            <MagneticButton
-              href="/contact"
-              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
+            <CtaPrimary
+              href={contactHref("strategy")}
+              location="page.close"
+              intent="strategy"
+              pattern="closing-stage"
             >
-              Start a conversation
-            </MagneticButton>
-            <Link
-              href="/company"
-              className="group inline-flex items-center gap-2 text-sm text-white/50 hover:text-white"
-            >
+              Book an AI strategy call
+            </CtaPrimary>
+            <CtaText href="/company" location="page.close">
               Company story
-              <ArrowUpRight size={14} />
-            </Link>
+            </CtaText>
           </div>
         </div>
       </section>

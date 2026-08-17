@@ -12,8 +12,10 @@ import {
   caseStudyIntro,
 } from "@/data/caseStudies";
 import { Reveal } from "@/components/ui/Reveal";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { CtaText } from "@/components/cta/CtaText";
 import { cn } from "@/lib/cn";
+import { contactHref } from "@/lib/cta";
 
 export function CaseStudiesHero() {
   return (
@@ -34,28 +36,18 @@ export function CaseStudiesHero() {
             {caseStudyIntro.copy}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <MagneticButton
-              href="/contact"
-              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
-            >
-              Discuss a similar project
-            </MagneticButton>
-            <Link
-              href="/portfolio"
-              className="group inline-flex items-center gap-2 px-2 text-sm text-white/60 transition-colors hover:text-white"
-            >
+            <CtaText href="/portfolio" location="case-study" pattern="text-explore">
               View AI portfolio
-              <ArrowUpRight
-                size={14}
-                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </Link>
+            </CtaText>
+            <CtaText href="/solutions" location="case-study">
+              Explore AI solutions
+            </CtaText>
           </div>
         </Reveal>
 
         <div className="mt-12 grid grid-cols-2 gap-3 border-t border-white/[0.08] pt-8 sm:grid-cols-4 md:mt-14">
           {[
-            { value: "14+", label: "Years DNA for AI programs" },
+            { value: "14+", label: "Years delivery DNA for AI programs" },
             { value: "600+", label: "Engagements informing delivery" },
             { value: "AI/ML", label: "Agents · Vision · LLMOps" },
             { value: "Owned", label: "IP at handover" },
@@ -197,18 +189,17 @@ export function CaseStudiesCTA() {
             right first move.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <MagneticButton
-              href="/contact"
-              className="bg-cyan px-7 py-3.5 text-white hover:bg-white hover:text-ink"
+            <CtaPrimary
+              href={contactHref("strategy")}
+              location="case-study"
+              intent="strategy"
+              pattern="case-convert"
             >
-              Book an AI strategy call
-            </MagneticButton>
-            <Link
-              href="/portfolio"
-              className="text-sm text-white/50 transition-colors hover:text-white"
-            >
+              Start a similar engagement
+            </CtaPrimary>
+            <CtaText href="/portfolio" location="case-study">
               Explore AI capability portfolio
-            </Link>
+            </CtaText>
           </div>
         </motion.div>
       </div>

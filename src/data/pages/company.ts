@@ -61,7 +61,7 @@ export const companyPrinciples = [
   },
 ];
 
-/** Figures reflected on inheritx.com company materials; labels reframed for AI-first positioning. */
+/** Delivery-history figures used across company materials; labels describe DNA informing AI programs—not 600 AI-only engagements. */
 export const companyStats = [
   { value: "14+", label: "Years delivery DNA for AI programs" },
   { value: "600+", label: "Engagements informing AI delivery" },

@@ -11,6 +11,26 @@ type ContactPayload = {
   source?: string;
 };
 
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+const RATE_MAX = 8;
+const hits = new Map<string, { count: number; resetAt: number }>();
+
+function clientKey(request: Request) {
+  const forwarded = request.headers.get("x-forwarded-for");
+  return forwarded?.split(",")[0]?.trim() || "local";
+}
+
+function rateLimited(key: string) {
+  const now = Date.now();
+  const current = hits.get(key);
+  if (!current || now > current.resetAt) {
+    hits.set(key, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+  current.count += 1;
+  return current.count > RATE_MAX;
+}
+
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
@@ -51,7 +71,7 @@ async function forwardToResend(payload: ContactPayload) {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL ?? "hello@inheritx.com";
   const from =
-    process.env.CONTACT_FROM_EMAIL ?? "InheritX Website <onboarding@resend.dev>";
+    process.env.CONTACT_FROM_EMAIL ?? "InheritX Website <hello@inheritx.com>";
 
   if (!apiKey) return { delivered: false as const, channel: null };
 
@@ -86,6 +106,13 @@ async function forwardToResend(payload: ContactPayload) {
 
 export async function POST(request: Request) {
   try {
+    if (rateLimited(clientKey(request))) {
+      return NextResponse.json(
+        { ok: false, error: "Too many requests. Please email hello@inheritx.com." },
+        { status: 429 },
+      );
+    }
+
     const body = (await request.json()) as Partial<ContactPayload>;
     const payload: ContactPayload = {
       name: sanitize(body.name, 120),
@@ -130,8 +157,6 @@ export async function POST(request: Request) {
       });
     }
 
-    // No CRM/email provider configured yet — accept the lead and ask the client
-    // to use mailto fallback so inquiries are not lost.
     return NextResponse.json({
       ok: true,
       delivered: false,

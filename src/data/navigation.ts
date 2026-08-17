@@ -1,3 +1,5 @@
+import { contactHref } from "@/data/cta/intents";
+
 export type MegaItem = {
   title: string;
   description: string;
@@ -104,7 +106,7 @@ export const navigation: NavItem[] = [
       ],
     },
     quickLinks: [
-      { title: "AI strategy call", description: "30-min architect session", href: "/contact" },
+      { title: "AI strategy call", description: "30-min architect session", href: contactHref("strategy") },
       { title: "All solutions", description: "Capability map", href: "/solutions" },
       { title: "Engagement models", description: "How to buy", href: "/resources/engagement-models" },
     ],
@@ -225,7 +227,7 @@ export const navigation: NavItem[] = [
       ],
     },
     quickLinks: [
-      { title: "Book strategy call", description: "Map your use case", href: "/contact" },
+      { title: "Book strategy call", description: "Map your use case", href: contactHref("strategy") },
       { title: "AI Portfolio", description: "Capability patterns", href: "/portfolio" },
     ],
   },
@@ -341,7 +343,7 @@ export const navigation: NavItem[] = [
           {
             title: "Book a strategy call",
             description: "30 minutes to map your AI transformation.",
-            href: "/contact",
+            href: contactHref("strategy"),
           },
         ],
       },
@@ -351,16 +353,16 @@ export const navigation: NavItem[] = [
       title: "Talk with an AI architect",
       description:
         "30 minutes to pressure-test fit, ownership model, and the right engagement shape.",
-      href: "/contact",
+      href: contactHref("strategy"),
       cta: "Book an AI strategy call",
       stats: [
-        { value: "14+", label: "Years AI delivery DNA" },
-        { value: "600+", label: "Engagements" },
-        { value: "97%", label: "Retention" },
+        { value: "14+", label: "Years delivery DNA for AI programs" },
+        { value: "600+", label: "Engagements informing AI delivery" },
+        { value: "97%", label: "Client retention" },
       ],
     },
     quickLinks: [
-      { title: "Contact", description: "Start a conversation", href: "/contact" },
+      { title: "Contact", description: "Book an AI strategy call", href: "/contact" },
       { title: "Careers", description: "Join the team", href: "/careers" },
     ],
   },

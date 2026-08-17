@@ -28,7 +28,8 @@ import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 
 import { navigation, type NavItem } from "@/data/navigation";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { contactHref } from "@/lib/cta";
 import { cn } from "@/lib/cn";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -380,8 +381,8 @@ export function NavOverlay({ open, onClose }: NavOverlayProps) {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,190,212,0.14),transparent_55%)]" />
           <div className="pointer-events-none absolute inset-0 editorial-grid opacity-25" />
 
-          <div className="relative z-10 flex items-center justify-between border-b border-white/[0.06] px-5 py-4 pt-[max(1rem,env(safe-area-inset-top))] md:px-8 md:py-5">
-            <div>
+          <div className="relative z-10 flex items-center justify-between gap-3 border-b border-white/[0.06] px-5 py-4 pt-[max(1rem,env(safe-area-inset-top))] md:px-8 md:py-5">
+            <div className="min-w-0">
               <p
                 id={titleId}
                 className="text-[11px] tracking-[0.24em] text-cyan uppercase"
@@ -392,15 +393,28 @@ export function NavOverlay({ open, onClose }: NavOverlayProps) {
                 AI-native enterprise solutions, industries, and proof
               </p>
             </div>
-            <button
-              ref={closeRef}
-              type="button"
-              onClick={onClose}
-              aria-label="Close navigation"
-              className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 text-white transition-colors hover:border-cyan/40 hover:bg-white/5"
-            >
-              <X size={18} />
-            </button>
+            <div className="flex shrink-0 items-center gap-2.5">
+              <CtaPrimary
+                href={contactHref("strategy")}
+                location="header"
+                intent="strategy"
+                pattern="header-convert"
+                onClick={onClose}
+                strength={0}
+                className="hidden min-h-11 lg:inline-flex"
+              >
+                Book an AI strategy call
+              </CtaPrimary>
+              <button
+                ref={closeRef}
+                type="button"
+                onClick={onClose}
+                aria-label="Close navigation"
+                className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 text-white transition-colors hover:border-cyan/40 hover:bg-white/5"
+              >
+                <X size={18} />
+              </button>
+            </div>
           </div>
 
           {/* Desktop layout */}
@@ -524,6 +538,23 @@ export function NavOverlay({ open, onClose }: NavOverlayProps) {
                   );
                 })}
               </ul>
+            </div>
+            <div className="border-t border-white/[0.06] px-5 py-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+              <CtaPrimary
+                href={contactHref("strategy")}
+                fullWidth
+                location="mobile-nav"
+                intent="strategy"
+                pattern="header-convert"
+                onClick={onClose}
+                strength={0}
+                className="min-h-11 py-3.5 font-semibold"
+              >
+                Book an AI strategy call
+              </CtaPrimary>
+              <p className="mt-2.5 text-center text-[11px] text-white/35">
+                30 minutes · Strategy-first · No pitch theater
+              </p>
             </div>
           </div>
         </motion.div>

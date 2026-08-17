@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { caseStudiesPage, featuredCaseStudyIds } from "@/data/caseStudies";
+import { CtaProof } from "@/components/cta/CtaProof";
+import { CtaText } from "@/components/cta/CtaText";
 
 const AUTO_MS = 7000;
 const featuredStudies = featuredCaseStudyIds
@@ -19,6 +20,7 @@ export function FeaturedCaseStudy() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const [direction, setDirection] = useState(1);
+  const sectionRef = useRef<HTMLElement>(null);
   const total = featuredStudies.length;
   const study = featuredStudies[active];
   const primary = study.results[0];
@@ -44,6 +46,8 @@ export function FeaturedCaseStudy() {
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
+      const target = event.target as Node | null;
+      if (!sectionRef.current?.contains(target)) return;
       if (event.key === "ArrowRight") goNext();
       if (event.key === "ArrowLeft") goPrev();
     };
@@ -53,6 +57,7 @@ export function FeaturedCaseStudy() {
 
   return (
     <section
+      ref={sectionRef}
       id="cases"
       aria-roledescription="carousel"
       aria-label="Case Studies"
@@ -112,16 +117,9 @@ export function FeaturedCaseStudy() {
                 references available under NDA for qualified opportunities.
               </p>
             </div>
-            <Link
-              href="/case-studies"
-              className="group inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-cyan/55 bg-cyan/10 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,190,212,0.12)] transition-colors hover:border-cyan hover:bg-cyan/20"
-            >
+            <CtaText href="/case-studies" location="home" className="shrink-0">
               View all case studies
-              <ArrowUpRight
-                size={14}
-                className="shrink-0 text-cyan transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </Link>
+            </CtaText>
           </div>
 
           {/* Main story content */}
@@ -164,16 +162,13 @@ export function FeaturedCaseStudy() {
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3 md:mt-7">
-                  <Link
+                  <CtaProof
                     href={`/case-studies/${study.id}`}
-                    className="group inline-flex min-h-11 items-center justify-center gap-2.5 rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-white shadow-[0_0_32px_rgba(0,190,212,0.25)] transition-colors hover:bg-white hover:text-ink"
+                    location="home"
+                    pattern="proof-band"
                   >
                     Read full case study
-                    <ArrowUpRight
-                      size={15}
-                      className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                    />
-                  </Link>
+                  </CtaProof>
                   <div className="flex gap-2">
                     <button
                       type="button"

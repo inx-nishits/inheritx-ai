@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
 import { processSteps } from "@/data/content";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CTA_LABELS } from "@/data/cta/copy";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { CtaProof } from "@/components/cta/CtaProof";
 import { Reveal } from "@/components/ui/Reveal";
+import { contactHref } from "@/lib/cta";
 
 export function Process() {
   return (
@@ -102,22 +104,17 @@ export function Process() {
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-4">
-              <MagneticButton
-                href="/contact"
-                className="bg-cyan px-6 py-3 text-sm font-medium text-white hover:bg-white hover:text-ink"
+              <CtaPrimary
+                href={contactHref("strategy")}
+                location="home.mid"
+                intent="strategy"
+                pattern="contextual-band"
               >
-                Book an AI strategy call
-              </MagneticButton>
-              <a
-                href="/case-studies"
-                className="group inline-flex items-center gap-1.5 text-sm text-white/50 transition-colors hover:text-white"
-              >
+                {CTA_LABELS.startConversation}
+              </CtaPrimary>
+              <CtaProof href="/case-studies" location="home.mid" pattern="proof-band">
                 See enterprise outcomes
-                <ArrowUpRight
-                  size={14}
-                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </a>
+              </CtaProof>
             </div>
           </div>
         </Reveal>

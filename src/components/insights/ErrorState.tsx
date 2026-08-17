@@ -1,6 +1,5 @@
-import Link from "next/link";
-
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaText } from "@/components/cta/CtaText";
+import { contactHref } from "@/lib/cta";
 
 export function ErrorState({
   title = "Insights temporarily unavailable",
@@ -17,15 +16,17 @@ export function ErrorState({
         {description}
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <MagneticButton
-          href="/insights"
-          className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
-        >
+        <CtaText href="/insights" location="insight" pattern="text-explore">
           Retry Insights
-        </MagneticButton>
-        <Link href="/contact" className="text-sm text-white/50 hover:text-white">
-          Contact us
-        </Link>
+        </CtaText>
+        <CtaText
+          href={contactHref("strategy")}
+          location="insight"
+          intent="strategy"
+          pattern="insight-inline"
+        >
+          Talk to an architect
+        </CtaText>
       </div>
     </div>
   );

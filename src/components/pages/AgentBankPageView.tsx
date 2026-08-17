@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 
 import { agentBankProject } from "@/data/pages/agentBank";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { CtaProof } from "@/components/cta/CtaProof";
+import { CtaText } from "@/components/cta/CtaText";
 import { Reveal } from "@/components/ui/Reveal";
+import { contactHref } from "@/lib/cta";
 
 export function AgentBankPageView() {
   const p = agentBankProject;
@@ -30,22 +31,17 @@ export function AgentBankPageView() {
             {p.summary}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <MagneticButton
-              href="/contact"
-              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
+            <CtaPrimary
+              href={contactHref("strategy")}
+              location="case-study"
+              intent="strategy"
+              pattern="case-convert"
             >
               Discuss a similar build
-            </MagneticButton>
-            <Link
-              href="/portfolio"
-              className="group inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
-            >
+            </CtaPrimary>
+            <CtaText href="/portfolio" location="case-study" pattern="text-explore">
               Back to portfolio
-              <ArrowUpRight
-                size={14}
-                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </Link>
+            </CtaText>
           </div>
         </div>
 
@@ -260,19 +256,17 @@ export function AgentBankPageView() {
             a first production slice—without demo theater.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <MagneticButton
-              href="/contact"
-              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
+            <CtaPrimary
+              href={contactHref("strategy")}
+              location="page.close"
+              intent="strategy"
+              pattern="case-convert"
             >
-              Book an AI strategy call
-            </MagneticButton>
-            <Link
-              href="/case-studies"
-              className="group inline-flex items-center gap-2 text-sm text-white/60 hover:text-white"
-            >
+              Start a similar engagement
+            </CtaPrimary>
+            <CtaProof href="/case-studies" location="page.close" pattern="proof-band">
               Browse case studies
-              <ArrowUpRight size={14} />
-            </Link>
+            </CtaProof>
           </div>
         </div>
       </section>

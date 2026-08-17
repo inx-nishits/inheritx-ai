@@ -3,19 +3,28 @@
 import { useGSAP } from "@gsap/react";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
-import { ArrowUpRight, Bot } from "lucide-react";
-import Link from "next/link";
+import { Bot } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { HeroAtmosphere } from "@/components/canvas/HeroAtmosphere";
+import { CtaArtifactChip } from "@/components/cta/CtaArtifactChip";
+import { CtaPair } from "@/components/cta/CtaPair";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { CtaProof } from "@/components/cta/CtaProof";
 import { HeroStage } from "@/components/home/HeroConstellation";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { contactHref } from "@/lib/cta";
+import { getHeroAbVariant, HERO_AB_LABELS, type HeroAbVariant } from "@/lib/ctaAb";
 
 const verbs = ["Scale", "Automate", "Orchestrate", "Transform"] as const;
 
 export function Hero() {
   const copyRef = useRef<HTMLDivElement>(null);
   const [verbIndex, setVerbIndex] = useState(0);
+  const [heroAb, setHeroAb] = useState<HeroAbVariant>("control");
+
+  useEffect(() => {
+    setHeroAb(getHeroAbVariant());
+  }, []);
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -197,44 +206,29 @@ export function Hero() {
               DevOps—deployed in your private cloud with full IP ownership.
             </p>
 
-            <div className="hero-fade mt-10 flex flex-col items-center gap-3 sm:mt-12 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-3 md:gap-4">
-              <MagneticButton
-                href="/contact?intent=strategy"
-                className="min-h-12 shrink-0 justify-center whitespace-nowrap bg-cyan px-7 py-3.5 text-white shadow-[0_0_32px_rgba(0,190,212,0.22)] hover:bg-white hover:text-ink sm:px-8"
+            <CtaPair align="center" className="hero-fade mt-10 sm:mt-12">
+              <CtaPrimary
+                href={contactHref("strategy")}
+                size="hero"
+                location="home.hero"
+                intent="strategy"
+                variant={heroAb}
                 strength={0.2}
               >
-                Book an AI strategy call
-              </MagneticButton>
-              <Link
-                href="#cases"
-                className="group inline-flex min-h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-cyan/55 bg-cyan/10 px-5 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(0,190,212,0.12)] transition-colors hover:border-cyan hover:bg-cyan/20 sm:px-6"
-              >
+                {HERO_AB_LABELS[heroAb]}
+              </CtaPrimary>
+              <CtaProof href="#cases" arrow="chevron" location="home.hero">
                 See production outcomes
-                <span className="text-cyan transition-transform duration-300 group-hover:translate-x-0.5">
-                  →
-                </span>
-              </Link>
-              <Link
+              </CtaProof>
+              <CtaArtifactChip
                 href="/portfolio/agent-bank"
-                className="group inline-flex min-h-12 shrink-0 items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.04] py-1.5 pr-4 pl-1.5 shadow-[0_0_24px_rgba(0,190,212,0.08)] transition-colors hover:border-cyan/45 hover:bg-cyan/10 sm:gap-3 sm:pr-5"
-              >
-                <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-cyan text-white transition-colors group-hover:bg-cyan/90">
-                  <Bot size={15} strokeWidth={2} aria-hidden />
-                </span>
-                <span className="min-w-0 text-left leading-tight">
-                  <span className="block text-[10px] tracking-[0.18em] text-cyan uppercase">
-                    Featured build
-                  </span>
-                  <span className="mt-0.5 block whitespace-nowrap text-sm font-semibold text-white">
-                    Explore Agent Bank
-                  </span>
-                </span>
-                <ArrowUpRight
-                  size={14}
-                  className="shrink-0 text-cyan transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </Link>
-            </div>
+                eyebrow="Featured build"
+                label="Explore Agent Bank"
+                icon={<Bot size={15} strokeWidth={2} aria-hidden />}
+                location="home.hero"
+                className="shrink-0"
+              />
+            </CtaPair>
           </div>
         </div>
       </section>

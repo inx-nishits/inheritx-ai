@@ -1,3 +1,5 @@
+import { contactHref } from "@/data/cta/intents";
+import { CTA_LABELS } from "@/data/cta/copy";
 import type { TopicPage } from "./topic";
 
 /**
@@ -11,8 +13,8 @@ export const enterpriseResourceTopics: TopicPage[] = [
     title: "Answers procurement and security teams ask first.",
     description:
       "Factual responses for vendor reviews. If something is not yet attested, we say so—rather than inventing certifications or partnership claims.",
-    primaryCta: { label: "Security practices", href: "/company/security" },
-    secondaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    primaryCta: { label: CTA_LABELS.talkToArchitect, href: contactHref("strategy") },
+    secondaryCta: { label: "Security practices", href: "/company/security" },
     layout: "library",
     metadata: {
       title: "Security FAQ | InheritX",
@@ -116,7 +118,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     title: "What enterprise buyers receive under NDA.",
     description:
       "A structured pack for security, legal, and architecture review—shared after a qualified strategy conversation. Public pages stay precise; sensitive detail stays controlled.",
-    primaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    primaryCta: { label: CTA_LABELS.talkToArchitect, href: contactHref("strategy") },
     secondaryCta: { label: "Security FAQ", href: "/resources/security-faq" },
     layout: "library",
     metadata: {
@@ -282,8 +284,8 @@ export const enterpriseResourceTopics: TopicPage[] = [
     title: "How to buy InheritX without category confusion.",
     description:
       "Three primary motions—plus embeds when the roadmap is already clear. Choose the path that matches your decision, not a menu of everything at once.",
-    primaryCta: { label: "Explore solutions", href: "/solutions" },
-    secondaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    primaryCta: { label: CTA_LABELS.startConversation, href: contactHref("strategy") },
+    secondaryCta: { label: "Explore solutions", href: "/solutions" },
     layout: "engagement",
     metadata: {
       title: "Engagement models | InheritX",
@@ -356,7 +358,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           { label: "AI Transformation", href: "/solutions/ai-transformation" },
           { label: "Dedicated AI Squads", href: "/solutions/dedicated-ai-squads" },
           { label: "Embedded AI Engineering", href: "/solutions/hire-ai-engineers" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
     ],
@@ -367,8 +369,8 @@ export const enterpriseResourceTopics: TopicPage[] = [
     title: "Controls that let autonomy survive audit.",
     description:
       "How InheritX designs human-in-the-loop gates, evaluation, attribution, and escalation—so agentic systems behave like infrastructure, not demos.",
-    primaryCta: { label: "Production readiness", href: "/resources/production-readiness" },
-    secondaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    primaryCta: { label: CTA_LABELS.talkToArchitect, href: contactHref("strategy") },
+    secondaryCta: { label: "Production readiness", href: "/resources/production-readiness" },
     layout: "library",
     metadata: {
       title: "AI governance | InheritX",
@@ -436,7 +438,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           { label: "Architecture principles", href: "/resources/architecture-principles" },
           { label: "Security practices", href: "/company/security" },
           { label: "Our Approach", href: "/company/approach" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
     ],
@@ -509,7 +511,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           { label: "AI Governance", href: "/resources/ai-governance" },
           { label: "Diligence pack", href: "/resources/diligence-pack" },
           { label: "Case Studies", href: "/case-studies" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
     ],
@@ -579,7 +581,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           { label: "Production readiness", href: "/resources/production-readiness" },
           { label: "Enterprise AI solutions", href: "/solutions/enterprise-ai" },
           { label: "Security", href: "/company/security" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
     ],
@@ -590,8 +592,8 @@ export const enterpriseResourceTopics: TopicPage[] = [
     title: "How enterprise buyers verify InheritX.",
     description:
       "Named references only with written customer approval. Until then: published case methodology plus anonymized industry-scale references under NDA—never fabricated logos or Fortune 500 claims.",
-    primaryCta: { label: "Case Studies", href: "/case-studies" },
-    secondaryCta: { label: "Book an AI strategy call", href: "/contact" },
+    primaryCta: { label: CTA_LABELS.startConversation, href: contactHref("strategy") },
+    secondaryCta: { label: "Case Studies", href: "/case-studies" },
     layout: "library",
     metadata: {
       title: "Enterprise references | InheritX",
@@ -778,7 +780,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           { label: "Enterprise References", href: "/resources/enterprise-references" },
           { label: "Diligence pack", href: "/resources/diligence-pack" },
           { label: "AI Governance", href: "/resources/ai-governance" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
     ],

@@ -29,11 +29,11 @@ export default function Home() {
         <Hero />
         <TrustedBy />
         <TrustBar />
-        <MidPageCTA />
         <ChooseYourPath />
         <WhyInheritX />
         <Capabilities />
         <FeaturedCaseStudy />
+        <MidPageCTA />
         <Industries />
         <TransformationJourney />
         <TechStack />

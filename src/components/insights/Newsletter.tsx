@@ -4,10 +4,6 @@ import { useState, type FormEvent } from "react";
 
 import { cn } from "@/lib/cn";
 
-const WP_BASE =
-  process.env.NEXT_PUBLIC_WP_API_BASE?.replace(/\/$/, "") ||
-  "https://wpadmin.inheritx.com";
-
 export function Newsletter({ className }: { className?: string }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
@@ -21,7 +17,7 @@ export function Newsletter({ className }: { className?: string }) {
     setStatus("loading");
     setMessage("");
     try {
-      const res = await fetch(`${WP_BASE}/wp-json/api/v1/subscription`, {
+      const res = await fetch("/api/insights/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ email: email.trim() }),

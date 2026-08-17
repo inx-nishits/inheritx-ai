@@ -1,3 +1,5 @@
+import { contactHref } from "@/data/cta/intents";
+import { CTA_LABELS } from "@/data/cta/copy";
 import type { TopicPage } from "./topic";
 
 export type { TopicLink, TopicSection, TopicPage } from "./topic";
@@ -9,7 +11,7 @@ export const industryTopics: TopicPage[] = [
     title: "Clinical intelligence without compromising the chart.",
     description:
       "InheritX builds governed AI for health systems—documentation assistants, retrieval over approved clinical knowledge, and intake automation that respects HIPAA, audit trails, and clinician judgment.",
-    primaryCta: { label: "Discuss healthcare AI", href: "/contact" },
+    primaryCta: { label: "Discuss healthcare AI", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "industry",
     image: "/images/visuals/industries/industry-healthcare.png",
@@ -156,7 +158,7 @@ export const industryTopics: TopicPage[] = [
           { label: "AI Dent case study", href: "/case-studies/ai-dent" },
           { label: "Heva case study", href: "/case-studies/heva" },
           { label: "All case studies", href: "/case-studies" },
-          { label: "Book an AI strategy call", href: "/contact?intent=strategy" },
+          { label: CTA_LABELS.talkToArchitect, href: "/contact?intent=strategy" },
         ],
       },
     ],
@@ -167,7 +169,7 @@ export const industryTopics: TopicPage[] = [
     title: "Risk decisions at institutional scale—with explainability built in.",
     description:
       "From fraud triage to underwriting copilots, InheritX delivers multi-agent systems and governed generative AI for banks and asset managers who must explain every recommendation to regulators and boards.",
-    primaryCta: { label: "Discuss financial services AI", href: "/contact" },
+    primaryCta: { label: "Discuss financial services AI", href: contactHref("strategy") },
     secondaryCta: { label: "See Agent Bank", href: "/portfolio/agent-bank" },
     layout: "industry",
     image: "/images/visuals/industries/industry-finance.png",
@@ -299,7 +301,7 @@ export const industryTopics: TopicPage[] = [
           { label: "Generative AI platforms", href: "/solutions/generative-ai" },
           { label: "Enterprise AI strategy", href: "/solutions/enterprise-ai" },
           { label: "Portfolio — Agent Bank", href: "/portfolio/agent-bank" },
-          { label: "Contact us", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
       {
@@ -328,7 +330,7 @@ export const industryTopics: TopicPage[] = [
     title: "Demand sensing and service at scale—without merchandising guesswork.",
     description:
       "Retail leaders use InheritX for demand intelligence, support command agents, and assortment copilots that connect to your commerce stack—with governance over customer data and brand voice.",
-    primaryCta: { label: "Explore retail AI", href: "/contact" },
+    primaryCta: { label: "Discuss retail AI", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "industry",
     image: "/images/visuals/industries/industry-retail.png",
@@ -470,7 +472,7 @@ export const industryTopics: TopicPage[] = [
           { label: "Generative AI", href: "/solutions/generative-ai" },
           { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
           { label: "Case Studies", href: "/case-studies" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
     ],
@@ -481,7 +483,7 @@ export const industryTopics: TopicPage[] = [
     title: "Quality and uptime on the line—perception plus orchestration.",
     description:
       "Edge computer vision, predictive maintenance agents, and operator feedback loops for plants where missed defects and unplanned downtime carry immediate cost.",
-    primaryCta: { label: "Discuss manufacturing AI", href: "/contact" },
+    primaryCta: { label: "Discuss manufacturing AI", href: contactHref("strategy") },
     secondaryCta: { label: "Computer Vision solutions", href: "/solutions/computer-vision" },
     layout: "industry",
     image: "/images/visuals/industries/industry-manufacturing.png",
@@ -613,7 +615,7 @@ export const industryTopics: TopicPage[] = [
           { label: "AI Agents", href: "/solutions/ai-agents" },
           { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
           { label: "Case Studies", href: "/case-studies" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
       {
@@ -642,7 +644,7 @@ export const industryTopics: TopicPage[] = [
     title: "Claims speed with control—policy-grounded from first notice.",
     description:
       "Claims acceleration agents, citation-backed knowledge fabric, and underwriting assist for carriers and MGAs who must move faster without inconsistent policy application.",
-    primaryCta: { label: "Discuss insurance AI", href: "/contact" },
+    primaryCta: { label: "Discuss insurance AI", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "industry",
     image: "/images/visuals/industries/industry-insurance.png",
@@ -784,7 +786,7 @@ export const industryTopics: TopicPage[] = [
           { label: "Generative AI", href: "/solutions/generative-ai" },
           { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
           { label: "Case Studies", href: "/case-studies" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
     ],
@@ -795,7 +797,7 @@ export const industryTopics: TopicPage[] = [
     title: "Network clarity under exception load.",
     description:
       "Document intelligence, exception-handling agents, and network optimization support for operators who cannot afford document delays or blind spots in the control tower.",
-    primaryCta: { label: "Discuss logistics AI", href: "/contact" },
+    primaryCta: { label: "Discuss logistics AI", href: contactHref("strategy") },
     secondaryCta: { label: "AI Automation", href: "/solutions/enterprise-ai" },
     layout: "industry",
     image: "/images/visuals/industries/industry-logistics.png",
@@ -919,7 +921,7 @@ export const industryTopics: TopicPage[] = [
           { label: "Computer Vision", href: "/solutions/computer-vision" },
           { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
           { label: "Case Studies", href: "/case-studies" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
       {
@@ -948,7 +950,7 @@ export const industryTopics: TopicPage[] = [
     title: "Mission systems citizens can trust.",
     description:
       "Secure case automation, private cloud deployments, and auditability by design for public institutions modernizing legacy workflows under sovereignty and security constraints.",
-    primaryCta: { label: "Discuss public sector AI", href: "/contact" },
+    primaryCta: { label: "Discuss public sector AI", href: contactHref("strategy") },
     secondaryCta: { label: "Enterprise AI platforms", href: "/solutions/enterprise-ai" },
     layout: "industry",
     image: "/images/visuals/industries/industry-government.png",
@@ -1071,7 +1073,7 @@ export const industryTopics: TopicPage[] = [
           { label: "Generative AI", href: "/solutions/generative-ai" },
           { label: "AI Agents", href: "/solutions/ai-agents" },
           { label: "Case Studies", href: "/case-studies" },
-          { label: "Contact", href: "/contact" },
+          { label: "Contact", href: contactHref("strategy") },
         ],
       },
       {

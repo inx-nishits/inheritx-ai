@@ -1,11 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 
 import type { PathBlock, PathMidCta, PathPage } from "@/data/pages/pathBuyer";
+import { getCaseStudy } from "@/data/caseStudies";
+import { CtaConversionBand } from "@/components/cta/CtaConversionBand";
 import { PageHero } from "@/components/layout/PageHero";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { PathFloatingCta } from "@/components/pages/PathFloatingCta";
 import { Reveal } from "@/components/ui/Reveal";
+import { ctaPairSecondaryFamily } from "@/data/cta/families";
 import { cn } from "@/lib/cn";
 
 type PathBuyerViewProps = {
@@ -40,29 +44,51 @@ function PerspectiveSection({
   title: string;
   body: string[];
 }) {
+  const [lead, ...rest] = body;
+
   return (
-    <section className="w-full bg-ink py-20 text-white md:py-28 lg:py-32">
-      <div className="mx-auto w-full max-w-[1400px] px-5 md:px-8">
-        <Reveal>
-          <div className="w-full">
+    <section className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-20 text-white md:py-28 lg:py-32">
+      <div className="noise-overlay" />
+      <div className="pointer-events-none absolute inset-0 editorial-grid opacity-20" />
+      <div className="pointer-events-none absolute -top-32 right-0 h-[380px] w-[380px] rounded-full bg-cyan/[0.07] blur-[120px]" />
+
+      <div className="relative mx-auto w-full max-w-[1400px] px-5 md:px-8">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-16 xl:gap-24">
+          <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Perspective
             </p>
-            <h2 className="font-display mt-4 w-full text-[2rem] leading-[1.12] text-white md:mt-5 md:text-5xl lg:text-[3.25rem]">
+            <h2 className="font-display mt-4 max-w-xl text-[2rem] leading-[1.12] text-white md:mt-5 md:text-5xl lg:text-[3.15rem]">
               {title}
             </h2>
-            <div className="mt-6 w-full space-y-5 md:mt-8 md:columns-2 md:gap-x-12 md:space-y-0 lg:columns-3 lg:gap-x-14">
-              {body.map((para) => (
-                <p
-                  key={para.slice(0, 48)}
-                  className="mb-5 break-inside-avoid text-base leading-[1.65] text-white/80 md:text-lg"
-                >
-                  {para}
+            <div
+              className="mt-8 hidden h-px w-24 bg-gradient-to-r from-cyan to-transparent lg:block"
+              aria-hidden
+            />
+          </Reveal>
+
+          <div className="min-w-0">
+            {lead ? (
+              <Reveal delay={0.08}>
+                <p className="border-l-2 border-cyan pl-5 text-lg leading-[1.65] text-white/85 md:pl-6 md:text-xl md:leading-[1.6]">
+                  {lead}
                 </p>
-              ))}
-            </div>
+              </Reveal>
+            ) : null}
+
+            {rest.length > 0 ? (
+              <div className="mt-8 space-y-6 border-t border-white/10 pt-8 md:mt-10 md:pt-10">
+                {rest.map((para, index) => (
+                  <Reveal key={para.slice(0, 48)} delay={0.12 + index * 0.04}>
+                    <p className="text-base leading-[1.7] text-white/55 md:text-lg">
+                      {para}
+                    </p>
+                  </Reveal>
+                ))}
+              </div>
+            ) : null}
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
@@ -93,456 +119,159 @@ function SectionIntro({ children }: { children?: string }) {
   );
 }
 
+function proofFocusLines(
+  study: NonNullable<ReturnType<typeof getCaseStudy>>,
+  focus: "business" | "engineering" | "ai",
+) {
+  if (focus === "business") {
+    return (study.businessOutcomes ?? study.highlights).slice(0, 2);
+  }
+  if (focus === "engineering") {
+    return (study.architecture ?? study.highlights).slice(0, 2);
+  }
+  return (study.aiCapabilities ?? study.highlights).slice(0, 2);
+}
+
+function ProofCasesVisual({
+  title,
+  intro,
+  cases,
+}: Extract<PathBlock, { type: "proofCases" }>) {
+  const studies = cases
+    .map((item) => {
+      const study = getCaseStudy(item.id);
+      if (!study) return null;
+      return { ...item, study };
+    })
+    .filter((item): item is NonNullable<typeof item> => item !== null);
+
+  if (studies.length === 0) return null;
+
+  return (
+    <>
+      <Reveal>
+        <SectionEyebrow>Production proof</SectionEyebrow>
+        <SectionTitle>{title}</SectionTitle>
+        <SectionIntro>{intro}</SectionIntro>
+      </Reveal>
+      <div className="mt-12 grid gap-6 md:mt-14 md:grid-cols-2">
+        {studies.map(({ study, focus }, index) => {
+          const href = study.relatedProjectHref ?? `/case-studies/${study.id}`;
+          const lines = proofFocusLines(study, focus);
+          const metrics = study.results.slice(0, 2);
+
+          return (
+            <Reveal key={study.id} delay={index * 0.05}>
+              <article className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-ink transition-colors hover:border-white/20">
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={study.image}
+                    alt=""
+                    fill
+                    unoptimized
+                    className="object-cover transition-transform duration-600 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+                  <span className="absolute top-4 left-4 rounded-full border border-white/15 bg-ink/70 px-3 py-1 text-[10px] tracking-[0.14em] text-cyan uppercase backdrop-blur-sm">
+                    {study.category}
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-6 md:p-7">
+                  <h3 className="font-display text-2xl text-white md:text-3xl">
+                    {study.name}
+                  </h3>
+                  <p className="mt-2 text-sm font-medium text-cyan/90">
+                    {study.tagline}
+                  </p>
+                  <ul className="mt-4 space-y-2">
+                    {lines.map((line) => (
+                      <li
+                        key={line}
+                        className="text-sm leading-relaxed text-white/50"
+                      >
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-5 grid grid-cols-2 gap-3 border-t border-white/[0.08] pt-5">
+                    {metrics.map((result) => (
+                      <div key={result.label}>
+                        <p className="font-display text-xl text-cyan md:text-2xl">
+                          {result.value}
+                        </p>
+                        <p className="mt-1 text-[11px] leading-snug text-white/40">
+                          {result.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    href={href}
+                    className="group/cta mt-6 inline-flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-cyan"
+                  >
+                    {study.relatedProjectLabel ?? "Read the case study"}
+                    <ArrowUpRight
+                      size={14}
+                      className="text-cyan transition-transform group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5"
+                    />
+                  </Link>
+                </div>
+              </article>
+            </Reveal>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+
+function VizHeader({
+  eyebrow,
+  title,
+  insight,
+  intro,
+}: {
+  eyebrow: string;
+  title: string;
+  insight?: string;
+  intro?: string;
+}) {
+  return (
+    <Reveal>
+      <SectionEyebrow>{eyebrow}</SectionEyebrow>
+      <SectionTitle>{title}</SectionTitle>
+      {insight ? (
+        <p className="mt-4 max-w-2xl border-l-2 border-cyan pl-4 text-base leading-relaxed text-white/80 md:text-lg">
+          {insight}
+        </p>
+      ) : null}
+      <SectionIntro>{intro}</SectionIntro>
+    </Reveal>
+  );
+}
+
+function ConceptualNote({ note }: { note?: string }) {
+  if (!note) return null;
+  return (
+    <p className="mt-6 text-[11px] leading-relaxed text-white/35">{note}</p>
+  );
+}
+
 function MidCtaBand({ cta }: { cta: PathMidCta }) {
   return (
-    <div className="flex flex-col gap-6 rounded-[1.5rem] border border-cyan/25 bg-cyan/[0.06] p-6 md:flex-row md:items-end md:justify-between md:p-8 lg:gap-10">
-      <div className="w-full min-w-0 max-w-2xl">
-        <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-          {cta.eyebrow}
-        </p>
-        <h3 className="font-display mt-2 text-2xl text-white md:text-3xl">
-          {cta.title}
-        </h3>
-        <p className="mt-3 text-sm leading-relaxed text-white/55">
-          {cta.description}
-        </p>
-      </div>
-      <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
-        <MagneticButton
-          href={cta.primary.href}
-          className="min-h-12 justify-center bg-cyan px-6 py-3 text-sm text-white hover:bg-white hover:text-ink"
-        >
-          {cta.primary.label}
-        </MagneticButton>
-        {cta.secondary ? (
-          <Link
-            href={cta.secondary.href}
-            className="group inline-flex min-h-12 items-center justify-center gap-2 px-2 text-sm text-white/60 hover:text-white"
-          >
-            {cta.secondary.label}
-            <ArrowUpRight size={14} />
-          </Link>
-        ) : null}
-      </div>
-    </div>
-  );
-}
-
-function BarsVisual({
-  title,
-  intro,
-  note,
-  items,
-}: Extract<PathBlock, { type: "bars" }>) {
-  return (
-    <>
-      <Reveal>
-        <SectionEyebrow>Executive KPI dashboard</SectionEyebrow>
-        <SectionTitle>{title}</SectionTitle>
-        <SectionIntro>{intro}</SectionIntro>
-      </Reveal>
-      <div className="mt-12 grid gap-5 md:mt-14 md:grid-cols-2">
-        {items.map((item, index) => (
-          <Reveal key={item.label} delay={index * 0.04}>
-            <div className="rounded-[1.25rem] border border-white/10 bg-ink p-5 md:p-6">
-              <div className="flex items-end justify-between gap-3">
-                <p className="text-sm font-medium text-white">{item.label}</p>
-                <p className="font-mono text-xs text-cyan">
-                  {item.before} → {item.after}
-                </p>
-              </div>
-              <div className="mt-4 space-y-2">
-                <div>
-                  <p className="mb-1 text-[10px] tracking-[0.16em] text-white/35 uppercase">
-                    Before
-                  </p>
-                  <div className="h-2 overflow-hidden rounded-full bg-white/10">
-                    <div
-                      className="h-full rounded-full bg-white/25"
-                      style={{ width: `${item.before}%` }}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <p className="mb-1 text-[10px] tracking-[0.16em] text-cyan/70 uppercase">
-                    After
-                  </p>
-                  <div className="h-2 overflow-hidden rounded-full bg-white/10">
-                    <div
-                      className="h-full rounded-full bg-cyan"
-                      style={{ width: `${item.after}%` }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-      {note ? (
-        <p className="mt-6 text-[11px] leading-relaxed text-white/35">{note}</p>
-      ) : null}
-    </>
-  );
-}
-
-function RoiMixVisual({
-  title,
-  intro,
-  note,
-  items,
-}: Extract<PathBlock, { type: "roiMix" }>) {
-  return (
-    <>
-      <Reveal>
-        <SectionEyebrow>ROI framework</SectionEyebrow>
-        <SectionTitle>{title}</SectionTitle>
-        <SectionIntro>{intro}</SectionIntro>
-      </Reveal>
-      <div className="mt-12 space-y-4 md:mt-14">
-        {items.map((item, index) => (
-          <Reveal key={item.label} delay={index * 0.04}>
-            <div className="grid gap-3 border-b border-white/10 pb-4 md:grid-cols-[160px_1fr_auto] md:items-center">
-              <p className="text-sm font-medium text-white">{item.label}</p>
-              <div className="h-2.5 overflow-hidden rounded-full bg-white/10">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-cyan-deep to-cyan"
-                  style={{ width: `${item.value}%` }}
-                />
-              </div>
-              <p className="font-mono text-sm text-cyan md:text-right">
-                {item.value}%
-              </p>
-              <p className="text-xs text-white/40 md:col-span-3">{item.detail}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-      {note ? (
-        <p className="mt-6 text-[11px] leading-relaxed text-white/35">{note}</p>
-      ) : null}
-    </>
-  );
-}
-
-const CHART_COLORS = ["#00bed4", "#5ee1f0", "#0891a8", "#164e63", "#7dd3e8", "#0e7490"];
-
-function LineChartVisual({
-  title,
-  intro,
-  note,
-  meta,
-  labels,
-  series,
-}: Extract<PathBlock, { type: "lineChart" }>) {
-  const w = 560;
-  const h = 220;
-  const padX = 28;
-  const padY = 24;
-  const max = Math.max(...series, 100);
-  const points = series.map((v, i) => {
-    const x = padX + (i / Math.max(series.length - 1, 1)) * (w - padX * 2);
-    const y = h - padY - (v / max) * (h - padY * 2);
-    return { x, y, v, label: labels[i] ?? `${i + 1}` };
-  });
-  const line = points.map((p) => `${p.x},${p.y}`).join(" ");
-  const area = `${padX},${h - padY} ${line} ${points[points.length - 1]?.x ?? padX},${h - padY}`;
-
-  return (
-    <>
-      <Reveal>
-        <SectionEyebrow>Trend chart</SectionEyebrow>
-        <SectionTitle>{title}</SectionTitle>
-        <SectionIntro>{intro}</SectionIntro>
-      </Reveal>
-      <Reveal delay={0.06}>
-        <div className="mt-12 overflow-hidden rounded-[1.5rem] border border-white/10 bg-ink p-5 md:mt-14 md:p-8">
-          <div className="mb-4 flex items-center justify-between gap-3">
-            <p className="text-[10px] tracking-[0.16em] text-white/35 uppercase">
-              Illustrative
-            </p>
-            {meta ? (
-              <p className="font-mono text-[10px] text-cyan/70">{meta}</p>
-            ) : null}
-          </div>
-          <svg
-            viewBox={`0 0 ${w} ${h}`}
-            className="h-auto w-full"
-            role="img"
-            aria-label={title}
-          >
-            {[0.25, 0.5, 0.75, 1].map((t) => {
-              const y = h - padY - t * (h - padY * 2);
-              return (
-                <line
-                  key={t}
-                  x1={padX}
-                  x2={w - padX}
-                  y1={y}
-                  y2={y}
-                  stroke="rgba(255,255,255,0.06)"
-                  strokeWidth="1"
-                />
-              );
-            })}
-            <polygon points={area} fill="rgba(0,190,212,0.12)" />
-            <polyline
-              points={line}
-              fill="none"
-              stroke="#00bed4"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            {points.map((p) => (
-              <g key={p.label}>
-                <circle cx={p.x} cy={p.y} r="4" fill="#00bed4" />
-                <text
-                  x={p.x}
-                  y={h - 6}
-                  textAnchor="middle"
-                  fill="rgba(255,255,255,0.4)"
-                  fontSize="11"
-                >
-                  {p.label}
-                </text>
-              </g>
-            ))}
-          </svg>
-        </div>
-      </Reveal>
-      {note ? (
-        <p className="mt-6 text-[11px] leading-relaxed text-white/35">{note}</p>
-      ) : null}
-    </>
-  );
-}
-
-function DonutChartVisual({
-  title,
-  intro,
-  note,
-  items,
-}: Extract<PathBlock, { type: "donutChart" }>) {
-  const total = items.reduce((sum, item) => sum + item.value, 0) || 1;
-  const size = 220;
-  const stroke = 28;
-  const r = (size - stroke) / 2;
-  const c = 2 * Math.PI * r;
-  let offset = 0;
-
-  return (
-    <>
-      <Reveal>
-        <SectionEyebrow>Portfolio chart</SectionEyebrow>
-        <SectionTitle>{title}</SectionTitle>
-        <SectionIntro>{intro}</SectionIntro>
-      </Reveal>
-      <div className="mt-12 grid items-center gap-10 md:mt-14 lg:grid-cols-[240px_1fr]">
-        <Reveal>
-          <div className="relative mx-auto w-[220px]">
-            <svg
-              viewBox={`0 0 ${size} ${size}`}
-              className="h-auto w-full -rotate-90"
-              role="img"
-              aria-label={title}
-            >
-              <circle
-                cx={size / 2}
-                cy={size / 2}
-                r={r}
-                fill="none"
-                stroke="rgba(255,255,255,0.06)"
-                strokeWidth={stroke}
-              />
-              {items.map((item, index) => {
-                const len = (item.value / total) * c;
-                const dash = `${len} ${c - len}`;
-                const el = (
-                  <circle
-                    key={item.label}
-                    cx={size / 2}
-                    cy={size / 2}
-                    r={r}
-                    fill="none"
-                    stroke={CHART_COLORS[index % CHART_COLORS.length]}
-                    strokeWidth={stroke}
-                    strokeDasharray={dash}
-                    strokeDashoffset={-offset}
-                    strokeLinecap="butt"
-                  />
-                );
-                offset += len;
-                return el;
-              })}
-            </svg>
-            <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
-              <p className="font-display text-3xl text-white">100%</p>
-              <p className="text-[10px] tracking-[0.16em] text-white/40 uppercase">
-                Portfolio
-              </p>
-            </div>
-          </div>
-        </Reveal>
-        <div className="space-y-4">
-          {items.map((item, index) => (
-            <Reveal key={item.label} delay={index * 0.04}>
-              <div className="flex items-start gap-3 border-b border-white/10 pb-4">
-                <span
-                  className="mt-1.5 size-2.5 shrink-0 rounded-full"
-                  style={{
-                    background: CHART_COLORS[index % CHART_COLORS.length],
-                  }}
-                />
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <p className="text-sm font-medium text-white">{item.label}</p>
-                    <p className="font-mono text-sm text-cyan">{item.value}%</p>
-                  </div>
-                  <p className="mt-1 text-xs text-white/40">{item.detail}</p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-      {note ? (
-        <p className="mt-6 text-[11px] leading-relaxed text-white/35">{note}</p>
-      ) : null}
-    </>
-  );
-}
-
-function FunnelChartVisual({
-  title,
-  intro,
-  note,
-  items,
-}: Extract<PathBlock, { type: "funnelChart" }>) {
-  return (
-    <>
-      <Reveal>
-        <SectionEyebrow>Funnel chart</SectionEyebrow>
-        <SectionTitle>{title}</SectionTitle>
-        <SectionIntro>{intro}</SectionIntro>
-      </Reveal>
-      <div className="mt-12 space-y-3 md:mt-14">
-        {items.map((item, index) => (
-          <Reveal key={item.label} delay={index * 0.04}>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
-              <p className="w-full shrink-0 text-sm text-white/70 sm:w-40">
-                {item.label}
-              </p>
-              <div className="min-w-0 flex-1">
-                <div
-                  className="flex items-center justify-between gap-3 rounded-lg border border-cyan/25 bg-gradient-to-r from-cyan/25 to-cyan/5 px-4 py-3"
-                  style={{ width: `${Math.max(item.value, 28)}%` }}
-                >
-                  <span className="truncate text-xs text-white/55">
-                    {item.detail}
-                  </span>
-                  <span className="font-mono text-sm text-cyan">
-                    {item.value}%
-                  </span>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-      {note ? (
-        <p className="mt-6 text-[11px] leading-relaxed text-white/35">{note}</p>
-      ) : null}
-    </>
-  );
-}
-
-function ScoreChartVisual({
-  title,
-  intro,
-  note,
-  items,
-}: Extract<PathBlock, { type: "scoreChart" }>) {
-  return (
-    <>
-      <Reveal>
-        <SectionEyebrow>Score chart</SectionEyebrow>
-        <SectionTitle>{title}</SectionTitle>
-        <SectionIntro>{intro}</SectionIntro>
-      </Reveal>
-      <div className="mt-12 grid gap-4 md:mt-14 md:grid-cols-2 lg:grid-cols-3">
-        {items.map((item, index) => (
-          <Reveal key={item.label} delay={index * 0.04}>
-            <div className="rounded-[1.25rem] border border-white/10 bg-ink p-5 md:p-6">
-              <div className="flex items-end justify-between gap-3">
-                <p className="text-sm font-medium text-white">{item.label}</p>
-                <p className="font-display text-3xl text-cyan">{item.value}</p>
-              </div>
-              <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/10">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-cyan-deep to-cyan"
-                  style={{ width: `${item.value}%` }}
-                />
-              </div>
-              <p className="mt-2 font-mono text-[10px] text-white/35">
-                Target posture / 100
-              </p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-      {note ? (
-        <p className="mt-6 text-[11px] leading-relaxed text-white/35">{note}</p>
-      ) : null}
-    </>
-  );
-}
-
-function PipelineChartVisual({
-  title,
-  intro,
-  note,
-  items,
-}: Extract<PathBlock, { type: "pipelineChart" }>) {
-  const max = Math.max(...items.map((i) => i.value), 1);
-
-  return (
-    <>
-      <Reveal>
-        <SectionEyebrow>Pipeline chart</SectionEyebrow>
-        <SectionTitle>{title}</SectionTitle>
-        <SectionIntro>{intro}</SectionIntro>
-      </Reveal>
-      <Reveal delay={0.06}>
-        <div className="mt-12 overflow-hidden rounded-[1.5rem] border border-white/10 bg-ink p-5 md:mt-14 md:p-8">
-          <div className="flex h-48 items-end gap-3 md:h-56 md:gap-4">
-            {items.map((item) => (
-              <div
-                key={item.label}
-                className="flex min-w-0 flex-1 flex-col items-center gap-2"
-              >
-                <p className="font-mono text-xs text-cyan">
-                  {item.value}
-                  {item.unit ?? ""}
-                </p>
-                <div className="flex w-full flex-1 items-end">
-                  <div
-                    className="w-full rounded-t-md bg-gradient-to-t from-cyan-deep to-cyan"
-                    style={{ height: `${(item.value / max) * 100}%` }}
-                  />
-                </div>
-                <p className="text-center text-[11px] text-white/45">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Reveal>
-      {note ? (
-        <p className="mt-6 text-[11px] leading-relaxed text-white/35">{note}</p>
-      ) : null}
-    </>
+    <CtaConversionBand
+      variant="card"
+      eyebrow={cta.eyebrow}
+      title={cta.title}
+      description={cta.description}
+      primary={cta.primary}
+      secondary={cta.secondary}
+      secondaryFamily={ctaPairSecondaryFamily(
+        cta.primary.href,
+        cta.secondary?.href,
+      )}
+      location="page.mid"
+    />
   );
 }
 
@@ -822,6 +551,464 @@ function CompareVisual({
   );
 }
 
+function SnapshotVisual({
+  title,
+  intro,
+  items,
+}: Extract<PathBlock, { type: "snapshot" }>) {
+  return (
+    <>
+      <Reveal>
+        <SectionEyebrow>Executive snapshot</SectionEyebrow>
+        <SectionTitle>{title}</SectionTitle>
+        <SectionIntro>{intro}</SectionIntro>
+      </Reveal>
+      <div className="mt-12 grid gap-px overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.06] sm:grid-cols-2 lg:grid-cols-4 md:mt-14">
+        {items.map((item, index) => (
+          <Reveal key={item.label} delay={index * 0.04} className="h-full">
+            <article className="h-full bg-ink p-5 md:p-6">
+              <p className="text-[11px] tracking-[0.18em] text-white/40 uppercase">
+                {item.label}
+              </p>
+              <p className="font-display mt-3 text-2xl text-cyan md:text-[1.65rem]">
+                {item.value}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-white/50">
+                {item.copy}
+              </p>
+            </article>
+          </Reveal>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function ImpactMatrixVisual({
+  title,
+  intro,
+  insight,
+  note,
+  items,
+}: Extract<PathBlock, { type: "impactMatrix" }>) {
+  const quadrants: {
+    key: string;
+    impact: "high" | "medium";
+    effort: "low" | "high";
+    label: string;
+    hint: string;
+  }[] = [
+    {
+      key: "start",
+      impact: "high",
+      effort: "low",
+      label: "Start here",
+      hint: "High impact · lower complexity",
+    },
+    {
+      key: "bets",
+      impact: "high",
+      effort: "high",
+      label: "Platform bets",
+      hint: "High impact · higher complexity",
+    },
+    {
+      key: "later",
+      impact: "medium",
+      effort: "low",
+      label: "Later / optional",
+      hint: "Lower impact · lower complexity",
+    },
+    {
+      key: "avoid",
+      impact: "medium",
+      effort: "high",
+      label: "Do not fund first",
+      hint: "Lower impact · higher complexity",
+    },
+  ];
+
+  return (
+    <>
+      <VizHeader
+        eyebrow="Conceptual framework"
+        title={title}
+        insight={insight}
+        intro={intro}
+      />
+      <div className="mt-10 md:mt-12">
+        <div className="mb-3 flex items-center justify-between gap-3 text-[10px] tracking-[0.16em] text-white/35 uppercase">
+          <span>Lower implementation complexity</span>
+          <span className="hidden sm:inline">Higher complexity</span>
+        </div>
+        <div
+          className="grid gap-3 md:grid-cols-2"
+          role="list"
+          aria-label={`${title}. Conceptual opportunity map, not measured client data.`}
+        >
+          {quadrants.map((quad, index) => {
+            const quadItems = items.filter(
+              (item) => item.impact === quad.impact && item.effort === quad.effort,
+            );
+            if (quadItems.length === 0) return null;
+            const emphasize = quad.key === "start";
+            return (
+              <Reveal key={quad.key} delay={index * 0.04}>
+                <div
+                  role="listitem"
+                  className={cn(
+                    "h-full rounded-[1.25rem] border p-5 md:p-6",
+                    emphasize
+                      ? "border-cyan/35 bg-cyan/[0.06]"
+                      : "border-white/10 bg-ink",
+                  )}
+                >
+                  <p
+                    className={cn(
+                      "text-[11px] tracking-[0.18em] uppercase",
+                      emphasize ? "text-cyan" : "text-white/40",
+                    )}
+                  >
+                    {quad.label}
+                  </p>
+                  <p className="mt-1 text-[11px] text-white/35">{quad.hint}</p>
+                  <ul className="mt-4 space-y-4">
+                    {quadItems.map((item) => (
+                      <li key={item.title}>
+                        <p className="text-sm font-medium text-white">
+                          {item.title}
+                        </p>
+                        <p className="mt-1 text-sm leading-relaxed text-white/50">
+                          {item.copy}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+        <p className="mt-3 text-[10px] tracking-[0.16em] text-white/35 uppercase">
+          Business impact: higher at top · lower at bottom
+        </p>
+      </div>
+      <ConceptualNote note={note} />
+    </>
+  );
+}
+
+function FlowVisual({
+  title,
+  intro,
+  insight,
+  note,
+  items,
+}: Extract<PathBlock, { type: "flow" }>) {
+  const compact = items.length > 5;
+
+  return (
+    <>
+      <VizHeader
+        eyebrow="Conceptual framework"
+        title={title}
+        insight={insight}
+        intro={intro}
+      />
+      <ol
+        className={cn(
+          "mt-12 md:mt-14",
+          compact
+            ? "grid gap-3 sm:grid-cols-2 xl:grid-cols-4"
+            : "flex flex-col gap-3 lg:flex-row lg:items-stretch",
+        )}
+      >
+        {items.map((item, index) => (
+          <li key={item.step} className="min-w-0 flex-1">
+            <Reveal delay={index * 0.04} className="h-full">
+              <div className="flex h-full flex-col rounded-[1.25rem] border border-white/10 bg-ink p-5 md:p-6">
+                <p className="font-mono text-xs text-cyan">{item.step}</p>
+                <h3 className="font-display mt-3 text-xl text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/50">
+                  {item.copy}
+                </p>
+              </div>
+            </Reveal>
+          </li>
+        ))}
+      </ol>
+      <ConceptualNote note={note} />
+    </>
+  );
+}
+
+function RankChartVisual({
+  title,
+  intro,
+  insight,
+  note,
+  items,
+}: Extract<PathBlock, { type: "rankChart" }>) {
+  const max = Math.max(...items.map((item) => item.value), 1);
+
+  return (
+    <>
+      <VizHeader
+        eyebrow="Executive chart"
+        title={title}
+        insight={insight}
+        intro={intro}
+      />
+      <div className="mt-12 space-y-4 md:mt-14">
+        {items.map((item, index) => (
+          <Reveal key={item.label} delay={index * 0.04}>
+            <div className="grid gap-2 sm:grid-cols-[minmax(0,200px)_1fr] sm:items-center sm:gap-5">
+              <div>
+                <p className="text-sm font-medium text-white">{item.label}</p>
+                <p className="mt-0.5 text-xs text-white/40">{item.detail}</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="h-2.5 min-w-0 flex-1 overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="h-full rounded-full bg-cyan"
+                    style={{ width: `${(item.value / max) * 100}%` }}
+                  />
+                </div>
+                <span className="w-6 shrink-0 font-mono text-xs text-cyan">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+      <ConceptualNote note={note} />
+    </>
+  );
+}
+
+function TrendChartVisual({
+  title,
+  intro,
+  insight,
+  note,
+  yLabel,
+  labels,
+  series,
+}: Extract<PathBlock, { type: "trendChart" }>) {
+  const w = 640;
+  const h = 240;
+  const padX = 36;
+  const padY = 28;
+  const max = Math.max(...series, 100);
+  const points = series.map((v, i) => {
+    const x = padX + (i / Math.max(series.length - 1, 1)) * (w - padX * 2);
+    const y = h - padY - (v / max) * (h - padY * 2);
+    return { x, y, label: labels[i] ?? `${i + 1}` };
+  });
+  const line = points.map((p) => `${p.x},${p.y}`).join(" ");
+  const area = `${padX},${h - padY} ${line} ${points[points.length - 1]?.x ?? padX},${h - padY}`;
+
+  return (
+    <>
+      <VizHeader
+        eyebrow="Executive chart"
+        title={title}
+        insight={insight}
+        intro={intro}
+      />
+      <Reveal delay={0.06}>
+        <div className="mt-12 overflow-hidden rounded-[1.5rem] border border-white/10 bg-ink p-5 md:mt-14 md:p-8">
+          <p className="mb-4 font-mono text-[10px] tracking-[0.16em] text-white/35 uppercase">
+            {yLabel} · conceptual
+          </p>
+          <svg
+            viewBox={`0 0 ${w} ${h}`}
+            className="h-auto w-full"
+            role="img"
+            aria-label={title}
+          >
+            {[0.25, 0.5, 0.75, 1].map((t) => {
+              const y = h - padY - t * (h - padY * 2);
+              return (
+                <line
+                  key={t}
+                  x1={padX}
+                  x2={w - padX}
+                  y1={y}
+                  y2={y}
+                  stroke="rgba(255,255,255,0.06)"
+                  strokeWidth="1"
+                />
+              );
+            })}
+            <polygon points={area} fill="rgba(0,190,212,0.12)" />
+            <polyline
+              points={line}
+              fill="none"
+              stroke="#00bed4"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            {points.map((p) => (
+              <g key={p.label}>
+                <circle cx={p.x} cy={p.y} r="4" fill="#00bed4" />
+                <text
+                  x={p.x}
+                  y={h - 6}
+                  textAnchor="middle"
+                  fill="rgba(255,255,255,0.4)"
+                  fontSize="11"
+                >
+                  {p.label}
+                </text>
+              </g>
+            ))}
+          </svg>
+        </div>
+      </Reveal>
+      <ConceptualNote note={note} />
+    </>
+  );
+}
+
+function RadarChartVisual({
+  title,
+  intro,
+  insight,
+  note,
+  items,
+}: Extract<PathBlock, { type: "radarChart" }>) {
+  const size = 280;
+  const cx = size / 2;
+  const cy = size / 2;
+  const radius = 96;
+  const n = items.length || 1;
+  const point = (index: number, value: number) => {
+    const angle = -Math.PI / 2 + (index / n) * Math.PI * 2;
+    const r = (value / 100) * radius;
+    return [cx + Math.cos(angle) * r, cy + Math.sin(angle) * r] as const;
+  };
+  const ring = (scale: number) =>
+    items
+      .map((_, i) => point(i, 100 * scale).join(","))
+      .join(" ");
+  const shape = items.map((item, i) => point(i, item.value).join(",")).join(" ");
+
+  return (
+    <>
+      <VizHeader
+        eyebrow="Executive chart"
+        title={title}
+        insight={insight}
+        intro={intro}
+      />
+      <div className="mt-12 grid items-center gap-10 md:mt-14 lg:grid-cols-[280px_1fr]">
+        <Reveal>
+          <svg
+            viewBox={`0 0 ${size} ${size}`}
+            className="mx-auto h-auto w-full max-w-[280px]"
+            role="img"
+            aria-label={title}
+          >
+            {[0.4, 0.7, 1].map((scale) => (
+              <polygon
+                key={scale}
+                points={ring(scale)}
+                fill="none"
+                stroke="rgba(255,255,255,0.08)"
+                strokeWidth="1"
+              />
+            ))}
+            {items.map((_, i) => {
+              const [x, y] = point(i, 100);
+              return (
+                <line
+                  key={i}
+                  x1={cx}
+                  y1={cy}
+                  x2={x}
+                  y2={y}
+                  stroke="rgba(255,255,255,0.08)"
+                />
+              );
+            })}
+            <polygon
+              points={shape}
+              fill="rgba(0,190,212,0.16)"
+              stroke="#00bed4"
+              strokeWidth="2"
+            />
+          </svg>
+        </Reveal>
+        <div className="space-y-4">
+          {items.map((item, index) => (
+            <Reveal key={item.label} delay={index * 0.04}>
+              <div>
+                <div className="flex items-baseline justify-between gap-3">
+                  <p className="text-sm font-medium text-white">{item.label}</p>
+                  <p className="font-mono text-xs text-cyan">Target</p>
+                </div>
+                <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="h-full rounded-full bg-cyan"
+                    style={{ width: `${item.value}%` }}
+                  />
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+      <ConceptualNote note={note} />
+    </>
+  );
+}
+
+function StageFunnelVisual({
+  title,
+  intro,
+  insight,
+  note,
+  items,
+}: Extract<PathBlock, { type: "stageFunnel" }>) {
+  return (
+    <>
+      <VizHeader
+        eyebrow="Executive chart"
+        title={title}
+        insight={insight}
+        intro={intro}
+      />
+      <div className="mt-12 space-y-3 md:mt-14">
+        {items.map((item, index) => {
+          const width = 100 - index * (52 / Math.max(items.length - 1, 1));
+          return (
+            <Reveal key={item.label} delay={index * 0.04}>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+                <p className="w-full shrink-0 font-mono text-xs text-cyan sm:w-10">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <div
+                  className="w-full rounded-lg border border-cyan/25 bg-gradient-to-r from-cyan/20 to-cyan/5 px-4 py-3 sm:w-[var(--funnel-w)]"
+                  style={{ ["--funnel-w" as string]: `${Math.max(width, 48)}%` }}
+                >
+                  <p className="text-sm font-medium text-white">{item.label}</p>
+                  <p className="mt-1 text-xs text-white/45">{item.detail}</p>
+                </div>
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
+      <ConceptualNote note={note} />
+    </>
+  );
+}
+
 function RiskVisual({
   title,
   intro,
@@ -895,7 +1082,7 @@ function renderBlock(block: PathBlock, index: number) {
         return (
           <>
             <Reveal>
-              <SectionEyebrow>Decision signals</SectionEyebrow>
+              <SectionEyebrow>{block.eyebrow ?? "Decision signals"}</SectionEyebrow>
               <SectionTitle>{block.title}</SectionTitle>
               <SectionIntro>{block.intro}</SectionIntro>
             </Reveal>
@@ -985,20 +1172,6 @@ function renderBlock(block: PathBlock, index: number) {
             </div>
           </>
         );
-      case "bars":
-        return <BarsVisual {...block} />;
-      case "roiMix":
-        return <RoiMixVisual {...block} />;
-      case "lineChart":
-        return <LineChartVisual {...block} />;
-      case "donutChart":
-        return <DonutChartVisual {...block} />;
-      case "funnelChart":
-        return <FunnelChartVisual {...block} />;
-      case "scoreChart":
-        return <ScoreChartVisual {...block} />;
-      case "pipelineChart":
-        return <PipelineChartVisual {...block} />;
       case "maturity":
         return <MaturityVisual {...block} />;
       case "layers":
@@ -1015,6 +1188,22 @@ function renderBlock(block: PathBlock, index: number) {
         return <CompareVisual {...block} />;
       case "risk":
         return <RiskVisual {...block} />;
+      case "snapshot":
+        return <SnapshotVisual {...block} />;
+      case "impactMatrix":
+        return <ImpactMatrixVisual {...block} />;
+      case "flow":
+        return <FlowVisual {...block} />;
+      case "rankChart":
+        return <RankChartVisual {...block} />;
+      case "trendChart":
+        return <TrendChartVisual {...block} />;
+      case "radarChart":
+        return <RadarChartVisual {...block} />;
+      case "stageFunnel":
+        return <StageFunnelVisual {...block} />;
+      case "proofCases":
+        return <ProofCasesVisual {...block} />;
       default:
         return null;
     }
@@ -1077,11 +1266,20 @@ export function PathBuyerView({ page, crumbs }: PathBuyerViewProps) {
 
       {page.blocks.map((block, index) => renderBlock(block, index))}
 
-      <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
+      <section
+        id="path-closing"
+        className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20"
+      >
         <div className="mx-auto max-w-[1400px] px-5 md:px-8">
           <MidCtaBand cta={page.closing} />
         </div>
       </section>
+
+      <PathFloatingCta
+        teaser={page.floatingCta.teaser}
+        label={page.floatingCta.label}
+        href={page.floatingCta.href}
+      />
     </>
   );
 }

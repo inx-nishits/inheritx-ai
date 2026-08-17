@@ -12,8 +12,10 @@ import {
   resourcesHero,
 } from "@/data/pages/resources";
 import { PageHero } from "@/components/layout/PageHero";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaGhost } from "@/components/cta/CtaGhost";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
 import { Reveal } from "@/components/ui/Reveal";
+import { contactHref } from "@/lib/cta";
 import { cn } from "@/lib/cn";
 
 export function ResourcesPageView() {
@@ -27,7 +29,10 @@ export function ResourcesPageView() {
         eyebrow={resourcesHero.eyebrow}
         title={resourcesHero.title}
         description={resourcesHero.description}
-        primaryCta={{ label: "Book an AI strategy call", href: "/contact" }}
+        primaryCta={{
+          label: "Book an AI strategy call",
+          href: contactHref("strategy"),
+        }}
         secondaryCta={{ label: "Browse AI insights", href: "/insights" }}
       />
 
@@ -172,12 +177,26 @@ export function ResourcesPageView() {
               );
             })}
           </div>
-          <MagneticButton
-            href="/contact"
-            className="mt-10 bg-ink px-6 py-3 text-white hover:bg-cyan hover:text-white"
-          >
-            Request a private briefing
-          </MagneticButton>
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <CtaPrimary
+              href={contactHref("strategy")}
+              location="page.close"
+              intent="strategy"
+              pattern="closing-stage"
+              className="bg-ink hover:bg-cyan hover:text-white"
+            >
+              Request a private briefing
+            </CtaPrimary>
+            <CtaGhost
+              href={contactHref("assessment")}
+              location="page.close"
+              intent="assessment"
+              pattern="closing-stage"
+              surface="paper"
+            >
+              Request AI assessment
+            </CtaGhost>
+          </div>
         </div>
       </section>
     </>

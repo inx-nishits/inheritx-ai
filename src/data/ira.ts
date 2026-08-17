@@ -1,5 +1,19 @@
 /** Single place to swap IRA CTA destination or avatar asset. */
-export const IRA_CHAT_URL = "https://ira-chatbot-nine.vercel.app/" as const;
+
+function resolveIraChatUrl() {
+  const fromEnv = process.env.NEXT_PUBLIC_IRA_CHAT_URL?.trim() ?? "";
+  if (!fromEnv) return "";
+  try {
+    const url = new URL(fromEnv);
+    if (url.protocol !== "https:") return "";
+    if (url.hostname.endsWith("vercel.app")) return "";
+    return url.toString();
+  } catch {
+    return "";
+  }
+}
+
+export const IRA_CHAT_URL = resolveIraChatUrl();
 
 export const IRA_AVATAR_SRC = "/images/ira/avatar.png" as const;
 

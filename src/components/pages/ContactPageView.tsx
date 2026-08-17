@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Briefcase, Calendar, CheckCircle2, Mail, MapPin, Shield } from "lucide-react";
 
 import {
@@ -12,10 +12,18 @@ import {
   contactProcurementNotes,
   contactTopics,
 } from "@/data/pages/contact";
+import { CTA_LABELS } from "@/data/cta/copy";
 import { PageHero } from "@/components/layout/PageHero";
 import { ProcurementExperience } from "@/components/pages/ProcurementExperience";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
+import {
+  readLastCtaClick,
+  resolveContactIntent,
+  trackCtaFormStart,
+  trackCtaFormSubmit,
+} from "@/lib/cta";
+import { readStoredHeroAbVariant } from "@/lib/ctaAb";
 
 const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL?.trim() || "";
 
@@ -25,16 +33,37 @@ type SubmitState =
   | { status: "success"; fallbackMailto: boolean }
   | { status: "error"; message: string };
 
+function contactIntentFromTopic(topic: string) {
+  const normalized = topic.toLowerCase();
+  if (normalized.includes("assessment")) return "assessment" as const;
+  if (normalized.includes("security") || normalized.includes("diligence")) {
+    return "security" as const;
+  }
+  return "strategy" as const;
+}
+
+function contactSubmitLabel(topic: string) {
+  const intent = contactIntentFromTopic(topic);
+  if (intent === "assessment") return CTA_LABELS.formSubmitAssessment;
+  if (intent === "security") return CTA_LABELS.formSubmitSecurity;
+  return CTA_LABELS.formSubmitStrategy;
+}
+
 export function ContactPageView() {
   const [submitted, setSubmitted] = useState(false);
   const [topic, setTopic] = useState(contactTopics[0]);
   const [submitState, setSubmitState] = useState<SubmitState>({ status: "idle" });
+  const formStartTracked = useRef(false);
+  const topicRef = useRef(topic);
+  topicRef.current = topic;
+  const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const intentId = params.get("intent");
     const topicParam = params.get("topic");
-    const fromIntent = contactIntents.find((item) => item.id === intentId);
+    const resolvedIntent = resolveContactIntent(intentId);
+    const fromIntent = contactIntents.find((item) => item.id === resolvedIntent);
     if (fromIntent) {
       setTopic(fromIntent.topic);
       return;
@@ -42,6 +71,34 @@ export function ContactPageView() {
     if (topicParam && (contactTopics as readonly string[]).includes(topicParam)) {
       setTopic(topicParam);
     }
+  }, []);
+
+  const onFormStart = () => {
+    if (formStartTracked.current) return;
+    formStartTracked.current = true;
+    const last = readLastCtaClick();
+    const variant = last?.variant ?? readStoredHeroAbVariant();
+    const currentTopic = topicRef.current;
+    trackCtaFormStart({
+      family: "object",
+      pattern: "form-destination",
+      intent: contactIntentFromTopic(currentTopic),
+      location: "contact.form",
+      label: last?.label || contactSubmitLabel(currentTopic),
+      href: last?.href || "/contact",
+      ...(variant ? { variant } : {}),
+    });
+  };
+
+  useEffect(() => {
+    const form = formRef.current;
+    if (!form) return;
+    form.addEventListener("focusin", onFormStart);
+    form.addEventListener("input", onFormStart);
+    return () => {
+      form.removeEventListener("focusin", onFormStart);
+      form.removeEventListener("input", onFormStart);
+    };
   }, []);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -92,6 +149,17 @@ export function ContactPageView() {
         status: "success",
         fallbackMailto: Boolean(result.fallbackMailto),
       });
+      const last = readLastCtaClick();
+      const variant = last?.variant ?? readStoredHeroAbVariant();
+      trackCtaFormSubmit({
+        family: "object",
+        pattern: "form-destination",
+        intent: contactIntentFromTopic(topic),
+        location: "contact.form",
+        label: contactSubmitLabel(topic),
+        href: last?.href || "/contact",
+        ...(variant ? { variant } : {}),
+      });
       form.reset();
     } catch {
       setSubmitState({
@@ -125,6 +193,7 @@ export function ContactPageView() {
               <div className="mt-6 grid gap-3 sm:grid-cols-3">
                 {contactIntents.map((intent) => {
                   const active = topic === intent.topic;
+                  const assessment = intent.id === "assessment";
                   return (
                     <button
                       key={intent.id}
@@ -134,14 +203,20 @@ export function ContactPageView() {
                       className={cn(
                         "rounded-2xl border px-4 py-3.5 text-left transition-colors",
                         active
-                          ? "border-cyan/40 bg-cyan/15"
+                          ? assessment
+                            ? "border-cyan-deep/45 bg-cyan-deep/20"
+                            : "border-cyan/40 bg-cyan/15"
                           : "border-white/10 bg-ink hover:border-white/25",
                       )}
                     >
                       <p
                         className={cn(
                           "text-sm font-medium",
-                          active ? "text-cyan" : "text-white",
+                          active
+                            ? assessment
+                              ? "text-cyan-deep"
+                              : "text-cyan"
+                            : "text-white",
                         )}
                       >
                         {intent.label}
@@ -165,14 +240,15 @@ export function ContactPageView() {
                     </p>
                     <p className="mt-1 text-sm text-white/55">
                       {submitState.status === "success" && submitState.fallbackMailto
-                        ? "If your mail client doesn’t open, email hello@inheritx.com with your brief. You can also book time below when calendar booking is available."
-                        : "An architect will follow up—usually within one business day. Prefer a specific slot? Use the calendar booking option when available."}
+                        ? "If your mail client doesn’t open, email hello@inheritx.com with your brief. An architect will follow up—usually within one business day."
+                        : "An architect will follow up—usually within one business day."}
                     </p>
                     <button
                       type="button"
                       onClick={() => {
                         setSubmitted(false);
                         setSubmitState({ status: "idle" });
+                        formStartTracked.current = false;
                       }}
                       className="mt-4 text-sm text-cyan underline-offset-4 hover:underline"
                     >
@@ -181,7 +257,13 @@ export function ContactPageView() {
                   </div>
                 </div>
               ) : (
-                <form onSubmit={onSubmit} className="mt-8 space-y-5" noValidate>
+                <form
+                  ref={formRef}
+                  onSubmit={onSubmit}
+                  onFocusCapture={onFormStart}
+                  className="mt-8 space-y-5"
+                  noValidate
+                >
                   <div className="grid gap-5 sm:grid-cols-2">
                     <label className="block text-xs tracking-wide text-white/40">
                       Name
@@ -223,22 +305,28 @@ export function ContactPageView() {
                       role="group"
                       aria-labelledby="contact-topic-label"
                     >
-                      {contactTopics.map((item) => (
+                      {contactTopics.map((item) => {
+                        const selected = topic === item;
+                        const assessment = item.toLowerCase().includes("assessment");
+                        return (
                         <button
                           key={item}
                           type="button"
                           onClick={() => setTopic(item)}
-                          aria-pressed={topic === item}
+                          aria-pressed={selected}
                           className={cn(
                             "inline-flex min-h-11 items-center justify-center rounded-full border px-4 py-2.5 text-sm transition-all",
-                            topic === item
-                              ? "border-cyan/40 bg-cyan/15 text-cyan"
+                            selected
+                              ? assessment
+                                ? "border-cyan-deep/45 bg-cyan-deep/20 text-cyan-deep"
+                                : "border-cyan/40 bg-cyan/15 text-cyan"
                               : "border-white/10 text-white/45 hover:text-white/75",
                           )}
                         >
                           {item}
                         </button>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                   <label className="block text-xs tracking-wide text-white/40">
@@ -259,15 +347,16 @@ export function ContactPageView() {
                   <button
                     type="submit"
                     disabled={submitState.status === "submitting"}
-                    className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-cyan px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-ink disabled:opacity-60 sm:w-auto"
+                    className={cn(
+                      "inline-flex min-h-12 w-full items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-ink disabled:opacity-60 sm:w-auto",
+                      contactIntentFromTopic(topic) === "assessment"
+                        ? "bg-cyan-deep"
+                        : "bg-cyan",
+                    )}
                   >
                     {submitState.status === "submitting"
                       ? "Submitting…"
-                      : topic.includes("Assessment")
-                        ? "Request AI assessment"
-                        : topic.includes("Security")
-                          ? "Request diligence support"
-                          : "Submit consultation request"}
+                      : contactSubmitLabel(topic)}
                   </button>
                   <p className="text-xs text-white/35">
                     Prefer email?{" "}
@@ -285,48 +374,32 @@ export function ContactPageView() {
           </Reveal>
 
           <div className="space-y-8">
-            <Reveal delay={0.05}>
-              <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-5 md:p-6">
-                <div className="flex items-center gap-2 text-white">
-                  <Calendar size={14} className="text-cyan" />
-                  <p className="text-[11px] tracking-[0.2em] text-cyan uppercase">
-                    Calendar booking
+            {calendlyUrl ? (
+              <Reveal delay={0.05}>
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-5 md:p-6">
+                  <div className="flex items-center gap-2 text-white">
+                    <Calendar size={14} className="text-cyan" />
+                    <p className="text-[11px] tracking-[0.2em] text-cyan uppercase">
+                      Calendar booking
+                    </p>
+                  </div>
+                  <h3 className="font-display mt-3 text-xl text-white">
+                    Book a 30-minute AI strategy call
+                  </h3>
+                  <p className="mt-2 text-sm text-white/45">
+                    Pick a time that works for your leadership team.
                   </p>
+                  <div className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-ink">
+                    <iframe
+                      title="Book an AI strategy call"
+                      src={calendlyUrl}
+                      className="h-[620px] w-full"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
-                <h3 className="font-display mt-3 text-xl text-white">
-                  Book a 30-minute AI strategy call
-                </h3>
-                {calendlyUrl ? (
-                  <>
-                    <p className="mt-2 text-sm text-white/45">
-                      Pick a time that works for your leadership team.
-                    </p>
-                    <div className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-ink">
-                      <iframe
-                        title="Book an AI strategy call"
-                        src={calendlyUrl}
-                        className="h-[620px] w-full"
-                        loading="lazy"
-                      />
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <p className="mt-2 text-sm text-white/45">
-                      Submit the form and an architect will propose times—usually
-                      within one business day. Prefer email? Request a booking
-                      slot and we will confirm availability.
-                    </p>
-                    <a
-                      href="mailto:hello@inheritx.com?subject=AI%20Strategy%20Call%20Booking"
-                      className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full border border-cyan/35 bg-cyan/10 px-5 text-sm text-cyan transition-colors hover:bg-cyan hover:text-white"
-                    >
-                      Request a booking slot by email
-                    </a>
-                  </>
-                )}
-              </div>
-            </Reveal>
+              </Reveal>
+            ) : null}
 
             <Reveal delay={0.07}>
               <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-5 md:p-6">

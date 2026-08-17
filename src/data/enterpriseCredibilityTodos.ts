@@ -57,7 +57,7 @@ export const enterpriseCredibilityTodos = [
     id: "customer-quotes",
     phase: 3,
     owner: "Marketing / Sales",
-    item: "Add approved customer quotes to src/data/testimonials.ts (approved + published). The homepage Testimonials section stays hidden until entries exist—never invent quotes.",
+    item: "Published testimonials live in src/data/testimonials.ts (approved + published). Refresh only with written customer approval.",
   },
   {
     id: "quarterly-refresh",

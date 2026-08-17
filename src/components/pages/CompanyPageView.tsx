@@ -12,8 +12,9 @@ import {
   companyVision,
 } from "@/data/pages/company";
 import { PageHero } from "@/components/layout/PageHero";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaText } from "@/components/cta/CtaText";
 import { Reveal } from "@/components/ui/Reveal";
+import { contactHref } from "@/lib/cta";
 
 export function CompanyPageView() {
   return (
@@ -22,8 +23,11 @@ export function CompanyPageView() {
         eyebrow={companyHero.eyebrow}
         title={companyHero.title}
         description={companyHero.description}
-        primaryCta={{ label: "Book an AI strategy call", href: "/contact" }}
-        secondaryCta={{ label: "See how we engage", href: "/solutions" }}
+        primaryCta={{
+          label: "Book an AI strategy call",
+          href: contactHref("strategy"),
+        }}
+        secondaryCta={{ label: "Review security", href: "/company/security" }}
       />
 
       <section className="bg-ink py-16 md:py-20">
@@ -181,19 +185,12 @@ export function CompanyPageView() {
             </div>
           </div>
           <div className="flex flex-wrap gap-4">
-            <MagneticButton
-              href="/careers"
-              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
-            >
+            <CtaText href="/careers" location="page.close" pattern="text-explore">
               View careers
-            </MagneticButton>
-            <Link
-              href="/team"
-              className="group inline-flex items-center gap-2 text-sm text-white/50 hover:text-white"
-            >
+            </CtaText>
+            <CtaText href="/team" location="page.close">
               Meet the team
-              <ArrowUpRight size={14} />
-            </Link>
+            </CtaText>
           </div>
         </div>
       </section>

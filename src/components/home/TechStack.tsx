@@ -12,25 +12,24 @@ import { cn } from "@/lib/cn";
 const layerIcons = [Cpu, Network, Database, Workflow, Cloud, Activity];
 
 const partnerStrip = [
-  { name: "OpenAI", src: "/images/partners/openai.svg" },
   { name: "Anthropic", src: "/images/partners/anthropic.svg" },
-  { name: "Gemini", src: "/images/partners/googlecloud.svg" },
   { name: "Hugging Face", src: "/images/partners/huggingface.svg" },
   { name: "NVIDIA", src: "/images/partners/nvidia.svg" },
-  { name: "LangChain", src: "/images/partners/langchain.svg" },
+  { name: "PyTorch", src: "/images/partners/pytorch.svg" },
+  { name: "LangGraph", src: "/images/partners/langgraph.svg" },
+  { name: "LlamaIndex", src: "/images/partners/llamaindex.svg" },
   { name: "CrewAI", src: "/images/partners/crewai.svg" },
   { name: "Pinecone", src: "/images/partners/pinecone.svg" },
   { name: "Weaviate", src: "/images/partners/weaviate.svg" },
+  { name: "Qdrant", src: "/images/partners/qdrant.svg" },
   { name: "Redis", src: "/images/partners/redis.svg" },
-  { name: "n8n", src: "/images/partners/n8n.svg" },
-  { name: "AWS", src: "/images/partners/amazonaws.svg" },
+  { name: "Langfuse", src: "/images/partners/langfuse.svg" },
   { name: "Azure", src: "/images/partners/microsoft.svg" },
-  { name: "GCP", src: "/images/partners/googlecloud.svg" },
+  { name: "vLLM", src: "/images/partners/vllm.svg" },
+  { name: "MLflow", src: "/images/partners/mlflow.svg" },
   { name: "Docker", src: "/images/partners/docker.svg" },
   { name: "Kubernetes", src: "/images/partners/kubernetes.svg" },
   { name: "Terraform", src: "/images/partners/terraform.svg" },
-  { name: "Vercel", src: "/images/partners/vercel.svg" },
-  { name: "Stripe", src: "/images/partners/stripe.svg" },
 ];
 
 export function TechStack() {
@@ -62,7 +61,8 @@ export function TechStack() {
           <Reveal>
             <p className="max-w-md text-base leading-relaxed text-white/50 lg:justify-self-end">
               Six infrastructure layers and the tools we compose them
-              with—models, agents, retrieval, automation, cloud, and AI DevOps.
+              with—hosted and open models, agents, retrieval, automation,
+              cloud AI platforms, and AI DevOps.
             </p>
           </Reveal>
         </div>

@@ -33,7 +33,7 @@ export function Solutions() {
             />
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/45 md:text-base">
               Outcome-led solution lanes mapped to enterprise mandates—from
-              engineering and automation to DevOps and industry systems.
+              engineering, search, and agents to DevOps and industry systems.
             </p>
         </div>
 

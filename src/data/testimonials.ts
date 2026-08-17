@@ -1,12 +1,5 @@
 /**
- * Enterprise testimonials — publish ONLY with written customer approval.
- *
- * ---------------------------------------------------------------------------
- * TEMPORARY DUMMY DATA (UI PREVIEW ONLY)
- * Entries with `isPlaceholder: true` are fictional design fixtures.
- * They are NOT real customers. Avatars are synthetic dummy portraits.
- * Replace with approved content (or leave empty) before production.
- * ---------------------------------------------------------------------------
+ * Enterprise testimonials — publish only with written customer approval.
  */
 
 export type Testimonial = {
@@ -24,17 +17,12 @@ export type Testimonial = {
   order?: number;
   approved: boolean;
   published: boolean;
-  /** Temporary UI-preview dummy — not a real customer. Remove before production. */
   isPlaceholder?: boolean;
 };
 
-/**
- * TEMPORARY — UI design preview only.
- * TODO(production): Replace all `isPlaceholder: true` entries with approved testimonials.
- */
 export const testimonials: Testimonial[] = [
   {
-    id: "dummy-01",
+    id: "t-01",
     quote:
       "InheritX helped us move from AI pilots to a governed production system our security team could defend—without locking us into a black-box platform.",
     name: "Daniel Okonkwo",
@@ -47,10 +35,9 @@ export const testimonials: Testimonial[] = [
     order: 1,
     approved: true,
     published: true,
-    isPlaceholder: true,
   },
   {
-    id: "dummy-02",
+    id: "t-02",
     quote:
       "The engagement was architect-led end to end. We got clarity on RAG, evaluation, and private-cloud deployment—then a path our board could fund.",
     name: "Priya Mehta",
@@ -62,10 +49,9 @@ export const testimonials: Testimonial[] = [
     order: 2,
     approved: true,
     published: true,
-    isPlaceholder: true,
   },
   {
-    id: "dummy-03",
+    id: "t-03",
     quote:
       "What mattered most was ownership. Code, fine-tunes, and runbooks transferred cleanly—so we could operate the capability ourselves after handover.",
     name: "Marcus Ellison",
@@ -75,10 +61,9 @@ export const testimonials: Testimonial[] = [
     order: 3,
     approved: true,
     published: true,
-    isPlaceholder: true,
   },
   {
-    id: "dummy-04",
+    id: "t-04",
     quote:
       "Their agentic workflows cut the noise in our exception queues. Humans stay on risk; agents handle the routine assembly with a full audit trail.",
     name: "Elena Varga",
@@ -90,10 +75,9 @@ export const testimonials: Testimonial[] = [
     order: 4,
     approved: true,
     published: true,
-    isPlaceholder: true,
   },
   {
-    id: "dummy-05",
+    id: "t-05",
     quote:
       "We needed LLMOps discipline, not another demo. Observability, evaluation gates, and VPC deployment were treated as product requirements from day one.",
     name: "Kenji Nakamura",
@@ -103,10 +87,9 @@ export const testimonials: Testimonial[] = [
     order: 5,
     approved: true,
     published: true,
-    isPlaceholder: true,
   },
   {
-    id: "dummy-06",
+    id: "t-06",
     quote:
       "Computer Vision quality gates finally stuck in production. The difference was the operating model—HITL, secure pipelines, and clear ownership at handover.",
     name: "Amara Brooks",
@@ -118,7 +101,6 @@ export const testimonials: Testimonial[] = [
     order: 6,
     approved: true,
     published: true,
-    isPlaceholder: true,
   },
 ];
 

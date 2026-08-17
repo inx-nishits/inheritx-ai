@@ -1,3 +1,5 @@
+import { CONTACT_INTENTS } from "@/data/cta/intents";
+
 export const contactHero = {
   eyebrow: "Contact",
   title: "Book an AI strategy call with an architect.",
@@ -5,28 +7,8 @@ export const contactHero = {
     "Thirty minutes to pressure-test your mandate. We’ll review your use case, say honestly whether AI is the right solution, and outline a delivery roadmap—NDA and a diligence pack available for qualified opportunities.",
 };
 
-/** Primary buyer intents — maps to form topics and ?intent= query params. */
-export const contactIntents = [
-  {
-    id: "strategy",
-    label: "AI strategy call",
-    topic: "AI strategy call",
-    description: "Pressure-test fit, scope, and a 90-day path with an architect.",
-  },
-  {
-    id: "assessment",
-    label: "AI assessment / architecture review",
-    topic: "AI assessment / architecture review",
-    description:
-      "Structured readiness review—data, architecture, security, and build-vs-buy.",
-  },
-  {
-    id: "security",
-    label: "Security / Diligence",
-    topic: "Security / Diligence",
-    description: "Questionnaire support, NDA pack, and reference process.",
-  },
-] as const;
+/** Primary buyer intents — source of truth is `@/data/cta/intents`. */
+export const contactIntents = CONTACT_INTENTS;
 
 export const contactChannels = [
   {
@@ -57,10 +39,6 @@ export const contactChannels = [
 
 export const contactOffices = [
   {
-    region: "India",
-    address: "8th Floor, Panchdhara Complex, S G Highway, Bodakdev, Ahmedabad 380054",
-  },
-  {
     region: "United States",
     address: "222 Broadway, New York, NY 10038",
   },
@@ -71,6 +49,10 @@ export const contactOffices = [
   {
     region: "Japan",
     address: "1-36-13 Hashiba, Taito-ku, Tokyo",
+  },
+  {
+    region: "India",
+    address: "8th Floor, Panchdhara Complex, S G Highway, Bodakdev, Ahmedabad 380054",
   },
 ];
 
@@ -98,6 +80,11 @@ export const contactTopics = [
   "AI transformation Program",
   "AI / ML Engineering",
   "Agentic AI / Multi-Agent System",
+  "Voice / Realtime Conversational AI",
+  "Document AI / IDP",
+  "AI Search / Enterprise Search",
+  "Fine-Tuning & Custom Models",
+  "AI Eval / Safety / Red Team",
   "AI DevOps / LLMOps",
   "AI consulting & Architecture",
   "Custom AI Platform",

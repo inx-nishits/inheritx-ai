@@ -4,9 +4,12 @@ import type { ReactNode } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 
 import type { TopicPage, TopicSection } from "@/data/pages/topic";
+import { CTA_LABELS } from "@/data/cta/copy";
+import { CtaGhost } from "@/components/cta/CtaGhost";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
 import { PageHero } from "@/components/layout/PageHero";
-import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Reveal } from "@/components/ui/Reveal";
+import { contactHref } from "@/lib/cta";
 import { cn } from "@/lib/cn";
 
 type TopicLandingViewProps = {
@@ -595,6 +598,14 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
     </section>
   ) : null;
 
+  const convertHref = topic.primaryCta.href.includes("/contact")
+    ? topic.primaryCta.href
+    : contactHref("strategy");
+  const convertLabel = topic.primaryCta.href.includes("/contact")
+    ? topic.primaryCta.label
+    : CTA_LABELS.startConversation;
+  const primaryIsConvert = topic.primaryCta.href.includes("/contact");
+
   return (
     <>
       {showIndustryImage ? (
@@ -607,6 +618,7 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
             description={topic.description}
             primaryCta={topic.primaryCta}
             secondaryCta={topic.secondaryCta}
+            primaryVariant={primaryIsConvert ? "fill" : "text"}
             className="border-b border-white/[0.06] pt-10 pb-16 md:pt-14 md:pb-20"
           />
         </>
@@ -618,6 +630,7 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
             description={topic.description}
             primaryCta={topic.primaryCta}
             secondaryCta={topic.secondaryCta}
+            primaryVariant={primaryIsConvert ? "fill" : "text"}
           />
           {breadcrumb}
         </>
@@ -642,21 +655,21 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
-            <MagneticButton
-              href={topic.primaryCta.href}
-              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
+            <CtaPrimary
+              href={convertHref}
+              location="page.close"
+              pattern="closing-stage"
             >
-              {topic.primaryCta.label}
-            </MagneticButton>
-            {topic.secondaryCta && (
-              <Link
-                href={topic.secondaryCta.href}
-                className="group inline-flex items-center gap-2 text-sm text-white/55 hover:text-white"
-              >
-                {topic.secondaryCta.label}
-                <ArrowUpRight size={14} />
-              </Link>
-            )}
+              {convertLabel}
+            </CtaPrimary>
+            <CtaGhost
+              href={contactHref("assessment")}
+              location="page.close"
+              intent="assessment"
+              pattern="closing-stage"
+            >
+              Request AI assessment
+            </CtaGhost>
           </div>
         </div>
       </section>

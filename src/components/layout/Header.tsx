@@ -1,9 +1,10 @@
 "use client";
 
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { CtaHeader } from "@/components/cta/CtaHeader";
 import { navigation } from "@/data/navigation";
 import { cn } from "@/lib/cn";
 import { Logo } from "@/components/ui/Logo";
@@ -36,29 +37,12 @@ export function Header() {
             <Logo variant="light" className="min-w-0 shrink" />
 
             <div className="flex shrink-0 items-center gap-2.5 md:gap-3">
-              <Link
-                href="/contact?intent=strategy"
-                className={cn(
-                  "group relative inline-flex h-10 shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full",
-                  "border border-cyan bg-cyan pl-4 pr-3.5",
-                  "text-[12px] font-semibold tracking-wide text-white sm:text-[13px]",
-                  "shadow-[0_0_24px_rgba(0,190,212,0.22)]",
-                  "transition-[background-color,border-color,box-shadow,color] duration-300",
-                  "hover:border-white hover:bg-white hover:text-ink hover:shadow-[0_0_28px_rgba(255,255,255,0.18)]",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan/50 focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
-                )}
-              >
-                <span className="sm:hidden">Strategy call</span>
-                <span className="hidden sm:inline">Book an AI strategy call</span>
-                <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-white text-ink transition-colors duration-300 group-hover:bg-ink group-hover:text-white">
-                  <ArrowUpRight size={13} strokeWidth={2.25} />
-                </span>
-              </Link>
+              <CtaHeader />
 
               <button
                 type="button"
                 className={cn(
-                  "inline-flex size-10 shrink-0 items-center justify-center rounded-full border text-white transition-colors",
+                  "inline-flex size-11 shrink-0 items-center justify-center rounded-full border text-white transition-colors",
                   menuOpen
                     ? "border-cyan/40 bg-cyan/10 text-cyan"
                     : "border-white/15 hover:border-white/30 hover:bg-white/5 active:bg-white/10",

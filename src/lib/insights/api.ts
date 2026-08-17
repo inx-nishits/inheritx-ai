@@ -14,12 +14,18 @@ import {
   prepareRichHtml,
   withSlug,
 } from "./utils";
+import {
+  filterEnterpriseCategories,
+  filterEnterpriseInsightCards,
+} from "./categories";
 
 const DEFAULT_WP_BASE = "https://wpadmin.inheritx.com";
 
 function wpBase(): string {
   return (
-    process.env.NEXT_PUBLIC_WP_API_BASE?.replace(/\/$/, "") || DEFAULT_WP_BASE
+    process.env.WP_API_BASE?.replace(/\/$/, "") ||
+    process.env.NEXT_PUBLIC_WP_API_BASE?.replace(/\/$/, "") ||
+    DEFAULT_WP_BASE
   );
 }
 
@@ -44,18 +50,17 @@ async function wpFetch<T>(path: string, init?: RequestInit): Promise<T> {
 export async function fetchInsightsListing(): Promise<NormalizedListing> {
   const data = await wpFetch<InsightsListingResponse>("/wp-json/api/v1/inxblog");
 
-  const featuredRaw = asArray(data.singleBlog);
-  const latest = asArray(data.recentBlog);
-  const popular = asArray(data.popularPost);
-  const trending = asArray(data.trendingPost);
-  const categories = asArray(data.categories);
+  const latest = filterEnterpriseInsightCards(asArray(data.recentBlog));
+  const popular = filterEnterpriseInsightCards(asArray(data.popularPost));
+  const trending = filterEnterpriseInsightCards(asArray(data.trendingPost));
+  const featuredPool = filterEnterpriseInsightCards(asArray(data.singleBlog));
 
   return {
-    featured: featuredRaw[0] ?? latest[0] ?? null,
+    featured: featuredPool[0] ?? latest[0] ?? null,
     latest,
     popular,
     trending,
-    categories,
+    categories: filterEnterpriseCategories(asArray(data.categories)),
   };
 }
 
@@ -101,9 +106,11 @@ export async function fetchInsightBySlug(
     },
     related,
     featuredSidebar,
-    categories: asArray(data.categories).length
-      ? asArray(data.categories)
-      : listing?.categories ?? [],
+    categories: filterEnterpriseCategories(
+      asArray(data.categories).length
+        ? asArray(data.categories)
+        : listing?.categories ?? [],
+    ),
   };
 }
 
@@ -133,9 +140,11 @@ export async function fetchInsightsByCategory(
     categorySlug,
     posts,
     featuredSidebar,
-    categories: asArray(data.categories).length
-      ? asArray(data.categories)
-      : listing?.categories ?? [],
+    categories: filterEnterpriseCategories(
+      asArray(data.categories).length
+        ? asArray(data.categories)
+        : listing?.categories ?? [],
+    ),
     totalPosts: data.total_post ?? data.pagination?.total_posts ?? posts.length,
     pagination: data.pagination,
   };

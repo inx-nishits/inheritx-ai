@@ -5,8 +5,10 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 import type { CaseStudy, CaseStudyLink } from "@/data/caseStudies";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { CtaText } from "@/components/cta/CtaText";
 import { Reveal } from "@/components/ui/Reveal";
+import { contactHref } from "@/lib/cta";
 
 function LinkRow({
   title,
@@ -330,19 +332,17 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
-            <MagneticButton
-              href="/contact?intent=strategy"
-              className="bg-cyan px-6 py-3 text-white hover:bg-white hover:text-ink"
+            <CtaPrimary
+              href={contactHref("strategy")}
+              location="case-study"
+              intent="strategy"
+              pattern="case-convert"
             >
-              Book an AI strategy call
-            </MagneticButton>
-            <Link
-              href="/solutions"
-              className="group inline-flex items-center gap-2 text-sm text-white/50 hover:text-white"
-            >
+              Start a similar engagement
+            </CtaPrimary>
+            <CtaText href="/solutions" location="case-study" pattern="text-explore">
               Explore AI solutions
-              <ArrowUpRight size={14} />
-            </Link>
+            </CtaText>
           </div>
         </div>
       </section>
