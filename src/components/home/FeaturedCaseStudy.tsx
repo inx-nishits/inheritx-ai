@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { caseStudiesPage, featuredCaseStudyIds } from "@/data/caseStudies";
@@ -11,35 +11,32 @@ import { CtaText } from "@/components/cta/CtaText";
 import { cn } from "@/lib/cn";
 
 const AUTO_MS = 7000;
+const CASE_STUDY_BG = "/images/actual/actual-casestudy.jpg";
 const featuredStudies = featuredCaseStudyIds
   .map((id) => caseStudiesPage.find((study) => study.id === id))
   .filter((study): study is NonNullable<typeof study> => Boolean(study));
 
-const ease = [0.22, 1, 0.36, 1] as const;
-
 export function FeaturedCaseStudy() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [direction, setDirection] = useState(1);
   const sectionRef = useRef<HTMLElement>(null);
   const total = featuredStudies.length;
   const study = featuredStudies[active];
 
   const goTo = useCallback(
-    (index: number, dir?: number) => {
+    (index: number) => {
       const next = ((index % total) + total) % total;
-      setDirection(dir ?? (next > active || (active === total - 1 && next === 0) ? 1 : -1));
       setActive(next);
     },
-    [active, total],
+    [total],
   );
 
-  const goNext = useCallback(() => goTo(active + 1, 1), [active, goTo]);
-  const goPrev = useCallback(() => goTo(active - 1, -1), [active, goTo]);
+  const goNext = useCallback(() => goTo(active + 1), [active, goTo]);
+  const goPrev = useCallback(() => goTo(active - 1), [active, goTo]);
 
   useEffect(() => {
     if (paused) return;
-    const id = window.setInterval(() => goTo(active + 1, 1), AUTO_MS);
+    const id = window.setInterval(() => goTo(active + 1), AUTO_MS);
     return () => window.clearInterval(id);
   }, [paused, active, goTo]);
 
@@ -70,36 +67,24 @@ export function FeaturedCaseStudy() {
     >
       {/* Compact stage — full viewport height on md+; standard section spacing on mobile */}
       <div className="relative w-full md:min-h-[min(62vh,520px)]">
-        <AnimatePresence mode="sync" custom={direction}>
-          <motion.div
-            key={study.id}
-            custom={direction}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7, ease }}
-            className="absolute inset-0"
-          >
-            <motion.div
-              className="absolute inset-0"
-              initial={{ scale: 1.08 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 7.2, ease: "linear" }}
-            >
-              <Image
-                src={study.image}
-                alt=""
-                fill
-                priority={active === 0}
-                className="object-cover"
-                sizes="100vw"
-              />
-            </motion.div>
-            <div className="absolute inset-0 bg-ink/55" />
-            <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/75 to-ink/25" />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/30" />
-          </motion.div>
-        </AnimatePresence>
+        <motion.div
+          className="absolute inset-0"
+          initial={{ scale: 1.08 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 7.2, ease: "linear" }}
+        >
+          <Image
+            src={CASE_STUDY_BG}
+            alt=""
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </motion.div>
+        <div className="absolute inset-0 bg-ink/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/75 to-ink/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/30" />
 
         <div className="noise-overlay opacity-40" />
 

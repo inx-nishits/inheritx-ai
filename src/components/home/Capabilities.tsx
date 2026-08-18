@@ -37,7 +37,10 @@ function CapabilityCard({
   contentAtBottom?: boolean;
 }) {
   return (
-    <article
+    <Link
+      href={item.href}
+      data-capability-card
+      aria-label={`${item.title} — open details`}
       className={
         className ??
         "group relative h-[min(380px,48vh)] w-[min(82vw,380px)] shrink-0 overflow-hidden rounded-[2rem] border border-white/10 bg-ink-soft p-7 md:w-[400px] md:p-9 lg:h-[min(420px,50vh)] lg:w-[420px] lg:p-10"
@@ -66,7 +69,7 @@ function CapabilityCard({
           </p>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
 
@@ -107,7 +110,9 @@ export function Capabilities() {
       // Compute where each lane starts within the translated track.
       // We use these offsets so Prev/Next always lands on the exact lane title
       // (no skipping due to viewport clipping).
-      const cards = Array.from(track.querySelectorAll("article")) as HTMLElement[];
+      const cards = Array.from(
+        track.querySelectorAll("[data-capability-card]"),
+      ) as HTMLElement[];
       const offsets = cards.map((el) => el.offsetLeft);
       setCardOffsets(offsets);
     };

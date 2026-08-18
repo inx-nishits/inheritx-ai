@@ -172,7 +172,7 @@ export function SolutionsPageView() {
                   <article className="group h-full rounded-[1.75rem] border border-ink/10 bg-white p-6 transition-shadow hover:shadow-[0_20px_50px_rgba(11,18,32,0.06)] md:p-8">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <h3 className="font-display text-2xl">{model.title}</h3>
-                      <span className="rounded-full border border-ink/10 bg-paper-soft px-3 py-1 text-[11px] text-ink/45">
+                      <span className="rounded-full border border-ink/20 bg-ink/[0.06] px-3 py-1 text-[11px] font-medium text-ink/80">
                         {model.duration}
                       </span>
                     </div>

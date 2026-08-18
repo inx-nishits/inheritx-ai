@@ -16,7 +16,7 @@ export const solutionPillars = [
       "Prediction, search, and analytics systems tied to KPIs",
       "Full IP transfer on delivery",
     ],
-    image: "/images/visuals/lead-solutions.png",
+    image: "/images/actual/actual-aiml-engineering.jpg",
     href: "/solutions/enterprise-ai",
   },
   {
@@ -29,7 +29,7 @@ export const solutionPillars = [
       "MCP, tool contracts, memory, and approval gates",
       "Observability for every agent decision",
     ],
-    image: "/images/actual/actual-lead-agents.jpg",
+    image: "/images/actual/actual-agentic-ai.jpg",
     href: "/solutions/ai-agents",
   },
   {
@@ -42,7 +42,7 @@ export const solutionPillars = [
       "CloudOps, tracing, guardrails, cost controls, and incident playbooks",
       "Vision, documents, and n8n workflow automation when ops need them",
     ],
-    image: "/images/actual/actual-lead-capabilities.jpg",
+    image: "/images/actual/actual-ai-devops.jpg",
     href: "/solutions/ai-transformation",
   },
 ];

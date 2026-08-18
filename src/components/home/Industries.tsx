@@ -6,14 +6,11 @@ import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 import { industries } from "@/data/content";
-import { industryCaseLinks } from "@/data/enterpriseProof";
 import { TextReveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 
 export function Industries() {
   const [active, setActive] = useState(0);
-  const activeIndustry = industries[active];
-  const proof = industryCaseLinks[activeIndustry.name];
 
   return (
     <section id="industries" className="relative bg-paper py-16 text-ink md:py-20">
@@ -41,12 +38,11 @@ export function Industries() {
           {industries.map((industry, index) => {
             const isActive = active === index;
             return (
-              <button
+              <Link
                 key={industry.name}
-                type="button"
+                href={industry.href}
                 onMouseEnter={() => setActive(index)}
                 onFocus={() => setActive(index)}
-                onClick={() => setActive(index)}
                 className={cn(
                   "relative overflow-hidden border-white/[0.06] text-left text-white outline-none transition-[flex-grow,min-height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:min-h-0 md:h-full md:border-r md:last:border-r-0",
                   isActive
@@ -104,44 +100,10 @@ export function Industries() {
                     {industry.focus}
                   </p>
                 </div>
-              </button>
+              </Link>
             );
           })}
         </div>
-
-        {proof ? (
-          <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-ink/10 bg-white px-5 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="min-w-0 w-full lg:w-auto">
-              <p className="text-[11px] tracking-[0.16em] text-ink/40 uppercase">
-                {activeIndustry.name} — published outcomes
-              </p>
-              <p className="mt-1 text-sm text-ink/55">
-                {proof.cases.length > 0
-                  ? "Linked only to published case studies for this sector."
-                  : "Sector page available; browse all case studies for related patterns."}
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              {proof.cases.map((item) => (
-                <Link
-                  key={item.id}
-                  href={`/case-studies/${item.id}`}
-                  className="inline-flex items-center gap-1 text-sm font-medium text-cyan-deep hover:text-ink"
-                >
-                  {item.name}
-                  <ArrowUpRight size={13} />
-                </Link>
-              ))}
-              <Link
-                href={proof.sectorHref}
-                className="inline-flex items-center gap-1 text-sm text-ink/55 hover:text-ink"
-              >
-                Sector page
-                <ArrowUpRight size={13} />
-              </Link>
-            </div>
-          </div>
-        ) : null}
       </div>
     </section>
   );

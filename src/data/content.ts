@@ -14,31 +14,37 @@ export const capabilities = [
     id: "01",
     title: "AI/ML Engineering",
     copy: "Fine-tuning, Document AI, prediction systems, and PyTorch-class training—engineered for measurable outcomes, not demos.",
+    href: "/solutions/enterprise-ai",
   },
   {
     id: "02",
     title: "Generative AI",
     copy: "Secure LLM apps, RAG copilots, and code copilots with evaluation harnesses, guardrails, citations, and private-cloud ownership.",
+    href: "/solutions/generative-ai",
   },
   {
     id: "03",
     title: "Agentic AI Systems",
     copy: "Text, voice/realtime, and multimodal agents with MCP, tool calling, memory, and human gates that execute real enterprise work.",
+    href: "/solutions/ai-agents",
   },
   {
     id: "04",
     title: "AI Automation",
     copy: "Workflow intelligence with n8n, durable orchestration, and system integrations—cutting operating cost inside ERP, CRM, and plant systems you already run.",
+    href: "/solutions/ai-automation",
   },
   {
     id: "05",
     title: "AI DevOps & LLMOps",
     copy: "CI/CD for AI, MLflow, vLLM serving, tracing, and LLM FinOps—so production systems stay reliable and cost-governed after go-live.",
+    href: "/solutions/ai-transformation",
   },
   {
     id: "06",
     title: "Enterprise AI platforms",
     copy: "AI Search, GraphRAG, model gateways, and AI security controls—deployed in your VPC with full ownership at handover.",
+    href: "/solutions/enterprise-ai",
   },
 ];
 
@@ -117,37 +123,44 @@ export const industries = [
   {
     name: "Healthcare",
     focus: "Clinical operations, documentation, and compliance-grade AI that reduces cost without increasing risk.",
-    image: "/images/visuals/industries/industry-healthcare.png",
+    image: "/images/actual/actual-healthcare.jpg",
+    href: "/industries/healthcare",
   },
   {
     name: "Finance",
     focus: "Fraud, underwriting, and decisioning agents with audit trails built for institutional scale.",
-    image: "/images/visuals/industries/industry-finance.png",
+    image: "/images/actual/actual-finance.jpg",
+    href: "/industries/finance",
   },
   {
     name: "Retail",
     focus: "Demand sensing, merchandising intelligence, and service automation that compress operating cost.",
-    image: "/images/visuals/industries/industry-retail.png",
+    image: "/images/actual/actual-retail.jpg",
+    href: "/industries/retail",
   },
   {
     name: "Manufacturing",
     focus: "Vision inspection, predictive maintenance, and plant intelligence that protect throughput and quality.",
-    image: "/images/visuals/industries/industry-manufacturing.png",
+    image: "/images/actual/actual-manufacturing.jpg",
+    href: "/industries/manufacturing",
   },
   {
     name: "Insurance",
     focus: "Claims acceleration, underwriting support, and service agents with policy-aware controls.",
-    image: "/images/visuals/industries/industry-insurance.png",
+    image: "/images/actual/actual-insurance.jpg",
+    href: "/industries/insurance",
   },
   {
     name: "Logistics",
     focus: "Network optimization, control towers, and exception agents that cut manual operations.",
-    image: "/images/visuals/industries/industry-logistics.png",
+    image: "/images/actual/actual-logistic.jpg",
+    href: "/industries/logistics",
   },
   {
     name: "Government",
     focus: "Secure AI modernization for mission-critical public systems with sovereignty by design.",
-    image: "/images/visuals/industries/industry-government.png",
+    image: "/images/actual/actual-government.jpg",
+    href: "/industries/government",
   },
 ];
 
@@ -164,6 +177,7 @@ export const techLayers = [
     id: "01",
     name: "Models & Reasoning",
     tagline: "Frontier, open-weight, and cloud AI platforms—privately governed.",
+    image: "/images/actual/actual-model-reasoning.jpg",
     items: [
       "OpenAI",
       "Claude",
@@ -178,6 +192,7 @@ export const techLayers = [
     id: "02",
     name: "Agentic AI",
     tagline: "Multi-Agent Systems that execute real enterprise work.",
+    image: "/images/actual/actual-agenticai.jpg",
     items: [
       "LangChain",
       "LangGraph",
@@ -192,6 +207,7 @@ export const techLayers = [
     id: "03",
     name: "Data & Retrieval",
     tagline: "AI Search, GraphRAG, and vector infrastructure that stays accurate.",
+    image: "/images/actual/actual-data-retrieval.jpg",
     items: [
       "Pinecone",
       "Weaviate",
@@ -206,6 +222,7 @@ export const techLayers = [
     id: "04",
     name: "Automation & Integration",
     tagline: "Workflow intelligence connected to enterprise systems.",
+    image: "/images/actual/actual-automation.jpg",
     items: [
       "n8n",
       "Temporal / Prefect",
@@ -219,6 +236,7 @@ export const techLayers = [
     id: "05",
     name: "Cloud & Security",
     tagline: "Bedrock, Azure OpenAI, Vertex, and private-cloud AI by design.",
+    image: "/images/actual/actual-cloud-security.jpg",
     items: [
       "AWS / Bedrock",
       "Azure OpenAI / Foundry",
@@ -232,6 +250,7 @@ export const techLayers = [
     id: "06",
     name: "AI DevOps",
     tagline: "MLflow, vLLM, GitOps, and tracing for production AI.",
+    image: "/images/actual/actual-aidevops.jpg",
     items: [
       "MLflow",
       "vLLM / FastAPI",

@@ -34,7 +34,7 @@ export function FinalCTA() {
       ]}
       media={
         <VisualFrame
-          src="/images/visuals/cta-transformation.png"
+          src="/images/actual/actual-transformation.jpg"
           alt="Enterprise leaders beginning an AI transformation"
           className="absolute inset-0"
           priority

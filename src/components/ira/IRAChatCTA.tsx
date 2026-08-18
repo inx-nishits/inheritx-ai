@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Minus, Volume2, VolumeX, X } from "lucide-react";
+import { ArrowUpRight, Minus, Volume2, VolumeX } from "lucide-react";
 import {
   useCallback,
   useEffect,
@@ -26,7 +26,7 @@ import {
 import { cn } from "@/lib/cn";
 import { trackCtaIraOpen } from "@/lib/cta";
 
-type PanelMode = "expanded" | "minimized" | "dismissed";
+type PanelMode = "expanded" | "minimized";
 
 const CLOSED_KEY = "inx_ira_closed";
 const MUTED_KEY = "inx_ira_muted";
@@ -164,9 +164,9 @@ function IRAAssistant() {
     startPlayback();
   }, [startPlayback]);
 
-  const closePanel = useCallback((next: "minimized" | "dismissed") => {
+  const closePanel = useCallback(() => {
     markClosedThisSession();
-    setMode(next);
+    setMode("minimized");
     const el = videoRef.current;
     if (el && !el.paused) el.pause();
   }, []);
@@ -229,7 +229,7 @@ function IRAAssistant() {
         return;
       }
       event.preventDefault();
-      closePanel("minimized");
+      closePanel();
     };
 
     window.addEventListener("keydown", onKey);
@@ -325,7 +325,7 @@ function IRAAssistant() {
               </button>
               <button
                 type="button"
-                onClick={() => closePanel("minimized")}
+                onClick={() => closePanel()}
                 aria-label="Minimize IRA assistant"
                 className={cn(
                   "inline-flex size-10 items-center justify-center rounded-full text-white/55",
@@ -334,18 +334,6 @@ function IRAAssistant() {
                 )}
               >
                 <Minus size={15} strokeWidth={2} />
-              </button>
-              <button
-                type="button"
-                onClick={() => closePanel("dismissed")}
-                aria-label="Dismiss IRA assistant"
-                className={cn(
-                  "inline-flex size-10 items-center justify-center rounded-full text-white/55",
-                  "transition-colors hover:bg-white/10 hover:text-white",
-                  "focus-visible:ring-cyan focus-visible:ring-offset-ink-soft focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
-                )}
-              >
-                <X size={15} strokeWidth={2} />
               </button>
             </div>
           </div>
@@ -426,7 +414,6 @@ function IRAAssistant() {
               className={cn(
                 "ira-trigger group relative inline-flex size-14 items-center justify-center",
                 "focus-visible:ring-cyan focus-visible:ring-offset-paper focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
-                mode === "dismissed" && "opacity-90 hover:opacity-100",
               )}
             >
               <span aria-hidden className="ira-trigger-ring" />

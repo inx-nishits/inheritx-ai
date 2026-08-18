@@ -125,15 +125,6 @@ export function TechStack() {
 
           {/* Active layer detail */}
           <div className="relative min-h-[300px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-ink-elevated via-ink-soft to-ink md:min-h-[420px] md:rounded-[2rem]">
-            <Image
-              src="/images/actual/actual-lead-tech.jpg"
-              alt=""
-              fill
-              className="object-cover opacity-25"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-ink/75 to-ink/95" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_10%,rgba(0,190,212,0.2),transparent_50%)]" />
-
             <AnimatePresence mode="wait">
               <motion.div
                 key={layer.id}
@@ -143,7 +134,16 @@ export function TechStack() {
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className="relative flex h-full min-h-[420px] flex-col justify-between p-7 md:p-10"
               >
-                <div>
+                <Image
+                  src={layer.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover opacity-25"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-ink/75 to-ink/95" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_10%,rgba(0,190,212,0.2),transparent_50%)]" />
+                <div className="relative z-10">
                   <div className="flex items-center gap-3">
                     <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan/30 bg-cyan-soft text-cyan">
                       <ActiveIcon size={22} />
@@ -158,7 +158,7 @@ export function TechStack() {
                   </p>
                 </div>
 
-                <div>
+                <div className="relative z-10">
                   <p className="mb-4 text-[11px] tracking-[0.2em] text-white/35 uppercase">
                     Technologies in this layer
                   </p>
