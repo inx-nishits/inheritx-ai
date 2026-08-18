@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 import { CtaGhost } from "@/components/cta/CtaGhost";
 import { CtaPrimary } from "@/components/cta/CtaPrimary";
@@ -23,6 +24,7 @@ type PageHeroProps = {
   /** Defaults from href: contact → ghost, proof → tint, else text. */
   secondaryVariant?: CtaPairSecondaryFamily;
   className?: string;
+  media?: ReactNode;
 };
 
 export function PageHero({
@@ -36,6 +38,7 @@ export function PageHero({
   primaryVariant,
   secondaryVariant,
   className,
+  media,
 }: PageHeroProps) {
   const resolvedPrimaryVariant =
     primaryVariant ??
@@ -77,10 +80,25 @@ export function PageHero({
             <span className="text-white/55">{currentCrumb ?? eyebrow}</span>
           </nav>
         ) : null}
-        <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
-          {eyebrow}
-        </p>
-        <h1 className="font-display mt-3 max-w-3xl text-[2rem] leading-[1.15] text-white md:text-6xl">
+
+        <div
+          className={cn(
+            media &&
+              "grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-12",
+          )}
+        >
+          <div className={cn(media && "order-2 lg:order-1")}>
+            <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
+              {eyebrow}
+            </p>
+        <h1
+          className={cn(
+            "font-display mt-3 leading-[1.15] text-white",
+            media
+              ? "max-w-xl text-[1.85rem] md:text-4xl lg:text-5xl"
+              : "max-w-3xl text-[2rem] md:text-6xl",
+          )}
+        >
           {title}
         </h1>
         <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/55 md:text-lg">
@@ -139,6 +157,11 @@ export function PageHero({
               ))}
           </div>
         )}
+        </div>
+        {media ? (
+          <div className="order-1 min-w-0 lg:order-2">{media}</div>
+        ) : null}
+        </div>
       </div>
     </section>
   );

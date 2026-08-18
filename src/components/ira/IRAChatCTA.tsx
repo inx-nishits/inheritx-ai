@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Minus, Volume2, VolumeX } from "lucide-react";
+import Image from "next/image";
 import {
   useCallback,
   useEffect,
@@ -352,7 +353,7 @@ function IRAAssistant() {
                 controlsList="nodownload nofullscreen noremoteplayback"
                 disablePictureInPicture
                 disableRemotePlayback
-                preload="auto"
+                preload={mode === "expanded" ? "auto" : "metadata"}
                 aria-label="IRA, InheritX Research Assistant, speaking"
               />
             </div>
@@ -431,16 +432,12 @@ function IRAAssistant() {
                   "group-active:scale-[0.98] motion-reduce:transition-none motion-reduce:group-hover:scale-100",
                 )}
               >
-                <video
-                  className="ira-video pointer-events-none size-full object-cover"
-                  src={IRA_VIDEO_SRC}
-                  poster={IRA_AVATAR_SRC}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls={false}
-                  preload="metadata"
+                <Image
+                  src={IRA_AVATAR_SRC}
+                  alt=""
+                  fill
+                  sizes="56px"
+                  className="object-cover"
                   aria-hidden
                 />
                 <span

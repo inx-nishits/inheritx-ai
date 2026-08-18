@@ -52,7 +52,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Routine ops accelerate while high-risk actions stay human-gated and auditable.",
     impact: "Governed agent ops",
     tech: ["Claude", "LangChain", "Python", "AWS", "Eval harness"],
-    image: "/images/visuals/industries/industry-finance.png",
+    image: "/images/actual/actual-agent-bank.png",
     featured: true,
     editorial: true,
     href: "/portfolio/agent-bank",
@@ -71,7 +71,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "40% less documentation time across specialty clinics (pattern).",
     impact: "40% time saved",
     tech: ["OpenAI", "LangChain", "Python", "Azure", "Vector DB"],
-    image: "/images/visuals/industries/industry-healthcare.png",
+    image: "/images/actual/actual-healthcare-industry.jpg",
     featured: true,
     editorial: true,
   },
@@ -89,7 +89,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Fraud review accelerated 6× with clearer auditability (pattern).",
     impact: "6× faster review",
     tech: ["Claude", "CrewAI", "MCP", "Python", "AWS"],
-    image: "/images/visuals/industries/industry-finance.png",
+    image: "/images/actual/actual-finance-industry.jpg",
     featured: true,
     editorial: true,
   },
@@ -107,7 +107,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Defect escape rate cut by 58% on critical lines (pattern).",
     impact: "58% fewer escapes",
     tech: ["Gemini", "Python", "AWS", "Edge Inference"],
-    image: "/images/visuals/industries/industry-manufacturing.png",
+    image: "/images/actual/actual-manufacturing-industry.jpg",
     featured: true,
   },
   {
@@ -124,7 +124,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "First-response time dropped from days to minutes.",
     impact: "Minutes vs days",
     tech: ["OpenAI", "LangChain", "Vector DB", "Next.js", "Azure"],
-    image: "/images/actual/actual-lead-agents.jpg",
+    image: "/images/actual/actual-data-retrieval.jpg",
     featured: true,
   },
   {
@@ -141,7 +141,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "32% lower handle time and higher first-contact resolution (pattern).",
     impact: "32% faster support",
     tech: ["Claude", "LangChain", "GCP", "Next.js"],
-    image: "/images/visuals/industries/industry-retail.png",
+    image: "/images/actual/actual-retail-industry.jpg",
   },
   {
     id: "ai-knowledge-base",
@@ -157,7 +157,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Policy answer accuracy improved to 94% with citations (pattern).",
     impact: "94% accuracy",
     tech: ["OpenAI", "Vector DB", "Python", "AWS"],
-    image: "/images/visuals/industries/industry-insurance.png",
+    image: "/images/actual/actual-insurance-industry.jpg",
   },
   {
     id: "ai-sales-copilot",
@@ -173,7 +173,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Reps regained 8+ selling hours per week.",
     impact: "8 hrs/week gained",
     tech: ["Gemini", "LangChain", "Next.js", "Azure"],
-    image: "/images/visuals/lead-solutions.png",
+    image: "/images/actual/actual-agenticai.jpg",
   },
   {
     id: "ai-hr-assistant",
@@ -189,7 +189,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "65% of tier-1 HR queries auto-resolved (pattern).",
     impact: "65% auto-resolved",
     tech: ["Claude", "MCP", "Python", "GCP"],
-    image: "/images/actual/actual-lead-capabilities.jpg",
+    image: "/images/actual/actual-automation.jpg",
   },
   {
     id: "document-intelligence",
@@ -205,7 +205,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Document turnaround reduced from hours to minutes.",
     impact: "Minutes vs hours",
     tech: ["OpenAI", "Python", "AWS", "Vector DB"],
-    image: "/images/visuals/industries/industry-logistics.png",
+    image: "/images/actual/actual-logistic-industry.jpg",
   },
   {
     id: "predictive-ops",
@@ -221,7 +221,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Unplanned downtime reduced by 27% (pattern).",
     impact: "27% less downtime",
     tech: ["Python", "AWS", "Gemini", "Observability"],
-    image: "/images/actual/actual-lead-tech.jpg",
+    image: "/images/actual/actual-manufacturing.jpg",
   },
   {
     id: "workflow-automation",
@@ -237,7 +237,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Case cycle time reduced by 45% with full auditability (pattern).",
     impact: "45% faster cycles",
     tech: ["Claude", "CrewAI", "Azure", "Next.js"],
-    image: "/images/visuals/industries/industry-government.png",
+    image: "/images/actual/actual-government-industry.jpg",
     editorial: true,
   },
   {
@@ -254,7 +254,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Executive alignment and funded 3-wave AI roadmap.",
     impact: "Funded roadmap",
     tech: ["Strategy", "Architecture", "Governance"],
-    image: "/images/actual/actual-lead-journey.jpg",
+    image: "/images/actual/actual-transformation.jpg",
   },
 ];
 

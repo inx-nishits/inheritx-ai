@@ -79,7 +79,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "100%", label: "Actions attributable in audit logs" },
       { value: "HITL", label: "Human gates on high-risk tools" },
     ],
-    image: "/images/visuals/industries/industry-finance.png",
+    image: "/images/actual/actual-agent-bank.png",
     challenge:
       "Banking teams drown in repetitive operational work—KYC follow-ups, case triage, document checks, and queue routing—while regulators still demand explainability. Single LLM chatbots cannot own multi-step work across core systems without creating control gaps: fragmented case queues, high false-positive load on fraud and compliance reviews, and no reliable way to prove what an AI system did—or why.",
     whyAi:
@@ -156,7 +156,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "60%", label: "Reduced entry barriers" },
       { value: "30–35%", label: "Reduction in clinic visits" },
     ],
-    image: "/images/visuals/industries/industry-healthcare.png",
+    image: "/images/case-studies/ai-dent-app.png",
     challenge:
       "Patients delayed care due to access friction, while clinics lacked a reliable way to capture diagnostic-quality imagery outside the chair—without replacing clinician judgment or weakening data controls.",
     whyAi:
@@ -221,7 +221,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "~50%", label: "Reduction in care discovery effort" },
       { value: "Improved", label: "Personalized care pathways" },
     ],
-    image: "/images/actual/actual-lead-journey.jpg",
+    image: "/images/case-studies/heva.png",
     challenge:
       "Patients struggled to navigate care options while providers lacked a unified intelligence layer for personalized guidance within approved content boundaries.",
     whyAi:
@@ -293,7 +293,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "40–50%", label: "Reduction in MTTR" },
       { value: "Improved", label: "AI builder productivity" },
     ],
-    image: "/images/actual/actual-lead-agents.jpg",
+    image: "/images/case-studies/kavia-ai.png",
     challenge:
       "Teams building AI workflows hit reliability walls—opaque failures, slow recovery, and fragile environments that blocked production trust.",
     whyAi:
@@ -365,7 +365,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "$10k–$20k", label: "Monthly cloud losses prevented" },
       { value: "~90%", label: "Reduction in attack surface" },
     ],
-    image: "/images/actual/actual-lead-tech.jpg",
+    image: "/images/case-studies/t2d2.png",
     challenge:
       "An AI damage-detection product faced exposure and cost risk from insecure cloud configuration—undermining trust in the intelligence layer.",
     whyAi:
@@ -436,7 +436,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "50%", label: "Reduction in coach preparation time" },
       { value: "50–60%", label: "Improvement in off-court practice" },
     ],
-    image: "/images/actual/actual-lead-capabilities.jpg",
+    image: "/images/case-studies/hoopDNA.png",
     challenge:
       "Coaches lacked a system to assign drills, track progress, and guide practice between sessions.",
     whyAi:
@@ -498,7 +498,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "85%", label: "Elimination of billing disputes" },
       { value: "Zero", label: "Budget overruns across 120+ properties" },
     ],
-    image: "/images/visuals/lead-solutions.png",
+    image: "/images/case-studies/qdis.png",
     challenge:
       "Fragmented tools across work orders, vendors, and billing created leakage and low operational visibility.",
     whyAi:
@@ -560,7 +560,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "~60%", label: "Faster charging station discovery" },
       { value: "Higher", label: "Session completion rates" },
     ],
-    image: "/images/visuals/industries/industry-logistics.png",
+    image: "/images/case-studies/emobility-app-m.png",
     challenge:
       "Drivers abandoned sessions when discovery, access, and payment lived in fragmented experiences.",
     whyAi:
@@ -619,7 +619,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "Zero", label: "Downtime during major match events" },
       { value: "2–3 sec", label: "Live leaderboard update time" },
     ],
-    image: "/images/visuals/industries/industry-retail.png",
+    image: "/images/case-studies/twelfthman.png",
     challenge:
       "Engagement collapses when live decision surfaces lag or fail under peak load.",
     whyAi:

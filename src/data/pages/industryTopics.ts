@@ -14,7 +14,7 @@ export const industryTopics: TopicPage[] = [
     primaryCta: { label: "Discuss healthcare AI", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "industry",
-    image: "/images/actual/actual-healthcare.jpg",
+    image: "/images/actual/actual-healthcare-industry.jpg",
     metadata: {
       title: "Healthcare AI Solutions — InheritX",
       description:
@@ -172,7 +172,7 @@ export const industryTopics: TopicPage[] = [
     primaryCta: { label: "Discuss financial services AI", href: contactHref("strategy") },
     secondaryCta: { label: "See Agent Bank", href: "/portfolio/agent-bank" },
     layout: "industry",
-    image: "/images/actual/actual-finance.jpg",
+    image: "/images/actual/actual-finance-industry.jpg",
     metadata: {
       title: "Financial Services AI — InheritX",
       description:
@@ -333,7 +333,7 @@ export const industryTopics: TopicPage[] = [
     primaryCta: { label: "Discuss retail AI", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "industry",
-    image: "/images/actual/actual-retail.jpg",
+    image: "/images/actual/actual-retail-industry.jpg",
     metadata: {
       title: "Retail AI Solutions — InheritX",
       description:
@@ -486,7 +486,7 @@ export const industryTopics: TopicPage[] = [
     primaryCta: { label: "Discuss manufacturing AI", href: contactHref("strategy") },
     secondaryCta: { label: "Computer Vision solutions", href: "/solutions/computer-vision" },
     layout: "industry",
-    image: "/images/actual/actual-manufacturing.jpg",
+    image: "/images/actual/actual-manufacturing-industry.jpg",
     metadata: {
       title: "Manufacturing AI Solutions — InheritX",
       description:
@@ -647,7 +647,7 @@ export const industryTopics: TopicPage[] = [
     primaryCta: { label: "Discuss insurance AI", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "industry",
-    image: "/images/actual/actual-insurance.jpg",
+    image: "/images/actual/actual-insurance-industry.jpg",
     metadata: {
       title: "Insurance AI Solutions — InheritX",
       description:
@@ -800,7 +800,7 @@ export const industryTopics: TopicPage[] = [
     primaryCta: { label: "Discuss logistics AI", href: contactHref("strategy") },
     secondaryCta: { label: "AI Automation", href: "/solutions/enterprise-ai" },
     layout: "industry",
-    image: "/images/actual/actual-logistic.jpg",
+    image: "/images/actual/actual-logistic-industry.jpg",
     metadata: {
       title: "Logistics AI Solutions — InheritX",
       description:
@@ -953,7 +953,7 @@ export const industryTopics: TopicPage[] = [
     primaryCta: { label: "Discuss public sector AI", href: contactHref("strategy") },
     secondaryCta: { label: "Enterprise AI platforms", href: "/solutions/enterprise-ai" },
     layout: "industry",
-    image: "/images/actual/actual-government.jpg",
+    image: "/images/actual/actual-government-industry.jpg",
     metadata: {
       title: "Government AI Solutions — InheritX",
       description:

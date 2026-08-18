@@ -33,6 +33,7 @@ export function Logo({
         width={200}
         height={28}
         priority={priority}
+        loading={priority ? "eager" : "lazy"}
         className="h-7 w-auto md:h-8"
       />
     </Link>

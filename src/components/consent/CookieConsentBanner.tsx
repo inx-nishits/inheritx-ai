@@ -87,7 +87,7 @@ export function CookieConsentBanner() {
           <button
             type="button"
             onClick={choose(false)}
-            className={cn(ctaFamilyClasses.ghost, "cursor-pointer")}
+            className={cn(ctaFamilyClasses.ghostQuiet, "cursor-pointer")}
           >
             Reject analytics
           </button>

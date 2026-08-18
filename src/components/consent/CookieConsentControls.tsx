@@ -37,7 +37,7 @@ export function CookieConsentControls() {
             </button>
             <button
               type="button"
-              className={ctaFamilyClasses.ghost}
+              className={ctaFamilyClasses.ghostQuiet}
               onClick={() => {
                 setAnalyticsConsent(false);
                 setAnalyticsEnabled(false);
