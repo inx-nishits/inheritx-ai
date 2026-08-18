@@ -452,7 +452,9 @@ select:focus-visible {
 
   .cta-primary {
     background-image: none;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .cta-primary:hover,
@@ -729,5 +731,163 @@ select:focus-visible {
   100% {
     transform: translateY(0) scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes ira-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.ira-caret {
+  animation: ira-caret 0.9s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ira-caret {
+    animation: none;
+  }
+}
+
+.ira-video {
+  object-position: center 18%;
+}
+
+.ira-video::-webkit-media-controls,
+.ira-video::-webkit-media-controls-enclosure,
+.ira-video::-webkit-media-controls-panel,
+.ira-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+.ira-shell-panel {
+  width: min(18.25rem, calc(100vw - 1.5rem));
+}
+
+.ira-body {
+  display: flex;
+  align-items: stretch;
+  gap: 0.55rem;
+}
+
+.ira-video-frame {
+  position: relative;
+  flex: 0 0 8.5rem;
+  width: 8.5rem;
+  height: 11.25rem;
+  overflow: hidden;
+}
+
+.ira-transcript {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-height: 11.25rem;
+}
+
+.ira-transcript-copy {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@keyframes ira-pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+@keyframes ira-dot-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.65;
+  }
+}
+
+.ira-trigger {
+  position: relative;
+}
+
+.ira-trigger-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 999px;
+  border: 1.5px solid color-mix(in oklab, var(--cyan) 70%, white);
+  animation: ira-pulse-ring 2.4s ease-out infinite;
+}
+
+.ira-trigger-ring-delay {
+  animation-delay: 1.2s;
+}
+
+.ira-trigger-face {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.ira-trigger-dot {
+  animation: ira-dot-pulse 1.8s ease-in-out infinite;
+}
+
+.ira-trigger-tip {
+  pointer-events: none;
+  position: absolute;
+  right: calc(100% + 0.55rem);
+  top: 50%;
+  translate: 0 -50%;
+  white-space: nowrap;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--cyan) 45%, transparent);
+  background: var(--ink);
+  padding: 0.35rem 0.7rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: white;
+  opacity: 0;
+  transform: translateX(6px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  box-shadow: 0 10px 24px rgba(7, 9, 13, 0.35);
+}
+
+.ira-trigger:hover .ira-trigger-tip,
+.ira-trigger:focus-visible .ira-trigger-tip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ira-trigger-ring,
+  .ira-trigger-dot {
+    animation: none;
+  }
+
+  .ira-trigger-tip {
+    transition: none;
+  }
+}
+
+@media (min-height: 640px) {
+  body:has([aria-label="Cookie consent"]) .ira-shell {
+    bottom: max(7.25rem, calc(env(safe-area-inset-bottom) + 7.25rem));
   }
 }
