@@ -15,12 +15,12 @@ import { fetchInsightsListing } from "@/lib/insights/api";
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: "Enterprise AI Insights | InheritX",
+  title: "Insights | InheritX",
   description:
     "Enterprise AI insights on agentic systems, generative AI, RAG, LLMOps, governance, and production architecture from InheritX.",
   alternates: { canonical: "/insights" },
   openGraph: {
-    title: "Enterprise AI Insights | InheritX",
+    title: "Insights | InheritX",
     description:
       "Perspectives for Fortune 500 technical and executive buyers shipping production AI.",
     type: "website",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Enterprise AI Insights | InheritX",
+    title: "Insights | InheritX",
     description:
       "Perspectives for Fortune 500 technical and executive buyers shipping production AI.",
   },

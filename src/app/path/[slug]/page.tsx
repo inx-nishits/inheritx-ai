@@ -17,7 +17,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const page = getPathPage(slug);
-  if (!page) return { title: "Choose your path — InheritX" };
+  if (!page) return { title: "Choose your path | InheritX" };
   return {
     title: page.metadata.title,
     description: page.metadata.description,

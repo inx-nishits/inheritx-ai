@@ -93,7 +93,7 @@ export function FeaturedCaseStudy() {
           <div className="flex flex-col items-start gap-4 lg:flex-row lg:justify-between lg:gap-6">
             <div className="w-full min-w-0 lg:max-w-md">
               <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
-                Case studies
+                Case Studies
               </p>
               <p className="mt-1.5 text-sm text-white/45">
                 Measured production outcomes with published methodology. Named
@@ -101,7 +101,7 @@ export function FeaturedCaseStudy() {
               </p>
             </div>
             <CtaText href="/case-studies" location="home" className="shrink-0">
-              View all case studies
+              View case studies
             </CtaText>
           </div>
 

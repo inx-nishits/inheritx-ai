@@ -25,7 +25,7 @@ export function Solutions() {
       <div className="relative mx-auto max-w-page px-5 md:px-8">
         <div className="mb-10 max-w-3xl md:mb-12">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-            Enterprise AI Solutions
+            Enterprise AI solutions
           </p>
             <TextReveal
               text="AI systems that create measurable business outcomes."

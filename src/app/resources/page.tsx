@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ResourcesPageView } from "@/components/pages/ResourcesPageView";
 
 export const metadata: Metadata = {
-  title: "Resources — InheritX AI",
+  title: "Resources | InheritX",
   description:
     "Decision material for CEOs and CTOs—insights, governance, diligence, and frameworks for industrializing enterprise AI.",
 };

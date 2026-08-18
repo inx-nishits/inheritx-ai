@@ -1,7 +1,7 @@
 /** Homepage strength strip — core AI technology lanes (UI shared with former sector bar). */
 export const trustTechnologies = [
   { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
-  { label: "Agentic AI", href: "/solutions/ai-agents" },
+  { label: "AI Agents", href: "/solutions/ai-agents" },
   { label: "Generative AI", href: "/solutions/generative-ai" },
   { label: "AI Search", href: "/solutions/enterprise-ai" },
   { label: "LLMOps", href: "/solutions/ai-transformation" },
@@ -24,8 +24,8 @@ export const capabilities = [
   },
   {
     id: "03",
-    title: "Agentic AI Systems",
-    copy: "Text, voice/realtime, and multimodal agents with MCP, tool calling, memory, and human gates that execute real enterprise work.",
+    title: "AI Agents",
+    copy: "Text, voice/real-time, and multimodal agents with MCP, tool calling, memory, and human gates that execute real enterprise work.",
     href: "/solutions/ai-agents",
   },
   {
@@ -42,7 +42,7 @@ export const capabilities = [
   },
   {
     id: "06",
-    title: "Enterprise AI platforms",
+    title: "Enterprise AI",
     copy: "AI Search, GraphRAG, model gateways, and AI security controls—deployed in your VPC with full ownership at handover.",
     href: "/solutions/enterprise-ai",
   },
@@ -85,11 +85,11 @@ export const solutions = [
   {
     index: "03",
     title: "Autonomous AI agents",
-    copy: "Task-oriented agents—text, voice/realtime, and computer-use—with MCP and tool access that execute, not just answer.",
+    copy: "Task-oriented agents—text, voice/real-time, and computer-use—with MCP and tool access that execute, not just answer.",
   },
   {
     index: "04",
-    title: "Multi-Agent Orchestration",
+    title: "Multi-agent orchestration",
     copy: "Hierarchical agent networks that assign work, peer-review outputs, escalate exceptions, and keep humans on risk.",
   },
   {
@@ -104,13 +104,13 @@ export const solutions = [
   },
   {
     index: "07",
-    title: "Enterprise RAG Platforms",
+    title: "Enterprise RAG platforms",
     copy: "AI Search and GraphRAG with hybrid retrieval, citations, and guardrails inside your security boundary.",
   },
   {
     index: "08",
     title: "Computer Vision",
-    copy: "Domain-trained perception for QA, imaging, and plant ops—including on-device / edge inference when data cannot leave site.",
+    copy: "Domain-trained perception for QA, imaging, and plant ops—including on-device / edge inference when data cannot leave the site.",
   },
   {
     index: "09",
@@ -190,7 +190,7 @@ export const techLayers = [
   },
   {
     id: "02",
-    name: "Agentic AI",
+    name: "AI Agents",
     tagline: "Multi-Agent Systems that execute real enterprise work.",
     image: "/images/actual/actual-agenticai.jpg",
     items: [
@@ -352,12 +352,12 @@ export const audiencePaths = {
       id: "explore",
       icon: "explore" as const,
       label: "03",
-      title: "I'm a Head of AI / Enterprise architect",
+      title: "I'm a Head of AI / Enterprise Architect",
       description:
         "Define estate fit, agent architecture, evaluation, and the AI operating model.",
       cta: "Open AI leadership path",
       href: "/path/head-of-ai",
-      meta: "Heads of AI & enterprise architects",
+      meta: "Heads of AI & Enterprise Architects",
     },
   ],
 };

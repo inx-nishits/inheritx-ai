@@ -62,7 +62,7 @@ export function CompanyPageView() {
                 href="/company/ai-vision"
                 className="group mt-6 inline-flex items-center gap-2 text-sm text-cyan hover:text-white"
               >
-                Read our AI vision
+                Read Our AI Vision
                 <ArrowUpRight size={14} />
               </Link>
             </Reveal>
@@ -162,7 +162,7 @@ export function CompanyPageView() {
                 href="/company/approach"
                 className="group inline-flex items-center gap-2 text-sm text-white/50 hover:text-white"
               >
-                Our approach
+                Our Approach
                 <ArrowUpRight size={14} />
               </Link>
             </div>

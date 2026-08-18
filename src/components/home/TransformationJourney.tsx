@@ -24,7 +24,7 @@ export function TransformationJourney() {
       <div className="relative mx-auto grid max-w-page gap-16 px-5 py-16 md:px-8 md:py-20 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
-            AI transformation Journey
+            AI Transformation Journey
           </p>
           <TextReveal
             text="A sequenced path from mandate to production."

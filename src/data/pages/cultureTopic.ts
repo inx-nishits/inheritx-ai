@@ -5,14 +5,14 @@ import type { TopicPage } from "./topic";
 export const cultureTopic: TopicPage = {
   slug: "culture",
   eyebrow: "Culture & Values",
-  title: "Precision, ownership, ambitious craft.",
+  title: "Precision, ownership, and ambitious craft.",
   description:
     "How InheritX teams work: production discipline over performance theater, client IP ownership, clarity under pressure, and engineering craft held accountable by metrics and traces.",
   primaryCta: { label: "View careers", href: "/careers" },
   secondaryCta: { label: "Meet the team", href: "/team" },
   layout: "narrative",
   metadata: {
-    title: "Culture & values | InheritX",
+    title: "Culture & Values | InheritX",
     description:
       "Precision, ownership, and ambitious craft—how InheritX teams ship governed enterprise AI with accountability and calm delivery under pressure.",
   },

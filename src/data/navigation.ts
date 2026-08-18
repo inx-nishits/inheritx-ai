@@ -34,7 +34,7 @@ export const navigation: NavItem[] = [
     label: "Solutions",
     href: "/solutions",
     overview:
-      "AI/ML engineering, Agentic AI, and AI DevOps—built for enterprise production, not pilots.",
+      "AI/ML engineering, AI Agents, and AI DevOps—built for enterprise production, not pilots.",
     columns: [
       {
         label: "AI capabilities",
@@ -81,7 +81,7 @@ export const navigation: NavItem[] = [
           },
           {
             title: "Dedicated AI Squads",
-            description: "Pods that own an AI capability to production.",
+            description: "Pods that own an AI capability through to production.",
             href: "/solutions/dedicated-ai-squads",
           },
           {
@@ -94,11 +94,11 @@ export const navigation: NavItem[] = [
     ],
     featured: {
       eyebrow: "Featured solution",
-      title: "Agentic AI for enterprise operations",
+      title: "AI Agents for enterprise operations",
       description:
         "Multi-Agent Systems with MCP, human gates, and full audit trails—deployed in your VPC.",
       href: "/solutions/ai-agents",
-      cta: "Explore Agentic AI",
+      cta: "Explore AI Agents",
       stats: [
         { value: "MCP", label: "Tool contracts" },
         { value: "HITL", label: "Risk gates" },
@@ -106,7 +106,7 @@ export const navigation: NavItem[] = [
       ],
     },
     quickLinks: [
-      { title: "AI strategy call", description: "30-min architect session", href: contactHref("strategy") },
+      { title: "Book an AI strategy call", description: "30-min architect session", href: contactHref("strategy") },
       { title: "All solutions", description: "Capability map", href: "/solutions" },
       { title: "Engagement Models", description: "How to buy", href: "/resources/engagement-models" },
     ],
@@ -219,7 +219,7 @@ export const navigation: NavItem[] = [
       description:
         "Client deployments with methodology—vision, generative systems, platforms, and agentic workflows.",
       href: "/case-studies",
-      cta: "Browse case studies",
+      cta: "View case studies",
       stats: [
         { value: "AI/ML", label: "Core focus" },
         { value: "Owned", label: "IP handover" },
@@ -227,7 +227,7 @@ export const navigation: NavItem[] = [
       ],
     },
     quickLinks: [
-      { title: "Book strategy call", description: "Map your use case", href: contactHref("strategy") },
+      { title: "Book an AI strategy call", description: "Map your use case", href: contactHref("strategy") },
       { title: "AI Portfolio", description: "Capability patterns", href: "/portfolio" },
     ],
   },
@@ -341,7 +341,7 @@ export const navigation: NavItem[] = [
             href: "/contact",
           },
           {
-            title: "Book a strategy call",
+            title: "Book an AI strategy call",
             description: "30 minutes to map your AI transformation.",
             href: contactHref("strategy"),
           },
@@ -376,7 +376,7 @@ export const navigation: NavItem[] = [
         label: "Library",
         items: [
           {
-            title: "All Insights",
+            title: "All insights",
             description: "Browse the enterprise AI library.",
             href: "/insights",
           },
@@ -394,9 +394,9 @@ export const navigation: NavItem[] = [
       },
     ],
     quickLinks: [
-      { title: "All Insights", description: "Browse the library", href: "/insights" },
+      { title: "All insights", description: "Browse the library", href: "/insights" },
       { title: "Case Studies", description: "Measured outcomes", href: "/case-studies" },
-      { title: "AI strategy call", description: "Talk to an architect", href: "/contact?intent=strategy" },
+      { title: "Book an AI strategy call", description: "Talk to an architect", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -485,7 +485,7 @@ export const navigation: NavItem[] = [
       cta: "Review security",
       stats: [
         { value: "VPC", label: "Private by default" },
-        { value: "NDA", label: "Diligence pack" },
+        { value: "NDA", label: "Diligence Pack" },
         { value: "IP", label: "Client-owned" },
       ],
     },
@@ -515,7 +515,7 @@ export const footerColumns = [
       { label: "Insights", href: "/insights" },
       { label: "AI Portfolio", href: "/portfolio" },
       { label: "Security FAQ", href: "/resources/security-faq" },
-      { label: "Diligence pack", href: "/resources/diligence-pack" },
+      { label: "Diligence Pack", href: "/resources/diligence-pack" },
       { label: "AI Governance", href: "/resources/ai-governance" },
       { label: "Enterprise References", href: "/resources/enterprise-references" },
       { label: "Resources", href: "/resources" },
@@ -525,12 +525,12 @@ export const footerColumns = [
     title: "Company",
     links: [
       { label: "About", href: "/company" },
-      { label: "Security", href: "/company/security" },
+      { label: "Security & Compliance", href: "/company/security" },
       { label: "IP Ownership", href: "/company/ip-ownership" },
       { label: "Our Team", href: "/team" },
       { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
-      { label: "AI Assessment", href: "/contact?intent=assessment" },
+      { label: "AI assessment", href: "/contact?intent=assessment" },
     ],
   },
 ];

@@ -25,7 +25,7 @@ export const solutionTopics: TopicPage[] = [
     description:
       "We build and hand over AI/ML systems—governed retrieval, fine-tuning, model endpoints, prediction, and policy controls inside your VPC. Your data, your models, your IP. Not a rental of someone else’s platform.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
-    secondaryCta: { label: "View AI portfolio", href: "/portfolio" },
+    secondaryCta: { label: "View AI Portfolio", href: "/portfolio" },
     layout: "capability",
     sections: [
       {
@@ -139,15 +139,15 @@ export const solutionTopics: TopicPage[] = [
         title: "Adjacent capabilities",
         links: [
           { label: "Document AI / IDP", href: "/solutions/document-ai" },
-          { label: "Generative AI applications", href: "/solutions/generative-ai" },
+          { label: "Generative AI", href: "/solutions/generative-ai" },
           { label: "AI Agents", href: "/solutions/ai-agents" },
-          { label: "AI consulting & architecture", href: "/solutions/ai-consulting" },
+          { label: "AI Consulting & Architecture", href: "/solutions/ai-consulting" },
           { label: "Case Studies", href: "/case-studies" },
         ],
       },
       {
         type: "faq",
-        title: "Enterprise AI platform FAQ",
+        title: "Enterprise AI FAQ",
         items: [
           {
             q: "Do you require a specific cloud provider?",
@@ -173,19 +173,19 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "Enterprise AI platforms — InheritX",
+      title: "Enterprise AI | InheritX",
       description:
         "Private, governed enterprise AI platforms—AI Search, Document AI, GraphRAG, fine-tuning, model routing, and observability inside your cloud estate.",
     },
   },
   {
     slug: "ai-agents",
-    eyebrow: "Agentic AI",
+    eyebrow: "AI Agents",
     title: "Autonomous agents that execute enterprise work—not chat demos.",
     description:
       "Autonomous agents with memory, planning, MCP, and tool calling. Multi-agent networks assign work, peer-review outputs, and escalate exceptions—fully instrumented, with humans on consequential decisions.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
-    secondaryCta: { label: "See Agent Bank", href: "/portfolio/agent-bank" },
+    secondaryCta: { label: "View Agent Bank", href: "/portfolio/agent-bank" },
     layout: "capability",
     sections: [
       {
@@ -199,7 +199,7 @@ export const solutionTopics: TopicPage[] = [
       },
       {
         type: "bullets",
-        title: "Agentic AI principles we enforce",
+        title: "Principles we enforce",
         items: [
           {
             title: "MCP and tool contracts, not prompt hope",
@@ -226,15 +226,15 @@ export const solutionTopics: TopicPage[] = [
           "Same control plane—typed tools, HITL, and traces—applied to channels and runtimes enterprises now ask for by name.",
         items: [
           {
-            title: "Voice / realtime conversational AI",
-            copy: "Telephony and realtime assistants with barge-in, latency budgets, and the same tool contracts and approval gates as text agents.",
+            title: "Voice / real-time conversational AI",
+            copy: "Telephony and real-time assistants with barge-in, latency budgets, and the same tool contracts and approval gates as text agents.",
           },
           {
             title: "Computer-use and browser agents",
             copy: "Bounded UI automation where APIs do not exist—scoped credentials, step limits, and human publish on irreversible actions.",
           },
           {
-            title: "Realtime multimodal agents",
+            title: "Real-time multimodal agents",
             copy: "Vision, voice, and tools in one loop for ops floors and service desks—still evaluated and logged like any other worker.",
           },
           {
@@ -310,16 +310,16 @@ export const solutionTopics: TopicPage[] = [
         type: "related",
         title: "Explore further",
         links: [
-          { label: "Voice / Realtime AI", href: "/solutions/voice-ai" },
+          { label: "Voice / Real-time AI", href: "/solutions/voice-ai" },
           { label: "AI Automation", href: "/solutions/ai-automation" },
-          { label: "Enterprise AI platform", href: "/solutions/enterprise-ai" },
+          { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
           { label: "Agent Bank showcase", href: "/portfolio/agent-bank" },
           { label: "Dedicated AI Squads", href: "/solutions/dedicated-ai-squads" },
         ],
       },
       {
         type: "faq",
-        title: "AI agents FAQ",
+        title: "AI Agents FAQ",
         items: [
           {
             q: "How is this different from RPA with an LLM wrapper?",
@@ -335,15 +335,15 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             q: "Do you build voice or only text agents?",
-            a: "Voice and realtime channels use the same agent runtime, tool policy, and audit trail as text. We add them when the workflow actually needs a phone or live audio path—not as a demo overlay.",
+            a: "Voice and real-time channels use the same agent runtime, tool policy, and audit trail as text. We add them when the workflow actually needs a phone or live audio path—not as a demo overlay.",
           },
         ],
       },
     ],
     metadata: {
-      title: "AI Agents & Multi-Agent Systems — InheritX",
+      title: "AI Agents | InheritX",
       description:
-        "Enterprise agent systems—text, voice/realtime, computer-use, and multimodal—with MCP, observability, and human gates built in.",
+        "Enterprise agent systems—text, voice/real-time, computer-use, and multimodal—with MCP, observability, and human gates built in.",
     },
   },
   {
@@ -353,7 +353,7 @@ export const solutionTopics: TopicPage[] = [
     description:
       "Embed AI into intake, routing, documentation, and exception handling—using n8n, agents, and system integrations connected to ERP and CRM with evaluation loops and cost discipline.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
-    secondaryCta: { label: "Browse case studies", href: "/case-studies" },
+    secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "capability",
     sections: [
       {
@@ -459,7 +459,7 @@ export const solutionTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "AI automation FAQ",
+        title: "AI Automation FAQ",
         items: [
           {
             q: "Will this replace our iPaaS or BPM platform?",
@@ -477,7 +477,7 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "AI Workflow Automation — InheritX",
+      title: "AI Automation | InheritX",
       description:
         "Enterprise intelligent automation integrated with ERP, CRM, and mission systems—classification, routing, documentation, and exception handling.",
     },
@@ -489,7 +489,7 @@ export const solutionTopics: TopicPage[] = [
     description:
       "Context-aware RAG with vector stores, semantic search, prompt engineering, evaluation harnesses, and custom guardrails—so answers stay grounded in your business context. Copilots and content systems you own in your private cloud.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
-    secondaryCta: { label: "Explore enterprise AI platform", href: "/solutions/enterprise-ai" },
+    secondaryCta: { label: "Explore Enterprise AI", href: "/solutions/enterprise-ai" },
     layout: "capability",
     sections: [
       {
@@ -622,7 +622,7 @@ export const solutionTopics: TopicPage[] = [
         type: "related",
         title: "Continue exploring",
         links: [
-          { label: "Enterprise AI platform", href: "/solutions/enterprise-ai" },
+          { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
           { label: "AI Consulting", href: "/solutions/ai-consulting" },
           { label: "Case Studies", href: "/case-studies" },
           { label: "Contact", href: contactHref("strategy") },
@@ -630,7 +630,7 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "Enterprise Generative AI — InheritX",
+      title: "Generative AI | InheritX",
       description:
         "Secure LLM applications for the enterprise—RAG copilots, code copilots / AI SDLC, evaluation harnesses, and private deployment.",
     },
@@ -792,7 +792,7 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "Enterprise Computer Vision — InheritX",
+      title: "Computer Vision | InheritX",
       description:
         "Production computer vision for inspection, safety, and logistics—edge / on-device inference, MES integration, and retraining loops.",
     },
@@ -802,7 +802,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "AI Transformation",
     title: "From executive mandate to industrialized AI capability.",
     description:
-      "Run structured transformation programs across AI/ML, Agentic AI, and AI DevOps—align leadership, stand up architecture, deliver governed pilots, and embed LLMOps so AI scales beyond innovation labs.",
+      "Run structured transformation programs across AI/ML, AI Agents, and AI DevOps—align leadership, stand up architecture, deliver governed pilots, and embed LLMOps so AI scales beyond innovation labs.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: { label: "AI Consulting", href: "/solutions/ai-consulting" },
     layout: "engagement",
@@ -931,7 +931,7 @@ export const solutionTopics: TopicPage[] = [
         title: "Engagement options",
         links: [
           { label: "AI Consulting", href: "/solutions/ai-consulting" },
-          { label: "Enterprise AI platform", href: "/solutions/enterprise-ai" },
+          { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
           { label: "AI Governance", href: "/resources/ai-governance" },
           { label: "Dedicated AI Squads", href: "/solutions/dedicated-ai-squads" },
           { label: "Case Studies", href: "/case-studies" },
@@ -940,7 +940,7 @@ export const solutionTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "AI transformation FAQ",
+        title: "AI Transformation FAQ",
         items: [
           {
             q: "How long does a typical program run?",
@@ -958,7 +958,7 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "AI transformation Programs — InheritX",
+      title: "AI Transformation | InheritX",
       description:
         "Enterprise AI transformation from strategy through industrialized capability—eval and security gates, governed pilots, platform foundation, and operating model design.",
     },
@@ -970,7 +970,7 @@ export const solutionTopics: TopicPage[] = [
     description:
       "Engage senior architects for board-ready blueprints—data readiness, model strategy, LLMOps posture, security controls, and sequenced investment before major build spend.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
-    secondaryCta: { label: "Start transformation program", href: "/solutions/ai-transformation" },
+    secondaryCta: { label: "Start AI Transformation", href: "/solutions/ai-transformation" },
     layout: "engagement",
     sections: [
       {
@@ -1097,7 +1097,7 @@ export const solutionTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "AI consulting FAQ",
+        title: "AI Consulting FAQ",
         items: [
           {
             q: "How long is a typical consulting engagement?",
@@ -1130,7 +1130,7 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "AI consulting & Architecture — InheritX",
+      title: "AI Consulting | InheritX",
       description:
         "Enterprise AI consulting—reference architecture, eval and red team programs, AI security, LLMOps, and sequenced roadmaps for CTOs and CIOs.",
     },
@@ -1142,7 +1142,7 @@ export const solutionTopics: TopicPage[] = [
     description:
       "Senior ML, LLM, and agentic engineers who join your delivery system—under your architecture, repos, and controls.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
-    secondaryCta: { label: "Compare dedicated AI squads", href: "/solutions/dedicated-ai-squads" },
+    secondaryCta: { label: "Compare Dedicated AI Squads", href: "/solutions/dedicated-ai-squads" },
     layout: "engagement",
     sections: [
       {
@@ -1251,7 +1251,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             q: "When should we NOT hire embeds first?",
-            a: "When the KPI, architecture standards, or security path are still undefined. Start with AI consulting & Architecture, then embed once the backlog and guardrails are clear.",
+            a: "When the KPI, architecture standards, or security path is still undefined. Start with AI Consulting & Architecture, then embed once the backlog and guardrails are clear.",
           },
           {
             q: "How is this different from Dedicated AI Squads?",
@@ -1263,7 +1263,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             q: "Do engineers work on-site or remote?",
-            a: "We match your policy—onsite, hybrid, or remote—with time-zone overlap agreed upfront.",
+            a: "We match your policy—on-site, hybrid, or remote—with time-zone overlap agreed upfront.",
           },
           {
             q: "What happens at the end of an embed?",
@@ -1273,7 +1273,7 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "Embedded AI Engineering — InheritX",
+      title: "Embedded AI Engineering | InheritX",
       description:
         "Embedded senior AI, ML, and agentic engineers for enterprise teams—shipping in your repos and standards with explicit knowledge transfer.",
     },
@@ -1281,11 +1281,11 @@ export const solutionTopics: TopicPage[] = [
   {
     slug: "dedicated-ai-squads",
     eyebrow: "Dedicated AI Squads",
-    title: "Cross-functional pods that own a capability to production.",
+    title: "Cross-functional pods that own a capability through to production.",
     description:
-      "Stand up dedicated squads—ML, LLMOps, platform, and product delivery— chartered to deliver a defined AI capability from discovery through production operations.",
+      "Stand up dedicated squads—ML, LLMOps, platform, and product delivery—chartered to deliver a defined AI capability from discovery through production operations.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
-    secondaryCta: { label: "View portfolio", href: "/portfolio" },
+    secondaryCta: { label: "View AI Portfolio", href: "/portfolio" },
     layout: "engagement",
     sections: [
       {
@@ -1404,7 +1404,7 @@ export const solutionTopics: TopicPage[] = [
       },
     ],
     metadata: {
-      title: "Dedicated AI Squads — InheritX",
+      title: "Dedicated AI Squads | InheritX",
       description:
         "Cross-functional AI delivery pods owning enterprise capabilities from discovery to production—ML, LLMOps, platform, and product in one charter.",
     },
@@ -1412,17 +1412,17 @@ export const solutionTopics: TopicPage[] = [
   {
     slug: "voice-ai",
     eyebrow: "Voice AI",
-    title: "Realtime conversational AI on the same agent control plane.",
+    title: "Real-time conversational AI on the same agent control plane.",
     description:
       "Telephony and live-audio assistants with barge-in, latency budgets, and the same MCP tools, human gates, and audit trail as text agents—not a separate chatbot stack.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
-    secondaryCta: { label: "Parent capability: AI Agents", href: "/solutions/ai-agents" },
+    secondaryCta: { label: "View AI Agents", href: "/solutions/ai-agents" },
     layout: "capability",
     sections: [
       {
         type: "proof",
         items: [
-          { value: "Realtime", label: "Latency budgets for live audio" },
+          { value: "Real-time", label: "Latency budgets for live audio" },
           { value: "Telephony", label: "Contact-center and DID paths" },
           { value: "Governed", label: "Same tools, HITL, and traces" },
           { value: "Handoff", label: "Warm transfer with full context" },
@@ -1433,7 +1433,7 @@ export const solutionTopics: TopicPage[] = [
         title: "Voice is a channel—not a second product",
         body: [
           "Enterprises asking for “voice AI” usually need an agent that can listen, speak, call tools, and escalate—under the same policy as their text workers. A standalone IVR demo that cannot share memory, credentials, or eval suites becomes another silo.",
-          "InheritX attaches realtime and telephony channels to the agent runtime you already review: typed tool contracts, approval gates on irreversible actions, and step-level logs operators can replay.",
+          "InheritX attaches real-time and telephony channels to the agent runtime you already review: typed tool contracts, approval gates on irreversible actions, and step-level logs operators can replay.",
           "We add voice when the workflow actually needs a phone or live-audio path—service desks, intake, status, and exception handling—not as a demo overlay on a text bot.",
         ],
       },
@@ -1442,8 +1442,8 @@ export const solutionTopics: TopicPage[] = [
         title: "What we ship in a voice lane",
         items: [
           {
-            title: "Telephony and realtime audio",
-            copy: "Inbound/outbound call paths and realtime APIs with barge-in, interruption handling, and explicit silence/timeout behavior.",
+            title: "Telephony and real-time audio",
+            copy: "Inbound/outbound call paths and real-time APIs with barge-in, interruption handling, and explicit silence/timeout behavior.",
           },
           {
             title: "Same tools as text agents",
@@ -1471,7 +1471,7 @@ export const solutionTopics: TopicPage[] = [
           {
             step: "02",
             title: "Channel and identity",
-            copy: "Wire telephony or realtime audio into your identity, recording, and retention policy.",
+            copy: "Wire telephony or real-time audio into your identity, recording, and retention policy.",
           },
           {
             step: "03",
@@ -1491,7 +1491,7 @@ export const solutionTopics: TopicPage[] = [
         rows: [
           {
             need: "High-volume status or intake on the phone",
-            approach: "Realtime agent with retrieval + warm transfer on low confidence",
+            approach: "Real-time agent with retrieval + warm transfer on low confidence",
           },
           {
             need: "Internal ops that already run as text agents",
@@ -1513,7 +1513,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             q: "Is this a different platform from AI Agents?",
-            a: "No. Voice is a child lane of Agentic AI. The parent page covers the control plane; this page is for buyers who search “voice” or “realtime conversational AI.”",
+            a: "No. Voice is a child lane of AI Agents. The parent page covers the control plane; this page is for buyers who search “voice” or “real-time conversational AI.”",
           },
           {
             q: "Do you replace our contact-center vendor?",
@@ -1531,16 +1531,16 @@ export const solutionTopics: TopicPage[] = [
         links: [
           { label: "AI Agents", href: "/solutions/ai-agents" },
           { label: "AI Automation", href: "/solutions/ai-automation" },
-          { label: "Enterprise AI platform", href: "/solutions/enterprise-ai" },
+          { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
           { label: "Document AI / IDP", href: "/solutions/document-ai" },
           { label: "Contact", href: contactHref("strategy") },
         ],
       },
     ],
     metadata: {
-      title: "Voice AI & Realtime Conversational AI — InheritX",
+      title: "Voice AI | InheritX",
       description:
-        "Enterprise voice and realtime assistants on the same agent control plane—telephony, barge-in, MCP tools, human gates, and evaluation before you scale call minutes.",
+        "Enterprise voice and real-time assistants on the same agent control plane—telephony, barge-in, MCP tools, human gates, and evaluation before you scale call minutes.",
     },
   },
   {
@@ -1551,7 +1551,7 @@ export const solutionTopics: TopicPage[] = [
       "Ingestion, classification, extraction, and reconciliation for contracts, claims, clinical packets, and back-office files—with human review on low confidence and IP you own.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: {
-      label: "Parent capability: Enterprise AI",
+      label: "View Enterprise AI",
       href: "/solutions/enterprise-ai",
     },
     layout: "capability",
@@ -1666,16 +1666,16 @@ export const solutionTopics: TopicPage[] = [
         type: "related",
         title: "Parent and adjacent",
         links: [
-          { label: "Enterprise AI platform", href: "/solutions/enterprise-ai" },
+          { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
           { label: "Generative AI", href: "/solutions/generative-ai" },
           { label: "Computer Vision", href: "/solutions/computer-vision" },
-          { label: "Voice / Realtime AI", href: "/solutions/voice-ai" },
+          { label: "Voice / Real-time AI", href: "/solutions/voice-ai" },
           { label: "Contact", href: contactHref("strategy") },
         ],
       },
     ],
     metadata: {
-      title: "Document AI & IDP — InheritX",
+      title: "Document AI | InheritX",
       description:
         "Intelligent document processing for enterprise packets—classification, extraction with evidence, human review, and write-back inside your VPC.",
     },

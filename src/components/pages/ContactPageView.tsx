@@ -577,7 +577,7 @@ export function ContactPageView() {
                     </p>
                   </div>
                   <h3 className="font-display mt-3 text-xl text-white">
-                    Book a 30-minute AI strategy call
+                    Book an AI strategy call
                   </h3>
                   <p className="mt-2 text-sm text-white/45">
                     Pick a time that works for your leadership team.

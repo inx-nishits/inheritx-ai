@@ -10,7 +10,7 @@ import {
 } from "@/data/pages/privacy";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — InheritX",
+  title: "Privacy Policy | InheritX",
   description:
     "How InheritX collects, uses, and protects personal information on our websites and contact channels.",
 };

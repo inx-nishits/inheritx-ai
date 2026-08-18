@@ -29,7 +29,7 @@ export function Industries() {
             href="/case-studies"
             className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-cyan-deep transition-colors hover:text-ink"
           >
-            Browse all outcomes
+            View case studies
             <ArrowUpRight size={14} />
           </Link>
         </div>

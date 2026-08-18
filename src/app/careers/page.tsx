@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CareersPageView } from "@/components/pages/CareersPageView";
 
 export const metadata: Metadata = {
-  title: "Careers — InheritX",
+  title: "Careers | InheritX",
   description:
     "Join InheritX to build production Enterprise AI—agents, platforms, LLMOps, and transformation delivery.",
 };

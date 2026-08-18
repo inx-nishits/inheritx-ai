@@ -6,7 +6,7 @@ export type { TopicLink, TopicSection, TopicPage } from "./topic";
 const companyTopics: TopicPage[] = [
   {
     slug: "ai-vision",
-    eyebrow: "AI vision",
+    eyebrow: "Our AI Vision",
     title: "Intelligence as governed infrastructure you own.",
     description:
       "InheritX treats AI as enterprise infrastructure—reliable, observable, and entirely under your control. Not rented capability. Not pilot theater. Systems that compound.",
@@ -14,7 +14,7 @@ const companyTopics: TopicPage[] = [
     secondaryCta: { label: "Explore solutions", href: "/solutions" },
     layout: "narrative",
     metadata: {
-      title: "Our AI vision | InheritX",
+      title: "Our AI Vision | InheritX",
       description:
         "Intelligence should behave like infrastructure: governed, measurable, and owned by the enterprise. InheritX designs AI systems for production—not demos.",
     },
@@ -72,7 +72,7 @@ const companyTopics: TopicPage[] = [
         links: [
           { label: "Why InheritX", href: "/company/why-inheritx" },
           { label: "Our Approach", href: "/company/approach" },
-          { label: "Enterprise AI solutions", href: "/solutions" },
+          { label: "Solutions", href: "/solutions" },
           { label: "Our Team", href: "/team" },
           { label: "Contact", href: contactHref("strategy") },
         ],
@@ -107,7 +107,7 @@ const companyTopics: TopicPage[] = [
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "narrative",
     metadata: {
-      title: "Why InheritX | Enterprise AI Partner",
+      title: "Why InheritX | InheritX",
       description:
         "Production AI with full IP ownership and delivery discipline for regulated enterprises. InheritX industrializes intelligence—not experiments.",
     },
@@ -181,9 +181,9 @@ const companyTopics: TopicPage[] = [
         links: [
           { label: "Our AI Vision", href: "/company/ai-vision" },
           { label: "Our Approach", href: "/company/approach" },
-          { label: "Security practices", href: "/company/security" },
+          { label: "Security & Compliance", href: "/company/security" },
           { label: "IP Ownership", href: "/company/ip-ownership" },
-          { label: "Engagement models", href: "/resources/engagement-models" },
+          { label: "Engagement Models", href: "/resources/engagement-models" },
           { label: "Contact", href: contactHref("strategy") },
         ],
       },
@@ -191,7 +191,7 @@ const companyTopics: TopicPage[] = [
   },
   {
     slug: "approach",
-    eyebrow: "Our approach",
+    eyebrow: "Our Approach",
     title: "From discovery to production.",
     description:
       "Discover, strategise, prototype, deploy, and scale—with governance and ownership in every phase. Typical engagements move from feasibility to private-cloud go-live with full IP handover.",
@@ -199,7 +199,7 @@ const companyTopics: TopicPage[] = [
     secondaryCta: { label: "Explore solutions", href: "/solutions" },
     layout: "narrative",
     metadata: {
-      title: "Our approach | InheritX Enterprise AI",
+      title: "Our Approach | InheritX",
       description:
         "A disciplined path from executive mandate to industrialized AI: discovery, blueprint, pilot to proof, and scale—with governance and IP ownership throughout.",
     },
@@ -289,9 +289,9 @@ const companyTopics: TopicPage[] = [
         links: [
           { label: "Our AI Vision", href: "/company/ai-vision" },
           { label: "Why InheritX", href: "/company/why-inheritx" },
-          { label: "Security practices", href: "/company/security" },
+          { label: "Security & Compliance", href: "/company/security" },
           { label: "IP Ownership", href: "/company/ip-ownership" },
-          { label: "Production readiness", href: "/resources/production-readiness" },
+          { label: "Production Readiness", href: "/resources/production-readiness" },
           { label: "Contact", href: contactHref("strategy") },
         ],
       },
@@ -325,7 +325,7 @@ const companyTopics: TopicPage[] = [
     secondaryCta: { label: "Security FAQ", href: "/resources/security-faq" },
     layout: "narrative",
     metadata: {
-      title: "Security & compliance | InheritX",
+      title: "Security & Compliance | InheritX",
       description:
         "InheritX security practices for private-cloud AI: data boundaries, access control, auditability, and precise compliance language for enterprise buyers.",
     },
@@ -389,7 +389,7 @@ const companyTopics: TopicPage[] = [
         title: "Related",
         links: [
           { label: "Security FAQ", href: "/resources/security-faq" },
-          { label: "Diligence pack overview", href: "/resources/diligence-pack" },
+          { label: "Diligence Pack", href: "/resources/diligence-pack" },
           { label: "Enterprise References", href: "/resources/enterprise-references" },
           { label: "IP Ownership", href: "/company/ip-ownership" },
           { label: "AI Governance", href: "/resources/ai-governance" },
@@ -426,7 +426,7 @@ const companyTopics: TopicPage[] = [
     secondaryCta: { label: "Our Approach", href: "/company/approach" },
     layout: "narrative",
     metadata: {
-      title: "IP ownership & Handover | InheritX",
+      title: "IP Ownership | InheritX",
       description:
         "InheritX IP handover scope: code, fine-tunes, agents, prompts, and infrastructure-as-code transferred to the customer—without renting back the platform.",
     },
@@ -511,9 +511,9 @@ const companyTopics: TopicPage[] = [
         type: "related",
         title: "Related",
         links: [
-          { label: "Security practices", href: "/company/security" },
+          { label: "Security & Compliance", href: "/company/security" },
           { label: "Our Approach", href: "/company/approach" },
-          { label: "Diligence pack", href: "/resources/diligence-pack" },
+          { label: "Diligence Pack", href: "/resources/diligence-pack" },
           { label: "Why InheritX", href: "/company/why-inheritx" },
           { label: "Contact", href: contactHref("strategy") },
         ],

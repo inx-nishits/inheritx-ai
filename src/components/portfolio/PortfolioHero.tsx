@@ -19,7 +19,7 @@ export function PortfolioHero() {
         <div>
           <Reveal>
             <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
-              AI portfolio
+              AI Portfolio
             </p>
           </Reveal>
           <TextReveal
@@ -28,18 +28,18 @@ export function PortfolioHero() {
           />
           <Reveal delay={0.12}>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-white/55 md:text-lg">
-              How we deliver AI/ML engineering, Agentic AI, and AI DevOps—
+              How we deliver AI/ML engineering, AI Agents, and AI DevOps—
               generative applications, vision, automation, and transformation—
-              organized by capability. Named client outcomes live in Case studies.
+              organized by capability. Named client outcomes live in Case Studies.
             </p>
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-8 flex flex-wrap gap-3">
               <CtaText href="#grid" location="nav" pattern="text-explore">
-                Browse AI work
+                View AI work
               </CtaText>
               <CtaText href="/portfolio/agent-bank" location="nav">
-                Featured: Agent Bank
+                View Agent Bank
               </CtaText>
             </div>
           </Reveal>

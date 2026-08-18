@@ -48,9 +48,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const defaultTitle = "InheritX — AI-Native Enterprise Partner";
+const defaultTitle = "InheritX | AI-native enterprise partner";
 const defaultDescription =
-  "InheritX is an AI-native enterprise technology partner—AI/ML engineering, Generative AI, Agentic AI, and AI DevOps—deployed in your private cloud with full IP ownership.";
+  "InheritX is an AI-native enterprise technology partner—AI/ML engineering, Generative AI, AI Agents, and AI DevOps—deployed in your private cloud with full IP ownership.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

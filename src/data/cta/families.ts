@@ -35,7 +35,7 @@ export const ctaFamilyMeta = {
     id: "tint",
     name: "Tinted outline",
     purpose: "Proof / next-best action beside a fill",
-    useFor: "See production outcomes, Review case studies",
+    useFor: "See production outcomes, View case studies",
     neverUseFor: "A second P0 convert competing with fill",
     shape: "pill",
     size: "min-h-12, px-5 to px-6",

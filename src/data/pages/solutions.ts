@@ -2,7 +2,7 @@ export const solutionsHero = {
   eyebrow: "Solutions",
   title: "AI systems that transform how enterprises operate.",
   description:
-    "InheritX is an AI-native enterprise partner. We deliver AI/ML engineering, Generative AI, Agentic AI, and AI DevOps—consulting when the mandate is unclear; production systems in your private cloud when you are ready—with full IP handover.",
+    "InheritX is an AI-native enterprise partner. We deliver AI/ML engineering, Generative AI, AI Agents, and AI DevOps—consulting when the mandate is unclear; production systems in your private cloud when you are ready—with full IP handover.",
 };
 
 export const solutionPillars = [
@@ -21,7 +21,7 @@ export const solutionPillars = [
   },
   {
     id: "02",
-    title: "Agentic AI",
+    title: "AI Agents",
     summary:
       "Autonomous agents, multi-agent orchestration, MCP, tool calling, memory, and human–AI collaboration—agents that execute work with auditability.",
     points: [
@@ -49,14 +49,14 @@ export const solutionPillars = [
 
 export const engagementModels = [
   {
-    title: "AI consulting & Architecture",
+    title: "AI Consulting & Architecture",
     duration: "2–6 weeks · Start here when the mandate is unclear",
     copy: "Board-ready blueprints: data readiness, model strategy, agent design, LLMOps posture, security, and sequenced investment—before you commit to a build.",
     bestFor: "CTO / CIO / CISO / Head of AI",
     href: "/solutions/ai-consulting",
   },
   {
-    title: "AI transformation Programs",
+    title: "AI Transformation Programs",
     duration: "90 days → multi-wave · Production build & industrialize",
     copy: "Executive alignment, architecture, governed pilots that industrialize, private-cloud deployment, and enablement—with IP handover.",
     bestFor: "CEO / Transformation Office",
@@ -64,7 +64,7 @@ export const engagementModels = [
   },
   {
     title: "Dedicated AI Squads",
-    duration: "Pod-based delivery · Owned capability to production",
+    duration: "Pod-based delivery · Owned capability through to production",
     copy: "Cross-functional pods (ML, agentic systems, LLMOps, platform) that own a capability from discovery to production under InheritX delivery leadership.",
     bestFor: "Business unit & innovation leaders",
     href: "/solutions/dedicated-ai-squads",
@@ -85,7 +85,7 @@ export const solutionFitMatrix = [
   },
   {
     need: "We need agents that execute work, not just answer",
-    fit: "Agentic AI",
+    fit: "AI Agents",
   },
   {
     need: "We need production reliability, MLOps, and LLMOps",

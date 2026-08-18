@@ -14,7 +14,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     description:
       "Factual responses for vendor reviews. If something is not yet attested, we say so—rather than inventing certifications or partnership claims.",
     primaryCta: { label: CTA_LABELS.talkToArchitect, href: contactHref("strategy") },
-    secondaryCta: { label: "Security practices", href: "/company/security" },
+    secondaryCta: { label: "Security & Compliance", href: "/company/security" },
     layout: "library",
     metadata: {
       title: "Security FAQ | InheritX",
@@ -62,7 +62,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             q: "Do you have SOC 2 / ISO certificates we can download?",
-            a: "Formal SOC/ISO marks are published only when evidenced. Until then, use this Security FAQ and the diligence pack under NDA. We share attestation status factually during vendor review—this site does not claim certifications that are not currently evidenced.",
+            a: "Formal SOC/ISO marks are published only when evidenced. Until then, use this Security FAQ and the Diligence Pack under NDA. We share attestation status factually during vendor review—this site does not claim certifications that are not currently evidenced.",
           },
         ],
       },
@@ -102,8 +102,8 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "related",
         title: "Go deeper",
         links: [
-          { label: "Security practices", href: "/company/security" },
-          { label: "Diligence pack", href: "/resources/diligence-pack" },
+          { label: "Security & Compliance", href: "/company/security" },
+          { label: "Diligence Pack", href: "/resources/diligence-pack" },
           { label: "Enterprise References", href: "/resources/enterprise-references" },
           { label: "IP Ownership", href: "/company/ip-ownership" },
           { label: "AI Governance", href: "/resources/ai-governance" },
@@ -114,7 +114,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
   },
   {
     slug: "diligence-pack",
-    eyebrow: "Diligence pack",
+    eyebrow: "Diligence Pack",
     title: "What enterprise buyers receive under NDA.",
     description:
       "A structured pack for security, legal, and architecture review—shared after a qualified strategy conversation. Public pages stay precise; sensitive detail stays controlled.",
@@ -122,7 +122,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     secondaryCta: { label: "Security FAQ", href: "/resources/security-faq" },
     layout: "library",
     metadata: {
-      title: "Enterprise diligence pack | InheritX",
+      title: "Diligence Pack | InheritX",
       description:
         "Overview of InheritX enterprise diligence materials available under NDA for security, legal, and architecture review.",
     },
@@ -131,7 +131,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "narrative",
         title: "How diligence works with InheritX",
         body: [
-          "Serious enterprise programs need more than a marketing site. After a strategy call confirms mutual fit, we can share a diligence pack under NDA covering security practices, engagement models, IP intent, and architecture patterns relevant to your mandate.",
+          "Serious enterprise programs need more than a marketing site. After a strategy call confirms mutual fit, we can share a Diligence Pack under NDA covering security practices, Engagement Models, IP intent, and architecture patterns relevant to your mandate.",
           "We will not invent certificates, logos, or capabilities to fill gaps. Where an item is not available, we mark it clearly and propose an alternative evidence path (architecture review, reference call process, questionnaire response).",
           "Formal SOC/ISO marks appear only when evidenced. Until then, use the Security FAQ and this pack under NDA.",
         ],
@@ -178,7 +178,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
             copy: "Consulting, transformation/build, squads, and embeds—when each is appropriate.",
           },
           {
-            title: "Architecture principles & governance outline",
+            title: "Architecture Principles",
             copy: "Human-in-the-loop, evaluation, observability, and private-by-default patterns.",
           },
           {
@@ -201,11 +201,11 @@ export const enterpriseResourceTopics: TopicPage[] = [
             copy: "How code, models, and data transfer at handover — /company/ip-ownership",
           },
           {
-            title: "Security practices",
+            title: "Security & Compliance",
             copy: "Deployment and governance posture — /company/security",
           },
           {
-            title: "Enterprise references process",
+            title: "Enterprise References",
             copy: "How verification works — /resources/enterprise-references",
           },
         ],
@@ -268,11 +268,11 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "related",
         title: "Public materials",
         links: [
-          { label: "Security practices", href: "/company/security" },
+          { label: "Security & Compliance", href: "/company/security" },
           { label: "Security FAQ", href: "/resources/security-faq" },
           { label: "IP Ownership", href: "/company/ip-ownership" },
           { label: "Enterprise References", href: "/resources/enterprise-references" },
-          { label: "Engagement models", href: "/resources/engagement-models" },
+          { label: "Engagement Models", href: "/resources/engagement-models" },
           { label: "Contact — diligence", href: "/contact?intent=security" },
         ],
       },
@@ -280,7 +280,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
   },
   {
     slug: "engagement-models",
-    eyebrow: "Engagement models",
+    eyebrow: "Engagement Models",
     title: "How to buy InheritX without category confusion.",
     description:
       "Three primary motions—plus embeds when the roadmap is already clear. Choose the path that matches your decision, not a menu of everything at once.",
@@ -288,9 +288,9 @@ export const enterpriseResourceTopics: TopicPage[] = [
     secondaryCta: { label: "Explore solutions", href: "/solutions" },
     layout: "engagement",
     metadata: {
-      title: "Engagement models | InheritX",
+      title: "Engagement Models | InheritX",
       description:
-        "InheritX engagement models: AI consulting, transformation/build with IP handover, dedicated squads, and embedded AI engineers.",
+        "InheritX Engagement Models: AI Consulting, transformation/build with IP handover, Dedicated AI Squads, and Embedded AI Engineering.",
     },
     sections: [
       {
@@ -300,7 +300,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         items: [
           {
             step: "01",
-            title: "AI consulting & Architecture",
+            title: "AI Consulting & Architecture",
             copy: "When the mandate, KPI, data readiness, or security path is unclear. Output: blueprint your CISO and architecture board can defend.",
           },
           {
@@ -326,14 +326,14 @@ export const enterpriseResourceTopics: TopicPage[] = [
         rows: [
           {
             need: "We need a board-ready plan and honest feasibility",
-            approach: "AI consulting & Architecture",
+            approach: "AI Consulting & Architecture",
           },
           {
             need: "We need private AI in our VPC with ownership at handover",
             approach: "AI transformation / production build",
           },
           {
-            need: "We need a pod to own one capability to production",
+            need: "We need a pod to own one capability through to production",
             approach: "Dedicated AI Squads",
           },
           {
@@ -365,15 +365,15 @@ export const enterpriseResourceTopics: TopicPage[] = [
   },
   {
     slug: "ai-governance",
-    eyebrow: "AI governance",
+    eyebrow: "AI Governance",
     title: "Controls that let autonomy survive audit.",
     description:
       "How InheritX designs human-in-the-loop gates, evaluation, attribution, and escalation—so agentic systems behave like infrastructure, not demos.",
     primaryCta: { label: CTA_LABELS.talkToArchitect, href: contactHref("strategy") },
-    secondaryCta: { label: "Production readiness", href: "/resources/production-readiness" },
+    secondaryCta: { label: "Production Readiness", href: "/resources/production-readiness" },
     layout: "library",
     metadata: {
-      title: "AI governance | InheritX",
+      title: "AI Governance | InheritX",
       description:
         "InheritX AI governance patterns: human-in-the-loop, evaluation harnesses, attributable agent actions, and escalation for high-risk tools.",
     },
@@ -434,9 +434,9 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "related",
         title: "Related",
         links: [
-          { label: "Production readiness checklist", href: "/resources/production-readiness" },
-          { label: "Architecture principles", href: "/resources/architecture-principles" },
-          { label: "Security practices", href: "/company/security" },
+          { label: "Production Readiness", href: "/resources/production-readiness" },
+          { label: "Architecture Principles", href: "/resources/architecture-principles" },
+          { label: "Security & Compliance", href: "/company/security" },
           { label: "Our Approach", href: "/company/approach" },
           { label: "Contact", href: contactHref("strategy") },
         ],
@@ -445,7 +445,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
   },
   {
     slug: "production-readiness",
-    eyebrow: "Production readiness",
+    eyebrow: "Production Readiness",
     title: "The checklist before you industrialize.",
     description:
       "A practical readiness bar InheritX uses so pilots become platforms—security, evaluation, ownership, and operations included.",
@@ -453,7 +453,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     secondaryCta: { label: "Our Approach", href: "/company/approach" },
     layout: "library",
     metadata: {
-      title: "Production readiness checklist | InheritX",
+      title: "Production Readiness | InheritX",
       description:
         "InheritX production readiness checklist for enterprise AI: KPI, data, security, evaluation, observability, and handover.",
     },
@@ -507,9 +507,9 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "related",
         title: "Related",
         links: [
-          { label: "Engagement models", href: "/resources/engagement-models" },
+          { label: "Engagement Models", href: "/resources/engagement-models" },
           { label: "AI Governance", href: "/resources/ai-governance" },
-          { label: "Diligence pack", href: "/resources/diligence-pack" },
+          { label: "Diligence Pack", href: "/resources/diligence-pack" },
           { label: "Case Studies", href: "/case-studies" },
           { label: "Contact", href: contactHref("strategy") },
         ],
@@ -518,7 +518,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
   },
   {
     slug: "architecture-principles",
-    eyebrow: "Architecture principles",
+    eyebrow: "Architecture Principles",
     title: "Opinionated defaults for enterprise AI systems.",
     description:
       "Principles InheritX applies when designing private, governed, IP-transferrable AI—useful for CTOs comparing builders vs. integrators.",
@@ -526,7 +526,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     secondaryCta: { label: "AI Consulting", href: "/solutions/ai-consulting" },
     layout: "library",
     metadata: {
-      title: "Architecture principles | InheritX",
+      title: "Architecture Principles | InheritX",
       description:
         "InheritX architecture principles: private by default, evaluate before scale, human gates, observability, and IP-transferrable design.",
     },
@@ -578,9 +578,9 @@ export const enterpriseResourceTopics: TopicPage[] = [
         title: "Related",
         links: [
           { label: "AI Governance", href: "/resources/ai-governance" },
-          { label: "Production readiness", href: "/resources/production-readiness" },
-          { label: "Enterprise AI solutions", href: "/solutions/enterprise-ai" },
-          { label: "Security", href: "/company/security" },
+          { label: "Production Readiness", href: "/resources/production-readiness" },
+          { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
+          { label: "Security & Compliance", href: "/company/security" },
           { label: "Contact", href: contactHref("strategy") },
         ],
       },
@@ -588,15 +588,15 @@ export const enterpriseResourceTopics: TopicPage[] = [
   },
   {
     slug: "enterprise-references",
-    eyebrow: "References",
+    eyebrow: "Enterprise References",
     title: "How enterprise buyers verify InheritX.",
     description:
       "Named references only with written customer approval. Until then: published case methodology plus anonymized industry-scale references under NDA—never fabricated logos or Fortune 500 claims.",
     primaryCta: { label: CTA_LABELS.startConversation, href: contactHref("strategy") },
-    secondaryCta: { label: "Case Studies", href: "/case-studies" },
+    secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "library",
     metadata: {
-      title: "Enterprise references | InheritX",
+      title: "Enterprise References | InheritX",
       description:
         "InheritX reference process: published case studies, anonymized NDA references, and named calls only with customer approval.",
     },
@@ -677,8 +677,8 @@ export const enterpriseResourceTopics: TopicPage[] = [
         title: "Related",
         links: [
           { label: "Case Studies", href: "/case-studies" },
-          { label: "Diligence pack", href: "/resources/diligence-pack" },
-          { label: "Outcome taxonomy", href: "/resources/outcome-taxonomy" },
+          { label: "Diligence Pack", href: "/resources/diligence-pack" },
+          { label: "Outcome Taxonomy", href: "/resources/outcome-taxonomy" },
           { label: "Security FAQ", href: "/resources/security-faq" },
           { label: "Contact — diligence", href: "/contact?intent=security" },
           { label: "Contact — strategy", href: "/contact?intent=strategy" },
@@ -688,15 +688,15 @@ export const enterpriseResourceTopics: TopicPage[] = [
   },
   {
     slug: "outcome-taxonomy",
-    eyebrow: "Outcomes",
+    eyebrow: "Outcome Taxonomy",
     title: "How we talk about results—without vanity metrics.",
     description:
       "A shared vocabulary for case studies and diligence: efficiency, risk reduction, reliability, cost control, and enablement—tied to methods you can inspect.",
     primaryCta: { label: "Case Studies", href: "/case-studies" },
-    secondaryCta: { label: "Production readiness", href: "/resources/production-readiness" },
+    secondaryCta: { label: "Production Readiness", href: "/resources/production-readiness" },
     layout: "library",
     metadata: {
-      title: "Outcome taxonomy | InheritX",
+      title: "Outcome Taxonomy | InheritX",
       description:
         "InheritX outcome taxonomy for enterprise AI engagements: efficiency, risk, reliability, cost, and enablement—measured with inspectable methods.",
     },
@@ -778,7 +778,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         links: [
           { label: "Case Studies", href: "/case-studies" },
           { label: "Enterprise References", href: "/resources/enterprise-references" },
-          { label: "Diligence pack", href: "/resources/diligence-pack" },
+          { label: "Diligence Pack", href: "/resources/diligence-pack" },
           { label: "AI Governance", href: "/resources/ai-governance" },
           { label: "Contact", href: contactHref("strategy") },
         ],

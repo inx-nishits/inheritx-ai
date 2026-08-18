@@ -11,7 +11,7 @@ import {
 import { CookieConsentControls } from "@/components/consent/CookieConsentControls";
 
 export const metadata: Metadata = {
-  title: "Cookies — InheritX",
+  title: "Cookies | InheritX",
   description:
     "How InheritX uses cookies and similar technologies on inheritx.com.",
 };

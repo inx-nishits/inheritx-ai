@@ -155,7 +155,7 @@ export function Hero() {
 
           <div className="relative">
             <p className="hero-eyebrow hero-eyebrow-shimmer mx-auto max-w-[min(92vw,44rem)] text-center text-sm font-semibold tracking-[0.22em] uppercase md:text-base md:tracking-[0.26em]">
-              AI-Native Enterprise Partner
+              AI-native enterprise partner
             </p>
 
             <h1 className="font-display mt-6 text-[clamp(2.6rem,7.5vw,5.75rem)] leading-[1.12] tracking-[-0.04em] text-white md:mt-8">
@@ -198,7 +198,7 @@ export function Hero() {
             </h1>
 
             <p className="hero-fade mx-auto mt-6 max-w-lg text-base leading-relaxed text-white/60 md:mt-8 md:text-lg">
-              AI/ML engineering, Generative AI, Agentic AI, and AI
+              AI/ML engineering, Generative AI, AI Agents, and AI
               DevOps—deployed in your private cloud with full IP ownership.
             </p>
 
@@ -219,7 +219,7 @@ export function Hero() {
               <CtaArtifactChip
                 href="/portfolio/agent-bank"
                 eyebrow="Featured build"
-                label="Explore Agent Bank"
+                label="View Agent Bank"
                 icon={<Bot size={15} strokeWidth={2} aria-hidden />}
                 location="home.hero"
                 className="shrink-0"

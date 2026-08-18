@@ -460,12 +460,12 @@ export const pathPages: PathPage[] = [
         type: "related",
         title: "Useful next reads for business leaders",
         links: [
-          { label: "Case studies", href: "/case-studies" },
+          { label: "Case Studies", href: "/case-studies" },
           { label: "AI Transformation", href: "/solutions/ai-transformation" },
           { label: "Why InheritX", href: "/company/why-inheritx" },
-          { label: "IP ownership", href: "/company/ip-ownership" },
+          { label: "IP Ownership", href: "/company/ip-ownership" },
           { label: "Agent Bank", href: "/portfolio/agent-bank" },
-          { label: "Diligence pack", href: "/resources/diligence-pack" },
+          { label: "Diligence Pack", href: "/resources/diligence-pack" },
           { label: CTA_LABELS.strategySession, href: contactHref("strategy") },
         ],
       },
@@ -495,7 +495,7 @@ export const pathPages: PathPage[] = [
           },
           {
             q: "How does procurement typically start?",
-            a: "A strategy session or opportunity assessment under NDA when required, then a scoped statement of work. Security questionnaires and the diligence pack are available before a master agreement.",
+            a: "A strategy session or opportunity assessment under NDA when required, then a scoped statement of work. Security questionnaires and the Diligence Pack are available before a master agreement.",
           },
           {
             q: "What does an AI opportunity assessment produce?",
@@ -650,7 +650,7 @@ export const pathPages: PathPage[] = [
         layers: [
           {
             name: "Experience & channels",
-            items: ["Apps", "Voice / realtime", "APIs", "Human approval queues"],
+            items: ["Apps", "Voice / real-time", "APIs", "Human approval queues"],
           },
           {
             name: "Agent & orchestration",
@@ -716,7 +716,7 @@ export const pathPages: PathPage[] = [
       },
       {
         type: "checklist",
-        title: "Production readiness checklist",
+        title: "Production Readiness checklist",
         intro:
           "Use this in design review. If answers are vague, the system is not ready for enterprise traffic.",
         items: [
@@ -830,7 +830,7 @@ export const pathPages: PathPage[] = [
           {
             need: "Security & diligence first",
             a: "CISO-ready materials",
-            b: "Security FAQ + diligence pack",
+            b: "Security FAQ + Diligence Pack",
             c: "/resources/security-faq",
           },
           {
@@ -845,13 +845,13 @@ export const pathPages: PathPage[] = [
         type: "related",
         title: "Technical deep links",
         links: [
-          { label: "Case studies", href: "/case-studies" },
+          { label: "Case Studies", href: "/case-studies" },
           { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
           { label: "AI Agents", href: "/solutions/ai-agents" },
           { label: "Agent Bank", href: "/portfolio/agent-bank" },
           { label: "Security FAQ", href: "/resources/security-faq" },
-          { label: "IP ownership", href: "/company/ip-ownership" },
-          { label: "Diligence pack", href: "/resources/diligence-pack" },
+          { label: "IP Ownership", href: "/company/ip-ownership" },
+          { label: "Diligence Pack", href: "/resources/diligence-pack" },
           { label: CTA_LABELS.architectureAssessment, href: contactHref("assessment") },
         ],
       },
@@ -906,7 +906,7 @@ export const pathPages: PathPage[] = [
       href: contactHref("strategy"),
     },
     metadata: {
-      title: "AI for Heads of AI & enterprise architects | InheritX",
+      title: "AI for Heads of AI & Enterprise Architects | InheritX",
       description:
         "Production AI for Heads of AI and Enterprise Architects: estate fit, RAG, Multi-Agent Systems, evaluation, identity, governance, and the path from experiments to industrialized intelligence.",
     },
@@ -1245,13 +1245,13 @@ export const pathPages: PathPage[] = [
         type: "related",
         title: "Deep links for AI leaders and architects",
         links: [
-          { label: "Case studies", href: "/case-studies" },
+          { label: "Case Studies", href: "/case-studies" },
           { label: "AI Agents", href: "/solutions/ai-agents" },
           { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
           { label: "Agent Bank", href: "/portfolio/agent-bank" },
           { label: "AI Consulting", href: "/solutions/ai-consulting" },
           { label: "Security FAQ", href: "/resources/security-faq" },
-          { label: "IP ownership", href: "/company/ip-ownership" },
+          { label: "IP Ownership", href: "/company/ip-ownership" },
           {
             label: CTA_LABELS.architectureAssessment,
             href: contactHref("assessment"),
@@ -1260,7 +1260,7 @@ export const pathPages: PathPage[] = [
       },
       {
         type: "faq",
-        title: "FAQs for Heads of AI & enterprise architects",
+        title: "FAQs for Heads of AI & Enterprise Architects",
         items: [
           {
             q: "How do you approach Multi-Agent Systems responsibly?",

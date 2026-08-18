@@ -72,7 +72,7 @@ export function BusinessImpact() {
           />
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/50">
             Target outcome classes across cost, speed, automation, and trust.
-            Specific client metrics live in Case studies.
+            Specific client metrics live in Case Studies.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ export function PortfolioCTA() {
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-white/55">
             From strategy to agentic production systems—we design AI/ML,
-            Agentic AI, and AI DevOps platforms enterprises own.
+            AI Agents, and AI DevOps platforms enterprises own.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <CtaPrimary

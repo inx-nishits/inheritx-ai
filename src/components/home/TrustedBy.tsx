@@ -198,7 +198,7 @@ export function TrustedBy() {
             href="/case-studies"
             className="cta-primary group inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(0,190,212,0.22)]"
           >
-            Explore case studies
+            View case studies
             <ArrowUpRight
               size={15}
               className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

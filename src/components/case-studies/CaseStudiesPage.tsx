@@ -37,10 +37,10 @@ export function CaseStudiesHero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <CtaText href="/portfolio" location="case-study" pattern="text-explore">
-              View AI portfolio
+              View AI Portfolio
             </CtaText>
             <CtaText href="/solutions" location="case-study">
-              Explore AI solutions
+              Explore solutions
             </CtaText>
           </div>
         </Reveal>

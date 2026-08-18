@@ -72,7 +72,7 @@ export const diligenceLinks = [
     note: "Public procurement-oriented answers",
   },
   {
-    label: "Diligence pack",
+    label: "Diligence Pack",
     href: "/resources/diligence-pack",
     note: "Detailed materials under NDA after fit is confirmed",
   },
@@ -82,7 +82,7 @@ export const diligenceLinks = [
     note: "How code, models, and data transfer at handover",
   },
   {
-    label: "Security practices",
+    label: "Security & Compliance",
     href: "/company/security",
     note: "Deployment and governance posture",
   },

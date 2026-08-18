@@ -83,7 +83,7 @@ export function ProcurementExperience({
                 }
               >
                 Formal SOC/ISO marks appear here only when evidenced. Until then,
-                use the Security FAQ and the diligence pack under NDA—we share
+                use the Security FAQ and the Diligence Pack under NDA—we share
                 attestation status factually during vendor review.
               </p>
             </div>

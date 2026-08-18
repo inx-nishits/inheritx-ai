@@ -17,7 +17,7 @@ export function EmptyState({
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
         <CtaText href="/insights" location="insight" pattern="text-explore">
-          Browse all insights
+          All insights
         </CtaText>
         <CtaText
           href={contactHref("strategy")}

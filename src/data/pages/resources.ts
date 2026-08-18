@@ -2,7 +2,7 @@ export const resourcesHero = {
   eyebrow: "Resources",
   title: "Decision material for CEOs and CTOs building with AI.",
   description:
-    "Outcomes, architecture briefs, and practical frameworks for leaders industrializing AI/ML, Agentic AI, and AI DevOps across the enterprise.",
+    "Outcomes, architecture briefs, and practical frameworks for leaders industrializing AI/ML, AI Agents, and AI DevOps across the enterprise.",
 };
 
 export const resourceArticles = [
@@ -55,7 +55,7 @@ export const resourceArticles = [
     body: [
       "Embedded AI Engineering works when the roadmap is clear and the bottleneck is execution capacity—not when the problem is still undefined.",
       "We embed senior practitioners who ship under your architecture standards, security reviews, and product rituals.",
-      "If you need a mandate and a blueprint first, start with consulting. If the architecture is defined and the bottleneck is execution, Embedded AI Engineering is the right motion. See Engagement models for the full buying sequence.",
+      "If you need a mandate and a blueprint first, start with consulting. If the architecture is defined and the bottleneck is execution, Embedded AI Engineering is the right motion. See Engagement Models for the full buying sequence.",
     ],
   },
   {
@@ -89,49 +89,49 @@ export const resourceLibrary = [
     meta: "Security",
   },
   {
-    title: "Diligence pack",
+    title: "Diligence Pack",
     description:
       "NDA-ready security, IP intent, engagement classes from published cases, and procurement answers.",
     href: "/resources/diligence-pack",
     meta: "Trust",
   },
   {
-    title: "AI governance",
+    title: "AI Governance",
     description:
       "How we design policy, evaluation, guardrails, and human gates for production AI.",
     href: "/resources/ai-governance",
     meta: "Governance",
   },
   {
-    title: "Architecture principles",
+    title: "Architecture Principles",
     description:
       "Reference patterns for RAG, agents, MCP, LLMOps, and private-cloud deployment.",
     href: "/resources/architecture-principles",
     meta: "Architecture",
   },
   {
-    title: "Enterprise references",
+    title: "Enterprise References",
     description:
       "How buyers verify InheritX—published cases, anonymized NDA references, and named calls only with approval.",
     href: "/resources/enterprise-references",
     meta: "Proof",
   },
   {
-    title: "Engagement models",
+    title: "Engagement Models",
     description:
       "Consulting, build/transformation, squads, and embeds—when each motion is the right buy.",
     href: "/resources/engagement-models",
     meta: "How to buy",
   },
   {
-    title: "Case studies library",
+    title: "Case Studies",
     description:
       "Named client outcomes led by AI—vision, generative systems, platforms—and supporting enterprise delivery.",
     href: "/case-studies",
     meta: "Client proof",
   },
   {
-    title: "IP ownership",
+    title: "IP Ownership",
     description:
       "What transfers at handover—application code, agents, fine-tunes, prompts, evals, and IaC.",
     href: "/company/ip-ownership",
@@ -144,8 +144,8 @@ export const resourceFaqs = [
     a: "They are written to help buyers and builders make better decisions. If they also start a conversation with us, that is useful—but the content stands alone.",
   },
   {
-    q: "Can we request a private briefing or diligence pack?",
-    a: "Yes. Book an AI strategy call. NDA-backed diligence materials (security, IP intent, engagement models) can follow when there is mutual fit.",
+    q: "Can we request a private briefing or Diligence Pack?",
+    a: "Yes. Book an AI strategy call. NDA-backed Diligence Pack materials (security, IP intent, Engagement Models) can follow when there is mutual fit.",
   },
   {
     q: "Do OpenAI/AWS/Microsoft logos mean you are formal partners?",

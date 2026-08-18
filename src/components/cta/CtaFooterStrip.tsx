@@ -21,7 +21,7 @@ export function CtaFooterStrip({
   title = "Ready to pressure-test an AI mandate?",
   primaryLabel = CTA_LABELS.footerStrategy,
   primaryHref = contactHref("strategy"),
-  secondaryLabel = "AI Assessment",
+  secondaryLabel = "AI assessment",
   secondaryHref = contactHref("assessment"),
 }: CtaFooterStripProps) {
   const impressionRef = useCtaImpression<HTMLDivElement>({

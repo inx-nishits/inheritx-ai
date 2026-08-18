@@ -42,7 +42,7 @@ export function CaseStudies() {
               href="/case-studies"
               className="mb-1 hidden shrink-0 items-center gap-1.5 text-sm text-cyan transition-colors hover:text-white lg:inline-flex"
             >
-              All case studies
+              View case studies
               <ArrowUpRight size={14} />
             </Link>
           </div>
@@ -173,7 +173,7 @@ export function CaseStudies() {
                   href="/case-studies"
                   className="inline-flex items-center justify-center gap-2 text-sm text-cyan lg:hidden"
                 >
-                  All case studies
+                  View case studies
                   <ArrowUpRight size={14} />
                 </Link>
               </div>

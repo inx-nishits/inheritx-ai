@@ -208,7 +208,7 @@ function ProofCasesVisual({
                     href={href}
                     className="group/cta mt-6 inline-flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-cyan"
                   >
-                    {study.relatedProjectLabel ?? "Read the case study"}
+                    {study.relatedProjectLabel ?? "Read case study"}
                     <ArrowUpRight
                       size={14}
                       className="text-cyan transition-transform group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5"

@@ -264,7 +264,7 @@ export function AgentBankPageView() {
               Start a similar engagement
             </CtaPrimary>
             <CtaProof href="/case-studies" location="page.close" pattern="proof-band">
-              Browse case studies
+              View case studies
             </CtaProof>
           </div>
         </div>

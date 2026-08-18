@@ -70,7 +70,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
             className="inline-flex items-center gap-2 text-sm text-white/45 transition-colors hover:text-white"
           >
             <ArrowLeft size={14} />
-            All case studies
+            View case studies
           </Link>
           <p className="mt-8 text-[11px] tracking-[0.28em] text-cyan uppercase">
             {study.category}
@@ -87,7 +87,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
               href={study.relatedProjectHref}
               className="group mt-6 inline-flex items-center gap-2 text-sm text-cyan transition-colors hover:text-white"
             >
-              {study.relatedProjectLabel ?? "Open related project"}
+              {study.relatedProjectLabel ?? "View related project"}
               <ArrowUpRight size={14} />
             </Link>
           ) : null}

@@ -33,7 +33,7 @@ export function IndustriesPageView() {
           label: "Discuss your sector",
           href: contactHref("strategy"),
         }}
-        secondaryCta={{ label: "Read case studies", href: "/case-studies" }}
+        secondaryCta={{ label: "View case studies", href: "/case-studies" }}
       />
 
       <section className="bg-ink py-16 md:py-20">

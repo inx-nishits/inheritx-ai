@@ -1,5 +1,5 @@
 export const teamHero = {
-  eyebrow: "Our team",
+  eyebrow: "Our Team",
   title: "AI architects and engineers—not generalist consultants.",
   description:
     "Every engagement is led by named technical accountability. Architects, ML/LLM engineers, and delivery leads who ship intelligence into production—owned, governed, and measured.",
@@ -193,7 +193,7 @@ export const practiceDisciplines = [
     copy: "Secure LLM products embedded in real enterprise workflows.",
   },
   {
-    title: "AI transformation Delivery",
+    title: "AI Transformation Delivery",
     copy: "From discovery to industrialization—with enablement that sticks.",
   },
 ];

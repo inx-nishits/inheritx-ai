@@ -12,7 +12,7 @@ import {
 } from "@/components/portfolio/PortfolioCapabilities";
 
 export const metadata: Metadata = {
-  title: "AI portfolio — InheritX",
+  title: "AI Portfolio | InheritX",
   description:
     "Enterprise AI capability patterns—AI/ML, agentic systems, computer vision, automation, and LLMOps—from InheritX.",
 };

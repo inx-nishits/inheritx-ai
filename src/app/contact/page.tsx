@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ContactPageView } from "@/components/pages/ContactPageView";
 
 export const metadata: Metadata = {
-  title: "Contact — InheritX AI",
+  title: "Contact | InheritX",
   description:
     "Book an AI strategy call with InheritX—transformation programs, agentic systems, AI DevOps, and enterprise diligence.",
 };

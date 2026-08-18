@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CompanyPageView } from "@/components/pages/CompanyPageView";
 
 export const metadata: Metadata = {
-  title: "Company — InheritX AI",
+  title: "Company | InheritX",
   description:
     "InheritX is an AI-native enterprise partner—AI vision, ownership principles, and how we industrialize AI systems enterprises own.",
 };

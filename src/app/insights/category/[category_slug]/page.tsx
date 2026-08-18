@@ -49,7 +49,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   try {
     const data = await fetchInsightsByCategory(category_slug, 1);
     if (!data.categoryName) {
-      return { title: "Insights Category | InheritX", robots: { index: false } };
+      return { title: "Insights | InheritX", robots: { index: false } };
     }
     const title = `${data.categoryName} Insights | InheritX`;
     const description = `Enterprise AI insights on ${data.categoryName}—production perspectives from InheritX.`;
@@ -67,7 +67,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     };
   } catch {
     return {
-      title: "Insights Category | InheritX",
+      title: "Insights | InheritX",
       robots: { index: false },
     };
   }

@@ -154,7 +154,7 @@ export function SolutionsPageView() {
         <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
-              Engagement models
+              Engagement Models
             </p>
             <h2 className="font-display mt-3 max-w-2xl text-3xl md:text-5xl">
               How enterprise leaders engage us.
@@ -230,7 +230,7 @@ export function SolutionsPageView() {
               Request AI assessment
             </CtaGhost>
             <CtaText href="/portfolio" location="page.close">
-              Browse AI portfolio
+              View AI Portfolio
             </CtaText>
           </div>
         </div>

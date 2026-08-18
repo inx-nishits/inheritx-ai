@@ -4,7 +4,7 @@ export const contactHero = {
   eyebrow: "Contact",
   title: "Book an AI strategy call with an architect.",
   description:
-    "Thirty minutes to pressure-test your mandate. We’ll review your use case, say honestly whether AI is the right solution, and outline a delivery roadmap—NDA and a diligence pack available for qualified opportunities.",
+    "Thirty minutes to pressure-test your mandate. We’ll review your use case, say honestly whether AI is the right solution, and outline a delivery roadmap—NDA and a Diligence Pack available for qualified opportunities.",
 };
 
 /** Primary buyer intents — source of truth is `@/data/cta/intents`. */
@@ -24,7 +24,7 @@ export const contactChannels = [
     note: "Data residency, access, models, IP—before the call",
   },
   {
-    title: "Diligence pack",
+    title: "Diligence Pack",
     detail: "Vendor review materials",
     href: "/resources/diligence-pack",
     note: "Detailed pack under NDA after fit is confirmed",
@@ -77,16 +77,16 @@ export const contactNextSteps = [
 export const contactTopics = [
   "AI strategy call",
   "AI assessment / architecture review",
-  "AI transformation Program",
+  "AI Transformation Program",
   "AI / ML Engineering",
-  "Agentic AI / Multi-Agent System",
-  "Voice / Realtime Conversational AI",
+  "AI Agents / Multi-Agent System",
+  "Voice / Real-time Conversational AI",
   "Document AI / IDP",
   "AI Search / Enterprise Search",
   "Fine-Tuning & Custom Models",
   "AI Eval / Safety / Red Team",
   "AI DevOps / LLMOps",
-  "AI consulting & Architecture",
+  "AI Consulting & Architecture",
   "Custom AI Platform",
   "Embedded AI Engineering",
   "Dedicated AI Squad",
@@ -98,7 +98,7 @@ export const contactTopics = [
 
 export const contactProcurementNotes = [
   "NDA available before detailed architecture or data discussion",
-  "Security FAQ is public; full diligence pack after fit is confirmed",
+  "Security FAQ is public; full Diligence Pack after fit is confirmed",
   "Named references only with written customer approval—otherwise anonymized industry + scale under NDA",
   "IP handover and private-cloud / VPC deployment are default commercial postures",
 ];

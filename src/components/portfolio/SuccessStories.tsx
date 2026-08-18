@@ -21,8 +21,8 @@ export function SuccessStories() {
             className="font-display mt-5 text-4xl leading-[1.15] md:text-6xl"
           />
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink/55 md:text-base">
-            Capability narratives across AI/ML, Agentic AI, and AI DevOps.
-            Named client outcomes live in Case studies.
+            Capability narratives across AI/ML, AI Agents, and AI DevOps.
+            Named client outcomes live in Case Studies.
           </p>
         </div>
 

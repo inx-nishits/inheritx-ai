@@ -13,7 +13,7 @@ const resourceTopics: TopicPage[] = [
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "library",
     metadata: {
-      title: "Enterprise AI Insights | InheritX",
+      title: "Insights | InheritX",
       description:
         "Perspectives for executives and architects on governed agents, private AI, and industrializing intelligence in regulated enterprises.",
     },
@@ -106,7 +106,7 @@ const resourceTopics: TopicPage[] = [
     description:
       "Focused research notes on how enterprise AI behaves in production—evaluation design, agent governance, private deployment patterns, and domain-specific constraints.",
     primaryCta: { label: "Explore solutions", href: "/solutions" },
-    secondaryCta: { label: "AI Portfolio", href: "/portfolio" },
+    secondaryCta: { label: "View AI Portfolio", href: "/portfolio" },
     layout: "library",
     metadata: {
       title: "Applied AI Research | InheritX",

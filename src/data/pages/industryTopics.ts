@@ -16,7 +16,7 @@ export const industryTopics: TopicPage[] = [
     layout: "industry",
     image: "/images/actual/actual-healthcare.jpg",
     metadata: {
-      title: "Healthcare AI Solutions — InheritX",
+      title: "Healthcare | InheritX",
       description:
         "Governed clinical documentation, knowledge retrieval, and prior-auth automation for health systems that cannot trade compliance for speed.",
     },
@@ -133,7 +133,7 @@ export const industryTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "Healthcare AI — common questions",
+        title: "Healthcare FAQ",
         items: [
           {
             q: "Can this run entirely inside our cloud?",
@@ -153,11 +153,11 @@ export const industryTopics: TopicPage[] = [
         type: "related",
         title: "Explore related capabilities",
         links: [
-          { label: "Generative AI for enterprise", href: "/solutions/generative-ai" },
-          { label: "AI agents that execute work", href: "/solutions/ai-agents" },
+          { label: "Generative AI", href: "/solutions/generative-ai" },
+          { label: "AI Agents", href: "/solutions/ai-agents" },
           { label: "AI Dent case study", href: "/case-studies/ai-dent" },
           { label: "Heva case study", href: "/case-studies/heva" },
-          { label: "All case studies", href: "/case-studies" },
+          { label: "View case studies", href: "/case-studies" },
           { label: CTA_LABELS.talkToArchitect, href: "/contact?intent=strategy" },
         ],
       },
@@ -170,11 +170,11 @@ export const industryTopics: TopicPage[] = [
     description:
       "From fraud triage to underwriting copilots, InheritX delivers multi-agent systems and governed generative AI for banks and asset managers who must explain every recommendation to regulators and boards.",
     primaryCta: { label: "Discuss financial services AI", href: contactHref("strategy") },
-    secondaryCta: { label: "See Agent Bank", href: "/portfolio/agent-bank" },
+    secondaryCta: { label: "View Agent Bank", href: "/portfolio/agent-bank" },
     layout: "industry",
     image: "/images/actual/actual-finance.jpg",
     metadata: {
-      title: "Financial Services AI — InheritX",
+      title: "Finance | InheritX",
       description:
         "Multi-agent fraud triage, underwriting copilots, and policy-aware decision support for institutions that need speed and regulatory explainability.",
     },
@@ -297,16 +297,16 @@ export const industryTopics: TopicPage[] = [
         type: "related",
         title: "Related solutions",
         links: [
-          { label: "AI agents for enterprise", href: "/solutions/ai-agents" },
-          { label: "Generative AI platforms", href: "/solutions/generative-ai" },
-          { label: "Enterprise AI strategy", href: "/solutions/enterprise-ai" },
-          { label: "Portfolio — Agent Bank", href: "/portfolio/agent-bank" },
+          { label: "AI Agents", href: "/solutions/ai-agents" },
+          { label: "Generative AI", href: "/solutions/generative-ai" },
+          { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
+          { label: "Agent Bank", href: "/portfolio/agent-bank" },
           { label: "Contact", href: contactHref("strategy") },
         ],
       },
       {
         type: "faq",
-        title: "Financial services — FAQ",
+        title: "Finance FAQ",
         items: [
           {
             q: "How do you support model risk management?",
@@ -335,7 +335,7 @@ export const industryTopics: TopicPage[] = [
     layout: "industry",
     image: "/images/actual/actual-retail.jpg",
     metadata: {
-      title: "Retail AI Solutions — InheritX",
+      title: "Retail | InheritX",
       description:
         "Demand intelligence, customer support agents, and merchandising copilots for retailers navigating volatile demand and high-volume service.",
     },
@@ -448,7 +448,7 @@ export const industryTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "Retail AI — FAQ",
+        title: "Retail FAQ",
         items: [
           {
             q: "Will AI agents replace our contact center?",
@@ -484,11 +484,11 @@ export const industryTopics: TopicPage[] = [
     description:
       "Edge computer vision, predictive maintenance agents, and operator feedback loops for plants where missed defects and unplanned downtime carry immediate cost.",
     primaryCta: { label: "Discuss manufacturing AI", href: contactHref("strategy") },
-    secondaryCta: { label: "Computer Vision solutions", href: "/solutions/computer-vision" },
+    secondaryCta: { label: "View Computer Vision", href: "/solutions/computer-vision" },
     layout: "industry",
     image: "/images/actual/actual-manufacturing.jpg",
     metadata: {
-      title: "Manufacturing AI Solutions — InheritX",
+      title: "Manufacturing | InheritX",
       description:
         "Edge computer vision, predictive maintenance agents, and plant intelligence for manufacturers who need detection accuracy and operational continuity.",
     },
@@ -620,10 +620,10 @@ export const industryTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "Manufacturing — FAQ",
+        title: "Manufacturing FAQ",
         items: [
           {
-            q: "Can vision run fully on-premise?",
+            q: "Can vision run fully on-premises?",
             a: "Yes. We deploy edge inference on approved industrial hardware and keep sensitive imagery inside your OT network when required. Cloud components are optional and architected to your security team’s standards.",
           },
           {
@@ -649,7 +649,7 @@ export const industryTopics: TopicPage[] = [
     layout: "industry",
     image: "/images/actual/actual-insurance.jpg",
     metadata: {
-      title: "Insurance AI Solutions — InheritX",
+      title: "Insurance | InheritX",
       description:
         "Claims agents, policy-aware knowledge retrieval, and underwriting assist for insurers balancing speed, consistency, and regulatory scrutiny.",
     },
@@ -762,7 +762,7 @@ export const industryTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "Insurance AI — FAQ",
+        title: "Insurance FAQ",
         items: [
           {
             q: "Can AI auto-approve claims?",
@@ -798,11 +798,11 @@ export const industryTopics: TopicPage[] = [
     description:
       "Document intelligence, exception-handling agents, and network optimization support for operators who cannot afford document delays or blind spots in the control tower.",
     primaryCta: { label: "Discuss logistics AI", href: contactHref("strategy") },
-    secondaryCta: { label: "AI Automation", href: "/solutions/enterprise-ai" },
+    secondaryCta: { label: "Explore AI Automation", href: "/solutions/ai-automation" },
     layout: "industry",
     image: "/images/actual/actual-logistic.jpg",
     metadata: {
-      title: "Logistics AI Solutions — InheritX",
+      title: "Logistics | InheritX",
       description:
         "Document intelligence, exception agents, and network optimization for logistics operators managing high document volume and disruption.",
     },
@@ -926,7 +926,7 @@ export const industryTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "Logistics — FAQ",
+        title: "Logistics FAQ",
         items: [
           {
             q: "Can document AI handle poor-quality scans?",
@@ -951,11 +951,11 @@ export const industryTopics: TopicPage[] = [
     description:
       "Secure case automation, private cloud deployments, and auditability by design for public institutions modernizing legacy workflows under sovereignty and security constraints.",
     primaryCta: { label: "Discuss public sector AI", href: contactHref("strategy") },
-    secondaryCta: { label: "Enterprise AI platforms", href: "/solutions/enterprise-ai" },
+    secondaryCta: { label: "Explore Enterprise AI", href: "/solutions/enterprise-ai" },
     layout: "industry",
     image: "/images/actual/actual-government.jpg",
     metadata: {
-      title: "Government AI Solutions — InheritX",
+      title: "Government | InheritX",
       description:
         "Secure case automation, sovereign deployments, and full auditability for government agencies modernizing citizen services and internal operations.",
     },
@@ -1078,11 +1078,11 @@ export const industryTopics: TopicPage[] = [
       },
       {
         type: "faq",
-        title: "Government — FAQ",
+        title: "Government FAQ",
         items: [
           {
             q: "Can you deploy in FedRAMP or IL environments?",
-            a: "We architect to your accreditation requirements—private cloud, GovCloud, or on-premise model endpoints. Specific ATO boundaries are defined jointly with your security and compliance teams.",
+            a: "We architect to your accreditation requirements—private cloud, GovCloud, or on-premises model endpoints. Specific ATO boundaries are defined jointly with your security and compliance teams.",
           },
           {
             q: "Will AI make eligibility decisions for citizens?",

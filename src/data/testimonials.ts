@@ -39,7 +39,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t-02",
     quote:
-      "The engagement was architect-led end to end. We got clarity on RAG, evaluation, and private-cloud deployment—then a path our board could fund.",
+      "The engagement was architect-led end-to-end. We got clarity on RAG, evaluation, and private-cloud deployment—then a path our board could fund.",
     name: "Priya Mehta",
     title: "Head of AI",
     company: "Aether Health Systems",

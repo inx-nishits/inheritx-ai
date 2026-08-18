@@ -33,7 +33,7 @@ export function ResourcesPageView() {
           label: "Book an AI strategy call",
           href: contactHref("strategy"),
         }}
-        secondaryCta={{ label: "Browse AI insights", href: "/insights" }}
+        secondaryCta={{ label: "All insights", href: "/insights" }}
       />
 
       <section className="bg-ink py-16 md:py-20">

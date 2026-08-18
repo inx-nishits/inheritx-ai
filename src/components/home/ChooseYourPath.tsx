@@ -117,7 +117,7 @@ export function ChooseYourPath() {
                 Not sure which seat fits?
               </p>
               <h3 className="font-display mt-2 text-xl leading-snug text-white md:text-2xl">
-                Book a 30-minute AI strategy call
+                Book an AI strategy call
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-white/50">
                 An architect will help you map consulting, build, or embedded

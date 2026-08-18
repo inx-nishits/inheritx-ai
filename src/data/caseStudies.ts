@@ -38,7 +38,7 @@ export type CaseStudy = {
 };
 
 export const caseStudyIntro = {
-  eyebrow: "Case studies",
+  eyebrow: "Case Studies",
   title: "Measured AI outcomes from production—not pilot theater.",
   copy: "AI-led engagements first—agentic systems, computer vision, generative intelligence, AI platforms, and AI infrastructure—followed by enterprise systems that prove scale and ops discipline. We publish methodology with the story. Named or anonymized references for qualified opportunities are available under NDA.",
 };
@@ -61,7 +61,7 @@ export const caseStudiesPage: CaseStudy[] = [
   {
     id: "agent-bank",
     name: "Agent Bank",
-    category: "Agentic AI",
+    category: "AI Agents",
     tagline: "A governed multi-agent workforce for banking operations",
     summary:
       "Agent Bank is an enterprise multi-agent platform that executes high-volume banking workflows—with policy controls, audit trails, and human approval gates for anything that moves money or risk.",
@@ -83,7 +83,7 @@ export const caseStudiesPage: CaseStudy[] = [
     challenge:
       "Banking teams drown in repetitive operational work—KYC follow-ups, case triage, document checks, and queue routing—while regulators still demand explainability. Single LLM chatbots cannot own multi-step work across core systems without creating control gaps: fragmented case queues, high false-positive load on fraud and compliance reviews, and no reliable way to prove what an AI system did—or why.",
     whyAi:
-      "Rule engines alone stall on unstructured evidence and exception-heavy work. Unbounded chatbots create control and audit gaps. Agentic AI with tool contracts, policy checks, and human gates is the right fit when the operating problem is multi-step workflow—not a single Q&A.",
+      "Rule engines alone stall on unstructured evidence and exception-heavy work. Unbounded chatbots create control and audit gaps. AI Agents with tool contracts, policy checks, and human gates is the right fit when the operating problem is multi-step workflow—not a single Q&A.",
     approach:
       "We built a multi-agent operating layer where specialized agents collaborate: intake, evidence gathering, policy checking, drafting, and escalation. Every tool call is permissioned. Every decision is traced. Humans remain accountable for irreversible actions.",
     architecture: [
@@ -123,8 +123,8 @@ export const caseStudiesPage: CaseStudy[] = [
       "Platform reuse beats one-off bots: shared orchestration, evals, and escalation patterns compound across product lines.",
     ],
     relatedSolutions: [
-      { label: "Agentic AI", href: "/solutions/ai-agents" },
-      { label: "Enterprise AI platforms", href: "/solutions/enterprise-ai" },
+      { label: "AI Agents", href: "/solutions/ai-agents" },
+      { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
       { label: "AI Transformation", href: "/solutions/ai-transformation" },
     ],
     relatedIndustries: [
@@ -133,11 +133,11 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     relatedResources: [
       { label: "Security FAQ", href: "/resources/security-faq" },
-      { label: "Engagement models", href: "/resources/engagement-models" },
-      { label: "AI strategy call", href: "/contact?intent=strategy" },
+      { label: "Engagement Models", href: "/resources/engagement-models" },
+      { label: "Book an AI strategy call", href: "/contact?intent=strategy" },
     ],
     relatedProjectHref: "/portfolio/agent-bank",
-    relatedProjectLabel: "Open full Agent Bank project",
+    relatedProjectLabel: "View Agent Bank",
   },
   {
     id: "ai-dent",
@@ -206,7 +206,7 @@ export const caseStudiesPage: CaseStudy[] = [
     relatedResources: [
       { label: "Security FAQ", href: "/resources/security-faq" },
       { label: "IP Ownership", href: "/company/ip-ownership" },
-      { label: "AI strategy call", href: "/contact?intent=strategy" },
+      { label: "Book an AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -270,8 +270,8 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     relatedResources: [
       { label: "Security FAQ", href: "/resources/security-faq" },
-      { label: "Diligence pack", href: "/resources/diligence-pack" },
-      { label: "AI strategy call", href: "/contact?intent=strategy" },
+      { label: "Diligence Pack", href: "/resources/diligence-pack" },
+      { label: "Book an AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -333,8 +333,8 @@ export const caseStudiesPage: CaseStudy[] = [
       "Playbooks and topology hardening compound: every recovered incident improves the next release.",
     ],
     relatedSolutions: [
-      { label: "AI transformation / AI DevOps", href: "/solutions/ai-transformation" },
-      { label: "Enterprise AI platforms", href: "/solutions/enterprise-ai" },
+      { label: "AI Transformation / AI DevOps", href: "/solutions/ai-transformation" },
+      { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
       { label: "Embedded AI Engineering", href: "/solutions/hire-ai-engineers" },
     ],
     relatedIndustries: [
@@ -342,9 +342,9 @@ export const caseStudiesPage: CaseStudy[] = [
       { label: "Enterprise", href: "/industries" },
     ],
     relatedResources: [
-      { label: "Engagement models", href: "/resources/engagement-models" },
+      { label: "Engagement Models", href: "/resources/engagement-models" },
       { label: "Security FAQ", href: "/resources/security-faq" },
-      { label: "AI strategy call", href: "/contact?intent=strategy" },
+      { label: "Book an AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -405,8 +405,8 @@ export const caseStudiesPage: CaseStudy[] = [
       "Cost leakage and security exposure often share root causes in cloud AI estates.",
     ],
     relatedSolutions: [
-      { label: "AI transformation / AI DevOps", href: "/solutions/ai-transformation" },
-      { label: "Enterprise AI platforms", href: "/solutions/enterprise-ai" },
+      { label: "AI Transformation / AI DevOps", href: "/solutions/ai-transformation" },
+      { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
       { label: "AI Consulting", href: "/solutions/ai-consulting" },
     ],
     relatedIndustries: [
@@ -415,8 +415,8 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     relatedResources: [
       { label: "Security FAQ", href: "/resources/security-faq" },
-      { label: "Company security practices", href: "/company/security" },
-      { label: "AI strategy call", href: "/contact?intent=strategy" },
+      { label: "Security & Compliance", href: "/company/security" },
+      { label: "Book an AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -483,7 +483,7 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     relatedResources: [
       { label: "AI Portfolio", href: "/portfolio" },
-      { label: "AI strategy call", href: "/contact?intent=strategy" },
+      { label: "Book an AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -537,15 +537,15 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     relatedSolutions: [
       { label: "AI Automation", href: "/solutions/ai-automation" },
-      { label: "Agentic AI", href: "/solutions/ai-agents" },
+      { label: "AI Agents", href: "/solutions/ai-agents" },
       { label: "AI Transformation", href: "/solutions/ai-transformation" },
     ],
     relatedIndustries: [
       { label: "Enterprise operations", href: "/industries" },
     ],
     relatedResources: [
-      { label: "Engagement models", href: "/resources/engagement-models" },
-      { label: "AI strategy call", href: "/contact?intent=strategy" },
+      { label: "Engagement Models", href: "/resources/engagement-models" },
+      { label: "Book an AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -604,7 +604,7 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     relatedResources: [
       { label: "Case Studies", href: "/case-studies" },
-      { label: "AI strategy call", href: "/contact?intent=strategy" },
+      { label: "Book an AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
   {
@@ -654,15 +654,15 @@ export const caseStudiesPage: CaseStudy[] = [
       "Latency and availability are buyer trust signals—whether the surface is a leaderboard or an agent console.",
     ],
     relatedSolutions: [
-      { label: "AI transformation / AI DevOps", href: "/solutions/ai-transformation" },
-      { label: "Agentic AI", href: "/solutions/ai-agents" },
+      { label: "AI Transformation / AI DevOps", href: "/solutions/ai-transformation" },
+      { label: "AI Agents", href: "/solutions/ai-agents" },
     ],
     relatedIndustries: [
       { label: "Retail", href: "/industries/retail" },
     ],
     relatedResources: [
       { label: "AI Portfolio", href: "/portfolio" },
-      { label: "AI strategy call", href: "/contact?intent=strategy" },
+      { label: "Book an AI strategy call", href: "/contact?intent=strategy" },
     ],
   },
 ];

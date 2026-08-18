@@ -6,7 +6,7 @@ import { LegalPageView } from "@/components/pages/LegalPageView";
 import { termsHero, termsSections, termsUpdated } from "@/data/pages/terms";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — InheritX",
+  title: "Terms of Use | InheritX",
   description:
     "Terms governing use of InheritX websites and publicly available materials.",
 };
