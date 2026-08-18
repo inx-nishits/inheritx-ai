@@ -90,7 +90,6 @@ export function FeaturedCaseStudy() {
                 src={study.image}
                 alt=""
                 fill
-                unoptimized
                 priority={active === 0}
                 className="object-cover"
                 sizes="100vw"

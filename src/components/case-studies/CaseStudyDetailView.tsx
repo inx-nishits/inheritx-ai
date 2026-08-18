@@ -102,7 +102,6 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
               alt={study.name}
               fill
               priority
-              unoptimized
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />

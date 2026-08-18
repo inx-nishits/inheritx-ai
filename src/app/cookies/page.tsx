@@ -8,6 +8,7 @@ import {
   cookiesSections,
   cookiesUpdated,
 } from "@/data/pages/cookies";
+import { CookieConsentControls } from "@/components/consent/CookieConsentControls";
 
 export const metadata: Metadata = {
   title: "Cookies — InheritX",
@@ -27,6 +28,7 @@ export default function CookiesPage() {
           updated={cookiesUpdated}
           sections={cookiesSections}
         />
+        <CookieConsentControls />
       </main>
       <Footer />
     </>

@@ -41,7 +41,6 @@ export function SuccessStories() {
                       src={story.image}
                       alt={story.title}
                       fill
-                      unoptimized
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />

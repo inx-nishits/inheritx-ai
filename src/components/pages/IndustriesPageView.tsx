@@ -78,7 +78,6 @@ export function IndustriesPageView() {
                       src={industry.image}
                       alt=""
                       fill
-                      unoptimized
                       className="object-cover"
                     />
                   </motion.div>

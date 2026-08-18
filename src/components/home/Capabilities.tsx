@@ -17,12 +17,12 @@ import { VisualFrame } from "@/components/ui/VisualFrame";
 import { cn } from "@/lib/cn";
 
 const cardLeads = [
-  "/images/visuals/lead-capabilities.png",
-  "/images/visuals/lead-solutions.png",
-  "/images/visuals/lead-agents.png",
-  "/images/visuals/lead-journey.png",
-  "/images/visuals/lead-tech.png",
-  "/images/visuals/lead-capabilities.png",
+  "/images/actual/actual-lead-capabilities.jpg",
+  "/images/actual/actual-lead-solutions.jpg",
+  "/images/actual/actual-lead-agents.jpg",
+  "/images/actual/actual-lead-journey.jpg",
+  "/images/actual/actual-lead-tech.jpg",
+  "/images/actual/actual-lead-capabilities.jpg",
 ];
 
 function CapabilityCard({

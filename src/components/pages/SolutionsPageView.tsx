@@ -101,7 +101,6 @@ export function SolutionsPageView() {
                       src={pillar.image}
                       alt=""
                       fill
-                      unoptimized
                       className="object-cover"
                     />
                   </motion.div>

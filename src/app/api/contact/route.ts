@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { Redis } from "@upstash/redis";
+import { Ratelimit } from "@upstash/ratelimit";
 
 export const runtime = "nodejs";
 
@@ -8,19 +10,42 @@ type ContactPayload = {
   company?: string;
   topic: string;
   message: string;
+  // Hidden anti-spam field (honeypot). Human users should never fill it.
+  website?: string;
   source?: string;
 };
 
 const RATE_WINDOW_MS = 10 * 60 * 1000;
 const RATE_MAX = 8;
+
+// Local/dev fallback (server-instance memory only).
 const hits = new Map<string, { count: number; resetAt: number }>();
+
+// Production-safe distributed limiter.
+const upstashConfigured = Boolean(
+  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN,
+);
+
+const ratelimit = upstashConfigured
+  ? new Ratelimit({
+      redis: Redis.fromEnv(),
+      limiter: Ratelimit.fixedWindow(RATE_MAX, "10 m"),
+      prefix: "inheritx:contact",
+    })
+  : null;
 
 function clientKey(request: Request) {
   const forwarded = request.headers.get("x-forwarded-for");
   return forwarded?.split(",")[0]?.trim() || "local";
 }
 
-function rateLimited(key: string) {
+async function rateLimited(key: string): Promise<boolean> {
+  if (ratelimit) {
+    const { success } = await ratelimit.limit(key);
+    return !success;
+  }
+
+  // Fallback: per-instance memory (NOT distributed).
   const now = Date.now();
   const current = hits.get(key);
   if (!current || now > current.resetAt) {
@@ -106,7 +131,7 @@ async function forwardToResend(payload: ContactPayload) {
 
 export async function POST(request: Request) {
   try {
-    if (rateLimited(clientKey(request))) {
+    if (await rateLimited(clientKey(request))) {
       return NextResponse.json(
         { ok: false, error: "Too many requests. Please email hello@inheritx.com." },
         { status: 429 },
@@ -120,8 +145,17 @@ export async function POST(request: Request) {
       company: sanitize(body.company, 160) || undefined,
       topic: sanitize(body.topic, 120),
       message: sanitize(body.message, 5000),
+      website: sanitize(body.website, 80) || undefined,
       source: sanitize(body.source, 80) || "website-contact",
     };
+
+    // Honeypot: reject obvious bots/spam submissions.
+    if (payload.website && payload.website.trim().length > 0) {
+      return NextResponse.json(
+        { ok: false, error: "Too many requests. Please try again later." },
+        { status: 429 },
+      );
+    }
 
     const missing: string[] = [];
     if (!payload.name) missing.push("Name");
@@ -167,19 +201,24 @@ export async function POST(request: Request) {
       });
     }
 
-    console.error("[contact] No delivery channel configured. Lead accepted but not forwarded.", {
-      name: payload.name,
-      email: payload.email,
-      company: payload.company,
-      topic: payload.topic,
-      message: payload.message,
-    });
+    console.error(
+      "[contact] No delivery channel configured. Lead rejected (no webhook/resend).",
+      {
+        name: payload.name,
+        email: payload.email,
+        company: payload.company,
+        topic: payload.topic,
+        message: payload.message,
+      },
+    );
 
-    return NextResponse.json({
-      ok: true,
-      delivered: false,
-      channel: null,
-    });
+    return NextResponse.json(
+      {
+        ok: false,
+        error: "Unable to submit right now. Please try again in a few minutes, or email hello@inheritx.com.",
+      },
+      { status: 503 },
+    );
   } catch (error) {
     console.error("[contact]", error);
     return NextResponse.json(

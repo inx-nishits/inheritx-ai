@@ -66,7 +66,6 @@ export function PortfolioGrid() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    unoptimized
                     className="object-cover transition-transform duration-600 group-hover:scale-[1.04]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />

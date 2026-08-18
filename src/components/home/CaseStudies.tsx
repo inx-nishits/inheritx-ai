@@ -91,7 +91,6 @@ export function CaseStudies() {
                     src={study.image}
                     alt=""
                     fill
-                    unoptimized
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />

@@ -124,7 +124,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "First-response time dropped from days to minutes.",
     impact: "Minutes vs days",
     tech: ["OpenAI", "LangChain", "Vector DB", "Next.js", "Azure"],
-    image: "/images/visuals/lead-agents.png",
+    image: "/images/actual/actual-lead-agents.jpg",
     featured: true,
   },
   {
@@ -189,7 +189,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "65% of tier-1 HR queries auto-resolved (pattern).",
     impact: "65% auto-resolved",
     tech: ["Claude", "MCP", "Python", "GCP"],
-    image: "/images/visuals/lead-capabilities.png",
+    image: "/images/actual/actual-lead-capabilities.jpg",
   },
   {
     id: "document-intelligence",
@@ -221,7 +221,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Unplanned downtime reduced by 27% (pattern).",
     impact: "27% less downtime",
     tech: ["Python", "AWS", "Gemini", "Observability"],
-    image: "/images/visuals/lead-tech.png",
+    image: "/images/actual/actual-lead-tech.jpg",
   },
   {
     id: "workflow-automation",
@@ -254,7 +254,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Executive alignment and funded 3-wave AI roadmap.",
     impact: "Funded roadmap",
     tech: ["Strategy", "Architecture", "Governance"],
-    image: "/images/visuals/lead-journey.png",
+    image: "/images/actual/actual-lead-journey.jpg",
   },
 ];
 

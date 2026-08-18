@@ -353,13 +353,6 @@ export function NavOverlay({ open, onClose }: NavOverlayProps) {
     };
   }, [open, onClose]);
 
-  useEffect(() => {
-    if (open) {
-      setActiveLabel(navigation[0]?.label ?? "");
-      setMobileExpanded(navigation[0]?.label ?? null);
-    }
-  }, [open]);
-
   return (
     <AnimatePresence>
       {open ? (

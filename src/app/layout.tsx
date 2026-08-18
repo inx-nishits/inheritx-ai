@@ -5,6 +5,7 @@ import { Geist_Mono } from "next/font/google";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { IRAChatCTA } from "@/components/ira/IRAChatCTA";
 import { GtmBoot } from "@/components/analytics/GtmBoot";
+import { CookieConsentBanner } from "@/components/consent/CookieConsentBanner";
 import { SITE_URL } from "@/lib/site";
 
 import "./globals.css";
@@ -68,7 +69,7 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/images/visuals/lead-capabilities.png",
+        url: "/images/actual/actual-lead-capabilities.jpg",
         width: 1200,
         height: 630,
         alt: "InheritX — AI-native enterprise technology partner",
@@ -79,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: defaultTitle,
     description: defaultDescription,
-    images: ["/images/visuals/lead-capabilities.png"],
+    images: ["/images/actual/actual-lead-capabilities.jpg"],
   },
   robots: { index: true, follow: true },
   icons: {
@@ -116,6 +117,7 @@ export default function RootLayout({
           </div>
           <IRAChatCTA />
         </SmoothScroll>
+        <CookieConsentBanner />
       </body>
     </html>
   );

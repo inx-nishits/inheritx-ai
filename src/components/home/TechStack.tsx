@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Cpu, Database, Cloud, Network, Activity, Workflow } from "lucide-react";
@@ -125,10 +126,9 @@ export function TechStack() {
           {/* Active layer detail */}
           <div className="relative min-h-[300px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-ink-elevated via-ink-soft to-ink md:min-h-[420px] md:rounded-[2rem]">
             <Image
-              src="/images/visuals/lead-tech.png"
+              src="/images/actual/actual-lead-tech.jpg"
               alt=""
               fill
-              unoptimized
               className="object-cover opacity-25"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-ink/90 via-ink/75 to-ink/95" />
@@ -175,7 +175,7 @@ export function TechStack() {
                       </motion.span>
                     ))}
                   </div>
-                  <a
+                  <Link
                     href="/case-studies"
                     className="group mt-8 inline-flex items-center gap-2 text-sm text-cyan transition-colors hover:text-white"
                   >
@@ -184,7 +184,7 @@ export function TechStack() {
                       size={14}
                       className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     />
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             </AnimatePresence>

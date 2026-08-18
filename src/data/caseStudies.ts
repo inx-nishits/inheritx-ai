@@ -221,7 +221,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "~50%", label: "Reduction in care discovery effort" },
       { value: "Improved", label: "Personalized care pathways" },
     ],
-    image: "/images/visuals/lead-journey.png",
+    image: "/images/actual/actual-lead-journey.jpg",
     challenge:
       "Patients struggled to navigate care options while providers lacked a unified intelligence layer for personalized guidance within approved content boundaries.",
     whyAi:
@@ -293,7 +293,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "40–50%", label: "Reduction in MTTR" },
       { value: "Improved", label: "AI builder productivity" },
     ],
-    image: "/images/visuals/lead-agents.png",
+    image: "/images/actual/actual-lead-agents.jpg",
     challenge:
       "Teams building AI workflows hit reliability walls—opaque failures, slow recovery, and fragile environments that blocked production trust.",
     whyAi:
@@ -365,7 +365,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "$10k–$20k", label: "Monthly cloud losses prevented" },
       { value: "~90%", label: "Reduction in attack surface" },
     ],
-    image: "/images/visuals/lead-tech.png",
+    image: "/images/actual/actual-lead-tech.jpg",
     challenge:
       "An AI damage-detection product faced exposure and cost risk from insecure cloud configuration—undermining trust in the intelligence layer.",
     whyAi:
@@ -436,7 +436,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "50%", label: "Reduction in coach preparation time" },
       { value: "50–60%", label: "Improvement in off-court practice" },
     ],
-    image: "/images/visuals/lead-capabilities.png",
+    image: "/images/actual/actual-lead-capabilities.jpg",
     challenge:
       "Coaches lacked a system to assign drills, track progress, and guide practice between sessions.",
     whyAi:

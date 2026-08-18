@@ -59,7 +59,6 @@ export function Industries() {
                   src={industry.image}
                   alt={industry.name}
                   fill
-                  unoptimized
                   sizes="(max-width: 768px) 100vw, 30vw"
                   className="object-cover"
                 />

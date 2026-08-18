@@ -588,7 +588,6 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
             src={topic.image!}
             alt=""
             fill
-            unoptimized
             className="object-cover"
             priority
           />

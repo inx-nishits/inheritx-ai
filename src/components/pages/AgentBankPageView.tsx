@@ -52,7 +52,6 @@ export function AgentBankPageView() {
               alt={p.name}
               fill
               priority
-              unoptimized
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />

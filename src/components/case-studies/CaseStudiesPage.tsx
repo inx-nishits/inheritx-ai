@@ -106,7 +106,6 @@ export function CaseStudiesListing() {
                     src={study.image}
                     alt=""
                     fill
-                    unoptimized
                     className="object-cover transition-transform duration-600 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />

@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "test": "tsx scripts/security/sanitizeHtml.security.test.mts",
+    "test:security": "tsx scripts/security/sanitizeHtml.security.test.mts",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -23,16 +25,22 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
+    "@rolldown/binding-wasm32-wasi": "^1.2.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.38.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.11",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
+    "sanitize-html": "^2.17.7",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "tsx": "^4.23.12",
+    "typescript": "^5",
+    "vitest": "^4.1.10"
   }
 }

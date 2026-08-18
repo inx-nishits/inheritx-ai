@@ -14,7 +14,10 @@ export function useCtaImpression<T extends HTMLElement = HTMLElement>(
   const ref = useRef<T>(null);
   const sent = useRef(false);
   const payloadRef = useRef(payload);
-  payloadRef.current = payload;
+
+  useEffect(() => {
+    payloadRef.current = payload;
+  }, [payload]);
 
   useEffect(() => {
     const node = ref.current;

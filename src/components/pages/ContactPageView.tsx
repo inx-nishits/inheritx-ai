@@ -24,8 +24,26 @@ import {
   trackCtaFormSubmit,
 } from "@/lib/cta";
 import { readStoredHeroAbVariant } from "@/lib/ctaAb";
+import { isAnalyticsConsentGranted } from "@/lib/consent";
 
-const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL?.trim() || "";
+function isValidCalendlyUrl(value: string): boolean {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:") return false;
+    if (!url.hostname.toLowerCase().endsWith("calendly.com")) return false;
+    // Basic sanity: must have at least a path segment.
+    if (!url.pathname || url.pathname === "/") return false;
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+const configuredCalendlyUrl =
+  process.env.NEXT_PUBLIC_CALENDLY_URL?.trim() || "";
+const calendlyUrl = isValidCalendlyUrl(configuredCalendlyUrl)
+  ? configuredCalendlyUrl
+  : "";
 
 type SubmitState =
   | { status: "idle" }
@@ -99,30 +117,42 @@ function contactSubmitLabel(topic: string) {
 
 export function ContactPageView() {
   const [submitted, setSubmitted] = useState(false);
-  const [topic, setTopic] = useState(contactTopics[0]);
+  const [topic, setTopic] = useState(() => {
+    if (typeof window === "undefined") return contactTopics[0];
+
+    const params = new URLSearchParams(window.location.search);
+    const intentId = params.get("intent");
+    const topicParam = params.get("topic");
+
+    const resolvedIntent = resolveContactIntent(intentId);
+    const fromIntent = contactIntents.find((item) => item.id === resolvedIntent);
+    if (fromIntent) return fromIntent.topic;
+
+    if (topicParam && (contactTopics as readonly string[]).includes(topicParam)) {
+      return topicParam;
+    }
+
+    return contactTopics[0];
+  });
   const [submitState, setSubmitState] = useState<SubmitState>({ status: "idle" });
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const formStartTracked = useRef(false);
+  const [analyticsConsented, setAnalyticsConsented] = useState(
+    isAnalyticsConsentGranted(),
+  );
   const topicRef = useRef(topic);
-  topicRef.current = topic;
+  useEffect(() => {
+    topicRef.current = topic;
+  }, [topic]);
   const formRef = useRef<HTMLFormElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const intentId = params.get("intent");
-    const topicParam = params.get("topic");
-    const resolvedIntent = resolveContactIntent(intentId);
-    const fromIntent = contactIntents.find((item) => item.id === resolvedIntent);
-    if (fromIntent) {
-      setTopic(fromIntent.topic);
-      return;
-    }
-    if (topicParam && (contactTopics as readonly string[]).includes(topicParam)) {
-      setTopic(topicParam);
-    }
+    const onConsent = () => setAnalyticsConsented(isAnalyticsConsentGranted());
+    window.addEventListener("inheritx:consent-change", onConsent);
+    return () => window.removeEventListener("inheritx:consent-change", onConsent);
   }, []);
 
   const onFormStart = () => {
@@ -175,6 +205,7 @@ export function ContactPageView() {
       company: String(data.get("company") || ""),
       topic,
       message: String(data.get("message") || ""),
+      website: String(data.get("website") || ""),
       source: "website-contact",
     };
 
@@ -339,6 +370,14 @@ export function ContactPageView() {
                   className="mt-8 space-y-5"
                   noValidate
                 >
+                  {/* Honeypot anti-spam: invisible to humans, triggers server-side rejection. */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    className="hidden"
+                  />
                   <div className="grid gap-5 sm:grid-cols-2">
                     <label className="block text-xs tracking-wide text-white/40">
                       <span className="flex items-center justify-between gap-3">
@@ -546,9 +585,14 @@ export function ContactPageView() {
                   <div className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-ink">
                     <iframe
                       title="Book an AI strategy call"
-                      src={calendlyUrl}
+                      // Preserve visible Calendly UI, but avoid loading third-party
+                      // cookies/scripts until analytics consent is granted.
+                      src={analyticsConsented ? calendlyUrl : "about:blank"}
                       className="h-[620px] w-full"
                       loading="lazy"
+                      sandbox="allow-scripts allow-popups allow-forms"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allow="clipboard-write; fullscreen"
                     />
                   </div>
                 </div>

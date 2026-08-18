@@ -1,5 +1,6 @@
 import type { CtaAnalyticsPayload } from "@/data/cta/analytics";
 import { CTA_EVENTS } from "@/data/cta/analytics";
+import { isAnalyticsConsentGranted } from "@/lib/consent";
 
 export {
   contactHref,
@@ -49,6 +50,8 @@ export function trackCta(payload: CtaAnalyticsPayload): void {
   if (!win) return;
 
   window.dispatchEvent(new CustomEvent("inheritx:cta", { detail: payload }));
+
+  if (!isAnalyticsConsentGranted()) return;
 
   const params = toVendorParams(payload);
   ensureDataLayer(win).push(params);

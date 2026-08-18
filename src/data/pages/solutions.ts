@@ -29,7 +29,7 @@ export const solutionPillars = [
       "MCP, tool contracts, memory, and approval gates",
       "Observability for every agent decision",
     ],
-    image: "/images/visuals/lead-agents.png",
+    image: "/images/actual/actual-lead-agents.jpg",
     href: "/solutions/ai-agents",
   },
   {
@@ -42,7 +42,7 @@ export const solutionPillars = [
       "CloudOps, tracing, guardrails, cost controls, and incident playbooks",
       "Vision, documents, and n8n workflow automation when ops need them",
     ],
-    image: "/images/visuals/lead-capabilities.png",
+    image: "/images/actual/actual-lead-capabilities.jpg",
     href: "/solutions/ai-transformation",
   },
 ];

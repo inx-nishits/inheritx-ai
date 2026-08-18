@@ -52,7 +52,6 @@ export function PortfolioHero() {
               alt="Enterprise AI portfolio visual"
               fill
               priority
-              unoptimized
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />

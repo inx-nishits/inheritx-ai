@@ -1,4 +1,19 @@
+"use client";
+
 import Script from "next/script";
+import { useEffect, useState } from "react";
+
+import {
+  CONSENT_CHANGE_EVENT,
+  isAnalyticsConsentGranted,
+} from "@/lib/consent";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  }
+}
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID?.trim() ?? "";
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? "";
@@ -12,13 +27,45 @@ function isGaId(value: string): boolean {
 }
 
 /**
- * Boots the analytics vendor when an ID is present.
- * CTA events still queue on `window.dataLayer` without a vendor.
- * Do not run A/B copy until a baseline exists in GTM/GA4.
+ * Boots GTM/GA4 only after analytics consent is granted.
+ *
+ * This prevents analytics cookies and event dispatching before explicit consent.
  */
 export function GtmBoot() {
+  const [consented, setConsented] = useState(() => isAnalyticsConsentGranted());
+
+  useEffect(() => {
+    const onChange = () => setConsented(isAnalyticsConsentGranted());
+    window.addEventListener(CONSENT_CHANGE_EVENT, onChange);
+    return () => window.removeEventListener(CONSENT_CHANGE_EVENT, onChange);
+  }, []);
+
+  // Consent-mode updates after initial consent decisions.
+  // We cannot reliably "unload" already-loaded vendors in the browser,
+  // but we can update consent state so analytics vendors stop recording.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      if (typeof window.gtag === "function") {
+        window.gtag("consent", "update", {
+          analytics_storage: consented ? "granted" : "denied",
+        });
+      }
+      if (Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({
+          event: "inheritx_consent_update",
+          analytics_storage: consented ? "granted" : "denied",
+        });
+      }
+    } catch {
+      /* ignore */
+    }
+  }, [consented]);
+
   const gtmId = isGtmId(GTM_ID) ? GTM_ID : "";
   const gaId = isGaId(GA_ID) ? GA_ID : "";
+
+  if (!consented) return null;
   if (!gtmId && !gaId) return null;
 
   return (
@@ -49,7 +96,7 @@ export function GtmBoot() {
             strategy="afterInteractive"
           />
           <Script id="ga4" strategy="afterInteractive">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');`}
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('consent','update',{'analytics_storage':'granted'});gtag('config','${gaId}');`}
           </Script>
         </>
       ) : null}

@@ -58,7 +58,6 @@ function TeamPhoneCard({
                   src={member.image}
                   alt={member.name}
                   fill
-                  unoptimized
                   sizes="260px"
                   className="object-cover object-top"
                 />
@@ -91,20 +90,10 @@ function TeamPhoneCard({
                   <LinkedInIcon className="size-3" />
                 </a>
               )}
-
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-8 bg-gradient-to-t from-[#0a1018] to-transparent"
-              />
-
-              <div
-                aria-hidden
-                className="absolute bottom-2 left-1/2 z-20 h-1 w-16 -translate-x-1/2 rounded-full bg-white/35"
-              />
             </div>
           </div>
 
-          <div className="flex flex-1 flex-col px-3.5 pt-3.5 pb-4 md:px-4 md:pt-4 md:pb-5">
+          <div className="flex flex-1 flex-col px-3.5 pt-3.5 pb-3 md:px-4 md:pt-4 md:pb-3">
             {member.department ? (
               <p className="text-[10px] tracking-[0.18em] text-cyan/85 uppercase">
                 {member.department}
@@ -119,6 +108,13 @@ function TeamPhoneCard({
                 {member.bio}
               </p>
             ) : null}
+          </div>
+
+          <div
+            aria-hidden
+            className="mt-auto flex justify-center pb-3 pt-1 md:pb-3.5"
+          >
+            <span className="h-1 w-16 rounded-full bg-white/35" />
           </div>
         </div>
       </article>

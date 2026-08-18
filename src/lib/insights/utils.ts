@@ -5,7 +5,7 @@ import { wpOriginalImageUrl } from "./mediaUrl";
 export { insightHref, insightCategoryHref, rewriteWpLinks } from "./rewriteWpLinks";
 export { wpOriginalImageUrl } from "./mediaUrl";
 
-const FALLBACK_IMAGE = "/images/visuals/lead-capabilities.png";
+const FALLBACK_IMAGE = "/images/actual/actual-lead-capabilities.jpg";
 
 export function asArray<T>(value: T | T[] | null | undefined): T[] {
   if (!value) return [];
