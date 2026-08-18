@@ -96,7 +96,7 @@ export const resourceLibrary = [
     meta: "Trust",
   },
   {
-    title: "AI Governance",
+    title: "AI governance",
     description:
       "How we design policy, evaluation, guardrails, and human gates for production AI.",
     href: "/resources/ai-governance",
@@ -110,7 +110,7 @@ export const resourceLibrary = [
     meta: "Architecture",
   },
   {
-    title: "Enterprise References",
+    title: "Enterprise references",
     description:
       "How buyers verify InheritX—published cases, anonymized NDA references, and named calls only with approval.",
     href: "/resources/enterprise-references",
@@ -131,7 +131,7 @@ export const resourceLibrary = [
     meta: "Client proof",
   },
   {
-    title: "IP Ownership",
+    title: "IP ownership",
     description:
       "What transfers at handover—application code, agents, fine-tunes, prompts, evals, and IaC.",
     href: "/company/ip-ownership",

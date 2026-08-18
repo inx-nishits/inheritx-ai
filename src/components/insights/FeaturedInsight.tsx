@@ -30,7 +30,7 @@ export function FeaturedInsight({ insight }: { insight: InsightCard }) {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,190,212,0.1),transparent_50%)]" />
       <div className="noise-overlay opacity-30" />
 
-      <div className="relative mx-auto max-w-[1400px] px-5 py-16 md:px-8 md:py-20">
+      <div className="relative mx-auto max-w-page px-5 py-16 md:px-8 md:py-20">
         <Reveal>
           <div className="flex flex-wrap items-center gap-3">
             <span className="font-mono text-sm text-cyan">01</span>

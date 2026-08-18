@@ -25,7 +25,7 @@ type CtaPrimaryProps = CtaTrackable & {
 const sizeClasses: Record<CtaPrimarySize, string> = {
   md: ctaFamilyClasses.fill.magnetic,
   hero: ctaFamilyClasses.fill.magneticHero,
-  lg: "min-h-12 justify-center bg-cyan px-8 py-4 text-base text-white hover:bg-white hover:text-ink",
+  lg: "cta-primary min-h-12 justify-center px-8 py-4 text-base text-white",
 };
 
 export function CtaPrimary({

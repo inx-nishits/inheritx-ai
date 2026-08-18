@@ -31,7 +31,7 @@ export function CompanyPageView() {
       />
 
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-4 px-5 md:grid-cols-4 md:gap-6 md:px-8">
+        <div className="mx-auto grid max-w-page grid-cols-2 gap-4 px-5 md:grid-cols-4 md:gap-6 md:px-8">
           {companyStats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.04}>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-6">
@@ -46,7 +46,7 @@ export function CompanyPageView() {
       </section>
 
       <section className="border-t border-white/[0.06] bg-ink py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <Reveal>
               <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -88,7 +88,7 @@ export function CompanyPageView() {
       </section>
 
       <section className="bg-paper py-16 text-ink md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Path
@@ -98,14 +98,21 @@ export function CompanyPageView() {
             </h2>
           </Reveal>
           <div className="relative mt-14">
-            <div className="absolute top-5 right-0 left-0 hidden h-px bg-ink/10 md:block" />
             <div className="grid gap-8 md:grid-cols-3">
               {companyTimeline.map((item, index) => (
                 <Reveal key={item.year} delay={index * 0.07}>
                   <article>
-                    <span className="relative z-10 inline-flex rounded-full border border-ink/15 bg-paper px-3 py-1 font-mono text-xs text-cyan-deep">
-                      {item.year}
-                    </span>
+                    <div className="relative flex h-8 items-center">
+                      {index < companyTimeline.length - 1 ? (
+                        <span
+                          aria-hidden
+                          className="absolute top-1/2 left-0 hidden h-px w-[calc(100%+2rem)] -translate-y-1/2 bg-ink/10 md:block"
+                        />
+                      ) : null}
+                      <span className="relative z-10 inline-flex rounded-full border border-ink/15 bg-paper px-3 py-1 font-mono text-xs text-cyan-deep">
+                        {item.year}
+                      </span>
+                    </div>
                     <h3 className="font-display mt-5 text-2xl">{item.title}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-ink/55">
                       {item.copy}
@@ -119,7 +126,7 @@ export function CompanyPageView() {
       </section>
 
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Principles
@@ -164,7 +171,7 @@ export function CompanyPageView() {
       </section>
 
       <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
-        <div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-5 md:px-8 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mx-auto flex max-w-page flex-col gap-8 px-5 md:px-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="w-full min-w-0 max-w-xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Careers

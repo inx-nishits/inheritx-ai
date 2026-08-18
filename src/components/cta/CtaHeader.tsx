@@ -50,7 +50,7 @@ export function CtaHeader({
       >
         <span className="sm:hidden">{mobileLabel}</span>
         <span className="hidden sm:inline">{label}</span>
-        <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-white text-ink transition-colors duration-300 group-hover:bg-ink group-hover:text-white">
+        <span className="relative z-10 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-white text-ink">
           <ArrowUpRight size={13} strokeWidth={2.25} />
         </span>
       </Link>

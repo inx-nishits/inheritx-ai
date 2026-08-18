@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { CtaGhost } from "@/components/cta/CtaGhost";
 import { CtaPrimary } from "@/components/cta/CtaPrimary";
 import { CtaProof } from "@/components/cta/CtaProof";
@@ -14,6 +16,8 @@ type PageHeroProps = {
   description: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  crumbs?: { label: string; href: string }[];
+  currentCrumb?: string;
   /** Insights and other low-intent heroes use text instead of fill. */
   primaryVariant?: "fill" | "text";
   /** Defaults from href: contact → ghost, proof → tint, else text. */
@@ -27,6 +31,8 @@ export function PageHero({
   description,
   primaryCta,
   secondaryCta,
+  crumbs,
+  currentCrumb,
   primaryVariant,
   secondaryVariant,
   className,
@@ -53,7 +59,24 @@ export function PageHero({
       <div className="pointer-events-none absolute inset-0 editorial-grid opacity-30" />
       <div className="pointer-events-none absolute -top-24 right-0 h-[420px] w-[420px] rounded-full bg-cyan/10 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto max-w-page px-5 md:px-8">
+        {crumbs && crumbs.length > 0 ? (
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-5 flex flex-wrap items-center gap-2 text-xs text-white/35 md:mb-6"
+          >
+            {crumbs.map((crumb, i) => (
+              <span key={crumb.href} className="inline-flex items-center gap-2">
+                {i > 0 && <span aria-hidden>/</span>}
+                <Link href={crumb.href} className="hover:text-white/70">
+                  {crumb.label}
+                </Link>
+              </span>
+            ))}
+            <span aria-hidden>/</span>
+            <span className="text-white/55">{currentCrumb ?? eyebrow}</span>
+          </nav>
+        ) : null}
         <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
           {eyebrow}
         </p>

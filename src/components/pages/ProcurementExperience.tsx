@@ -7,6 +7,7 @@ import {
   anonymousEngagementClasses,
   diligenceLinks,
 } from "@/data/enterpriseProof";
+import { getCaseStudy } from "@/data/caseStudies";
 import { Reveal } from "@/components/ui/Reveal";
 
 /**
@@ -30,7 +31,7 @@ export function ProcurementExperience({
           : "border-t border-ink/10 bg-paper py-16 text-ink md:py-20"
       }
     >
-      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="mx-auto max-w-page px-5 md:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
           <Reveal>
             <p
@@ -137,19 +138,23 @@ export function ProcurementExperience({
                       {item.detail}
                     </p>
                     <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1">
-                      {item.caseIds.map((id) => (
-                        <Link
-                          key={id}
-                          href={`/case-studies/${id}`}
-                          className={
-                            isDark
-                              ? "text-xs text-cyan underline-offset-2 hover:underline"
-                              : "text-xs text-cyan-deep underline-offset-2 hover:underline"
-                          }
-                        >
-                          View case →
-                        </Link>
-                      ))}
+                      {item.caseIds.map((id) => {
+                        const study = getCaseStudy(id);
+                        if (!study) return null;
+                        return (
+                          <Link
+                            key={id}
+                            href={`/case-studies/${id}`}
+                            className={
+                              isDark
+                                ? "text-xs text-cyan underline-offset-2 hover:underline"
+                                : "text-xs text-cyan-deep underline-offset-2 hover:underline"
+                            }
+                          >
+                            {study.name} →
+                          </Link>
+                        );
+                      })}
                     </div>
                   </li>
                 ))}

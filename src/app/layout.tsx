@@ -96,7 +96,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${satoshi.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${satoshi.variable} ${geistMono.variable} antialiased`}
       suppressHydrationWarning
     >
       <body

@@ -123,9 +123,21 @@ export async function POST(request: Request) {
       source: sanitize(body.source, 80) || "website-contact",
     };
 
-    if (!payload.name || !payload.email || !payload.topic || !payload.message) {
+    const missing: string[] = [];
+    if (!payload.name) missing.push("Name");
+    if (!payload.email) missing.push("Work email");
+    if (!payload.topic) missing.push("Topic");
+    if (!payload.message) missing.push("What you are trying to solve");
+
+    if (missing.length > 0) {
+      const detail =
+        missing.length === 1
+          ? `Please complete: ${missing[0]}.`
+          : missing.length === 2
+            ? `Please complete: ${missing[0]} and ${missing[1]}.`
+            : `Please complete: ${missing.slice(0, -1).join(", ")}, and ${missing.at(-1)}.`;
       return NextResponse.json(
-        { ok: false, error: "Missing required fields." },
+        { ok: false, error: detail, fields: missing },
         { status: 400 },
       );
     }
@@ -143,7 +155,6 @@ export async function POST(request: Request) {
         ok: true,
         delivered: true,
         channel: webhookResult.channel,
-        fallbackMailto: false,
       });
     }
 
@@ -153,27 +164,21 @@ export async function POST(request: Request) {
         ok: true,
         delivered: true,
         channel: emailResult.channel,
-        fallbackMailto: false,
       });
     }
+
+    console.error("[contact] No delivery channel configured. Lead accepted but not forwarded.", {
+      name: payload.name,
+      email: payload.email,
+      company: payload.company,
+      topic: payload.topic,
+      message: payload.message,
+    });
 
     return NextResponse.json({
       ok: true,
       delivered: false,
       channel: null,
-      fallbackMailto: true,
-      mailto: {
-        to: "hello@inheritx.com",
-        subject: `[InheritX] ${payload.topic} — ${payload.company || payload.name}`,
-        body: [
-          `Name: ${payload.name}`,
-          `Email: ${payload.email}`,
-          `Company: ${payload.company || "—"}`,
-          `Topic: ${payload.topic}`,
-          "",
-          payload.message,
-        ].join("\n"),
-      },
     });
   } catch (error) {
     console.error("[contact]", error);

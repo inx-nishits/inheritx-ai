@@ -29,7 +29,7 @@ export default function Error({
             <button
               type="button"
               onClick={() => reset()}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-cyan px-7 text-sm font-medium text-white transition-colors hover:bg-white hover:text-ink"
+              className="cta-primary inline-flex min-h-12 items-center justify-center rounded-full px-7 text-sm font-medium text-white"
             >
               Try again
             </button>

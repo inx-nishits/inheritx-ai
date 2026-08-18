@@ -45,7 +45,7 @@ export function AgentEcosystem() {
       <div className="editorial-grid absolute inset-0 opacity-30" />
       <div className="noise-overlay" />
 
-      <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto max-w-page px-5 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
             Agentic AI

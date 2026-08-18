@@ -22,7 +22,7 @@ export function Solutions() {
   return (
     <section id="solutions" className="relative overflow-hidden bg-ink py-16 md:py-20">
       <div className="noise-overlay" />
-      <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto max-w-page px-5 md:px-8">
         <div className="mb-10 max-w-3xl md:mb-12">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
             Enterprise AI Solutions

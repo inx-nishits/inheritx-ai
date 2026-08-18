@@ -31,7 +31,7 @@ export function TeamPageView() {
       />
 
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-4 px-5 md:grid-cols-4 md:gap-6 md:px-8">
+        <div className="mx-auto grid max-w-page grid-cols-2 gap-4 px-5 md:grid-cols-4 md:gap-6 md:px-8">
           {teamHighlights.map((item, index) => (
             <Reveal key={item.label} delay={index * 0.04}>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-6">
@@ -45,8 +45,10 @@ export function TeamPageView() {
         </div>
       </section>
 
+      <TeamMembersGrid />
+
       <section className="border-t border-white/[0.06] bg-ink py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Leadership
@@ -79,10 +81,8 @@ export function TeamPageView() {
         </div>
       </section>
 
-      <TeamMembersGrid />
-
       <section className="bg-paper py-16 text-ink md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Disciplines
@@ -108,7 +108,7 @@ export function TeamPageView() {
       </section>
 
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Culture & values
@@ -140,7 +140,7 @@ export function TeamPageView() {
       </section>
 
       <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Why Work With Us
@@ -167,7 +167,7 @@ export function TeamPageView() {
       </section>
 
       <section className="bg-paper py-16 text-ink md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Collaboration Process
@@ -194,7 +194,7 @@ export function TeamPageView() {
 
       <section className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,190,212,0.08),transparent_60%)]" />
-        <div className="relative mx-auto flex max-w-[1400px] flex-col gap-8 px-5 md:px-8 lg:flex-row lg:items-end lg:justify-between">
+        <div className="relative mx-auto flex max-w-page flex-col gap-8 px-5 md:px-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="w-full min-w-0 max-w-xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Join Us

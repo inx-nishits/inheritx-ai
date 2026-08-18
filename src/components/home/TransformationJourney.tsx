@@ -21,7 +21,7 @@ export function TransformationJourney() {
       className="relative bg-paper text-ink"
     >
       <div className="editorial-grid-light absolute inset-0 opacity-60" />
-      <div className="relative mx-auto grid max-w-[1400px] gap-16 px-5 py-16 md:px-8 md:py-20 lg:grid-cols-[0.95fr_1.05fr]">
+      <div className="relative mx-auto grid max-w-page gap-16 px-5 py-16 md:px-8 md:py-20 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
             AI transformation Journey

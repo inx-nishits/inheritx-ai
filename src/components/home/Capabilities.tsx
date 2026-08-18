@@ -9,6 +9,7 @@ import {
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useLenis } from "lenis/react";
 
 import { capabilities } from "@/data/content";
 import { TextReveal } from "@/components/ui/Reveal";
@@ -75,16 +76,16 @@ export function Capabilities() {
   const [isDesktop, setIsDesktop] = useState(false);
   const [scrollDistance, setScrollDistance] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [cardOffsets, setCardOffsets] = useState<number[]>([]);
+  const targetIndex = useRef(0);
+  const animating = useRef(false);
+  const lenis = useLenis();
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
   });
   const x = useTransform(scrollYProgress, (value) => value * -scrollDistance);
-
-  useMotionValueEvent(scrollYProgress, "change", (value) => {
-    setProgress(value);
-  });
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
@@ -100,8 +101,15 @@ export function Capabilities() {
     const measure = () => {
       const track = trackRef.current;
       if (!track) return;
-      const overflow = track.scrollWidth - window.innerWidth;
-      setScrollDistance(Math.max(0, overflow));
+      const styles = window.getComputedStyle(track);
+      setScrollDistance(Math.max(0, track.scrollWidth - window.innerWidth));
+
+      // Compute where each lane starts within the translated track.
+      // We use these offsets so Prev/Next always lands on the exact lane title
+      // (no skipping due to viewport clipping).
+      const cards = Array.from(track.querySelectorAll("article")) as HTMLElement[];
+      const offsets = cards.map((el) => el.offsetLeft);
+      setCardOffsets(offsets);
     };
 
     measure();
@@ -114,18 +122,95 @@ export function Capabilities() {
     };
   }, [isDesktop]);
 
-  const scrollToProgress = useCallback((next: number) => {
-    const section = sectionRef.current;
-    if (!section) return;
-    const clamped = Math.min(1, Math.max(0, next));
-    const start = section.offsetTop;
-    const range = Math.max(1, section.offsetHeight - window.innerHeight);
-    window.scrollTo({ top: start + clamped * range, behavior: "smooth" });
-  }, []);
+  const laneCount = capabilities.length;
+  const lastIndex = laneCount - 1;
 
-  const step = 1 / Math.max(1, capabilities.length - 1);
-  const canPrev = progress > 0.02;
-  const canNext = progress < 0.98;
+  const goToProgress = useCallback(
+    (clampedProgress: number) => {
+      const section = sectionRef.current;
+      if (!section) return;
+      const clamped = Math.min(1, Math.max(0, clampedProgress));
+      const start = section.offsetTop;
+      const range = Math.max(1, section.offsetHeight - window.innerHeight);
+      const top = start + clamped * range;
+      if (lenis) {
+        lenis.scrollTo(top, { lock: false });
+        return;
+      }
+      window.scrollTo({ top, behavior: "smooth" });
+    },
+    [lenis],
+  );
+
+  const goToCard = useCallback(
+    (index: number) => {
+      const next = Math.min(lastIndex, Math.max(0, index));
+      targetIndex.current = next;
+      animating.current = true;
+
+      if (scrollDistance <= 0 || cardOffsets.length !== laneCount) {
+        goToProgress(next / Math.max(1, lastIndex));
+        return;
+      }
+
+      const offset = cardOffsets[next] ?? 0;
+      const desiredProgress = Math.min(1, Math.max(0, offset / scrollDistance));
+      goToProgress(desiredProgress);
+
+      window.setTimeout(() => {
+        animating.current = false;
+      }, 700);
+    },
+    [
+      cardOffsets,
+      goToProgress,
+      laneCount,
+      lastIndex,
+      scrollDistance,
+    ],
+  );
+
+  useMotionValueEvent(scrollYProgress, "change", (value) => {
+    setProgress(value);
+    if (animating.current || scrollDistance <= 0 || cardOffsets.length !== laneCount) return;
+
+    // Pick the nearest lane to the current translate progress.
+    let bestIndex = 0;
+    let bestDist = Number.POSITIVE_INFINITY;
+    for (let i = 0; i < laneCount; i++) {
+      const offset = cardOffsets[i] ?? 0;
+      const laneProgress = Math.min(1, Math.max(0, offset / scrollDistance));
+      const dist = Math.abs(laneProgress - value);
+      if (dist < bestDist) {
+        bestDist = dist;
+        bestIndex = i;
+      }
+    }
+    targetIndex.current = bestIndex;
+  });
+
+  const activeIndex = (() => {
+    if (scrollDistance <= 0 || cardOffsets.length !== laneCount) return 0;
+    if (laneCount <= 1) return 0;
+
+    let bestIndex = 0;
+    let bestDist = Number.POSITIVE_INFINITY;
+    for (let i = 0; i < laneCount; i++) {
+      const offset = cardOffsets[i] ?? 0;
+      const laneProgress = Math.min(1, Math.max(0, offset / scrollDistance));
+      const dist = Math.abs(laneProgress - progress);
+      if (dist < bestDist) {
+        bestDist = dist;
+        bestIndex = i;
+      }
+    }
+    return bestIndex;
+  })();
+
+  const canPrev = activeIndex > 0;
+  const canNext = activeIndex < lastIndex;
+  const prevTitle = capabilities[activeIndex - 1]?.title;
+  const nextTitle = capabilities[activeIndex + 1]?.title;
 
   return (
     <section
@@ -137,7 +222,7 @@ export function Capabilities() {
 
       {/* Mobile: intentional vertical stack */}
       <div className="relative py-16 md:hidden">
-        <div className="mx-auto max-w-[1400px] px-5">
+        <div className="mx-auto max-w-page px-5">
           <div className="mb-10 flex flex-col gap-6">
             <div className="max-w-3xl">
               <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -178,7 +263,7 @@ export function Capabilities() {
       {/* Desktop: sticky pin so cards stay visible while scrolling horizontally */}
       <div className="relative hidden h-svh md:sticky md:top-0 md:block">
         <div className="flex h-full flex-col justify-start gap-8 pt-28 pb-8 lg:gap-10 lg:pt-32 lg:pb-10">
-          <div className="relative mx-auto w-full max-w-[1400px] shrink-0 px-8">
+          <div className="relative mx-auto w-full max-w-page shrink-0 px-8">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-6">
               <div className="max-w-3xl">
                 <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -204,9 +289,11 @@ export function Capabilities() {
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
-                    aria-label="Previous capability"
+                    aria-label={
+                      prevTitle ? `Previous: ${prevTitle}` : "Previous capability"
+                    }
                     disabled={!canPrev}
-                    onClick={() => scrollToProgress(progress - step)}
+                    onClick={() => goToCard(targetIndex.current - 1)}
                     className={cn(
                       "inline-flex h-11 items-center gap-2 rounded-full border px-4 text-sm transition-colors",
                       canPrev
@@ -219,9 +306,11 @@ export function Capabilities() {
                   </button>
                   <button
                     type="button"
-                    aria-label="Next capability"
+                    aria-label={
+                      nextTitle ? `Next: ${nextTitle}` : "Next capability"
+                    }
                     disabled={!canNext}
-                    onClick={() => scrollToProgress(progress + step)}
+                    onClick={() => goToCard(targetIndex.current + 1)}
                     className={cn(
                       "inline-flex h-11 items-center gap-2 rounded-full border px-4 text-sm transition-colors",
                       canNext

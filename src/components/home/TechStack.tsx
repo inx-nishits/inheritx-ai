@@ -47,7 +47,7 @@ export function TechStack() {
       <div className="pointer-events-none absolute top-1/4 -left-32 h-[420px] w-[420px] rounded-full bg-cyan/10 blur-[120px]" />
       <div className="pointer-events-none absolute right-0 bottom-0 h-[360px] w-[360px] rounded-full bg-cyan/5 blur-[100px]" />
 
-      <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto max-w-page px-5 md:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end lg:gap-16">
           <div>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">

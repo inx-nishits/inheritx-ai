@@ -14,7 +14,7 @@ import { contactHref } from "@/lib/cta";
 export function PortfolioCapabilities() {
   return (
     <section className="relative border-t border-white/[0.06] bg-ink py-16 md:py-20">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="mx-auto max-w-page px-5 md:px-8">
         <div className="mb-12 max-w-3xl md:mb-16">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
             AI Infrastructure
@@ -61,7 +61,7 @@ export function BusinessImpact() {
   return (
     <section className="relative bg-ink-soft py-16 md:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,190,212,0.08),transparent_60%)]" />
-      <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto max-w-page px-5 md:px-8">
         <div className="mb-12 max-w-3xl md:mb-16">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
             Business Impact
@@ -114,7 +114,7 @@ export function PortfolioCTA() {
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/70" />
       </div>
 
-      <div className="relative mx-auto max-w-[1400px] px-5 text-center md:px-8">
+      <div className="relative mx-auto max-w-page px-5 text-center md:px-8">
         <Reveal>
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
             Start your AI transformation

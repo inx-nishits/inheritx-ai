@@ -33,7 +33,7 @@ export function Header() {
               : "border-b border-transparent bg-transparent",
           )}
         >
-          <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-4 px-5 md:h-[4.5rem] md:px-8">
+          <div className="mx-auto flex h-16 max-w-page items-center justify-between gap-4 px-5 md:h-[4.5rem] md:px-8">
             <Logo variant="light" className="min-w-0 shrink" />
 
             <div className="flex shrink-0 items-center gap-2.5 md:gap-3">

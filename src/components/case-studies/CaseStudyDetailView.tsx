@@ -64,7 +64,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
         <div className="pointer-events-none absolute inset-0 editorial-grid opacity-30" />
         <div className="pointer-events-none absolute -top-24 right-0 h-[420px] w-[420px] rounded-full bg-cyan/10 blur-[120px]" />
 
-        <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="relative mx-auto max-w-page px-5 md:px-8">
           <Link
             href="/case-studies"
             className="inline-flex items-center gap-2 text-sm text-white/45 transition-colors hover:text-white"
@@ -95,7 +95,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
       </section>
 
       <section className="bg-ink">
-        <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="relative mx-auto max-w-page px-5 md:px-8">
           <div className="relative aspect-[16/10] overflow-hidden rounded-b-[1.75rem] border border-t-0 border-white/10 md:aspect-[21/9]">
             <Image
               src={study.image}
@@ -111,7 +111,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
       </section>
 
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-4 px-5 md:grid-cols-2 md:gap-6 lg:grid-cols-4 md:px-8">
+        <div className="mx-auto grid max-w-page grid-cols-2 gap-4 px-5 md:grid-cols-2 md:gap-6 lg:grid-cols-4 md:px-8">
           {study.results.map((result, index) => (
             <Reveal key={result.label} delay={index * 0.04}>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-6">
@@ -126,7 +126,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
       </section>
 
       <section className="border-t border-white/[0.06] bg-ink py-16 md:py-20">
-        <div className="mx-auto grid max-w-[1400px] gap-12 px-5 lg:grid-cols-3 lg:gap-10 md:px-8">
+        <div className="mx-auto grid max-w-page gap-12 px-5 lg:grid-cols-3 lg:gap-10 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Business challenge
@@ -156,7 +156,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
 
       {hasJourney ? (
         <section className="border-t border-white/[0.06] bg-ink py-16 md:py-20">
-          <div className="mx-auto max-w-[1400px] space-y-14 px-5 md:px-8 md:space-y-16">
+          <div className="mx-auto max-w-page space-y-14 px-5 md:px-8 md:space-y-16">
             {study.whyAi ? (
               <Reveal>
                 <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -229,7 +229,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
       ) : null}
 
       <section className="bg-paper py-16 text-ink md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Technical highlights
@@ -317,7 +317,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
 
       <section className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,190,212,0.08),transparent_60%)]" />
-        <div className="relative mx-auto flex max-w-[1400px] flex-col gap-8 px-5 md:px-8 lg:flex-row lg:items-end lg:justify-between">
+        <div className="relative mx-auto flex max-w-page flex-col gap-8 px-5 md:px-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="w-full min-w-0 max-w-xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Next engagement

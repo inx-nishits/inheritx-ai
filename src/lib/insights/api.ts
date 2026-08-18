@@ -14,6 +14,7 @@ import {
   prepareRichHtml,
   withSlug,
 } from "./utils";
+import { stripLeadingDuplicateFeatureImage } from "./mediaUrl";
 import {
   filterEnterpriseCategories,
   filterEnterpriseInsightCards,
@@ -102,7 +103,9 @@ export async function fetchInsightBySlug(
       ...post,
       slug: post.slug || slug,
       post_date: enrichedDate,
-      content: prepareRichHtml(post.content),
+      content: prepareRichHtml(
+        stripLeadingDuplicateFeatureImage(post.content, post.feature_image),
+      ),
     },
     related,
     featuredSidebar,

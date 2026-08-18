@@ -34,7 +34,7 @@ export function HomeInsightsPreview({
     >
       <div className="noise-overlay opacity-40" />
 
-      <div className="relative mx-auto max-w-[1400px] px-5 pt-16 md:px-8 md:pt-20">
+      <div className="relative mx-auto max-w-page px-5 pt-16 md:px-8 md:pt-20">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
@@ -87,7 +87,7 @@ export function HomeInsightsPreview({
             </div>
 
             <div className="relative z-10 -mt-20 px-5 pb-12 md:-mt-32 md:px-8 md:pb-14">
-              <div className="mx-auto max-w-[1400px]">
+              <div className="mx-auto max-w-page">
                 <div className="max-w-2xl">
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="font-mono text-[11px] tracking-[0.18em] text-cyan uppercase">
@@ -108,7 +108,7 @@ export function HomeInsightsPreview({
                   <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
                     {excerptFrom(featured, 160)}
                   </p>
-                  <span className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-cyan px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(0,190,212,0.22)] transition-colors group-hover:bg-white group-hover:text-ink">
+                  <span className="cta-primary mt-6 inline-flex min-h-11 items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(0,190,212,0.22)]">
                     Read insight
                     <ArrowUpRight size={14} />
                   </span>
@@ -120,7 +120,7 @@ export function HomeInsightsPreview({
       ) : null}
 
       {cards.length ? (
-        <div className="relative mx-auto max-w-[1400px] px-5 pb-16 md:px-8 md:pb-20">
+        <div className="relative mx-auto max-w-page px-5 pb-16 md:px-8 md:pb-20">
           <div className="border-t border-white/[0.06] pt-10">
             <InsightsMasonry insights={cards} />
           </div>

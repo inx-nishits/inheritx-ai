@@ -27,7 +27,7 @@ export function ChooseYourPath() {
       <div className="noise-overlay" />
       <div className="pointer-events-none absolute top-0 right-0 h-[420px] w-[420px] rounded-full bg-cyan/[0.06] blur-[120px]" />
 
-      <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto max-w-page px-5 md:px-8">
         <div className="mb-12 w-full md:mb-14">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">

@@ -37,7 +37,7 @@ export function ResourcesPageView() {
       />
 
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Library
@@ -72,7 +72,7 @@ export function ResourcesPageView() {
       </section>
 
       <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Insights & briefs

@@ -284,15 +284,15 @@ export const caseStudies = [
 
 export const whyPoints = [
   {
-    title: "AI-Native, Not IT-Generic",
+    title: "AI-native, not IT-generic",
     copy: "We specialize in AI/ML engineering, agentic systems, and AI DevOps—not websites, staff-aug theater, or generic software projects dressed up as AI.",
   },
   {
-    title: "You Own the Capability",
+    title: "You own the capability",
     copy: "Agent logic, platforms, fine-tunes, and infrastructure-as-code transfer at handover. We do not rent you someone else’s black-box platform.",
   },
   {
-    title: "Private Cloud by Default",
+    title: "Private cloud by default",
     copy: "Deploy into your AWS, Azure, or GCP VPC. Your data stays inside your boundary and is never used by InheritX to train public models.",
   },
   {

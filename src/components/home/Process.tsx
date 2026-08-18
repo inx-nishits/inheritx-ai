@@ -18,7 +18,7 @@ export function Process() {
       <div className="noise-overlay" />
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-cyan/[0.07] blur-[100px]" />
 
-      <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto max-w-page px-5 md:px-8">
         <div className="flex flex-col gap-6 border-b border-white/10 pb-10 md:pb-12 lg:flex-row lg:items-end lg:justify-between">
           <div className="w-full min-w-0 max-w-2xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">

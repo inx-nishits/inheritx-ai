@@ -33,6 +33,8 @@
   --font-sans: var(--font-satoshi);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-satoshi);
+  /* Site shell — 1440px standard page container. */
+  --max-width-page: 90rem;
 }
 
 * {
@@ -47,7 +49,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-satoshi), system-ui, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection {
@@ -84,6 +86,96 @@ body {
     linear-gradient(to right, rgba(11, 18, 32, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(11, 18, 32, 0.05) 1px, transparent 1px);
   background-size: 72px 72px;
+}
+
+/* Full-bleed testimonials track: first card aligns with the 1440px shell. */
+.testimonial-track {
+  --testimonial-gutter: 1.25rem;
+  padding-left: var(--testimonial-gutter);
+  padding-right: var(--testimonial-gutter);
+  scroll-padding-left: var(--testimonial-gutter);
+}
+
+@media (min-width: 768px) {
+  .testimonial-track {
+    --testimonial-gutter: max(2rem, calc((100% - 1440px) / 2 + 2rem));
+    padding-right: var(--testimonial-gutter);
+  }
+}
+
+/* Testimonial cards: static 1px edge at rest, traveling gradient on hover. */
+.testimonial-card-frame {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-card-border {
+  position: absolute;
+  inset: -70%;
+  z-index: 0;
+  pointer-events: none;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 52%,
+    rgba(0, 190, 212, 0.08) 60%,
+    var(--cyan-deep) 68%,
+    var(--cyan) 74%,
+    #9af8ff 80%,
+    var(--cyan) 86%,
+    var(--cyan-deep) 92%,
+    transparent 98%
+  );
+  opacity: 0;
+  transition: opacity 0.65s ease;
+}
+
+.testimonial-card-frame:hover .testimonial-card-border,
+.testimonial-card-frame:focus-within .testimonial-card-border {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .testimonial-card-frame:hover .testimonial-card-border,
+  .testimonial-card-frame:focus-within .testimonial-card-border {
+    animation: testimonial-border-travel 3.6s linear infinite;
+  }
+}
+
+@keyframes testimonial-border-travel {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Team portraits: unify mixed source photos, reveal color on hover/open. */
+.team-member-frame {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.team-member-border {
+  position: absolute;
+  inset: -70%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 52%,
+    rgba(0, 190, 212, 0.08) 60%,
+    var(--cyan-deep) 68%,
+    var(--cyan) 74%,
+    #9af8ff 80%,
+    var(--cyan) 86%,
+    var(--cyan-deep) 92%,
+    transparent 98%
+  );
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .team-member-border {
+    animation: testimonial-border-travel 3.6s linear infinite;
+  }
 }
 
 .marquee-track {
@@ -169,6 +261,40 @@ body {
   animation: footer-wordmark-glow 4.5s ease-in-out infinite;
 }
 
+.footer-wordmark-glyph {
+  flex: 0 0 auto;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.42) 0%,
+    rgba(255, 255, 255, 0.55) 32%,
+    rgba(0, 190, 212, 0.88) 46%,
+    rgba(180, 245, 255, 0.98) 50%,
+    rgba(0, 190, 212, 0.88) 54%,
+    rgba(255, 255, 255, 0.55) 68%,
+    rgba(255, 255, 255, 0.42) 100%
+  );
+  background-size: 250% 100%;
+  background-attachment: fixed;
+  animation: footer-wordmark-scan 6s linear infinite;
+  -webkit-mask-image: var(--letter-src);
+  mask-image: var(--letter-src);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center bottom;
+  mask-position: center bottom;
+}
+
+@keyframes footer-wordmark-scan {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}
+
 /* Hero banner tag — Satoshi + cyan scan (white base) */
 .hero-eyebrow-shimmer {
   font-family: var(--font-satoshi), system-ui, sans-serif;
@@ -207,6 +333,7 @@ body {
   .float-soft,
   .pulse-ring,
   .footer-wordmark-text,
+  .footer-wordmark-glyph,
   .hero-eyebrow-shimmer {
     animation: none !important;
     filter: none !important;
@@ -215,6 +342,12 @@ body {
   .footer-wordmark-text {
     fill: rgba(0, 190, 212, 0.35) !important;
     opacity: 1 !important;
+  }
+
+  .footer-wordmark-glyph {
+    background-attachment: scroll;
+    background-image: none;
+    background-color: rgba(0, 190, 212, 0.45);
   }
 
   .hero-eyebrow-shimmer {
@@ -237,6 +370,49 @@ button:disabled,
 a[aria-disabled="true"],
 [aria-disabled="true"] {
   cursor: not-allowed;
+}
+
+/* Primary CTA: cyan rest, animated cyan/teal gradient on hover (never white). */
+@keyframes cta-primary-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.cta-primary {
+  overflow: hidden;
+  background-color: var(--cyan);
+  background-image: linear-gradient(
+    105deg,
+    var(--cyan) 0%,
+    var(--cyan) 32%,
+    #7af4ff 50%,
+    var(--cyan-deep) 68%,
+    var(--cyan) 100%
+  );
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  color: #fff;
+  transition:
+    background-position 0.45s ease,
+    box-shadow 0.35s ease;
+}
+
+.cta-primary:hover,
+.cta-primary:focus-visible,
+.group:hover .cta-primary {
+  color: #fff;
+  background-position: 100% 50%;
+  box-shadow: 0 0 32px rgba(0, 190, 212, 0.38);
+  animation: cta-primary-flow 1.6s ease-in-out infinite alternate;
+}
+
+.cta-primary:disabled,
+.cta-primary[aria-disabled="true"] {
+  animation: none;
 }
 
 /* Shared focus-visible system for keyboard navigation. */
@@ -272,6 +448,19 @@ select:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   :focus-visible {
     outline-offset: 2px;
+  }
+
+  .cta-primary {
+    background-image: none;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cta-primary:hover,
+  .cta-primary:focus-visible,
+  .group:hover .cta-primary {
+    animation: none;
+    background-color: var(--cyan-deep);
+    background-position: 0% 50%;
   }
 }
 
@@ -409,10 +598,10 @@ select:focus-visible {
 .rich-content .alignwide,
 .rich-content .alignfull {
   display: block;
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-  margin: 1.25rem 0;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 1.25rem auto;
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   object-fit: contain;

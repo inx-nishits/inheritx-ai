@@ -32,6 +32,8 @@ const agencyInsightCategories = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Dev-only: allow LAN HMR when opening the site from this machine's network IP.
+  allowedDevOrigins: ["192.168.1.162", "localhost", "127.0.0.1"],
   images: {
     remotePatterns: [
       {

@@ -6,7 +6,7 @@ import { Reveal, TextReveal } from "@/components/ui/Reveal";
 export function WhyInheritX() {
   return (
     <section id="why" className="relative overflow-hidden bg-paper py-16 text-ink md:py-20">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="mx-auto max-w-page px-5 md:px-8">
         <div>
           <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
             Why InheritX

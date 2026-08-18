@@ -45,7 +45,7 @@ export default async function InsightsPage() {
         <Header />
         <main className="flex-1 bg-ink">
           <InsightsHero />
-          <div className="mx-auto max-w-[1400px] px-5 py-16 md:px-8">
+          <div className="mx-auto max-w-page px-5 py-16 md:px-8">
             <ErrorState />
           </div>
         </main>
@@ -72,7 +72,7 @@ export default async function InsightsPage() {
           />
         ) : !listing.featured ? (
           <section className="bg-ink py-16 md:py-20">
-            <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+            <div className="mx-auto max-w-page px-5 md:px-8">
               <EmptyState />
             </div>
           </section>
@@ -91,7 +91,7 @@ export default async function InsightsPage() {
         <PopularInsights insights={listing.popular} />
 
         <section className="border-t border-white/[0.06] bg-ink py-12 md:py-14">
-          <div className="mx-auto flex max-w-[1400px] flex-col gap-4 px-5 md:flex-row md:items-center md:justify-between md:px-8">
+          <div className="mx-auto flex max-w-page flex-col gap-4 px-5 md:flex-row md:items-center md:justify-between md:px-8">
             <p className="text-sm text-white/45">
               Looking for a production AI roadmap, not just reading?
             </p>

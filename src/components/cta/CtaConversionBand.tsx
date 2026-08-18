@@ -115,7 +115,7 @@ export function CtaConversionBand({
         )}
       >
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,190,212,0.12),transparent_55%)]" />
-        <div className="relative mx-auto flex max-w-[1400px] flex-col items-start gap-6 px-5 py-14 md:px-8 md:py-16 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+        <div className="relative mx-auto flex max-w-page flex-col items-start gap-6 px-5 py-14 md:px-8 md:py-16 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
           {copy}
           {actions}
         </div>

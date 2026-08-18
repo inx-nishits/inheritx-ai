@@ -56,7 +56,7 @@ export function CtaText({
         className={
           tone === "quiet"
             ? "text-white/35"
-            : "text-white/45 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            : "text-white/45"
         }
       />
     </Link>

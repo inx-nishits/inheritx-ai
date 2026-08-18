@@ -39,7 +39,7 @@ export function Newsletter({ className }: { className?: string }) {
         className,
       )}
     >
-      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="mx-auto max-w-page px-5 md:px-8">
         <div className="grid gap-8 rounded-[1.75rem] border border-white/10 bg-ink px-6 py-8 md:grid-cols-[1.2fr_1fr] md:items-center md:px-10 md:py-10">
           <div>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -71,7 +71,7 @@ export function Newsletter({ className }: { className?: string }) {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-cyan px-6 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-ink disabled:opacity-60"
+                className="cta-primary inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold text-white disabled:opacity-60"
               >
                 {status === "loading" ? "Subscribing…" : "Subscribe"}
               </button>

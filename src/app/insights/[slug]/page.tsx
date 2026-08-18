@@ -165,7 +165,7 @@ export default async function InsightDetailPage({ params }: Props) {
         <section className="relative overflow-hidden border-b border-white/[0.06] pt-24 pb-8 md:pt-36 md:pb-14">
           <div className="noise-overlay" />
           <div className="pointer-events-none absolute inset-0 editorial-grid opacity-25" />
-          <div className="relative mx-auto max-w-[1400px] px-4 sm:px-5 md:px-8">
+          <div className="relative mx-auto max-w-page px-4 sm:px-5 md:px-8">
             <Link
               href="/insights"
               className="inline-flex min-h-11 items-center gap-2 text-sm text-white/45 transition-colors hover:text-white"
@@ -188,24 +188,34 @@ export default async function InsightDetailPage({ params }: Props) {
         </section>
 
         <section className="bg-ink">
-          <div className="relative mx-auto max-w-[1400px] sm:px-5 md:px-8">
+          <div className="relative mx-auto max-w-page sm:px-5 md:px-8">
             <div className="overflow-hidden border-y border-white/10 bg-ink-soft sm:rounded-2xl sm:border md:rounded-b-[1.75rem] md:rounded-t-none md:border-t-0">
-              <Image
-                src={image}
-                alt=""
-                width={1600}
-                height={900}
-                priority
-                unoptimized={image.startsWith("http")}
-                className="mx-auto block h-auto w-full max-w-full object-contain"
-                sizes="(max-width: 768px) 100vw, 1400px"
-              />
+              {image.startsWith("http") ? (
+                // Remote CMS assets must keep intrinsic size — stretching 330–512px
+                // sources to the 1440px shell is what made the hero look blurry.
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={image}
+                  alt=""
+                  className="mx-auto block h-auto w-auto max-w-full"
+                />
+              ) : (
+                <Image
+                  src={image}
+                  alt=""
+                  width={1600}
+                  height={900}
+                  priority
+                  className="mx-auto block h-auto w-auto max-w-full object-contain"
+                  sizes="(max-width: 768px) 100vw, 1440px"
+                />
+              )}
             </div>
           </div>
         </section>
 
         <section className="bg-ink py-8 sm:py-12 md:py-16">
-          <div className="mx-auto grid max-w-[1400px] gap-8 px-4 sm:px-5 lg:grid-cols-[minmax(0,1fr)_minmax(240px,280px)] lg:gap-12 md:px-8">
+          <div className="mx-auto grid max-w-page gap-8 px-4 sm:px-5 lg:grid-cols-[minmax(0,1fr)_minmax(240px,280px)] lg:gap-12 md:px-8">
             {/* Mobile TOC first, then article */}
             <div className="min-w-0 space-y-6 lg:col-start-1 lg:row-start-1">
               <div className="lg:hidden">

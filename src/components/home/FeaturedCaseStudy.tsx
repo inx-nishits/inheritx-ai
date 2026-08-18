@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { caseStudiesPage, featuredCaseStudyIds } from "@/data/caseStudies";
 import { CtaProof } from "@/components/cta/CtaProof";
 import { CtaText } from "@/components/cta/CtaText";
+import { cn } from "@/lib/cn";
 
 const AUTO_MS = 7000;
 const featuredStudies = featuredCaseStudyIds
@@ -23,8 +24,6 @@ export function FeaturedCaseStudy() {
   const sectionRef = useRef<HTMLElement>(null);
   const total = featuredStudies.length;
   const study = featuredStudies[active];
-  const primary = study.results[0];
-  const secondary = study.results[1];
 
   const goTo = useCallback(
     (index: number, dir?: number) => {
@@ -105,7 +104,7 @@ export function FeaturedCaseStudy() {
 
         <div className="noise-overlay opacity-40" />
 
-        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col px-5 py-16 md:min-h-[min(62vh,520px)] md:px-8 md:py-9 lg:py-10">
+        <div className="relative z-10 mx-auto flex max-w-page flex-col px-5 py-16 md:min-h-[min(62vh,520px)] md:px-8 md:py-9 lg:py-10">
           {/* Top bar — stack on mobile/tablet so copy keeps full width */}
           <div className="flex flex-col items-start gap-4 lg:flex-row lg:justify-between lg:gap-6">
             <div className="w-full min-w-0 lg:max-w-md">
@@ -122,74 +121,85 @@ export function FeaturedCaseStudy() {
             </CtaText>
           </div>
 
-          {/* Main story content */}
-          <div className="mt-auto grid max-w-4xl pt-8 pb-1 md:pt-10">
-            <AnimatePresence mode="wait" custom={direction}>
-              <motion.div
-                key={study.id + "-body"}
-                custom={direction}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -14 }}
-                transition={{ duration: 0.5, ease }}
-              >
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="font-mono text-[11px] tracking-[0.18em] text-cyan uppercase">
-                    {String(active + 1).padStart(2, "0")} — {study.category}
-                  </span>
-                  <span className="text-white/25">/</span>
-                  <span className="text-sm text-white/45">{study.name}</span>
-                </div>
+          {/* Main story — all slides stacked so height stays on the tallest copy. */}
+          <div className="mt-auto max-w-4xl pt-8 pb-1 md:pt-10">
+            <div className="grid">
+              {featuredStudies.map((item, index) => {
+                const itemPrimary = item.results[0];
+                const itemSecondary = item.results[1];
+                const isActive = index === active;
 
-                <p className="font-display mt-3 text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.9] tracking-[-0.04em] text-cyan">
-                  {primary.value}
-                </p>
-                <p className="mt-2 text-base text-white/70 md:text-lg">
-                  {primary.label}
-                  {secondary ? (
-                    <span className="text-white/35">
-                      {" "}
-                      · {secondary.value} {secondary.label.toLowerCase()}
-                    </span>
-                  ) : null}
-                </p>
-
-                <h3 className="font-display mt-5 max-w-3xl text-[1.55rem] leading-[1.15] text-white md:mt-6 md:text-4xl lg:text-[2.75rem]">
-                  {study.tagline}
-                </h3>
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/55 md:text-base">
-                  {study.summary}
-                </p>
-
-                <div className="mt-6 flex flex-wrap items-center gap-3 md:mt-7">
-                  <CtaProof
-                    href={`/case-studies/${study.id}`}
-                    location="home"
-                    pattern="proof-band"
+                return (
+                  <div
+                    key={item.id}
+                    className={cn(
+                      "col-start-1 row-start-1 transition-opacity duration-500 ease-out",
+                      isActive
+                        ? "relative z-10 opacity-100"
+                        : "pointer-events-none opacity-0",
+                    )}
+                    aria-hidden={!isActive}
                   >
-                    Read full case study
-                  </CtaProof>
-                  <div className="flex gap-2">
-                    <button
-                      type="button"
-                      aria-label="Previous case study"
-                      onClick={goPrev}
-                      className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 backdrop-blur-sm transition-colors hover:border-cyan/50 hover:text-white"
-                    >
-                      <ArrowLeft size={17} />
-                    </button>
-                    <button
-                      type="button"
-                      aria-label="Next case study"
-                      onClick={goNext}
-                      className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 backdrop-blur-sm transition-colors hover:border-cyan/50 hover:text-white"
-                    >
-                      <ArrowRight size={17} />
-                    </button>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="font-mono text-[11px] tracking-[0.18em] text-cyan uppercase">
+                        {String(index + 1).padStart(2, "0")} — {item.category}
+                      </span>
+                      <span className="text-white/25">/</span>
+                      <span className="text-sm text-white/45">{item.name}</span>
+                    </div>
+
+                    <p className="font-display mt-3 text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.9] tracking-[-0.04em] text-cyan">
+                      {itemPrimary.value}
+                    </p>
+                    <p className="mt-2 text-base text-white/70 md:text-lg">
+                      {itemPrimary.label}
+                      {itemSecondary ? (
+                        <span className="text-white/35">
+                          {" "}
+                          · {itemSecondary.value}{" "}
+                          {itemSecondary.label.toLowerCase()}
+                        </span>
+                      ) : null}
+                    </p>
+
+                    <h3 className="font-display mt-5 max-w-3xl text-[1.55rem] leading-[1.15] text-white md:mt-6 md:text-4xl lg:text-[2.75rem]">
+                      {item.tagline}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/55 md:text-base">
+                      {item.summary}
+                    </p>
                   </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                );
+              })}
+            </div>
+
+            <div className="mt-6 flex flex-wrap items-center gap-3 md:mt-7">
+              <CtaProof
+                href={`/case-studies/${study.id}`}
+                location="home"
+                pattern="proof-band"
+              >
+                Read full case study
+              </CtaProof>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  aria-label="Previous case study"
+                  onClick={goPrev}
+                  className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 backdrop-blur-sm transition-colors hover:border-cyan/50 hover:text-white"
+                >
+                  <ArrowLeft size={17} />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Next case study"
+                  onClick={goNext}
+                  className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 backdrop-blur-sm transition-colors hover:border-cyan/50 hover:text-white"
+                >
+                  <ArrowRight size={17} />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

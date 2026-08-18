@@ -49,7 +49,7 @@ const iconMap: Record<string, LucideIcon> = {
   "Case Studies": FileText,
   Research: Brain,
   Whitepapers: FileText,
-  "Engagement models": Briefcase,
+  "Engagement Models": Briefcase,
   "About InheritX": Building2,
   "Our AI Vision": Sparkles,
   "Why InheritX": Target,
@@ -62,11 +62,11 @@ const iconMap: Record<string, LucideIcon> = {
   "Book a strategy call": Sparkles,
   "Agent Bank": Bot,
   "Enterprise References": Building2,
-  "Production readiness": Target,
+  "Production Readiness": Target,
   "Security FAQ": Shield,
-  "Diligence pack": FileText,
+  "Diligence Pack": FileText,
   "AI Governance": Shield,
-  "Architecture principles": Network,
+  "Architecture Principles": Network,
   "AI strategy call": Sparkles,
   "All solutions": Workflow,
   "All industries": Factory,
@@ -94,7 +94,7 @@ export function MegaMenu({ item, onClose }: MegaMenuProps) {
       <div className="border-b border-white/[0.06] bg-ink/90 shadow-[0_32px_100px_rgba(0,0,0,0.45)] backdrop-blur-2xl backdrop-saturate-150">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,190,212,0.1),transparent_50%)]" />
 
-        <div className="relative mx-auto max-w-[1400px] px-8 py-10">
+        <div className="relative mx-auto max-w-page px-8 py-10">
           <div className="mb-8 flex items-end justify-between gap-6 border-b border-white/[0.06] pb-6">
             <div className="max-w-2xl">
               <p className="text-[11px] tracking-[0.22em] text-cyan uppercase">

@@ -17,7 +17,7 @@ export function Industries() {
 
   return (
     <section id="industries" className="relative bg-paper py-16 text-ink md:py-20">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="mx-auto max-w-page px-5 md:px-8">
         <div className="mb-12 flex max-w-3xl flex-col gap-4 md:mb-14 md:max-w-none lg:flex-row lg:items-end lg:justify-between">
           <div className="w-full min-w-0 max-w-3xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">

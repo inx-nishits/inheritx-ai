@@ -1,7 +1,9 @@
 import type { InsightCard, InsightCategory, InsightDetail } from "./types";
 import { sanitizeInsightHtml } from "./sanitizeHtml";
+import { wpOriginalImageUrl } from "./mediaUrl";
 
 export { insightHref, insightCategoryHref, rewriteWpLinks } from "./rewriteWpLinks";
+export { wpOriginalImageUrl } from "./mediaUrl";
 
 const FALLBACK_IMAGE = "/images/visuals/lead-capabilities.png";
 
@@ -54,7 +56,7 @@ export function resolveFeatureImage(
   src: string | null | undefined,
 ): string {
   if (!src || !src.trim()) return FALLBACK_IMAGE;
-  return src;
+  return wpOriginalImageUrl(src.trim());
 }
 
 export function excerptFrom(

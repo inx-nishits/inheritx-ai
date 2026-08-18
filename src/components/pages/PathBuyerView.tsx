@@ -32,7 +32,7 @@ function SectionShell({
         tone === "soft" && "border-t border-white/[0.06] bg-ink-soft text-white",
       )}
     >
-      <div className="mx-auto max-w-[1400px] px-5 md:px-8">{children}</div>
+      <div className="mx-auto max-w-page px-5 md:px-8">{children}</div>
     </section>
   );
 }
@@ -52,7 +52,7 @@ function PerspectiveSection({
       <div className="pointer-events-none absolute inset-0 editorial-grid opacity-20" />
       <div className="pointer-events-none absolute -top-32 right-0 h-[380px] w-[380px] rounded-full bg-cyan/[0.07] blur-[120px]" />
 
-      <div className="relative mx-auto w-full max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto w-full max-w-page px-5 md:px-8">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-16 xl:gap-24">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
@@ -1227,30 +1227,12 @@ export function PathBuyerView({ page, crumbs }: PathBuyerViewProps) {
         description={page.description}
         primaryCta={page.primaryCta}
         secondaryCta={page.secondaryCta}
+        crumbs={crumbs}
+        currentCrumb={page.eyebrow}
       />
 
-      {crumbs && crumbs.length > 0 ? (
-        <div className="border-b border-white/[0.06] bg-ink">
-          <nav
-            aria-label="Breadcrumb"
-            className="mx-auto flex max-w-[1400px] flex-wrap items-center gap-2 px-5 py-4 text-xs text-white/35 md:px-8 md:py-5"
-          >
-            {crumbs.map((crumb, i) => (
-              <span key={crumb.href} className="inline-flex items-center gap-2">
-                {i > 0 && <span aria-hidden>/</span>}
-                <Link href={crumb.href} className="hover:text-white/70">
-                  {crumb.label}
-                </Link>
-              </span>
-            ))}
-            <span aria-hidden>/</span>
-            <span className="text-white/55">{page.eyebrow}</span>
-          </nav>
-        </div>
-      ) : null}
-
       <section className="border-b border-white/[0.06] bg-ink">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-px bg-white/[0.06] md:grid-cols-4">
+        <div className="mx-auto grid max-w-page grid-cols-2 gap-px bg-white/[0.06] md:grid-cols-4">
           {page.proof.map((item) => (
             <div key={item.label} className="bg-ink px-5 py-8 md:px-8 md:py-10">
               <p className="font-display text-3xl text-cyan md:text-4xl">
@@ -1270,7 +1252,7 @@ export function PathBuyerView({ page, crumbs }: PathBuyerViewProps) {
         id="path-closing"
         className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20"
       >
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <MidCtaBand cta={page.closing} />
         </div>
       </section>

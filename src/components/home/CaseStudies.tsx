@@ -26,7 +26,7 @@ export function CaseStudies() {
     >
       <div className="noise-overlay" />
 
-      <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto max-w-page px-5 md:px-8">
         {/* Compact first-fold block: title + tabs always together */}
         <div className="sticky top-16 z-20 -mx-5 border-b border-white/[0.06] bg-ink/92 px-5 pt-3 pb-3 backdrop-blur-xl md:static md:top-auto md:mx-0 md:border-0 md:bg-transparent md:px-0 md:pt-0 md:pb-0 md:backdrop-blur-none">
           <div className="flex items-end justify-between gap-4">

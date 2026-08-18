@@ -221,7 +221,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "~50%", label: "Reduction in care discovery effort" },
       { value: "Improved", label: "Personalized care pathways" },
     ],
-    image: "/images/visuals/industries/industry-healthcare.png",
+    image: "/images/visuals/lead-journey.png",
     challenge:
       "Patients struggled to navigate care options while providers lacked a unified intelligence layer for personalized guidance within approved content boundaries.",
     whyAi:

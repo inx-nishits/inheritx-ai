@@ -94,7 +94,7 @@ export default async function InsightCategoryPage({
         <Header />
         <main className="flex-1 bg-ink">
           <InsightsHero title="Insights by topic." />
-          <div className="mx-auto max-w-[1400px] px-5 py-16 md:px-8">
+          <div className="mx-auto max-w-page px-5 py-16 md:px-8">
             <ErrorState title="Category unavailable" />
           </div>
         </main>
@@ -131,7 +131,7 @@ export default async function InsightCategoryPage({
             aria-label="Category pagination"
             className="border-t border-white/[0.06] bg-ink py-10"
           >
-            <div className="mx-auto flex max-w-[1400px] items-center justify-center gap-3 px-5 md:px-8">
+            <div className="mx-auto flex max-w-page items-center justify-center gap-3 px-5 md:px-8">
               {page > 1 ? (
                 <Link
                   href={`/insights/category/${category_slug}?page=${page - 1}`}
@@ -157,7 +157,7 @@ export default async function InsightCategoryPage({
 
         {data.featuredSidebar.length ? (
           <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
-            <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+            <div className="mx-auto max-w-page px-5 md:px-8">
               <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
                 Featured
               </p>

@@ -24,7 +24,7 @@ export function CaseStudiesHero() {
       <div className="pointer-events-none absolute inset-0 editorial-grid opacity-30" />
       <div className="pointer-events-none absolute -top-24 right-0 h-[420px] w-[420px] rounded-full bg-cyan/10 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto max-w-page px-5 md:px-8">
         <Reveal>
           <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
             {caseStudyIntro.eyebrow}
@@ -78,7 +78,7 @@ export function CaseStudiesListing() {
 
   return (
     <section className="relative bg-ink py-16 md:py-20">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="mx-auto max-w-page px-5 md:px-8">
         <div className="mb-10 flex snap-x snap-mandatory gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] md:mb-12 md:flex-wrap md:snap-none md:overflow-visible [&::-webkit-scrollbar]:hidden">
           {caseStudyCategories.map((cat) => (
             <button
@@ -174,7 +174,7 @@ export function CaseStudiesCTA() {
   return (
     <section className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,190,212,0.08),transparent_60%)]" />
-      <div className="relative mx-auto max-w-[1400px] px-5 text-center md:px-8">
+      <div className="relative mx-auto max-w-page px-5 text-center md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

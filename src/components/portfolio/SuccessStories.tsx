@@ -11,7 +11,7 @@ export function SuccessStories() {
   return (
     <section className="relative overflow-hidden bg-paper py-16 text-ink md:py-20">
       <div className="editorial-grid-light absolute inset-0 opacity-50" />
-      <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="relative mx-auto max-w-page px-5 md:px-8">
         <div className="mb-14 max-w-3xl md:mb-20">
           <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
             Enterprise AI outcomes

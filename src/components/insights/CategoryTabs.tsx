@@ -159,7 +159,7 @@ export function CategoryTabs({
 
   return (
     <section className="border-t border-white/[0.06] bg-ink py-10 md:py-12">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-8">{tabs}</div>
+      <div className="mx-auto max-w-page px-5 md:px-8">{tabs}</div>
     </section>
   );
 }

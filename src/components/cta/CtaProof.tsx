@@ -47,7 +47,7 @@ export function CtaProof({
     >
       {children}
       {arrow === "chevron" ? (
-        <span className="text-cyan transition-transform duration-300 group-hover:translate-x-0.5">
+        <span className="text-cyan">
           →
         </span>
       ) : (

@@ -36,7 +36,7 @@ function SectionShell({
         className,
       )}
     >
-      <div className="mx-auto max-w-[1400px] px-5 md:px-8">{children}</div>
+      <div className="mx-auto max-w-page px-5 md:px-8">{children}</div>
     </section>
   );
 }
@@ -48,7 +48,7 @@ function ProofStrip({
 }) {
   return (
     <section className="border-b border-white/[0.06] bg-ink">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-px bg-white/[0.06] md:grid-cols-4">
+      <div className="mx-auto grid max-w-page grid-cols-2 gap-px bg-white/[0.06] md:grid-cols-4">
         {items.map((item) => (
           <div key={item.label} className="bg-ink px-5 py-8 md:px-8 md:py-10">
             <p className="font-display text-3xl text-cyan md:text-4xl">
@@ -564,7 +564,7 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
       >
         <nav
           aria-label="Breadcrumb"
-          className="mx-auto flex max-w-[1400px] flex-wrap items-center gap-2 px-5 py-4 text-xs text-white/35 md:px-8 md:py-5"
+          className="mx-auto flex max-w-page flex-wrap items-center gap-2 px-5 py-4 text-xs text-white/35 md:px-8 md:py-5"
         >
           {crumbs.map((crumb, i) => (
             <span key={crumb.href} className="inline-flex items-center gap-2">
@@ -582,7 +582,7 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
 
   const industryBanner = showIndustryImage ? (
     <section className="bg-ink pt-5 pb-8 md:pt-6 md:pb-10 lg:pt-8 lg:pb-12">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+      <div className="mx-auto max-w-page px-5 md:px-8">
         <div className="relative aspect-[21/9] overflow-hidden rounded-[1.5rem] border border-white/10 md:rounded-[2rem]">
           <Image
             src={topic.image!}
@@ -631,8 +631,9 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
             primaryCta={topic.primaryCta}
             secondaryCta={topic.secondaryCta}
             primaryVariant={primaryIsConvert ? "fill" : "text"}
+            crumbs={crumbs}
+            currentCrumb={topic.eyebrow}
           />
-          {breadcrumb}
         </>
       )}
 
@@ -641,7 +642,7 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
       )}
 
       <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
-        <div className="mx-auto flex max-w-[1400px] flex-col gap-6 px-5 md:px-8 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mx-auto flex max-w-page flex-col gap-6 px-5 md:px-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="w-full min-w-0 max-w-xl">
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Next step

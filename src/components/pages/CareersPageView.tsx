@@ -26,7 +26,7 @@ export function CareersPageView() {
       />
 
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Culture of craft
@@ -42,7 +42,7 @@ export function CareersPageView() {
       </section>
 
       <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Disciplines we hire
@@ -69,7 +69,7 @@ export function CareersPageView() {
       </section>
 
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Process

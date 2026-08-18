@@ -19,7 +19,7 @@ export function AgentBankPageView() {
         <div className="pointer-events-none absolute inset-0 editorial-grid opacity-30" />
         <div className="pointer-events-none absolute -top-24 right-0 h-[420px] w-[420px] rounded-full bg-cyan/10 blur-[120px]" />
 
-        <div className="relative mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="relative mx-auto max-w-page px-5 md:px-8">
           <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
             {p.eyebrow}
           </p>
@@ -45,7 +45,7 @@ export function AgentBankPageView() {
           </div>
         </div>
 
-        <div className="relative mx-auto mt-12 max-w-[1400px] px-5 md:mt-16 md:px-8">
+        <div className="relative mx-auto mt-12 max-w-page px-5 md:mt-16 md:px-8">
           <div className="relative aspect-[16/10] overflow-hidden rounded-t-[1.75rem] border border-b-0 border-white/10 md:aspect-[21/9]">
             <Image
               src={p.heroImage}
@@ -66,7 +66,7 @@ export function AgentBankPageView() {
       </section>
 
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-4 px-5 md:grid-cols-4 md:gap-6 md:px-8">
+        <div className="mx-auto grid max-w-page grid-cols-2 gap-4 px-5 md:grid-cols-4 md:gap-6 md:px-8">
           {p.stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.04}>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-6">
@@ -81,7 +81,7 @@ export function AgentBankPageView() {
       </section>
 
       <section className="border-t border-white/[0.06] bg-ink py-16 md:py-20">
-        <div className="mx-auto grid max-w-[1400px] gap-12 px-5 lg:grid-cols-2 lg:gap-20 md:px-8">
+        <div className="mx-auto grid max-w-page gap-12 px-5 lg:grid-cols-2 lg:gap-20 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Challenge
@@ -119,7 +119,7 @@ export function AgentBankPageView() {
       </section>
 
       <section className="bg-paper py-16 text-ink md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Capabilities
@@ -147,7 +147,7 @@ export function AgentBankPageView() {
       </section>
 
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               User journey
@@ -175,7 +175,7 @@ export function AgentBankPageView() {
       </section>
 
       <section className="border-t border-white/[0.06] bg-ink-soft py-16 md:py-20">
-        <div className="mx-auto grid max-w-[1400px] gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 md:px-8">
+        <div className="mx-auto grid max-w-page gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Architecture
@@ -204,7 +204,7 @@ export function AgentBankPageView() {
       </section>
 
       <section className="bg-paper py-16 text-ink md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Outcomes
@@ -244,7 +244,7 @@ export function AgentBankPageView() {
 
       <section className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,190,212,0.08),transparent_60%)]" />
-        <div className="relative mx-auto max-w-[1400px] px-5 text-center md:px-8">
+        <div className="relative mx-auto max-w-page px-5 text-center md:px-8">
           <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
             Next
           </p>

@@ -40,7 +40,7 @@ export function SolutionsPageView() {
 
       {/* Proof strip — unique to solutions page */}
       <section className="border-b border-white/[0.06] bg-ink">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-px bg-white/[0.06] md:grid-cols-4">
+        <div className="mx-auto grid max-w-page grid-cols-2 gap-px bg-white/[0.06] md:grid-cols-4">
           {solutionProofPoints.map((item) => (
             <div
               key={item.label}
@@ -57,7 +57,7 @@ export function SolutionsPageView() {
 
       {/* Pillar explorer */}
       <section id="lanes" className="bg-ink py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Solution pillars
@@ -152,7 +152,7 @@ export function SolutionsPageView() {
 
       {/* Engagement models */}
       <section id="engagement" className="border-t border-white/[0.06] bg-paper py-16 text-ink md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Engagement models
@@ -199,7 +199,7 @@ export function SolutionsPageView() {
 
       {/* Fit matrix */}
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
               Quick fit

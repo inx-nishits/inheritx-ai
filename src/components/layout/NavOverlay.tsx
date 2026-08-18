@@ -55,7 +55,7 @@ const iconMap: Record<string, LucideIcon> = {
   "Case Studies": FileText,
   Research: Brain,
   Whitepapers: FileText,
-  "Engagement models": Briefcase,
+  "Engagement Models": Briefcase,
   "About InheritX": Building2,
   "Our AI Vision": Sparkles,
   "Why InheritX": Target,
@@ -69,11 +69,11 @@ const iconMap: Record<string, LucideIcon> = {
   "Book a strategy call": Sparkles,
   "Agent Bank": Bot,
   "Enterprise References": Building2,
-  "Production readiness": Target,
+  "Production Readiness": Target,
   "Security FAQ": Shield,
-  "Diligence pack": FileText,
+  "Diligence Pack": FileText,
   "AI Governance": Shield,
-  "Architecture principles": Network,
+  "Architecture Principles": Network,
 };
 
 type NavOverlayProps = {

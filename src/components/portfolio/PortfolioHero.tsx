@@ -15,7 +15,7 @@ export function PortfolioHero() {
       <div className="pointer-events-none absolute -top-24 right-0 h-[520px] w-[520px] rounded-full bg-cyan/10 blur-[120px]" />
       <div className="pointer-events-none absolute bottom-0 left-1/4 h-64 w-64 rounded-full bg-cyan/5 blur-[80px]" />
 
-      <div className="relative mx-auto grid max-w-[1400px] items-center gap-12 px-5 md:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div className="relative mx-auto grid max-w-page items-center gap-12 px-5 md:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <div>
           <Reveal>
             <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
@@ -70,7 +70,7 @@ export function PortfolioHero() {
         </Reveal>
       </div>
 
-      <div className="relative mx-auto mt-16 grid max-w-[1400px] grid-cols-2 gap-4 px-5 md:mt-20 md:grid-cols-4 md:gap-6 md:px-8">
+      <div className="relative mx-auto mt-16 grid max-w-page grid-cols-2 gap-4 px-5 md:mt-20 md:grid-cols-4 md:gap-6 md:px-8">
         {portfolioStats.map((stat, index) => (
           <motion.div
             key={stat.label}

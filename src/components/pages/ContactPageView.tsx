@@ -30,8 +30,56 @@ const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL?.trim() || "";
 type SubmitState =
   | { status: "idle" }
   | { status: "submitting" }
-  | { status: "success"; fallbackMailto: boolean }
+  | { status: "success" }
   | { status: "error"; message: string };
+
+type FieldName = "name" | "email" | "message";
+type FieldErrors = Partial<Record<FieldName, string>>;
+
+function FieldMark({ hint }: { hint: "Required" | "Optional" }) {
+  return (
+    <span
+      className={cn(
+        "text-[10px] tracking-[0.16em] uppercase",
+        hint === "Required" ? "text-cyan/70" : "text-white/30",
+      )}
+    >
+      {hint}
+    </span>
+  );
+}
+
+function validateContactForm(payload: {
+  name: string;
+  email: string;
+  message: string;
+}): FieldErrors {
+  const errors: FieldErrors = {};
+  if (!payload.name.trim()) errors.name = "Enter your name.";
+  if (!payload.email.trim()) errors.email = "Enter your work email.";
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email.trim())) {
+    errors.email = "Enter a valid work email.";
+  }
+  if (!payload.message.trim()) {
+    errors.message = "Tell us what you are trying to solve.";
+  }
+  return errors;
+}
+
+function missingFieldsSummary(errors: FieldErrors) {
+  const labels: Record<FieldName, string> = {
+    name: "Name",
+    email: "Work email",
+    message: "What you are trying to solve",
+  };
+  const missing = (Object.keys(errors) as FieldName[]).map((key) => labels[key]);
+  if (missing.length === 0) return "";
+  if (missing.length === 1) return `Please complete: ${missing[0]}.`;
+  if (missing.length === 2) {
+    return `Please complete: ${missing[0]} and ${missing[1]}.`;
+  }
+  return `Please complete: ${missing.slice(0, -1).join(", ")}, and ${missing.at(-1)}.`;
+}
 
 function contactIntentFromTopic(topic: string) {
   const normalized = topic.toLowerCase();
@@ -53,10 +101,14 @@ export function ContactPageView() {
   const [submitted, setSubmitted] = useState(false);
   const [topic, setTopic] = useState(contactTopics[0]);
   const [submitState, setSubmitState] = useState<SubmitState>({ status: "idle" });
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const formStartTracked = useRef(false);
   const topicRef = useRef(topic);
   topicRef.current = topic;
   const formRef = useRef<HTMLFormElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -101,7 +153,17 @@ export function ContactPageView() {
     };
   }, []);
 
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const clearFieldError = (field: FieldName) => {
+    setFieldErrors((current) => {
+      if (!current[field]) return current;
+      const next = { ...current };
+      delete next[field];
+      return next;
+    });
+    setSubmitState((current) =>
+      current.status === "error" ? { status: "idle" } : current,
+    );
+  };
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
@@ -114,6 +176,22 @@ export function ContactPageView() {
       source: "website-contact",
     };
 
+    const errors = validateContactForm(payload);
+    setFieldErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      setSubmitState({
+        status: "error",
+        message: missingFieldsSummary(errors),
+      });
+      const first = errors.name
+        ? nameRef.current
+        : errors.email
+          ? emailRef.current
+          : messageRef.current;
+      first?.focus();
+      return;
+    }
+
     setSubmitState({ status: "submitting" });
 
     try {
@@ -125,30 +203,29 @@ export function ContactPageView() {
       const result = (await response.json()) as {
         ok?: boolean;
         error?: string;
-        fallbackMailto?: boolean;
-        mailto?: { to: string; subject: string; body: string };
       };
 
       if (!response.ok || !result.ok) {
+        const apiMessage =
+          result.error ||
+          "Unable to submit right now. Please email hello@inheritx.com.";
+        if (apiMessage.toLowerCase().includes("email")) {
+          setFieldErrors((current) => ({
+            ...current,
+            email: apiMessage,
+          }));
+          emailRef.current?.focus();
+        }
         setSubmitState({
           status: "error",
-          message:
-            result.error ||
-            "Unable to submit right now. Please email hello@inheritx.com.",
+          message: apiMessage,
         });
         return;
       }
 
-      if (result.fallbackMailto && result.mailto) {
-        const href = `mailto:${result.mailto.to}?subject=${encodeURIComponent(result.mailto.subject)}&body=${encodeURIComponent(result.mailto.body)}`;
-        window.location.href = href;
-      }
-
       setSubmitted(true);
-      setSubmitState({
-        status: "success",
-        fallbackMailto: Boolean(result.fallbackMailto),
-      });
+      setSubmitState({ status: "success" });
+      setFieldErrors({});
       const last = readLastCtaClick();
       const variant = last?.variant ?? readStoredHeroAbVariant();
       trackCtaFormSubmit({
@@ -178,7 +255,7 @@ export function ContactPageView() {
       />
 
       <section className="bg-ink py-16 md:py-20">
-        <div className="mx-auto grid max-w-[1400px] gap-10 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 md:px-8">
+        <div className="mx-auto grid max-w-page gap-10 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 md:px-8">
           <Reveal>
             <div className="rounded-[1.75rem] border border-white/10 bg-ink-soft p-6 md:p-8">
               <h2 className="font-display text-2xl text-white md:text-3xl">
@@ -204,7 +281,7 @@ export function ContactPageView() {
                         "rounded-2xl border px-4 py-3.5 text-left transition-colors",
                         active
                           ? assessment
-                            ? "border-cyan-deep/45 bg-cyan-deep/20"
+                            ? "border-white/25 bg-white/[0.08]"
                             : "border-cyan/40 bg-cyan/15"
                           : "border-white/10 bg-ink hover:border-white/25",
                       )}
@@ -214,7 +291,7 @@ export function ContactPageView() {
                           "text-sm font-medium",
                           active
                             ? assessment
-                              ? "text-cyan-deep"
+                              ? "text-white"
                               : "text-cyan"
                             : "text-white",
                         )}
@@ -233,21 +310,17 @@ export function ContactPageView() {
                 <div className="mt-10 flex items-start gap-3 rounded-2xl border border-cyan/30 bg-cyan/10 p-5">
                   <CheckCircle2 className="mt-0.5 shrink-0 text-cyan" size={20} />
                   <div>
-                    <p className="font-medium text-white">
-                      {submitState.status === "success" && submitState.fallbackMailto
-                        ? "Opening email fallback"
-                        : "Request received"}
-                    </p>
+                    <p className="font-medium text-white">Request received</p>
                     <p className="mt-1 text-sm text-white/55">
-                      {submitState.status === "success" && submitState.fallbackMailto
-                        ? "If your mail client doesn’t open, email hello@inheritx.com with your brief. An architect will follow up—usually within one business day."
-                        : "An architect will follow up—usually within one business day."}
+                      An architect will follow up—usually within one business
+                      day.
                     </p>
                     <button
                       type="button"
                       onClick={() => {
                         setSubmitted(false);
                         setSubmitState({ status: "idle" });
+                        setFieldErrors({});
                         formStartTracked.current = false;
                       }}
                       className="mt-4 text-sm text-cyan underline-offset-4 hover:underline"
@@ -266,29 +339,80 @@ export function ContactPageView() {
                 >
                   <div className="grid gap-5 sm:grid-cols-2">
                     <label className="block text-xs tracking-wide text-white/40">
-                      Name
+                      <span className="flex items-center justify-between gap-3">
+                        Name
+                        <FieldMark hint="Required" />
+                      </span>
                       <input
+                        ref={nameRef}
                         required
                         name="name"
                         autoComplete="name"
-                        className="mt-2 w-full rounded-xl border border-white/10 bg-ink px-4 py-3.5 text-base text-white outline-none transition-colors focus:border-cyan/50 md:py-3 md:text-sm"
+                        aria-required="true"
+                        aria-invalid={Boolean(fieldErrors.name)}
+                        aria-describedby={
+                          fieldErrors.name ? "contact-name-error" : undefined
+                        }
+                        onChange={() => clearFieldError("name")}
+                        className={cn(
+                          "mt-2 w-full rounded-xl border bg-ink px-4 py-3.5 text-base text-white outline-none transition-colors focus:border-cyan/50 md:py-3 md:text-sm",
+                          fieldErrors.name
+                            ? "border-red-400/60"
+                            : "border-white/10",
+                        )}
                         placeholder="Your name"
                       />
+                      {fieldErrors.name ? (
+                        <p
+                          id="contact-name-error"
+                          className="mt-1.5 text-xs text-red-300"
+                          role="alert"
+                        >
+                          {fieldErrors.name}
+                        </p>
+                      ) : null}
                     </label>
                     <label className="block text-xs tracking-wide text-white/40">
-                      Work email
+                      <span className="flex items-center justify-between gap-3">
+                        Work email
+                        <FieldMark hint="Required" />
+                      </span>
                       <input
+                        ref={emailRef}
                         required
                         type="email"
                         name="email"
                         autoComplete="email"
-                        className="mt-2 w-full rounded-xl border border-white/10 bg-ink px-4 py-3.5 text-base text-white outline-none transition-colors focus:border-cyan/50 md:py-3 md:text-sm"
+                        aria-required="true"
+                        aria-invalid={Boolean(fieldErrors.email)}
+                        aria-describedby={
+                          fieldErrors.email ? "contact-email-error" : undefined
+                        }
+                        onChange={() => clearFieldError("email")}
+                        className={cn(
+                          "mt-2 w-full rounded-xl border bg-ink px-4 py-3.5 text-base text-white outline-none transition-colors focus:border-cyan/50 md:py-3 md:text-sm",
+                          fieldErrors.email
+                            ? "border-red-400/60"
+                            : "border-white/10",
+                        )}
                         placeholder="you@company.com"
                       />
+                      {fieldErrors.email ? (
+                        <p
+                          id="contact-email-error"
+                          className="mt-1.5 text-xs text-red-300"
+                          role="alert"
+                        >
+                          {fieldErrors.email}
+                        </p>
+                      ) : null}
                     </label>
                   </div>
                   <label className="block text-xs tracking-wide text-white/40">
-                    Company
+                    <span className="flex items-center justify-between gap-3">
+                      Company
+                      <FieldMark hint="Optional" />
+                    </span>
                     <input
                       name="company"
                       autoComplete="organization"
@@ -297,8 +421,12 @@ export function ContactPageView() {
                     />
                   </label>
                   <div>
-                    <p className="text-xs tracking-wide text-white/40" id="contact-topic-label">
+                    <p
+                      className="flex items-center justify-between gap-3 text-xs tracking-wide text-white/40"
+                      id="contact-topic-label"
+                    >
                       Topic
+                      <FieldMark hint="Required" />
                     </p>
                     <div
                       className="mt-2 flex flex-wrap gap-2"
@@ -318,7 +446,7 @@ export function ContactPageView() {
                             "inline-flex min-h-11 items-center justify-center rounded-full border px-4 py-2.5 text-sm transition-all",
                             selected
                               ? assessment
-                                ? "border-cyan-deep/45 bg-cyan-deep/20 text-cyan-deep"
+                                ? "border-white/30 bg-white text-ink"
                                 : "border-cyan/40 bg-cyan/15 text-cyan"
                               : "border-white/10 text-white/45 hover:text-white/75",
                           )}
@@ -330,14 +458,38 @@ export function ContactPageView() {
                     </div>
                   </div>
                   <label className="block text-xs tracking-wide text-white/40">
-                    What are you trying to solve?
+                    <span className="flex items-center justify-between gap-3">
+                      What are you trying to solve?
+                      <FieldMark hint="Required" />
+                    </span>
                     <textarea
+                      ref={messageRef}
                       required
                       name="message"
                       rows={5}
-                      className="mt-2 w-full resize-y rounded-xl border border-white/10 bg-ink px-4 py-3 text-base text-white outline-none transition-colors focus:border-cyan/50 md:text-sm"
+                      aria-required="true"
+                      aria-invalid={Boolean(fieldErrors.message)}
+                      aria-describedby={
+                        fieldErrors.message ? "contact-message-error" : undefined
+                      }
+                      onChange={() => clearFieldError("message")}
+                      className={cn(
+                        "mt-2 w-full resize-y rounded-xl border bg-ink px-4 py-3 text-base text-white outline-none transition-colors focus:border-cyan/50 md:text-sm",
+                        fieldErrors.message
+                          ? "border-red-400/60"
+                          : "border-white/10",
+                      )}
                       placeholder="Mandate, systems involved, timeline, constraints…"
                     />
+                    {fieldErrors.message ? (
+                      <p
+                        id="contact-message-error"
+                        className="mt-1.5 text-xs text-red-300"
+                        role="alert"
+                      >
+                        {fieldErrors.message}
+                      </p>
+                    ) : null}
                   </label>
                   {submitState.status === "error" ? (
                     <p className="text-sm text-red-300" role="alert">
@@ -348,10 +500,10 @@ export function ContactPageView() {
                     type="submit"
                     disabled={submitState.status === "submitting"}
                     className={cn(
-                      "inline-flex min-h-12 w-full items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-ink disabled:opacity-60 sm:w-auto",
+                      "inline-flex min-h-12 w-full items-center justify-center rounded-full px-6 py-3 text-sm font-medium disabled:opacity-60 sm:w-auto",
                       contactIntentFromTopic(topic) === "assessment"
-                        ? "bg-cyan-deep"
-                        : "bg-cyan",
+                        ? "bg-white text-ink transition-colors hover:bg-cyan hover:text-white"
+                        : "cta-primary text-white",
                     )}
                   >
                     {submitState.status === "submitting"
@@ -487,7 +639,7 @@ export function ContactPageView() {
       <ProcurementExperience tone="dark" />
 
       <section className="border-t border-white/[0.06] bg-paper py-16 text-ink md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-8">
+        <div className="mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Offices

@@ -108,7 +108,7 @@ export const navigation: NavItem[] = [
     quickLinks: [
       { title: "AI strategy call", description: "30-min architect session", href: contactHref("strategy") },
       { title: "All solutions", description: "Capability map", href: "/solutions" },
-      { title: "Engagement models", description: "How to buy", href: "/resources/engagement-models" },
+      { title: "Engagement Models", description: "How to buy", href: "/resources/engagement-models" },
     ],
   },
   {
@@ -201,7 +201,7 @@ export const navigation: NavItem[] = [
             href: "/resources/enterprise-references",
           },
           {
-            title: "Production readiness",
+            title: "Production Readiness",
             description: "Checklist before go-live.",
             href: "/resources/production-readiness",
           },
@@ -434,7 +434,7 @@ export const navigation: NavItem[] = [
             href: "/resources/whitepapers",
           },
           {
-            title: "Engagement models",
+            title: "Engagement Models",
             description: "Consulting, build, squads, embeds.",
             href: "/resources/engagement-models",
           },
@@ -449,7 +449,7 @@ export const navigation: NavItem[] = [
             href: "/resources/security-faq",
           },
           {
-            title: "Diligence pack",
+            title: "Diligence Pack",
             description: "NDA materials for qualified buyers.",
             href: "/resources/diligence-pack",
           },
@@ -459,12 +459,12 @@ export const navigation: NavItem[] = [
             href: "/resources/ai-governance",
           },
           {
-            title: "Production readiness",
+            title: "Production Readiness",
             description: "Checklist before declaring AI production-ready.",
             href: "/resources/production-readiness",
           },
           {
-            title: "Architecture principles",
+            title: "Architecture Principles",
             description: "Private, governed defaults.",
             href: "/resources/architecture-principles",
           },
