@@ -23,13 +23,16 @@ export function sanitizeInsightHtml(html: string): string {
   out = out.replace(/vbscript:/gi, "");
   out = out.replace(/data:text\/html/gi, "");
 
-  out = out.replace(/\s(src|data-src|data-lazy-src)=["']([^"']+)["']/gi, (_, attr, url) => {
-    return ` ${attr}="${wpOriginalImageUrl(url)}"`;
-  });
-  out = out.replace(/\ssrcset=["']([^"']+)["']/gi, (_, srcset) => {
+  out = out.replace(
+    /\s(src|data-src|data-lazy-src)=["']([^"']+)["']/gi,
+    (_: string, attr: string, url: string) => {
+      return ` ${attr}="${wpOriginalImageUrl(url)}"`;
+    },
+  );
+  out = out.replace(/\ssrcset=["']([^"']+)["']/gi, (_: string, srcset: string) => {
     const upgraded = srcset
       .split(",")
-      .map((part) => {
+      .map((part: string) => {
         const trimmed = part.trim();
         const space = trimmed.search(/\s/);
         if (space === -1) return wpOriginalImageUrl(trimmed);

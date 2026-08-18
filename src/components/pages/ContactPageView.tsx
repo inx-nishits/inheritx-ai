@@ -164,6 +164,8 @@ export function ContactPageView() {
       current.status === "error" ? { status: "idle" } : current,
     );
   };
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
