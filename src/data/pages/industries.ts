@@ -21,7 +21,7 @@ export const industryProfiles = [
       "Prior-auth and intake automation",
     ],
     metric: "Up to 40% less documentation time (pattern)",
-    image: "/images/visuals/industries/industry-healthcare.png",
+    image: "/images/actual/actual-healthcare.jpg",
   },
   {
     name: "Finance",
@@ -38,7 +38,7 @@ export const industryProfiles = [
       "Policy-aware decision support",
     ],
     metric: "10× faster agentic triage cycles (pattern)",
-    image: "/images/visuals/industries/industry-finance.png",
+    image: "/images/actual/actual-finance.jpg",
   },
   {
     name: "Manufacturing",
@@ -55,7 +55,7 @@ export const industryProfiles = [
       "Operator feedback loops",
     ],
     metric: "Higher detection on critical lines",
-    image: "/images/visuals/industries/industry-manufacturing.png",
+    image: "/images/actual/actual-manufacturing.jpg",
   },
   {
     name: "Retail",
@@ -72,7 +72,7 @@ export const industryProfiles = [
       "Assortment copilots",
     ],
     metric: "Lower handle time at volume",
-    image: "/images/visuals/industries/industry-retail.png",
+    image: "/images/actual/actual-retail.jpg",
   },
   {
     name: "Insurance",
@@ -89,7 +89,7 @@ export const industryProfiles = [
       "Underwriting assist",
     ],
     metric: "Cited policy answers at scale",
-    image: "/images/visuals/industries/industry-insurance.png",
+    image: "/images/actual/actual-insurance.jpg",
   },
   {
     name: "Logistics",
@@ -106,7 +106,7 @@ export const industryProfiles = [
       "Network optimization models",
     ],
     metric: "Faster document & exception cycles",
-    image: "/images/visuals/industries/industry-logistics.png",
+    image: "/images/actual/actual-logistic.jpg",
   },
   {
     name: "Government",
@@ -123,7 +123,7 @@ export const industryProfiles = [
       "Full auditability by design",
     ],
     metric: "Shorter governed case cycles",
-    image: "/images/visuals/industries/industry-government.png",
+    image: "/images/actual/actual-government.jpg",
   },
 ];
 

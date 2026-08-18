@@ -46,13 +46,13 @@ function TeamPhoneCard({
   return (
     <Reveal
       delay={index * 0.06}
-      className={cn("h-full w-full", index % 2 === 1 && "lg:mt-8")}
+      className={cn("h-full w-full", index % 2 === 0 && "lg:mt-8")}
     >
       <article className="team-member-frame group relative mx-auto flex h-full w-full max-w-[240px] flex-col overflow-hidden rounded-[2rem] p-[1.5px] sm:max-w-[260px]">
         <span aria-hidden className="team-member-border" />
         <div className="relative z-10 flex h-full flex-col overflow-hidden rounded-[calc(2rem-1.5px)] bg-[#0c1118] shadow-[0_20px_48px_rgba(0,0,0,0.4)]">
           <div className="p-2 pb-0 md:p-2.5 md:pb-0">
-            <div className="relative mx-auto aspect-square w-full overflow-hidden rounded-[1.5rem] bg-[#0a1018]">
+            <div className="relative mx-auto aspect-[4/5] w-full overflow-hidden rounded-[1.5rem] bg-[#0a1018] sm:aspect-square">
               {member.image ? (
                 <Image
                   src={member.image}
@@ -103,11 +103,6 @@ function TeamPhoneCard({
               {member.name}
             </h3>
             <p className="mt-1 text-sm text-cyan">{member.role}</p>
-            {member.bio ? (
-              <p className="mt-2 text-xs leading-relaxed text-white/60 md:text-sm">
-                {member.bio}
-              </p>
-            ) : null}
           </div>
 
           <div
@@ -138,7 +133,7 @@ export function TeamMembersGrid() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 justify-items-center gap-10 sm:grid-cols-2 sm:justify-items-stretch lg:grid-cols-4 lg:gap-8">
+        <div className="mx-auto mt-14 grid max-w-[1200px] grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:gap-10">
           {featuredTeamMembers.map((member, index) => (
             <TeamPhoneCard key={member.id} member={member} index={index} />
           ))}
