@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type PointerEvent,
+} from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { Reveal, TextReveal } from "@/components/ui/Reveal";
@@ -22,7 +29,8 @@ export type TestimonialsSectionProps = {
 };
 
 const AUTO_MS = 5500;
-const LOOP_COPIES = 3;
+const LOOP_COPIES = 2;
+const SLIDE_MS = 550;
 
 function trackMetrics(track: HTMLDivElement) {
   const styles = window.getComputedStyle(track);
@@ -145,9 +153,16 @@ export function TestimonialsSection({
     [published],
   );
 
+  const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const looping = useRef(false);
+  const offsetRef = useRef(0);
+  const draggingRef = useRef(false);
+  const dragStartXRef = useRef(0);
+  const dragStartYRef = useRef(0);
+  const dragStartOffsetRef = useRef(0);
+  const pointerActiveRef = useRef(false);
   const [paused, setPaused] = useState(false);
+  const [inView, setInView] = useState(false);
 
   const setWidth = useCallback(() => {
     const track = trackRef.current;
@@ -155,28 +170,57 @@ export function TestimonialsSection({
     return trackMetrics(track).step * total;
   }, [total]);
 
-  const normalizeLoop = useCallback(() => {
-    const track = trackRef.current;
-    if (!track || looping.current || total < 2) return;
-    const width = setWidth();
-    if (width <= 0) return;
-    if (track.scrollLeft < width * 0.5) {
-      looping.current = true;
-      track.scrollLeft += width;
-      looping.current = false;
-    } else if (track.scrollLeft >= width * 1.5) {
-      looping.current = true;
-      track.scrollLeft -= width;
-      looping.current = false;
-    }
-  }, [setWidth, total]);
+  const prefersReducedMotion = useCallback(() => {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }, []);
 
-  const scrollByCard = useCallback((direction: -1 | 1) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const { step } = trackMetrics(track);
-    if (step <= 0) return;
-    track.scrollBy({ left: direction * step, behavior: "smooth" });
+  const applyOffset = useCallback(
+    (x: number, animate: boolean) => {
+      const track = trackRef.current;
+      if (!track) return;
+      offsetRef.current = x;
+      const useMotion = animate && !draggingRef.current && !prefersReducedMotion();
+      track.style.transition = useMotion
+        ? `transform ${SLIDE_MS}ms cubic-bezier(0.22, 1, 0.36, 1)`
+        : "none";
+      track.style.transform = `translate3d(${-x}px, 0, 0)`;
+    },
+    [prefersReducedMotion],
+  );
+
+  const normalizeLoop = useCallback(
+    (animate = false) => {
+      if (total < 2) return;
+      const width = setWidth();
+      if (width <= 0) return;
+      let x = offsetRef.current;
+      while (x < width * 0.5) x += width;
+      while (x >= width * 1.5) x -= width;
+      applyOffset(x, animate);
+    },
+    [applyOffset, setWidth, total],
+  );
+
+  const scrollByCard = useCallback(
+    (direction: -1 | 1) => {
+      const track = trackRef.current;
+      if (!track) return;
+      const { step } = trackMetrics(track);
+      if (step <= 0) return;
+      applyOffset(offsetRef.current + direction * step, true);
+    },
+    [applyOffset],
+  );
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { rootMargin: "15% 0px", threshold: 0.08 },
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -186,60 +230,93 @@ export function TestimonialsSection({
     const placeInLoop = () => {
       const width = setWidth();
       if (width <= 0) return;
-      looping.current = true;
-      if (track.scrollLeft === 0) {
-        track.scrollLeft = width;
-      } else {
-        const offset = track.scrollLeft % width;
-        track.scrollLeft = width + offset;
-      }
-      looping.current = false;
+      const offset = offsetRef.current > 0 ? offsetRef.current % width : 0;
+      applyOffset(width + offset, false);
     };
 
     placeInLoop();
     const raf = requestAnimationFrame(placeInLoop);
 
-    let frame = 0;
-    const onScroll = () => {
-      if (looping.current) return;
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(normalizeLoop);
+    const onTransitionEnd = (event: TransitionEvent) => {
+      if (event.propertyName !== "transform") return;
+      normalizeLoop(false);
     };
-    const onScrollEnd = () => normalizeLoop();
 
-    track.addEventListener("scroll", onScroll, { passive: true });
-    track.addEventListener("scrollend", onScrollEnd);
+    track.addEventListener("transitionend", onTransitionEnd);
     window.addEventListener("resize", placeInLoop);
 
     return () => {
       cancelAnimationFrame(raf);
-      cancelAnimationFrame(frame);
-      track.removeEventListener("scroll", onScroll);
-      track.removeEventListener("scrollend", onScrollEnd);
+      track.removeEventListener("transitionend", onTransitionEnd);
       window.removeEventListener("resize", placeInLoop);
     };
-  }, [normalizeLoop, setWidth, total]);
+  }, [applyOffset, normalizeLoop, setWidth, total]);
 
   useEffect(() => {
-    if (paused || total < 2) return;
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (reduceMotion) return;
+    if (!inView || paused || total < 2) return;
+    if (prefersReducedMotion()) return;
 
     const timer = window.setInterval(() => scrollByCard(1), AUTO_MS);
     return () => window.clearInterval(timer);
-  }, [paused, scrollByCard, total]);
+  }, [inView, paused, prefersReducedMotion, scrollByCard, total]);
+
+  const onPointerDown = useCallback((event: PointerEvent<HTMLDivElement>) => {
+    if (event.button !== 0 || total < 2) return;
+    pointerActiveRef.current = true;
+    draggingRef.current = false;
+    dragStartXRef.current = event.clientX;
+    dragStartYRef.current = event.clientY;
+    dragStartOffsetRef.current = offsetRef.current;
+  }, [total]);
+
+  const onPointerMove = useCallback(
+    (event: PointerEvent<HTMLDivElement>) => {
+      if (!pointerActiveRef.current || total < 2) return;
+      const dx = event.clientX - dragStartXRef.current;
+      const dy = event.clientY - dragStartYRef.current;
+      if (!draggingRef.current) {
+        if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+        if (Math.abs(dy) >= Math.abs(dx)) {
+          pointerActiveRef.current = false;
+          return;
+        }
+        draggingRef.current = true;
+        setPaused(true);
+        event.currentTarget.setPointerCapture(event.pointerId);
+      }
+      applyOffset(dragStartOffsetRef.current - dx, false);
+    },
+    [applyOffset, total],
+  );
+
+  const onPointerUp = useCallback(
+    (event: PointerEvent<HTMLDivElement>) => {
+      pointerActiveRef.current = false;
+      if (!draggingRef.current) return;
+      draggingRef.current = false;
+      event.currentTarget.releasePointerCapture(event.pointerId);
+      const track = trackRef.current;
+      if (!track) return;
+      const { step } = trackMetrics(track);
+      if (step > 0) {
+        const snapped = Math.round(offsetRef.current / step) * step;
+        applyOffset(snapped, true);
+      }
+      window.setTimeout(() => setPaused(false), 1800);
+    },
+    [applyOffset],
+  );
 
   if (total === 0) return null;
 
   return (
     <section
+      ref={sectionRef}
       id={id}
       aria-roledescription="carousel"
       aria-label="Enterprise testimonials"
       className={cn(
-        "relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20",
+        "relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20 [contain:layout_paint]",
         className,
       )}
       onMouseEnter={() => setPaused(true)}
@@ -251,9 +328,8 @@ export function TestimonialsSection({
         }
       }}
     >
-      <div className="noise-overlay opacity-40" />
-      <div className="pointer-events-none absolute inset-0 editorial-grid opacity-25" />
-      <div className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[70%] -translate-x-1/2 rounded-full bg-cyan/[0.07] blur-[120px]" />
+      <div className="pointer-events-none absolute inset-0 editorial-grid opacity-20" />
+      <div className="pointer-events-none absolute -top-16 left-1/2 h-[220px] w-[40%] -translate-x-1/2 rounded-full bg-cyan/[0.06] blur-[48px]" />
 
       <div className="relative mx-auto max-w-page px-5 md:px-8">
         <div className="flex flex-col gap-5 md:gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -280,7 +356,7 @@ export function TestimonialsSection({
                 type="button"
                 aria-label="Previous testimonials"
                 onClick={() => scrollByCard(-1)}
-                className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 backdrop-blur-sm transition-colors hover:border-cyan/50 hover:text-white"
+                className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 transition-colors hover:border-cyan/50 hover:text-white"
               >
                 <ArrowLeft size={17} />
               </button>
@@ -288,7 +364,7 @@ export function TestimonialsSection({
                 type="button"
                 aria-label="Next testimonials"
                 onClick={() => scrollByCard(1)}
-                className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 backdrop-blur-sm transition-colors hover:border-cyan/50 hover:text-white"
+                className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 transition-colors hover:border-cyan/50 hover:text-white"
               >
                 <ArrowRight size={17} />
               </button>
@@ -297,21 +373,22 @@ export function TestimonialsSection({
         </div>
       </div>
 
-      <div className="relative mt-8 w-full md:mt-12">
+      <div
+        className="relative mt-8 w-full touch-pan-y overflow-hidden md:mt-12"
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+      >
         <div
           ref={trackRef}
-          className="testimonial-track flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain pb-1 [-webkit-overflow-scrolling:touch] [scrollbar-width:none] touch-pan-x sm:gap-4 md:gap-5 lg:gap-6 [&::-webkit-scrollbar]:hidden"
-          data-lenis-prevent-horizontal
-          onTouchStart={() => setPaused(true)}
-          onTouchEnd={() => {
-            window.setTimeout(() => setPaused(false), 2500);
-          }}
+          className="testimonial-track flex w-max gap-3 [backface-visibility:hidden] sm:gap-4 md:gap-5 lg:gap-6"
         >
           {looped.map(({ item, copy }, index) => (
             <div
               key={`${item.id}-${copy}-${index}`}
               data-testimonial-card
-              className="w-[min(85vw,22rem)] shrink-0 snap-start sm:w-[min(62vw,24rem)] md:w-[min(48vw,26rem)] lg:w-[min(36vw,28rem)]"
+              className="w-[min(85vw,22rem)] shrink-0 sm:w-[min(62vw,24rem)] md:w-[min(48vw,26rem)] lg:w-[min(36vw,28rem)]"
             >
               <TestimonialCard item={item} index={index % total} />
             </div>
