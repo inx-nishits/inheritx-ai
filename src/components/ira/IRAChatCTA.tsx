@@ -437,7 +437,8 @@ function IRAAssistant() {
                   alt=""
                   fill
                   sizes="56px"
-                  className="object-cover"
+                  unoptimized
+                  className="object-cover object-center"
                   aria-hidden
                 />
                 <span

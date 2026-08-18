@@ -48,7 +48,7 @@ export function PortfolioHero() {
         <Reveal delay={0.1}>
           <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] border border-white/10">
             <Image
-              src="/images/visuals/lead-cases.png"
+              src="/images/actual/actual-portfolio-banner.png"
               alt="Enterprise AI portfolio visual"
               fill
               priority

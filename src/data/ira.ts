@@ -17,7 +17,7 @@ function resolveIraChatUrl() {
 
 export const IRA_CHAT_URL = resolveIraChatUrl();
 
-export const IRA_AVATAR_SRC = "/images/ira/avatar.png" as const;
+export const IRA_AVATAR_SRC = "/images/actual/Ira-icon.png" as const;
 
 export const IRA_VIDEO_SRC = "/images/actual/IRA.mp4" as const;
 
