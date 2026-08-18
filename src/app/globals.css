@@ -12,6 +12,9 @@
   --cyan: #00bed4;
   --cyan-deep: #0891a8;
   --cyan-soft: rgba(0, 190, 212, 0.14);
+  --mint: #2ee6c0;
+  --mint-deep: #12b89a;
+  --mint-soft: rgba(46, 230, 192, 0.14);
   --foreground: #f5f7fa;
   --background: var(--ink);
 }
@@ -28,6 +31,9 @@
   --color-cyan: var(--cyan);
   --color-cyan-deep: var(--cyan-deep);
   --color-cyan-soft: var(--cyan-soft);
+  --color-mint: var(--mint);
+  --color-mint-deep: var(--mint-deep);
+  --color-mint-soft: var(--mint-soft);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-satoshi);

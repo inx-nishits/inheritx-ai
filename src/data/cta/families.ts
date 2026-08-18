@@ -54,7 +54,7 @@ export const ctaFamilyMeta = {
     size: "min-h-12, px-6",
     icon: "None by default",
     color:
-      "On ink: cyan wash, white type. On paper: cyan wash, cyan-deep type. Hover deepens the cyan.",
+      "On ink: mint wash, white type. On paper: mint wash, mint-deep type. Hover deepens the mint.",
     background: "None",
   },
   text: {
@@ -117,11 +117,11 @@ export const ctaFamilyClasses = {
   },
   tint: "inline-flex min-h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-cyan/45 bg-cyan/10 px-5 py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(0,190,212,0.1)] transition-colors hover:border-cyan/70 hover:bg-cyan/20 sm:px-6",
   ghost:
-    "inline-flex min-h-12 shrink-0 items-center justify-center rounded-full border border-cyan/40 bg-cyan/10 px-6 text-sm font-medium text-white shadow-[0_0_18px_rgba(0,190,212,0.08)] transition-colors hover:border-cyan hover:bg-cyan/20 hover:text-white",
+    "inline-flex min-h-12 shrink-0 items-center justify-center rounded-full border border-mint/40 bg-mint/10 px-6 text-sm font-medium text-white shadow-[0_0_18px_rgba(46,230,192,0.12)] transition-colors hover:border-mint hover:bg-mint/20 hover:text-white",
   ghostStrategy:
-    "inline-flex min-h-12 shrink-0 items-center justify-center rounded-full border border-cyan/40 bg-cyan/10 px-6 text-sm font-medium text-white shadow-[0_0_18px_rgba(0,190,212,0.08)] transition-colors hover:border-cyan hover:bg-cyan/20 hover:text-white",
+    "inline-flex min-h-12 shrink-0 items-center justify-center rounded-full border border-mint/40 bg-mint/10 px-6 text-sm font-medium text-white shadow-[0_0_18px_rgba(46,230,192,0.12)] transition-colors hover:border-mint hover:bg-mint/20 hover:text-white",
   ghostOnPaper:
-    "inline-flex min-h-12 shrink-0 items-center justify-center rounded-full border border-cyan-deep/35 bg-cyan/[0.1] px-6 text-sm font-medium text-cyan-deep transition-colors hover:border-cyan-deep hover:bg-cyan/20 hover:text-ink",
+    "inline-flex min-h-12 shrink-0 items-center justify-center rounded-full border border-mint-deep/40 bg-mint/[0.12] px-6 text-sm font-medium text-mint-deep transition-colors hover:border-mint-deep hover:bg-mint/20 hover:text-ink",
   ghostQuiet:
     "inline-flex min-h-12 shrink-0 items-center justify-center rounded-full border border-white/25 bg-transparent px-6 text-sm font-medium text-white transition-colors hover:border-white/45 hover:bg-white/[0.06]",
   text: "group inline-flex min-h-12 items-center justify-center gap-2 px-1 text-sm font-medium text-white/70 transition-colors hover:text-white",

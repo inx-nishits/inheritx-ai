@@ -141,7 +141,7 @@ export function Hero() {
         {/* Layer 4 — content (highest priority) */}
         <div
           ref={copyRef}
-          className="relative z-20 mx-auto flex w-full max-w-[1100px] flex-col items-center px-5 pt-28 pb-16 text-center md:h-full md:justify-center md:px-8 md:pt-16 md:pb-16"
+          className="relative z-20 mx-auto flex w-full max-w-[1100px] flex-col items-center px-5 pt-28 pb-16 text-center md:h-full md:justify-center md:px-8 md:pt-[calc(4rem+50px)] md:pb-16"
         >
           {/* Content spotlight — soft lift so type stays primary */}
           <div
