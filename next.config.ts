@@ -30,10 +30,19 @@ const agencyInsightCategories = [
   "xamarin-app-development",
 ] as const;
 
+const securityHeaders = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "DENY" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=63072000; includeSubDomains; preload",
+  },
+];
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  // Dev-only: allow LAN HMR when opening the site from this machine's network IP.
-  allowedDevOrigins: ["192.168.1.162", "localhost", "127.0.0.1"],
   images: {
     remotePatterns: [
       {
@@ -53,23 +62,25 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
+  async headers() {
     return [
       {
-        source: "/resources/insights",
-        destination: "/insights",
-        permanent: true,
+        source: "/(.*)",
+        headers: securityHeaders,
       },
-      {
-        source: "/resources/insights/:path*",
-        destination: "/insights",
-        permanent: true,
-      },
-      {
-        source: "/path/evaluating",
-        destination: "/path/head-of-ai",
-        permanent: true,
-      },
+    ];
+  },
+  async redirects() {
+    return [
+      // Legacy careers page URL from old site
+      { source: "/join-our-team", destination: "/careers", permanent: true },
+      { source: "/join-our-team/:path*", destination: "/careers", permanent: true },
+      // Legacy blog/insights URLs
+      { source: "/resources/insights", destination: "/insights", permanent: true },
+      { source: "/resources/insights/:path*", destination: "/insights", permanent: true },
+      // Legacy evaluating path
+      { source: "/path/evaluating", destination: "/path/head-of-ai", permanent: true },
+      // Legacy agency blog category slugs → insights index
       ...agencyInsightCategories.map((slug) => ({
         source: `/insights/category/${slug}`,
         destination: "/insights",

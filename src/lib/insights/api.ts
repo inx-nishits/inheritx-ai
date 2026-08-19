@@ -201,10 +201,6 @@ export async function fetchAllInsightSlugs(): Promise<string[]> {
   return Array.from(set);
 }
 
-export function cardKey(card: InsightCard): string {
-  return String(card.slug || card.id);
-}
-
 // ---------------------------------------------------------------------------
 // Careers
 // ---------------------------------------------------------------------------

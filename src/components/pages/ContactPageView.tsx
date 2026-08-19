@@ -286,7 +286,7 @@ export function ContactPageView() {
   const [submitted, setSubmitted] = useState(false);
   const [submitState, setSubmitState] = useState<SubmitState>({ status: "idle" });
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
-  const [captcha, setCaptcha] = useState<{ a: number; b: number } | null>(null);
+  const [captcha, setCaptcha] = useState<{ a: number; b: number }>(() => randomCaptcha());
   const [captchaAnswer, setCaptchaAnswer] = useState("");
   const [requestNda, setRequestNda] = useState(false);
   const formStartTracked = useRef(false);
@@ -299,14 +299,7 @@ export function ContactPageView() {
   const messageRef = useRef<HTMLTextAreaElement>(null);
   const captchaRef = useRef<HTMLInputElement>(null);
 
-  const captchaExpected = useMemo(
-    () => (captcha ? captcha.a + captcha.b : 0),
-    [captcha],
-  );
-
-  useEffect(() => {
-    setCaptcha(randomCaptcha());
-  }, []);
+  const captchaExpected = useMemo(() => captcha.a + captcha.b, [captcha]);
 
   const onFormStart = () => {
     if (formStartTracked.current) return;
@@ -752,11 +745,11 @@ export function ContactPageView() {
                         >
                           <div className="flex flex-wrap items-center gap-2">
                             <span className="flex size-9 items-center justify-center rounded-lg border border-white/10 bg-ink font-mono text-sm text-white">
-                              {captcha?.a ?? "·"}
+                              {captcha.a}
                             </span>
                             <span className="text-white/35">+</span>
                             <span className="flex size-9 items-center justify-center rounded-lg border border-white/10 bg-ink font-mono text-sm text-white">
-                              {captcha?.b ?? "·"}
+                              {captcha.b}
                             </span>
                             <span className="text-white/35">=</span>
                             <input

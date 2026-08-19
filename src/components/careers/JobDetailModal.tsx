@@ -126,43 +126,33 @@ export function JobDetailModal({ jobId, jobTitle }: Props) {
   const previouslyFocused = useRef<HTMLElement | null>(null);
   const titleId = useId();
 
-  // ── Fetch detail when modal opens ────────────────────────────────────────
+  // ── Open: init captcha + start detail fetch; Close: reset all state ──────
   useEffect(() => {
-    if (!open) return;
-    if (fetchState.status !== "idle") return;
+    if (open) {
+      setCaptcha(randomCaptcha());
+      setFetchState({ status: "loading" });
 
-    setFetchState({ status: "loading" });
-
-    fetch(`/api/career-detail?id=${encodeURIComponent(String(jobId))}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("API error");
-        return res.json() as Promise<{ detail: JobDetail | null }>;
-      })
-      .then((data) => {
-        if (!data.detail) {
-          setFetchState({ status: "error" });
-          return;
-        }
-        setFetchState({ status: "ok", detail: data.detail });
-      })
-      .catch(() => setFetchState({ status: "error" }));
-  }, [open, jobId, fetchState.status]);
-
-  // ── Init captcha when modal opens ────────────────────────────────────────
-  useEffect(() => {
-    if (open) setCaptcha(randomCaptcha());
-  }, [open]);
-
-  // ── Reset form when modal closes ─────────────────────────────────────────
-  useEffect(() => {
-    if (!open) {
+      fetch(`/api/career-detail?id=${encodeURIComponent(String(jobId))}`)
+        .then((res) => {
+          if (!res.ok) throw new Error("API error");
+          return res.json() as Promise<{ detail: JobDetail | null }>;
+        })
+        .then((data) => {
+          setFetchState(
+            data.detail
+              ? { status: "ok", detail: data.detail }
+              : { status: "error" },
+          );
+        })
+        .catch(() => setFetchState({ status: "error" }));
+    } else {
       setFormState({ status: "idle" });
       setFieldErrors({});
       setCaptchaAnswer("");
       setResumeFile(null);
       setFetchState({ status: "idle" });
     }
-  }, [open]);
+  }, [open, jobId]);
 
   // ── Body scroll lock + focus trap + Escape ───────────────────────────────
   useEffect(() => {
