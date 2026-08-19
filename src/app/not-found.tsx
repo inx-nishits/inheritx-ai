@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Header } from "@/components/layout/Header";
@@ -5,6 +6,11 @@ import { Footer } from "@/components/layout/Footer";
 import { CtaPrimary } from "@/components/cta/CtaPrimary";
 import { CtaText } from "@/components/cta/CtaText";
 import { contactHref } from "@/lib/cta";
+
+export const metadata: Metadata = {
+  title: "Page Not Found | InheritX",
+  robots: { index: false, follow: false },
+};
 
 export default function NotFound() {
   return (

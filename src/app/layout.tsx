@@ -24,12 +24,7 @@ const satoshi = localFont({
     },
     {
       path: "../fonts/satoshi/Satoshi-Bold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../fonts/satoshi/Satoshi-Bold.woff2",
-      weight: "700",
+      weight: "600 700",
       style: "normal",
     },
     {
@@ -59,7 +54,6 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description: defaultDescription,
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -89,6 +83,22 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "InheritX",
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/actual/actual-lead-capabilities.jpg`,
+  description:
+    "InheritX is an AI-native enterprise partner—production AI in your VPC, full IP ownership, and systems your teams operate after handover.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    url: `${SITE_URL}/contact`,
+  },
+  sameAs: ["https://www.linkedin.com/company/inheritx"],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -104,6 +114,10 @@ export default function RootLayout({
         className="bg-ink font-sans text-foreground"
         suppressHydrationWarning
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <GtmBoot />
         <a
           href="#main-content"

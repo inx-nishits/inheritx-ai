@@ -13,7 +13,16 @@ import { CookieConsentControls } from "@/components/consent/CookieConsentControl
 export const metadata: Metadata = {
   title: "Cookies | InheritX",
   description:
-    "How InheritX uses cookies and similar technologies on inheritx.com.",
+    "How InheritX uses cookies and similar technologies on inheritx.ai.",
+  alternates: { canonical: "/cookies" },
+  openGraph: {
+    title: "Cookies | InheritX",
+    description:
+      "How InheritX uses cookies and similar technologies on inheritx.ai.",
+    type: "website",
+    url: "/cookies",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function CookiesPage() {

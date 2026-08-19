@@ -21,9 +21,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const topic = getIndustryTopic(slug);
   if (!topic) return { title: "Industries | InheritX" };
+  const canonical = `/industries/${slug}`;
   return {
     title: topic.metadata.title,
     description: topic.metadata.description,
+    alternates: { canonical },
+    openGraph: {
+      title: topic.metadata.title,
+      description: topic.metadata.description,
+      type: "website",
+      url: canonical,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: topic.metadata.title,
+      description: topic.metadata.description,
+    },
   };
 }
 

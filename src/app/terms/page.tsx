@@ -9,6 +9,15 @@ export const metadata: Metadata = {
   title: "Terms of Use | InheritX",
   description:
     "Terms governing use of InheritX websites and publicly available materials.",
+  alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms of Use | InheritX",
+    description:
+      "Terms governing use of InheritX websites and publicly available materials.",
+    type: "website",
+    url: "/terms",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function TermsPage() {

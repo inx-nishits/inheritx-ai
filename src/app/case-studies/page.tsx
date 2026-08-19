@@ -12,6 +12,20 @@ export const metadata: Metadata = {
   title: "Case Studies | InheritX",
   description:
     "Measured enterprise AI outcomes—AI/ML, agentic systems, computer vision, and platforms—from InheritX production engagements.",
+  alternates: { canonical: "/case-studies" },
+  openGraph: {
+    title: "Case Studies | InheritX",
+    description:
+      "Measured enterprise AI outcomes—AI/ML, agentic systems, computer vision, and platforms—from InheritX production engagements.",
+    type: "website",
+    url: "/case-studies",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Case Studies | InheritX",
+    description:
+      "Measured enterprise AI outcomes—AI/ML, agentic systems, computer vision, and platforms—from InheritX production engagements.",
+  },
 };
 
 export default function CaseStudiesRoute() {

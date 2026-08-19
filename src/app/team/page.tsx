@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   title: "Our Team | InheritX",
   description:
     "Meet the architects, engineers, and delivery leads building production AI systems at InheritX.",
+  alternates: { canonical: "/team" },
+  openGraph: {
+    title: "Our Team | InheritX",
+    description:
+      "Meet the architects, engineers, and delivery leads building production AI systems at InheritX.",
+    type: "website",
+    url: "/team",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Team | InheritX",
+    description:
+      "Meet the architects, engineers, and delivery leads building production AI systems at InheritX.",
+  },
 };
 
 export default function TeamPage() {

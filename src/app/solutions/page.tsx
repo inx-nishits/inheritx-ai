@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   title: "Solutions | InheritX",
   description:
     "Production AI/ML, agents, and AI DevOps—plus transformation, consulting, and dedicated squads for enterprise buyers.",
+  alternates: { canonical: "/solutions" },
+  openGraph: {
+    title: "Solutions | InheritX",
+    description:
+      "Production AI/ML, agents, and AI DevOps—plus transformation, consulting, and dedicated squads for enterprise buyers.",
+    type: "website",
+    url: "/solutions",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Solutions | InheritX",
+    description:
+      "Production AI/ML, agents, and AI DevOps—plus transformation, consulting, and dedicated squads for enterprise buyers.",
+  },
 };
 
 export default function SolutionsPage() {

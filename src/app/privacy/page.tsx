@@ -13,6 +13,15 @@ export const metadata: Metadata = {
   title: "Privacy Policy | InheritX",
   description:
     "How InheritX collects, uses, and protects personal information on our websites and contact channels.",
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Privacy Policy | InheritX",
+    description:
+      "How InheritX collects, uses, and protects personal information on our websites and contact channels.",
+    type: "website",
+    url: "/privacy",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function PrivacyPage() {

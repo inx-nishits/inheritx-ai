@@ -93,7 +93,7 @@ function TestimonialCard({
               <div className="relative size-11 shrink-0 overflow-hidden rounded-full border border-white/15 ring-2 ring-cyan/15 sm:size-12">
                 <Image
                   src={item.avatarSrc}
-                  alt=""
+                  alt={item.name}
                   fill
                   className="object-cover"
                   sizes="48px"

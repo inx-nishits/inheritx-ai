@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   title: "Contact | InheritX",
   description:
     "Contact InheritX—share your project details and we will respond within one business day.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact | InheritX",
+    description:
+      "Contact InheritX—share your project details and we will respond within one business day.",
+    type: "website",
+    url: "/contact",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | InheritX",
+    description:
+      "Contact InheritX—share your project details and we will respond within one business day.",
+  },
 };
 
 export default function ContactPage() {

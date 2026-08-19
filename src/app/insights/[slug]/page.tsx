@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -89,7 +89,7 @@ export default async function InsightDetailPage({ params }: Props) {
   const readingMinutes = estimateReadingMinutes(post.content);
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "https://www.inheritx.com";
+    "https://inheritx.ai";
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -194,13 +194,13 @@ export default async function InsightDetailPage({ params }: Props) {
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={image}
-                    alt=""
+                    alt={post.title}
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                 ) : (
                   <Image
                     src={image}
-                    alt=""
+                    alt={post.title}
                     fill
                     priority
                     className="object-cover"

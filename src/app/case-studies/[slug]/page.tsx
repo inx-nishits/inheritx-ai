@@ -18,9 +18,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const study = getCaseStudy(slug);
   if (!study) return { title: "Case Studies | InheritX" };
+  const title = `${study.name} | InheritX`;
+  const canonical = `/case-studies/${slug}`;
   return {
-    title: `${study.name} | InheritX`,
+    title,
     description: study.summary,
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description: study.summary,
+      type: "website",
+      url: canonical,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: study.summary,
+    },
   };
 }
 

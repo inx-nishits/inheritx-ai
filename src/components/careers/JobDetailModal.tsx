@@ -106,7 +106,9 @@ export function JobDetailModal({ jobId, jobTitle }: Props) {
   // Apply form
   const [formState, setFormState] = useState<FormState>({ status: "idle" });
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
-  const [captcha, setCaptcha] = useState<{ a: number; b: number } | null>(null);
+  const [captcha, setCaptcha] = useState<{ a: number; b: number } | null>(
+    () => randomCaptcha(),
+  );
   const [captchaAnswer, setCaptchaAnswer] = useState("");
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isDragOver, setIsDragOver] = useState(false);
@@ -126,10 +128,10 @@ export function JobDetailModal({ jobId, jobTitle }: Props) {
   const previouslyFocused = useRef<HTMLElement | null>(null);
   const titleId = useId();
 
-  // ── Open: init captcha + start detail fetch; Close: reset all state ──────
+  // ── Open: start detail fetch; Close: reset all state + refresh captcha ───
   useEffect(() => {
     if (open) {
-      setCaptcha(randomCaptcha());
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFetchState({ status: "loading" });
 
       fetch(`/api/career-detail?id=${encodeURIComponent(String(jobId))}`)
@@ -151,6 +153,8 @@ export function JobDetailModal({ jobId, jobTitle }: Props) {
       setCaptchaAnswer("");
       setResumeFile(null);
       setFetchState({ status: "idle" });
+      // Refresh captcha so it is ready for the next open
+      setCaptcha(randomCaptcha());
     }
   }, [open, jobId]);
 

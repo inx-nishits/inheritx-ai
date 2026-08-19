@@ -8,6 +8,18 @@ import { TopicLandingView } from "@/components/pages/TopicLandingView";
 export const metadata: Metadata = {
   title: cultureTopic.metadata.title,
   description: cultureTopic.metadata.description,
+  alternates: { canonical: "/team/culture" },
+  openGraph: {
+    title: cultureTopic.metadata.title,
+    description: cultureTopic.metadata.description,
+    type: "website",
+    url: "/team/culture",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: cultureTopic.metadata.title,
+    description: cultureTopic.metadata.description,
+  },
 };
 
 export default function CulturePage() {

@@ -18,9 +18,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const page = getPathPage(slug);
   if (!page) return { title: "Choose your path | InheritX" };
+  const canonical = `/path/${slug}`;
   return {
     title: page.metadata.title,
     description: page.metadata.description,
+    alternates: { canonical },
+    openGraph: {
+      title: page.metadata.title,
+      description: page.metadata.description,
+      type: "website",
+      url: canonical,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.metadata.title,
+      description: page.metadata.description,
+    },
   };
 }
 

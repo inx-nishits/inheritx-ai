@@ -135,11 +135,14 @@ export function Capabilities() {
       const section = sectionRef.current;
       if (!section) return;
       const clamped = Math.min(1, Math.max(0, clampedProgress));
-      const start = section.offsetTop;
+      // Use getBoundingClientRect + current scroll position for accuracy
+      // instead of offsetTop which can be wrong inside sticky/transform contexts.
+      const sectionTop =
+        section.getBoundingClientRect().top + window.scrollY;
       const range = Math.max(1, section.offsetHeight - window.innerHeight);
-      const top = start + clamped * range;
+      const top = sectionTop + clamped * range;
       if (lenis) {
-        lenis.scrollTo(top, { lock: false });
+        lenis.scrollTo(top, { duration: 0.8, easing: (t) => 1 - Math.pow(1 - t, 3) });
         return;
       }
       window.scrollTo({ top, behavior: "smooth" });
@@ -152,6 +155,8 @@ export function Capabilities() {
       const next = Math.min(lastIndex, Math.max(0, index));
       targetIndex.current = next;
       animating.current = true;
+      // Keep ref in sync immediately so rapid button presses don't accumulate
+      // past the boundary before activeIndex state catches up.
 
       if (scrollDistance <= 0 || cardOffsets.length !== laneCount) {
         goToProgress(next / Math.max(1, lastIndex));
@@ -298,7 +303,11 @@ export function Capabilities() {
                       prevTitle ? `Previous: ${prevTitle}` : "Previous capability"
                     }
                     disabled={!canPrev}
-                    onClick={() => goToCard(targetIndex.current - 1)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (canPrev) goToCard(activeIndex - 1);
+                    }}
                     className={cn(
                       "inline-flex h-11 items-center gap-2 rounded-full border px-4 text-sm transition-colors",
                       canPrev
@@ -315,7 +324,11 @@ export function Capabilities() {
                       nextTitle ? `Next: ${nextTitle}` : "Next capability"
                     }
                     disabled={!canNext}
-                    onClick={() => goToCard(targetIndex.current + 1)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (canNext) goToCard(activeIndex + 1);
+                    }}
                     className={cn(
                       "inline-flex h-11 items-center gap-2 rounded-full border px-4 text-sm transition-colors",
                       canNext

@@ -12,7 +12,7 @@ export const privacySections = [
     title: "Who we are",
     body: [
       "InheritX (“InheritX,” “we,” “us,” or “our”) provides Enterprise AI Solutions—including AI platforms, agents, automation, and related professional services.",
-      "This Privacy Policy explains how we handle personal information in connection with inheritx-ai.com and related marketing or contact channels. It does not replace client contracts or data processing agreements that govern project delivery.",
+      "This Privacy Policy explains how we handle personal information in connection with inheritx.ai and related marketing or contact channels. It does not replace client contracts or data processing agreements that govern project delivery.",
     ],
   },
   {

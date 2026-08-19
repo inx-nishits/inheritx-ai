@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Cpu, Database, Cloud, Network, Activity, Workflow } from "lucide-react";
 
@@ -11,6 +11,8 @@ import { Reveal, TextReveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 
 const layerIcons = [Cpu, Network, Database, Workflow, Cloud, Activity];
+
+const HOVER_DELAY_MS = 80;
 
 const partnerStrip = [
   { name: "Anthropic", src: "/images/partners/anthropic.svg" },
@@ -35,6 +37,23 @@ const partnerStrip = [
 
 export function TechStack() {
   const [active, setActive] = useState(0);
+  const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Cancel any pending hover timer on unmount
+  useEffect(() => () => { if (hoverTimer.current) clearTimeout(hoverTimer.current); }, []);
+
+  const handleHover = useCallback((index: number) => {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    hoverTimer.current = setTimeout(() => setActive(index), HOVER_DELAY_MS);
+  }, []);
+
+  const cancelHover = useCallback(() => {
+    if (hoverTimer.current) {
+      clearTimeout(hoverTimer.current);
+      hoverTimer.current = null;
+    }
+  }, []);
+
   const layer = techLayers[active];
   const ActiveIcon = layerIcons[active] ?? Cpu;
 
@@ -79,8 +98,9 @@ export function TechStack() {
                   <button
                     key={item.id}
                     type="button"
-                    onClick={() => setActive(index)}
-                    onMouseEnter={() => setActive(index)}
+                    onClick={() => { cancelHover(); setActive(index); }}
+                    onMouseEnter={() => handleHover(index)}
+                    onMouseLeave={cancelHover}
                     className={cn(
                       "group flex min-w-[78vw] snap-start items-center gap-4 rounded-2xl border px-4 py-4 text-left transition-all duration-400 sm:min-w-[200px] lg:min-w-0",
                       isActive
@@ -124,13 +144,13 @@ export function TechStack() {
 
           {/* Active layer detail */}
           <div className="relative min-h-[300px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-ink-elevated via-ink-soft to-ink md:min-h-[420px] md:rounded-[2rem]">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="sync">
               <motion.div
                 key={layer.id}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                exit={{ opacity: 0, y: -8, position: "absolute", width: "100%" }}
+                transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
                 className="relative flex h-full min-h-[420px] flex-col justify-between p-7 md:p-10"
               >
                 <Image

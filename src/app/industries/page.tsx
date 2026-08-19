@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   title: "Industries | InheritX",
   description:
     "Enterprise AI for healthcare, finance, manufacturing, retail, insurance, logistics, and government—where accuracy and auditability matter.",
+  alternates: { canonical: "/industries" },
+  openGraph: {
+    title: "Industries | InheritX",
+    description:
+      "Enterprise AI for healthcare, finance, manufacturing, retail, insurance, logistics, and government—where accuracy and auditability matter.",
+    type: "website",
+    url: "/industries",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Industries | InheritX",
+    description:
+      "Enterprise AI for healthcare, finance, manufacturing, retail, insurance, logistics, and government—where accuracy and auditability matter.",
+  },
 };
 
 export default function IndustriesPage() {

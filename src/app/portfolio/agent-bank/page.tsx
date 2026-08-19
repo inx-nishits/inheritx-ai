@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   title: "Agent Bank | InheritX",
   description:
     "Agent Bank: a governed multi-agent platform for banking operations—with policy controls, audit trails, and human approval gates.",
+  alternates: { canonical: "/portfolio/agent-bank" },
+  openGraph: {
+    title: "Agent Bank | InheritX",
+    description:
+      "Agent Bank: a governed multi-agent platform for banking operations—with policy controls, audit trails, and human approval gates.",
+    type: "website",
+    url: "/portfolio/agent-bank",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Agent Bank | InheritX",
+    description:
+      "Agent Bank: a governed multi-agent platform for banking operations—with policy controls, audit trails, and human approval gates.",
+  },
 };
 
 export default function AgentBankPage() {

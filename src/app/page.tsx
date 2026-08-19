@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/home/Hero";
@@ -14,6 +16,11 @@ import { TechStack } from "@/components/home/TechStack";
 import { ProcurementTrustStrip } from "@/components/home/ProcurementTrustStrip";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { Testimonials } from "@/components/testimonials/TestimonialsSection";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: { url: "/" },
+};
 
 /**
  * Homepage story arc (enterprise buyer psychology):

@@ -2,15 +2,14 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
-// A 5 MB file becomes ~6.7 MB base64. Raise the body limit so large
-// resumes are not rejected by Next.js before they reach the handler.
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: "10mb",
-    },
-  },
-};
+// Resume uploads are base64-encoded before POSTing (~6.7 MB for a 5 MB file).
+// App Router does not support the legacy `config.api.bodyParser` export — that
+// was Pages Router only and is silently ignored here.
+// On Vercel: set `maxDuration` if needed; the platform default body limit is
+// sufficient for 5 MB base64 payloads (~6.7 MB, well within the 4.5 MB
+// compressed / uncompressed limits for Hobby; use Pro/Enterprise for larger).
+// The client-side file picker enforces MAX_BYTES = 5 MB before any upload.
+export const maxDuration = 30;
 
 type ApplyPayload = {
   jobId: string;
