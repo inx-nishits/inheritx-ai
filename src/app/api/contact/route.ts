@@ -102,9 +102,9 @@ async function forwardToWebhook(payload: ContactPayload) {
 
 async function forwardToResend(payload: ContactPayload) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL ?? "hello@inheritx.com";
+  const to = process.env.CONTACT_TO_EMAIL ?? "contact@inheritx.com";
   const from =
-    process.env.CONTACT_FROM_EMAIL ?? "InheritX Website <hello@inheritx.com>";
+    process.env.CONTACT_FROM_EMAIL ?? "InheritX Website <contact@inheritx.com>";
 
   if (!apiKey) return { delivered: false as const, channel: null };
 
@@ -144,7 +144,7 @@ export async function POST(request: Request) {
   try {
     if (await rateLimited(clientKey(request))) {
       return NextResponse.json(
-        { ok: false, error: "Too many requests. Please email hello@inheritx.com." },
+        { ok: false, error: "Too many requests. Please email contact@inheritx.com." },
         { status: 429 },
       );
     }
@@ -234,7 +234,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         ok: false,
-        error: "Unable to submit right now. Please try again in a few minutes, or email hello@inheritx.com.",
+        error: "Unable to submit right now. Please try again in a few minutes, or email contact@inheritx.com.",
       },
       { status: 503 },
     );
@@ -243,7 +243,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         ok: false,
-        error: "Unable to submit right now. Please email hello@inheritx.com.",
+        error: "Unable to submit right now. Please email contact@inheritx.com.",
       },
       { status: 502 },
     );

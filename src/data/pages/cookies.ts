@@ -25,7 +25,7 @@ export const cookiesSections = [
   {
     title: "Contact",
     body: [
-      "Questions about cookies or analytics on this site: hello@inheritx.com.",
+      "Questions about cookies or analytics on this site: contact@inheritx.com.",
     ],
   },
 ];

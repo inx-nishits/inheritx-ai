@@ -77,7 +77,7 @@ export const privacySections = [
   {
     title: "Contact",
     body: [
-      "Privacy questions: hello@inheritx.com",
+      "Privacy questions: contact@inheritx.com",
       "Postal correspondence may be directed to InheritX, 8th Floor, Panchdhara Complex, S G Highway, Bodakdev, Ahmedabad 380054, India.",
     ],
   },

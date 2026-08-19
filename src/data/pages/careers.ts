@@ -43,7 +43,7 @@ export const careersHowToApply = {
     {
       step: "01",
       title: "Send a brief",
-      copy: "Email hello@inheritx.com with your résumé, LinkedIn, and a short note on production AI work you are proud of.",
+      copy: "Email careers@inheritx.com with your résumé, LinkedIn, and a short note on production AI work you are proud of.",
     },
     {
       step: "02",

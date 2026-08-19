@@ -28,7 +28,7 @@ export function Newsletter({ className }: { className?: string }) {
       setEmail("");
     } catch {
       setStatus("error");
-      setMessage("Subscription unavailable right now. Email hello@inheritx.com.");
+      setMessage("Subscription unavailable right now. Email contact@inheritx.com.");
     }
   }
 

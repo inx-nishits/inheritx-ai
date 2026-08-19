@@ -22,7 +22,7 @@ export default function Error({
             This page could not be loaded.
           </h1>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-white/50">
-            Please try again. If the problem continues, email hello@inheritx.com
+            Please try again. If the problem continues, email contact@inheritx.com
             or start from the homepage.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">

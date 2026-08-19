@@ -96,6 +96,58 @@ export type NormalizedDetail = {
   categories: InsightCategory[];
 };
 
+// ---------------------------------------------------------------------------
+// Careers / Job Openings
+// ---------------------------------------------------------------------------
+
+/** Single job opening as returned by the WordPress careers API. */
+export type JobRaw = {
+  id: number | string;
+  title: string;
+  experience?: string | null;
+  technology?: string | string[] | null;
+};
+
+/** WordPress careers API envelope. */
+export type CareersApiResponse = {
+  career?: JobRaw[] | null;
+};
+
+/** Detailed job opening from /wp-json/api/v1/careerdetails/{id} */
+export type JobDetailRaw = {
+  id: number | string;
+  title: string;
+  experience?: string | null;
+  technology?: string | string[] | null;
+  openings?: string | number | null;
+  location?: string | null;
+  roles?: string[] | null;
+  requirements?: string[] | null;
+};
+
+export type CareerDetailApiResponse = {
+  career?: JobDetailRaw | null;
+};
+
+export type JobDetail = {
+  id: number | string;
+  title: string;
+  experience: string | null;
+  technologies: string[];
+  openings: string | null;
+  location: string | null;
+  roles: string[];
+  requirements: string[];
+};
+
+/** Normalized job opening used by the UI. */
+export type Job = {
+  id: number | string;
+  title: string;
+  experience: string | null;
+  technologies: string[];
+};
+
 export type NormalizedCategoryListing = {
   categoryName: string;
   categorySlug: string;

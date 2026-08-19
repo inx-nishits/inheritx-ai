@@ -1,8 +1,14 @@
 import type {
+  CareerDetailApiResponse,
+  CareersApiResponse,
   InsightCard,
   InsightCategoryResponse,
   InsightDetailResponse,
   InsightsListingResponse,
+  Job,
+  JobDetail,
+  JobDetailRaw,
+  JobRaw,
   NormalizedCategoryListing,
   NormalizedDetail,
   NormalizedListing,
@@ -23,7 +29,14 @@ import {
 const DEFAULT_WP_BASE = "https://wpadmin.inheritx.com";
 
 function wpBase(): string {
+  // NEXT_PUBLIC_WP_API_URL may include the full path prefix — strip it to get
+  // just the origin so individual fetch calls can append their own paths.
+  const fromApiUrl = process.env.NEXT_PUBLIC_WP_API_URL
+    ?.replace(/\/wp-json\/api\/v1\/?$/, "")
+    .replace(/\/$/, "");
+
   return (
+    fromApiUrl ||
     process.env.WP_API_BASE?.replace(/\/$/, "") ||
     process.env.NEXT_PUBLIC_WP_API_BASE?.replace(/\/$/, "") ||
     DEFAULT_WP_BASE
@@ -190,4 +203,97 @@ export async function fetchAllInsightSlugs(): Promise<string[]> {
 
 export function cardKey(card: InsightCard): string {
   return String(card.slug || card.id);
+}
+
+// ---------------------------------------------------------------------------
+// Careers
+// ---------------------------------------------------------------------------
+
+/**
+ * Normalize a raw technology value from the API.
+ * Handles: string, comma-separated string, array, null/undefined.
+ * Returns a deduplicated array of trimmed, non-empty strings.
+ */
+function normalizeTechnologies(raw: string | string[] | null | undefined): string[] {
+  if (!raw) return [];
+  const items = Array.isArray(raw)
+    ? raw
+    : String(raw)
+        .split(",")
+        .map((t) => t.trim());
+  return [...new Set(items.map((t) => t.trim()).filter(Boolean))];
+}
+
+function normalizeJob(raw: JobRaw): Job {
+  return {
+    id: raw.id,
+    title: String(raw.title ?? "").trim(),
+    experience: raw.experience ? String(raw.experience).trim() : null,
+    technologies: normalizeTechnologies(raw.technology),
+  };
+}
+
+export type CareersResult =
+  | { ok: true; jobs: Job[] }
+  | { ok: false; error: "network" | "api" };
+
+/**
+ * Fetch current job openings from the WordPress Careers API.
+ * Revalidates every 60 s so openings are always current.
+ */
+export async function fetchCareers(): Promise<CareersResult> {
+  let data: CareersApiResponse;
+  try {
+    data = await wpFetch<CareersApiResponse>("/wp-json/api/v1/career", {
+      next: { revalidate: 60 },
+    });
+  } catch {
+    return { ok: false, error: "network" };
+  }
+
+  if (!data) return { ok: false, error: "api" };
+  if (!Array.isArray(data.career)) return { ok: true, jobs: [] };
+
+  const jobs = data.career
+    .filter((item): item is JobRaw => Boolean(item?.title))
+    .map(normalizeJob);
+
+  return { ok: true, jobs };
+}
+
+function normalizeJobDetail(raw: JobDetailRaw): JobDetail {
+  return {
+    id: raw.id,
+    title: String(raw.title ?? "").trim(),
+    experience: raw.experience ? String(raw.experience).trim() : null,
+    technologies: normalizeTechnologies(raw.technology),
+    openings: raw.openings != null ? String(raw.openings).trim() : null,
+    location: raw.location ? String(raw.location).trim() : null,
+    roles: Array.isArray(raw.roles)
+      ? raw.roles.map((r) => String(r).trim()).filter(Boolean)
+      : [],
+    requirements: Array.isArray(raw.requirements)
+      ? raw.requirements.map((r) => String(r).trim()).filter(Boolean)
+      : [],
+  };
+}
+
+/**
+ * Fetch detailed information for a single job opening.
+ * Returns null if the job is not found or the API fails.
+ */
+export async function fetchCareerDetail(
+  id: number | string,
+): Promise<JobDetail | null> {
+  let data: CareerDetailApiResponse;
+  try {
+    data = await wpFetch<CareerDetailApiResponse>(
+      `/wp-json/api/v1/careerdetails/${encodeURIComponent(String(id))}`,
+      { next: { revalidate: 60 } },
+    );
+  } catch {
+    return null;
+  }
+  if (!data?.career?.title) return null;
+  return normalizeJobDetail(data.career);
 }
