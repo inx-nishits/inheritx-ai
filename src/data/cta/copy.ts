@@ -96,7 +96,7 @@ export const ctaCopyByPageJob = {
       label: CTA_LABELS.seeOutcomes,
       family: "tint",
       intent: "explore",
-      hrefHint: "#cases",
+      hrefHint: "/case-studies",
     },
     artifact: {
       label: CTA_LABELS.exploreAgentBank,

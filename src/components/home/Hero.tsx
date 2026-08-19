@@ -213,7 +213,7 @@ export function Hero() {
               >
                 {HERO_AB_LABELS[heroAb]}
               </CtaPrimary>
-              <CtaProof href="#cases" arrow="chevron" location="home.hero">
+              <CtaProof href="/case-studies" arrow="chevron" location="home.hero">
                 See production outcomes
               </CtaProof>
               <CtaArtifactChip

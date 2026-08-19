@@ -24,21 +24,25 @@ function InsightImage({
   priority,
   sizes,
   className,
+  fill = false,
 }: {
   src: string;
   priority?: boolean;
   sizes: string;
   className?: string;
+  fill?: boolean;
 }) {
   return (
     <Image
       src={src}
       alt=""
-      width={1600}
-      height={900}
+      {...(fill
+        ? { fill: true }
+        : { width: 1600, height: 900 })}
       priority={priority}
       unoptimized={src.startsWith("http")}
-      className={cn("block h-auto w-full", className)}
+      className={cn(fill ? "object-cover" : "block h-auto w-full", className)}
+      style={fill ? { objectFit: "cover" } : undefined}
       sizes={sizes}
     />
   );
@@ -59,20 +63,20 @@ export function InsightCard({
       <Link
         href={href}
         className={cn(
-          "group flex gap-4 border-b border-white/[0.08] py-4 transition-colors last:border-b-0",
+          "group flex items-center gap-3 py-3 first:pt-0 last:pb-0",
           className,
         )}
       >
-        <div className="w-[5.5rem] shrink-0 overflow-hidden rounded-xl border border-white/10 sm:w-28">
-          <InsightImage src={image} sizes="112px" />
+        <div className="relative h-12 w-[4.5rem] shrink-0 overflow-hidden rounded-lg bg-ink-soft">
+          <InsightImage src={image} sizes="72px" fill />
         </div>
-        <div className="min-w-0 flex-1 self-center">
+        <div className="min-w-0 flex-1">
           {category ? (
-            <p className="font-mono text-[10px] tracking-[0.16em] text-cyan uppercase">
+            <p className="truncate font-mono text-[10px] tracking-[0.14em] text-cyan uppercase">
               {category.name}
             </p>
           ) : null}
-          <p className="mt-1.5 line-clamp-2 text-sm font-medium leading-snug text-white transition-colors group-hover:text-cyan">
+          <p className="mt-1 line-clamp-2 text-[13px] font-medium leading-snug text-white transition-colors group-hover:text-cyan">
             {insight.title}
           </p>
         </div>
@@ -87,12 +91,12 @@ export function InsightCard({
         className,
       )}
     >
-      <Link href={href} className="block overflow-hidden leading-none">
+      <Link href={href} className="relative block aspect-[16/10] overflow-hidden leading-none">
         <InsightImage
           src={image}
           priority={priority}
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="align-top"
+          fill
         />
       </Link>
 

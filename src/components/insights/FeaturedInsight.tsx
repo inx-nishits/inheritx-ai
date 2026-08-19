@@ -45,17 +45,16 @@ export function FeaturedInsight({ insight }: { insight: InsightCard }) {
           <Reveal delay={0.05}>
             <Link
               href={href}
-              className="group block overflow-hidden rounded-[1.75rem] border border-white/10 bg-ink transition-colors hover:border-cyan/35"
+              className="group relative block aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-white/10 bg-ink transition-colors hover:border-cyan/35"
             >
               <Image
                 src={image}
                 alt=""
-                width={1600}
-                height={900}
+                fill
                 priority
                 unoptimized={image.startsWith("http")}
-                className="block h-auto w-full"
-                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 55vw"
               />
             </Link>
           </Reveal>

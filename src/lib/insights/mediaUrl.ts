@@ -32,7 +32,9 @@ export function stripLeadingDuplicateFeatureImage(
   const firstImg = html.match(/<img\b[^>]*>/i);
   if (!firstImg || firstImg.index == null) return html;
 
-  const src = firstImg[0].match(/\bsrc=["']([^"']+)["']/i)?.[1];
+  const src =
+    firstImg[0].match(/\bsrc=["']([^"']+)["']/i)?.[1] ||
+    firstImg[0].match(/\bsrcset=["']([^"'\s,]+)/i)?.[1];
   if (!src || mediaFileKey(src) !== featureKey) return html;
 
   const prefix = html.slice(0, firstImg.index);

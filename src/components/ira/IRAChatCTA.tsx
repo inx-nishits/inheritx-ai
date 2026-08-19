@@ -293,15 +293,15 @@ function IRAAssistant() {
             "shadow-[0_16px_40px_rgba(7,9,13,0.4),0_0_24px_rgba(0,190,212,0.1)]",
           )}
         >
-          <div className="flex items-center gap-2 px-2.5 pt-1.5 pb-1">
+          <div className="flex items-center gap-2 px-3 pt-2.5 pb-1.5">
             <div className="min-w-0 flex-1">
               <p
                 id={titleId}
-                className="text-cyan text-[10px] font-semibold tracking-[0.18em] uppercase"
+                className="text-cyan text-[15px] font-semibold tracking-[0.08em] leading-tight"
               >
                 IRA
               </p>
-              <p className="truncate text-[10px] text-white/45">
+              <p className="mt-0.5 truncate text-[13px] leading-snug text-white/75">
                 {IRA_CTA_SUBLABEL}
               </p>
             </div>

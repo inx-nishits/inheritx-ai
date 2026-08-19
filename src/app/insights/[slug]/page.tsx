@@ -11,7 +11,6 @@ import { RichContent } from "@/components/insights/RichContent";
 import { RelatedInsights } from "@/components/insights/RelatedInsights";
 import { Newsletter } from "@/components/insights/Newsletter";
 import { ReadingProgress } from "@/components/insights/ReadingProgress";
-import { TableOfContents } from "@/components/insights/TableOfContents";
 import { InsightCard } from "@/components/insights/InsightCard";
 import { CtaText } from "@/components/cta/CtaText";
 import { contactHref } from "@/lib/cta";
@@ -151,7 +150,7 @@ export default async function InsightDetailPage({ params }: Props) {
   return (
     <>
       <Header />
-      <main className="flex-1 overflow-x-hidden bg-ink">
+      <main className="flex-1 bg-ink">
         <ReadingProgress />
         <script
           type="application/ld+json"
@@ -162,7 +161,7 @@ export default async function InsightDetailPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
         />
 
-        <section className="relative overflow-hidden border-b border-white/[0.06] pt-24 pb-8 md:pt-36 md:pb-14">
+        <section className="relative overflow-hidden border-b border-white/[0.06] pt-24 pb-10 md:pt-32 md:pb-16">
           <div className="noise-overlay" />
           <div className="pointer-events-none absolute inset-0 editorial-grid opacity-25" />
           <div className="relative mx-auto max-w-page px-4 sm:px-5 md:px-8">
@@ -173,55 +172,49 @@ export default async function InsightDetailPage({ params }: Props) {
               <ArrowLeft size={14} className="shrink-0" />
               Back to insights
             </Link>
-            <div className="mt-6 max-w-3xl md:mt-8">
-              <AuthorMeta
-                author={post.author}
-                date={post.post_date}
-                readingMinutes={readingMinutes}
-                category={category}
-              />
-              <h1 className="font-display mt-4 break-words text-[1.65rem] leading-[1.15] tracking-[-0.03em] text-white sm:text-[2rem] md:mt-5 md:text-5xl lg:text-6xl">
-                {post.title}
-              </h1>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-ink">
-          <div className="relative mx-auto max-w-page sm:px-5 md:px-8">
-            <div className="overflow-hidden border-y border-white/10 bg-ink-soft sm:rounded-2xl sm:border md:rounded-b-[1.75rem] md:rounded-t-none md:border-t-0">
-              {image.startsWith("http") ? (
-                // Remote CMS assets must keep intrinsic size — stretching 330–512px
-                // sources to the 1440px shell is what made the hero look blurry.
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={image}
-                  alt=""
-                  className="mx-auto block h-auto w-auto max-w-full"
+            <div className="mt-6 grid items-center gap-8 lg:mt-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12">
+              <div className="min-w-0">
+                <AuthorMeta
+                  author={post.author}
+                  date={post.post_date}
+                  readingMinutes={readingMinutes}
+                  category={category}
                 />
-              ) : (
-                <Image
-                  src={image}
-                  alt=""
-                  width={1600}
-                  height={900}
-                  priority
-                  className="mx-auto block h-auto w-auto max-w-full object-contain"
-                  sizes="(max-width: 768px) 100vw, 1440px"
-                />
-              )}
+                <h1 className="font-display mt-4 break-words text-[1.65rem] leading-[1.15] tracking-[-0.03em] text-white sm:text-[2rem] md:mt-5 md:text-5xl">
+                  {post.title}
+                </h1>
+                {post.short_desc ? (
+                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/50 md:text-base">
+                    {stripHtml(post.short_desc)}
+                  </p>
+                ) : null}
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-white/10 bg-ink-soft md:rounded-[1.75rem]">
+                {image.startsWith("http") ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={image}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={image}
+                    alt=""
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                  />
+                )}
+              </div>
             </div>
           </div>
         </section>
 
         <section className="bg-ink py-8 sm:py-12 md:py-16">
-          <div className="mx-auto grid max-w-page gap-8 px-4 sm:px-5 lg:grid-cols-[minmax(0,1fr)_minmax(240px,280px)] lg:gap-12 md:px-8">
-            {/* Mobile TOC first, then article */}
+          <div className="mx-auto grid max-w-page gap-8 px-4 sm:px-5 lg:grid-cols-[minmax(0,1fr)_minmax(260px,300px)] lg:items-start lg:gap-12 md:px-8">
             <div className="min-w-0 space-y-6 lg:col-start-1 lg:row-start-1">
-              <div className="lg:hidden">
-                <TableOfContents html={post.content} variant="mobile" />
-              </div>
-
               <article id="insight-article" className="min-w-0 overflow-x-clip">
                 <RichContent html={post.content} />
 
@@ -280,16 +273,12 @@ export default async function InsightDetailPage({ params }: Props) {
             </div>
 
             <aside className="min-w-0 space-y-5 lg:sticky lg:top-28 lg:col-start-2 lg:row-start-1 lg:self-start lg:space-y-6">
-              <div className="hidden lg:block">
-                <TableOfContents html={post.content} variant="desktop" />
-              </div>
-
               {featuredSidebar.length ? (
-                <div className="rounded-[1.25rem] border border-white/10 bg-ink-soft/80 p-4 sm:rounded-[1.5rem] sm:p-5">
+                <div className="rounded-[1.25rem] border border-white/10 bg-ink-soft p-4 sm:rounded-[1.5rem] sm:p-5">
                   <p className="text-[11px] tracking-[0.2em] text-cyan uppercase">
                     Featured
                   </p>
-                  <div className="mt-4 space-y-3">
+                  <div className="mt-4 divide-y divide-white/[0.08]">
                     {featuredSidebar.slice(0, 4).map((item) => (
                       <InsightCard
                         key={item.slug}
