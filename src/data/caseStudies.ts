@@ -79,7 +79,7 @@ export const caseStudiesPage: CaseStudy[] = [
       { value: "100%", label: "Actions attributable in audit logs" },
       { value: "HITL", label: "Human gates on high-risk tools" },
     ],
-    image: "/images/actual/actual-agent-bank.png",
+    image: "/images/actual/actual-agentbank.jpg",
     challenge:
       "Banking teams drown in repetitive operational work—KYC follow-ups, case triage, document checks, and queue routing—while regulators still demand explainability. Single LLM chatbots cannot own multi-step work across core systems without creating control gaps: fragmented case queues, high false-positive load on fraud and compliance reviews, and no reliable way to prove what an AI system did—or why.",
     whyAi:

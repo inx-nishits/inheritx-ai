@@ -198,8 +198,8 @@ export function Hero() {
             </h1>
 
             <p className="hero-fade mx-auto mt-6 max-w-lg text-base leading-relaxed text-white/60 md:mt-8 md:text-lg">
-              AI/ML engineering, Generative AI, AI Agents, and AI
-              DevOps—deployed in your private cloud with full IP ownership.
+              Production enterprise AI in your VPC—with full IP ownership and
+              systems your teams can operate after handover.
             </p>
 
             <CtaPair align="center" className="hero-fade mt-10 sm:mt-12">

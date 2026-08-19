@@ -17,7 +17,7 @@ export function FinalCTA() {
           className="font-display text-[2rem] leading-[1.15] text-white md:text-6xl lg:justify-start lg:text-6xl"
         />
       }
-      description="Book an AI strategy call with an architect. We’ll pressure-test your use case, say honestly whether AI is the right move, and outline a delivery roadmap—NDA and Diligence Pack materials available for qualified opportunities."
+      description="Pressure-test your use case with an architect—we will say honestly whether AI is the right move and outline a delivery roadmap. NDA and Diligence Pack materials available for qualified opportunities."
       primary={{
         label: "Book an AI strategy call",
         href: contactHref("strategy"),

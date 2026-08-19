@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { NavLink } from "@/components/layout/NavLink";
 
 import { CtaFooterStripGate } from "@/components/cta/CtaFooterStrip";
 import { Logo } from "@/components/ui/Logo";
@@ -44,12 +44,12 @@ export function Footer() {
                 <ul className="mt-4 space-y-0.5">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <Link
+                      <NavLink
                         href={link.href}
                         className="inline-flex min-h-10 items-center text-sm text-white/55 transition-colors hover:text-white"
                       >
                         {link.label}
-                      </Link>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -63,15 +63,15 @@ export function Footer() {
         <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between md:pt-7">
           <p>© {new Date().getFullYear()} InheritX. All rights reserved.</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link href="/privacy" className="hover:text-white">
+            <NavLink href="/privacy" className="hover:text-white">
               Privacy
-            </Link>
-            <Link href="/terms" className="hover:text-white">
+            </NavLink>
+            <NavLink href="/terms" className="hover:text-white">
               Terms
-            </Link>
-            <Link href="/cookies" className="hover:text-white">
+            </NavLink>
+            <NavLink href="/cookies" className="hover:text-white">
               Cookies
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>

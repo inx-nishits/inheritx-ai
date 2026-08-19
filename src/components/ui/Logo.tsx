@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { NavLink } from "@/components/layout/NavLink";
 
 import { cn } from "@/lib/cn";
 
@@ -22,7 +22,7 @@ export function Logo({
       : "/images/inx-logo-dark.svg";
 
   return (
-    <Link
+    <NavLink
       href="/"
       aria-label="InheritX home"
       className={cn("inline-flex items-center", className)}
@@ -36,6 +36,6 @@ export function Logo({
         loading={priority ? "eager" : "lazy"}
         className="h-7 w-auto md:h-8"
       />
-    </Link>
+    </NavLink>
   );
 }

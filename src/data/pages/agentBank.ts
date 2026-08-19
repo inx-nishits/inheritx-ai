@@ -6,7 +6,7 @@ export const agentBankProject = {
   headline: "A governed agent workforce for banking operations.",
   summary:
     "Agent Bank is an enterprise multi-agent platform that executes high-volume banking workflows—with policy controls, audit trails, and human approval gates for anything that moves money or risk.",
-  heroImage: "/images/actual/actual-agent-bank.png",
+  heroImage: "/images/actual/actual-agentbank.jpg",
   stats: [
     { value: "6×", label: "Faster exception review cycles" },
     { value: "24/7", label: "Agent coverage on routine ops" },

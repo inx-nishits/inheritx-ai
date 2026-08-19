@@ -52,7 +52,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Routine ops accelerate while high-risk actions stay human-gated and auditable.",
     impact: "Governed agent ops",
     tech: ["Claude", "LangChain", "Python", "AWS", "Eval harness"],
-    image: "/images/actual/actual-agent-bank.png",
+    image: "/images/actual/actual-agentbank.jpg",
     featured: true,
     editorial: true,
     href: "/portfolio/agent-bank",

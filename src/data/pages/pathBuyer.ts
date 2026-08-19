@@ -323,8 +323,8 @@ export const pathPages: PathPage[] = [
         rightTitle: "What a serious program looks like",
         rightItems: [
           "Mandate → feasibility → architecture → governed pilot → industrialize",
-          "Named architects accountable from blueprint to LLMOps",
-          "Private cloud / VPC deployment with policy and audit trails",
+          "Named architects accountable from blueprint through handover",
+          "Deployment in your estate with policy and audit trails",
           "Case-study-grade proof, then scaled capability across BUs",
           "Enablement so your teams own the system after handoff",
         ],
@@ -510,7 +510,7 @@ export const pathPages: PathPage[] = [
     eyebrow: "For CTOs, VP Engineering & platform leaders",
     title: "Build AI systems your enterprise can actually scale.",
     description:
-      "Architecture, security, LLMOps, and handover—so production AI survives design review and still runs after we leave. Private cloud and VPC. Your estate. Your IP.",
+      "Architecture, security, and handover—so production AI survives design review and still runs after we leave. Your estate. Your IP.",
     primaryCta: {
       label: CTA_LABELS.architectureAssessment,
       href: contactHref("assessment"),
@@ -522,7 +522,7 @@ export const pathPages: PathPage[] = [
     metadata: {
       title: "AI for CTOs & VP Engineering | InheritX",
       description:
-        "Enterprise AI architecture for CTOs: VPC and hybrid deployment, LLMOps, security, RAG, MCP, observability, and systems your platform team can operate.",
+        "Enterprise AI architecture for CTOs: deployment topology, security, evaluation, observability, and systems your platform team can operate.",
     },
     proof: [
       { value: "VPC", label: "Private / hybrid / sovereign deployment" },
@@ -555,7 +555,7 @@ export const pathPages: PathPage[] = [
         title: "What CTOs evaluate before they trust a partner",
         body: [
           "The failure mode is familiar: a flashy prototype that cannot pass security review, has no evaluation regression suite, and cannot be operated by your platform team. Engineering leadership does not need more copilots. It needs systems that behave like infrastructure.",
-          "InheritX designs and delivers enterprise AI platforms and agent systems for private cloud, VPC, and hybrid estates. GitOps-friendly delivery, CloudOps and LLMOps as operating disciplines, observability, cost controls, and handover that includes runbooks—not a slide of “next steps.” MCP and tool calling are treated as governed interfaces, not unrestricted plugins.",
+          "InheritX designs and delivers enterprise AI platforms and agent systems in private and hybrid estates—with GitOps-friendly delivery, observability, cost controls, and runbooks your platform team can operate after handover.",
         ],
       },
       {
@@ -941,7 +941,7 @@ export const pathPages: PathPage[] = [
         title: "What Heads of AI and Enterprise Architects decide together",
         body: [
           "Your job is not to ship another chatbot. It is to make intelligence behave like infrastructure: measurable, governable, and extensible across the estate you already run. That means maturity honesty, a real AI operating model, and agent architectures that survive contact with tools, data, identity, and risk.",
-          "Enterprise Architects need the other half of that picture: domain and data architecture, application integration, API strategy, identity boundaries, deployment topology, and a build-vs-buy call that does not create a parallel shadow platform. InheritX connects those layers to production AI—Enterprise RAG, Multi-Agent Systems, MCP, evaluation, guardrails—delivered into private and hybrid estates with IP you own. Autonomy is earned through evaluation. It is not a demo setting.",
+          "Enterprise Architects need the other half of that picture: domain and data architecture, application integration, API strategy, identity boundaries, deployment topology, and a build-vs-buy call that does not create a parallel shadow platform. InheritX connects those layers to production retrieval, multi-agent systems, evaluation, and guardrails—delivered into estates you own. Autonomy is earned through evaluation. It is not a demo setting.",
         ],
       },
       {

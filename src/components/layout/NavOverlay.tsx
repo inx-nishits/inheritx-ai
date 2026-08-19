@@ -24,7 +24,7 @@ import {
   X,
   type LucideIcon,
 } from "lucide-react";
-import Link from "next/link";
+import { NavLink } from "@/components/layout/NavLink";
 import { useEffect, useId, useRef, useState } from "react";
 
 import { navigation, type NavItem } from "@/data/navigation";
@@ -100,14 +100,14 @@ function SectionContent({
             {item.overview}
           </p>
         ) : null}
-        <Link
+        <NavLink
           href={item.href}
           onClick={onClose}
           className="mt-4 inline-flex items-center gap-1.5 text-sm text-cyan transition-colors hover:text-white"
         >
           View all {item.label.toLowerCase()}
           <ArrowUpRight size={14} />
-        </Link>
+        </NavLink>
       </div>
 
       <div
@@ -135,7 +135,7 @@ function SectionContent({
                   const Icon = iconMap[link.title] ?? Sparkles;
                   return (
                     <li key={`${column.label}-${link.title}-${link.href}`}>
-                      <Link
+                      <NavLink
                         href={link.href}
                         onClick={onClose}
                         className="group flex items-start gap-3 rounded-2xl border border-transparent p-3 transition-all duration-300 hover:border-white/10 hover:bg-white/[0.04]"
@@ -155,7 +155,7 @@ function SectionContent({
                             {link.description}
                           </span>
                         </span>
-                      </Link>
+                      </NavLink>
                     </li>
                   );
                 })}
@@ -165,7 +165,7 @@ function SectionContent({
         </div>
 
         {item.featured ? (
-          <Link
+          <NavLink
             href={item.featured.href}
             onClick={onClose}
             className="group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-ink-elevated via-ink-soft to-ink p-7 transition-colors hover:border-cyan/35"
@@ -202,7 +202,7 @@ function SectionContent({
                 className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </span>
-          </Link>
+          </NavLink>
         ) : null}
       </div>
 
@@ -212,7 +212,7 @@ function SectionContent({
             Quick links
           </span>
           {item.quickLinks.map((link) => (
-            <Link
+            <NavLink
               key={`${link.title}-${link.href}`}
               href={link.href}
               onClick={onClose}
@@ -220,7 +220,7 @@ function SectionContent({
             >
               {link.title}
               <ArrowUpRight size={12} className="text-cyan/80" />
-            </Link>
+            </NavLink>
           ))}
         </div>
       ) : null}

@@ -117,11 +117,11 @@ export function ChooseYourPath() {
                 Not sure which seat fits?
               </p>
               <h3 className="font-display mt-2 text-xl leading-snug text-white md:text-2xl">
-                Book an AI strategy call
+                Talk to an architect
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-white/50">
-                An architect will help you map consulting, build, or embedded
-                engineering—honestly, including when AI is not the right move.
+                Map your mandate to the right path—consulting, build, or
+                embedded engineering. We will say when AI is not the right move.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
@@ -133,7 +133,7 @@ export function ChooseYourPath() {
                 className="min-h-12 shrink-0"
                 strength={0.3}
               >
-                {CTA_LABELS.strategySession}
+                {CTA_LABELS.talkToArchitectShort}
               </CtaPrimary>
               <CtaGhost
                 href={contactHref("assessment")}

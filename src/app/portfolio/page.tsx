@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "AI Portfolio | InheritX",
   description:
-    "Enterprise AI capability patterns—AI/ML, agentic systems, computer vision, automation, and LLMOps—from InheritX.",
+    "Enterprise AI capability patterns—AI/ML, agents, vision, automation, and production operations—from InheritX.",
 };
 
 export default function PortfolioPage() {

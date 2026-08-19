@@ -1,7 +1,6 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { CtaHeader } from "@/components/cta/CtaHeader";
@@ -9,6 +8,7 @@ import { navigation } from "@/data/navigation";
 import { cn } from "@/lib/cn";
 import { Logo } from "@/components/ui/Logo";
 
+import { NavLink } from "./NavLink";
 import { NavOverlay } from "./NavOverlay";
 
 export function Header() {
@@ -62,15 +62,15 @@ export function Header() {
         <nav className="sr-only" aria-label="Site">
           {navigation.map((item) => (
             <div key={item.label}>
-              <Link href={item.href}>{item.label}</Link>
+              <NavLink href={item.href}>{item.label}</NavLink>
               {item.columns?.map((column) =>
                 column.items.map((link) => (
-                  <Link
+                  <NavLink
                     key={`${item.label}-${column.label}-${link.href}-${link.title}`}
                     href={link.href}
                   >
                     {link.title}
-                  </Link>
+                  </NavLink>
                 )),
               )}
             </div>

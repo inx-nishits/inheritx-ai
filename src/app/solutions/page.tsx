@@ -7,7 +7,7 @@ import { SolutionsPageView } from "@/components/pages/SolutionsPageView";
 export const metadata: Metadata = {
   title: "Solutions | InheritX",
   description:
-    "AI/ML engineering, AI Agents, and AI DevOps—plus transformation, consulting, and dedicated AI squads for enterprise buyers.",
+    "Production AI/ML, agents, and AI DevOps—plus transformation, consulting, and dedicated squads for enterprise buyers.",
 };
 
 export default function SolutionsPage() {

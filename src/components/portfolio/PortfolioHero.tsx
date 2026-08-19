@@ -28,9 +28,8 @@ export function PortfolioHero() {
           />
           <Reveal delay={0.12}>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-white/55 md:text-lg">
-              How we deliver AI/ML engineering, AI Agents, and AI DevOps—
-              generative applications, vision, automation, and transformation—
-              organized by capability. Named client outcomes live in Case Studies.
+              How we deliver AI/ML, agents, and AI DevOps—organized by capability.
+              Named client outcomes live in Case Studies.
             </p>
           </Reveal>
           <Reveal delay={0.18}>

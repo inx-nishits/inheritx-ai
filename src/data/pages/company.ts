@@ -2,7 +2,7 @@ export const companyHero = {
   eyebrow: "Company",
   title: "AI-native enterprise partner. You own the systems.",
   description:
-    "InheritX is an AI-native enterprise partner for regulated industries—AI/ML, AI Agents, and AI DevOps programs built on 14+ years of enterprise delivery DNA and 600+ engagements. We design, build, and industrialize production intelligence with governance by design.",
+    "InheritX is an AI-native enterprise partner for regulated industries—production AI programs built on 14+ years of enterprise delivery DNA and 600+ engagements. We design, build, and industrialize governed systems with ownership by design.",
 };
 
 export const companyVision = {

@@ -2,7 +2,7 @@ export const solutionsHero = {
   eyebrow: "Solutions",
   title: "AI systems that transform how enterprises operate.",
   description:
-    "InheritX is an AI-native enterprise partner. We deliver AI/ML engineering, Generative AI, AI Agents, and AI DevOps—consulting when the mandate is unclear; production systems in your private cloud when you are ready—with full IP handover.",
+    "InheritX delivers production AI/ML, agents, and AI DevOps—consulting when the mandate is unclear; build in your estate when you are ready. Full IP handover at delivery.",
 };
 
 export const solutionPillars = [
@@ -58,7 +58,7 @@ export const engagementModels = [
   {
     title: "AI Transformation Programs",
     duration: "90 days → multi-wave · Production build & industrialize",
-    copy: "Executive alignment, architecture, governed pilots that industrialize, private-cloud deployment, and enablement—with IP handover.",
+    copy: "Executive alignment, architecture, governed pilots that industrialize, and enablement—with IP handover.",
     bestFor: "CEO / Transformation Office",
     href: "/solutions/ai-transformation",
   },

@@ -19,13 +19,13 @@ export const capabilities = [
   {
     id: "02",
     title: "Generative AI",
-    copy: "Secure LLM apps, RAG copilots, and code copilots with evaluation harnesses, guardrails, citations, and private-cloud ownership.",
+    copy: "Secure LLM apps, RAG copilots, and code copilots with evaluation harnesses, guardrails, and citations.",
     href: "/solutions/generative-ai",
   },
   {
     id: "03",
     title: "AI Agents",
-    copy: "Text, voice/real-time, and multimodal agents with MCP, tool calling, memory, and human gates that execute real enterprise work.",
+    copy: "Governed agents for text, voice, and multimodal work—with human gates on consequential actions.",
     href: "/solutions/ai-agents",
   },
   {
@@ -43,7 +43,7 @@ export const capabilities = [
   {
     id: "06",
     title: "Enterprise AI",
-    copy: "AI Search, GraphRAG, model gateways, and AI security controls—deployed in your VPC with full ownership at handover.",
+    copy: "AI Search, GraphRAG, model gateways, and security controls—owned at handover.",
     href: "/solutions/enterprise-ai",
   },
 ];
@@ -62,7 +62,7 @@ export const journey = [
   {
     step: "03",
     title: "Build & Deploy",
-    copy: "Ship production agents and platforms into your environment with evaluation, monitoring, and IP transfer—not a rented sandbox.",
+    copy: "Ship production agents and platforms into your environment with evaluation and monitoring—not a rented sandbox.",
   },
   {
     step: "04",
@@ -85,7 +85,7 @@ export const solutions = [
   {
     index: "03",
     title: "Autonomous AI agents",
-    copy: "Task-oriented agents—text, voice/real-time, and computer-use—with MCP and tool access that execute, not just answer.",
+    copy: "Task-oriented agents—text, voice, and computer-use—that execute under policy and audit trails.",
   },
   {
     index: "04",
@@ -115,7 +115,7 @@ export const solutions = [
   {
     index: "09",
     title: "AI Transformation",
-    copy: "From strategy call to industrialized capability—with eval, safety, and security gates from pilot to scaled operations.",
+    copy: "From mandate review to industrialized capability—with eval, safety, and security gates from pilot to scaled operations.",
   },
 ];
 
@@ -235,7 +235,7 @@ export const techLayers = [
   {
     id: "05",
     name: "Cloud & Security",
-    tagline: "Bedrock, Azure OpenAI, Vertex, and private-cloud AI by design.",
+    tagline: "AWS, Azure, GCP, and sovereign deployment paths by design.",
     image: "/images/actual/actual-cloud-security.jpg",
     items: [
       "AWS / Bedrock",
@@ -249,7 +249,7 @@ export const techLayers = [
   {
     id: "06",
     name: "AI DevOps",
-    tagline: "MLflow, vLLM, GitOps, and tracing for production AI.",
+    tagline: "Eval gates, MLflow, vLLM, GitOps, and tracing for production AI.",
     image: "/images/actual/actual-aidevops.jpg",
     items: [
       "MLflow",
@@ -308,7 +308,7 @@ export const whyPoints = [
   },
   {
     title: "You own the capability",
-    copy: "Agent logic, platforms, fine-tunes, and infrastructure-as-code transfer at handover. We do not rent you someone else’s black-box platform.",
+    copy: "Code, agent logic, fine-tunes, adapters, and infrastructure-as-code transfer at handover. We do not rent you someone else’s black-box platform.",
   },
   {
     title: "Private cloud by default",
@@ -316,7 +316,7 @@ export const whyPoints = [
   },
   {
     title: "Architects who ship production",
-    copy: "Named AI architects and engineers accountable from blueprint to LLMOps—systems your CTO can operate, not slideware your board forgets.",
+    copy: "Named AI architects and engineers accountable from blueprint to handover—systems your CTO can operate, not slideware your board forgets.",
   },
 ];
 
@@ -343,7 +343,7 @@ export const audiencePaths = {
       label: "02",
       title: "I'm a CTO / VP Engineering",
       description:
-        "Pressure-test architecture, LLMOps, security, and production readiness.",
+        "Pressure-test architecture, security, and production readiness.",
       cta: "Open CTO path",
       href: "/path/cto",
       meta: "CTOs, CIOs & VP Engineering",
