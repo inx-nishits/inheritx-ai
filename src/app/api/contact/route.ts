@@ -7,9 +7,12 @@ export const runtime = "nodejs";
 type ContactPayload = {
   name: string;
   email: string;
-  company?: string;
-  topic: string;
+  country: string;
+  phone: string;
+  projectType: string;
+  budget?: string;
   message: string;
+  requestNda?: boolean;
   // Hidden anti-spam field (honeypot). Human users should never fill it.
   website?: string;
   source?: string;
@@ -66,6 +69,11 @@ function sanitize(value: unknown, max = 2000) {
     .slice(0, max);
 }
 
+function formatBudget(value?: string) {
+  if (!value) return "—";
+  return value.replace(/-/g, " ");
+}
+
 async function forwardToWebhook(payload: ContactPayload) {
   const webhook = process.env.CONTACT_WEBHOOK_URL;
   if (!webhook) return { delivered: false as const, channel: null };
@@ -110,12 +118,15 @@ async function forwardToResend(payload: ContactPayload) {
       from,
       to: [to],
       reply_to: payload.email,
-      subject: `[InheritX] ${payload.topic} — ${payload.company || payload.name}`,
+      subject: `[InheritX] ${payload.projectType} — ${payload.name}`,
       text: [
         `Name: ${payload.name}`,
         `Email: ${payload.email}`,
-        `Company: ${payload.company || "—"}`,
-        `Topic: ${payload.topic}`,
+        `Country: ${payload.country}`,
+        `Phone: ${payload.phone}`,
+        `Project type: ${payload.projectType}`,
+        `Budget: ${formatBudget(payload.budget)}`,
+        `NDA requested: ${payload.requestNda ? "Yes" : "No"}`,
         "",
         payload.message,
       ].join("\n"),
@@ -142,9 +153,12 @@ export async function POST(request: Request) {
     const payload: ContactPayload = {
       name: sanitize(body.name, 120),
       email: sanitize(body.email, 160),
-      company: sanitize(body.company, 160) || undefined,
-      topic: sanitize(body.topic, 120),
+      country: sanitize(body.country, 120),
+      phone: sanitize(body.phone, 40),
+      projectType: sanitize(body.projectType, 160),
+      budget: sanitize(body.budget, 40) || undefined,
       message: sanitize(body.message, 5000),
+      requestNda: Boolean(body.requestNda),
       website: sanitize(body.website, 80) || undefined,
       source: sanitize(body.source, 80) || "website-contact",
     };
@@ -159,9 +173,11 @@ export async function POST(request: Request) {
 
     const missing: string[] = [];
     if (!payload.name) missing.push("Name");
-    if (!payload.email) missing.push("Work email");
-    if (!payload.topic) missing.push("Topic");
-    if (!payload.message) missing.push("What you are trying to solve");
+    if (!payload.email) missing.push("Email");
+    if (!payload.country) missing.push("Country");
+    if (!payload.phone) missing.push("Phone");
+    if (!payload.projectType) missing.push("Project type");
+    if (!payload.message) missing.push("Brief your details");
 
     if (missing.length > 0) {
       const detail =
@@ -178,7 +194,7 @@ export async function POST(request: Request) {
 
     if (!isValidEmail(payload.email)) {
       return NextResponse.json(
-        { ok: false, error: "Enter a valid work email." },
+        { ok: false, error: "Enter a valid email." },
         { status: 400 },
       );
     }
@@ -206,8 +222,11 @@ export async function POST(request: Request) {
       {
         name: payload.name,
         email: payload.email,
-        company: payload.company,
-        topic: payload.topic,
+        country: payload.country,
+        phone: payload.phone,
+        projectType: payload.projectType,
+        budget: payload.budget,
+        requestNda: payload.requestNda,
         message: payload.message,
       },
     );

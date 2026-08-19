@@ -7,7 +7,7 @@ import { ContactPageView } from "@/components/pages/ContactPageView";
 export const metadata: Metadata = {
   title: "Contact | InheritX",
   description:
-    "Book an AI strategy call with InheritX—transformation programs, agentic systems, AI DevOps, and enterprise diligence.",
+    "Contact InheritX—share your project details and we will respond within one business day.",
 };
 
 export default function ContactPage() {
