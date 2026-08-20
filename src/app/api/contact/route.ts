@@ -69,75 +69,47 @@ function sanitize(value: unknown, max = 2000) {
     .slice(0, max);
 }
 
-function formatBudget(value?: string) {
-  if (!value) return ", ";
-  return value.replace(/-/g, " ");
+function wpBase(): string {
+  return (
+    process.env.WP_API_BASE?.replace(/\/$/, "") ||
+    process.env.NEXT_PUBLIC_WP_API_BASE?.replace(/\/$/, "") ||
+    "https://wpadmin.inheritx.com"
+  );
 }
 
-async function forwardToWebhook(payload: ContactPayload) {
-  const webhook = process.env.CONTACT_WEBHOOK_URL;
-  if (!webhook) return { delivered: false as const, channel: null };
+async function forwardToWordPress(payload: ContactPayload) {
+  const endpoint = `${wpBase()}/wp-json/api/contactform`;
+  const fd = new FormData();
+  fd.append("name", payload.name);
+  fd.append("email", payload.email);
+  fd.append("country", payload.country);
+  fd.append("phone", payload.phone);
+  fd.append("project_budget", payload.budget ?? "");
+  fd.append("project_type", payload.projectType);
+  fd.append("project_details", payload.message);
+  fd.append("project_nda", payload.requestNda ? "1" : "0");
 
-  const response = await fetch(webhook, {
+  const response = await fetch(endpoint, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      ...(process.env.CONTACT_WEBHOOK_SECRET
-        ? { Authorization: `Bearer ${process.env.CONTACT_WEBHOOK_SECRET}` }
-        : {}),
-    },
-    body: JSON.stringify({
-      ...payload,
-      submittedAt: new Date().toISOString(),
-      source: payload.source ?? "website-contact",
-    }),
+    body: fd,
   });
 
   if (!response.ok) {
-    throw new Error(`Webhook failed with status ${response.status}`);
+    throw new Error(`WordPress API failed with status ${response.status}`);
   }
 
-  return { delivered: true as const, channel: "webhook" as const };
-}
-
-async function forwardToResend(payload: ContactPayload) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL ?? "contact@inheritx.com";
-  const from =
-    process.env.CONTACT_FROM_EMAIL ?? "InheritX Website <contact@inheritx.com>";
-
-  if (!apiKey) return { delivered: false as const, channel: null };
-
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      reply_to: payload.email,
-      subject: `[InheritX] ${payload.projectType} - ${payload.name}`,
-      text: [
-        `Name: ${payload.name}`,
-        `Email: ${payload.email}`,
-        `Country: ${payload.country}`,
-        `Phone: ${payload.phone}`,
-        `Project type: ${payload.projectType}`,
-        `Budget: ${formatBudget(payload.budget)}`,
-        `NDA requested: ${payload.requestNda ? "Yes" : "No"}`,
-        "",
-        payload.message,
-      ].join("\n"),
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(`Resend failed with status ${response.status}`);
+  let data: { status?: number; message?: string } | null = null;
+  try {
+    data = (await response.json()) as { status?: number; message?: string };
+  } catch {
+    /* ignore json parse error */
   }
 
-  return { delivered: true as const, channel: "email" as const };
+  if (data && typeof data.status !== "undefined" && Number(data.status) !== 1) {
+    throw new Error(data.message || "WordPress API returned non-success status");
+  }
+
+  return { delivered: true as const, channel: "wordpress" as const };
 }
 
 export async function POST(request: Request) {
@@ -199,26 +171,26 @@ export async function POST(request: Request) {
       );
     }
 
-    const webhookResult = await forwardToWebhook(payload);
-    if (webhookResult.delivered) {
-      return NextResponse.json({
-        ok: true,
-        delivered: true,
-        channel: webhookResult.channel,
-      });
+    let wpResult: { delivered: boolean; channel: "wordpress" | null } = {
+      delivered: false,
+      channel: null,
+    };
+    try {
+      wpResult = await forwardToWordPress(payload);
+    } catch (wpError) {
+      console.error("[contact] WordPress delivery failed:", wpError);
     }
 
-    const emailResult = await forwardToResend(payload);
-    if (emailResult.delivered) {
+    if (wpResult.delivered) {
       return NextResponse.json({
         ok: true,
         delivered: true,
-        channel: emailResult.channel,
+        channel: wpResult.channel,
       });
     }
 
     console.error(
-      "[contact] No delivery channel configured. Lead rejected (no webhook/resend).",
+      "[CRITICAL LEAD LOSS PREVENTION] Contact lead could not be delivered to WordPress.",
       {
         name: payload.name,
         email: payload.email,
@@ -228,13 +200,15 @@ export async function POST(request: Request) {
         budget: payload.budget,
         requestNda: payload.requestNda,
         message: payload.message,
+        timestamp: new Date().toISOString(),
       },
     );
 
     return NextResponse.json(
       {
         ok: false,
-        error: "Unable to submit right now. Please try again in a few minutes, or email contact@inheritx.com.",
+        error:
+          "Unable to submit right now. Please try again in a few minutes, or email contact@inheritx.com.",
       },
       { status: 503 },
     );
