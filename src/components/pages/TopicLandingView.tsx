@@ -602,7 +602,7 @@ export function TopicLandingView({ topic, crumbs }: TopicLandingViewProps) {
               Map this capability to your mandate.
             </h2>
             <p className="mt-4 text-sm text-white/50">
-              A focused strategy conversation—constraints, systems, and what
+              A focused strategy conversation, constraints, systems, and what
               production readiness looks like for your organization.
             </p>
           </div>

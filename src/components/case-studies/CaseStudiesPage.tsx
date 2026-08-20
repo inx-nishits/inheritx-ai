@@ -10,6 +10,7 @@ import {
   caseStudiesPage,
   caseStudyCategories,
   caseStudyIntro,
+  resultQualifier,
 } from "@/data/caseStudies";
 import { Reveal } from "@/components/ui/Reveal";
 import { CtaPrimary } from "@/components/cta/CtaPrimary";
@@ -47,8 +48,8 @@ export function CaseStudiesHero() {
 
         <div className="mt-12 grid grid-cols-2 gap-3 border-t border-white/[0.08] pt-8 sm:grid-cols-4 md:mt-14">
           {[
-            { value: "14+", label: "Years delivery DNA for AI programs" },
-            { value: "600+", label: "Engagements informing delivery" },
+            { value: "2011+", label: "Enterprise delivery DNA informing AI programs" },
+            { value: "600+", label: "Software engagements informing how we deliver AI" },
             { value: "AI/ML", label: "Agents · Vision · LLMOps" },
             { value: "Owned", label: "IP at handover" },
           ].map((stat) => (
@@ -145,6 +146,9 @@ export function CaseStudiesListing() {
                         <p className="mt-1 text-[11px] leading-snug text-white/40">
                           {result.label}
                         </p>
+                        <p className="mt-1 text-[10px] tracking-wide text-white/30 uppercase">
+                          {resultQualifier(result.kind)}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -183,7 +187,7 @@ export function CaseStudiesCTA() {
             Planning an AI transformation like these?
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-sm text-white/50 md:text-base">
-            Share the workflow, constraint, and outcome you need—we will map
+            Share the workflow, constraint, and outcome you need, we will map
             whether consulting, a production build, or embedded AI talent is the
             right first move.
           </p>

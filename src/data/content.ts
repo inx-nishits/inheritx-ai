@@ -13,7 +13,7 @@ export const capabilities = [
   {
     id: "01",
     title: "AI/ML Engineering",
-    copy: "Fine-tuning, Document AI, prediction systems, and PyTorch-class training—engineered for measurable outcomes, not demos.",
+    copy: "Fine-tuning, Document AI, prediction systems, and PyTorch-class training, engineered for measurable outcomes, not demos.",
     href: "/solutions/enterprise-ai",
   },
   {
@@ -25,25 +25,25 @@ export const capabilities = [
   {
     id: "03",
     title: "AI Agents",
-    copy: "Governed agents for text, voice, and multimodal work—with human gates on consequential actions.",
+    copy: "Governed agents for text, voice, and multimodal work, with human gates on consequential actions.",
     href: "/solutions/ai-agents",
   },
   {
     id: "04",
     title: "AI Automation",
-    copy: "Workflow intelligence with n8n, durable orchestration, and system integrations—cutting operating cost inside ERP, CRM, and plant systems you already run.",
+    copy: "Workflow intelligence with n8n, durable orchestration, and system integrations, cutting operating cost inside ERP, CRM, and plant systems you already run.",
     href: "/solutions/ai-automation",
   },
   {
     id: "05",
     title: "AI DevOps & LLMOps",
-    copy: "CI/CD for AI, MLflow, vLLM serving, tracing, and LLM FinOps—so production systems stay reliable and cost-governed after go-live.",
+    copy: "CI/CD for AI, MLflow, vLLM serving, tracing, and LLM FinOps, so production systems stay reliable and cost-governed after go-live.",
     href: "/solutions/ai-transformation",
   },
   {
     id: "06",
     title: "Enterprise AI",
-    copy: "AI Search, GraphRAG, model gateways, and security controls—owned at handover.",
+    copy: "AI Search, GraphRAG, model gateways, and security controls, owned at handover.",
     href: "/solutions/enterprise-ai",
   },
 ];
@@ -52,7 +52,7 @@ export const journey = [
   {
     step: "01",
     title: "Discover",
-    copy: "Map the business problem, data readiness, and ROI case—so leadership knows why AI, why now, and which workflows move the P&L.",
+    copy: "Map the business problem, data readiness, and ROI case, so leadership knows why AI, why now, and which workflows move the P&L.",
   },
   {
     step: "02",
@@ -62,7 +62,7 @@ export const journey = [
   {
     step: "03",
     title: "Build & Deploy",
-    copy: "Ship production agents and platforms into your environment with evaluation and monitoring—not a rented sandbox.",
+    copy: "Ship production agents and platforms into your environment with evaluation and monitoring, not a rented sandbox.",
   },
   {
     step: "04",
@@ -85,7 +85,7 @@ export const solutions = [
   {
     index: "03",
     title: "Autonomous AI agents",
-    copy: "Task-oriented agents—text, voice, and computer-use—that execute under policy and audit trails.",
+    copy: "Task-oriented agents, text, voice, and computer-use, that execute under policy and audit trails.",
   },
   {
     index: "04",
@@ -95,7 +95,7 @@ export const solutions = [
   {
     index: "05",
     title: "AI Automation",
-    copy: "Governed workflow automation with n8n, agents, and integrations—cut operating cost without shadow IT.",
+    copy: "Governed workflow automation with n8n, agents, and integrations, cut operating cost without shadow IT.",
   },
   {
     index: "06",
@@ -110,12 +110,12 @@ export const solutions = [
   {
     index: "08",
     title: "Computer Vision",
-    copy: "Domain-trained perception for QA, imaging, and plant ops—including on-device / edge inference when data cannot leave the site.",
+    copy: "Domain-trained perception for QA, imaging, and plant ops, including on-device / edge inference when data cannot leave the site.",
   },
   {
     index: "09",
     title: "AI Transformation",
-    copy: "From mandate review to industrialized capability—with eval, safety, and security gates from pilot to scaled operations.",
+    copy: "From mandate review to industrialized capability, with eval, safety, and security gates from pilot to scaled operations.",
   },
 ];
 
@@ -125,42 +125,49 @@ export const industries = [
     focus: "Clinical operations, documentation, and compliance-grade AI that reduces cost without increasing risk.",
     image: "/images/actual/actual-healthcare.jpg",
     href: "/industries/healthcare",
+    proof: "Published cases",
   },
   {
     name: "Finance",
     focus: "Fraud, underwriting, and decisioning agents with audit trails built for institutional scale.",
     image: "/images/actual/actual-finance.jpg",
     href: "/industries/finance",
-  },
-  {
-    name: "Retail",
-    focus: "Demand sensing, merchandising intelligence, and service automation that compress operating cost.",
-    image: "/images/actual/actual-retail.jpg",
-    href: "/industries/retail",
-  },
-  {
-    name: "Manufacturing",
-    focus: "Vision inspection, predictive maintenance, and plant intelligence that protect throughput and quality.",
-    image: "/images/actual/actual-manufacturing.jpg",
-    href: "/industries/manufacturing",
-  },
-  {
-    name: "Insurance",
-    focus: "Claims acceleration, underwriting support, and service agents with policy-aware controls.",
-    image: "/images/actual/actual-insurance.jpg",
-    href: "/industries/insurance",
+    proof: "Published pattern",
   },
   {
     name: "Logistics",
     focus: "Network optimization, control towers, and exception agents that cut manual operations.",
     image: "/images/actual/actual-logistic.jpg",
     href: "/industries/logistics",
+    proof: "Related case",
+  },
+  {
+    name: "Retail",
+    focus: "Demand sensing, merchandising intelligence, and service automation that compress operating cost.",
+    image: "/images/actual/actual-retail.jpg",
+    href: "/industries/retail",
+    proof: "Related case",
+  },
+  {
+    name: "Manufacturing",
+    focus: "Vision inspection and plant-intelligence architecture for quality and uptime, capability we apply when the mandate fits.",
+    image: "/images/actual/actual-manufacturing.jpg",
+    href: "/industries/manufacturing",
+    proof: "Capability",
+  },
+  {
+    name: "Insurance",
+    focus: "Policy-aware claims and underwriting architecture, capability we apply when the mandate fits.",
+    image: "/images/actual/actual-insurance.jpg",
+    href: "/industries/insurance",
+    proof: "Capability",
   },
   {
     name: "Government",
-    focus: "Secure AI modernization for mission-critical public systems with sovereignty by design.",
+    focus: "Sovereign deployment patterns for mission systems, engaged when accreditation requirements are defined.",
     image: "/images/actual/actual-government.jpg",
     href: "/industries/government",
+    proof: "Capability",
   },
 ];
 
@@ -176,7 +183,7 @@ export const techLayers = [
   {
     id: "01",
     name: "Models & Reasoning",
-    tagline: "Frontier, open-weight, and cloud AI platforms—privately governed.",
+    tagline: "Frontier, open-weight, and cloud AI platforms, privately governed.",
     image: "/images/actual/actual-model-reasoning.jpg",
     items: [
       "OpenAI",
@@ -269,10 +276,10 @@ export const caseStudies = [
   {
     sector: "Healthcare",
     title: "Governed clinical documentation assistants",
-    result: "40%",
-    resultLabel: "less documentation time (pattern)",
+    result: "HITL",
+    resultLabel: "Clinician review on notes (pattern)",
     detail:
-      "A private generative platform that drafts, validates, and routes clinical notes under strict governance—cutting clinician admin load.",
+      "A private generative platform that drafts, validates, and routes clinical notes under strict governance, cutting clinician admin load.",
     challenge: "Clinicians lost hours to notes, delaying care and increasing burnout.",
     solution: "Governed AI assistants with specialty-aware drafting and EHR handoffs.",
     image: "/images/visuals/industries/industry-healthcare.png",
@@ -280,10 +287,10 @@ export const caseStudies = [
   {
     sector: "Finance",
     title: "Multi-agent fraud review with audit trails",
-    result: "10×",
-    resultLabel: "faster case triage cycles (pattern)",
+    result: "Audit",
+    resultLabel: "Explainable escalation (pattern)",
     detail:
-      "Agentic triage across signals, cases, and analyst workflows—with explainable escalation and full auditability.",
+      "Agentic triage across signals, cases, and analyst workflows, with explainable escalation and full auditability.",
     challenge: "Fraud teams drowned in false positives while high-risk cases waited.",
     solution: "Multi-agent orchestration with human gates on consequential actions.",
     image: "/images/visuals/industries/industry-finance.png",
@@ -291,8 +298,8 @@ export const caseStudies = [
   {
     sector: "Manufacturing",
     title: "Vision quality on the production line",
-    result: "65%",
-    resultLabel: "fewer missed micro-defects (pattern)",
+    result: "Edge",
+    resultLabel: "Vision + operator loops (capability)",
     detail:
       "Computer Vision on the line, integrated into quality systems and operator feedback loops that open corrective workflows.",
     challenge: "Manual inspection missed micro-defects and slowed throughput.",
@@ -304,7 +311,7 @@ export const caseStudies = [
 export const whyPoints = [
   {
     title: "AI-native, not IT-generic",
-    copy: "We specialize in AI/ML engineering, agentic systems, and AI DevOps—not websites, staff-aug theater, or generic software projects dressed up as AI.",
+    copy: "We specialize in AI/ML engineering, agentic systems, and AI DevOps, not websites, staff-aug theater, or generic software projects dressed up as AI.",
   },
   {
     title: "You own the capability",
@@ -316,7 +323,7 @@ export const whyPoints = [
   },
   {
     title: "Architects who ship production",
-    copy: "Named AI architects and engineers accountable from blueprint to handover—systems your CTO can operate, not slideware your board forgets.",
+    copy: "Named AI architects and engineers accountable from blueprint to handover, systems your CTO can operate, not slideware your board forgets.",
   },
 ];
 
@@ -324,7 +331,7 @@ export const audiencePaths = {
   eyebrow: "Built for enterprise AI buyers",
   title: "Choose your path",
   description:
-    "Open the decision page built for your seat—outcomes for CEOs, architecture for CTOs, and operating models for Heads of AI and Enterprise Architects.",
+    "Open the decision page built for your seat, outcomes for CEOs, architecture for CTOs, and operating models for Heads of AI and Enterprise Architects.",
   paths: [
     {
       id: "outcomes",
@@ -367,7 +374,7 @@ export const processSteps = [
     step: "01",
     title: "Discover",
     duration: "2–3 weeks",
-    copy: "Business problem, AI feasibility, ROI blueprint, and data readiness—honest about what should not be automated.",
+    copy: "Business problem, AI feasibility, ROI blueprint, and data readiness, honest about what should not be automated.",
     detail:
       "We map mandates, operating cost, risk posture, and the highest-leverage AI opportunities with leadership before production build begins.",
     outcomes: ["Feasibility report", "ROI blueprint", "Data readiness audit"],
@@ -385,16 +392,16 @@ export const processSteps = [
     step: "03",
     title: "Prove",
     duration: "6–10 weeks",
-    copy: "Governed pilot under production constraints—accuracy benchmarks, human gates, and scale criteria.",
+    copy: "Governed pilot under production constraints, accuracy benchmarks, human gates, and scale criteria.",
     detail:
-      "We ship a real system with security, auditability, and integration—not a disposable demo that dies after the readout.",
+      "We ship a real system with security, auditability, and integration, not a disposable demo that dies after the readout.",
     outcomes: ["Working PoC", "Accuracy benchmarks", "Scale criteria"],
   },
   {
     step: "04",
     title: "Industrialize",
     duration: "Ongoing",
-    copy: "Private-cloud deployment, AI DevOps, enablement, and IP handover—then optional hypercare and advisory.",
+    copy: "Private-cloud deployment, AI DevOps, enablement, and IP handover, then optional hypercare and advisory.",
     detail:
       "We harden platforms, enable your teams, transfer IP, and expand agents across units with full observability. No forced lock-in.",
     outcomes: ["Private cloud go-live", "IP handover", "Hypercare / enablement"],

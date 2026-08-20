@@ -11,8 +11,6 @@ import { FeaturedCaseStudy } from "@/components/home/FeaturedCaseStudy";
 import { MidPageCTA } from "@/components/home/MidPageCTA";
 import { ChooseYourPath } from "@/components/home/ChooseYourPath";
 import { Industries } from "@/components/home/Industries";
-import { TransformationJourney } from "@/components/home/TransformationJourney";
-import { TechStack } from "@/components/home/TechStack";
 import { ProcurementTrustStrip } from "@/components/home/ProcurementTrustStrip";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { Testimonials } from "@/components/testimonials/TestimonialsSection";
@@ -34,16 +32,14 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <WhyInheritX />
+        <FeaturedCaseStudy />
+        <ChooseYourPath />
+        <Capabilities />
         <TrustedBy />
         <TrustBar />
-        <ChooseYourPath />
-        <WhyInheritX />
-        <Capabilities />
-        <FeaturedCaseStudy />
         <MidPageCTA />
         <Industries />
-        <TransformationJourney />
-        <TechStack />
         <Testimonials />
         <ProcurementTrustStrip />
         <FinalCTA />

@@ -2,7 +2,7 @@ export const solutionsHero = {
   eyebrow: "Solutions",
   title: "AI systems that transform how enterprises operate.",
   description:
-    "InheritX delivers production AI/ML, agents, and AI DevOps—consulting when the mandate is unclear; build in your estate when you are ready. Full IP handover at delivery.",
+    "InheritX delivers production AI/ML, agents, and AI DevOps, consulting when the mandate is unclear; build in your estate when you are ready. Full IP handover at delivery.",
 };
 
 export const solutionPillars = [
@@ -10,7 +10,7 @@ export const solutionPillars = [
     id: "01",
     title: "AI/ML Engineering",
     summary:
-      "Custom LLMs, RAG, fine-tuning, vector search, prediction systems, and AI analytics—engineered for measurable outcomes inside your security boundary.",
+      "Custom LLMs, RAG, fine-tuning, vector search, prediction systems, and AI analytics, engineered for measurable outcomes inside your security boundary.",
     points: [
       "Enterprise RAG, fine-tuning, and model gateways",
       "Prediction, search, and analytics systems tied to KPIs",
@@ -23,7 +23,7 @@ export const solutionPillars = [
     id: "02",
     title: "AI Agents",
     summary:
-      "Autonomous agents, multi-agent orchestration, MCP, tool calling, memory, and human–AI collaboration—agents that execute work with auditability.",
+      "Autonomous agents, multi-agent orchestration, MCP, tool calling, memory, and human–AI collaboration, agents that execute work with auditability.",
     points: [
       "Single agents and hierarchical multi-agent systems",
       "MCP, tool contracts, memory, and approval gates",
@@ -36,7 +36,7 @@ export const solutionPillars = [
     id: "03",
     title: "AI DevOps",
     summary:
-      "MLOps, LLMOps, CloudOps, GitOps, CI/CD for AI, model lifecycle, monitoring, and cloud AI infrastructure—so production intelligence stays reliable after go-live.",
+      "MLOps, LLMOps, CloudOps, GitOps, CI/CD for AI, model lifecycle, monitoring, and cloud AI infrastructure, so production intelligence stays reliable after go-live.",
     points: [
       "CI/CD, GitOps promotion gates, and model lifecycle",
       "CloudOps, tracing, guardrails, cost controls, and incident playbooks",
@@ -51,14 +51,14 @@ export const engagementModels = [
   {
     title: "AI Consulting & Architecture",
     duration: "2–6 weeks · Start here when the mandate is unclear",
-    copy: "Board-ready blueprints: data readiness, model strategy, agent design, LLMOps posture, security, and sequenced investment—before you commit to a build.",
+    copy: "Board-ready blueprints: data readiness, model strategy, agent design, LLMOps posture, security, and sequenced investment, before you commit to a build.",
     bestFor: "CTO / CIO / CISO / Head of AI",
     href: "/solutions/ai-consulting",
   },
   {
     title: "AI Transformation Programs",
     duration: "90 days → multi-wave · Production build & industrialize",
-    copy: "Executive alignment, architecture, governed pilots that industrialize, and enablement—with IP handover.",
+    copy: "Executive alignment, architecture, governed pilots that industrialize, and enablement, with IP handover.",
     bestFor: "CEO / Transformation Office",
     href: "/solutions/ai-transformation",
   },
@@ -72,7 +72,7 @@ export const engagementModels = [
   {
     title: "Embedded AI Engineering",
     duration: "Dedicated embed · Only when the roadmap is already clear",
-    copy: "Senior AI / ML / agentic / LLMOps engineers embedded in your roadmap—shipping under your standards. Not a substitute for strategy.",
+    copy: "Senior AI / ML / agentic / LLMOps engineers embedded in your roadmap, shipping under your standards. Not a substitute for strategy.",
     bestFor: "Product & Engineering leaders with a defined backlog",
     href: "/solutions/hire-ai-engineers",
   },
@@ -101,6 +101,6 @@ export const solutionFitMatrix = [
 export const solutionProofPoints = [
   { value: "Owned", label: "100% code & model IP at handover" },
   { value: "Private", label: "Deployed in your VPC or on-prem" },
-  { value: "40%", label: "Faster documentation cycles (pattern)" },
-  { value: "10×", label: "Faster agentic triage (pattern)" },
+  { value: "HITL", label: "Human gates on high-risk actions" },
+  { value: "Eval", label: "Production gates, not demo theater" },
 ];

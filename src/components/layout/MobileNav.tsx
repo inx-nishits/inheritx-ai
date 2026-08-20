@@ -146,7 +146,7 @@ export function MobileNav({
                 AI-native enterprise
               </p>
               <p className="mb-6 max-w-xs text-sm leading-relaxed text-white/45">
-                Explore solutions, industries, proof, and company—built for
+                Explore solutions, industries, proof, and company, built for
                 enterprise decision makers.
               </p>
 

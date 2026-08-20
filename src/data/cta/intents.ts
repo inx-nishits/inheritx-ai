@@ -35,7 +35,7 @@ export const CONTACT_INTENTS = [
     label: "AI assessment / architecture review",
     topic: "AI assessment / architecture review",
     description:
-      "Structured readiness review—data, architecture, security, and build-vs-buy.",
+      "Structured readiness review, data, architecture, security, and build-vs-buy.",
     priority: "P1",
   },
   {

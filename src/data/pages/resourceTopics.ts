@@ -8,7 +8,7 @@ const resourceTopics: TopicPage[] = [
     eyebrow: "Insights",
     title: "Executive and architect perspectives on enterprise AI.",
     description:
-      "Short, decision-grade writing for leaders and builders—governed agents, private AI ownership, and the path from pilot to platform. No filler. No hype.",
+      "Short, decision-grade writing for leaders and builders, governed agents, private AI ownership, and the path from pilot to platform. No filler. No hype.",
     primaryCta: { label: "Talk to an architect", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "library",
@@ -22,7 +22,7 @@ const resourceTopics: TopicPage[] = [
         type: "narrative",
         title: "Written for decisions, not page views",
         body: [
-          "Insights here are shaped by delivery work—not marketing calendars. We publish when a pattern repeats across healthcare, finance, manufacturing, and operations programs and leaders ask for language they can use in boardrooms and architecture reviews.",
+          "Insights here are shaped by delivery work, not marketing calendars. We publish when a pattern repeats across healthcare, finance, manufacturing, and operations programs and leaders ask for language they can use in boardrooms and architecture reviews.",
           "Expect direct takes on what breaks in production: autonomy without policy, API rentals mistaken for capability, pilots without scale criteria, and agents that cannot explain what they did yesterday.",
           "Themes rotate, but the through-line is consistent: intelligence should behave like infrastructure you govern and own.",
         ],
@@ -34,7 +34,7 @@ const resourceTopics: TopicPage[] = [
         items: [
           {
             title: "Governed agents",
-            copy: "Why agentic systems fail without identity, tool permissions, traces, and escalation paths—and how to design workforces that survive audit and operational scrutiny.",
+            copy: "Why agentic systems fail without identity, tool permissions, traces, and escalation paths, and how to design workforces that survive audit and operational scrutiny.",
           },
           {
             title: "Private AI as ownership",
@@ -42,7 +42,7 @@ const resourceTopics: TopicPage[] = [
           },
           {
             title: "Pilot to platform",
-            copy: "Four decisions that separate industrialization from slideware: KPI, scope, exception ownership, and scale criteria—forced early, not discovered late.",
+            copy: "Four decisions that separate industrialization from slideware: KPI, scope, exception ownership, and scale criteria, forced early, not discovered late.",
           },
           {
             title: "When to embed AI engineers",
@@ -57,7 +57,7 @@ const resourceTopics: TopicPage[] = [
         leftBody: [
           "Board-ready framing for AI investment, risk, and sequencing.",
           "Language that connects ambition to operating reality.",
-          "Honest guidance on build vs. buy vs. embed—and when to pause.",
+          "Honest guidance on build vs. buy vs. embed, and when to pause.",
         ],
         rightTitle: "For architects & engineering leaders",
         rightItems: [
@@ -85,7 +85,7 @@ const resourceTopics: TopicPage[] = [
         items: [
           {
             q: "Is this content sales collateral?",
-            a: "It is written to help buyers and builders make better decisions. If it starts a conversation with us, that is useful—but each piece should stand alone.",
+            a: "It is written to help buyers and builders make better decisions. If it starts a conversation with us, that is useful, but each piece should stand alone.",
           },
           {
             q: "Can we request a private briefing on a theme?",
@@ -93,7 +93,7 @@ const resourceTopics: TopicPage[] = [
           },
           {
             q: "How often do you publish?",
-            a: "When we have something worth saying—typically aligned to patterns we see across active delivery work, not a fixed publishing cadence.",
+            a: "When we have something worth saying, typically aligned to patterns we see across active delivery work, not a fixed publishing cadence.",
           },
         ],
       },
@@ -104,7 +104,7 @@ const resourceTopics: TopicPage[] = [
     eyebrow: "Research",
     title: "Applied intelligence briefs.",
     description:
-      "Focused research notes on how enterprise AI behaves in production—evaluation design, agent governance, private deployment patterns, and domain-specific constraints.",
+      "Focused research notes on how enterprise AI behaves in production, evaluation design, agent governance, private deployment patterns, and domain-specific constraints.",
     primaryCta: { label: "Explore solutions", href: "/solutions" },
     secondaryCta: { label: "View AI Portfolio", href: "/portfolio" },
     layout: "library",
@@ -130,7 +130,7 @@ const resourceTopics: TopicPage[] = [
         rows: [
           {
             need: "How do we know the system still works after deployment?",
-            approach: "Evaluation harnesses—offline suites, production sampling, drift detection, and human review loops tied to business KPIs.",
+            approach: "Evaluation harnesses, offline suites, production sampling, drift detection, and human review loops tied to business KPIs.",
           },
           {
             need: "How do agents stay inside policy when tools can act?",
@@ -138,7 +138,7 @@ const resourceTopics: TopicPage[] = [
           },
           {
             need: "How do we deploy without creating vendor dependency?",
-            approach: "Private estate patterns—VPC boundaries, owned fine-tunes and corpora, orchestration you control, commodity models where appropriate.",
+            approach: "Private estate patterns, VPC boundaries, owned fine-tunes and corpora, orchestration you control, commodity models where appropriate.",
           },
           {
             need: "How do domain rules change AI design?",
@@ -152,7 +152,7 @@ const resourceTopics: TopicPage[] = [
         items: [
           {
             title: "Problem framing",
-            copy: "The operational or compliance tension the reader is actually trying to resolve—not a technology trend recap.",
+            copy: "The operational or compliance tension the reader is actually trying to resolve, not a technology trend recap.",
           },
           {
             title: "Design implications",
@@ -160,7 +160,7 @@ const resourceTopics: TopicPage[] = [
           },
           {
             title: "Production signals",
-            copy: "Observability, evaluation, and escalation patterns that indicate readiness—or warn early when a pilot is still theater.",
+            copy: "Observability, evaluation, and escalation patterns that indicate readiness, or warn early when a pilot is still theater.",
           },
         ],
       },
@@ -182,21 +182,21 @@ const resourceTopics: TopicPage[] = [
     eyebrow: "Whitepapers",
     title: "Frameworks for AI modernization.",
     description:
-      "Longer-form frameworks for transformation leaders—sequencing investment, designing governed platforms, and moving agentic capability from proof to estate-wide scale.",
+      "Longer-form frameworks for transformation leaders, sequencing investment, designing governed platforms, and moving agentic capability from proof to estate-wide scale.",
     primaryCta: { label: "Talk to an architect", href: contactHref("strategy") },
     secondaryCta: { label: "Our Approach", href: "/company/approach" },
     layout: "library",
     metadata: {
       title: "AI Modernization Whitepapers | InheritX",
       description:
-        "Frameworks for enterprise AI modernization—platform design, agent governance, and industrialization playbooks from InheritX.",
+        "Frameworks for enterprise AI modernization, platform design, agent governance, and industrialization playbooks from InheritX.",
     },
     sections: [
       {
         type: "narrative",
         title: "Frameworks you can operationalize",
         body: [
-          "Whitepapers here are written for transformation offices, CTO organizations, and architecture boards planning multi-wave AI programs—not for casual browsing.",
+          "Whitepapers here are written for transformation offices, CTO organizations, and architecture boards planning multi-wave AI programs, not for casual browsing.",
           "Each framework connects executive mandate to engineering reality: what to decide first, how to phase investment, where governance must be invariant, and how to know a pilot is ready to become a platform.",
           "They complement delivery work. Many clients use them to align internal stakeholders before a discovery or blueprint engagement begins.",
         ],
@@ -207,7 +207,7 @@ const resourceTopics: TopicPage[] = [
         items: [
           {
             title: "Enterprise AI operating model",
-            copy: "Roles, rituals, and decision rights for AI at scale—how product, security, data, and domain teams collaborate without bottlenecks or shadow AI.",
+            copy: "Roles, rituals, and decision rights for AI at scale, how product, security, data, and domain teams collaborate without bottlenecks or shadow AI.",
           },
           {
             title: "Governed agent reference architecture",
@@ -236,17 +236,17 @@ const resourceTopics: TopicPage[] = [
           {
             step: "02",
             title: "Gap against current state",
-            copy: "Map existing pilots, data estates, and governance posture to the framework—surfacing where scale will break without redesign.",
+            copy: "Map existing pilots, data estates, and governance posture to the framework, surfacing where scale will break without redesign.",
           },
           {
             step: "03",
             title: "Sequence investment",
-            copy: "Use the phasing model to order blueprint, proof, and industrialization waves—with explicit KPIs per wave.",
+            copy: "Use the phasing model to order blueprint, proof, and industrialization waves, with explicit KPIs per wave.",
           },
           {
             step: "04",
             title: "Engage for delivery",
-            copy: "Bring InheritX in where execution capacity or specialized patterns accelerate the roadmap—always with IP ownership intact.",
+            copy: "Bring InheritX in where execution capacity or specialized patterns accelerate the roadmap, always with IP ownership intact.",
           },
         ],
       },
@@ -271,7 +271,7 @@ const resourceTopics: TopicPage[] = [
           },
           {
             q: "Can we adapt these frameworks internally?",
-            a: "Yes. They are meant to be operationalized inside your governance process—we do not require attribution for internal use.",
+            a: "Yes. They are meant to be operationalized inside your governance process, we do not require attribution for internal use.",
           },
           {
             q: "Do you workshop these with client teams?",

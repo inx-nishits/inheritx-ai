@@ -70,7 +70,7 @@ function sanitize(value: unknown, max = 2000) {
 }
 
 function formatBudget(value?: string) {
-  if (!value) return "—";
+  if (!value) return ", ";
   return value.replace(/-/g, " ");
 }
 

@@ -46,7 +46,7 @@ export function HomeInsightsPreview({
             />
             <Reveal delay={0.1}>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/50 md:text-base">
-                Agentic systems, LLMOps, governance, and architecture—written for
+                Agentic systems, LLMOps, governance, and architecture, written for
                 buyers who ship, not spectators.
               </p>
             </Reveal>

@@ -1,5 +1,5 @@
 export const portfolioStats = [
-  { value: "14+", label: "Years delivery DNA for AI programs" },
+  { value: "2011+", label: "Enterprise delivery DNA informing AI programs" },
   { value: "AI-first", label: "AI/ML · Agents · Vision · LLMOps" },
   { value: "VPC", label: "Private-cloud by default" },
   { value: "Owned", label: "IP transfer on delivery" },
@@ -44,7 +44,7 @@ export const portfolioProjects: PortfolioProject[] = [
     industry: "Finance",
     service: "Multi-Agent Systems",
     summary:
-      "A governed multi-agent workforce for banking operations—with policy controls, audit trails, and human approval gates.",
+      "A governed multi-agent workforce for banking operations, with policy controls, audit trails, and human approval gates.",
     challenge:
       "Banking teams drown in repetitive operational work while regulators demand explainability.",
     solution:
@@ -68,8 +68,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "Clinicians spent hours on documentation, delaying care and increasing burnout.",
     solution:
       "Enterprise AI assistants with specialty-aware drafting, audit trails, and EHR handoffs.",
-    outcome: "40% less documentation time across specialty clinics (pattern).",
-    impact: "40% time saved",
+    outcome: "Less documentation time across specialty clinics (pattern).",
+    impact: "Pattern: documentation time",
     tech: ["OpenAI", "LangChain", "Python", "Azure", "Vector DB"],
     image: "/images/actual/actual-healthcare-industry.jpg",
     featured: true,
@@ -86,8 +86,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "Fraud teams drowned in false positives while high-risk cases waited.",
     solution:
       "Multi-agent orchestration with risk scoring, evidence synthesis, and human-in-the-loop gates.",
-    outcome: "Fraud review accelerated 6× with clearer auditability (pattern).",
-    impact: "6× faster review",
+    outcome: "Fraud review accelerated with clearer auditability (pattern).",
+    impact: "Pattern: faster review",
     tech: ["Claude", "CrewAI", "MCP", "Python", "AWS"],
     image: "/images/actual/actual-finance-industry.jpg",
     featured: true,
@@ -104,8 +104,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "Manual inspection missed micro-defects and slowed throughput.",
     solution:
       "Vision models + ops agents that flag anomalies and open maintenance tickets automatically.",
-    outcome: "Defect escape rate cut by 58% on critical lines (pattern).",
-    impact: "58% fewer escapes",
+    outcome: "Fewer missed micro-defects on critical lines (pattern).",
+    impact: "Pattern: defect escape",
     tech: ["Gemini", "Python", "AWS", "Edge Inference"],
     image: "/images/actual/actual-manufacturing-industry.jpg",
     featured: true,
@@ -138,8 +138,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "Support volume spiked while CSAT and handle times slipped.",
     solution:
       "Agentic support workflows with CRM tools, sentiment routing, and supervised escalation.",
-    outcome: "32% lower handle time and higher first-contact resolution (pattern).",
-    impact: "32% faster support",
+    outcome: "Lower handle time and higher first-contact resolution (pattern).",
+    impact: "Pattern: handle time",
     tech: ["Claude", "LangChain", "GCP", "Next.js"],
     image: "/images/actual/actual-retail-industry.jpg",
   },
@@ -154,8 +154,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "Policy updates lagged; agents worked from outdated guidance.",
     solution:
       "Continuous ingestion, citation-backed answers, and change-aware retrieval.",
-    outcome: "Policy answer accuracy improved to 94% with citations (pattern).",
-    impact: "94% accuracy",
+    outcome: "Policy answers grounded in citations (pattern).",
+    impact: "Pattern: cited answers",
     tech: ["OpenAI", "Vector DB", "Python", "AWS"],
     image: "/images/actual/actual-insurance-industry.jpg",
   },
@@ -170,8 +170,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "Reps spent more time researching than selling.",
     solution:
       "Sales agents connected to CRM, email, and account intelligence with guardrails.",
-    outcome: "Reps regained 8+ selling hours per week.",
-    impact: "8 hrs/week gained",
+    outcome: "Reps spent more time selling, less time researching (pattern).",
+    impact: "Pattern: selling time",
     tech: ["Gemini", "LangChain", "Next.js", "Azure"],
     image: "/images/actual/actual-agenticai.jpg",
   },
@@ -186,8 +186,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "HR teams were overloaded with repetitive employee requests.",
     solution:
       "Role-scoped assistant with workflow automation for onboarding and policy support.",
-    outcome: "65% of tier-1 HR queries auto-resolved (pattern).",
-    impact: "65% auto-resolved",
+    outcome: "Tier-1 HR queries auto-resolved under policy controls (pattern).",
+    impact: "Pattern: tier-1 HR",
     tech: ["Claude", "MCP", "Python", "GCP"],
     image: "/images/actual/actual-automation.jpg",
   },
@@ -218,8 +218,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "Unplanned downtime disrupted production schedules.",
     solution:
       "Sensor ML pipelines with ops agents that trigger maintenance playbooks.",
-    outcome: "Unplanned downtime reduced by 27% (pattern).",
-    impact: "27% less downtime",
+    outcome: "Unplanned downtime reduced on instrumented lines (pattern).",
+    impact: "Pattern: uptime",
     tech: ["Python", "AWS", "Gemini", "Observability"],
     image: "/images/actual/actual-manufacturing.jpg",
   },
@@ -234,8 +234,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "Legacy case workflows were slow, opaque, and labor-heavy.",
     solution:
       "Transformation program with automation agents, audit logs, and secure cloud controls.",
-    outcome: "Case cycle time reduced by 45% with full auditability (pattern).",
-    impact: "45% faster cycles",
+    outcome: "Shorter case cycles with full auditability (pattern).",
+    impact: "Pattern: case cycle time",
     tech: ["Claude", "CrewAI", "Azure", "Next.js"],
     image: "/images/actual/actual-government-industry.jpg",
     editorial: true,
@@ -276,32 +276,32 @@ export const capabilityLogos = [
 export const businessImpacts = [
   {
     title: "Manual operations",
-    value: "65%",
-    copy: "Lower manual ops through agentic triage and workflow automation (pattern).",
+    value: "Lower",
+    copy: "Agentic triage and workflow automation aimed at operating cost, not a guaranteed percentage.",
   },
   {
     title: "Decision velocity",
-    value: "80%",
-    copy: "Faster decision cycles with governed agents and AI analytics (pattern).",
+    value: "Faster",
+    copy: "Governed agents and AI analytics designed to compress decision cycles with human gates on risk.",
   },
   {
     title: "Process automation",
-    value: "10×",
-    copy: "Higher throughput on tier-1 paths while humans own high-risk gates (pattern).",
+    value: "Governed",
+    copy: "Higher throughput on routine paths while humans own high-risk actions.",
   },
   {
     title: "Delivery speed",
-    value: "40%",
-    copy: "Faster product and ops delivery with AI platforms and LLMOps (pattern).",
+    value: "Shorter",
+    copy: "AI platforms and LLMOps so teams ship production systems instead of repeating pilots.",
   },
   {
     title: "Workflow accuracy",
-    value: "90%",
-    copy: "Higher accuracy on governed AI workflows with evaluation harnesses (pattern).",
+    value: "Evaluated",
+    copy: "Evaluation harnesses and citations on governed workflows, accuracy is measured per program.",
   },
   {
     title: "Ownership",
-    value: "100%",
-    copy: "Code, agents, and fine-tunes transfer at handover—no rented platform.",
+    value: "Yours",
+    copy: "Code, agents, and fine-tunes transfer at handover, no rented platform.",
   },
 ];

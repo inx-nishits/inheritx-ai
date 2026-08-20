@@ -24,7 +24,7 @@ export function MidPageCTA() {
               Ready to pressure-test an AI mandate?
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/50 md:text-base">
-              Start with a mandate review with an architect—or review production
+              Start with a mandate review with an architect, or review production
               case studies first.
             </p>
           </div>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 import type { CaseStudy, CaseStudyLink } from "@/data/caseStudies";
+import { CASE_STUDY_METRICS_NOTE, resultQualifier } from "@/data/caseStudies";
 import { CtaPrimary } from "@/components/cta/CtaPrimary";
 import { CtaText } from "@/components/cta/CtaText";
 import { Reveal } from "@/components/ui/Reveal";
@@ -118,10 +119,16 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
                   {result.value}
                 </p>
                 <p className="mt-2 text-xs text-white/40">{result.label}</p>
+                <p className="mt-2 text-[10px] tracking-wide text-white/30 uppercase">
+                  {resultQualifier(result.kind)}
+                </p>
               </div>
             </Reveal>
           ))}
         </div>
+        <p className="mx-auto mt-6 max-w-page px-5 text-xs leading-relaxed text-white/35 md:px-8">
+          {CASE_STUDY_METRICS_NOTE}
+        </p>
       </section>
 
       <section className="border-t border-white/[0.06] bg-ink py-16 md:py-20">
@@ -326,7 +333,7 @@ export function CaseStudyDetailView({ study }: { study: CaseStudy }) {
             </h2>
             <p className="mt-4 text-sm text-white/50">
               Thirty minutes with an architect to pressure-test fit, constraints,
-              and a practical first slice—NDA available for qualified
+              and a practical first slice, NDA available for qualified
               opportunities.
             </p>
           </div>

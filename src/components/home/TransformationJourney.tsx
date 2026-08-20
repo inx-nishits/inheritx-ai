@@ -32,7 +32,7 @@ export function TransformationJourney() {
           />
           <Reveal delay={0.15}>
             <p className="mt-4 max-w-md text-base leading-relaxed text-ink/55">
-              Discover, architect, build, and scale—four stages that take a
+              Discover, architect, build, and scale, four stages that take a
               qualified use case from leadership alignment to industrialized
               delivery.
             </p>

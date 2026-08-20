@@ -14,12 +14,12 @@ import {
 export const metadata: Metadata = {
   title: "AI Portfolio | InheritX",
   description:
-    "Enterprise AI capability patterns—AI/ML, agents, vision, automation, and production operations—from InheritX.",
+    "Enterprise AI capability patterns, AI/ML, agents, vision, automation, and production operations, from InheritX.",
   alternates: { canonical: "/portfolio" },
   openGraph: {
     title: "AI Portfolio | InheritX",
     description:
-      "Enterprise AI capability patterns—AI/ML, agents, vision, automation, and production operations—from InheritX.",
+      "Enterprise AI capability patterns, AI/ML, agents, vision, automation, and production operations, from InheritX.",
     type: "website",
     url: "/portfolio",
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Portfolio | InheritX",
     description:
-      "Enterprise AI capability patterns—AI/ML, agents, vision, automation, and production operations—from InheritX.",
+      "Enterprise AI capability patterns, AI/ML, agents, vision, automation, and production operations, from InheritX.",
   },
 };
 

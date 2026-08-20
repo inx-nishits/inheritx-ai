@@ -12,7 +12,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     eyebrow: "Security FAQ",
     title: "Answers procurement and security teams ask first.",
     description:
-      "Factual responses for vendor reviews. If something is not yet attested, we say so—rather than inventing certifications or partnership claims.",
+      "Factual responses for vendor reviews. If something is not yet attested, we say so, rather than inventing certifications or partnership claims.",
     primaryCta: { label: CTA_LABELS.talkToArchitect, href: contactHref("strategy") },
     secondaryCta: { label: "Security & Compliance", href: "/company/security" },
     layout: "library",
@@ -32,7 +32,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             q: "Which model providers might be involved?",
-            a: "Depending on architecture choices: commercial APIs (e.g., OpenAI, Anthropic, Google) and/or models hosted in your VPC. Provider selection is part of blueprint—and governed by those providers’ terms plus your policies.",
+            a: "Depending on architecture choices: commercial APIs (e.g., OpenAI, Anthropic, Google) and/or models hosted in your VPC. Provider selection is part of blueprint, and governed by those providers’ terms plus your policies.",
           },
           {
             q: "Do logos for OpenAI, AWS, Microsoft, etc. mean formal partnership?",
@@ -50,7 +50,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         items: [
           {
             q: "How do engineers access our systems?",
-            a: "Through identities and roles you approve—preferably time-bound and least-privilege—following your IAM and change processes.",
+            a: "Through identities and roles you approve, preferably time-bound and least-privilege, following your IAM and change processes.",
           },
           {
             q: "What logs exist for AI actions?",
@@ -62,7 +62,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             q: "Do you have SOC 2 / ISO certificates we can download?",
-            a: "Formal SOC/ISO marks are published only when evidenced. Until then, use this Security FAQ and the Diligence Pack under NDA. We share attestation status factually during vendor review—this site does not claim certifications that are not currently evidenced.",
+            a: "Formal SOC/ISO marks are published only when evidenced. Until then, use this Security FAQ and the Diligence Pack under NDA. We share attestation status factually during vendor review, this site does not claim certifications that are not currently evidenced.",
           },
         ],
       },
@@ -70,7 +70,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "bullets",
         title: "Anonymized engagement classes (from published cases)",
         intro:
-          "Derived from published case studies—not invented client names. Use these for early peer matching; named references require written approval.",
+          "Derived from published case studies, not invented client names. Use these for early peer matching; named references require written approval.",
         items: [
           {
             title: "Healthcare & clinical workflows",
@@ -94,8 +94,8 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "narrative",
         title: "What we share publicly vs under NDA",
         body: [
-          "We do not publish unverified logos or invented testimonials. Public materials include this FAQ, published case methodology, anonymized engagement classes from those stories, and company pages on security practices and IP ownership.",
-          "Named customer references: only with written approval. Otherwise anonymized industry + scale references under NDA for qualified opportunities—after a strategy or security diligence conversation confirms fit.",
+          "Named customer quotes are anonymized until written approval is on file. Public materials include this FAQ, published case methodology, anonymized engagement classes from those stories, and company pages on security practices and IP ownership.",
+          "Named customer references: only with written approval. Otherwise anonymized industry + scale references under NDA for qualified opportunities, after a strategy or security diligence conversation confirms fit.",
         ],
       },
       {
@@ -117,7 +117,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     eyebrow: "Diligence Pack",
     title: "What enterprise buyers receive under NDA.",
     description:
-      "A structured pack for security, legal, and architecture review—shared after a qualified strategy conversation. Public pages stay precise; sensitive detail stays controlled.",
+      "A structured pack for security, legal, and architecture review, shared after a qualified strategy conversation. Public pages stay precise; sensitive detail stays controlled.",
     primaryCta: { label: CTA_LABELS.talkToArchitect, href: contactHref("strategy") },
     secondaryCta: { label: "Security FAQ", href: "/resources/security-faq" },
     layout: "library",
@@ -163,7 +163,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
       {
         type: "bullets",
         title: "Pack contents (standard intent)",
-        intro: "Typical contents—final set depends on your questionnaire and engagement type.",
+        intro: "Typical contents, final set depends on your questionnaire and engagement type.",
         items: [
           {
             title: "Security & data-handling overview",
@@ -175,7 +175,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             title: "Engagement model one-pagers",
-            copy: "Consulting, transformation/build, squads, and embeds—when each is appropriate.",
+            copy: "Consulting, transformation/build, squads, and embeds, when each is appropriate.",
           },
           {
             title: "Architecture Principles",
@@ -190,7 +190,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
       {
         type: "bullets",
         title: "Public security & procurement links",
-        intro: "Available without NDA—use these while your questionnaire is prepared.",
+        intro: "Available without NDA, use these while your questionnaire is prepared.",
         items: [
           {
             title: "Security FAQ",
@@ -214,7 +214,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "matrix",
         title: "Materials available under NDA after fit is confirmed",
         intro:
-          "Shared during vendor review when mutual fit is clear—not as public downloads.",
+          "Shared during vendor review when mutual fit is clear, not as public downloads.",
         rows: [
           {
             need: "Current certification letters / reports",
@@ -229,7 +229,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           {
             need: "Sample SOW / MSA exhibits (IP, DPA)",
             approach:
-              "Legal-owned templates shared under NDA—not published as open downloads.",
+              "Legal-owned templates shared under NDA, not published as open downloads.",
           },
           {
             need: "Named customer references",
@@ -283,7 +283,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     eyebrow: "Engagement Models",
     title: "How to buy InheritX without category confusion.",
     description:
-      "Three primary motions—plus embeds when the roadmap is already clear. Choose the path that matches your decision, not a menu of everything at once.",
+      "Three primary motions, plus embeds when the roadmap is already clear. Choose the path that matches your decision, not a menu of everything at once.",
     primaryCta: { label: CTA_LABELS.startConversation, href: contactHref("strategy") },
     secondaryCta: { label: "Explore solutions", href: "/solutions" },
     layout: "engagement",
@@ -316,7 +316,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           {
             step: "04",
             title: "Embedded AI Engineering",
-            copy: "Only when the roadmap and architecture standards already exist and the bottleneck is senior execution capacity—not strategy.",
+            copy: "Only when the roadmap and architecture standards already exist and the bottleneck is senior execution capacity, not strategy.",
           },
         ],
       },
@@ -344,10 +344,10 @@ export const enterpriseResourceTopics: TopicPage[] = [
       },
       {
         type: "narrative",
-        title: "What InheritX is—and is not",
+        title: "What InheritX is, and is not",
         body: [
-          "InheritX is an AI-native enterprise partner—an Enterprise AI Solutions company. We design, build, govern, and hand over systems. We are not a foundation-model provider, and we are not a classic staff-augmentation broker optimizing for headcount.",
-          "Embeds exist to accelerate a defined roadmap under your standards. If you need the mandate and blueprint first, start with consulting—even if you eventually want embeds.",
+          "InheritX is an AI-native enterprise partner, an Enterprise AI Solutions company. We design, build, govern, and hand over systems. We are not a foundation-model provider, and we are not a classic staff-augmentation broker optimizing for headcount.",
+          "Embeds exist to accelerate a defined roadmap under your standards. If you need the mandate and blueprint first, start with consulting, even if you eventually want embeds.",
         ],
       },
       {
@@ -368,7 +368,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     eyebrow: "AI Governance",
     title: "Controls that let autonomy survive audit.",
     description:
-      "How InheritX designs human-in-the-loop gates, evaluation, attribution, and escalation—so agentic systems behave like infrastructure, not demos.",
+      "How InheritX designs human-in-the-loop gates, evaluation, attribution, and escalation, so agentic systems behave like infrastructure, not demos.",
     primaryCta: { label: CTA_LABELS.talkToArchitect, href: contactHref("strategy") },
     secondaryCta: { label: "Production Readiness", href: "/resources/production-readiness" },
     layout: "library",
@@ -392,7 +392,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         items: [
           {
             title: "Human-in-the-loop for high-risk actions",
-            copy: "Consequential tools—money movement, clinical sign-off proxies, irreversible changes—require explicit approval paths.",
+            copy: "Consequential tools, money movement, clinical sign-off proxies, irreversible changes, require explicit approval paths.",
           },
           {
             title: "Attributed agent actions",
@@ -400,7 +400,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             title: "Evaluation before scale",
-            copy: "Offline suites and sampling strategies defined before broad rollout—not after users discover failure modes.",
+            copy: "Offline suites and sampling strategies defined before broad rollout, not after users discover failure modes.",
           },
           {
             title: "Scoped retrieval",
@@ -408,7 +408,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             title: "Escalation & fallback",
-            copy: "Clear paths when confidence is low, tools fail, or policy blocks an action—humans remain accountable.",
+            copy: "Clear paths when confidence is low, tools fail, or policy blocks an action, humans remain accountable.",
           },
         ],
       },
@@ -448,7 +448,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     eyebrow: "Production Readiness",
     title: "The checklist before you industrialize.",
     description:
-      "A practical readiness bar InheritX uses so pilots become platforms—security, evaluation, ownership, and operations included.",
+      "A practical readiness bar InheritX uses so pilots become platforms, security, evaluation, ownership, and operations included.",
     primaryCta: { label: "AI Governance", href: "/resources/ai-governance" },
     secondaryCta: { label: "Our Approach", href: "/company/approach" },
     layout: "library",
@@ -461,7 +461,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
       {
         type: "steps",
         title: "Readiness gates",
-        intro: "If a gate is red, we recommend fixing it before scale—even if the demo looks impressive.",
+        intro: "If a gate is red, we recommend fixing it before scale, even if the demo looks impressive.",
         items: [
           {
             step: "01",
@@ -481,7 +481,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           {
             step: "04",
             title: "Evaluation harness",
-            copy: "Offline tests and sampling plan tied to quality/risk metrics—not anecdotal prompt checks.",
+            copy: "Offline tests and sampling plan tied to quality/risk metrics, not anecdotal prompt checks.",
           },
           {
             step: "05",
@@ -499,7 +499,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "narrative",
         title: "Honesty over velocity theater",
         body: [
-          "We will recommend pausing industrialization when readiness gates fail. That is not friction—it is how regulated buyers avoid expensive rework and trust loss.",
+          "We will recommend pausing industrialization when readiness gates fail. That is not friction, it is how regulated buyers avoid expensive rework and trust loss.",
           "Consulting engagements often exist specifically to turn red gates green before a production build starts.",
         ],
       },
@@ -521,7 +521,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     eyebrow: "Architecture Principles",
     title: "Opinionated defaults for enterprise AI systems.",
     description:
-      "Principles InheritX applies when designing private, governed, IP-transferrable AI—useful for CTOs comparing builders vs. integrators.",
+      "Principles InheritX applies when designing private, governed, IP-transferrable AI, useful for CTOs comparing builders vs. integrators.",
     primaryCta: { label: "Tech on the homepage", href: "/#tech" },
     secondaryCta: { label: "AI Consulting", href: "/solutions/ai-consulting" },
     layout: "library",
@@ -545,7 +545,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             title: "Human gates on consequential actions",
-            copy: "Autonomy is earned inside policy—not granted globally because a demo impressed.",
+            copy: "Autonomy is earned inside policy, not granted globally because a demo impressed.",
           },
           {
             title: "Attribution over opacity",
@@ -553,7 +553,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             title: "Observability is a product requirement",
-            copy: "Tracing, cost, and failure modes are visible to operators—not buried in vendor dashboards you cannot export.",
+            copy: "Tracing, cost, and failure modes are visible to operators, not buried in vendor dashboards you cannot export.",
           },
           {
             title: "IP-transferrable by construction",
@@ -569,7 +569,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "narrative",
         title: "LLMOps in practice",
         body: [
-          "Delivery & observability layers include regression checks for prompts/agents, cost controls, and guardrails appropriate to the workflow. Exact tooling varies by estate—AWS, Azure, GCP, and your existing CI/CD.",
+          "Delivery & observability layers include regression checks for prompts/agents, cost controls, and guardrails appropriate to the workflow. Exact tooling varies by estate, AWS, Azure, GCP, and your existing CI/CD.",
           "We document trade-offs in blueprint so security and platform teams can accept the path before build velocity increases.",
         ],
       },
@@ -591,7 +591,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
     eyebrow: "Enterprise References",
     title: "How enterprise buyers verify InheritX.",
     description:
-      "Named references only with written customer approval. Until then: published case methodology plus anonymized industry-scale references under NDA—never fabricated logos or Fortune 500 claims.",
+      "Named references only with written customer approval. Until then: published case methodology plus anonymized industry-scale references under NDA, never fabricated logos or Fortune 500 claims.",
     primaryCta: { label: CTA_LABELS.startConversation, href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "library",
@@ -616,12 +616,12 @@ export const enterpriseResourceTopics: TopicPage[] = [
           {
             step: "01",
             title: "Published case studies",
-            copy: "Methodology-forward stories on this site—challenge, approach, outcome, and measurable results where we can publish them.",
+            copy: "Methodology-forward stories on this site, challenge, approach, outcome, and measurable results where we can publish them.",
           },
           {
             step: "02",
             title: "Anonymized references (NDA)",
-            copy: "Industry, size band, use case, constraint, InheritX role, and outcome class—shared after mutual fit is confirmed.",
+            copy: "Industry, size band, use case, constraint, InheritX role, and outcome class, shared after mutual fit is confirmed.",
           },
           {
             step: "03",
@@ -634,7 +634,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         type: "bullets",
         title: "Published anonymized engagement classes",
         intro:
-          "Available now from published case studies—not invented client names. Prefer these for early peer matching before NDA.",
+          "Available now from published case studies, not invented client names. Prefer these for early peer matching before NDA.",
         items: [
           {
             title: "Healthcare & clinical workflows",
@@ -660,7 +660,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         items: [
           {
             title: "Peer similarity",
-            copy: "Industry, geography, and approximate scale so we match the closest approved reference—not a vanity logo.",
+            copy: "Industry, geography, and approximate scale so we match the closest approved reference, not a vanity logo.",
           },
           {
             title: "Diligence stage",
@@ -689,23 +689,23 @@ export const enterpriseResourceTopics: TopicPage[] = [
   {
     slug: "outcome-taxonomy",
     eyebrow: "Outcome Taxonomy",
-    title: "How we talk about results—without vanity metrics.",
+    title: "How we talk about results, without vanity metrics.",
     description:
-      "A shared vocabulary for case studies and diligence: efficiency, risk reduction, reliability, cost control, and enablement—tied to methods you can inspect.",
+      "A shared vocabulary for case studies and diligence: efficiency, risk reduction, reliability, cost control, and enablement, tied to methods you can inspect.",
     primaryCta: { label: "Case Studies", href: "/case-studies" },
     secondaryCta: { label: "Production Readiness", href: "/resources/production-readiness" },
     layout: "library",
     metadata: {
       title: "Outcome Taxonomy | InheritX",
       description:
-        "InheritX outcome taxonomy for enterprise AI engagements: efficiency, risk, reliability, cost, and enablement—measured with inspectable methods.",
+        "InheritX outcome taxonomy for enterprise AI engagements: efficiency, risk, reliability, cost, and enablement, measured with inspectable methods.",
     },
     sections: [
       {
         type: "narrative",
         title: "Why taxonomy matters",
         body: [
-          "Enterprise buyers should be able to compare stories by outcome class—not by unrelated percentages. We classify published results so readers know what kind of value was measured and what remains qualitative.",
+          "Enterprise buyers should be able to compare stories by outcome class, not by unrelated percentages. We classify published results so readers know what kind of value was measured and what remains qualitative.",
           "Where a figure cannot be independently verified for public use, we prefer precise qualitative outcomes and methodology over invented precision.",
         ],
       },
@@ -715,7 +715,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
         items: [
           {
             title: "Operational efficiency",
-            copy: "Time-to-complete, discovery effort, prep time, throughput—e.g. reduced clinic visits, faster discovery flows.",
+            copy: "Time-to-complete, discovery effort, prep time, throughput, e.g. reduced clinic visits, faster discovery flows.",
           },
           {
             title: "Risk & security posture",
@@ -727,7 +727,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             title: "Cost & leakage control",
-            copy: "Avoidable cloud spend, billing disputes, budget adherence—when economics are part of the mandate.",
+            copy: "Avoidable cloud spend, billing disputes, budget adherence, when economics are part of the mandate.",
           },
           {
             title: "Enablement & ownership",
@@ -738,7 +738,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
       {
         type: "matrix",
         title: "How published case studies map (illustrative)",
-        intro: "Mapping uses public case narratives already on this site—not new claims.",
+        intro: "Mapping uses public case narratives already on this site, not new claims.",
         rows: [
           {
             need: "AI Dent / Heva",
@@ -768,7 +768,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           },
           {
             q: "How often is proof refreshed?",
-            a: "Published outcomes and the security FAQ are refreshed when new approved material is available—without inventing interim claims.",
+            a: "Published outcomes and the security FAQ are refreshed when new approved material is available, without inventing interim claims.",
           },
         ],
       },

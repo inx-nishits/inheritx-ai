@@ -11,7 +11,7 @@ export const privacySections = [
   {
     title: "Who we are",
     body: [
-      "InheritX (“InheritX,” “we,” “us,” or “our”) provides Enterprise AI Solutions—including AI platforms, agents, automation, and related professional services.",
+      "InheritX (“InheritX,” “we,” “us,” or “our”) provides Enterprise AI Solutions, including AI platforms, agents, automation, and related professional services.",
       "This Privacy Policy explains how we handle personal information in connection with inheritx.ai and related marketing or contact channels. It does not replace client contracts or data processing agreements that govern project delivery.",
     ],
   },
@@ -19,7 +19,7 @@ export const privacySections = [
     title: "Information we collect",
     body: [
       "Information you provide: name, work email, company, role, phone number, and the content of messages you send via forms, email, or scheduling tools.",
-      "Technical information: IP address, browser type, device identifiers, approximate location derived from IP, pages visited, referring URLs, and timestamps—typically collected through server logs and analytics tools.",
+      "Technical information: IP address, browser type, device identifiers, approximate location derived from IP, pages visited, referring URLs, and timestamps, typically collected through server logs and analytics tools.",
       "Cookies and similar technologies: we may use essential cookies to operate the site and optional analytics cookies to understand aggregate usage. You can control cookies through your browser settings.",
     ],
   },
@@ -36,7 +36,7 @@ export const privacySections = [
     title: "Sharing",
     body: [
       "We do not sell personal information.",
-      "We may share information with service providers who help us host websites, process email, analyze traffic, or schedule meetings—under confidentiality and appropriate safeguards.",
+      "We may share information with service providers who help us host websites, process email, analyze traffic, or schedule meetings, under confidentiality and appropriate safeguards.",
       "We may disclose information if required by law, regulation, legal process, or to protect InheritX, our clients, or the public from harm.",
       "If we are involved in a merger, acquisition, or asset transfer, personal information may be transferred as part of that transaction, subject to this policy or equivalent protections.",
     ],

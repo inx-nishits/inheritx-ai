@@ -32,7 +32,7 @@ export function TrustBar() {
               Built on production AI systems.
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-ink/55 md:text-base">
-              Six capability lanes—each engineered for governed production
+              Six capability lanes, each engineered for governed production
               delivery.
             </p>
           </Reveal>

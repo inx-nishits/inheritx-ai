@@ -197,9 +197,9 @@ export function Hero() {
               </span>
             </h1>
 
-            <p className="hero-fade mx-auto mt-6 max-w-lg text-base leading-relaxed text-white/60 md:mt-8 md:text-lg">
-              Production enterprise AI in your VPC—with full IP ownership and
-              systems your teams can operate after handover.
+            <p className="hero-fade mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/60 md:mt-8 md:text-lg">
+              We build production enterprise AI you own, running in your
+              environment, operated by your teams after handover.
             </p>
 
             <CtaPair align="center" className="hero-fade mt-10 sm:mt-12">

@@ -175,7 +175,7 @@ export const pathPages: PathPage[] = [
     eyebrow: "For CEOs, founders & business owners",
     title: "Turn AI into a business advantage your board can fund.",
     description:
-      "We help enterprises identify where AI creates P&L leverage—then design, build, and industrialize governed systems you own. Cost, speed, risk, and competitive position first. Technology second.",
+      "We help enterprises identify where AI creates P&L leverage, then design, build, and industrialize governed systems you own. Cost, speed, risk, and competitive position first. Technology second.",
     primaryCta: {
       label: CTA_LABELS.strategySession,
       href: contactHref("strategy"),
@@ -192,7 +192,7 @@ export const pathPages: PathPage[] = [
     proof: [
       { value: "P&L", label: "KPIs tied to cost, speed, revenue & risk" },
       { value: "90d", label: "Typical path to a governed production system" },
-      { value: "Owned", label: "Full IP transfer—no platform lock-in" },
+      { value: "Owned", label: "Full IP transfer, no platform lock-in" },
       { value: "Honest", label: "We say no when AI is the wrong lever" },
     ],
     closing: {
@@ -220,8 +220,8 @@ export const pathPages: PathPage[] = [
         title: "What a CEO actually needs to decide",
         body: [
           "Most AI programs fail the board test for the same reason: the demo is impressive, but nobody owns the operating metric, the security posture, or the path past the pilot. Boards do not fund fluency. They fund durable capability that shows up in the P&L and the risk register.",
-          "Why now: copilots are already inside the estate, shadow spend is accumulating, and competitors who industrialize governed workflows will lock in cost and cycle-time advantages that are hard to unwind. Waiting is also a decision—usually a more expensive one.",
-          "InheritX is an AI-native enterprise partner. We help you identify, design, build, deploy, and scale AI systems that create measurable business impact—with private deployment and IP that stays with you. If AI is not the right lever, we will say so.",
+          "Why now: copilots are already inside the estate, shadow spend is accumulating, and competitors who industrialize governed workflows will lock in cost and cycle-time advantages that are hard to unwind. Waiting is also a decision, usually a more expensive one.",
+          "InheritX is an AI-native enterprise partner. We help you identify, design, build, deploy, and scale AI systems that create measurable business impact, with private deployment and IP that stays with you. If AI is not the right lever, we will say so.",
         ],
       },
       {
@@ -233,7 +233,7 @@ export const pathPages: PathPage[] = [
           {
             label: "Business impact",
             value: "Named KPI",
-            copy: "Cost-to-serve, cycle time, exception rate, revenue quality, or risk—chosen before architecture.",
+            copy: "Cost-to-serve, cycle time, exception rate, revenue quality, or risk, chosen before architecture.",
           },
           {
             label: "How we work",
@@ -248,7 +248,7 @@ export const pathPages: PathPage[] = [
           {
             label: "What happens next",
             value: "One call",
-            copy: "A strategy session to pressure-test the opportunity—or a clear no if AI is the wrong move.",
+            copy: "A strategy session to pressure-test the opportunity, or a clear no if AI is the wrong move.",
           },
         ],
       },
@@ -256,7 +256,7 @@ export const pathPages: PathPage[] = [
         type: "proofCases",
         title: "Production proof, not a pitch deck",
         intro:
-          "Published outcomes from systems already in production. These metrics belong to those engagements—they are not a forecast of yours.",
+          "Published outcomes from systems already in production. These metrics belong to those engagements, they are not a forecast of yours.",
         cases: [
           { id: "heva", focus: "business" },
           { id: "agent-bank", focus: "business" },
@@ -268,12 +268,12 @@ export const pathPages: PathPage[] = [
         insight:
           "Fund high-impact, lower-complexity workflows first. Platform bets come second. Do not buy autonomy before the operating metric and data are real.",
         intro:
-          "A decision map for where to invest first—not a forecast of your results. Categories reflect how enterprise AI programs typically concentrate value.",
+          "A decision map for where to invest first, not a forecast of your results. Categories reflect how enterprise AI programs typically concentrate value.",
         note: "Conceptual framework for briefing. Your sequence is set by data access, risk class, and the KPI you are willing to own. Not measured client statistics.",
         items: [
           {
             title: "Document-heavy operations",
-            copy: "Clinical notes, claims, contracts, onboarding packs—high volume, repeatable structure, clear time-to-complete.",
+            copy: "Clinical notes, claims, contracts, onboarding packs, high volume, repeatable structure, clear time-to-complete.",
             impact: "high",
             effort: "low",
           },
@@ -291,7 +291,7 @@ export const pathPages: PathPage[] = [
           },
           {
             title: "Multi-agent operations",
-            copy: "Tool-using agents across core systems—with human gates on money, customers, and irreversible actions.",
+            copy: "Tool-using agents across core systems, with human gates on money, customers, and irreversible actions.",
             impact: "high",
             effort: "high",
           },
@@ -376,7 +376,7 @@ export const pathPages: PathPage[] = [
           {
             phase: "Week 6–14",
             title: "Governed production",
-            copy: "Ship under production constraints—integrations, evaluation, auditability, human gates.",
+            copy: "Ship under production constraints, integrations, evaluation, auditability, human gates.",
           },
           {
             phase: "Ongoing",
@@ -389,11 +389,11 @@ export const pathPages: PathPage[] = [
         type: "bullets",
         title: "Decision signals CEOs use to filter partners",
         intro:
-          "If a partner cannot answer these cleanly, the program will not survive diligence—or the first security review.",
+          "If a partner cannot answer these cleanly, the program will not survive diligence, or the first security review.",
         items: [
           {
             title: "One board-recognizable KPI",
-            copy: "Cost-to-serve, cycle time, exception rate, revenue lift, or risk reduction—named before architecture. Not “engagement with the assistant.”",
+            copy: "Cost-to-serve, cycle time, exception rate, revenue lift, or risk reduction, named before architecture. Not “engagement with the assistant.”",
           },
           {
             title: "A path past the pilot",
@@ -401,7 +401,7 @@ export const pathPages: PathPage[] = [
           },
           {
             title: "Economics that survive procurement",
-            copy: "Build vs. buy vs. embed framed honestly—including where SaaS copilots create shadow spend and where owned systems compound.",
+            copy: "Build vs. buy vs. embed framed honestly, including where SaaS copilots create shadow spend and where owned systems compound.",
           },
           {
             title: "IP and exit rights from day one",
@@ -475,19 +475,19 @@ export const pathPages: PathPage[] = [
         items: [
           {
             q: "How do we show the board progress in 90 days?",
-            a: "Name one KPI, ship a governed production-constrained release against that KPI, and report accuracy, cost, risk controls, and operating ownership—not demo anecdotes.",
+            a: "Name one KPI, ship a governed production-constrained release against that KPI, and report accuracy, cost, risk controls, and operating ownership, not demo anecdotes.",
           },
           {
             q: "Will we own the IP?",
-            a: "Yes. Engagements are structured for full IP transfer of systems built for you—agents, orchestration, fine-tunes, and integration code.",
+            a: "Yes. Engagements are structured for full IP transfer of systems built for you, agents, orchestration, fine-tunes, and integration code.",
           },
           {
             q: "What if AI is not the right answer?",
-            a: "We will say so. A useful strategy session often ends with a clearer process or data decision—and no build.",
+            a: "We will say so. A useful strategy session often ends with a clearer process or data decision, and no build.",
           },
           {
             q: "How do you work with our SI or cloud partner?",
-            a: "As the AI systems partner alongside enterprise IT and cloud partners—not a rip-and-replace of trusted vendors.",
+            a: "As the AI systems partner alongside enterprise IT and cloud partners, not a rip-and-replace of trusted vendors.",
           },
           {
             q: "What does an executive workshop produce?",
@@ -499,7 +499,7 @@ export const pathPages: PathPage[] = [
           },
           {
             q: "What does an AI opportunity assessment produce?",
-            a: "A prioritized workflow, value hypothesis tied to a named KPI, risk class, and a go / no-go on whether AI is the right lever—without committing you to a build.",
+            a: "A prioritized workflow, value hypothesis tied to a named KPI, risk class, and a go / no-go on whether AI is the right lever, without committing you to a build.",
           },
         ],
       },
@@ -510,7 +510,7 @@ export const pathPages: PathPage[] = [
     eyebrow: "For CTOs, VP Engineering & platform leaders",
     title: "Build AI systems your enterprise can actually scale.",
     description:
-      "Architecture, security, and handover—so production AI survives design review and still runs after we leave. Your estate. Your IP.",
+      "Architecture, security, and handover, so production AI survives design review and still runs after we leave. Your estate. Your IP.",
     primaryCta: {
       label: CTA_LABELS.architectureAssessment,
       href: contactHref("assessment"),
@@ -528,7 +528,7 @@ export const pathPages: PathPage[] = [
       { value: "VPC", label: "Private / hybrid / sovereign deployment" },
       { value: "LLMOps", label: "Eval → release → observe → improve" },
       { value: "Secure", label: "Policy, audit, secrets, tool sandboxing" },
-      { value: "Owned", label: "Code, weights, runbooks—your estate" },
+      { value: "Owned", label: "Code, weights, runbooks, your estate" },
     ],
     closing: {
       eyebrow: "Technical next step",
@@ -555,14 +555,14 @@ export const pathPages: PathPage[] = [
         title: "What CTOs evaluate before they trust a partner",
         body: [
           "The failure mode is familiar: a flashy prototype that cannot pass security review, has no evaluation regression suite, and cannot be operated by your platform team. Engineering leadership does not need more copilots. It needs systems that behave like infrastructure.",
-          "InheritX designs and delivers enterprise AI platforms and agent systems in private and hybrid estates—with GitOps-friendly delivery, observability, cost controls, and runbooks your platform team can operate after handover.",
+          "InheritX designs and delivers enterprise AI platforms and agent systems in private and hybrid estates, with GitOps-friendly delivery, observability, cost controls, and runbooks your platform team can operate after handover.",
         ],
       },
       {
         type: "snapshot",
         title: "Technical credibility, scannable",
         intro:
-          "What we expect to defend in your design review—without a fake scorecard.",
+          "What we expect to defend in your design review, without a fake scorecard.",
         items: [
           {
             label: "Architecture",
@@ -572,7 +572,7 @@ export const pathPages: PathPage[] = [
           {
             label: "Release quality",
             value: "Eval-gated",
-            copy: "Golden sets and regression suites as release blockers—not a one-off accuracy slide.",
+            copy: "Golden sets and regression suites as release blockers, not a one-off accuracy slide.",
           },
           {
             label: "Operations",
@@ -590,7 +590,7 @@ export const pathPages: PathPage[] = [
         type: "proofCases",
         title: "Production systems that survived engineering review",
         intro:
-          "Published architecture and reliability outcomes—not a scored audit of your estate.",
+          "Published architecture and reliability outcomes, not a scored audit of your estate.",
         cases: [
           { id: "kavia-ai", focus: "engineering" },
           { id: "t2d2", focus: "engineering" },
@@ -600,15 +600,15 @@ export const pathPages: PathPage[] = [
         type: "flow",
         title: "Enterprise AI architecture we design against",
         insight:
-          "Intelligence sits on a real data and control plane. Agents are an application layer—not a substitute for architecture.",
+          "Intelligence sits on a real data and control plane. Agents are an application layer, not a substitute for architecture.",
         intro:
           "A pressure-testable topology. We map your estate onto this before we propose build.",
-        note: "Conceptual reference architecture—not a latency SLO, capacity plan, or measured benchmark.",
+        note: "Conceptual reference architecture, not a latency SLO, capacity plan, or measured benchmark.",
         items: [
           {
             step: "01",
             title: "Data sources",
-            copy: "Systems of record, documents, events, and approved APIs—with residency and classification explicit.",
+            copy: "Systems of record, documents, events, and approved APIs, with residency and classification explicit.",
           },
           {
             step: "02",
@@ -623,7 +623,7 @@ export const pathPages: PathPage[] = [
           {
             step: "04",
             title: "Models",
-            copy: "Your approved providers and serving path—Bedrock, Azure OpenAI, Vertex, or private vLLM.",
+            copy: "Your approved providers and serving path, Bedrock, Azure OpenAI, Vertex, or private vLLM.",
           },
           {
             step: "05",
@@ -633,12 +633,12 @@ export const pathPages: PathPage[] = [
           {
             step: "06",
             title: "Enterprise systems",
-            copy: "ERP, CRM, core banking, clinical, and plant systems—integrations with scoped credentials.",
+            copy: "ERP, CRM, core banking, clinical, and plant systems, integrations with scoped credentials.",
           },
           {
             step: "07",
             title: "Observe & govern",
-            copy: "Tracing, eval, cost, audit, incident runbooks, and policy in runtime—not a PDF after the fact.",
+            copy: "Tracing, eval, cost, audit, incident runbooks, and policy in runtime, not a PDF after the fact.",
           },
         ],
       },
@@ -646,7 +646,7 @@ export const pathPages: PathPage[] = [
         type: "layers",
         title: "Enterprise AI reference stack",
         intro:
-          "A pressure-testable layer model—not a product catalog. We map your estate onto this before we propose build.",
+          "A pressure-testable layer model, not a product catalog. We map your estate onto this before we propose build.",
         layers: [
           {
             name: "Experience & channels",
@@ -704,7 +704,7 @@ export const pathPages: PathPage[] = [
         eyebrow: "Architecture review",
         title: "Review deployment strategy with an architect",
         description:
-          "Private cloud, VPC, hybrid, or sovereign—map trust boundaries, data flows, and serving topology before sprint zero.",
+          "Private cloud, VPC, hybrid, or sovereign, map trust boundaries, data flows, and serving topology before sprint zero.",
         primary: {
           label: CTA_LABELS.deploymentStrategy,
           href: contactHref("assessment"),
@@ -861,7 +861,7 @@ export const pathPages: PathPage[] = [
         items: [
           {
             q: "Do you fine-tune, or only prompt?",
-            a: "Both when justified. Simplest approach that meets accuracy and latency bars first; fine-tune when evaluation proves the gap—and document the tradeoffs.",
+            a: "Both when justified. Simplest approach that meets accuracy and latency bars first; fine-tune when evaluation proves the gap, and document the tradeoffs.",
           },
           {
             q: "How do you handle secrets, PII, and tool access for agents?",
@@ -869,15 +869,15 @@ export const pathPages: PathPage[] = [
           },
           {
             q: "Can our platform team operate this after you leave?",
-            a: "Yes—that is a design requirement. Handover includes architecture, evaluation suites, runbooks, and enablement.",
+            a: "Yes, that is a design requirement. Handover includes architecture, evaluation suites, runbooks, and enablement.",
           },
           {
             q: "What clouds and model providers do you support?",
-            a: "Your approved estate—AWS, Azure, GCP, and your model gateway choices. No proprietary runtime you cannot own.",
+            a: "Your approved estate, AWS, Azure, GCP, and your model gateway choices. No proprietary runtime you cannot own.",
           },
           {
             q: "How does MCP fit your agent architecture?",
-            a: "As a governed tool interface with scoped servers, auditability, and clear trust boundaries—not unrestricted tool sprawl.",
+            a: "As a governed tool interface with scoped servers, auditability, and clear trust boundaries, not unrestricted tool sprawl.",
           },
           {
             q: "How do GitOps, CloudOps, and LLMOps show up in delivery?",
@@ -896,7 +896,7 @@ export const pathPages: PathPage[] = [
     eyebrow: "For Heads of AI, CAIOs & Enterprise Architects",
     title: "Connect enterprise architecture to production-grade intelligence.",
     description:
-      "AI strategy, RAG, agents, evaluation, and governance—on the estate you already run. Domain architecture, integration, identity, and a build-vs-buy call that does not create a shadow platform.",
+      "AI strategy, RAG, agents, evaluation, and governance, on the estate you already run. Domain architecture, integration, identity, and a build-vs-buy call that does not create a shadow platform.",
     primaryCta: {
       label: CTA_LABELS.architectureAssessment,
       href: contactHref("assessment"),
@@ -941,7 +941,7 @@ export const pathPages: PathPage[] = [
         title: "What Heads of AI and Enterprise Architects decide together",
         body: [
           "Your job is not to ship another chatbot. It is to make intelligence behave like infrastructure: measurable, governable, and extensible across the estate you already run. That means maturity honesty, a real AI operating model, and agent architectures that survive contact with tools, data, identity, and risk.",
-          "Enterprise Architects need the other half of that picture: domain and data architecture, application integration, API strategy, identity boundaries, deployment topology, and a build-vs-buy call that does not create a parallel shadow platform. InheritX connects those layers to production retrieval, multi-agent systems, evaluation, and guardrails—delivered into estates you own. Autonomy is earned through evaluation. It is not a demo setting.",
+          "Enterprise Architects need the other half of that picture: domain and data architecture, application integration, API strategy, identity boundaries, deployment topology, and a build-vs-buy call that does not create a parallel shadow platform. InheritX connects those layers to production retrieval, multi-agent systems, evaluation, and guardrails, delivered into estates you own. Autonomy is earned through evaluation. It is not a demo setting.",
         ],
       },
       {
@@ -953,7 +953,7 @@ export const pathPages: PathPage[] = [
           {
             label: "Estate fit",
             value: "Your topology",
-            copy: "Domain, data, APIs, and identity first. AI sits on the control plane you already operate—not beside it.",
+            copy: "Domain, data, APIs, and identity first. AI sits on the control plane you already operate, not beside it.",
           },
           {
             label: "Strategy",
@@ -968,7 +968,7 @@ export const pathPages: PathPage[] = [
           {
             label: "Control",
             value: "Runtime gov",
-            copy: "IAM, tool scopes, HITL, audit, and policy in the path of execution—not a PDF after incidents.",
+            copy: "IAM, tool scopes, HITL, audit, and policy in the path of execution, not a PDF after incidents.",
           },
         ],
       },
@@ -976,7 +976,7 @@ export const pathPages: PathPage[] = [
         type: "proofCases",
         title: "Production AI architecture, already shipped",
         intro:
-          "Published agent, RAG, and evaluation patterns—not a lab demo. Metrics belong to those engagements.",
+          "Published agent, RAG, and evaluation patterns, not a lab demo. Metrics belong to those engagements.",
         cases: [
           { id: "agent-bank", focus: "ai" },
           { id: "heva", focus: "ai" },
@@ -1016,7 +1016,7 @@ export const pathPages: PathPage[] = [
         insight:
           "If evaluation coverage stays flat while agents gain tools, autonomy is theater.",
         intro:
-          "A teaching chart for steering committees—not a measured score of your org.",
+          "A teaching chart for steering committees, not a measured score of your org.",
         yLabel: "Eval rigor",
         note: "Conceptual relationship across maturity stages. Real coverage is measured against golden sets and production sampling.",
         labels: ["L1 Copilots", "L2 RAG", "L3 Agents", "L4 Multi-agent"],
@@ -1107,7 +1107,7 @@ export const pathPages: PathPage[] = [
         type: "bullets",
         title: "Questions we expect AI leaders and Enterprise Architects to ask",
         intro:
-          "If a partner cannot answer these, they are selling features—not an operating model that fits the estate.",
+          "If a partner cannot answer these, they are selling features, not an operating model that fits the estate.",
         items: [
           {
             title: "How does this sit on the existing estate?",
@@ -1203,7 +1203,7 @@ export const pathPages: PathPage[] = [
         rightTitle: "Build toward",
         rightItems: [
           "Documented maturity stage and investment thesis",
-          "AI on the existing estate—identity, APIs, and trust boundaries drawn",
+          "AI on the existing estate, identity, APIs, and trust boundaries drawn",
           "Prompt + corpus lifecycle tied to eval gates",
           "Use-case → pattern → platform sequencing",
           "Governance embedded in runtime and release",
@@ -1212,7 +1212,7 @@ export const pathPages: PathPage[] = [
       {
         type: "decisionMatrix",
         title: "Implementation decision tree (simplified)",
-        intro: "Choose the next motion based on maturity and estate fit—not vendor excitement.",
+        intro: "Choose the next motion based on maturity and estate fit, not vendor excitement.",
         columns: ["If you are here…", "Do this next", "Primary artifact"],
         rows: [
           {
@@ -1264,15 +1264,15 @@ export const pathPages: PathPage[] = [
         items: [
           {
             q: "How do you approach Multi-Agent Systems responsibly?",
-            a: "Specialist agents with clear contracts, shared memory carefully scoped, MCP/tool governance, and human approval for irreversible actions—autonomy is earned through evaluation.",
+            a: "Specialist agents with clear contracts, shared memory carefully scoped, MCP/tool governance, and human approval for irreversible actions, autonomy is earned through evaluation.",
           },
           {
             q: "What is your stance on prompt engineering vs. context engineering?",
-            a: "Prompts matter, but enterprise quality usually hinges on corpus design, retrieval, structured outputs, and eval—context engineering plus prompt lifecycle, not prompt folklore.",
+            a: "Prompts matter, but enterprise quality usually hinges on corpus design, retrieval, structured outputs, and eval, context engineering plus prompt lifecycle, not prompt folklore.",
           },
           {
             q: "How do you fit AI into an existing enterprise estate?",
-            a: "We map domain architecture, data classification, application integration, API strategy, and identity boundaries first—then place RAG, agents, and the model gateway on that control plane. We do not stand up a parallel shadow platform.",
+            a: "We map domain architecture, data classification, application integration, API strategy, and identity boundaries first, then place RAG, agents, and the model gateway on that control plane. We do not stand up a parallel shadow platform.",
           },
           {
             q: "Build vs. buy for the AI platform?",
@@ -1280,15 +1280,15 @@ export const pathPages: PathPage[] = [
           },
           {
             q: "Can you work inside our existing AI platform team?",
-            a: "Yes. Many engagements are embedded with your architects and platform engineers—InheritX as acceleration and production hardening, not a parallel shadow org.",
+            a: "Yes. Many engagements are embedded with your architects and platform engineers, InheritX as acceleration and production hardening, not a parallel shadow org.",
           },
           {
             q: "How do you treat AI governance?",
-            a: "As runtime and release controls—policy, audit, evaluation gates, and operating ownership—not a PDF after the fact.",
+            a: "As runtime and release controls, policy, audit, evaluation gates, and operating ownership, not a PDF after the fact.",
           },
           {
             q: "Where should we start if leadership wants agents tomorrow?",
-            a: "Assess maturity and estate fit honestly. If RAG, eval, identity, and tool policy are weak, we stabilize foundations first—then agentize the highest-leverage workflow.",
+            a: "Assess maturity and estate fit honestly. If RAG, eval, identity, and tool policy are weak, we stabilize foundations first, then agentize the highest-leverage workflow.",
           },
         ],
       },

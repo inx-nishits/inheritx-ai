@@ -52,7 +52,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       return { title: "Insights | InheritX", robots: { index: false } };
     }
     const title = `${data.categoryName} Insights | InheritX`;
-    const description = `Enterprise AI insights on ${data.categoryName}—production perspectives from InheritX.`;
+    const description = `Enterprise AI insights on ${data.categoryName}, production perspectives from InheritX.`;
     return {
       title,
       description,
@@ -115,7 +115,7 @@ export default async function InsightCategoryPage({
       <main className="flex-1">
         <InsightsHero
           title={`${data.categoryName}.`}
-          description={`Enterprise AI insights in ${data.categoryName}—for technical leaders and buyers industrializing intelligence.`}
+          description={`Enterprise AI insights in ${data.categoryName}, for technical leaders and buyers industrializing intelligence.`}
         />
 
         <InsightsSearch

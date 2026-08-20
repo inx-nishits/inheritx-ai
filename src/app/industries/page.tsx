@@ -7,12 +7,12 @@ import { IndustriesPageView } from "@/components/pages/IndustriesPageView";
 export const metadata: Metadata = {
   title: "Industries | InheritX",
   description:
-    "Enterprise AI for healthcare, finance, manufacturing, retail, insurance, logistics, and government—where accuracy and auditability matter.",
+    "Enterprise AI for healthcare and finance with published proof, plus capability pages for manufacturing, insurance, and government.",
   alternates: { canonical: "/industries" },
   openGraph: {
     title: "Industries | InheritX",
     description:
-      "Enterprise AI for healthcare, finance, manufacturing, retail, insurance, logistics, and government—where accuracy and auditability matter.",
+      "Enterprise AI for healthcare and finance with published proof, plus capability pages for manufacturing, insurance, and government.",
     type: "website",
     url: "/industries",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Industries | InheritX",
     description:
-      "Enterprise AI for healthcare, finance, manufacturing, retail, insurance, logistics, and government—where accuracy and auditability matter.",
+      "Enterprise AI for healthcare and finance with published proof, plus capability pages for manufacturing, insurance, and government.",
   },
 };
 

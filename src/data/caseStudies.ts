@@ -3,6 +3,17 @@ export type CaseStudyLink = {
   href: string;
 };
 
+export type CaseStudyResultKind = "reported" | "control" | "qualitative";
+
+export type CaseStudyResult = {
+  value: string;
+  label: string;
+  kind?: CaseStudyResultKind;
+};
+
+export const CASE_STUDY_METRICS_NOTE =
+  "Numeric figures are engagement-reported from published project work. Baselines and measurement windows are shared with qualified buyers under NDA.";
+
 export type CaseStudy = {
   id: string;
   name: string;
@@ -11,7 +22,7 @@ export type CaseStudy = {
   /** Executive summary — leads the story. */
   summary: string;
   technologies: string[];
-  results: { value: string; label: string }[];
+  results: CaseStudyResult[];
   image: string;
   challenge: string;
   approach: string;
@@ -39,8 +50,8 @@ export type CaseStudy = {
 
 export const caseStudyIntro = {
   eyebrow: "Case Studies",
-  title: "Measured AI outcomes from production—not pilot theater.",
-  copy: "AI-led engagements first—agentic systems, computer vision, generative intelligence, AI platforms, and AI infrastructure—followed by enterprise systems that prove scale and ops discipline. We publish methodology with the story. Named or anonymized references for qualified opportunities are available under NDA.",
+  title: "Measured AI outcomes from production, not pilot theater.",
+  copy: "AI-led engagements first, agentic systems, computer vision, generative intelligence, AI platforms, and AI infrastructure, followed by enterprise systems that prove scale and ops discipline. We publish methodology with the story. Numeric outcomes are engagement-reported until a measurement memo is on file. Named or anonymized references for qualified opportunities are available under NDA.",
 };
 
 /** Homepage featured carousel — AI-forward IDs only. */
@@ -64,7 +75,7 @@ export const caseStudiesPage: CaseStudy[] = [
     category: "AI Agents",
     tagline: "A governed multi-agent workforce for banking operations",
     summary:
-      "Agent Bank is an enterprise multi-agent platform that executes high-volume banking workflows—with policy controls, audit trails, and human approval gates for anything that moves money or risk.",
+      "Agent Bank is an enterprise multi-agent platform that executes high-volume banking workflows, with policy controls, audit trails, and human approval gates for anything that moves money or risk.",
     technologies: [
       "Multi-agent orchestration",
       "MCP-ready tool registry",
@@ -74,16 +85,16 @@ export const caseStudiesPage: CaseStudy[] = [
       "Observability",
     ],
     results: [
-      { value: "6×", label: "Faster exception review cycles" },
-      { value: "24/7", label: "Agent coverage on routine ops" },
-      { value: "100%", label: "Actions attributable in audit logs" },
-      { value: "HITL", label: "Human gates on high-risk tools" },
+      { value: "6×", label: "Faster exception review cycles", kind: "reported" },
+      { value: "24/7", label: "Logged coverage on routine ops", kind: "control" },
+      { value: "Ledger", label: "Tool actions attributable in audit logs", kind: "control" },
+      { value: "HITL", label: "Human gates on high-risk tools", kind: "control" },
     ],
     image: "/images/actual/actual-agentbank.jpg",
     challenge:
-      "Banking teams drown in repetitive operational work—KYC follow-ups, case triage, document checks, and queue routing—while regulators still demand explainability. Single LLM chatbots cannot own multi-step work across core systems without creating control gaps: fragmented case queues, high false-positive load on fraud and compliance reviews, and no reliable way to prove what an AI system did—or why.",
+      "Banking teams drown in repetitive operational work, KYC follow-ups, case triage, document checks, and queue routing, while regulators still demand explainability. Single LLM chatbots cannot own multi-step work across core systems without creating control gaps: fragmented case queues, high false-positive load on fraud and compliance reviews, and no reliable way to prove what an AI system did, or why.",
     whyAi:
-      "Rule engines alone stall on unstructured evidence and exception-heavy work. Unbounded chatbots create control and audit gaps. AI Agents with tool contracts, policy checks, and human gates is the right fit when the operating problem is multi-step workflow—not a single Q&A.",
+      "Rule engines alone stall on unstructured evidence and exception-heavy work. Unbounded chatbots create control and audit gaps. AI Agents with tool contracts, policy checks, and human gates is the right fit when the operating problem is multi-step workflow, not a single Q&A.",
     approach:
       "We built a multi-agent operating layer where specialized agents collaborate: intake, evidence gathering, policy checking, drafting, and escalation. Every tool call is permissioned. Every decision is traced. Humans remain accountable for irreversible actions.",
     architecture: [
@@ -103,12 +114,12 @@ export const caseStudiesPage: CaseStudy[] = [
       "Attributable action logging",
     ],
     deliveryApproach:
-      "Cases enter from channels and systems; intake agents classify urgency and required evidence. Specialists assemble the file from approved tools—never unbounded browsing—attach citations, run policy checks, and recommend next actions. High-risk moves require analyst approval; low-risk routines complete under logged autonomy.",
+      "Cases enter from channels and systems; intake agents classify urgency and required evidence. Specialists assemble the file from approved tools, never unbounded browsing, attach citations, run policy checks, and recommend next actions. High-risk moves require analyst approval; low-risk routines complete under logged autonomy.",
     outcome:
-      "Routine assembly and first-pass checks move to agents so experts focus on exceptions that matter. Auditability becomes default—every recommendation is reconstructable. The result is a reusable agent fabric for new product lines, not a one-off chatbot.",
+      "Routine assembly and first-pass checks move to agents so experts focus on exceptions that matter. Auditability becomes default, every recommendation is reconstructable. The result is a reusable agent fabric for new product lines, not a one-off chatbot.",
     businessOutcomes: [
       "Analysts reclaim judgment time as routine assembly shifts to agents",
-      "Auditability becomes default—inputs, tools, policy checks, and approvals are reconstructable",
+      "Auditability becomes default, inputs, tools, policy checks, and approvals are reconstructable",
       "A platform pattern: new product lines reuse the same agent fabric with new tools and policies",
     ],
     highlights: [
@@ -118,7 +129,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "Evaluation harness and full action ledger for production trust",
     ],
     lessonsLearned: [
-      "Banking AI fails when autonomy is unbounded—permissioned tools and HITL gates are product requirements, not afterthoughts.",
+      "Banking AI fails when autonomy is unbounded, permissioned tools and HITL gates are product requirements, not afterthoughts.",
       "Audit trails must capture tool I/O and policy checks, not just final answers.",
       "Platform reuse beats one-off bots: shared orchestration, evals, and escalation patterns compound across product lines.",
     ],
@@ -145,7 +156,7 @@ export const caseStudiesPage: CaseStudy[] = [
     category: "Computer Vision",
     tagline: "Vision-guided dental assessment at home",
     summary:
-      "Computer Vision quality gates for at-home dental scans—reducing unnecessary clinic visits by 30–35% while keeping clinicians in the loop.",
+      "Computer Vision quality gates for at-home dental scans, reducing unnecessary clinic visits by 30–35% while keeping clinicians in the loop.",
     technologies: [
       "Computer Vision",
       "Quality gating models",
@@ -153,14 +164,14 @@ export const caseStudiesPage: CaseStudy[] = [
       "Clinician review workflow",
     ],
     results: [
-      { value: "60%", label: "Reduced entry barriers" },
-      { value: "30–35%", label: "Reduction in clinic visits" },
+      { value: "60%", label: "Reduced entry barriers", kind: "reported" },
+      { value: "30–35%", label: "Reduction in clinic visits", kind: "reported" },
     ],
     image: "/images/case-studies/ai-dent-app.png",
     challenge:
-      "Patients delayed care due to access friction, while clinics lacked a reliable way to capture diagnostic-quality imagery outside the chair—without replacing clinician judgment or weakening data controls.",
+      "Patients delayed care due to access friction, while clinics lacked a reliable way to capture diagnostic-quality imagery outside the chair, without replacing clinician judgment or weakening data controls.",
     whyAi:
-      "Manual intake cannot scale quality checks across at-home capture. Computer Vision is the right tool when the business problem is consistent scan quality and triage efficiency—while clinical interpretation remains human-owned.",
+      "Manual intake cannot scale quality checks across at-home capture. Computer Vision is the right tool when the business problem is consistent scan quality and triage efficiency, while clinical interpretation remains human-owned.",
     approach:
       "We built a sensor-guided capture flow with vision models that gate scan quality, secure cloud processing, and clinician review workflows. High-risk interpretation stayed human-owned; AI focused on quality gates and intake efficiency.",
     architecture: [
@@ -178,7 +189,7 @@ export const caseStudiesPage: CaseStudy[] = [
     deliveryApproach:
       "Delivery prioritized regulated-care constraints: quality gates first, secure processing, and clinician workflows before any expansion of AI responsibility. High-risk interpretation was never delegated to models.",
     outcome:
-      "At-home scans became a trusted intake path—cutting avoidable visits without replacing clinical judgment. Pattern: vision + human review for regulated care workflows.",
+      "At-home scans became a trusted intake path, cutting avoidable visits without replacing clinical judgment. Pattern: vision + human review for regulated care workflows.",
     businessOutcomes: [
       "Reduced entry barriers for patients seeking assessment",
       "30–35% fewer unnecessary clinic visits from improved intake quality",
@@ -191,7 +202,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "Clear separation: AI assists intake; clinicians decide",
     ],
     lessonsLearned: [
-      "In regulated care, AI earns trust when its job is quality and intake—not replacing clinical judgment.",
+      "In regulated care, AI earns trust when its job is quality and intake, not replacing clinical judgment.",
       "Human-in-the-loop is a design constraint, not a disclaimer.",
       "Secure cloud pipelines and data controls must ship with the model, not after a successful pilot.",
     ],
@@ -215,19 +226,19 @@ export const caseStudiesPage: CaseStudy[] = [
     category: "Generative AI",
     tagline: "AI-native healthcare & wellness intelligence",
     summary:
-      "NLP and personalization models that unify patient interaction and care discovery—cutting discovery effort by ~50%.",
+      "NLP and personalization models that unify patient interaction and care discovery, cutting discovery effort by ~50%.",
     technologies: ["Generative AI", "NLP", "Personalization models", "Python"],
     results: [
-      { value: "~50%", label: "Reduction in care discovery effort" },
-      { value: "Improved", label: "Personalized care pathways" },
+      { value: "~50%", label: "Reduction in care discovery effort", kind: "reported" },
+      { value: "Improved", label: "Personalized care pathways", kind: "qualitative" },
     ],
     image: "/images/case-studies/heva.png",
     challenge:
       "Patients struggled to navigate care options while providers lacked a unified intelligence layer for personalized guidance within approved content boundaries.",
     whyAi:
-      "Static directories and generic search cannot personalize pathways inside approved content boundaries. Generative NLP with operator-visible pathways is appropriate when the goal is guided discovery—not autonomous clinical advice.",
+      "Static directories and generic search cannot personalize pathways inside approved content boundaries. Generative NLP with operator-visible pathways is appropriate when the goal is guided discovery, not autonomous clinical advice.",
     approach:
-      "We designed an AI-native interaction layer—NLP-driven guidance, personalization models, and operator-visible pathways with human oversight for clinical escalation.",
+      "We designed an AI-native interaction layer, NLP-driven guidance, personalization models, and operator-visible pathways with human oversight for clinical escalation.",
     architecture: [
       "NLP-driven patient interaction layer",
       "Personalization models for care discovery",
@@ -257,7 +268,7 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     lessonsLearned: [
       "Generative healthcare UX fails without content boundaries and operator visibility.",
-      "Personalization must stay inside approved guidance—fluency alone is not a product.",
+      "Personalization must stay inside approved guidance, fluency alone is not a product.",
       "Escalation paths are part of the architecture, not a support afterthought.",
     ],
     relatedSolutions: [
@@ -290,16 +301,16 @@ export const caseStudiesPage: CaseStudy[] = [
       "Python / Node.js services",
     ],
     results: [
-      { value: "40–50%", label: "Reduction in MTTR" },
-      { value: "Improved", label: "AI builder productivity" },
+      { value: "40–50%", label: "Reduction in MTTR", kind: "reported" },
+      { value: "Improved", label: "AI builder productivity", kind: "qualitative" },
     ],
     image: "/images/case-studies/kavia-ai.png",
     challenge:
-      "Teams building AI workflows hit reliability walls—opaque failures, slow recovery, and fragile environments that blocked production trust.",
+      "Teams building AI workflows hit reliability walls, opaque failures, slow recovery, and fragile environments that blocked production trust.",
     whyAi:
-      "AI products stall when the platform beneath them cannot be observed or recovered. LLMOps-adjacent reliability—tracing, resilient topology, and incident playbooks—is required before agentic or generative workloads earn production trust.",
+      "AI products stall when the platform beneath them cannot be observed or recovered. LLMOps-adjacent reliability, tracing, resilient topology, and incident playbooks, is required before agentic or generative workloads earn production trust.",
     approach:
-      "We strengthened LLMOps-adjacent reliability: clearer observability, resilient service topology, and operational playbooks for AI workloads—treating the platform as governed infrastructure.",
+      "We strengthened LLMOps-adjacent reliability: clearer observability, resilient service topology, and operational playbooks for AI workloads, treating the platform as governed infrastructure.",
     architecture: [
       "Resilient service topology for AI workflow workloads",
       "Observability for opaque failure modes",
@@ -328,7 +339,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "Operational playbooks for AI incidents",
     ],
     lessonsLearned: [
-      "AI platforms need the same ops discipline as core enterprise systems—demos do not survive opaque failures.",
+      "AI platforms need the same ops discipline as core enterprise systems, demos do not survive opaque failures.",
       "MTTR and observability are buyer-facing outcomes for AI products, not only SRE metrics.",
       "Playbooks and topology hardening compound: every recovered incident improves the next release.",
     ],
@@ -353,7 +364,7 @@ export const caseStudiesPage: CaseStudy[] = [
     category: "AI Infrastructure",
     tagline: "Securing an AI damage-detection platform",
     summary:
-      "Security and infrastructure hardening for an AI building-damage platform—cutting attack surface ~90% and preventing avoidable cloud loss.",
+      "Security and infrastructure hardening for an AI building-damage platform, cutting attack surface ~90% and preventing avoidable cloud loss.",
     technologies: [
       "GCP",
       "IAM / Secrets",
@@ -362,14 +373,14 @@ export const caseStudiesPage: CaseStudy[] = [
       "AI platform guardrails",
     ],
     results: [
-      { value: "$10k–$20k", label: "Monthly cloud losses prevented" },
-      { value: "~90%", label: "Reduction in attack surface" },
+      { value: "$10k–$20k", label: "Monthly cloud losses prevented", kind: "reported" },
+      { value: "~90%", label: "Reduction in attack surface", kind: "reported" },
     ],
     image: "/images/case-studies/t2d2.png",
     challenge:
-      "An AI damage-detection product faced exposure and cost risk from insecure cloud configuration—undermining trust in the intelligence layer.",
+      "An AI damage-detection product faced exposure and cost risk from insecure cloud configuration, undermining trust in the intelligence layer.",
     whyAi:
-      "AI products inherit the risk of their cloud estate. Without IAM hygiene, secrets discipline, and automated guardrails, model capability cannot be trusted in production—security is part of AI infrastructure, not a separate IT track.",
+      "AI products inherit the risk of their cloud estate. Without IAM hygiene, secrets discipline, and automated guardrails, model capability cannot be trusted in production, security is part of AI infrastructure, not a separate IT track.",
     approach:
       "We audited posture, hardened secrets and IAM, and automated guardrails so the AI platform could run as governed infrastructure.",
     architecture: [
@@ -387,7 +398,7 @@ export const caseStudiesPage: CaseStudy[] = [
     deliveryApproach:
       "Security and cost were treated as joint product requirements: audit, harden, automate guardrails, and prove the AI platform could operate under governed cloud controls.",
     outcome:
-      "Attack surface and avoidable spend dropped—protecting both the AI product and operating margin. Pattern: security + cost controls as first-class AI platform requirements.",
+      "Attack surface and avoidable spend dropped, protecting both the AI product and operating margin. Pattern: security + cost controls as first-class AI platform requirements.",
     businessOutcomes: [
       "~90% reduction in attack surface",
       "$10k–$20k monthly cloud losses prevented",
@@ -401,7 +412,7 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     lessonsLearned: [
       "AI buyers evaluate security of the estate as much as model quality.",
-      "Automated guardrails beat one-time hardening—configuration drift returns.",
+      "Automated guardrails beat one-time hardening, configuration drift returns.",
       "Cost leakage and security exposure often share root causes in cloud AI estates.",
     ],
     relatedSolutions: [
@@ -425,7 +436,7 @@ export const caseStudiesPage: CaseStudy[] = [
     category: "Computer Vision",
     tagline: "AR-assisted coaching intelligence",
     summary:
-      "Coach-athlete platform with AR-assisted practice guidance—cutting coach prep time ~50% and lifting off-court consistency.",
+      "Coach-athlete platform with AR-assisted practice guidance, cutting coach prep time ~50% and lifting off-court consistency.",
     technologies: [
       "Computer Vision",
       "AR coaching intelligence",
@@ -433,14 +444,14 @@ export const caseStudiesPage: CaseStudy[] = [
       "Progress analytics",
     ],
     results: [
-      { value: "50%", label: "Reduction in coach preparation time" },
-      { value: "50–60%", label: "Improvement in off-court practice" },
+      { value: "50%", label: "Reduction in coach preparation time", kind: "reported" },
+      { value: "50–60%", label: "Improvement in off-court practice", kind: "reported" },
     ],
     image: "/images/case-studies/hoopDNA.png",
     challenge:
       "Coaches lacked a system to assign drills, track progress, and guide practice between sessions.",
     whyAi:
-      "Static drill libraries do not adapt to athlete progress between sessions. Computer Vision and AR-assisted cues make practice guidance portable—so coaching intelligence travels with the athlete.",
+      "Static drill libraries do not adapt to athlete progress between sessions. Computer Vision and AR-assisted cues make practice guidance portable, so coaching intelligence travels with the athlete.",
     approach:
       "We applied computer vision and AR-assisted practice cues with progress intelligence so coaching guidance traveled with the athlete between sessions.",
     architecture: [
@@ -456,7 +467,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "Measurable prep-time reduction for coaches",
     ],
     deliveryApproach:
-      "We centered coaches as owners of the training plan while using CV/AR to extend guidance off-court—progress visibility and cues, not autonomous coaching replacement.",
+      "We centered coaches as owners of the training plan while using CV/AR to extend guidance off-court, progress visibility and cues, not autonomous coaching replacement.",
     outcome:
       "Coaches prepared faster; athletes practiced more consistently with clearer, vision-assisted cues. Pattern: CV/AR coaching intelligence with measurable prep-time reduction.",
     businessOutcomes: [
@@ -472,7 +483,7 @@ export const caseStudiesPage: CaseStudy[] = [
     lessonsLearned: [
       "CV/AR coaching works when coaches remain in control of the plan.",
       "Progress analytics turn practice cues into measurable operating improvement.",
-      "Off-court consistency is a business outcome—not only an engagement metric.",
+      "Off-court consistency is a business outcome, not only an engagement metric.",
     ],
     relatedSolutions: [
       { label: "Computer Vision", href: "/solutions/computer-vision" },
@@ -492,19 +503,19 @@ export const caseStudiesPage: CaseStudy[] = [
     category: "Enterprise Systems",
     tagline: "Operations fabric ready for AI automation",
     summary:
-      "Unified work-order and GPS-verified service operations across 120+ properties—eliminating most billing disputes and holding budgets.",
+      "Unified work-order and GPS-verified service operations across 120+ properties, eliminating most billing disputes and holding budgets.",
     technologies: [".NET Core", "React", "React Native", "Azure"],
     results: [
-      { value: "85%", label: "Elimination of billing disputes" },
-      { value: "Zero", label: "Budget overruns across 120+ properties" },
+      { value: "85%", label: "Elimination of billing disputes", kind: "reported" },
+      { value: "Zero", label: "Budget overruns across 120+ properties", kind: "reported" },
     ],
     image: "/images/case-studies/qdis.png",
     challenge:
       "Fragmented tools across work orders, vendors, and billing created leakage and low operational visibility.",
     whyAi:
-      "This engagement delivered a governed operations fabric—not an AI model. Clean, verified operational data and multi-role workflows are the prerequisite for trustworthy AI automation and agents; without them, automation amplifies chaos.",
+      "This engagement delivered a governed operations fabric, not an AI model. Clean, verified operational data and multi-role workflows are the prerequisite for trustworthy AI automation and agents; without them, automation amplifies chaos.",
     approach:
-      "We delivered a multi-role operations fabric—admin, tenant, and vendor workflows with verified service proof and transparent economics.",
+      "We delivered a multi-role operations fabric, admin, tenant, and vendor workflows with verified service proof and transparent economics.",
     architecture: [
       "Multi-role operations fabric (admin, tenant, vendor)",
       "GPS-verified service completion",
@@ -517,9 +528,9 @@ export const caseStudiesPage: CaseStudy[] = [
       "Verified field events suitable for exception automation",
     ],
     deliveryApproach:
-      "We unified roles, verification, and economics first—so leaders gained visibility and the estate became a credible foundation for later AI automation.",
+      "We unified roles, verification, and economics first, so leaders gained visibility and the estate became a credible foundation for later AI automation.",
     outcome:
-      "Leaders gained end-to-end operational visibility; disputes collapsed and budgets held—the governed data plane AI automation extends next.",
+      "Leaders gained end-to-end operational visibility; disputes collapsed and budgets held, the governed data plane AI automation extends next.",
     businessOutcomes: [
       "85% elimination of billing disputes",
       "Zero budget overruns across 120+ properties",
@@ -533,7 +544,7 @@ export const caseStudiesPage: CaseStudy[] = [
     lessonsLearned: [
       "AI automation requires a governed data plane; fragmented ops tools cannot be papered over with models.",
       "Verified completion events are the raw material for trustworthy agents.",
-      "Enterprise systems discipline and AI roadmap should be sequenced—not confused.",
+      "Enterprise systems discipline and AI roadmap should be sequenced, not confused.",
     ],
     relatedSolutions: [
       { label: "AI Automation", href: "/solutions/ai-automation" },
@@ -554,17 +565,17 @@ export const caseStudiesPage: CaseStudy[] = [
     category: "Enterprise Systems",
     tagline: "Intelligent EV charging operations journey",
     summary:
-      "Connected discovery, session control, and payments for EV charging—~60% faster station discovery and higher completion.",
+      "Connected discovery, session control, and payments for EV charging, ~60% faster station discovery and higher completion.",
     technologies: ["Maps & telemetry", "Stripe", "OCPP", "Cloud services"],
     results: [
-      { value: "~60%", label: "Faster charging station discovery" },
-      { value: "Higher", label: "Session completion rates" },
+      { value: "~60%", label: "Faster charging station discovery", kind: "reported" },
+      { value: "Higher", label: "Session completion rates", kind: "qualitative" },
     ],
     image: "/images/case-studies/emobility-app-m.png",
     challenge:
       "Drivers abandoned sessions when discovery, access, and payment lived in fragmented experiences.",
     whyAi:
-      "This delivery unified real-time operations—discovery, session control, and payments. That control plane is the substrate for forecasting and agent-assisted support; we do not claim generative or agentic AI was the core of this engagement.",
+      "This delivery unified real-time operations, discovery, session control, and payments. That control plane is the substrate for forecasting and agent-assisted support; we do not claim generative or agentic AI was the core of this engagement.",
     approach:
       "We unified real-time availability, session control, and payments into one operator-ready charging journey.",
     architecture: [
@@ -578,9 +589,9 @@ export const caseStudiesPage: CaseStudy[] = [
       "Foundation for agent-assisted support on charging exceptions",
     ],
     deliveryApproach:
-      "We closed journey fragmentation first—availability, access, and payment—so completion rates rose and operators gained a coherent control plane.",
+      "We closed journey fragmentation first, availability, access, and payment, so completion rates rose and operators gained a coherent control plane.",
     outcome:
-      "Faster discovery and more completed sessions—an operations surface ready for forecasting and agent-assisted support.",
+      "Faster discovery and more completed sessions, an operations surface ready for forecasting and agent-assisted support.",
     businessOutcomes: [
       "~60% faster charging station discovery",
       "Higher session completion rates",
@@ -616,16 +627,16 @@ export const caseStudiesPage: CaseStudy[] = [
       "Live fantasy sports platform with leaderboard updates in 2–3 seconds and zero downtime during major events.",
     technologies: ["Node.js", "React", "Redis", "WebSockets"],
     results: [
-      { value: "Zero", label: "Downtime during major match events" },
-      { value: "2–3 sec", label: "Live leaderboard update time" },
+      { value: "Zero", label: "Downtime during major match events", kind: "reported" },
+      { value: "2–3 sec", label: "Live leaderboard update time", kind: "reported" },
     ],
     image: "/images/case-studies/twelfthman.png",
     challenge:
       "Engagement collapses when live decision surfaces lag or fail under peak load.",
     whyAi:
-      "This engagement proved high-scale, low-latency delivery—the same ops class enterprise AI agents need under load. It is not an LLM or vision delivery; it demonstrates the real-time discipline production AI systems inherit.",
+      "This engagement proved high-scale, low-latency delivery, the same ops class enterprise AI agents need under load. It is not an LLM or vision delivery; it demonstrates the real-time discipline production AI systems inherit.",
     approach:
-      "We engineered a resilient real-time architecture for peak traffic—the same class of discipline enterprise AI agents need under load.",
+      "We engineered a resilient real-time architecture for peak traffic, the same class of discipline enterprise AI agents need under load.",
     architecture: [
       "Real-time leaderboard and decision surfaces",
       "Peak-load resilient service architecture",
@@ -638,7 +649,7 @@ export const caseStudiesPage: CaseStudy[] = [
     deliveryApproach:
       "Peak-event resilience was the acceptance bar: zero downtime and sub-3-second updates through major match traffic.",
     outcome:
-      "Leaderboards stayed live within seconds through major events—proving high-scale, low-latency delivery.",
+      "Leaderboards stayed live within seconds through major events, proving high-scale, low-latency delivery.",
     businessOutcomes: [
       "Zero downtime during major match events",
       "2–3 second live leaderboard updates",
@@ -651,7 +662,7 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     lessonsLearned: [
       "Production AI inherits the same peak-load discipline as live decision surfaces.",
-      "Latency and availability are buyer trust signals—whether the surface is a leaderboard or an agent console.",
+      "Latency and availability are buyer trust signals, whether the surface is a leaderboard or an agent console.",
     ],
     relatedSolutions: [
       { label: "AI Transformation / AI DevOps", href: "/solutions/ai-transformation" },
@@ -671,6 +682,12 @@ export const caseStudyCategories = [
   "All",
   ...Array.from(new Set(caseStudiesPage.map((c) => c.category))),
 ];
+
+export function resultQualifier(kind?: CaseStudyResultKind) {
+  if (kind === "control") return "Design control";
+  if (kind === "qualitative") return "Qualitative outcome";
+  return "Engagement-reported";
+}
 
 export function getCaseStudy(id: string) {
   return caseStudiesPage.find((study) => study.id === id);

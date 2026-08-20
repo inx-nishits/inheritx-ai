@@ -7,12 +7,12 @@ import { ContactPageView } from "@/components/pages/ContactPageView";
 export const metadata: Metadata = {
   title: "Contact | InheritX",
   description:
-    "Contact InheritX—share your project details and we will respond within one business day.",
+    "Contact InheritX, share your project details and we will respond within one business day.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact | InheritX",
     description:
-      "Contact InheritX—share your project details and we will respond within one business day.",
+      "Contact InheritX, share your project details and we will respond within one business day.",
     type: "website",
     url: "/contact",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact | InheritX",
     description:
-      "Contact InheritX—share your project details and we will respond within one business day.",
+      "Contact InheritX, share your project details and we will respond within one business day.",
   },
 };
 

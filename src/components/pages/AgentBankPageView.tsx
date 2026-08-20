@@ -184,7 +184,7 @@ export function AgentBankPageView() {
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-white/50">
               Agent Bank assumes private cloud, scoped tools, and evaluation as
-              first-class product requirements—not afterthoughts.
+              first-class product requirements, not afterthoughts.
             </p>
           </Reveal>
           <ul className="space-y-4">
@@ -252,7 +252,7 @@ export function AgentBankPageView() {
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-sm text-white/50">
             We will map your highest-volume workflows, control requirements, and
-            a first production slice—without demo theater.
+            a first production slice, without demo theater.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <CtaPrimary

@@ -2,16 +2,16 @@ export const companyHero = {
   eyebrow: "Company",
   title: "AI-native enterprise partner. You own the systems.",
   description:
-    "InheritX is an AI-native enterprise partner for regulated industries—production AI programs built on 14+ years of enterprise delivery DNA and 600+ engagements. We design, build, and industrialize governed systems with ownership by design.",
+    "InheritX is an AI-native enterprise partner for regulated industries. Production AI programs are built on enterprise delivery DNA from 2011 and hundreds of software engagements that inform how we ship AI, with ownership by design.",
 };
 
 export const companyVision = {
   title: "Our AI Vision",
-  lead: "Enterprise AI should behave like infrastructure you own: reliable, governed, measurable—and never rented back to you as a black box.",
+  lead: "Enterprise AI should behave like infrastructure you own: reliable, governed, measurable, and never rented back to you as a black box.",
   pillars: [
     {
       title: "Systems over slides",
-      copy: "Strategy only matters when it ships into production with observability, evaluation, and controls—and with IP that stays yours.",
+      copy: "Strategy only matters when it ships into production with observability, evaluation, and controls, and with IP that stays yours.",
     },
     {
       title: "Sovereignty by design",
@@ -19,7 +19,7 @@ export const companyVision = {
     },
     {
       title: "Agents that work",
-      copy: "Agentic systems that execute enterprise workflows—with humans supervising risk, not watching a chatbot demo.",
+      copy: "Agentic systems that execute enterprise workflows, with humans supervising risk, not watching a chatbot demo.",
     },
   ],
 };
@@ -28,7 +28,7 @@ export const companyTimeline = [
   {
     year: "2011+",
     title: "Delivery DNA that scales AI",
-    copy: "Complex enterprise systems for global organizations—the operating discipline we now apply to AI platforms, agents, and LLMOps.",
+    copy: "Complex enterprise systems for global organizations, the operating discipline we now apply to AI platforms, agents, and LLMOps.",
   },
   {
     year: "AI shift",
@@ -38,7 +38,7 @@ export const companyTimeline = [
   {
     year: "Today",
     title: "Enterprise AI transformation partner",
-    copy: "Board-ready programs that industrialize AI across regulated industries—with evaluation, security, and operability designed in.",
+    copy: "Board-ready programs that industrialize AI across regulated industries, with evaluation, security, and operability designed in.",
   },
 ];
 
@@ -61,16 +61,16 @@ export const companyPrinciples = [
   },
 ];
 
-/** Delivery-history figures used across company materials; labels describe DNA informing AI programs—not 600 AI-only engagements. */
+/** Delivery-history figures. Labels must not be read as AI-only tenure or 600 AI projects. */
 export const companyStats = [
-  { value: "14+", label: "Years delivery DNA for AI programs" },
-  { value: "600+", label: "Engagements informing AI delivery" },
-  { value: "18", label: "Industries with AI-ready programs" },
-  { value: "97%", label: "Client retention" },
+  { value: "2011+", label: "Enterprise delivery DNA informing AI programs" },
+  { value: "600+", label: "Software engagements informing how we deliver AI" },
+  { value: "7", label: "Sectors with public industry pages" },
+  { value: "Owned", label: "IP at handover" },
 ];
 
 export const careersTeaser = {
   title: "Build the AI systems enterprises will run on.",
-  copy: "We hire people who ship production AI—architects, ML/LLM engineers, agentic systems builders, and LLMOps practitioners who treat governance as part of the product.",
+  copy: "We hire people who ship production AI, architects, ML/LLM engineers, agentic systems builders, and LLMOps practitioners who treat governance as part of the product.",
   roles: ["AI Architects", "ML / LLM Engineers", "Agentic Systems", "AI DevOps / LLMOps"],
 };

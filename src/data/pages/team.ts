@@ -1,8 +1,8 @@
 export const teamHero = {
   eyebrow: "Our Team",
-  title: "AI architects and engineers—not generalist consultants.",
+  title: "AI architects and engineers, not generalist consultants.",
   description:
-    "Every engagement is led by named technical accountability. Architects, ML/LLM engineers, and delivery leads who ship intelligence into production—owned, governed, and measured.",
+    "Every engagement is led by named technical accountability. Architects, ML/LLM engineers, and delivery leads who ship intelligence into production, owned, governed, and measured.",
 };
 
 export const leadership = [
@@ -46,7 +46,7 @@ export const coreCapabilities = [
 export const cultureValues = [
   {
     title: "Production over performance theater",
-    copy: "We optimize for systems that run Monday morning—not demos that impress Friday.",
+    copy: "We optimize for systems that run Monday morning, not demos that impress Friday.",
   },
   {
     title: "Ownership is the product",
@@ -65,7 +65,7 @@ export const cultureValues = [
 export const whyWorkWithUs = [
   {
     title: "Embedded, not distant",
-    copy: "Squads and Embedded AI Engineering engagements work inside your rituals—not around them.",
+    copy: "Squads and Embedded AI Engineering engagements work inside your rituals, not around them.",
   },
   {
     title: "Senior by default",
@@ -81,12 +81,12 @@ export const collaborationSteps = [
   {
     step: "01",
     title: "Align on mandate",
-    copy: "Outcomes, constraints, and decision owners—before tooling conversations.",
+    copy: "Outcomes, constraints, and decision owners, before tooling conversations.",
   },
   {
     step: "02",
     title: "Staff the right shape",
-    copy: "Architect-led pods, embedded engineers, or transformation programs—matched to readiness.",
+    copy: "Architect-led pods, embedded engineers, or transformation programs, matched to readiness.",
   },
   {
     step: "03",
@@ -101,7 +101,7 @@ export const collaborationSteps = [
 ];
 
 export const teamHighlights = [
-  { value: "14+", label: "Years delivery DNA for AI programs" },
+  { value: "2011+", label: "Enterprise delivery DNA informing AI programs" },
   { value: "Global", label: "Pods across IN · US · EU · JP" },
   { value: "AI-native", label: "Agents, RAG, vision, LLMOps" },
   { value: "Owned", label: "IP transfer on every build" },
@@ -124,7 +124,7 @@ export const teamMembersIntro = {
   eyebrow: "Team members",
   title: "Operators behind production AI.",
   description:
-    "Leadership that owns outcomes—and practice disciplines across architecture, agents, ML/LLMOps, and delivery. Additional specialist profiles will be published here as we expand this roster.",
+    "Leadership that owns outcomes, and practice disciplines across architecture, agents, ML/LLMOps, and delivery. Additional specialist profiles will be published here as we expand this roster.",
 };
 
 export const teamMembers: TeamMember[] = [
@@ -132,7 +132,7 @@ export const teamMembers: TeamMember[] = [
     id: "sandip-modi",
     name: "Sandip Modi",
     role: "CEO",
-    bio: "Sets the vision for AI-native enterprise delivery worldwide—pairing ambition with the discipline required for regulated environments.",
+    bio: "Sets the vision for AI-native enterprise delivery worldwide, pairing ambition with the discipline required for regulated environments.",
     image: "/images/team/sandip-modi.png",
     department: "Leadership",
     linkedin: "https://www.linkedin.com/company/inheritx/",
@@ -142,7 +142,7 @@ export const teamMembers: TeamMember[] = [
     id: "aiyub-munshi",
     name: "Aiyub Munshi",
     role: "Delivery Head & Senior Project Manager",
-    bio: "Owns delivery excellence across complex multi-squad AI and platform programs—timelines honest, outcomes measurable.",
+    bio: "Owns delivery excellence across complex multi-squad AI and platform programs, timelines honest, outcomes measurable.",
     image: "/images/team/aiyub-munshi.jpg",
     department: "Delivery",
     linkedin: "https://www.linkedin.com/company/inheritx/",
@@ -152,7 +152,7 @@ export const teamMembers: TeamMember[] = [
     id: "krish-hinduja",
     name: "Krish Hinduja",
     role: "Sales Head",
-    bio: "Partners with enterprise leaders to shape outcomes-first AI engagements—scoping for production, not slideware.",
+    bio: "Partners with enterprise leaders to shape outcomes-first AI engagements, scoping for production, not slideware.",
     image: "/images/team/krish-hinduja.jpg",
     department: "Growth",
     linkedin: "https://www.linkedin.com/company/inheritx/",
@@ -194,7 +194,7 @@ export const practiceDisciplines = [
   },
   {
     title: "AI Transformation Delivery",
-    copy: "From discovery to industrialization—with enablement that sticks.",
+    copy: "From discovery to industrialization, with enablement that sticks.",
   },
 ];
 

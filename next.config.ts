@@ -32,14 +32,23 @@ const agencyInsightCategories = [
 
 // Content-Security-Policy
 // 'unsafe-inline' for scripts is required by Next.js inline chunks and GTM.
-// 'unsafe-eval' is NOT included — GTM operates without it.
+// 'unsafe-eval' is development-only: React uses eval() for debug callstacks.
+// Production never includes 'unsafe-eval' — GTM operates without it.
 // img-src includes wpadmin.inheritx.com and www.inheritx.com for WP images.
 // frame-src allows the IRA chatbot (*.vercel.app as interim; replace with
 // production IRA host once NEXT_PUBLIC_IRA_CHAT_URL is set).
 // connect-src allows Resend, Upstash, WP API, and GTM endpoints.
+const isDev = process.env.NODE_ENV !== "production";
+
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+  [
+    "script-src 'self' 'unsafe-inline'",
+    isDev ? "'unsafe-eval'" : "",
+    "https://www.googletagmanager.com https://www.google-analytics.com",
+  ]
+    .filter(Boolean)
+    .join(" "),
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self' data:",
   "img-src 'self' data: blob: https://wpadmin.inheritx.com https://www.inheritx.com https://inheritx.com https://www.googletagmanager.com https://www.google-analytics.com",

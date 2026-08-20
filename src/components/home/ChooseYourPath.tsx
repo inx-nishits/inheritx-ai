@@ -120,7 +120,7 @@ export function ChooseYourPath() {
                 Talk to an architect
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-white/50">
-                Map your mandate to the right path—consulting, build, or
+                Map your mandate to the right path, consulting, build, or
                 embedded engineering. We will say when AI is not the right move.
               </p>
             </div>

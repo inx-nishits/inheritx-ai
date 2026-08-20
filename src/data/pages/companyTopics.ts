@@ -9,21 +9,21 @@ const companyTopics: TopicPage[] = [
     eyebrow: "Our AI Vision",
     title: "Intelligence as governed infrastructure you own.",
     description:
-      "InheritX treats AI as enterprise infrastructure—reliable, observable, and entirely under your control. Not rented capability. Not pilot theater. Systems that compound.",
+      "InheritX treats AI as enterprise infrastructure, reliable, observable, and entirely under your control. Not rented capability. Not pilot theater. Systems that compound.",
     primaryCta: { label: "Book an AI strategy call", href: contactHref("strategy") },
     secondaryCta: { label: "Explore solutions", href: "/solutions" },
     layout: "narrative",
     metadata: {
       title: "Our AI Vision | InheritX",
       description:
-        "Intelligence should behave like infrastructure: governed, measurable, and owned by the enterprise. InheritX designs AI systems for production—not demos.",
+        "Intelligence should behave like infrastructure: governed, measurable, and owned by the enterprise. InheritX designs AI systems for production, not demos.",
     },
     sections: [
       {
         type: "narrative",
         title: "The shift from experiments to infrastructure",
         body: [
-          "Most enterprises are past the question of whether AI matters. The question now is whether intelligence will behave like email, ERP, or identity—always on, auditable, and owned—or like a vendor subscription that resets every renewal cycle.",
+          "Most enterprises are past the question of whether AI matters. The question now is whether intelligence will behave like email, ERP, or identity, always on, auditable, and owned, or like a vendor subscription that resets every renewal cycle.",
           "We believe intelligence belongs in the second category of serious infrastructure. That means private deployment, explicit governance, evaluation before release, and IP that stays with the organization that funded the work.",
           "Our vision is not maximal autonomy for its own sake. It is governed capability: agents and platforms that execute real work inside policy boundaries, with humans accountable for exceptions and outcomes.",
         ],
@@ -35,7 +35,7 @@ const companyTopics: TopicPage[] = [
         items: [
           {
             title: "Systems over slides",
-            copy: "Strategy earns its place when it ships into production with observability, evaluation harnesses, and operational controls—not when it lives in a deck.",
+            copy: "Strategy earns its place when it ships into production with observability, evaluation harnesses, and operational controls, not when it lives in a deck.",
           },
           {
             title: "Sovereignty by design",
@@ -53,7 +53,7 @@ const companyTopics: TopicPage[] = [
         leftTitle: "What infrastructure demands",
         leftBody: [
           "Clear ownership of models, retrieval corpora, orchestration, and workflow glue.",
-          "Security and privacy designed in before the first sprint—not patched after a successful demo.",
+          "Security and privacy designed in before the first sprint, not patched after a successful demo.",
           "Metrics tied to business outcomes: time, cost, accuracy, risk reduction, or decision quality.",
           "Enablement so capability compounds after the engagement ends.",
         ],
@@ -83,7 +83,7 @@ const companyTopics: TopicPage[] = [
         items: [
           {
             q: "Does this vision require building everything in-house?",
-            a: "No. It requires owning the capability that matters—fine-tunes, agents, retrieval, orchestration, and integrations—while using commodity models and cloud primitives where they add speed without creating dependency.",
+            a: "No. It requires owning the capability that matters, fine-tunes, agents, retrieval, orchestration, and integrations, while using commodity models and cloud primitives where they add speed without creating dependency.",
           },
           {
             q: "How does governance differ from slowing innovation?",
@@ -91,7 +91,7 @@ const companyTopics: TopicPage[] = [
           },
           {
             q: "Where should we start if our estate is still experimental?",
-            a: "Start with one workflow where the KPI is clear, the data is accessible, and the risk profile is manageable. Design it as infrastructure from day one—even if the first release is narrow.",
+            a: "Start with one workflow where the KPI is clear, the data is accessible, and the risk profile is manageable. Design it as infrastructure from day one, even if the first release is narrow.",
           },
         ],
       },
@@ -102,31 +102,31 @@ const companyTopics: TopicPage[] = [
     eyebrow: "Why InheritX",
     title: "Your data. Your models. Your IP.",
     description:
-      "Enterprises choose InheritX when pilots are no longer enough—when we build and hand over systems you own: code, fine-tuned weights, and private-cloud deployment with zero third-party data sharing.",
+      "Enterprises choose InheritX when pilots are no longer enough, when we build and hand over systems you own: code, fine-tuned weights, and private-cloud deployment with zero third-party data sharing.",
     primaryCta: { label: "Book an AI strategy call", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "narrative",
     metadata: {
       title: "Why InheritX | InheritX",
       description:
-        "Production AI with full IP ownership and delivery discipline for regulated enterprises. InheritX industrializes intelligence—not experiments.",
+        "Production AI with full IP ownership and delivery discipline for regulated enterprises. InheritX industrializes intelligence, not experiments.",
     },
     sections: [
       {
         type: "proof",
         items: [
-          { value: "14+", label: "Years delivery DNA for AI programs" },
-          { value: "600+", label: "Engagements informing AI delivery" },
-          { value: "18", label: "Industries with AI-ready programs" },
-          { value: "97%", label: "Client retention" },
+          { value: "2011+", label: "Enterprise delivery DNA informing AI programs" },
+          { value: "600+", label: "Software engagements informing how we deliver AI" },
+          { value: "7", label: "Sectors with public industry pages" },
+          { value: "Owned", label: "IP at handover" },
         ],
       },
       {
         type: "narrative",
         title: "Built for buyers who cannot afford theater",
         body: [
-          "InheritX is an Enterprise AI Solutions company—an AI-native enterprise partner. We design, govern, and industrialize intelligence systems—agents, platforms, and automation—so leaders own capability, not demos. We are not a foundation-model vendor and not a classic staff-augmentation broker.",
-          "Our clients operate where mistakes have consequences: healthcare, finance, insurance, manufacturing, logistics, and public institutions. They need partners who treat security, privacy, and auditability as product requirements—not change requests after launch.",
+          "InheritX is an Enterprise AI Solutions company, an AI-native enterprise partner. We design, govern, and industrialize intelligence systems, agents, platforms, and automation, so leaders own capability, not demos. We are not a foundation-model vendor and not a classic staff-augmentation broker.",
+          "Our clients operate where mistakes have consequences: healthcare, finance, insurance, manufacturing, logistics, and public institutions. They need partners who treat security, privacy, and auditability as product requirements, not change requests after launch.",
           "We refuse the trade that many AI vendors offer: speed today for dependency tomorrow. Code, fine-tunes, agents, and workflows transfer. Your competitive advantage stays yours.",
         ],
       },
@@ -137,19 +137,19 @@ const companyTopics: TopicPage[] = [
         rows: [
           {
             need: "We need a board-ready AI roadmap with realistic sequencing",
-            approach: "AI consulting and architecture—data readiness, model strategy, governance, and investment phasing in weeks, not quarters of slideware.",
+            approach: "AI consulting and architecture, data readiness, model strategy, governance, and investment phasing in weeks, not quarters of slideware.",
           },
           {
             need: "We need private AI inside our VPC with full IP transfer",
             approach: "Governed intelligence platforms deployed into your estate, with retrieval, generation, and controls designed for regulated buyers.",
           },
           {
-            need: "We need agents that execute work—not chat that impresses",
+            need: "We need agents that execute work, not chat that impresses",
             approach: "Agent workforces with tool permissions, traces, evaluation harnesses, and human approval gates for high-risk actions.",
           },
           {
             need: "We have a roadmap but lack senior execution capacity",
-            approach: "Embedded AI Engineering and dedicated squads embedded in your rituals—shipping under your standards, not staff-augmentation theater.",
+            approach: "Embedded AI Engineering and dedicated squads embedded in your rituals, shipping under your standards, not staff-augmentation theater.",
           },
         ],
       },
@@ -163,7 +163,7 @@ const companyTopics: TopicPage[] = [
           },
           {
             title: "Regulated reality first",
-            copy: "Identity, role-based retrieval, audit trails, and escalation paths are designed in—not negotiated after a successful pilot.",
+            copy: "Identity, role-based retrieval, audit trails, and escalation paths are designed in, not negotiated after a successful pilot.",
           },
           {
             title: "Measure what matters",
@@ -171,7 +171,7 @@ const companyTopics: TopicPage[] = [
           },
           {
             title: "AI talent with accountability",
-            copy: "Embedded engineers and squads own outcomes under your architecture and security standards—not ticket throughput.",
+            copy: "Embedded engineers and squads own outcomes under your architecture and security standards, not ticket throughput.",
           },
         ],
       },
@@ -194,14 +194,14 @@ const companyTopics: TopicPage[] = [
     eyebrow: "Our Approach",
     title: "From discovery to production.",
     description:
-      "Discover, strategise, prototype, deploy, and scale—with governance and ownership in every phase. Typical engagements move from feasibility to private-cloud go-live with full IP handover.",
+      "Discover, strategise, prototype, deploy, and scale, with governance and ownership in every phase. Typical engagements move from feasibility to private-cloud go-live with full IP handover.",
     primaryCta: { label: "Book an AI strategy call", href: contactHref("strategy") },
     secondaryCta: { label: "Explore solutions", href: "/solutions" },
     layout: "narrative",
     metadata: {
       title: "Our Approach | InheritX",
       description:
-        "A disciplined path from executive mandate to industrialized AI: discovery, blueprint, pilot to proof, and scale—with governance and IP ownership throughout.",
+        "A disciplined path from executive mandate to industrialized AI: discovery, blueprint, pilot to proof, and scale, with governance and IP ownership throughout.",
     },
     sections: [
       {
@@ -217,12 +217,12 @@ const companyTopics: TopicPage[] = [
           {
             step: "02",
             title: "Blueprint",
-            copy: "Architecture for private AI estates, agent ecosystems, integrations, security, and LLMOps posture—written for security review and executive decision-making.",
+            copy: "Architecture for private AI estates, agent ecosystems, integrations, security, and LLMOps posture, written for security review and executive decision-making.",
           },
           {
             step: "03",
             title: "Pilot to proof",
-            copy: "Ship a narrow, production-grade capability with evaluation harnesses, observability, and exception handling—not a sandbox that cannot survive Monday morning.",
+            copy: "Ship a narrow, production-grade capability with evaluation harnesses, observability, and exception handling, not a sandbox that cannot survive Monday morning.",
           },
           {
             step: "04",
@@ -236,7 +236,7 @@ const companyTopics: TopicPage[] = [
         title: "Why sequence matters more than speed",
         body: [
           "Enterprises often rush to build because competitors are visible in headlines. The failure mode is familiar: a fluent demo, vague success criteria, no owner for exceptions, and a security review that arrives too late.",
-          "Our approach forces the decisions that industrialization requires—what moves if this works, which systems are in scope, who owns risk, and what must be true to scale—before the first sprint.",
+          "Our approach forces the decisions that industrialization requires, what moves if this works, which systems are in scope, who owns risk, and what must be true to scale, before the first sprint.",
           "That discipline is not bureaucracy. It is how regulated buyers protect advantage while still moving faster than organizations stuck in endless pilot loops.",
         ],
       },
@@ -248,7 +248,7 @@ const companyTopics: TopicPage[] = [
           "Senior architects and engineers who have shipped complex platforms before AI was a category.",
           "Patterns for governed agents, private retrieval, evaluation, and cost control.",
           "Delivery leadership that keeps stakeholders aligned and risks visible weekly.",
-          "Enablement artifacts—runbooks, eval suites, and architecture decisions—that outlive the engagement.",
+          "Enablement artifacts, runbooks, eval suites, and architecture decisions, that outlive the engagement.",
         ],
         rightTitle: "You retain",
         rightItems: [
@@ -263,7 +263,7 @@ const companyTopics: TopicPage[] = [
         type: "bullets",
         title: "After handover",
         intro:
-          "Ownership raises a fair question: who supports the system next? Options are explicit—never forced dependency.",
+          "Ownership raises a fair question: who supports the system next? Options are explicit, never forced dependency.",
         items: [
           {
             title: "Hypercare window",
@@ -275,7 +275,7 @@ const companyTopics: TopicPage[] = [
           },
           {
             title: "Enhancement waves",
-            copy: "Additional scoped builds as new workflows industrialize—same ownership model as the original program.",
+            copy: "Additional scoped builds as new workflows industrialize, same ownership model as the original program.",
           },
           {
             title: "Your operations remain yours",
@@ -301,11 +301,11 @@ const companyTopics: TopicPage[] = [
         items: [
           {
             q: "Can we enter at pilot if we already have a strategy?",
-            a: "Yes—if the blueprint decisions are documented: KPI, scope, exception ownership, and scale criteria. If those are missing, we will recommend a short architecture phase first.",
+            a: "Yes, if the blueprint decisions are documented: KPI, scope, exception ownership, and scale criteria. If those are missing, we will recommend a short architecture phase first.",
           },
           {
             q: "Do you work alongside internal teams or replace them?",
-            a: "Alongside, by default. The goal is capability transfer—your teams should be stronger operators when we step back, not dependent on permanent embeds.",
+            a: "Alongside, by default. The goal is capability transfer, your teams should be stronger operators when we step back, not dependent on permanent embeds.",
           },
           {
             q: "How do you handle programs that span multiple business units?",
@@ -320,7 +320,7 @@ const companyTopics: TopicPage[] = [
     eyebrow: "Security & Compliance",
     title: "Security practices for private, production AI.",
     description:
-      "How InheritX approaches identity, data boundaries, private deployment, and honest compliance language—without claiming certifications we have not earned.",
+      "How InheritX approaches identity, data boundaries, private deployment, and honest compliance language, without claiming certifications we have not earned.",
     primaryCta: { label: "Book an AI strategy call", href: contactHref("strategy") },
     secondaryCta: { label: "Security FAQ", href: "/resources/security-faq" },
     layout: "narrative",
@@ -332,11 +332,11 @@ const companyTopics: TopicPage[] = [
     sections: [
       {
         type: "narrative",
-        title: "What we commit to—and what we do not claim",
+        title: "What we commit to, and what we do not claim",
         body: [
-          "Enterprise buyers deserve precise language. InheritX designs AI systems for private deployment, attributable actions, and customer-controlled data boundaries. We use phrases such as GDPR-aligned practices and HIPAA-ready architecture patterns when they describe how we build—not as substitutes for formal certifications.",
+          "Enterprise buyers deserve precise language. InheritX designs AI systems for private deployment, attributable actions, and customer-controlled data boundaries. We use phrases such as GDPR-aligned practices and HIPAA-ready architecture patterns when they describe how we build, not as substitutes for formal certifications.",
           "If a specific attestation, questionnaire answer, or certificate is required for your procurement process, we will state clearly whether we hold it today, are pursuing it, or will support your review with architecture evidence and contractual controls.",
-          "Certification status is shared factually during vendor diligence—we do not publish blanket certification claims on this site without evidence.",
+          "Certification status is shared factually during vendor diligence, we do not publish blanket certification claims on this site without evidence.",
         ],
       },
       {
@@ -346,7 +346,7 @@ const companyTopics: TopicPage[] = [
         items: [
           {
             title: "Customer-tenant deployment",
-            copy: "Workloads target your AWS, Azure, or GCP accounts (or equivalent private estate)—not a multi-tenant InheritX SaaS that reuses your data across customers.",
+            copy: "Workloads target your AWS, Azure, or GCP accounts (or equivalent private estate), not a multi-tenant InheritX SaaS that reuses your data across customers.",
           },
           {
             title: "Least-privilege access",
@@ -358,7 +358,7 @@ const companyTopics: TopicPage[] = [
           },
           {
             title: "Auditability for AI actions",
-            copy: "Agent and generation workflows are designed with traces, approval gates for high-risk tools, and retention aligned to your policy—not opaque chat logs.",
+            copy: "Agent and generation workflows are designed with traces, approval gates for high-risk tools, and retention aligned to your policy, not opaque chat logs.",
           },
           {
             title: "No public-model training on your proprietary data",
@@ -372,7 +372,7 @@ const companyTopics: TopicPage[] = [
         leftTitle: "Appropriate claims",
         leftBody: [
           "GDPR-aligned practices for data minimization, purpose limitation, and processor/controller clarity in contracts.",
-          "HIPAA-ready architecture patterns for healthcare workloads (private estate, access control, audit logging)—when the engagement scope requires them.",
+          "HIPAA-ready architecture patterns for healthcare workloads (private estate, access control, audit logging), when the engagement scope requires them.",
           "NDA-protected discovery and diligence discussions on request.",
           "Support for your vendor security questionnaire with factual answers.",
         ],
@@ -410,7 +410,7 @@ const companyTopics: TopicPage[] = [
           },
           {
             q: "Can we run a security review before build?",
-            a: "Yes. Blueprint and consulting phases are designed to survive CISO review. Bring your questionnaire—we answer factually and flag gaps honestly.",
+            a: "Yes. Blueprint and consulting phases are designed to survive CISO review. Bring your questionnaire, we answer factually and flag gaps honestly.",
           },
         ],
       },
@@ -421,21 +421,21 @@ const companyTopics: TopicPage[] = [
     eyebrow: "IP Ownership",
     title: "What you own when we hand over.",
     description:
-      "“You own the code” is a contractual and technical commitment—not a slogan. Here is the scope InheritX transfers on production AI engagements.",
+      "“You own the code” is a contractual and technical commitment, not a slogan. Here is the scope InheritX transfers on production AI engagements.",
     primaryCta: { label: "Book an AI strategy call", href: contactHref("strategy") },
     secondaryCta: { label: "Our Approach", href: "/company/approach" },
     layout: "narrative",
     metadata: {
       title: "IP Ownership | InheritX",
       description:
-        "InheritX IP handover scope: code, fine-tunes, agents, prompts, and infrastructure-as-code transferred to the customer—without renting back the platform.",
+        "InheritX IP handover scope: code, fine-tunes, agents, prompts, and infrastructure-as-code transferred to the customer, without renting back the platform.",
     },
     sections: [
       {
         type: "narrative",
         title: "Ownership is the point of the engagement",
         body: [
-          "Many AI vendors accelerate pilots by keeping the valuable layer—orchestration, fine-tunes, evaluation, and workflow glue—inside a rented platform. InheritX is built the other way: we implement capability inside your estate and transfer what we create for you.",
+          "Many AI vendors accelerate pilots by keeping the valuable layer, orchestration, fine-tunes, evaluation, and workflow glue, inside a rented platform. InheritX is built the other way: we implement capability inside your estate and transfer what we create for you.",
           "Exact transfer terms are defined in the statement of work and master agreement for each engagement. The lists below describe our standard intent for production build programs. A detailed IP schedule can be shared under NDA during diligence.",
         ],
       },
@@ -450,7 +450,7 @@ const companyTopics: TopicPage[] = [
           },
           {
             title: "Fine-tunes & adapters trained for you",
-            copy: "Model weights/adapters fine-tuned on your approved data for your use—remaining your IP.",
+            copy: "Model weights/adapters fine-tuned on your approved data for your use, remaining your IP.",
           },
           {
             title: "Prompts, policies, and evaluation assets",
@@ -468,7 +468,7 @@ const companyTopics: TopicPage[] = [
         items: [
           {
             title: "Third-party foundation models",
-            copy: "Commercial model licenses (OpenAI, Anthropic, etc.) remain governed by those providers’ terms. We help you choose and integrate—they are not InheritX IP to transfer.",
+            copy: "Commercial model licenses (OpenAI, Anthropic, etc.) remain governed by those providers’ terms. We help you choose and integrate, they are not InheritX IP to transfer.",
           },
           {
             title: "Your pre-existing systems & data",
@@ -483,7 +483,7 @@ const companyTopics: TopicPage[] = [
       {
         type: "steps",
         title: "Handover package (standard intent)",
-        intro: "At go-live, production programs aim to leave your team with operable ownership—not tribal knowledge.",
+        intro: "At go-live, production programs aim to leave your team with operable ownership, not tribal knowledge.",
         items: [
           {
             step: "01",
@@ -524,7 +524,7 @@ const companyTopics: TopicPage[] = [
         items: [
           {
             q: "Do you retain a license to reuse our solution for others?",
-            a: "Customer-specific work product is not resold as a productized clone of your system. Contract language governs residual knowledge and any shared accelerators—ask for the IP schedule in diligence.",
+            a: "Customer-specific work product is not resold as a productized clone of your system. Contract language governs residual knowledge and any shared accelerators, ask for the IP schedule in diligence.",
           },
           {
             q: "What about prompts and eval sets?",

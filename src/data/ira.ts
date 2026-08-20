@@ -24,8 +24,8 @@ export const IRA_VIDEO_SRC = "/images/actual/IRA.mp4" as const;
 /** Measured from IRA.mp4 (720×1280, 8.0s). Used to sync transcript if metadata is late. */
 export const IRA_VIDEO_DURATION_S = 8;
 
-/** First-visit delay before the concierge panel opens. */
-export const IRA_AUTO_OPEN_MS = 10_000;
+/** First-visit delay before the concierge panel opens. `0` = no auto-open. */
+export const IRA_AUTO_OPEN_MS = 0;
 
 export const IRA_SCRIPT =
   "Hi, thank you for connecting with InheritX Solutions. I am IRA, your AI assistant. I am here to guide you through your project requirements. Let’s get started." as const;

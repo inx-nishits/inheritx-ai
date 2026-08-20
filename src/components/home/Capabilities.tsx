@@ -244,7 +244,7 @@ export function Capabilities() {
               />
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-white/45">
-              Six capability lanes—each engineered for governed production
+              Six capability lanes, each engineered for governed production
               delivery.
             </p>
             <Link
@@ -286,7 +286,7 @@ export function Capabilities() {
               </div>
               <div className="flex flex-col gap-5 lg:items-end">
                 <p className="max-w-sm text-sm leading-relaxed text-white/45 md:text-base lg:text-right">
-                  Six capability lanes—each engineered for governed production
+                  Six capability lanes, each engineered for governed production
                   delivery.
                 </p>
                 <Link

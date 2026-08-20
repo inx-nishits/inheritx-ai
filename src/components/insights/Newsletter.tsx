@@ -50,7 +50,7 @@ export function Newsletter({ className }: { className?: string }) {
             </h2>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-white/50">
               Brief perspectives on agentic systems, LLMOps, governance, and
-              production AI—written for technical and executive buyers.
+              production AI, written for technical and executive buyers.
             </p>
           </div>
           <form onSubmit={onSubmit} className="space-y-3">

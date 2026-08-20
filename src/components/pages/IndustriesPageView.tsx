@@ -86,7 +86,7 @@ export function IndustriesPageView() {
                 <div className="absolute right-5 bottom-5 left-5">
                   <div className="rounded-2xl border border-white/15 bg-ink/80 px-4 py-3 backdrop-blur-md">
                     <p className="text-[11px] tracking-[0.16em] text-cyan uppercase">
-                      Signal outcome
+                      {industry.metricLabel}
                     </p>
                     <p className="font-display mt-1 text-2xl text-white">
                       {industry.metric}

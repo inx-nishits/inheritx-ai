@@ -14,14 +14,14 @@ export const cultureTopic: TopicPage = {
   metadata: {
     title: "Culture & Values | InheritX",
     description:
-      "Precision, ownership, and ambitious craft—how InheritX teams ship governed enterprise AI with accountability and calm delivery under pressure.",
+      "Precision, ownership, and ambitious craft, how InheritX teams ship governed enterprise AI with accountability and calm delivery under pressure.",
   },
   sections: [
     {
       type: "narrative",
       title: "Culture is how we behave when the demo is over",
       body: [
-        "InheritX teams operate inside regulated enterprises where fluency is not enough. Systems must be attributable, secure, and measurable. Culture here is not posters—it is the default choices we make when scope is tight, security review is thorough, and the client needs truth more than reassurance.",
+        "InheritX teams operate inside regulated enterprises where fluency is not enough. Systems must be attributable, secure, and measurable. Culture here is not posters, it is the default choices we make when scope is tight, security review is thorough, and the client needs truth more than reassurance.",
         "We hire operators who treat intelligence as infrastructure: architects, ML and LLM engineers, agentic systems builders, and delivery leads who would rather ship a narrow production capability than a wide sandbox that cannot survive Monday morning.",
         "Ambitious craft means we care about architecture, evaluation, and operator experience with the same intensity we bring to model selection. Beautiful design earns its place when traces, escalation paths, and KPIs prove it works.",
       ],
@@ -32,7 +32,7 @@ export const cultureTopic: TopicPage = {
       items: [
         {
           title: "Production over performance theater",
-          copy: "We optimize for systems that run in operations—not demos that impress in a conference room. Weekly signal includes evals, risks, and what changed in the operating model.",
+          copy: "We optimize for systems that run in operations, not demos that impress in a conference room. Weekly signal includes evals, risks, and what changed in the operating model.",
         },
         {
           title: "Ownership is the product",
@@ -53,9 +53,9 @@ export const cultureTopic: TopicPage = {
       title: "How we collaborate with clients",
       leftTitle: "Embedded, not distant",
       leftBody: [
-        "Squads and Embedded AI Engineering engagements work inside your rituals—standups, architecture forums, security reviews—not around them.",
+        "Squads and Embedded AI Engineering engagements work inside your rituals, standups, architecture forums, security reviews, not around them.",
         "Senior practitioners lead critical path work. We say plainly when consulting should precede hiring, or when a pilot is not ready to scale.",
-        "Evidence beats narrative: demos tied to eval results, integration progress, and exception handling—not vanity metrics.",
+        "Evidence beats narrative: demos tied to eval results, integration progress, and exception handling, not vanity metrics.",
       ],
       rightTitle: "What we expect from each other",
       rightItems: [
@@ -63,7 +63,7 @@ export const cultureTopic: TopicPage = {
         "Written decisions for cross-functional alignment",
         "Respect for security and compliance as design inputs",
         "Curiosity across domain, product, and platform",
-        "Ownership through handover—not throw-over-the-wall delivery",
+        "Ownership through handover, not throw-over-the-wall delivery",
       ],
     },
     {
@@ -74,12 +74,12 @@ export const cultureTopic: TopicPage = {
         {
           step: "01",
           title: "Align on mandate",
-          copy: "Outcomes, constraints, and decision owners—before tooling debates consume the room.",
+          copy: "Outcomes, constraints, and decision owners, before tooling debates consume the room.",
         },
         {
           step: "02",
           title: "Staff the right shape",
-          copy: "Architect-led pods, embedded engineers, or transformation programs—matched to readiness, not to a one-size staffing template.",
+          copy: "Architect-led pods, embedded engineers, or transformation programs, matched to readiness, not to a one-size staffing template.",
         },
         {
           step: "03",

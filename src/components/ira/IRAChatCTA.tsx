@@ -173,7 +173,8 @@ function IRAAssistant() {
   }, []);
 
   useEffect(() => {
-    if (!isClient || wasClosedThisSession() || mode === "expanded") return;
+    if (!isClient || IRA_AUTO_OPEN_MS <= 0) return;
+    if (wasClosedThisSession() || mode === "expanded") return;
     const timer = window.setTimeout(() => openPanel(), IRA_AUTO_OPEN_MS);
     return () => window.clearTimeout(timer);
   }, [isClient, mode, openPanel]);

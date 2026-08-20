@@ -160,7 +160,7 @@ export function SolutionsPageView() {
               How enterprise leaders engage us.
             </h2>
             <p className="mt-4 max-w-xl text-sm text-ink/55 md:text-base">
-              Pick the motion that matches readiness—strategy when the mandate
+              Pick the motion that matches readiness, strategy when the mandate
               is unclear; production build when you are ready to industrialize.
             </p>
           </Reveal>
@@ -204,7 +204,7 @@ export function SolutionsPageView() {
               Quick fit
             </p>
             <h2 className="font-display mt-3 text-3xl text-white md:text-4xl">
-              Start from the business problem—not the buzzword.
+              Start from the business problem, not the buzzword.
             </h2>
           </Reveal>
           <div className="mt-10 divide-y divide-white/10 border-y border-white/10">

@@ -89,6 +89,11 @@ export function Industries() {
                   >
                     {industry.name}
                   </h3>
+                  {isActive && industry.proof ? (
+                    <p className="mt-2 text-[11px] tracking-[0.16em] text-cyan/80 uppercase">
+                      {industry.proof}
+                    </p>
+                  ) : null}
                   <p
                     className={cn(
                       "max-w-sm text-sm leading-relaxed text-white/70 transition-opacity duration-300",

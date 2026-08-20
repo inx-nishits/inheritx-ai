@@ -58,7 +58,7 @@ export function TeamPageView() {
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/50">
               Leadership here is practiced through architecture decisions,
-              delivery accountability, and client trust—not job titles alone.
+              delivery accountability, and client trust, not job titles alone.
             </p>
           </Reveal>
           <div className="mt-12 grid gap-4 md:grid-cols-2">
@@ -204,7 +204,7 @@ export function TeamPageView() {
             </h2>
             <p className="mt-4 text-sm text-white/50">
               Open roles for architects, ML engineers, and delivery leads who
-              want ownership—not slideware.
+              want ownership, not slideware.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">

@@ -5,7 +5,7 @@ export const agentBankProject = {
   eyebrow: "Featured project",
   headline: "A governed agent workforce for banking operations.",
   summary:
-    "Agent Bank is an enterprise multi-agent platform that executes high-volume banking workflows—with policy controls, audit trails, and human approval gates for anything that moves money or risk.",
+    "Agent Bank is an enterprise multi-agent platform that executes high-volume banking workflows, with policy controls, audit trails, and human approval gates for anything that moves money or risk.",
   heroImage: "/images/actual/actual-agentbank.jpg",
   stats: [
     { value: "6×", label: "Faster exception review cycles" },
@@ -15,11 +15,11 @@ export const agentBankProject = {
   ],
   challenge: {
     title: "The operating problem",
-    copy: "Banking teams drown in repetitive operational work—KYC follow-ups, case triage, document checks, and queue routing—while regulators still demand explainability. Single LLM chatbots cannot own multi-step work across core systems without creating control gaps.",
+    copy: "Banking teams drown in repetitive operational work, KYC follow-ups, case triage, document checks, and queue routing, while regulators still demand explainability. Single LLM chatbots cannot own multi-step work across core systems without creating control gaps.",
     points: [
       "Fragmented case queues across CRM, core banking, and document stores",
       "High false-positive load on fraud and compliance reviews",
-      "No reliable way to prove what an AI system did—or why",
+      "No reliable way to prove what an AI system did, or why",
     ],
   },
   solution: {
@@ -53,7 +53,7 @@ export const agentBankProject = {
     {
       step: "02",
       title: "Agents assemble the file",
-      copy: "Specialists pull context from approved tools—never unbounded browsing—and attach citations.",
+      copy: "Specialists pull context from approved tools, never unbounded browsing, and attach citations.",
     },
     {
       step: "03",
@@ -80,11 +80,11 @@ export const agentBankProject = {
     },
     {
       title: "Auditability becomes default",
-      copy: "Every recommendation is reconstructable—inputs, tools, policy checks, and approvals.",
+      copy: "Every recommendation is reconstructable, inputs, tools, policy checks, and approvals.",
     },
     {
       title: "A platform, not a one-off bot",
-      copy: "New product lines reuse the same agent fabric with new tools and policies—not greenfield chat apps.",
+      copy: "New product lines reuse the same agent fabric with new tools and policies, not greenfield chat apps.",
     },
   ],
   stack: [

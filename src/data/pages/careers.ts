@@ -2,12 +2,12 @@ export const careersHero = {
   eyebrow: "Careers",
   title: "Build the intelligence enterprises will run on.",
   description:
-    "We hire people who ship production AI—architects, ML/LLM engineers, and builders who treat governance as part of the product.",
+    "We hire people who ship production AI, architects, ML/LLM engineers, and builders who treat governance as part of the product.",
 };
 
 export const careersIntro = {
   title: "Why InheritX",
-  copy: "You will work on private AI platforms, multi-agent systems, and intelligent automation for regulated enterprises—not disposable demos. Ownership, evaluation, and security are first-class requirements, not afterthoughts.",
+  copy: "You will work on private AI platforms, multi-agent systems, and intelligent automation for regulated enterprises, not disposable demos. Ownership, evaluation, and security are first-class requirements, not afterthoughts.",
 };
 
 export const careerRoles = [
@@ -29,7 +29,7 @@ export const careerRoles = [
   },
   {
     title: "Delivery Leads",
-    copy: "Run AI programs from discovery to industrialization—with clear KPIs and enablement that sticks.",
+    copy: "Run AI programs from discovery to industrialization, with clear KPIs and enablement that sticks.",
   },
   {
     title: "Product & Experience",
@@ -48,7 +48,7 @@ export const careersHowToApply = {
     {
       step: "02",
       title: "Conversation",
-      copy: "We discuss craft, systems thinking, and fit with active Enterprise AI programs—not puzzle theater.",
+      copy: "We discuss craft, systems thinking, and fit with active Enterprise AI programs, not puzzle theater.",
     },
     {
       step: "03",
@@ -61,7 +61,7 @@ export const careersHowToApply = {
 export const careersFaqs = [
   {
     q: "Do you hire remotely?",
-    a: "We collaborate across India, the United States, Europe, and Japan. Role location depends on client constraints and team design—ask when you apply.",
+    a: "We collaborate across India, the United States, Europe, and Japan. Role location depends on client constraints and team design, ask when you apply.",
   },
   {
     q: "Are openings listed individually?",
@@ -69,6 +69,6 @@ export const careersFaqs = [
   },
   {
     q: "What do you look for?",
-    a: "Evidence of shipping under real constraints—security, reliability, ownership—and clear communication with enterprise stakeholders.",
+    a: "Evidence of shipping under real constraints, security, reliability, ownership, and clear communication with enterprise stakeholders.",
   },
 ];

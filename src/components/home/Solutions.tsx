@@ -32,7 +32,7 @@ export function Solutions() {
               className="font-display mt-5 text-4xl leading-[1.15] text-white md:text-6xl"
             />
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/45 md:text-base">
-              Outcome-led solution lanes mapped to enterprise mandates—from
+              Outcome-led solution lanes mapped to enterprise mandates, from
               engineering, search, and agents to DevOps and industry systems.
             </p>
         </div>

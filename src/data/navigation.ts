@@ -34,7 +34,7 @@ export const navigation: NavItem[] = [
     label: "Solutions",
     href: "/solutions",
     overview:
-      "AI/ML engineering, AI Agents, and AI DevOps—built for enterprise production, not pilots.",
+      "AI/ML engineering, AI Agents, and AI DevOps, built for enterprise production, not pilots.",
     columns: [
       {
         label: "AI capabilities",
@@ -96,7 +96,7 @@ export const navigation: NavItem[] = [
       eyebrow: "Featured solution",
       title: "AI Agents for enterprise operations",
       description:
-        "Multi-Agent Systems with MCP, human gates, and full audit trails—deployed in your VPC.",
+        "Multi-Agent Systems with MCP, human gates, and full audit trails, deployed in your VPC.",
       href: "/solutions/ai-agents",
       cta: "Explore AI Agents",
       stats: [
@@ -172,8 +172,8 @@ export const navigation: NavItem[] = [
       cta: "View case studies",
       stats: [
         { value: "VPC", label: "Private by default" },
-        { value: "40%", label: "Doc time ↓ (pattern)" },
-        { value: "10×", label: "Triage speed (pattern)" },
+        { value: "Owned", label: "IP at handover" },
+        { value: "HITL", label: "Risk gates" },
       ],
     },
     quickLinks: [
@@ -185,7 +185,7 @@ export const navigation: NavItem[] = [
     label: "Case Studies",
     href: "/case-studies",
     overview:
-      "Production AI outcomes—methodology included. Proof for CEOs, CTOs, and diligence teams.",
+      "Production AI outcomes, methodology included. Proof for CEOs, CTOs, and diligence teams.",
     columns: [
       {
         label: "Proof",
@@ -217,7 +217,7 @@ export const navigation: NavItem[] = [
       eyebrow: "Featured outcome",
       title: "Measured enterprise AI results",
       description:
-        "Client deployments with methodology—vision, generative systems, platforms, and agentic workflows.",
+        "Client deployments with methodology, vision, generative systems, platforms, and agentic workflows.",
       href: "/case-studies",
       cta: "View case studies",
       stats: [
@@ -235,7 +235,7 @@ export const navigation: NavItem[] = [
     label: "Portfolio",
     href: "/portfolio",
     overview:
-      "Enterprise AI capability patterns—platforms, agents, vision, and transformation systems.",
+      "Enterprise AI capability patterns, platforms, agents, vision, and transformation systems.",
     columns: [
       {
         label: "Showcase",
@@ -275,7 +275,7 @@ export const navigation: NavItem[] = [
     label: "Company",
     href: "/company",
     overview:
-      "An AI-native enterprise partner—architects and engineers who ship owned intelligence systems.",
+      "An AI-native enterprise partner, architects and engineers who ship owned intelligence systems.",
     columns: [
       {
         label: "Who we are",
@@ -356,9 +356,9 @@ export const navigation: NavItem[] = [
       href: contactHref("strategy"),
       cta: "Book an AI strategy call",
       stats: [
-        { value: "14+", label: "Years delivery DNA for AI programs" },
-        { value: "600+", label: "Engagements informing AI delivery" },
-        { value: "97%", label: "Client retention" },
+        { value: "2011+", label: "Enterprise delivery DNA for AI programs" },
+        { value: "600+", label: "Software engagements informing AI delivery" },
+        { value: "Owned", label: "IP at handover" },
       ],
     },
     quickLinks: [
@@ -403,7 +403,7 @@ export const navigation: NavItem[] = [
     label: "Resources",
     href: "/resources",
     overview:
-      "Decision material for CEOs and CTOs—insights, frameworks, and diligence packs.",
+      "Decision material for CEOs and CTOs, insights, frameworks, and diligence packs.",
     columns: [
       {
         label: "Learn",
@@ -470,7 +470,7 @@ export const navigation: NavItem[] = [
           },
           {
             title: "Enterprise References",
-            description: "How buyers verify InheritX—honest tiers of proof.",
+            description: "How buyers verify InheritX, honest tiers of proof.",
             href: "/resources/enterprise-references",
           },
         ],

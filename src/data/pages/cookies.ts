@@ -11,7 +11,7 @@ export const cookiesSections = [
   {
     title: "What we use",
     body: [
-      "Essential cookies and similar technologies may be used to operate this website—for example to keep the site secure and remember basic session state.",
+      "Essential cookies and similar technologies may be used to operate this website, for example to keep the site secure and remember basic session state.",
       "If analytics is enabled, we may use optional cookies or tags (such as Google Tag Manager or GA4) to understand aggregate usage. Those tools only load after you enable analytics cookies.",
     ],
   },

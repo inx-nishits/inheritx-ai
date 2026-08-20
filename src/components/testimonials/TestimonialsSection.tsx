@@ -54,7 +54,7 @@ function InitialsAvatar({ name }: { name: string }) {
       className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] font-mono text-[11px] tracking-wide text-cyan"
       aria-hidden
     >
-      {initials || "—"}
+      {initials || ", "}
     </div>
   );
 }
@@ -138,8 +138,8 @@ function TestimonialCard({
 export function TestimonialsSection({
   items,
   eyebrow = "Enterprise voices",
-  title = "Trusted by leaders who ship production AI.",
-  description = "What enterprise leaders say about shipping production AI with InheritX.",
+  title = "What production AI buyers tell us.",
+  description = "Anonymized enterprise voices until named references are approved in writing. Named proof lives in case studies and NDA diligence.",
   className,
   id = "testimonials",
 }: TestimonialsSectionProps) {

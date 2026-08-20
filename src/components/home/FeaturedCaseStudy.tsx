@@ -88,7 +88,7 @@ export function FeaturedCaseStudy() {
 
         <div className="noise-overlay opacity-40" />
 
-        <div className="relative z-10 mx-auto flex max-w-page flex-col px-5 py-16 md:min-h-[min(62vh,520px)] md:px-8 md:py-9 lg:py-10">
+        <div className="relative z-10 mx-auto flex max-w-page flex-col px-5 py-16 md:min-h-[min(62vh,520px)] md:px-8 md:py-20">
           {/* Top bar — stack on mobile/tablet so copy keeps full width */}
           <div className="flex flex-col items-start gap-4 lg:flex-row lg:justify-between lg:gap-6">
             <div className="w-full min-w-0 lg:max-w-md">

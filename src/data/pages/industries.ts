@@ -2,7 +2,7 @@ export const industriesHero = {
   eyebrow: "Industries",
   title: "Enterprise AI for sectors where mistakes are expensive.",
   description:
-    "Healthcare, finance, logistics, manufacturing, and more—InheritX designs AI/ML systems, agentic workforces, and AI automation for industries where accuracy, auditability, and private deployment are non-negotiable.",
+    "Public case proof is strongest in healthcare, with published patterns in finance and related operations work. Manufacturing, insurance, and government are capability pages, architecture we apply when the mandate fits, not claimed specializations without published cases.",
 };
 
 export const industryProfiles = [
@@ -21,6 +21,7 @@ export const industryProfiles = [
       "Prior-auth and intake automation",
     ],
     metric: "Up to 40% less documentation time (pattern)",
+    metricLabel: "Published case pattern",
     image: "/images/actual/actual-healthcare.jpg",
   },
   {
@@ -38,6 +39,7 @@ export const industryProfiles = [
       "Policy-aware decision support",
     ],
     metric: "10× faster agentic triage cycles (pattern)",
+    metricLabel: "Published pattern",
     image: "/images/actual/actual-finance.jpg",
   },
   {
@@ -54,7 +56,8 @@ export const industryProfiles = [
       "Predictive maintenance agents",
       "Operator feedback loops",
     ],
-    metric: "Higher detection on critical lines",
+    metric: "Vision and plant-intelligence architecture",
+    metricLabel: "Capability pattern",
     image: "/images/actual/actual-manufacturing.jpg",
   },
   {
@@ -71,7 +74,8 @@ export const industryProfiles = [
       "Support command agents",
       "Assortment copilots",
     ],
-    metric: "Lower handle time at volume",
+    metric: "Real-time operations at event scale",
+    metricLabel: "Related case",
     image: "/images/actual/actual-retail.jpg",
   },
   {
@@ -88,7 +92,8 @@ export const industryProfiles = [
       "Citation-backed knowledge fabric",
       "Underwriting assist",
     ],
-    metric: "Cited policy answers at scale",
+    metric: "Policy-aware claims architecture",
+    metricLabel: "Capability pattern",
     image: "/images/actual/actual-insurance.jpg",
   },
   {
@@ -105,7 +110,8 @@ export const industryProfiles = [
       "Exception-handling agents",
       "Network optimization models",
     ],
-    metric: "Faster document & exception cycles",
+    metric: "Connected charging operations",
+    metricLabel: "Related case",
     image: "/images/actual/actual-logistic.jpg",
   },
   {
@@ -122,7 +128,8 @@ export const industryProfiles = [
       "Private cloud deployments",
       "Full auditability by design",
     ],
-    metric: "Shorter governed case cycles",
+    metric: "Sovereign deployment patterns",
+    metricLabel: "Capability pattern",
     image: "/images/actual/actual-government.jpg",
   },
 ];
@@ -130,7 +137,7 @@ export const industryProfiles = [
 export const crossIndustryPatterns = [
   {
     title: "Human-in-the-loop by default",
-    copy: "High-risk actions escalate. Agents accelerate work—they don’t invent authority.",
+    copy: "High-risk actions escalate. Agents accelerate work, they don’t invent authority.",
   },
   {
     title: "Evidence over eloquence",

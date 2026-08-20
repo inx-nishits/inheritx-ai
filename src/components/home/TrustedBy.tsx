@@ -13,89 +13,6 @@ const logos: {
   node: ReactNode;
 }[] = [
   {
-    name: "AWS Partner",
-    node: (
-      <svg viewBox="0 0 120 56" className="h-14 w-[128px] md:h-16 md:w-[148px]" aria-hidden>
-        <text
-          x="60"
-          y="26"
-          textAnchor="middle"
-          fill="#fff"
-          fontFamily="system-ui, Arial, sans-serif"
-          fontSize="26"
-          fontWeight="700"
-          letterSpacing="-0.5"
-        >
-          aws
-        </text>
-        <path
-          d="M28 34c14 10 50 10 64 0"
-          stroke="#FF9900"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          fill="none"
-        />
-        <path
-          d="M86 32.5l6 1.5-3.5 5.5"
-          stroke="#FF9900"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-        />
-        <text
-          x="60"
-          y="50"
-          textAnchor="middle"
-          fill="#fff"
-          fontFamily="system-ui, Arial, sans-serif"
-          fontSize="11"
-        >
-          Partner
-        </text>
-      </svg>
-    ),
-  },
-  {
-    name: "Google Reviews",
-    node: (
-      <svg viewBox="0 0 150 40" className="h-12 w-[160px] md:h-14 md:w-[180px]" aria-hidden>
-        <text
-          x="0"
-          y="16"
-          fontFamily="system-ui, Arial, sans-serif"
-          fontSize="15"
-          fontWeight="700"
-        >
-          <tspan fill="#4285F4">G</tspan>
-          <tspan fill="#EA4335">o</tspan>
-          <tspan fill="#FBBC05">o</tspan>
-          <tspan fill="#4285F4">g</tspan>
-          <tspan fill="#34A853">l</tspan>
-          <tspan fill="#EA4335">e</tspan>
-        </text>
-        <text
-          x="58"
-          y="16"
-          fill="#fff"
-          fontFamily="system-ui, Arial, sans-serif"
-          fontSize="14"
-          fontWeight="500"
-        >
-          Reviews
-        </text>
-        {[0, 1, 2, 3, 4].map((i) => (
-          <path
-            key={i}
-            transform={`translate(${i * 16}, 22)`}
-            d="M6 0l1.4 4.2H12l-3.5 2.6 1.3 4.2L6 8.4 2.2 11 3.5 6.8 0 4.2h4.6z"
-            fill="#FABB05"
-          />
-        ))}
-      </svg>
-    ),
-  },
-  {
     name: "Clutch",
     node: (
       <svg viewBox="0 0 110 36" className="h-11 w-[120px] md:h-12 md:w-[132px]" aria-hidden>
@@ -182,15 +99,14 @@ export function TrustedBy() {
     >
       <div className="mx-auto max-w-page px-5 text-center md:px-8">
         <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
-          Recognition
+          Review platforms
         </p>
         <h2 className="font-display mt-3 text-2xl leading-tight text-white md:text-4xl">
-          Trusted presence across leading platforms.
+          Independent profiles you can check.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50 md:text-base">
-          Verified delivery history and client reviews on the platforms buyers
-          already trust. For enterprise diligence, start with our published case
-          studies—or request references under NDA.
+          Public review listings are not a substitute for enterprise diligence.
+          Start with published case studies, or request references under NDA.
         </p>
 
         <div className="mt-8 flex justify-center">

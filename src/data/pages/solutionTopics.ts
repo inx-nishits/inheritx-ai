@@ -23,7 +23,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "Enterprise AI",
     title: "Private AI platforms that transform how enterprises operate.",
     description:
-      "We build and hand over AI/ML systems—governed retrieval, fine-tuning, model endpoints, prediction, and policy controls inside your VPC. Your data, your models, your IP. Not a rental of someone else’s platform.",
+      "We build and hand over AI/ML systems, governed retrieval, fine-tuning, model endpoints, prediction, and policy controls inside your VPC. Your data, your models, your IP. Not a rental of someone else’s platform.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: { label: "View AI Portfolio", href: "/portfolio" },
     layout: "capability",
@@ -42,7 +42,7 @@ export const solutionTopics: TopicPage[] = [
         title: "Intelligence as infrastructure, not a sidecar",
         body: [
           "Most enterprises accumulate disconnected copilots, vendor sandboxes, and shadow API keys. The result is duplicated spend, inconsistent policy enforcement, and no durable path from pilot to production.",
-          "InheritX builds enterprise AI platforms as shared infrastructure: a governed layer for retrieval, orchestration, model routing, and observability that business units consume through approved patterns—not ad hoc integrations.",
+          "InheritX builds enterprise AI platforms as shared infrastructure: a governed layer for retrieval, orchestration, model routing, and observability that business units consume through approved patterns, not ad hoc integrations.",
           "The platform is designed for CIO and CISO review from day one: identity-bound access, lineage for every inference, and deployment topologies that respect your existing network and data-classification boundaries.",
         ],
       },
@@ -50,7 +50,7 @@ export const solutionTopics: TopicPage[] = [
         type: "bullets",
         title: "Platform capabilities leaders expect",
         intro:
-          "Each component ships with operational runbooks—not demo scripts—so platform teams can sustain the estate after handoff.",
+          "Each component ships with operational runbooks, not demo scripts, so platform teams can sustain the estate after handoff.",
         items: [
           {
             title: "Unified retrieval fabric",
@@ -74,23 +74,23 @@ export const solutionTopics: TopicPage[] = [
         type: "bullets",
         title: "Capability lines this platform carries",
         intro:
-          "Named so procurement and architecture reviews can find them—delivered as shared services, not a second product catalog.",
+          "Named so procurement and architecture reviews can find them, delivered as shared services, not a second product catalog.",
         items: [
           {
             title: "AI Search / Enterprise Search",
-            copy: "Hybrid retrieval (keyword + vector), re-ranking, and citation-backed answers over role-scoped corpora—the RFQ label for governed RAG.",
+            copy: "Hybrid retrieval (keyword + vector), re-ranking, and citation-backed answers over role-scoped corpora, the RFQ label for governed RAG.",
           },
           {
             title: "Document AI / IDP",
-            copy: "Ingestion, classification, extraction, and reconciliation for contracts, claims, clinical packets, and back-office packets—with human review on low confidence.",
+            copy: "Ingestion, classification, extraction, and reconciliation for contracts, claims, clinical packets, and back-office packets, with human review on low confidence.",
           },
           {
             title: "GraphRAG & knowledge graphs",
-            copy: "Entity- and relationship-aware retrieval when chunked search is not enough—wired to the same policy, citation, and audit path.",
+            copy: "Entity- and relationship-aware retrieval when chunked search is not enough, wired to the same policy, citation, and audit path.",
           },
           {
             title: "Fine-tuning & custom models",
-            copy: "Adapters and supervised fine-tunes when prompting and retrieval plateau—with evaluation gates, rollback, and IP transfer on the artifacts we train for you.",
+            copy: "Adapters and supervised fine-tunes when prompting and retrieval plateau, with evaluation gates, rollback, and IP transfer on the artifacts we train for you.",
           },
         ],
       },
@@ -114,7 +114,7 @@ export const solutionTopics: TopicPage[] = [
       {
         type: "matrix",
         title: "When an enterprise platform is the right move",
-        intro: "Use this lens with your architecture board—not as a sales checklist.",
+        intro: "Use this lens with your architecture board, not as a sales checklist.",
         rows: [
           {
             need: "Multiple BUs need similar RAG and generation patterns",
@@ -151,7 +151,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             q: "Do you require a specific cloud provider?",
-            a: "No. We align to your existing estate—AWS, Azure, GCP, or private cloud—and use your approved IaC and identity patterns.",
+            a: "No. We align to your existing estate, AWS, Azure, GCP, or private cloud, and use your approved IaC and identity patterns.",
           },
           {
             q: "Can we start with one business unit and expand?",
@@ -175,15 +175,15 @@ export const solutionTopics: TopicPage[] = [
     metadata: {
       title: "Enterprise AI | InheritX",
       description:
-        "Private, governed enterprise AI platforms—AI Search, Document AI, GraphRAG, fine-tuning, model routing, and observability inside your cloud estate.",
+        "Private, governed enterprise AI platforms, AI Search, Document AI, GraphRAG, fine-tuning, model routing, and observability inside your cloud estate.",
     },
   },
   {
     slug: "ai-agents",
     eyebrow: "AI Agents",
-    title: "Autonomous agents that execute enterprise work—not chat demos.",
+    title: "Autonomous agents that execute enterprise work, not chat demos.",
     description:
-      "Autonomous agents with memory, planning, MCP, and tool calling. Multi-agent networks assign work, peer-review outputs, and escalate exceptions—fully instrumented, with humans on consequential decisions.",
+      "Autonomous agents with memory, planning, MCP, and tool calling. Multi-agent networks assign work, peer-review outputs, and escalate exceptions, fully instrumented, with humans on consequential decisions.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: { label: "View Agent Bank", href: "/portfolio/agent-bank" },
     layout: "capability",
@@ -192,9 +192,9 @@ export const solutionTopics: TopicPage[] = [
         type: "narrative",
         title: "From chat interfaces to accountable action",
         body: [
-          "Enterprise leaders do not need another chatbot. They need systems that intake requests, gather context, call internal APIs via MCP and tool contracts, draft outputs, and route exceptions—under explicit policy and with a record of every step.",
-          "InheritX designs agentic architectures around your operational reality: which tools exist, which actions require human approval, and where autonomy stops. Agents are observable workers—not opaque oracles.",
-          "Multi-agent patterns decompose complex workflows—research, triage, fulfillment—into specialized roles with shared memory, structured handoffs, and evaluation harnesses that catch regressions before production traffic does.",
+          "Enterprise leaders do not need another chatbot. They need systems that intake requests, gather context, call internal APIs via MCP and tool contracts, draft outputs, and route exceptions, under explicit policy and with a record of every step.",
+          "InheritX designs agentic architectures around your operational reality: which tools exist, which actions require human approval, and where autonomy stops. Agents are observable workers, not opaque oracles.",
+          "Multi-agent patterns decompose complex workflows, research, triage, fulfillment, into specialized roles with shared memory, structured handoffs, and evaluation harnesses that catch regressions before production traffic does.",
         ],
       },
       {
@@ -203,7 +203,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             title: "MCP and tool contracts, not prompt hope",
-            copy: "Every external action maps to typed tool schemas—MCP-ready where appropriate—with timeouts, idempotency rules, and explicit failure modes.",
+            copy: "Every external action maps to typed tool schemas, MCP-ready where appropriate, with timeouts, idempotency rules, and explicit failure modes.",
           },
           {
             title: "Human gates on consequential actions",
@@ -223,7 +223,7 @@ export const solutionTopics: TopicPage[] = [
         type: "bullets",
         title: "Agent surfaces beyond text chat",
         intro:
-          "Same control plane—typed tools, HITL, and traces—applied to channels and runtimes enterprises now ask for by name.",
+          "Same control plane, typed tools, HITL, and traces, applied to channels and runtimes enterprises now ask for by name.",
         items: [
           {
             title: "Voice / real-time conversational AI",
@@ -231,15 +231,15 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             title: "Computer-use and browser agents",
-            copy: "Bounded UI automation where APIs do not exist—scoped credentials, step limits, and human publish on irreversible actions.",
+            copy: "Bounded UI automation where APIs do not exist, scoped credentials, step limits, and human publish on irreversible actions.",
           },
           {
             title: "Real-time multimodal agents",
-            copy: "Vision, voice, and tools in one loop for ops floors and service desks—still evaluated and logged like any other worker.",
+            copy: "Vision, voice, and tools in one loop for ops floors and service desks, still evaluated and logged like any other worker.",
           },
           {
             title: "Long-running agent workflows",
-            copy: "Checkpointed cases that outlive a single model call—durable orchestration (e.g. Temporal / Prefect) with human review stages.",
+            copy: "Checkpointed cases that outlive a single model call, durable orchestration (e.g. Temporal / Prefect) with human review stages.",
           },
         ],
       },
@@ -251,7 +251,7 @@ export const solutionTopics: TopicPage[] = [
           {
             step: "01",
             title: "Workflow decomposition",
-            copy: "Map the human process today—inputs, decisions, systems touched, and exception paths—before naming any agent roles.",
+            copy: "Map the human process today, inputs, decisions, systems touched, and exception paths, before naming any agent roles.",
           },
           {
             step: "02",
@@ -327,7 +327,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             q: "Can agents act on our legacy systems?",
-            a: "Yes, via APIs, message buses, or controlled UI automation—scoped by tool contracts and approval rules you define.",
+            a: "Yes, via APIs, message buses, or controlled UI automation, scoped by tool contracts and approval rules you define.",
           },
           {
             q: "What happens when an agent is wrong?",
@@ -335,7 +335,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             q: "Do you build voice or only text agents?",
-            a: "Voice and real-time channels use the same agent runtime, tool policy, and audit trail as text. We add them when the workflow actually needs a phone or live audio path—not as a demo overlay.",
+            a: "Voice and real-time channels use the same agent runtime, tool policy, and audit trail as text. We add them when the workflow actually needs a phone or live audio path, not as a demo overlay.",
           },
         ],
       },
@@ -343,7 +343,7 @@ export const solutionTopics: TopicPage[] = [
     metadata: {
       title: "AI Agents | InheritX",
       description:
-        "Enterprise agent systems—text, voice/real-time, computer-use, and multimodal—with MCP, observability, and human gates built in.",
+        "Enterprise agent systems, text, voice/real-time, computer-use, and multimodal, with MCP, observability, and human gates built in.",
     },
   },
   {
@@ -351,7 +351,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "AI Automation",
     title: "Intelligent workflow automation woven into enterprise systems.",
     description:
-      "Embed AI into intake, routing, documentation, and exception handling—using n8n, agents, and system integrations connected to ERP and CRM with evaluation loops and cost discipline.",
+      "Embed AI into intake, routing, documentation, and exception handling, using n8n, agents, and system integrations connected to ERP and CRM with evaluation loops and cost discipline.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "capability",
@@ -360,7 +360,7 @@ export const solutionTopics: TopicPage[] = [
         type: "bullets",
         title: "Automation surfaces we industrialize",
         intro:
-          "We target workflows where manual handoffs create latency, inconsistency, or compliance exposure—not tasks that merely look automatable in a demo.",
+          "We target workflows where manual handoffs create latency, inconsistency, or compliance exposure, not tasks that merely look automatable in a demo.",
         items: [
           {
             title: "Intelligent intake & classification",
@@ -368,7 +368,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             title: "Dynamic routing & prioritization",
-            copy: "Queue logic that weighs SLA, skill match, risk tier, and backlog state—adjustable by operations leadership.",
+            copy: "Queue logic that weighs SLA, skill match, risk tier, and backlog state, adjustable by operations leadership.",
           },
           {
             title: "Document generation & reconciliation",
@@ -384,9 +384,9 @@ export const solutionTopics: TopicPage[] = [
         type: "narrative",
         title: "Automation that respects the backbone systems",
         body: [
-          "Enterprise automation fails when AI sits outside the transactional core—creating shadow processes that diverge from ERP truth or bypass approval hierarchies.",
+          "Enterprise automation fails when AI sits outside the transactional core, creating shadow processes that diverge from ERP truth or bypass approval hierarchies.",
           "InheritX designs automation fabric that reads and writes through governed integration points: event streams, approved APIs, and idempotent job patterns your integration team can support.",
-          "Intelligence augments deterministic steps—classification, extraction, summarization—while critical financial and policy commits remain under existing controls unless you explicitly expand autonomy.",
+          "Intelligence augments deterministic steps, classification, extraction, summarization, while critical financial and policy commits remain under existing controls unless you explicitly expand autonomy.",
         ],
       },
       {
@@ -463,7 +463,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             q: "Will this replace our iPaaS or BPM platform?",
-            a: "Usually no—we extend orchestration you already operate, adding AI steps where unstructured data or judgment-heavy prep work slows the flow.",
+            a: "Usually no, we extend orchestration you already operate, adding AI steps where unstructured data or judgment-heavy prep work slows the flow.",
           },
           {
             q: "How do you prevent silent data drift?",
@@ -479,7 +479,7 @@ export const solutionTopics: TopicPage[] = [
     metadata: {
       title: "AI Automation | InheritX",
       description:
-        "Enterprise intelligent automation integrated with ERP, CRM, and mission systems—classification, routing, documentation, and exception handling.",
+        "Enterprise intelligent automation integrated with ERP, CRM, and mission systems, classification, routing, documentation, and exception handling.",
     },
   },
   {
@@ -487,7 +487,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "Generative AI",
     title: "Secure LLM applications built for enterprise constraints.",
     description:
-      "Context-aware RAG with vector stores, semantic search, prompt engineering, evaluation harnesses, and custom guardrails—so answers stay grounded in your business context. Copilots and content systems you own in your private cloud.",
+      "Context-aware RAG with vector stores, semantic search, prompt engineering, evaluation harnesses, and custom guardrails, so answers stay grounded in your business context. Copilots and content systems you own in your private cloud.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: { label: "Explore Enterprise AI", href: "/solutions/enterprise-ai" },
     layout: "capability",
@@ -525,7 +525,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             title: "Knowledge copilots",
-            copy: "Policy, product, and operational Q&A with hierarchical access—employees see only corpora their role entitles them to.",
+            copy: "Policy, product, and operational Q&A with hierarchical access, employees see only corpora their role entitles them to.",
           },
           {
             title: "Authoring assistants",
@@ -537,7 +537,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             title: "Code copilots & AI SDLC",
-            copy: "Context-aware helpers bound to approved repos and schemas—review, test, and change workflows with secrets scanning and output filtering. Not an unbounded coding chatbot.",
+            copy: "Context-aware helpers bound to approved repos and schemas, review, test, and change workflows with secrets scanning and output filtering. Not an unbounded coding chatbot.",
           },
         ],
       },
@@ -549,7 +549,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             title: "Evaluation harnesses",
-            copy: "Golden sets, faithfulness checks, and regression suites in CI—so a prompt or index change cannot ship on vibes.",
+            copy: "Golden sets, faithfulness checks, and regression suites in CI, so a prompt or index change cannot ship on vibes.",
           },
           {
             title: "Red-team and jailbreak testing",
@@ -557,21 +557,21 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             title: "Prompt & retrieval contracts",
-            copy: "Versioned prompts, chunking, and re-rankers with rollback—the same discipline as application code.",
+            copy: "Versioned prompts, chunking, and re-rankers with rollback, the same discipline as application code.",
           },
           {
             title: "Fine-tunes when RAG plateaus",
-            copy: "Adapters and supervised fine-tunes only after retrieval and prompting are exhausted—with data governance and a rollback plan.",
+            copy: "Adapters and supervised fine-tunes only after retrieval and prompting are exhausted, with data governance and a rollback plan.",
           },
         ],
       },
       {
         type: "narrative",
-        title: "Quality is a systems problem—not a model pick",
+        title: "Quality is a systems problem, not a model pick",
         body: [
           "Leaders often anchor generative AI discussions on model selection. In production, answer quality depends on chunking strategy, metadata richness, re-rankers, prompt contracts, and feedback loops from real users.",
-          "InheritX engineers the full stack: ingestion pipelines that respect document lifecycle, retrieval graphs that mirror how experts search, and evaluation harnesses that score faithfulness—not just fluency.",
-          "We align with legal and compliance early on retention policies, training boundaries, and logging so generative features launch with documented controls—not retrofitted disclaimers.",
+          "InheritX engineers the full stack: ingestion pipelines that respect document lifecycle, retrieval graphs that mirror how experts search, and evaluation harnesses that score faithfulness, not just fluency.",
+          "We align with legal and compliance early on retention policies, training boundaries, and logging so generative features launch with documented controls, not retrofitted disclaimers.",
         ],
       },
       {
@@ -602,7 +602,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             q: "Do you fine-tune foundation models?",
-            a: "When retrieval and prompting plateau, we evaluate supervised fine-tuning or adapters—always with clear data governance and rollback plans.",
+            a: "When retrieval and prompting plateau, we evaluate supervised fine-tuning or adapters, always with clear data governance and rollback plans.",
           },
           {
             q: "How do you reduce hallucinations?",
@@ -614,7 +614,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             q: "Do you build enterprise code copilots?",
-            a: "Yes—scoped to approved repositories, identity, and change policy. We treat AI SDLC as a governed assistant in your delivery path, not an open internet coder.",
+            a: "Yes, scoped to approved repositories, identity, and change policy. We treat AI SDLC as a governed assistant in your delivery path, not an open internet coder.",
           },
         ],
       },
@@ -632,7 +632,7 @@ export const solutionTopics: TopicPage[] = [
     metadata: {
       title: "Generative AI | InheritX",
       description:
-        "Secure LLM applications for the enterprise—RAG copilots, code copilots / AI SDLC, evaluation harnesses, and private deployment.",
+        "Secure LLM applications for the enterprise, RAG copilots, code copilots / AI SDLC, evaluation harnesses, and private deployment.",
     },
   },
   {
@@ -640,7 +640,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "Computer Vision",
     title: "Perception systems for the physical operating world.",
     description:
-      "Custom CNNs and Vision Transformer models trained on your domain data for real-time detection, anomaly finding, and classification—including edge deployments when data cannot leave the site.",
+      "Custom CNNs and Vision Transformer models trained on your domain data for real-time detection, anomaly finding, and classification, including edge deployments when data cannot leave the site.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: { label: "Manufacturing & logistics", href: "/industries" },
     layout: "capability",
@@ -650,8 +650,8 @@ export const solutionTopics: TopicPage[] = [
         title: "Vision that survives the factory floor",
         body: [
           "Computer Vision pilots often fail in production because training data never captured glare, motion blur, line changeovers, or the long tail of defect morphology.",
-          "InheritX builds perception pipelines with field validation loops: capture protocols, labeling governance, and retraining triggers tied to operator feedback—not static model drops.",
-          "We design for deployment reality—GPU budgets at the edge, latency budgets on high-speed lines, and integration paths into quality hold systems and maintenance ticketing.",
+          "InheritX builds perception pipelines with field validation loops: capture protocols, labeling governance, and retraining triggers tied to operator feedback, not static model drops.",
+          "We design for deployment reality, GPU budgets at the edge, latency budgets on high-speed lines, and integration paths into quality hold systems and maintenance ticketing.",
         ],
       },
       {
@@ -686,7 +686,7 @@ export const solutionTopics: TopicPage[] = [
           {
             step: "04",
             title: "Line integration",
-            copy: "Reject mechanisms, HMI alerts, and data feeds to quality dashboards—coordinated with controls engineers.",
+            copy: "Reject mechanisms, HMI alerts, and data feeds to quality dashboards, coordinated with controls engineers.",
           },
           {
             step: "05",
@@ -721,7 +721,7 @@ export const solutionTopics: TopicPage[] = [
         type: "bullets",
         title: "Edge and on-device AI",
         intro:
-          "When frames cannot leave the line, we package perception to run next to the camera—not only in a cloud GPU pool.",
+          "When frames cannot leave the line, we package perception to run next to the camera, not only in a cloud GPU pool.",
         items: [
           {
             title: "On-device / line-side inference",
@@ -733,11 +733,11 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             title: "Labeling and retraining loops",
-            copy: "Operator overrides feed a governed labeling queue—synthetic or sampled data only where it improves the long tail, not as a standalone product.",
+            copy: "Operator overrides feed a governed labeling queue, synthetic or sampled data only where it improves the long tail, not as a standalone product.",
           },
           {
             title: "Vision stack we actually use",
-            copy: "PyTorch training, OpenCV capture pipelines, and detector families such as YOLO or ViT—chosen for the defect class and SLA, not a logo wall.",
+            copy: "PyTorch training, OpenCV capture pipelines, and detector families such as YOLO or ViT, chosen for the defect class and SLA, not a logo wall.",
           },
         ],
       },
@@ -772,11 +772,11 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             q: "Can vision models coexist with existing AOI systems?",
-            a: "Yes—we often augment legacy inspection with AI on defect classes rules miss, sharing outputs into the same quality workflow.",
+            a: "Yes, we often augment legacy inspection with AI on defect classes rules miss, sharing outputs into the same quality workflow.",
           },
           {
             q: "Is edge AI a separate product?",
-            a: "No. Edge is a deployment topology for the same vision system—used when data residency, bandwidth, or line latency requires on-device inference.",
+            a: "No. Edge is a deployment topology for the same vision system, used when data residency, bandwidth, or line latency requires on-device inference.",
           },
         ],
       },
@@ -794,7 +794,7 @@ export const solutionTopics: TopicPage[] = [
     metadata: {
       title: "Computer Vision | InheritX",
       description:
-        "Production computer vision for inspection, safety, and logistics—edge / on-device inference, MES integration, and retraining loops.",
+        "Production computer vision for inspection, safety, and logistics, edge / on-device inference, MES integration, and retraining loops.",
     },
   },
   {
@@ -802,7 +802,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "AI Transformation",
     title: "From executive mandate to industrialized AI capability.",
     description:
-      "Run structured transformation programs across AI/ML, AI Agents, and AI DevOps—align leadership, stand up architecture, deliver governed pilots, and embed LLMOps so AI scales beyond innovation labs.",
+      "Run structured transformation programs across AI/ML, AI Agents, and AI DevOps, align leadership, stand up architecture, deliver governed pilots, and embed LLMOps so AI scales beyond innovation labs.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: { label: "AI Consulting", href: "/solutions/ai-consulting" },
     layout: "engagement",
@@ -811,12 +811,12 @@ export const solutionTopics: TopicPage[] = [
         type: "steps",
         title: "Transformation waves",
         intro:
-          "Programs typically span multiple waves—each with board-visible outcomes and explicit go/no-go gates.",
+          "Programs typically span multiple waves, each with board-visible outcomes and explicit go/no-go gates.",
         items: [
           {
             step: "01",
             title: "Mandate & portfolio shaping",
-            copy: "Executive workshops to prioritize use cases by value, feasibility, and risk—avoiding unfocused pilot sprawl.",
+            copy: "Executive workshops to prioritize use cases by value, feasibility, and risk, avoiding unfocused pilot sprawl.",
           },
           {
             step: "02",
@@ -844,9 +844,9 @@ export const solutionTopics: TopicPage[] = [
         type: "narrative",
         title: "Transformation that outlasts the steering committee",
         body: [
-          "Many AI programs stall after an initial burst of executive attention—when pilots cannot migrate to shared infrastructure or business owners lack funding models for sustainment.",
+          "Many AI programs stall after an initial burst of executive attention, when pilots cannot migrate to shared infrastructure or business owners lack funding models for sustainment.",
           "InheritX runs transformation as a delivery program, not a strategy deck. We pair transformation leads with architects and engineers who ship the first industrialized capabilities while documenting the path for wave two.",
-          "Success is measured by capabilities in production, adoption by business operators, and a governance rhythm your CIO can defend—not by workshop attendance.",
+          "Success is measured by capabilities in production, adoption by business operators, and a governance rhythm your CIO can defend, not by workshop attendance.",
         ],
       },
       {
@@ -885,7 +885,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             title: "Production pilot capabilities",
-            copy: "Shipped systems with operational runbooks—not prototypes awaiting a future hardening phase.",
+            copy: "Shipped systems with operational runbooks, not prototypes awaiting a future hardening phase.",
           },
           {
             title: "Enablement & change kit",
@@ -901,11 +901,11 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             title: "Eval, safety, and red team gates",
-            copy: "Golden sets and adversarial tests at each wave go/no-go—so autonomy is earned, not assumed after a pilot demo.",
+            copy: "Golden sets and adversarial tests at each wave go/no-go, so autonomy is earned, not assumed after a pilot demo.",
           },
           {
             title: "AI security in the control plane",
-            copy: "Prompt-injection, data-exfiltration, and model-threat cases mapped into identity, DLP, and tool policy—not treated as generic AppSec later.",
+            copy: "Prompt-injection, data-exfiltration, and model-threat cases mapped into identity, DLP, and tool policy, not treated as generic AppSec later.",
           },
           {
             title: "LLMOps promotion path",
@@ -948,7 +948,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             q: "Do you work with existing SI or consulting partners?",
-            a: "Yes. We define clear boundaries—architecture and delivery of AI capabilities versus broader ERP or change programs you already have underway.",
+            a: "Yes. We define clear boundaries, architecture and delivery of AI capabilities versus broader ERP or change programs you already have underway.",
           },
           {
             q: "What if our first pilots failed?",
@@ -960,7 +960,7 @@ export const solutionTopics: TopicPage[] = [
     metadata: {
       title: "AI Transformation | InheritX",
       description:
-        "Enterprise AI transformation from strategy through industrialized capability—eval and security gates, governed pilots, platform foundation, and operating model design.",
+        "Enterprise AI transformation from strategy through industrialized capability, eval and security gates, governed pilots, platform foundation, and operating model design.",
     },
   },
   {
@@ -968,7 +968,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "AI Consulting",
     title: "Architecture, governance, and roadmap design for AI at scale.",
     description:
-      "Engage senior architects for board-ready blueprints—data readiness, model strategy, LLMOps posture, security controls, and sequenced investment before major build spend.",
+      "Engage senior architects for board-ready blueprints, data readiness, model strategy, LLMOps posture, security controls, and sequenced investment before major build spend.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: { label: "Start AI Transformation", href: "/solutions/ai-transformation" },
     layout: "engagement",
@@ -976,7 +976,7 @@ export const solutionTopics: TopicPage[] = [
       {
         type: "matrix",
         title: "Consulting entry points",
-        intro: "Engagements are scoped to decisions you need to make now—not open-ended advisory retainers.",
+        intro: "Engagements are scoped to decisions you need to make now, not open-ended advisory retainers.",
         rows: [
           {
             need: "Board asks for an AI strategy with defensible architecture",
@@ -1001,7 +1001,7 @@ export const solutionTopics: TopicPage[] = [
         title: "Decisions worth getting right before build",
         body: [
           "Enterprise AI failures are often architectural: retrieval without lineage, agents without permission models, or model choices that ignore data residency and cost at scale.",
-          "InheritX consulting engagements produce artifacts your CTO, CISO, and enterprise architecture forum can act on—reference diagrams, control mappings, and phased roadmaps tied to measurable outcomes.",
+          "InheritX consulting engagements produce artifacts your CTO, CISO, and enterprise architecture forum can act on, reference diagrams, control mappings, and phased roadmaps tied to measurable outcomes.",
           "We stay technology-agnostic where appropriate, recommending patterns that fit your estate rather than defaulting to a single vendor stack or open-source religion.",
         ],
       },
@@ -1031,15 +1031,15 @@ export const solutionTopics: TopicPage[] = [
         type: "bullets",
         title: "Risk programs we design before scale",
         intro:
-          "Named for buyers who search these as workstreams—not a parallel consulting brand.",
+          "Named for buyers who search these as workstreams, not a parallel consulting brand.",
         items: [
           {
             title: "AI eval, safety, and red team",
-            copy: "Golden sets, offline/online eval, and adversarial testing so quality and abuse cases are evidence—not a slide on guardrails.",
+            copy: "Golden sets, offline/online eval, and adversarial testing so quality and abuse cases are evidence, not a slide on guardrails.",
           },
           {
             title: "AI security (model threat)",
-            copy: "Prompt injection, data exfiltration, tool abuse, and model-supply risk mapped to identity, DLP, and logging—distinct from classic AppSec checklists.",
+            copy: "Prompt injection, data exfiltration, tool abuse, and model-supply risk mapped to identity, DLP, and logging, distinct from classic AppSec checklists.",
           },
           {
             title: "Responsible AI operating model",
@@ -1047,7 +1047,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             title: "Build-vs-buy for eval and safety tooling",
-            copy: "When to use Langfuse / LangSmith-class observability versus in-estate harnesses—chosen against your data-residency and SRE constraints.",
+            copy: "When to use Langfuse / LangSmith-class observability versus in-estate harnesses, chosen against your data-residency and SRE constraints.",
           },
         ],
       },
@@ -1105,7 +1105,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             q: "Will you recommend we build everything in-house?",
-            a: "No. We map options—build, buy, hybrid—and articulate trade-offs on control, speed, and total cost of ownership for your context.",
+            a: "No. We map options, build, buy, hybrid, and articulate trade-offs on control, speed, and total cost of ownership for your context.",
           },
           {
             q: "Can consulting transition into implementation?",
@@ -1113,7 +1113,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             q: "Is AI Governance a separate product?",
-            a: "No. Governance is the control design for production AI. We publish the pattern as a resource and produce the operating model in consulting—then enforce it in delivery.",
+            a: "No. Governance is the control design for production AI. We publish the pattern as a resource and produce the operating model in consulting, then enforce it in delivery.",
           },
         ],
       },
@@ -1132,7 +1132,7 @@ export const solutionTopics: TopicPage[] = [
     metadata: {
       title: "AI Consulting | InheritX",
       description:
-        "Enterprise AI consulting—reference architecture, eval and red team programs, AI security, LLMOps, and sequenced roadmaps for CTOs and CIOs.",
+        "Enterprise AI consulting, reference architecture, eval and red team programs, AI security, LLMOps, and sequenced roadmaps for CTOs and CIOs.",
     },
   },
   {
@@ -1140,7 +1140,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "Embedded AI Engineering",
     title: "Embedded AI specialists who ship under your standards.",
     description:
-      "Senior ML, LLM, and agentic engineers who join your delivery system—under your architecture, repos, and controls.",
+      "Senior ML, LLM, and agentic engineers who join your delivery system, under your architecture, repos, and controls.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: { label: "Compare Dedicated AI Squads", href: "/solutions/dedicated-ai-squads" },
     layout: "engagement",
@@ -1149,7 +1149,7 @@ export const solutionTopics: TopicPage[] = [
         type: "bullets",
         title: "Roles we embed",
         intro:
-          "Profiles are matched to your stack and delivery phase—not generic full-stack generalists relabeled as AI.",
+          "Profiles are matched to your stack and delivery phase, not generic full-stack generalists relabeled as AI.",
         items: [
           {
             title: "ML & LLM engineers",
@@ -1182,7 +1182,7 @@ export const solutionTopics: TopicPage[] = [
         type: "narrative",
         title: "Capacity without staff-aug theater",
         body: [
-          "Traditional staff augmentation optimizes for headcount and billable hours—not for merged pull requests and production incidents resolved.",
+          "Traditional staff augmentation optimizes for headcount and billable hours, not for merged pull requests and production incidents resolved.",
           "InheritX embeds engineers as contributors to your teams: they join standups, adhere to your branching strategy, and document decisions in your wikis. Success is measured by shipped capabilities and reduced bus factor on critical AI components.",
           "Engagements include explicit knowledge-transfer expectations so internal hires or existing staff can assume ownership as capacity scales.",
         ],
@@ -1199,7 +1199,7 @@ export const solutionTopics: TopicPage[] = [
           {
             step: "02",
             title: "Environment access",
-            copy: "Provision identities, repos, and data sandboxes under your security process—no shadow environments.",
+            copy: "Provision identities, repos, and data sandboxes under your security process, no shadow environments.",
           },
           {
             step: "03",
@@ -1259,11 +1259,11 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             q: "Is this staff augmentation?",
-            a: "No. Embeds are scoped to architecture, evaluation, and production outcomes under your standards—with explicit knowledge transfer. Success is shipped capability, not billable headcount.",
+            a: "No. Embeds are scoped to architecture, evaluation, and production outcomes under your standards, with explicit knowledge transfer. Success is shipped capability, not billable headcount.",
           },
           {
             q: "Do engineers work on-site or remote?",
-            a: "We match your policy—on-site, hybrid, or remote—with time-zone overlap agreed upfront.",
+            a: "We match your policy, on-site, hybrid, or remote, with time-zone overlap agreed upfront.",
           },
           {
             q: "What happens at the end of an embed?",
@@ -1275,7 +1275,7 @@ export const solutionTopics: TopicPage[] = [
     metadata: {
       title: "Embedded AI Engineering | InheritX",
       description:
-        "Embedded senior AI, ML, and agentic engineers for enterprise teams—shipping in your repos and standards with explicit knowledge transfer.",
+        "Embedded senior AI, ML, and agentic engineers for enterprise teams, shipping in your repos and standards with explicit knowledge transfer.",
     },
   },
   {
@@ -1283,7 +1283,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "Dedicated AI Squads",
     title: "Cross-functional pods that own a capability through to production.",
     description:
-      "Stand up dedicated squads—ML, LLMOps, platform, and product delivery—chartered to deliver a defined AI capability from discovery through production operations.",
+      "Stand up dedicated squads, ML, LLMOps, platform, and product delivery, chartered to deliver a defined AI capability from discovery through production operations.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: { label: "View AI Portfolio", href: "/portfolio" },
     layout: "engagement",
@@ -1309,7 +1309,7 @@ export const solutionTopics: TopicPage[] = [
       {
         type: "steps",
         title: "Squad operating rhythm",
-        intro: "Pods run as product teams—not project teams that dissolve after a milestone demo.",
+        intro: "Pods run as product teams, not project teams that dissolve after a milestone demo.",
         items: [
           {
             step: "01",
@@ -1337,7 +1337,7 @@ export const solutionTopics: TopicPage[] = [
         type: "narrative",
         title: "Ownership beats handoff documents",
         body: [
-          "Project-based AI delivery often ends with a knowledge dump and a team disbanded—leaving operations to inherit a system they did not shape.",
+          "Project-based AI delivery often ends with a knowledge dump and a team disbanded, leaving operations to inherit a system they did not shape.",
           "Dedicated AI Squads stay accountable through production stabilization. The same engineers who designed retrieval also tune alerts, respond to early incidents, and refine evaluation suites based on live feedback.",
           "Squads integrate with your governance forums but maintain velocity through a clear charter: one capability, one backlog, one release train.",
         ],
@@ -1348,7 +1348,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             title: "Greenfield agent platform",
-            copy: "First multi-agent workflow for a domain—intake through fulfillment with human gates and audit.",
+            copy: "First multi-agent workflow for a domain, intake through fulfillment with human gates and audit.",
           },
           {
             title: "Enterprise copilot launch",
@@ -1379,7 +1379,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             q: "How is a squad different from hiring individual engineers?",
-            a: "Squads include delivery leadership and a balanced skill mix to own outcomes—not just staff a backlog item.",
+            a: "Squads include delivery leadership and a balanced skill mix to own outcomes, not just staff a backlog item.",
           },
           {
             q: "Who prioritizes the squad backlog?",
@@ -1406,7 +1406,7 @@ export const solutionTopics: TopicPage[] = [
     metadata: {
       title: "Dedicated AI Squads | InheritX",
       description:
-        "Cross-functional AI delivery pods owning enterprise capabilities from discovery to production—ML, LLMOps, platform, and product in one charter.",
+        "Cross-functional AI delivery pods owning enterprise capabilities from discovery to production, ML, LLMOps, platform, and product in one charter.",
     },
   },
   {
@@ -1414,7 +1414,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "Voice AI",
     title: "Real-time conversational AI on the same agent control plane.",
     description:
-      "Telephony and live-audio assistants with barge-in, latency budgets, and the same MCP tools, human gates, and audit trail as text agents—not a separate chatbot stack.",
+      "Telephony and live-audio assistants with barge-in, latency budgets, and the same MCP tools, human gates, and audit trail as text agents, not a separate chatbot stack.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: { label: "View AI Agents", href: "/solutions/ai-agents" },
     layout: "capability",
@@ -1430,11 +1430,11 @@ export const solutionTopics: TopicPage[] = [
       },
       {
         type: "narrative",
-        title: "Voice is a channel—not a second product",
+        title: "Voice is a channel, not a second product",
         body: [
-          "Enterprises asking for “voice AI” usually need an agent that can listen, speak, call tools, and escalate—under the same policy as their text workers. A standalone IVR demo that cannot share memory, credentials, or eval suites becomes another silo.",
+          "Enterprises asking for “voice AI” usually need an agent that can listen, speak, call tools, and escalate, under the same policy as their text workers. A standalone IVR demo that cannot share memory, credentials, or eval suites becomes another silo.",
           "InheritX attaches real-time and telephony channels to the agent runtime you already review: typed tool contracts, approval gates on irreversible actions, and step-level logs operators can replay.",
-          "We add voice when the workflow actually needs a phone or live-audio path—service desks, intake, status, and exception handling—not as a demo overlay on a text bot.",
+          "We add voice when the workflow actually needs a phone or live-audio path, service desks, intake, status, and exception handling, not as a demo overlay on a text bot.",
         ],
       },
       {
@@ -1447,7 +1447,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             title: "Same tools as text agents",
-            copy: "MCP-ready or native tool contracts—CRM, ticketing, knowledge retrieval—scoped per persona, not unbounded computer-use on a call.",
+            copy: "MCP-ready or native tool contracts, CRM, ticketing, knowledge retrieval, scoped per persona, not unbounded computer-use on a call.",
           },
           {
             title: "Human gates on the live path",
@@ -1466,7 +1466,7 @@ export const solutionTopics: TopicPage[] = [
           {
             step: "01",
             title: "Workflow and risk class",
-            copy: "Map intents, systems, and which utterances may never auto-commit—before choosing a speech vendor.",
+            copy: "Map intents, systems, and which utterances may never auto-commit, before choosing a speech vendor.",
           },
           {
             step: "02",
@@ -1495,7 +1495,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             need: "Internal ops that already run as text agents",
-            approach: "Add a voice channel to the existing runtime—do not fork policy",
+            approach: "Add a voice channel to the existing runtime, do not fork policy",
           },
           {
             need: "Regulated customer commitments",
@@ -1540,7 +1540,7 @@ export const solutionTopics: TopicPage[] = [
     metadata: {
       title: "Voice AI | InheritX",
       description:
-        "Enterprise voice and real-time assistants on the same agent control plane—telephony, barge-in, MCP tools, human gates, and evaluation before you scale call minutes.",
+        "Enterprise voice and real-time assistants on the same agent control plane, telephony, barge-in, MCP tools, human gates, and evaluation before you scale call minutes.",
     },
   },
   {
@@ -1548,7 +1548,7 @@ export const solutionTopics: TopicPage[] = [
     eyebrow: "Document AI",
     title: "Intelligent document processing inside your security boundary.",
     description:
-      "Ingestion, classification, extraction, and reconciliation for contracts, claims, clinical packets, and back-office files—with human review on low confidence and IP you own.",
+      "Ingestion, classification, extraction, and reconciliation for contracts, claims, clinical packets, and back-office files, with human review on low confidence and IP you own.",
     primaryCta: { label: "Discuss this capability", href: contactHref("strategy") },
     secondaryCta: {
       label: "View Enterprise AI",
@@ -1571,7 +1571,7 @@ export const solutionTopics: TopicPage[] = [
         body: [
           "Buyers search “Document AI” and “IDP” when packet volume, exception rates, or audit requirements have outgrown shared inboxes and generic OCR. The failure mode is a point tool that cannot join your retrieval fabric, identity, or case systems.",
           "InheritX delivers document intelligence as a service of the enterprise AI platform: ingestion that respects document lifecycle, extraction with citation to page and span, and routing into ERP, CRM, EHR, or claims systems you already run.",
-          "Human review stays on the path where confidence is low or the field class is irreversible—so straight-through processing is earned, not assumed.",
+          "Human review stays on the path where confidence is low or the field class is irreversible, so straight-through processing is earned, not assumed.",
         ],
       },
       {
@@ -1580,7 +1580,7 @@ export const solutionTopics: TopicPage[] = [
         items: [
           {
             title: "Ingestion and classification",
-            copy: "Packets split, typed, and routed—contracts, invoices, clinical notes, claims, KYC—before any extraction model runs.",
+            copy: "Packets split, typed, and routed, contracts, invoices, clinical notes, claims, KYC, before any extraction model runs.",
           },
           {
             title: "Extraction with evidence",
@@ -1592,7 +1592,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             title: "Handoff into systems of record",
-            copy: "Write-back through approved APIs—not a parallel document silo your teams must re-key.",
+            copy: "Write-back through approved APIs, not a parallel document silo your teams must re-key.",
           },
         ],
       },
@@ -1632,7 +1632,7 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             need: "Employees asking questions over the same corpus",
-            approach: "Pair with AI Search / RAG on the enterprise platform—not a second index",
+            approach: "Pair with AI Search / RAG on the enterprise platform, not a second index",
           },
           {
             need: "Plant labels, waybills, or high-speed capture",
@@ -1654,11 +1654,11 @@ export const solutionTopics: TopicPage[] = [
           },
           {
             q: "Do you replace our existing OCR vendor?",
-            a: "We keep capture engines that already work and replace the fragile last mile—classification, extraction contracts, review, and write-back.",
+            a: "We keep capture engines that already work and replace the fragile last mile, classification, extraction contracts, review, and write-back.",
           },
           {
             q: "Can extraction models be fine-tuned on our packets?",
-            a: "Yes, when generic extraction plateaus—with data governance, eval gates, and rollback. Fine-tunes trained for you transfer with the rest of the IP.",
+            a: "Yes, when generic extraction plateaus, with data governance, eval gates, and rollback. Fine-tunes trained for you transfer with the rest of the IP.",
           },
         ],
       },
@@ -1677,7 +1677,7 @@ export const solutionTopics: TopicPage[] = [
     metadata: {
       title: "Document AI | InheritX",
       description:
-        "Intelligent document processing for enterprise packets—classification, extraction with evidence, human review, and write-back inside your VPC.",
+        "Intelligent document processing for enterprise packets, classification, extraction with evidence, human review, and write-back inside your VPC.",
     },
   },
 ];

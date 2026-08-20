@@ -83,7 +83,7 @@ export function ProcurementExperience({
                 }
               >
                 Formal SOC/ISO marks appear here only when evidenced. Until then,
-                use the Security FAQ and the Diligence Pack under NDA—we share
+                use the Security FAQ and the Diligence Pack under NDA, we share
                 attestation status factually during vendor review.
               </p>
             </div>
@@ -107,7 +107,7 @@ export function ProcurementExperience({
                     : "mt-2 text-xs text-ink/45"
                 }
               >
-                Derived from published case studies—not invented client names.
+                Derived from published case studies, not invented client names.
               </p>
               <ul className="mt-4 space-y-3">
                 {anonymousEngagementClasses.map((item) => (

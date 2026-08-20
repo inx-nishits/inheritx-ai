@@ -80,7 +80,7 @@ export function TechStack() {
           </div>
           <Reveal>
             <p className="max-w-md text-base leading-relaxed text-white/50 lg:justify-self-end">
-              Six infrastructure layers—from models and agents through cloud
+              Six infrastructure layers, from models and agents through cloud
               estate and AI DevOps operating discipline.
             </p>
           </Reveal>

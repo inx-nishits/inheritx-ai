@@ -1,5 +1,7 @@
 /**
- * Enterprise testimonials — publish only with written customer approval.
+ * Enterprise testimonials — publish named people/companies only with
+ * written customer approval stored outside this file.
+ * Until then, quotes are anonymized (role + sector).
  */
 
 export type Testimonial = {
@@ -24,11 +26,9 @@ export const testimonials: Testimonial[] = [
   {
     id: "t-01",
     quote:
-      "InheritX helped us move from AI pilots to a governed production system our security team could defend—without locking us into a black-box platform.",
-    name: "Daniel Okonkwo",
-    title: "Chief Technology Officer",
-    company: "Northline Financial",
-    avatarSrc: "/images/testimonials/avatar-01.png",
+      "InheritX helped us move from AI pilots to a governed production system our security team could defend, without locking us into a black-box platform.",
+    name: "Chief Technology Officer",
+    company: "Financial services · anonymized",
     caseStudyHref: "/case-studies",
     caseStudyLabel: "View related work",
     featured: true,
@@ -39,11 +39,9 @@ export const testimonials: Testimonial[] = [
   {
     id: "t-02",
     quote:
-      "The engagement was architect-led end-to-end. We got clarity on RAG, evaluation, and private-cloud deployment—then a path our board could fund.",
-    name: "Priya Mehta",
-    title: "Head of AI",
-    company: "Aether Health Systems",
-    avatarSrc: "/images/testimonials/avatar-02.png",
+      "The engagement was architect-led end-to-end. We got clarity on RAG, evaluation, and private-cloud deployment, then a path our board could fund.",
+    name: "Head of AI",
+    company: "Healthcare · anonymized",
     caseStudyHref: "/case-studies",
     caseStudyLabel: "View related work",
     order: 2,
@@ -53,11 +51,9 @@ export const testimonials: Testimonial[] = [
   {
     id: "t-03",
     quote:
-      "What mattered most was ownership. Code, fine-tunes, and runbooks transferred cleanly—so we could operate the capability ourselves after handover.",
-    name: "Marcus Ellison",
-    title: "VP of Engineering",
-    company: "Cascade Logistics Group",
-    avatarSrc: "/images/testimonials/avatar-03.png",
+      "What mattered most was ownership. Code, fine-tunes, and runbooks transferred cleanly, so we could operate the capability ourselves after handover.",
+    name: "VP of Engineering",
+    company: "Logistics · anonymized",
     order: 3,
     approved: true,
     published: true,
@@ -66,10 +62,8 @@ export const testimonials: Testimonial[] = [
     id: "t-04",
     quote:
       "Their agentic workflows cut the noise in our exception queues. Humans stay on risk; agents handle the routine assembly with a full audit trail.",
-    name: "Elena Varga",
-    title: "Chief Information Officer",
-    company: "Meridian Insurance",
-    avatarSrc: "/images/testimonials/avatar-04.png",
+    name: "Chief Information Officer",
+    company: "Insurance · anonymized",
     caseStudyHref: "/case-studies",
     caseStudyLabel: "View related work",
     order: 4,
@@ -80,10 +74,8 @@ export const testimonials: Testimonial[] = [
     id: "t-05",
     quote:
       "We needed LLMOps discipline, not another demo. Observability, evaluation gates, and VPC deployment were treated as product requirements from day one.",
-    name: "Kenji Nakamura",
-    title: "Director of Platform Engineering",
-    company: "Vertex Manufacturing",
-    avatarSrc: "/images/testimonials/avatar-05.png",
+    name: "Director of Platform Engineering",
+    company: "Manufacturing · anonymized",
     order: 5,
     approved: true,
     published: true,
@@ -91,11 +83,9 @@ export const testimonials: Testimonial[] = [
   {
     id: "t-06",
     quote:
-      "Computer Vision quality gates finally stuck in production. The difference was the operating model—HITL, secure pipelines, and clear ownership at handover.",
-    name: "Amara Brooks",
-    title: "VP of Digital Transformation",
-    company: "Harbor Retail Co.",
-    avatarSrc: "/images/testimonials/avatar-06.png",
+      "Computer Vision quality gates finally stuck in production. The difference was the operating model, HITL, secure pipelines, and clear ownership at handover.",
+    name: "VP of Digital Transformation",
+    company: "Retail · anonymized",
     caseStudyHref: "/case-studies",
     caseStudyLabel: "View related work",
     order: 6,
@@ -115,14 +105,18 @@ function isRenderable(item: Testimonial): boolean {
 
 function sortTestimonials(items: Testimonial[]): Testimonial[] {
   return [...items].sort((a, b) => {
-    const orderA = a.order ?? 999;
-    const orderB = b.order ?? 999;
+    const orderA = itemOrder(a);
+    const orderB = itemOrder(b);
     if (orderA !== orderB) return orderA - orderB;
     if (Boolean(a.featured) !== Boolean(b.featured)) {
       return a.featured ? -1 : 1;
     }
     return a.id.localeCompare(b.id);
   });
+}
+
+function itemOrder(item: Testimonial) {
+  return item.order ?? 999;
 }
 
 export function getPublishedTestimonials(

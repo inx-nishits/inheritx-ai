@@ -4,7 +4,7 @@ import { contactHref } from "@/lib/cta";
 
 export function InsightsHero({
   title = "Perspectives from production enterprise AI.",
-  description = "Perspectives on agentic systems, generative AI, LLMOps, governance, and production architecture—for Fortune 500 technical and executive buyers.",
+  description = "Perspectives on agentic systems, generative AI, LLMOps, governance, and production architecture, for Fortune 500 technical and executive buyers.",
 }: {
   title?: string;
   description?: string;

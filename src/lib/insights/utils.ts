@@ -39,7 +39,7 @@ export function stripHtml(html: string | undefined | null): string {
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/gi, " ")
     .replace(/&#8211;/g, "–")
-    .replace(/&#8212;/g, "—")
+    .replace(/&#8212;/g, ", ")
     .replace(/&amp;/g, "&")
     .replace(/&hellip;/g, "…")
     .replace(/\s+/g, " ")

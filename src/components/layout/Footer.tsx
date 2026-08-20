@@ -72,7 +72,7 @@ export function Footer() {
             </p>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/45">
               InheritX builds agents, RAG platforms, LLMOps, and vision systems
-              for regulated enterprises—then transfers operability to your team.
+              for regulated enterprises, then transfers operability to your team.
             </p>
 
             {/* Social icons — brand colours */}

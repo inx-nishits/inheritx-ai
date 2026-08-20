@@ -25,7 +25,7 @@ export function PortfolioCapabilities() {
           />
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/50">
             Models, agentic orchestration, retrieval, and cloud estates we
-            compose for private, production-grade systems—not demo stacks.
+            compose for private, production-grade systems, not demo stacks.
           </p>
         </div>
 
@@ -122,7 +122,7 @@ export function PortfolioCTA() {
             Let&apos;s industrialize your next AI mandate
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-white/55">
-            From strategy to agentic production systems—we design AI/ML,
+            From strategy to agentic production systems, we design AI/ML,
             AI Agents, and AI DevOps platforms enterprises own.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

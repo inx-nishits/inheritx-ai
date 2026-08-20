@@ -45,7 +45,7 @@ const geistMono = Geist_Mono({
 
 const defaultTitle = "InheritX | AI-native enterprise partner";
 const defaultDescription =
-  "InheritX is an AI-native enterprise partner—production AI in your VPC, full IP ownership, and systems your teams operate after handover.";
+  "InheritX builds production enterprise AI you own, deployed in your environment, with full IP handover so your teams can operate the system.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -90,7 +90,7 @@ const organizationJsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/images/actual/actual-lead-capabilities.jpg`,
   description:
-    "InheritX is an AI-native enterprise partner—production AI in your VPC, full IP ownership, and systems your teams operate after handover.",
+    "InheritX is an AI-native enterprise partner, production AI in your VPC, full IP ownership, and systems your teams operate after handover.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",

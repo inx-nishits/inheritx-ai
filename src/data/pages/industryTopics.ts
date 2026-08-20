@@ -10,7 +10,7 @@ export const industryTopics: TopicPage[] = [
     eyebrow: "Healthcare",
     title: "Clinical intelligence without compromising the chart.",
     description:
-      "InheritX builds governed AI for health systems—documentation assistants, retrieval over approved clinical knowledge, and intake automation that respects HIPAA, audit trails, and clinician judgment.",
+      "InheritX builds governed AI for health systems, documentation assistants, retrieval over approved clinical knowledge, and intake automation that respects HIPAA, audit trails, and clinician judgment.",
     primaryCta: { label: "Discuss healthcare AI", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "industry",
@@ -25,9 +25,9 @@ export const industryTopics: TopicPage[] = [
         type: "narrative",
         title: "Where care operations break down",
         body: [
-          "Clinicians spend disproportionate time in the EHR—charting, searching policies, and chasing prior authorization—while patient-facing work suffers. Knowledge lives in PDFs, order sets, and siloed repositories that generic chat tools cannot safely surface.",
+          "Clinicians spend disproportionate time in the EHR, charting, searching policies, and chasing prior authorization, while patient-facing work suffers. Knowledge lives in PDFs, order sets, and siloed repositories that generic chat tools cannot safely surface.",
           "Health systems need AI that accelerates documentation and routing without hallucinating clinical guidance or bypassing privacy controls. Every answer must be traceable, every action reversible, and every high-risk recommendation escalated to a licensed professional.",
-          "InheritX designs for private estates, clinician-in-the-loop gates, and audit-friendly traces—using HIPAA-ready architecture patterns where the workload requires them, without overclaiming certifications we have not earned.",
+          "InheritX designs for private estates, clinician-in-the-loop gates, and audit-friendly traces, using HIPAA-ready architecture patterns where the workload requires them, without overclaiming certifications we have not earned.",
         ],
       },
       {
@@ -43,7 +43,7 @@ export const industryTopics: TopicPage[] = [
         type: "bullets",
         title: "AI plays that hold up in a chart review",
         intro:
-          "We design for the workflows that actually consume clinician time—not demo chatbots disconnected from the EHR.",
+          "We design for the workflows that actually consume clinician time, not demo chatbots disconnected from the EHR.",
         items: [
           {
             title: "Clinical documentation assistants",
@@ -51,7 +51,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             title: "Governed knowledge retrieval",
-            copy: "Generative search over approved clinical policies, formularies, and internal protocols—with citations, not guesses.",
+            copy: "Generative search over approved clinical policies, formularies, and internal protocols, with citations, not guesses.",
           },
           {
             title: "Prior-auth and intake agents",
@@ -90,7 +90,7 @@ export const industryTopics: TopicPage[] = [
         type: "steps",
         title: "How we deploy in a health system",
         intro:
-          "Clinical AI requires staged validation—starting where risk is bounded and expanding with evidence.",
+          "Clinical AI requires staged validation, starting where risk is bounded and expanding with evidence.",
         items: [
           {
             step: "01",
@@ -110,7 +110,7 @@ export const industryTopics: TopicPage[] = [
           {
             step: "04",
             title: "Industrialize and transfer",
-            copy: "Integrate with EHR workflows, train operational teams, and transfer IP—you own the capability.",
+            copy: "Integrate with EHR workflows, train operational teams, and transfer IP, you own the capability.",
           },
         ],
       },
@@ -137,7 +137,7 @@ export const industryTopics: TopicPage[] = [
         items: [
           {
             q: "Can this run entirely inside our cloud?",
-            a: "Yes. We deploy private model endpoints, retrieval, and agent orchestration in your AWS, Azure, or GCP estate—no patient data sent to public APIs without explicit architecture approval.",
+            a: "Yes. We deploy private model endpoints, retrieval, and agent orchestration in your AWS, Azure, or GCP estate, no patient data sent to public APIs without explicit architecture approval.",
           },
           {
             q: "How do you prevent hallucinated clinical guidance?",
@@ -145,7 +145,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             q: "Will clinicians actually use it?",
-            a: "Adoption follows workflow fit. We embed in existing EHR and authorization flows, measure time-to-complete on real tasks, and iterate with frontline feedback—not generic chat UX.",
+            a: "Adoption follows workflow fit. We embed in existing EHR and authorization flows, measure time-to-complete on real tasks, and iterate with frontline feedback, not generic chat UX.",
           },
         ],
       },
@@ -166,7 +166,7 @@ export const industryTopics: TopicPage[] = [
   {
     slug: "finance",
     eyebrow: "Finance",
-    title: "Risk decisions at institutional scale—with explainability built in.",
+    title: "Risk decisions at institutional scale, with explainability built in.",
     description:
       "From fraud triage to underwriting copilots, InheritX delivers multi-agent systems and governed generative AI for banks and asset managers who must explain every recommendation to regulators and boards.",
     primaryCta: { label: "Discuss financial services AI", href: contactHref("strategy") },
@@ -184,7 +184,7 @@ export const industryTopics: TopicPage[] = [
         title: "Institutional constraints come first",
         body: [
           "Financial institutions cannot treat AI as an unverifiable assistant. Fraud, underwriting, and servicing decisions must be attributable, policy-bound, and deployable inside private estates.",
-          "InheritX designs multi-agent and generative systems with traces, human escalation on high-risk actions, and ownership at handover—so speed does not trade away auditability.",
+          "InheritX designs multi-agent and generative systems with traces, human escalation on high-risk actions, and ownership at handover, so speed does not trade away auditability.",
         ],
       },
       {
@@ -200,7 +200,7 @@ export const industryTopics: TopicPage[] = [
         type: "steps",
         title: "From alert storm to governed resolution",
         intro:
-          "Financial operations AI must connect signals to action across CRM, core banking, and document stores—not sit in a standalone chat window.",
+          "Financial operations AI must connect signals to action across CRM, core banking, and document stores, not sit in a standalone chat window.",
         items: [
           {
             step: "01",
@@ -229,7 +229,7 @@ export const industryTopics: TopicPage[] = [
         title: "Why generic AI fails in regulated finance",
         body: [
           "Alert fatigue buries analysts in false positives while genuine risk signals wait in queue. Single LLM chatbots can summarize a case but cannot orchestrate multi-step work across permissioned systems without creating control gaps.",
-          "Regulators and model risk teams demand explainability—not eloquent prose, but reconstructable decision paths. InheritX builds agent workforces where tool calls are scoped, policy checks are mandatory, and humans remain accountable for irreversible actions.",
+          "Regulators and model risk teams demand explainability, not eloquent prose, but reconstructable decision paths. InheritX builds agent workforces where tool calls are scoped, policy checks are mandatory, and humans remain accountable for irreversible actions.",
         ],
       },
       {
@@ -239,7 +239,7 @@ export const industryTopics: TopicPage[] = [
         leftBody: [
           "Cases scattered across CRM, core banking, and document repositories",
           "First-pass review dominated by repetitive assembly work",
-          "No reliable way to prove what an AI system did—or why",
+          "No reliable way to prove what an AI system did, or why",
         ],
         rightTitle: "Target operating model",
         rightItems: [
@@ -259,7 +259,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             title: "Underwriting and credit copilots",
-            copy: "Generative assistants that summarize financials, flag covenant gaps, and draft memos—never auto-approving credit.",
+            copy: "Generative assistants that summarize financials, flag covenant gaps, and draft memos, never auto-approving credit.",
           },
           {
             title: "Policy-aware decision support",
@@ -310,7 +310,7 @@ export const industryTopics: TopicPage[] = [
         items: [
           {
             q: "How do you support model risk management?",
-            a: "We deliver evaluation harnesses, documented decision traces, and regression suites aligned to your MRM framework. Agents are designed for reconstructability—not opaque end-to-end automation.",
+            a: "We deliver evaluation harnesses, documented decision traces, and regression suites aligned to your MRM framework. Agents are designed for reconstructability, not opaque end-to-end automation.",
           },
           {
             q: "Can agents integrate with our core systems?",
@@ -327,9 +327,9 @@ export const industryTopics: TopicPage[] = [
   {
     slug: "retail",
     eyebrow: "Retail",
-    title: "Demand sensing and service at scale—without merchandising guesswork.",
+    title: "Demand sensing and service at scale, without merchandising guesswork.",
     description:
-      "Retail leaders use InheritX for demand intelligence, support command agents, and assortment copilots that connect to your commerce stack—with governance over customer data and brand voice.",
+      "Retail leaders use InheritX for demand intelligence, support command agents, and assortment copilots that connect to your commerce stack, with governance over customer data and brand voice.",
     primaryCta: { label: "Discuss retail AI", href: contactHref("strategy") },
     secondaryCta: { label: "View case studies", href: "/case-studies" },
     layout: "industry",
@@ -348,7 +348,7 @@ export const industryTopics: TopicPage[] = [
         items: [
           {
             title: "Volatile demand patterns",
-            copy: "Forecasting and sensing models that ingest POS, web, and external signals—with human override on assortment calls.",
+            copy: "Forecasting and sensing models that ingest POS, web, and external signals, with human override on assortment calls.",
           },
           {
             title: "Support volume spikes",
@@ -369,7 +369,7 @@ export const industryTopics: TopicPage[] = [
         title: "Commerce AI that survives peak season",
         body: [
           "Retail operations run on thin margins and unforgiving SLAs. A chatbot that hallucinates return policies during Black Friday creates more cost than it saves. Personalization engines disconnected from inventory reality erode customer trust.",
-          "InheritX connects intelligence to your OMS, CRM, and catalog systems. Agents handle high-volume, policy-bounded interactions. Generative tools assist merchants and support leads—with citations to internal playbooks, not improvised answers.",
+          "InheritX connects intelligence to your OMS, CRM, and catalog systems. Agents handle high-volume, policy-bounded interactions. Generative tools assist merchants and support leads, with citations to internal playbooks, not improvised answers.",
         ],
       },
       {
@@ -441,7 +441,7 @@ export const industryTopics: TopicPage[] = [
         rightTitle: "Operations and merchandising",
         rightItems: [
           "Demand and inventory sensing dashboards with generative summaries",
-          "Assortment copilots for merchant review—not autonomous buying",
+          "Assortment copilots for merchant review, not autonomous buying",
           "Exception routing for supply chain and fulfillment disruptions",
           "Audit trails on every customer-facing agent response",
         ],
@@ -452,7 +452,7 @@ export const industryTopics: TopicPage[] = [
         items: [
           {
             q: "Will AI agents replace our contact center?",
-            a: "Agents absorb routine, policy-bounded volume so specialists handle disputes, VIP cases, and complex exceptions. We design for augmentation with clear escalation—not unattended automation on sensitive intents.",
+            a: "Agents absorb routine, policy-bounded volume so specialists handle disputes, VIP cases, and complex exceptions. We design for augmentation with clear escalation, not unattended automation on sensitive intents.",
           },
           {
             q: "How do you protect customer data?",
@@ -460,7 +460,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             q: "Can this integrate with Shopify, Salesforce, or custom stacks?",
-            a: "Yes. We integrate via your commerce APIs, CRM, and data warehouse—agents call approved tools rather than scraping public web data.",
+            a: "Yes. We integrate via your commerce APIs, CRM, and data warehouse, agents call approved tools rather than scraping public web data.",
           },
         ],
       },
@@ -480,9 +480,9 @@ export const industryTopics: TopicPage[] = [
   {
     slug: "manufacturing",
     eyebrow: "Manufacturing",
-    title: "Quality and uptime on the line—perception plus orchestration.",
+    title: "Quality and uptime on the line, perception plus orchestration.",
     description:
-      "Edge computer vision, predictive maintenance agents, and operator feedback loops for plants where missed defects and unplanned downtime carry immediate cost.",
+      "Capability page: edge computer vision, predictive maintenance agents, and operator feedback loops for plants where missed defects and unplanned downtime carry immediate cost. Public case studies in this sector are not yet published, we share architecture patterns and related production work.",
     primaryCta: { label: "Discuss manufacturing AI", href: contactHref("strategy") },
     secondaryCta: { label: "View Computer Vision", href: "/solutions/computer-vision" },
     layout: "industry",
@@ -498,7 +498,7 @@ export const industryTopics: TopicPage[] = [
         title: "Plant constraints come first",
         body: [
           "Manufacturers cannot accept vision or agent systems that invent defects, miss safety-critical events, or sit outside MES and quality processes. Latency, OT/IT boundaries, and change control matter as much as model accuracy.",
-          "InheritX designs edge perception and maintenance agents with evidence trails, operator feedback loops, and drift monitoring—so a successful pilot line can industrialize without becoming shadow IT.",
+          "InheritX designs edge perception and maintenance agents with evidence trails, operator feedback loops, and drift monitoring, so a successful pilot line can industrialize without becoming shadow IT.",
         ],
       },
       {
@@ -508,7 +508,7 @@ export const industryTopics: TopicPage[] = [
         leftBody: [
           "Edge vision models detect micro-defects at production speed",
           "Low-latency inference on approved hardware profiles",
-          "Operator alerts with image evidence—not black-box scores alone",
+          "Operator alerts with image evidence, not black-box scores alone",
         ],
         rightTitle: "Above the line",
         rightItems: [
@@ -569,7 +569,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             title: "Operator assistance copilots",
-            copy: "Generative retrieval over SOPs, manuals, and tribal knowledge—cited, not invented.",
+            copy: "Generative retrieval over SOPs, manuals, and tribal knowledge, cited, not invented.",
           },
           {
             title: "Quality feedback loops",
@@ -582,7 +582,7 @@ export const industryTopics: TopicPage[] = [
         title: "Why disconnected plant AI fails",
         body: [
           "A vision model that flags everything erodes operator trust within weeks. Cloud-only inference adds latency that production lines cannot tolerate. Predictive maintenance dashboards that ignore work-order reality become shelfware.",
-          "InheritX designs for the full loop: edge perception, enterprise orchestration, and human feedback from quality and maintenance teams. Integrations respect OT boundaries and security policies—not blanket cloud connectivity.",
+          "InheritX designs for the full loop: edge perception, enterprise orchestration, and human feedback from quality and maintenance teams. Integrations respect OT boundaries and security policies, not blanket cloud connectivity.",
         ],
       },
       {
@@ -628,11 +628,11 @@ export const industryTopics: TopicPage[] = [
           },
           {
             q: "How do you handle model drift after line changes?",
-            a: "We implement drift monitoring, operator feedback capture, and governed retraining pipelines—with quality sign-off before new models reach production.",
+            a: "We implement drift monitoring, operator feedback capture, and governed retraining pipelines, with quality sign-off before new models reach production.",
           },
           {
             q: "Do you integrate with our MES or SCADA?",
-            a: "We connect through approved interfaces and respect OT segmentation. Agents read telemetry and work orders via scoped integrations—not ad-hoc plant floor connectivity.",
+            a: "We connect through approved interfaces and respect OT segmentation. Agents read telemetry and work orders via scoped integrations, not ad-hoc plant floor connectivity.",
           },
         ],
       },
@@ -641,11 +641,11 @@ export const industryTopics: TopicPage[] = [
   {
     slug: "insurance",
     eyebrow: "Insurance",
-    title: "Claims speed with control—policy-grounded from first notice.",
+    title: "Claims speed with control, policy-grounded from first notice.",
     description:
-      "Claims acceleration agents, citation-backed knowledge fabric, and underwriting assist for carriers and MGAs who must move faster without inconsistent policy application.",
+      "Capability page: claims acceleration agents, citation-backed knowledge fabric, and underwriting assist for carriers and MGAs. Public insurance case studies are not yet published, related agent patterns appear in finance operations work.",
     primaryCta: { label: "Discuss insurance AI", href: contactHref("strategy") },
-    secondaryCta: { label: "View case studies", href: "/case-studies" },
+    secondaryCta: { label: "View AI Agents", href: "/solutions/ai-agents" },
     layout: "industry",
     image: "/images/actual/actual-insurance.jpg",
     metadata: {
@@ -657,7 +657,7 @@ export const industryTopics: TopicPage[] = [
       {
         type: "matrix",
         title: "Insurance operating pressures",
-        intro: "Each function has different risk tolerance—AI must match the control posture of the workflow it touches.",
+        intro: "Each function has different risk tolerance, AI must match the control posture of the workflow it touches.",
         rows: [
           {
             need: "Claims adjusters buried in document assembly",
@@ -669,7 +669,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             need: "Underwriters lack time for complex submissions",
-            approach: "Copilots that summarize submissions and flag gaps—never auto-binding risk",
+            approach: "Copilots that summarize submissions and flag gaps, never auto-binding risk",
           },
           {
             need: "Regulators question AI in claims decisions",
@@ -682,7 +682,7 @@ export const industryTopics: TopicPage[] = [
         title: "The claims and underwriting gap",
         body: [
           "Manual claims handling creates bottlenecks that erode policyholder experience. At the same time, adjusters cannot trust generic chat tools that invent coverage interpretations. Underwriters face submission volume with fragmented guidance across product lines and states.",
-          "InheritX builds agents and retrieval systems grounded in your policy corpus. Acceleration happens in assembly, routing, and first-pass analysis—licensed professionals retain authority over coverage determinations and bind decisions.",
+          "InheritX builds agents and retrieval systems grounded in your policy corpus. Acceleration happens in assembly, routing, and first-pass analysis, licensed professionals retain authority over coverage determinations and bind decisions.",
         ],
       },
       {
@@ -691,7 +691,7 @@ export const industryTopics: TopicPage[] = [
         items: [
           {
             title: "Claims acceleration agents",
-            copy: "Multi-step workflows for document intake, damage assessment support, and reserve drafting—with adjuster approval gates.",
+            copy: "Multi-step workflows for document intake, damage assessment support, and reserve drafting, with adjuster approval gates.",
           },
           {
             title: "Policy knowledge fabric",
@@ -766,7 +766,7 @@ export const industryTopics: TopicPage[] = [
         items: [
           {
             q: "Can AI auto-approve claims?",
-            a: "We design for acceleration, not unattended adjudication on complex claims. Straight-through processing may apply only where you explicitly define low-risk, rules-bound scenarios—with full audit trails.",
+            a: "We design for acceleration, not unattended adjudication on complex claims. Straight-through processing may apply only where you explicitly define low-risk, rules-bound scenarios, with full audit trails.",
           },
           {
             q: "How do you handle state-specific policy variations?",
@@ -774,7 +774,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             q: "Will this pass regulatory examination?",
-            a: "We document data flows, decision traces, and human oversight models for your compliance team. Architecture aligns to your governance framework—we do not substitute for your regulatory counsel.",
+            a: "We document data flows, decision traces, and human oversight models for your compliance team. Architecture aligns to your governance framework, we do not substitute for your regulatory counsel.",
           },
         ],
       },
@@ -811,7 +811,7 @@ export const industryTopics: TopicPage[] = [
         type: "steps",
         title: "Exception handling from document to resolution",
         intro:
-          "Logistics exceptions cascade—AI must connect paperwork, tracking, and carrier communication in one governed workflow.",
+          "Logistics exceptions cascade, AI must connect paperwork, tracking, and carrier communication in one governed workflow.",
         items: [
           {
             step: "01",
@@ -841,7 +841,7 @@ export const industryTopics: TopicPage[] = [
         items: [
           {
             title: "Document intelligence",
-            copy: "OCR plus generative validation for bills of lading, customs forms, and invoices—integrated with TMS and WMS.",
+            copy: "OCR plus generative validation for bills of lading, customs forms, and invoices, integrated with TMS and WMS.",
           },
           {
             title: "Exception-handling agents",
@@ -853,7 +853,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             title: "Forecasting and capacity models",
-            copy: "Demand and lane forecasting with planner override—not autonomous network reconfiguration.",
+            copy: "Demand and lane forecasting with planner override, not autonomous network reconfiguration.",
           },
         ],
       },
@@ -871,14 +871,14 @@ export const industryTopics: TopicPage[] = [
           "Real-time exception triage with carrier and customer context",
           "Playbook-driven agent recommendations for reroute and communication",
           "Planner approval on capacity and cost-impacting changes",
-          "Integration with control tower dashboards—not standalone bots",
+          "Integration with control tower dashboards, not standalone bots",
         ],
       },
       {
         type: "narrative",
         title: "Why logistics AI must respect the exception",
         body: [
-          "Standard shipments run on rules. Margin and customer satisfaction are won or lost on exceptions—customs holds, weather diversions, capacity crunches. Generic automation that cannot read a bill of lading or draft a carrier escalation leaves operators stitching systems manually.",
+          "Standard shipments run on rules. Margin and customer satisfaction are won or lost on exceptions, customs holds, weather diversions, capacity crunches. Generic automation that cannot read a bill of lading or draft a carrier escalation leaves operators stitching systems manually.",
           "InheritX targets the exception layer: document intelligence that feeds validated data into your TMS, and agents that execute playbooks with human approval on anything that changes cost, SLA, or compliance posture.",
         ],
       },
@@ -930,7 +930,7 @@ export const industryTopics: TopicPage[] = [
         items: [
           {
             q: "Can document AI handle poor-quality scans?",
-            a: "We combine OCR with validation against TMS records and route low-confidence extractions to operator review—never silent acceptance of bad data.",
+            a: "We combine OCR with validation against TMS records and route low-confidence extractions to operator review, never silent acceptance of bad data.",
           },
           {
             q: "Will agents reroute shipments automatically?",
@@ -938,7 +938,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             q: "How do you integrate with our TMS?",
-            a: "Via approved APIs and event streams. Tool access is scoped—agents read and draft within permissions you define, with full action logging.",
+            a: "Via approved APIs and event streams. Tool access is scoped, agents read and draft within permissions you define, with full action logging.",
           },
         ],
       },
@@ -949,7 +949,7 @@ export const industryTopics: TopicPage[] = [
     eyebrow: "Government",
     title: "Mission systems citizens can trust.",
     description:
-      "Secure case automation, private cloud deployments, and auditability by design for public institutions modernizing legacy workflows under sovereignty and security constraints.",
+      "Capability page: secure case automation, private cloud deployments, and auditability by design for public institutions. Public government case studies are not yet published, engagements start from accreditation requirements you define.",
     primaryCta: { label: "Discuss public sector AI", href: contactHref("strategy") },
     secondaryCta: { label: "Explore Enterprise AI", href: "/solutions/enterprise-ai" },
     layout: "industry",
@@ -980,11 +980,11 @@ export const industryTopics: TopicPage[] = [
       {
         type: "matrix",
         title: "Agency need → secure approach",
-        intro: "Government AI succeeds when architecture precedes features—security and auditability are features, not afterthoughts.",
+        intro: "Government AI succeeds when architecture precedes features, security and auditability are features, not afterthoughts.",
         rows: [
           {
             need: "Case backlogs delay citizen outcomes",
-            approach: "Intake agents that normalize applications and route by rules—with caseworker review",
+            approach: "Intake agents that normalize applications and route by rules, with caseworker review",
           },
           {
             need: "Staff cannot quickly locate policy guidance",
@@ -1027,7 +1027,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             title: "Policy-grounded knowledge retrieval",
-            copy: "Generative search over regulations, manuals, and internal guidance—with citations for staff use.",
+            copy: "Generative search over regulations, manuals, and internal guidance, with citations for staff use.",
           },
           {
             title: "Citizen inquiry assistants",
@@ -1035,7 +1035,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             title: "Document review support",
-            copy: "Extraction and summarization for caseworker review—not autonomous eligibility determinations.",
+            copy: "Extraction and summarization for caseworker review, not autonomous eligibility determinations.",
           },
         ],
       },
@@ -1082,7 +1082,7 @@ export const industryTopics: TopicPage[] = [
         items: [
           {
             q: "Can you deploy in FedRAMP or IL environments?",
-            a: "We architect to your accreditation requirements—private cloud, GovCloud, or on-premises model endpoints. Specific ATO boundaries are defined jointly with your security and compliance teams.",
+            a: "We architect to your accreditation requirements, private cloud, GovCloud, or on-premises model endpoints. Specific ATO boundaries are defined jointly with your security and compliance teams.",
           },
           {
             q: "Will AI make eligibility decisions for citizens?",
@@ -1090,7 +1090,7 @@ export const industryTopics: TopicPage[] = [
           },
           {
             q: "How do you support FOIA and oversight requests?",
-            a: "Action ledgers capture inputs, retrieval sources, agent steps, and human approvals—enabling reconstruction without ad-hoc log archaeology.",
+            a: "Action ledgers capture inputs, retrieval sources, agent steps, and human approvals, enabling reconstruction without ad-hoc log archaeology.",
           },
         ],
       },
