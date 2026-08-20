@@ -20,7 +20,11 @@ const verbs = ["Scale", "Automate", "Orchestrate", "Transform"] as const;
 export function Hero() {
   const copyRef = useRef<HTMLDivElement>(null);
   const [verbIndex, setVerbIndex] = useState(0);
-  const [heroAb] = useState<HeroAbVariant>(() => getHeroAbVariant());
+  const [heroAb, setHeroAb] = useState<HeroAbVariant>("control");
+
+  useEffect(() => {
+    setHeroAb(getHeroAbVariant());
+  }, []);
 
   useEffect(() => {
     const id = window.setInterval(() => {

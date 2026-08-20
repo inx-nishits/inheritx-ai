@@ -42,13 +42,9 @@ const isDev = process.env.NODE_ENV !== "production";
 
 const csp = [
   "default-src 'self'",
-  [
-    "script-src 'self' 'unsafe-inline'",
-    isDev ? "'unsafe-eval'" : "",
-    "https://www.googletagmanager.com https://www.google-analytics.com",
-  ]
-    .filter(Boolean)
-    .join(" "),
+  `script-src 'self' 'unsafe-inline' ${
+    process.env.NODE_ENV === "development" ? "'unsafe-eval'" : ""
+  } https://www.googletagmanager.com https://www.google-analytics.com`,
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self' data:",
   "img-src 'self' data: blob: https://wpadmin.inheritx.com https://www.inheritx.com https://inheritx.com https://www.googletagmanager.com https://www.google-analytics.com",

@@ -13,19 +13,10 @@ import {
 } from "react";
 
 import { useCtaImpression } from "@/components/cta/useCtaImpression";
-import {
-  IRA_A11Y_LABEL,
-  IRA_AUTO_OPEN_MS,
-  IRA_AVATAR_SRC,
-  IRA_CHAT_URL,
-  IRA_CTA_LABEL,
-  IRA_CTA_SUBLABEL,
-  IRA_SCRIPT,
-  IRA_VIDEO_DURATION_S,
-  IRA_VIDEO_SRC,
-} from "@/data/ira";
+import { IRA_A11Y_LABEL, IRA_AUTO_OPEN_MS, IRA_AVATAR_SRC, IRA_CHAT_URL, IRA_CTA_LABEL, IRA_CTA_SUBLABEL, IRA_SCRIPT, IRA_VIDEO_DURATION_S, IRA_VIDEO_SRC } from "@/data/ira";
 import { cn } from "@/lib/cn";
 import { trackCtaIraOpen } from "@/lib/cta";
+import { IRAChatModal } from "./IRAChatModal";
 
 type PanelMode = "expanded" | "minimized";
 
@@ -103,6 +94,7 @@ function IRAAssistant() {
   const [mode, setMode] = useState<PanelMode>("minimized");
   const [typedLen, setTypedLen] = useState(0);
   const [clicked, setClicked] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const mutedRef = useRef(true);
@@ -238,8 +230,11 @@ function IRAAssistant() {
     return () => window.removeEventListener("keydown", onKey);
   }, [closePanel, mode]);
 
-  const handleAskIra = () => {
+  const handleAskIra = (e?: React.MouseEvent) => {
+    e?.preventDefault();
     setClicked(true);
+    setIsModalOpen(true);
+    closePanel(); // Optional: close the mini-panel when full modal opens
     trackCtaIraOpen(iraTrack);
     window.setTimeout(() => setClicked(false), 220);
   };
@@ -373,10 +368,7 @@ function IRAAssistant() {
                   />
                 ) : null}
               </p>
-              <a
-                href={IRA_CHAT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
                 aria-label={IRA_A11Y_LABEL}
                 onClick={handleAskIra}
                 className={cn(
@@ -392,7 +384,7 @@ function IRAAssistant() {
                 <span className="relative z-10 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-white text-ink">
                   <ArrowUpRight size={11} strokeWidth={2.25} />
                 </span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -439,7 +431,7 @@ function IRAAssistant() {
                   fill
                   sizes="56px"
                   unoptimized
-                  className="object-cover object-center"
+                  className="object-cover object-center rounded-full"
                   aria-hidden
                 />
                 <span
@@ -452,6 +444,8 @@ function IRAAssistant() {
           </motion.div>
         ) : null}
       </AnimatePresence>
+
+      <IRAChatModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

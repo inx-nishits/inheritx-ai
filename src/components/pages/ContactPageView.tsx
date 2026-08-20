@@ -286,7 +286,11 @@ export function ContactPageView() {
   const [submitted, setSubmitted] = useState(false);
   const [submitState, setSubmitState] = useState<SubmitState>({ status: "idle" });
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
-  const [captcha, setCaptcha] = useState<{ a: number; b: number }>(() => randomCaptcha());
+  const [captcha, setCaptcha] = useState<{ a: number; b: number }>({ a: 5, b: 5 });
+  
+  useEffect(() => {
+    setCaptcha(randomCaptcha());
+  }, []);
   const [captchaAnswer, setCaptchaAnswer] = useState("");
   const [requestNda, setRequestNda] = useState(false);
   const formStartTracked = useRef(false);
