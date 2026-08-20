@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import {
   resourceArticles,
@@ -14,12 +14,13 @@ import {
 import { PageHero } from "@/components/layout/PageHero";
 import { CtaGhost } from "@/components/cta/CtaGhost";
 import { CtaPrimary } from "@/components/cta/CtaPrimary";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { PaperAtmosphere } from "@/components/ui/PaperAtmosphere";
 import { Reveal } from "@/components/ui/Reveal";
 import { contactHref } from "@/lib/cta";
 import { cn } from "@/lib/cn";
 
 export function ResourcesPageView() {
-  const [openFaq, setOpenFaq] = useState(0);
   const [activeArticle, setActiveArticle] = useState(0);
   const article = resourceArticles[activeArticle];
 
@@ -137,46 +138,18 @@ export function ResourcesPageView() {
         </div>
       </section>
 
-      <section className="bg-paper py-16 text-ink md:py-20">
-        <div className="mx-auto max-w-[900px] px-5 md:px-8">
+      <section className="relative overflow-hidden bg-paper-soft py-16 text-ink md:py-20">
+        <PaperAtmosphere />
+        <div className="relative mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               FAQ
             </p>
-            <h2 className="font-display mt-3 text-3xl md:text-4xl">
+            <h2 className="font-display mt-3 text-3xl md:text-4xl lg:text-5xl">
               Common questions about these resources.
             </h2>
           </Reveal>
-          <div className="mt-10 divide-y divide-ink/10 border-y border-ink/10">
-            {resourceFaqs.map((faq, index) => {
-              const open = openFaq === index;
-              return (
-                <div key={faq.q} className="py-5">
-                  <button
-                    type="button"
-                    onClick={() => setOpenFaq(open ? -1 : index)}
-                    className="flex w-full items-center justify-between gap-4 text-left"
-                  >
-                    <span className="text-base font-medium md:text-lg">
-                      {faq.q}
-                    </span>
-                    <ChevronDown
-                      size={18}
-                      className={cn(
-                        "shrink-0 text-ink/40 transition-transform",
-                        open && "rotate-180",
-                      )}
-                    />
-                  </button>
-                  {open && (
-                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink/55">
-                      {faq.a}
-                    </p>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+          <FaqAccordion items={resourceFaqs} tone="light" />
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <CtaPrimary
               href={contactHref("strategy")}

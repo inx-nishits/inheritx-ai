@@ -8,6 +8,7 @@ import {
   diligenceLinks,
 } from "@/data/enterpriseProof";
 import { getCaseStudy } from "@/data/caseStudies";
+import { PaperAtmosphere } from "@/components/ui/PaperAtmosphere";
 import { Reveal } from "@/components/ui/Reveal";
 
 /**
@@ -28,10 +29,11 @@ export function ProcurementExperience({
       className={
         isDark
           ? "border-t border-white/[0.06] bg-ink-soft py-16 md:py-20"
-          : "border-t border-ink/10 bg-paper py-16 text-ink md:py-20"
+          : "relative overflow-hidden border-t border-ink/10 bg-paper-soft py-16 text-ink md:py-20"
       }
     >
-      <div className="mx-auto max-w-page px-5 md:px-8">
+      {!isDark ? <PaperAtmosphere /> : null}
+      <div className="relative mx-auto max-w-page px-5 md:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
           <Reveal>
             <p

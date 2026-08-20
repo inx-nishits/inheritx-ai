@@ -8,6 +8,8 @@ import { CTA_LABELS } from "@/data/cta/copy";
 import { CtaGhost } from "@/components/cta/CtaGhost";
 import { CtaPrimary } from "@/components/cta/CtaPrimary";
 import { PageHero } from "@/components/layout/PageHero";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { PaperAtmosphere } from "@/components/ui/PaperAtmosphere";
 import { Reveal } from "@/components/ui/Reveal";
 import { contactHref } from "@/lib/cta";
 import { cn } from "@/lib/cn";
@@ -29,14 +31,15 @@ function SectionShell({
   return (
     <section
       className={cn(
-        "py-16 md:py-20",
+        "relative overflow-hidden py-16 md:py-20",
         tone === "ink" && "bg-ink text-white",
         tone === "soft" && "border-t border-white/[0.06] bg-ink-soft text-white",
-        tone === "paper" && "bg-paper text-ink",
+        tone === "paper" && "bg-paper-soft text-ink",
         className,
       )}
     >
-      <div className="mx-auto max-w-page px-5 md:px-8">{children}</div>
+      {tone === "paper" ? <PaperAtmosphere /> : null}
+      <div className="relative mx-auto max-w-page px-5 md:px-8">{children}</div>
     </section>
   );
 }
@@ -417,40 +420,14 @@ function FaqBlock({
         </p>
         <h2
           className={cn(
-            "font-display mt-3 text-3xl md:text-4xl",
+            "font-display mt-3 max-w-none text-3xl md:text-4xl lg:text-5xl",
             light ? "text-ink" : "text-white",
           )}
         >
           {title}
         </h2>
       </Reveal>
-      <div
-        className={cn(
-          "mt-12 max-w-3xl divide-y border-y md:mt-14",
-          light ? "divide-ink/10 border-ink/10" : "divide-white/10 border-white/10",
-        )}
-      >
-        {items.map((item) => (
-          <div key={item.q} className="py-5">
-            <h3
-              className={cn(
-                "text-base font-medium md:text-lg",
-                light ? "text-ink" : "text-white",
-              )}
-            >
-              {item.q}
-            </h3>
-            <p
-              className={cn(
-                "mt-2 text-sm leading-relaxed",
-                light ? "text-ink/55" : "text-white/50",
-              )}
-            >
-              {item.a}
-            </p>
-          </div>
-        ))}
-      </div>
+      <FaqAccordion items={items} tone={light ? "light" : "dark"} />
     </>
   );
 }

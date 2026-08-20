@@ -22,7 +22,7 @@ export function ChooseYourPath() {
   return (
     <section
       id="path"
-      className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-16 md:py-20"
+      className="relative overflow-hidden border-t border-white/[0.06] bg-ink py-12 pb-10 md:py-20"
     >
       <div className="noise-overlay" />
       <div className="pointer-events-none absolute top-0 right-0 h-[420px] w-[420px] rounded-full bg-cyan/[0.06] blur-[120px]" />
@@ -111,7 +111,7 @@ export function ChooseYourPath() {
         </div>
 
         <Reveal delay={0.08}>
-          <div className="mt-10 flex flex-col items-start gap-5 border-t border-white/10 pt-8 md:mt-12 md:pt-10 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+          <div className="mt-8 flex flex-col items-start gap-4 border-t border-white/10 pt-6 md:mt-12 md:gap-5 md:pt-10 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
             <div className="w-full min-w-0 max-w-2xl">
               <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
                 Not sure which seat fits?
@@ -124,13 +124,13 @@ export function ChooseYourPath() {
                 embedded engineering. We will say when AI is not the right move.
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
               <CtaPrimary
                 href={contactHref("strategy")}
                 location="home.mid"
                 intent="strategy"
                 pattern="contextual-band"
-                className="min-h-12 shrink-0"
+                className="min-h-12 w-full justify-center sm:w-auto sm:shrink-0"
                 strength={0.3}
               >
                 {CTA_LABELS.talkToArchitectShort}
@@ -140,6 +140,7 @@ export function ChooseYourPath() {
                 location="home.mid"
                 intent="assessment"
                 pattern="contextual-band"
+                className="min-h-12 w-full justify-center sm:w-auto"
               >
                 Request AI assessment
               </CtaGhost>

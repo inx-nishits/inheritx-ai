@@ -49,24 +49,6 @@ const logos: {
       </svg>
     ),
   },
-  {
-    name: "Trustpilot",
-    node: (
-      <svg viewBox="0 0 150 36" className="h-10 w-[148px] md:h-11 md:w-[160px]" aria-hidden>
-        <text
-          x="0"
-          y="25"
-          fill="#A1A1AA"
-          fontFamily="system-ui, Arial, sans-serif"
-          fontSize="17"
-          fontWeight="600"
-          letterSpacing="2"
-        >
-          TRUSTPILOT
-        </text>
-      </svg>
-    ),
-  },
 ];
 
 function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {

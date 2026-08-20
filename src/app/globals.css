@@ -94,7 +94,7 @@ body {
   background-size: 72px 72px;
 }
 
-/* Full-bleed testimonials track: first card aligns with the 1440px shell. */
+/* Full-bleed testimonials track: first card aligns with the page shell. */
 .testimonial-track {
   --testimonial-gutter: 1.25rem;
   padding-left: var(--testimonial-gutter);
@@ -104,8 +104,9 @@ body {
 
 @media (min-width: 768px) {
   .testimonial-track {
-    --testimonial-gutter: max(2rem, calc((100% - 1440px) / 2 + 2rem));
-    padding-right: var(--testimonial-gutter);
+    /* Must use 100vw — 100% resolves to the track’s own w-max width and
+       creates a huge empty gutter after scrolling. */
+    --testimonial-gutter: max(2rem, calc((100vw - 90rem) / 2 + 2rem));
   }
 }
 

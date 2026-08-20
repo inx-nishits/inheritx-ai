@@ -3,14 +3,15 @@
 import Image from "next/image";
 
 import { portfolioProjects } from "@/data/portfolio";
+import { PaperAtmosphere } from "@/components/ui/PaperAtmosphere";
 import { Reveal, TextReveal } from "@/components/ui/Reveal";
 
 const stories = portfolioProjects.filter((p) => p.editorial).slice(0, 3);
 
 export function SuccessStories() {
   return (
-    <section className="relative overflow-hidden bg-paper py-16 text-ink md:py-20">
-      <div className="editorial-grid-light absolute inset-0 opacity-50" />
+    <section className="relative overflow-hidden bg-paper-soft py-16 text-ink md:py-20">
+      <PaperAtmosphere />
       <div className="relative mx-auto max-w-page px-5 md:px-8">
         <div className="mb-14 max-w-3xl md:mb-20">
           <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">

@@ -231,9 +231,9 @@ export function Capabilities() {
       <div className="noise-overlay" />
 
       {/* Mobile: intentional vertical stack */}
-      <div className="relative py-16 md:hidden">
+      <div className="relative pt-10 pb-14 md:hidden">
         <div className="mx-auto max-w-page px-5">
-          <div className="mb-10 flex flex-col gap-6">
+          <div className="mb-8 flex flex-col gap-5">
             <div className="max-w-3xl">
               <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
                 AI capabilities

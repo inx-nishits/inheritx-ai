@@ -15,6 +15,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { CtaGhost } from "@/components/cta/CtaGhost";
 import { CtaPrimary } from "@/components/cta/CtaPrimary";
 import { CtaText } from "@/components/cta/CtaText";
+import { PaperAtmosphere } from "@/components/ui/PaperAtmosphere";
 import { Reveal } from "@/components/ui/Reveal";
 import { contactHref } from "@/lib/cta";
 import { cn } from "@/lib/cn";
@@ -163,8 +164,9 @@ export function IndustriesPageView() {
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] bg-paper py-16 text-ink md:py-20">
-        <div className="mx-auto max-w-page px-5 md:px-8">
+      <section className="relative overflow-hidden border-t border-white/[0.06] bg-paper-soft py-16 text-ink md:py-20">
+        <PaperAtmosphere />
+        <div className="relative mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Across sectors

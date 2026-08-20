@@ -11,6 +11,7 @@ import {
 } from "react";
 import {
   ArrowRight,
+  ArrowUpRight,
   Briefcase,
   CheckCircle2,
   ChevronDown,
@@ -57,11 +58,10 @@ type FieldName =
 type FieldErrors = Partial<Record<FieldName, string>>;
 
 const inputClassName = cn(
-  "min-h-12 w-full rounded-xl border bg-ink/70 px-4 py-3 text-base text-white outline-none transition-[border-color,box-shadow,background-color] duration-200",
+  "min-h-10 w-full rounded-lg border bg-ink/70 px-3.5 py-2.5 text-sm text-white outline-none transition-[border-color,box-shadow,background-color] duration-200",
   "placeholder:text-white/25",
   "border-white/10 hover:border-white/20",
   "focus:border-cyan/45 focus:bg-ink focus:shadow-[0_0_0_3px_rgba(0,190,212,0.12)]",
-  "md:text-sm",
 );
 
 function FieldShell({
@@ -79,7 +79,7 @@ function FieldShell({
 }) {
   return (
     <label className="block">
-      <span className="mb-2.5 block text-xs tracking-wide text-white/50">
+      <span className="mb-1.5 block text-xs tracking-wide text-white/50">
         {label}
         {hint === "Required" ? (
           <span className="ml-0.5 text-cyan" aria-hidden>
@@ -94,7 +94,7 @@ function FieldShell({
       </span>
       {children}
       {error ? (
-        <p id={errorId} className="mt-1.5 text-xs text-red-300" role="alert">
+        <p id={errorId} className="mt-1 text-xs text-red-300" role="alert">
           {error}
         </p>
       ) : null}
@@ -128,7 +128,7 @@ function FormSection({
   children: ReactNode;
 }) {
   return (
-    <div className="space-y-5">
+    <div className="space-y-3">
       <div className="flex items-center gap-3">
         <p className="text-[11px] tracking-[0.22em] text-cyan uppercase">
           {title}
@@ -212,39 +212,43 @@ function ContactSidebarCard({
   href?: string;
   icon: typeof Mail;
 }) {
+  const className =
+    "group flex items-start gap-3 py-3.5 transition-colors first:pt-0 last:pb-0";
+
   const inner = (
     <>
-      <Icon size={18} strokeWidth={1.75} className="mt-0.5 shrink-0 text-cyan/75" />
+      <Icon
+        size={18}
+        strokeWidth={1.75}
+        className="mt-0.5 shrink-0 text-cyan/75 transition-colors group-hover:text-cyan"
+      />
       <div className="min-w-0 flex-1">
-        <p className="text-[11px] tracking-[0.18em] text-white/35 uppercase">
+        <p className="text-[11px] tracking-[0.18em] text-white/40 uppercase">
           {title}
         </p>
-        <p className="mt-1 text-sm font-medium text-white">{detail}</p>
+        <p className="mt-1 break-words text-sm font-medium text-white transition-colors group-hover:text-cyan">
+          {detail}
+        </p>
       </div>
+      {href ? (
+        <ArrowUpRight
+          size={14}
+          className="mt-0.5 shrink-0 text-white/25 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-cyan"
+          aria-hidden
+        />
+      ) : null}
     </>
   );
 
   if (href) {
     return (
-      <a
-        href={href}
-        className="group flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.02] p-4 transition-colors hover:border-cyan/30 hover:bg-white/[0.04]"
-      >
+      <a href={href} className={className}>
         {inner}
-        <ArrowRight
-          size={16}
-          className="ml-auto shrink-0 text-white/20 transition-transform group-hover:translate-x-0.5 group-hover:text-cyan"
-          aria-hidden
-        />
       </a>
     );
   }
 
-  return (
-    <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
-      {inner}
-    </div>
-  );
+  return <div className={className}>{inner}</div>;
 }
 
 function SocialIcon({
@@ -281,6 +285,13 @@ function SocialIcon({
       );
   }
 }
+
+const SOCIAL_BRAND_BG: Record<(typeof contactSocialLinks)[number]["label"], string> = {
+  Facebook: "#1877F2",
+  X: "#14171A",
+  LinkedIn: "#0A66C2",
+  Instagram: "#E1306C",
+};
 
 export function ContactPageView() {
   const [submitted, setSubmitted] = useState(false);
@@ -490,15 +501,15 @@ export function ContactPageView() {
                 />
                 <div className="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-cyan/10 blur-[80px]" />
 
-                <div className="relative p-6 md:p-9 lg:p-10">
-                  <div className="mb-8 md:mb-10">
+                <div className="relative p-5 md:p-6 lg:p-7">
+                  <div className="mb-5 md:mb-6">
                     <p className="text-[11px] tracking-[0.24em] text-cyan uppercase">
                       Project inquiry
                     </p>
-                    <h2 className="font-display mt-2 text-2xl text-white md:text-3xl">
+                    <h2 className="font-display mt-1.5 text-xl text-white md:text-2xl">
                       Tell us about your project
                     </h2>
-                    <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/45">
+                    <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-white/45">
                       Share the essentials below. We will review your request and
                       respond within one business day.
                     </p>
@@ -538,7 +549,7 @@ export function ContactPageView() {
                       ref={formRef}
                       onSubmit={onSubmit}
                       onFocusCapture={onFormStart}
-                      className="space-y-8"
+                      className="space-y-5"
                       noValidate
                     >
                       <input
@@ -550,7 +561,7 @@ export function ContactPageView() {
                       />
 
                       <FormSection title="Your details">
-                        <div className="grid gap-5 sm:grid-cols-2">
+                        <div className="grid gap-3.5 sm:grid-cols-2">
                           <FieldShell
                             label="Name"
                             hint="Required"
@@ -650,7 +661,7 @@ export function ContactPageView() {
                       </FormSection>
 
                       <FormSection title="Project scope">
-                        <div className="space-y-5">
+                        <div className="grid gap-3.5 sm:grid-cols-2">
                           <FieldShell
                             label="Project type"
                             hint="Required"
@@ -721,7 +732,7 @@ export function ContactPageView() {
                             ref={messageRef}
                             required
                             name="message"
-                            rows={5}
+                            rows={4}
                             aria-required="true"
                             aria-invalid={Boolean(fieldErrors.message)}
                             aria-describedby={
@@ -732,7 +743,7 @@ export function ContactPageView() {
                             onChange={() => clearFieldError("message")}
                             className={cn(
                               inputClassName,
-                              "min-h-[140px] resize-y leading-relaxed",
+                              "min-h-[110px] resize-y leading-relaxed",
                               fieldErrors.message && "border-red-400/60",
                             )}
                             placeholder="Goals, timeline, systems involved, and what success looks like…"
@@ -740,7 +751,7 @@ export function ContactPageView() {
                         </FieldShell>
                       </FormSection>
 
-                      <div className="space-y-4">
+                      <div className="space-y-3">
                         <FieldShell
                           label="Verification"
                           hint="Required"
@@ -748,11 +759,11 @@ export function ContactPageView() {
                           errorId="contact-captcha-error"
                         >
                           <div className="flex flex-wrap items-center gap-2">
-                            <span className="flex size-9 items-center justify-center rounded-lg border border-white/10 bg-ink font-mono text-sm text-white">
+                            <span className="flex size-8 items-center justify-center rounded-md border border-white/10 bg-ink font-mono text-sm text-white">
                               {captcha.a}
                             </span>
                             <span className="text-white/35">+</span>
-                            <span className="flex size-9 items-center justify-center rounded-lg border border-white/10 bg-ink font-mono text-sm text-white">
+                            <span className="flex size-8 items-center justify-center rounded-md border border-white/10 bg-ink font-mono text-sm text-white">
                               {captcha.b}
                             </span>
                             <span className="text-white/35">=</span>
@@ -772,7 +783,7 @@ export function ContactPageView() {
                               }
                               className={cn(
                                 inputClassName,
-                                "max-w-20 min-h-10 text-center font-mono",
+                                "max-w-20 min-h-9 text-center font-mono",
                                 fieldErrors.captcha && "border-red-400/60",
                               )}
                               placeholder="?"
@@ -819,11 +830,20 @@ export function ContactPageView() {
                         </p>
                       ) : null}
 
-                      <div className="flex flex-col gap-4 border-t border-white/[0.08] pt-6 sm:flex-row sm:items-center sm:justify-between">
+                      <div className="flex flex-col gap-3 border-t border-white/[0.08] pt-4 sm:flex-row sm:items-center sm:justify-between">
+                        <p className="order-2 text-xs text-white/35 sm:order-1 sm:text-left">
+                          Prefer email?{" "}
+                          <a
+                            href={`mailto:${contactEmail}`}
+                            className="text-cyan underline-offset-2 hover:underline"
+                          >
+                            {contactEmail}
+                          </a>
+                        </p>
                         <button
                           type="submit"
                           disabled={submitState.status === "submitting"}
-                          className="cta-primary group inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-full px-8 py-3.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(0,190,212,0.22)] disabled:opacity-60 sm:w-auto"
+                          className="cta-primary group order-1 inline-flex min-h-11 w-full items-center justify-center gap-2.5 rounded-full px-7 py-2.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(0,190,212,0.22)] disabled:opacity-60 sm:order-2 sm:w-auto"
                         >
                           {submitState.status === "submitting" ? (
                             "Submitting…"
@@ -837,15 +857,6 @@ export function ContactPageView() {
                             </>
                           )}
                         </button>
-                        <p className="text-xs text-white/35 sm:text-right">
-                          Prefer email?{" "}
-                          <a
-                            href={`mailto:${contactEmail}`}
-                            className="text-cyan underline-offset-2 hover:underline"
-                          >
-                            {contactEmail}
-                          </a>
-                        </p>
                       </div>
                     </form>
                   )}
@@ -867,7 +878,7 @@ export function ContactPageView() {
                       Need a faster route? Reach us directly through any channel
                       below.
                     </p>
-                    <div className="mt-6 space-y-3">
+                    <div className="mt-6 divide-y divide-white/[0.08]">
                       {contactSidebar.map((item, index) => (
                         <ContactSidebarCard
                           key={item.title}
@@ -891,7 +902,8 @@ export function ContactPageView() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={`InheritX on ${link.label}`}
-                            className="flex size-10 items-center justify-center rounded-full bg-white text-ink transition-transform hover:scale-105 hover:bg-white/90"
+                            style={{ backgroundColor: SOCIAL_BRAND_BG[link.label] }}
+                            className={`inline-flex size-10 items-center justify-center rounded-full text-white transition-opacity hover:opacity-85${link.label === "X" ? " ring-1 ring-white/20" : ""}`}
                           >
                             <SocialIcon label={link.label} className="size-4" />
                           </a>

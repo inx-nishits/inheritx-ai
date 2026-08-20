@@ -30,13 +30,13 @@ export function MidPageCTA() {
           </div>
         </Reveal>
         <Reveal delay={0.08} className="w-full min-w-0 lg:w-auto lg:shrink-0">
-          <div className="flex flex-row flex-nowrap items-center gap-2 sm:gap-3">
+          <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
             <CtaPrimary
               href={contactHref("strategy")}
               location="home.mid"
               intent="strategy"
               pattern="contextual-band"
-              className="min-h-11 shrink-0 whitespace-nowrap px-3.5 py-3 text-[13px] sm:min-h-12 sm:px-7 sm:py-3.5 sm:text-sm"
+              className="min-h-11 w-full justify-center px-4 py-3 text-[13px] sm:min-h-12 sm:w-auto sm:px-7 sm:py-3.5 sm:text-sm"
             >
               {CTA_LABELS.strategyCall}
             </CtaPrimary>
@@ -44,7 +44,7 @@ export function MidPageCTA() {
               href="/case-studies"
               location="home.mid"
               pattern="proof-band"
-              className="min-h-11 px-3 text-[13px] sm:min-h-12 sm:px-5 sm:text-sm"
+              className="min-h-11 w-full justify-center px-4 text-[13px] sm:min-h-12 sm:w-auto sm:px-5 sm:text-sm"
             >
               Review case studies
             </CtaProof>

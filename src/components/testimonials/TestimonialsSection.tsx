@@ -29,7 +29,7 @@ export type TestimonialsSectionProps = {
 };
 
 const AUTO_MS = 5500;
-const LOOP_COPIES = 2;
+const LOOP_COPIES = 3;
 const SLIDE_MS = 550;
 
 function trackMetrics(track: HTMLDivElement) {
@@ -194,9 +194,12 @@ export function TestimonialsSection({
       const width = setWidth();
       if (width <= 0) return;
       let x = offsetRef.current;
-      while (x < width * 0.5) x += width;
-      while (x >= width * 1.5) x -= width;
-      applyOffset(x, animate);
+      // Keep the viewport inside the middle copy so neighbors always exist.
+      while (x < width) x += width;
+      while (x >= width * 2) x -= width;
+      if (x !== offsetRef.current) {
+        applyOffset(x, animate);
+      }
     },
     [applyOffset, setWidth, total],
   );
@@ -208,8 +211,9 @@ export function TestimonialsSection({
       const { step } = trackMetrics(track);
       if (step <= 0) return;
       applyOffset(offsetRef.current + direction * step, true);
+      window.setTimeout(() => normalizeLoop(false), SLIDE_MS + 40);
     },
-    [applyOffset],
+    [applyOffset, normalizeLoop],
   );
 
   useEffect(() => {

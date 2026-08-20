@@ -17,6 +17,7 @@ import { CTA_LABELS } from "@/data/cta/copy";
 import { PageHero } from "@/components/layout/PageHero";
 import { CtaGhost } from "@/components/cta/CtaGhost";
 import { CtaText } from "@/components/cta/CtaText";
+import { PaperAtmosphere } from "@/components/ui/PaperAtmosphere";
 import { Reveal } from "@/components/ui/Reveal";
 import { contactHref } from "@/lib/cta";
 import { cn } from "@/lib/cn";
@@ -150,8 +151,9 @@ export function SolutionsPageView() {
       </section>
 
       {/* Engagement models */}
-      <section id="engagement" className="border-t border-white/[0.06] bg-paper py-16 text-ink md:py-20">
-        <div className="mx-auto max-w-page px-5 md:px-8">
+      <section id="engagement" className="relative overflow-hidden border-t border-white/[0.06] bg-paper-soft py-16 text-ink md:py-20">
+        <PaperAtmosphere />
+        <div className="relative mx-auto max-w-page px-5 md:px-8">
           <Reveal>
             <p className="text-[11px] tracking-[0.24em] text-cyan-deep uppercase">
               Engagement Models
