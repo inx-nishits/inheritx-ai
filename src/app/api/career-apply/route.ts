@@ -34,90 +34,57 @@ function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-async function sendViaResend(payload: ApplyPayload) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return { delivered: false as const };
-
-  // HR career email - fall back to the general contact-to email
-  const to =
-    process.env.CAREERS_TO_EMAIL ??
-    process.env.CONTACT_TO_EMAIL ??
-    "careers@inheritx.com";
-
-  const from =
-    process.env.CONTACT_FROM_EMAIL ??
-    "InheritX Website <contact@inheritx.com>";
-
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      reply_to: payload.email,
-      subject: `[Career Application] ${payload.jobTitle} - ${payload.name}`,
-      text: [
-        `New job application received via the InheritX careers page.`,
-        ``,
-        `Position : ${payload.jobTitle}`,
-        `Job ID   : ${payload.jobId}`,
-        ``,
-        `Applicant Details`,
-        `─────────────────`,
-        `Name     : ${payload.name}`,
-        `Email    : ${payload.email}`,
-        `Phone    : ${payload.phone}`,
-        `Resume   : ${payload.resumeName ? `${payload.resumeName} (attached)` : "Not provided"}`,
-        ``,
-        `Reply directly to this email to contact the applicant.`,
-      ].join("\n"),
-      ...(payload.resumeBase64 && payload.resumeName
-        ? {
-            attachments: [
-              {
-                filename: payload.resumeName,
-                content: payload.resumeBase64,
-              },
-            ],
-          }
-        : {}),
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(`Resend failed with status ${response.status}`);
-  }
-
-  return { delivered: true as const };
+function wpBase(): string {
+  return (
+    process.env.WP_API_BASE?.replace(/\/$/, "") ||
+    process.env.NEXT_PUBLIC_WP_API_BASE?.replace(/\/$/, "") ||
+    "https://wpadmin.inheritx.com"
+  );
 }
 
-async function sendViaWebhook(payload: ApplyPayload) {
-  const webhook = process.env.CONTACT_WEBHOOK_URL;
-  if (!webhook) return { delivered: false as const };
+async function forwardToWordPress(payload: ApplyPayload) {
+  const endpoint = `${wpBase()}/wp-json/api/v1/careerform`;
+  const fd = new FormData();
+  fd.append("name", payload.name);
+  fd.append("email", payload.email);
+  fd.append("phone", payload.phone);
+  if (payload.jobTitle) fd.append("position", payload.jobTitle);
+  if (payload.jobId) fd.append("job_id", payload.jobId);
 
-  const response = await fetch(webhook, {
+  if (payload.resumeBase64 && payload.resumeName) {
+    try {
+      const base64Data = payload.resumeBase64.includes(",")
+        ? payload.resumeBase64.split(",")[1]
+        : payload.resumeBase64;
+      const buffer = Buffer.from(base64Data, "base64");
+      const blob = new Blob([buffer]);
+      fd.append("resume", blob, payload.resumeName);
+    } catch {
+      /* ignore resume formatting error */
+    }
+  }
+
+  const response = await fetch(endpoint, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      ...(process.env.CONTACT_WEBHOOK_SECRET
-        ? { Authorization: `Bearer ${process.env.CONTACT_WEBHOOK_SECRET}` }
-        : {}),
-    },
-    body: JSON.stringify({
-      ...payload,
-      source: "career-application",
-      submittedAt: new Date().toISOString(),
-    }),
+    body: fd,
   });
 
   if (!response.ok) {
-    throw new Error(`Webhook failed with status ${response.status}`);
+    throw new Error(`WordPress API failed with status ${response.status}`);
   }
 
-  return { delivered: true as const };
+  let data: { status?: number; message?: string } | null = null;
+  try {
+    data = (await response.json()) as { status?: number; message?: string };
+  } catch {
+    /* ignore json parse error */
+  }
+
+  if (data && typeof data.status !== "undefined" && Number(data.status) !== 1) {
+    throw new Error(data.message || "WordPress API returned non-success status");
+  }
+
+  return { delivered: true as const, channel: "wordpress" as const };
 }
 
 export async function POST(request: Request) {
@@ -158,22 +125,29 @@ export async function POST(request: Request) {
       );
     }
 
-    // Try webhook first, then Resend
-    const webhook = await sendViaWebhook(payload);
-    if (webhook.delivered) {
+    let wpResult: { delivered: boolean } = { delivered: false };
+    try {
+      wpResult = await forwardToWordPress(payload);
+    } catch (wpError) {
+      console.error("[career-apply] WordPress delivery failed:", wpError);
+    }
+
+    if (wpResult.delivered) {
       return NextResponse.json({ ok: true });
     }
 
-    const email = await sendViaResend(payload);
-    if (email.delivered) {
-      return NextResponse.json({ ok: true });
-    }
-
-    console.error("[career-apply] No delivery channel configured.", {
-      jobTitle: payload.jobTitle,
-      name: payload.name,
-      email: payload.email,
-    });
+    console.error(
+      "[CRITICAL LEAD LOSS PREVENTION] Career application lead could not be delivered to WordPress.",
+      {
+        jobId: payload.jobId,
+        jobTitle: payload.jobTitle,
+        name: payload.name,
+        email: payload.email,
+        phone: payload.phone,
+        resumeName: payload.resumeName,
+        timestamp: new Date().toISOString(),
+      },
+    );
 
     return NextResponse.json(
       {
