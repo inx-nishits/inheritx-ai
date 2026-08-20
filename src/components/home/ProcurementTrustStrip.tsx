@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 /**
- * Compact homepage discoverability only — full procurement depth lives on
+ * Compact homepage discoverability only - full procurement depth lives on
  * Contact, Security FAQ, and Diligence Pack.
  */
 export function ProcurementTrustStrip() {

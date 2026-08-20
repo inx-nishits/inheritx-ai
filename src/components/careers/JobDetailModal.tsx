@@ -27,7 +27,7 @@ import { cn } from "@/lib/cn";
 import type { JobDetail } from "@/lib/insights/types";
 
 // ---------------------------------------------------------------------------
-// Shared input style — mirrors ContactPageView exactly
+// Shared input style - mirrors ContactPageView exactly
 // ---------------------------------------------------------------------------
 const inputCls = cn(
   "min-h-12 w-full rounded-xl border bg-ink/70 px-4 py-3 text-sm text-white outline-none transition-[border-color,box-shadow,background-color] duration-200",
@@ -88,7 +88,7 @@ function readFileAsBase64(file: File): Promise<string> {
     const reader = new FileReader();
     reader.onload = () => {
       const result = reader.result as string;
-      // strip data-url prefix — Resend wants raw base64
+      // strip data-url prefix - Resend wants raw base64
       resolve(result.split(",")[1] ?? "");
     };
     reader.onerror = reject;
@@ -357,7 +357,7 @@ export function JobDetailModal({ jobId, jobTitle }: Props) {
               className="relative flex w-full max-w-5xl flex-col rounded-3xl border border-white/10 bg-ink shadow-2xl"
               style={{ maxHeight: "calc(100dvh - 3rem)" }}
             >
-              {/* ── Header — fixed, never scrolls ── */}
+              {/* ── Header - fixed, never scrolls ── */}
               <div className="flex shrink-0 items-start justify-between gap-4 border-b border-white/8 px-6 py-5 md:px-8 md:py-6">
                 <div className="min-w-0">
                   <h2
@@ -392,7 +392,7 @@ export function JobDetailModal({ jobId, jobTitle }: Props) {
                 </button>
               </div>
 
-              {/* ── Body — scrollable ── */}
+              {/* ── Body - scrollable ── */}
               <div className="scrollbar-none min-h-0 flex-1 overflow-y-auto px-6 py-6 [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:px-8 md:py-8">
 
                 {/* Loading skeleton */}

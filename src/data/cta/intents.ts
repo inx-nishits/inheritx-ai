@@ -63,7 +63,7 @@ export function isOfficialContactIntent(
 
 /**
  * Maps a raw `?intent=` value to an official intent.
- * Unknown values return null — do not invent a fallback intent.
+ * Unknown values return null - do not invent a fallback intent.
  */
 export function resolveContactIntent(
   raw: string | null | undefined,

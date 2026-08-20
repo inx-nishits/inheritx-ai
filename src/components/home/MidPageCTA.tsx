@@ -6,7 +6,7 @@ import { CtaProof } from "@/components/cta/CtaProof";
 import { Reveal } from "@/components/ui/Reveal";
 import { contactHref } from "@/lib/cta";
 
-/** Single mid-page conversion band — placed after proof. */
+/** Single mid-page conversion band - placed after proof. */
 export function MidPageCTA() {
   return (
     <section

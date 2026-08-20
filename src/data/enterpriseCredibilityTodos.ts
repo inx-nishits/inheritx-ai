@@ -1,5 +1,5 @@
 /**
- * Enterprise credibility — information still required from InheritX.
+ * Enterprise credibility - information still required from InheritX.
  * These are NOT website claims. Complete them before publishing as facts.
  *
  * Do not invent certifications, partnerships, named logos, or awards.
@@ -39,7 +39,7 @@ export const enterpriseCredibilityTodos = [
     id: "anonymized-refs",
     phase: 2,
     owner: "Sales / Delivery",
-    item: "Complete 6–12 anonymized enterprise-grade reference blurbs in /resources/enterprise-references STATUS rows (industry, size band, use case, outcome).",
+    item: "Complete 6-12 anonymized enterprise-grade reference blurbs in /resources/enterprise-references STATUS rows (industry, size band, use case, outcome).",
   },
   {
     id: "diligence-pdf",

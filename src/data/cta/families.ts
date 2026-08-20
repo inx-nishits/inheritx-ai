@@ -1,9 +1,9 @@
 /**
  * Five visual families. Phase 2 components should import these class contracts.
- * Do not restyle MagneticButton in Phase 1 — these strings document current chrome.
+ * Do not restyle MagneticButton in Phase 1 - these strings document current chrome.
  *
  * Rule: one strong cyan fill per viewport section. Families differ by
- * intensity, tint, border, and hierarchy — cyan for convert, white/ink
+ * intensity, tint, border, and hierarchy - cyan for convert, white/ink
  * for the alternate official intent. Explore never uses `fill`.
  */
 
@@ -29,7 +29,7 @@ export const ctaFamilyMeta = {
     icon: "Optional ArrowUpRight; header uses a white arrow disc",
     color:
       "Strategy: bg-cyan text-white; Assessment: bg-white text-ink; hover inverts",
-    background: "None — the button is the accent",
+    background: "None - the button is the accent",
   },
   tint: {
     id: "tint",
@@ -79,7 +79,7 @@ export const ctaFamilyMeta = {
     size: "varies",
     icon: "Object-specific (Bot, avatar, none)",
     color: "Inherit family of the inner control; object itself is the frame",
-    background: "Chip / band / widget — not a new accent color",
+    background: "Chip / band / widget - not a new accent color",
   },
 } as const satisfies Record<
   CtaFamilyId,

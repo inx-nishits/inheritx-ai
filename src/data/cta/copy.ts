@@ -2,7 +2,7 @@ import type { OfficialContactIntent } from "./intents";
 import type { CtaFamilyId } from "./families";
 
 /**
- * Canonical labels. Page jobs pick from this list — do not invent synonyms
+ * Canonical labels. Page jobs pick from this list - do not invent synonyms
  * like "Get Started" or "Contact Us" as a primary.
  */
 export const CTA_LABELS = {

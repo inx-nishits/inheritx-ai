@@ -14,7 +14,7 @@ const LETTER_DIMS: Record<string, { w: number; h: number; src: string }> = {
 };
 
 const WORD_LETTERS = ["i", "n", "h", "e", "r", "i", "t", "x"] as const;
-/** Tallest letter canvas — shared cap-height so every glyph scales the same. */
+/** Tallest letter canvas - shared cap-height so every glyph scales the same. */
 const CAP_HEIGHT = Math.max(...Object.values(LETTER_DIMS).map((d) => d.h));
 
 function SocialIcon({
@@ -75,7 +75,7 @@ export function Footer() {
               for regulated enterprises, then transfers operability to your team.
             </p>
 
-            {/* Social icons — brand colours */}
+            {/* Social icons - brand colours */}
             <div className="mt-7 flex items-center gap-3">
               {contactSocialLinks.map((link) => (
                 <a

@@ -1,4 +1,4 @@
-/** Homepage strength strip — core AI technology lanes (UI shared with former sector bar). */
+/** Homepage strength strip - core AI technology lanes (UI shared with former sector bar). */
 export const trustTechnologies = [
   { label: "Enterprise AI", href: "/solutions/enterprise-ai" },
   { label: "AI Agents", href: "/solutions/ai-agents" },
@@ -373,7 +373,7 @@ export const processSteps = [
   {
     step: "01",
     title: "Discover",
-    duration: "2–3 weeks",
+    duration: "2-3 weeks",
     copy: "Business problem, AI feasibility, ROI blueprint, and data readiness, honest about what should not be automated.",
     detail:
       "We map mandates, operating cost, risk posture, and the highest-leverage AI opportunities with leadership before production build begins.",
@@ -382,7 +382,7 @@ export const processSteps = [
   {
     step: "02",
     title: "Architect",
-    duration: "3–4 weeks",
+    duration: "3-4 weeks",
     copy: "AI architecture, model selection, agent design, and the security framework your CISO can defend.",
     detail:
       "We design the platform, agent workforce, and LLMOps operating model that survives board and security scrutiny.",
@@ -391,7 +391,7 @@ export const processSteps = [
   {
     step: "03",
     title: "Prove",
-    duration: "6–10 weeks",
+    duration: "6-10 weeks",
     copy: "Governed pilot under production constraints, accuracy benchmarks, human gates, and scale criteria.",
     detail:
       "We ship a real system with security, auditability, and integration, not a disposable demo that dies after the readout.",

@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         url: "/images/actual/actual-lead-capabilities.jpg",
         width: 1200,
         height: 630,
-        alt: "InheritX — AI-native enterprise technology partner",
+        alt: "InheritX - AI-native enterprise technology partner",
       },
     ],
   },

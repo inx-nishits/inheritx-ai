@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 
 // Resume uploads are base64-encoded before POSTing (~6.7 MB for a 5 MB file).
-// App Router does not support the legacy `config.api.bodyParser` export — that
+// App Router does not support the legacy `config.api.bodyParser` export - that
 // was Pages Router only and is silently ignored here.
 // On Vercel: set `maxDuration` if needed; the platform default body limit is
 // sufficient for 5 MB base64 payloads (~6.7 MB, well within the 4.5 MB
@@ -20,7 +20,7 @@ type ApplyPayload = {
   // Base64-encoded resume file (optional)
   resumeBase64?: string;
   resumeName?: string;
-  // Honeypot — bots fill this, humans never see it
+  // Honeypot - bots fill this, humans never see it
   website?: string;
 };
 
@@ -38,7 +38,7 @@ async function sendViaResend(payload: ApplyPayload) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return { delivered: false as const };
 
-  // HR career email — fall back to the general contact-to email
+  // HR career email - fall back to the general contact-to email
   const to =
     process.env.CAREERS_TO_EMAIL ??
     process.env.CONTACT_TO_EMAIL ??
@@ -58,7 +58,7 @@ async function sendViaResend(payload: ApplyPayload) {
       from,
       to: [to],
       reply_to: payload.email,
-      subject: `[Career Application] ${payload.jobTitle} — ${payload.name}`,
+      subject: `[Career Application] ${payload.jobTitle} - ${payload.name}`,
       text: [
         `New job application received via the InheritX careers page.`,
         ``,

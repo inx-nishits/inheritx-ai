@@ -39,7 +39,7 @@ export function SolutionsPageView() {
         secondaryCta={{ label: "Explore solution lanes", href: "#lanes" }}
       />
 
-      {/* Proof strip — unique to solutions page */}
+      {/* Proof strip - unique to solutions page */}
       <section className="border-b border-white/[0.06] bg-ink">
         <div className="mx-auto grid max-w-page grid-cols-2 gap-px bg-white/[0.06] md:grid-cols-4">
           {solutionProofPoints.map((item) => (

@@ -1,6 +1,6 @@
 /**
  * Shared light-section atmosphere: soft paper tint, check grid, cyan glows.
- * Use only on paper / light sections — never on dark (ink) sections.
+ * Use only on paper / light sections - never on dark (ink) sections.
  */
 export function PaperAtmosphere() {
   return (

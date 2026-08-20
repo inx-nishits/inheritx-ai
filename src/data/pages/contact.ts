@@ -10,9 +10,9 @@ export const contactEmail = "contact@inheritx.com";
 export const contactBudgetOptions = [
   { value: "", label: "Choose budget" },
   { value: "under-25k", label: "Under $25,000" },
-  { value: "25k-50k", label: "$25,000 – $50,000" },
-  { value: "50k-100k", label: "$50,000 – $100,000" },
-  { value: "100k-250k", label: "$100,000 – $250,000" },
+  { value: "25k-50k", label: "$25,000 - $50,000" },
+  { value: "50k-100k", label: "$50,000 - $100,000" },
+  { value: "100k-250k", label: "$100,000 - $250,000" },
   { value: "250k-plus", label: "$250,000+" },
   { value: "not-sure", label: "Not sure yet" },
 ] as const;

@@ -13,7 +13,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 /**
  * Full procurement experience for Contact (and reusable on demand pages).
- * Content relocated from the former homepage diligence band — nothing invented.
+ * Content relocated from the former homepage diligence band - nothing invented.
  */
 export function ProcurementExperience({
   tone = "dark",

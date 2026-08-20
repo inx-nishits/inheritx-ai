@@ -1,7 +1,7 @@
 import { contactHref } from "@/data/cta/intents";
 import type { TopicPage } from "./topic";
 
-/** Culture & values topic — rendered at /team/culture */
+/** Culture & values topic - rendered at /team/culture */
 export const cultureTopic: TopicPage = {
   slug: "culture",
   eyebrow: "Culture & Values",

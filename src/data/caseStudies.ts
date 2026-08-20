@@ -19,7 +19,7 @@ export type CaseStudy = {
   name: string;
   category: string;
   tagline: string;
-  /** Executive summary — leads the story. */
+  /** Executive summary - leads the story. */
   summary: string;
   technologies: string[];
   results: CaseStudyResult[];
@@ -28,7 +28,7 @@ export type CaseStudy = {
   approach: string;
   outcome: string;
   highlights: string[];
-  /** Why AI (or AI-ready systems) was the right approach — omit if not applicable. */
+  /** Why AI (or AI-ready systems) was the right approach - omit if not applicable. */
   whyAi?: string;
   /** Solution architecture points grounded in published delivery. */
   architecture?: string[];
@@ -38,7 +38,7 @@ export type CaseStudy = {
   deliveryApproach?: string;
   /** Business outcome narrative bullets (in addition to result stats). */
   businessOutcomes?: string[];
-  /** Lessons grounded in the published pattern — no invented claims. */
+  /** Lessons grounded in the published pattern - no invented claims. */
   lessonsLearned?: string[];
   relatedSolutions?: CaseStudyLink[];
   relatedIndustries?: CaseStudyLink[];
@@ -54,7 +54,7 @@ export const caseStudyIntro = {
   copy: "AI-led engagements first, agentic systems, computer vision, generative intelligence, AI platforms, and AI infrastructure, followed by enterprise systems that prove scale and ops discipline. We publish methodology with the story. Numeric outcomes are engagement-reported until a measurement memo is on file. Named or anonymized references for qualified opportunities are available under NDA.",
 };
 
-/** Homepage featured carousel — AI-forward IDs only. */
+/** Homepage featured carousel - AI-forward IDs only. */
 export const featuredCaseStudyIds = [
   "agent-bank",
   "ai-dent",
@@ -156,7 +156,7 @@ export const caseStudiesPage: CaseStudy[] = [
     category: "Computer Vision",
     tagline: "Vision-guided dental assessment at home",
     summary:
-      "Computer Vision quality gates for at-home dental scans, reducing unnecessary clinic visits by 30–35% while keeping clinicians in the loop.",
+      "Computer Vision quality gates for at-home dental scans, reducing unnecessary clinic visits by 30-35% while keeping clinicians in the loop.",
     technologies: [
       "Computer Vision",
       "Quality gating models",
@@ -165,7 +165,7 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     results: [
       { value: "60%", label: "Reduced entry barriers", kind: "reported" },
-      { value: "30–35%", label: "Reduction in clinic visits", kind: "reported" },
+      { value: "30-35%", label: "Reduction in clinic visits", kind: "reported" },
     ],
     image: "/images/case-studies/ai-dent-app.png",
     challenge:
@@ -192,7 +192,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "At-home scans became a trusted intake path, cutting avoidable visits without replacing clinical judgment. Pattern: vision + human review for regulated care workflows.",
     businessOutcomes: [
       "Reduced entry barriers for patients seeking assessment",
-      "30–35% fewer unnecessary clinic visits from improved intake quality",
+      "30-35% fewer unnecessary clinic visits from improved intake quality",
       "Clinicians retained decision authority with AI focused on quality and efficiency",
     ],
     highlights: [
@@ -291,7 +291,7 @@ export const caseStudiesPage: CaseStudy[] = [
     category: "AI Platforms",
     tagline: "Reliable infrastructure for AI workflow builders",
     summary:
-      "Hardened an AI development platform so teams could ship AI-driven workflows with 40–50% faster incident recovery.",
+      "Hardened an AI development platform so teams could ship AI-driven workflows with 40-50% faster incident recovery.",
     technologies: [
       "AI platform reliability",
       "Kubernetes",
@@ -301,7 +301,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "Python / Node.js services",
     ],
     results: [
-      { value: "40–50%", label: "Reduction in MTTR", kind: "reported" },
+      { value: "40-50%", label: "Reduction in MTTR", kind: "reported" },
       { value: "Improved", label: "AI builder productivity", kind: "qualitative" },
     ],
     image: "/images/case-studies/kavia-ai.png",
@@ -328,7 +328,7 @@ export const caseStudiesPage: CaseStudy[] = [
     outcome:
       "Builders spent less time firefighting and more time shipping AI workflows with confidence. Pattern: observability + ops discipline for AI platforms.",
     businessOutcomes: [
-      "40–50% faster incident recovery (MTTR)",
+      "40-50% faster incident recovery (MTTR)",
       "Higher AI builder productivity from stable environments",
       "Production trust restored for model-driven workflow products",
     ],
@@ -373,7 +373,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "AI platform guardrails",
     ],
     results: [
-      { value: "$10k–$20k", label: "Monthly cloud losses prevented", kind: "reported" },
+      { value: "$10k-$20k", label: "Monthly cloud losses prevented", kind: "reported" },
       { value: "~90%", label: "Reduction in attack surface", kind: "reported" },
     ],
     image: "/images/case-studies/t2d2.png",
@@ -401,7 +401,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "Attack surface and avoidable spend dropped, protecting both the AI product and operating margin. Pattern: security + cost controls as first-class AI platform requirements.",
     businessOutcomes: [
       "~90% reduction in attack surface",
-      "$10k–$20k monthly cloud losses prevented",
+      "$10k-$20k monthly cloud losses prevented",
       "Restored trust that the intelligence layer runs on governed infrastructure",
     ],
     highlights: [
@@ -445,7 +445,7 @@ export const caseStudiesPage: CaseStudy[] = [
     ],
     results: [
       { value: "50%", label: "Reduction in coach preparation time", kind: "reported" },
-      { value: "50–60%", label: "Improvement in off-court practice", kind: "reported" },
+      { value: "50-60%", label: "Improvement in off-court practice", kind: "reported" },
     ],
     image: "/images/case-studies/hoopDNA.png",
     challenge:
@@ -472,7 +472,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "Coaches prepared faster; athletes practiced more consistently with clearer, vision-assisted cues. Pattern: CV/AR coaching intelligence with measurable prep-time reduction.",
     businessOutcomes: [
       "~50% reduction in coach preparation time",
-      "50–60% improvement in off-court practice consistency",
+      "50-60% improvement in off-court practice consistency",
       "Clearer vision-assisted cues between sessions",
     ],
     highlights: [
@@ -624,11 +624,11 @@ export const caseStudiesPage: CaseStudy[] = [
     category: "Enterprise Systems",
     tagline: "Real-time decision surfaces at match-day scale",
     summary:
-      "Live fantasy sports platform with leaderboard updates in 2–3 seconds and zero downtime during major events.",
+      "Live fantasy sports platform with leaderboard updates in 2-3 seconds and zero downtime during major events.",
     technologies: ["Node.js", "React", "Redis", "WebSockets"],
     results: [
       { value: "Zero", label: "Downtime during major match events", kind: "reported" },
-      { value: "2–3 sec", label: "Live leaderboard update time", kind: "reported" },
+      { value: "2-3 sec", label: "Live leaderboard update time", kind: "reported" },
     ],
     image: "/images/case-studies/twelfthman.png",
     challenge:
@@ -652,7 +652,7 @@ export const caseStudiesPage: CaseStudy[] = [
       "Leaderboards stayed live within seconds through major events, proving high-scale, low-latency delivery.",
     businessOutcomes: [
       "Zero downtime during major match events",
-      "2–3 second live leaderboard updates",
+      "2-3 second live leaderboard updates",
       "Engagement sustained under concurrent demand",
     ],
     highlights: [

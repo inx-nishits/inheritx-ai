@@ -83,14 +83,14 @@ export function Hero() {
         id="top"
         className="relative flex h-auto flex-col overflow-hidden md:h-dvh md:max-h-dvh"
       >
-        {/* Layer 3 — soft particles (noticeable, still secondary) */}
+        {/* Layer 3 - soft particles (noticeable, still secondary) */}
         <HeroAtmosphere className="absolute inset-0 z-0 h-full w-full opacity-[0.48] [mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)]" />
 
-        {/* Layer 1 — ambient gradient environment */}
+        {/* Layer 1 - ambient gradient environment */}
         <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_38%,#0c1520_0%,#07090d_55%,#05070a_100%)]" />
 
-          {/* Soft corner ambience — restored depth, still quiet */}
+          {/* Soft corner ambience - restored depth, still quiet */}
           <div
             className="absolute -top-[12%] right-[-10%] h-[48vw] max-h-[460px] w-[48vw] max-w-[460px]"
             style={{
@@ -117,12 +117,12 @@ export function Hero() {
 
           <div className="noise-overlay opacity-28" />
 
-          {/* Edge vignette — keeps edges quiet, center readable */}
+          {/* Edge vignette - keeps edges quiet, center readable */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_28%,rgba(7,9,13,0.34)_70%,rgba(7,9,13,0.86)_100%)]" />
           <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink/78" />
         </div>
 
-        {/* Soft scrim — protects content without flattening the field */}
+        {/* Soft scrim - protects content without flattening the field */}
         <div
           className="pointer-events-none absolute inset-0 z-[3]"
           aria-hidden
@@ -132,7 +132,7 @@ export function Hero() {
           }}
         />
 
-        {/* Bottom feather — soft fade so bg lines/particles don't hard-clip */}
+        {/* Bottom feather - soft fade so bg lines/particles don't hard-clip */}
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 z-[4] h-[34%] md:h-[38%]"
           aria-hidden
@@ -142,12 +142,12 @@ export function Hero() {
           }}
         />
 
-        {/* Layer 4 — content (highest priority) */}
+        {/* Layer 4 - content (highest priority) */}
         <div
           ref={copyRef}
           className="relative z-20 mx-auto flex w-full max-w-[1100px] flex-col items-center px-5 pt-28 pb-16 text-center md:h-full md:justify-center md:px-8 md:pt-[calc(4rem+50px)] md:pb-16"
         >
-          {/* Content spotlight — soft lift so type stays primary */}
+          {/* Content spotlight - soft lift so type stays primary */}
           <div
             className="pointer-events-none absolute left-1/2 top-[46%] h-[min(72vw,520px)] w-[min(96vw,820px)] -translate-x-1/2 -translate-y-1/2"
             aria-hidden

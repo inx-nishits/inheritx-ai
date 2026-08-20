@@ -65,7 +65,7 @@ export function FeaturedCaseStudy() {
         if (!e.currentTarget.contains(e.relatedTarget as Node)) setPaused(false);
       }}
     >
-      {/* Compact stage — full viewport height on md+; standard section spacing on mobile */}
+      {/* Compact stage - full viewport height on md+; standard section spacing on mobile */}
       <div className="relative w-full md:min-h-[min(62vh,520px)]">
         <motion.div
           className="absolute inset-0"
@@ -89,7 +89,7 @@ export function FeaturedCaseStudy() {
         <div className="noise-overlay opacity-40" />
 
         <div className="relative z-10 mx-auto flex max-w-page flex-col px-5 py-16 md:min-h-[min(62vh,520px)] md:px-8 md:py-20">
-          {/* Top bar — stack on mobile/tablet so copy keeps full width */}
+          {/* Top bar - stack on mobile/tablet so copy keeps full width */}
           <div className="flex flex-col items-start gap-4 lg:flex-row lg:justify-between lg:gap-6">
             <div className="w-full min-w-0 lg:max-w-md">
               <p className="text-[11px] tracking-[0.28em] text-cyan uppercase">
@@ -105,7 +105,7 @@ export function FeaturedCaseStudy() {
             </CtaText>
           </div>
 
-          {/* Main story — all slides stacked so height stays on the tallest copy. */}
+          {/* Main story - all slides stacked so height stays on the tallest copy. */}
           <div className="mt-auto max-w-4xl pt-8 pb-1 md:pt-10">
             <div className="grid">
               {featuredStudies.map((item, index) => {
@@ -126,7 +126,7 @@ export function FeaturedCaseStudy() {
                   >
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="font-mono text-[11px] tracking-[0.18em] text-cyan uppercase">
-                        {String(index + 1).padStart(2, "0")} — {item.category}
+                        {String(index + 1).padStart(2, "0")} - {item.category}
                       </span>
                       <span className="text-white/25">/</span>
                       <span className="text-sm text-white/45">{item.name}</span>

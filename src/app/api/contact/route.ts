@@ -118,7 +118,7 @@ async function forwardToResend(payload: ContactPayload) {
       from,
       to: [to],
       reply_to: payload.email,
-      subject: `[InheritX] ${payload.projectType} — ${payload.name}`,
+      subject: `[InheritX] ${payload.projectType} - ${payload.name}`,
       text: [
         `Name: ${payload.name}`,
         `Email: ${payload.email}`,

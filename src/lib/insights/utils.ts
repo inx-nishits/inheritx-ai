@@ -38,7 +38,7 @@ export function stripHtml(html: string | undefined | null): string {
   return html
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/gi, " ")
-    .replace(/&#8211;/g, "–")
+    .replace(/&#8211;/g, "-")
     .replace(/&#8212;/g, ", ")
     .replace(/&amp;/g, "&")
     .replace(/&hellip;/g, "…")

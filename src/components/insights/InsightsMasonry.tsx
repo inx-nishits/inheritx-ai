@@ -10,7 +10,7 @@ type InsightsMasonryProps = {
 };
 
 /**
- * CSS column masonry — packs cards of unequal image ratios without row gaps.
+ * CSS column masonry - packs cards of unequal image ratios without row gaps.
  */
 export function InsightsMasonry({
   insights,

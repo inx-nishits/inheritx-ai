@@ -1,5 +1,5 @@
 /**
- * WordPress Insights API types — mapped to the live wpadmin.inheritx.com responses.
+ * WordPress Insights API types - mapped to the live wpadmin.inheritx.com responses.
  *
  * Known live quirks (verified Phase 1):
  * - Detail uses `feturedPost` (typo), not `featuredPost`.
@@ -57,7 +57,7 @@ export type InsightDetailResponse = {
   message?: string;
   bloginfo?: InsightDetail | InsightDetail[];
   relatedPost?: Array<{ id: number | string; title: string; slug: string }>;
-  /** Live API typo — featured posts */
+  /** Live API typo - featured posts */
   feturedPost?: Array<{ id: number | string; title: string; slug: string }>;
   categories?: InsightCategory[];
 };

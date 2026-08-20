@@ -107,7 +107,7 @@ export const teamHighlights = [
   { value: "Owned", label: "IP transfer on every build" },
 ];
 
-/** CMS-ready team member shape — swap image/social fields when a CMS is connected. */
+/** CMS-ready team member shape - swap image/social fields when a CMS is connected. */
 export type TeamMember = {
   id: string;
   name: string;

@@ -72,7 +72,7 @@ function wasClosedThisSession() {
 }
 
 /**
- * Global floating IRA concierge — InheritX Research Assistant.
+ * Global floating IRA concierge - InheritX Research Assistant.
  * Starts as the IRA-face CTA, then opens after 10s unless the visitor
  * already closed it this session. Ask IRA still opens IRA_CHAT_URL.
  */

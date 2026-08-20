@@ -34,10 +34,10 @@ export const IRA_CTA_LABEL = "Ask IRA" as const;
 
 export const IRA_CTA_SUBLABEL = "InheritX Research Assistant" as const;
 
-export const IRA_A11Y_LABEL = "Open IRA — InheritX Research Assistant" as const;
+export const IRA_A11Y_LABEL = "Open IRA - InheritX Research Assistant" as const;
 
 /**
- * Existing IRA clickable mapping — UI may change, destination must not:
+ * Existing IRA clickable mapping - UI may change, destination must not:
  *   Ask IRA → IRA_CHAT_URL (new tab, noopener)
  */
 export const IRA_CTA = {

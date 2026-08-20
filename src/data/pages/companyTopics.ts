@@ -393,7 +393,7 @@ const companyTopics: TopicPage[] = [
           { label: "Enterprise References", href: "/resources/enterprise-references" },
           { label: "IP Ownership", href: "/company/ip-ownership" },
           { label: "AI Governance", href: "/resources/ai-governance" },
-          { label: "Contact — diligence", href: "/contact?intent=security" },
+          { label: "Contact - diligence", href: "/contact?intent=security" },
         ],
       },
       {

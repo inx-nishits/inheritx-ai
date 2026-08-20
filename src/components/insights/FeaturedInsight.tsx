@@ -14,7 +14,7 @@ import { CtaText } from "@/components/cta/CtaText";
 import { Reveal } from "@/components/ui/Reveal";
 
 /**
- * Spotlight featured insight — editorial band below the library grid.
+ * Spotlight featured insight - editorial band below the library grid.
  * Image is shown at its native ratio with no overlays or letterboxing.
  */
 export function FeaturedInsight({ insight }: { insight: InsightCard }) {

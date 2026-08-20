@@ -39,7 +39,7 @@
   --font-sans: var(--font-satoshi);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-satoshi);
-  /* Site shell — 1440px standard page container. */
+  /* Site shell - 1440px standard page container. */
   --max-width-page: 90rem;
 }
 
@@ -104,7 +104,7 @@ body {
 
 @media (min-width: 768px) {
   .testimonial-track {
-    /* Must use 100vw — 100% resolves to the track’s own w-max width and
+    /* Must use 100vw - 100% resolves to the track’s own w-max width and
        creates a huge empty gutter after scrolling. */
     --testimonial-gutter: max(2rem, calc((100vw - 90rem) / 2 + 2rem));
   }
@@ -240,7 +240,7 @@ body {
   animation: pulse-ring 2.8s ease-out infinite;
 }
 
-/* Mobile-only touch & overflow helpers — desktop styles unchanged above md/lg */
+/* Mobile-only touch & overflow helpers - desktop styles unchanged above md/lg */
 @media (max-width: 767px) {
   html {
     -webkit-text-size-adjust: 100%;
@@ -302,7 +302,7 @@ body {
   }
 }
 
-/* Hero banner tag — Satoshi + cyan scan (white base) */
+/* Hero banner tag - Satoshi + cyan scan (white base) */
 .hero-eyebrow-shimmer {
   font-family: var(--font-satoshi), system-ui, sans-serif;
   font-optical-sizing: auto;
@@ -473,7 +473,7 @@ select:focus-visible {
   }
 }
 
-/* Scoped WordPress / Insights rich HTML — does not leak into site chrome */
+/* Scoped WordPress / Insights rich HTML - does not leak into site chrome */
 .rich-content {
   color: rgba(255, 255, 255, 0.72);
   font-size: 1rem;
@@ -714,7 +714,7 @@ select:focus-visible {
   max-width: 100% !important;
 }
 
-/* IRA floating CTA — subtle idle float (honors prefers-reduced-motion via Tailwind motion-safe) */
+/* IRA floating CTA - subtle idle float (honors prefers-reduced-motion via Tailwind motion-safe) */
 @keyframes ira-float {
   0%,
   100% {

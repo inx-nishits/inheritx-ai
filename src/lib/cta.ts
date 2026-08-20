@@ -99,7 +99,7 @@ export function trackCtaIraOpen(
   trackCta({ ...payload, event: CTA_EVENTS.iraOpen });
 }
 
-/** Last CTA click in this tab — used to stitch form_start / form_submit. */
+/** Last CTA click in this tab - used to stitch form_start / form_submit. */
 export function readLastCtaClick(): Partial<
   Omit<CtaAnalyticsPayload, "event">
 > | null {

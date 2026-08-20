@@ -46,7 +46,7 @@ export function SuccessStories() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
                     <p className="absolute bottom-5 left-5 font-mono text-xs text-cyan">
-                      {String(index + 1).padStart(2, "0")} — {story.industry}
+                      {String(index + 1).padStart(2, "0")} - {story.industry}
                     </p>
                   </div>
                   <div>

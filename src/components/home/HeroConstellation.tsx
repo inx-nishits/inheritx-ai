@@ -19,7 +19,7 @@ type Node = {
 };
 
 /**
- * Edge-weighted constellation — center reserved for typography.
+ * Edge-weighted constellation - center reserved for typography.
  * Balanced visibility: noticeable ambient intelligence, never primary.
  */
 const nodes: Node[] = [
@@ -78,7 +78,7 @@ export function HeroConstellation({ mouseX, mouseY }: ConstellationProps) {
           </linearGradient>
         </defs>
 
-        {/* Quiet orbital rings — perimeter, no bright core behind type */}
+        {/* Quiet orbital rings - perimeter, no bright core behind type */}
         <motion.g
           animate={{ rotate: 360 }}
           style={{ transformOrigin: "50px 48px" }}

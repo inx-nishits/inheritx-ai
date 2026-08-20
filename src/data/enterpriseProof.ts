@@ -1,5 +1,5 @@
 /**
- * Enterprise proof helpers — only reference published case studies
+ * Enterprise proof helpers - only reference published case studies
  * or clearly labeled anonymized engagement classes. Never invent logos,
  * client names, testimonials, certifications, or unaudited metrics.
  */

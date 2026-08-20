@@ -38,7 +38,7 @@ export function Process() {
           </p>
         </div>
 
-        {/* All stages visible — equal weight, no hidden content */}
+        {/* All stages visible - equal weight, no hidden content */}
         <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
           {processSteps.map((item, index) => (
             <Reveal key={item.step} delay={index * 0.07}>

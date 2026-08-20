@@ -107,7 +107,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           { label: "Enterprise References", href: "/resources/enterprise-references" },
           { label: "IP Ownership", href: "/company/ip-ownership" },
           { label: "AI Governance", href: "/resources/ai-governance" },
-          { label: "Contact — security intent", href: "/contact?intent=security" },
+          { label: "Contact - security intent", href: "/contact?intent=security" },
         ],
       },
     ],
@@ -194,19 +194,19 @@ export const enterpriseResourceTopics: TopicPage[] = [
         items: [
           {
             title: "Security FAQ",
-            copy: "Public procurement-oriented answers — /resources/security-faq",
+            copy: "Public procurement-oriented answers - /resources/security-faq",
           },
           {
             title: "IP Ownership",
-            copy: "How code, models, and data transfer at handover — /company/ip-ownership",
+            copy: "How code, models, and data transfer at handover - /company/ip-ownership",
           },
           {
             title: "Security & Compliance",
-            copy: "Deployment and governance posture — /company/security",
+            copy: "Deployment and governance posture - /company/security",
           },
           {
             title: "Enterprise References",
-            copy: "How verification works — /resources/enterprise-references",
+            copy: "How verification works - /resources/enterprise-references",
           },
         ],
       },
@@ -273,7 +273,7 @@ export const enterpriseResourceTopics: TopicPage[] = [
           { label: "IP Ownership", href: "/company/ip-ownership" },
           { label: "Enterprise References", href: "/resources/enterprise-references" },
           { label: "Engagement Models", href: "/resources/engagement-models" },
-          { label: "Contact — diligence", href: "/contact?intent=security" },
+          { label: "Contact - diligence", href: "/contact?intent=security" },
         ],
       },
     ],
@@ -638,19 +638,19 @@ export const enterpriseResourceTopics: TopicPage[] = [
         items: [
           {
             title: "Healthcare & clinical workflows",
-            copy: "Intake, vision quality gates, care discovery — cases: AI Dent, Heva.",
+            copy: "Intake, vision quality gates, care discovery - cases: AI Dent, Heva.",
           },
           {
             title: "AI platforms & LLMOps reliability",
-            copy: "AI builder infrastructure and recovery — case: Kavia AI.",
+            copy: "AI builder infrastructure and recovery - case: Kavia AI.",
           },
           {
             title: "AI infrastructure security",
-            copy: "Posture hardening for AI platforms — case: T2D2.",
+            copy: "Posture hardening for AI platforms - case: T2D2.",
           },
           {
             title: "Enterprise operations systems",
-            copy: "Multi-property and real-time operations — cases: QDIS, Twelfthman, E-mobility.",
+            copy: "Multi-property and real-time operations - cases: QDIS, Twelfthman, E-mobility.",
           },
         ],
       },
@@ -680,8 +680,8 @@ export const enterpriseResourceTopics: TopicPage[] = [
           { label: "Diligence Pack", href: "/resources/diligence-pack" },
           { label: "Outcome Taxonomy", href: "/resources/outcome-taxonomy" },
           { label: "Security FAQ", href: "/resources/security-faq" },
-          { label: "Contact — diligence", href: "/contact?intent=security" },
-          { label: "Contact — strategy", href: "/contact?intent=strategy" },
+          { label: "Contact - diligence", href: "/contact?intent=security" },
+          { label: "Contact - strategy", href: "/contact?intent=strategy" },
         ],
       },
     ],

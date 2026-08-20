@@ -40,7 +40,7 @@ function CapabilityCard({
     <Link
       href={item.href}
       data-capability-card
-      aria-label={`${item.title} — open details`}
+      aria-label={`${item.title} - open details`}
       className={
         className ??
         "group relative h-[min(380px,48vh)] w-[min(82vw,380px)] shrink-0 overflow-hidden rounded-[2rem] border border-white/10 bg-ink-soft p-7 md:w-[400px] md:p-9 lg:h-[min(420px,50vh)] lg:w-[420px] lg:p-10"

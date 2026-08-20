@@ -1,5 +1,5 @@
 /**
- * Enterprise testimonials — publish named people/companies only with
+ * Enterprise testimonials - publish named people/companies only with
  * written customer approval stored outside this file.
  * Until then, quotes are anonymized (role + sector).
  */

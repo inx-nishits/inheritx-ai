@@ -23,7 +23,7 @@ export const solutionPillars = [
     id: "02",
     title: "AI Agents",
     summary:
-      "Autonomous agents, multi-agent orchestration, MCP, tool calling, memory, and human–AI collaboration, agents that execute work with auditability.",
+      "Autonomous agents, multi-agent orchestration, MCP, tool calling, memory, and human-AI collaboration, agents that execute work with auditability.",
     points: [
       "Single agents and hierarchical multi-agent systems",
       "MCP, tool contracts, memory, and approval gates",
@@ -50,7 +50,7 @@ export const solutionPillars = [
 export const engagementModels = [
   {
     title: "AI Consulting & Architecture",
-    duration: "2–6 weeks · Start here when the mandate is unclear",
+    duration: "2-6 weeks · Start here when the mandate is unclear",
     copy: "Board-ready blueprints: data readiness, model strategy, agent design, LLMOps posture, security, and sequenced investment, before you commit to a build.",
     bestFor: "CTO / CIO / CISO / Head of AI",
     href: "/solutions/ai-consulting",
@@ -97,7 +97,7 @@ export const solutionFitMatrix = [
   },
 ];
 
-/** Trust signals for enterprise buyers — ownership + outcome classes. */
+/** Trust signals for enterprise buyers - ownership + outcome classes. */
 export const solutionProofPoints = [
   { value: "Owned", label: "100% code & model IP at handover" },
   { value: "Private", label: "Deployed in your VPC or on-prem" },

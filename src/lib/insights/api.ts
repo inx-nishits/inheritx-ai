@@ -29,7 +29,7 @@ import {
 const DEFAULT_WP_BASE = "https://wpadmin.inheritx.com";
 
 function wpBase(): string {
-  // NEXT_PUBLIC_WP_API_URL may include the full path prefix — strip it to get
+  // NEXT_PUBLIC_WP_API_URL may include the full path prefix - strip it to get
   // just the origin so individual fetch calls can append their own paths.
   const fromApiUrl = process.env.NEXT_PUBLIC_WP_API_URL
     ?.replace(/\/wp-json\/api\/v1\/?$/, "")

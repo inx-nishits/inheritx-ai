@@ -359,22 +359,22 @@ export const pathPages: PathPage[] = [
       },
       {
         type: "timeline",
-        title: "AI investment roadmap — typical executive path",
+        title: "AI investment roadmap - typical executive path",
         intro:
           "A briefing-friendly sequence. Actual calendars depend on data access, risk class, and estate readiness.",
         items: [
           {
-            phase: "Week 0–2",
+            phase: "Week 0-2",
             title: "Mandate & KPI",
             copy: "Strategy session or executive workshop: confirm the workflow, board metric, and go / no-go on AI.",
           },
           {
-            phase: "Week 2–6",
+            phase: "Week 2-6",
             title: "Architecture & risk",
             copy: "Target architecture, security posture, value case, and industrialization criteria.",
           },
           {
-            phase: "Week 6–14",
+            phase: "Week 6-14",
             title: "Governed production",
             copy: "Ship under production constraints, integrations, evaluation, auditability, human gates.",
           },
@@ -426,7 +426,7 @@ export const pathPages: PathPage[] = [
       },
       {
         type: "decisionMatrix",
-        title: "Executive decision matrix — where to start",
+        title: "Executive decision matrix - where to start",
         intro: "Match urgency to motion. Do not start with a catalog tour.",
         columns: ["If this is true…", "Start here", "Primary proof"],
         rows: [
@@ -1137,7 +1137,7 @@ export const pathPages: PathPage[] = [
       },
       {
         type: "risk",
-        title: "AI risk matrix — architecture view",
+        title: "AI risk matrix - architecture view",
         intro: "Common failure modes and how production-grade design responds.",
         rows: [
           {

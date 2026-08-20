@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 
 /**
  * Public profiles for InheritX Solutions.
- * Logos are visual recognition only — none are linked from this marquee.
+ * Logos are visual recognition only - none are linked from this marquee.
  */
 const logos: {
   name: string;
