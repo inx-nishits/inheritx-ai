@@ -497,9 +497,9 @@ export function NavOverlay({ open, onClose }: NavOverlayProps) {
                         onClick={() =>
                           setMobileExpanded(isExpanded ? null : item.label)
                         }
-                        className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left"
+                        className="flex w-full items-center justify-between gap-3 px-4 py-3.5 text-left"
                       >
-                        <span className="font-display text-2xl leading-none text-white">
+                        <span className="text-base font-medium leading-snug text-white">
                           {item.label}
                         </span>
                         <ChevronDown
