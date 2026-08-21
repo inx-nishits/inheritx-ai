@@ -282,7 +282,7 @@ export const caseStudies = [
       "A private generative platform that drafts, validates, and routes clinical notes under strict governance, cutting clinician admin load.",
     challenge: "Clinicians lost hours to notes, delaying care and increasing burnout.",
     solution: "Governed AI assistants with specialty-aware drafting and EHR handoffs.",
-    image: "/images/visuals/industries/industry-healthcare.png",
+    image: "/images/actual/actual-healthcare.jpg",
   },
   {
     sector: "Finance",
@@ -293,7 +293,7 @@ export const caseStudies = [
       "Agentic triage across signals, cases, and analyst workflows, with explainable escalation and full auditability.",
     challenge: "Fraud teams drowned in false positives while high-risk cases waited.",
     solution: "Multi-agent orchestration with human gates on consequential actions.",
-    image: "/images/visuals/industries/industry-finance.png",
+    image: "/images/actual/actual-finance.jpg",
   },
   {
     sector: "Manufacturing",
@@ -304,7 +304,7 @@ export const caseStudies = [
       "Computer Vision on the line, integrated into quality systems and operator feedback loops that open corrective workflows.",
     challenge: "Manual inspection missed micro-defects and slowed throughput.",
     solution: "Edge vision models with ops agents that trigger corrective action.",
-    image: "/images/visuals/industries/industry-manufacturing.png",
+    image: "/images/actual/actual-manufacturing.jpg",
   },
 ];
 

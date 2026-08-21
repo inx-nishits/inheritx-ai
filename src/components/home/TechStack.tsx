@@ -25,14 +25,8 @@ const partnerStrip = [
   { name: "Pinecone", src: "/images/partners/pinecone.svg" },
   { name: "Weaviate", src: "/images/partners/weaviate.svg" },
   { name: "Qdrant", src: "/images/partners/qdrant.svg" },
-  { name: "Redis", src: "/images/partners/redis.svg" },
-  { name: "Langfuse", src: "/images/partners/langfuse.svg" },
   { name: "Azure", src: "/images/partners/microsoft.svg" },
-  { name: "vLLM", src: "/images/partners/vllm.svg" },
-  { name: "MLflow", src: "/images/partners/mlflow.svg" },
-  { name: "Docker", src: "/images/partners/docker.svg" },
   { name: "Kubernetes", src: "/images/partners/kubernetes.svg" },
-  { name: "Terraform", src: "/images/partners/terraform.svg" },
 ];
 
 export function TechStack() {

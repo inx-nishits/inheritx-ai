@@ -105,7 +105,7 @@ export function PortfolioCTA() {
       <div className="noise-overlay" />
       <div className="pointer-events-none absolute inset-0">
         <Image
-          src="/images/visuals/lead-cta.png"
+          src="/images/actual/actual-transformation.jpg"
           alt=""
           fill
           className="object-cover opacity-30"
