@@ -107,7 +107,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Fewer missed micro-defects on critical lines (pattern).",
     impact: "Pattern: defect escape",
     tech: ["Gemini", "Python", "AWS", "Edge Inference"],
-    image: "/images/actual/actual-manufacturing-industry.jpg",
+    image: "/images/actual/actual-manufacturing-industry-l.jpg",
     featured: true,
   },
   {
@@ -141,7 +141,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Lower handle time and higher first-contact resolution (pattern).",
     impact: "Pattern: handle time",
     tech: ["Claude", "LangChain", "GCP", "Next.js"],
-    image: "/images/actual/actual-retail-industry.jpg",
+    image: "/images/actual/actual-retail-industry-l.jpg",
   },
   {
     id: "ai-knowledge-base",
@@ -205,7 +205,7 @@ export const portfolioProjects: PortfolioProject[] = [
     outcome: "Document turnaround reduced from hours to minutes.",
     impact: "Minutes vs hours",
     tech: ["OpenAI", "Python", "AWS", "Vector DB"],
-    image: "/images/actual/actual-logistic-industry.jpg",
+    image: "/images/actual/actual-logistic-industry-l.jpg",
   },
   {
     id: "predictive-ops",

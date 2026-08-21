@@ -129,7 +129,7 @@ export function Solutions() {
 
             <div className="relative order-1 min-h-[200px] lg:order-2 lg:min-h-full">
               <VisualFrame
-                src="/images/visuals/lead-solutions.png"
+                src="/images/actual/actual-lead-solutions.jpg"
                 alt=""
                 className="absolute inset-0 rounded-none border-0"
               />
