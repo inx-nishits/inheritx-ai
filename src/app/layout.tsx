@@ -91,12 +91,92 @@ const organizationJsonLd = {
   logo: `${SITE_URL}/images/actual/actual-lead-capabilities.jpg`,
   description:
     "InheritX is an AI-native enterprise partner, production AI in your VPC, full IP ownership, and systems your teams operate after handover.",
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "sales",
-    url: `${SITE_URL}/contact`,
+  sameAs: [
+    "https://www.linkedin.com/company/inheritx-solutions-pvt-ltd/",
+    "https://x.com/inheritx",
+    "https://www.facebook.com/InheritxSolutions/",
+    "https://www.instagram.com/inheritxsolutions/",
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+91 8487006480",
+      contactType: "sales",
+      areaServed: "Worldwide",
+      availableLanguage: ["English"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+91 8160047106",
+      contactType: "career",
+      areaServed: "Worldwide",
+      availableLanguage: ["English"],
+    },
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "InheritX",
+  url: SITE_URL,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${SITE_URL}/insights?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
   },
-  sameAs: ["https://www.linkedin.com/company/inheritx"],
+};
+
+const servicesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "InheritX Solutions & Services",
+  itemListElement: [
+    {
+      "@type": "Service",
+      name: "AI & Machine Learning Engineering",
+      provider: { "@type": "Organization", name: "InheritX", url: SITE_URL },
+    },
+    {
+      "@type": "Service",
+      name: "Enterprise Agentic Automation",
+      provider: { "@type": "Organization", name: "InheritX", url: SITE_URL },
+    },
+    {
+      "@type": "Service",
+      name: "Custom Software & Web Development",
+      provider: { "@type": "Organization", name: "InheritX", url: SITE_URL },
+    },
+    {
+      "@type": "Service",
+      name: "Mobile Application Development",
+      provider: { "@type": "Organization", name: "InheritX", url: SITE_URL },
+    },
+    {
+      "@type": "Service",
+      name: "Cloud Architecture & DevOps",
+      provider: { "@type": "Organization", name: "InheritX", url: SITE_URL },
+    },
+  ],
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "InheritX Technologies",
+  image: `${SITE_URL}/images/actual/actual-lead-capabilities.jpg`,
+  url: SITE_URL,
+  telephone: "+91 8487006480",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "IN",
+  },
+  sameAs: [
+    "https://www.linkedin.com/company/inheritx-solutions-pvt-ltd/",
+    "https://x.com/inheritx",
+    "https://www.facebook.com/InheritxSolutions/",
+    "https://www.instagram.com/inheritxsolutions/",
+  ],
 };
 
 export default function RootLayout({
@@ -117,6 +197,18 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
         <GtmBoot />
         <a
